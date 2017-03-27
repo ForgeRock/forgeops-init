@@ -1,0 +1,26 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "entityType" : "GlobalScripts",
+    "entityId" : "c827d2b4-3608-4693-868e-bbcf86bd87c7",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "c827d2b4-3608-4693-868e-bbcf86bd87c7",
+    "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
+    "lastModifiedDate" : "1490105312641",
+    "lastModifiedBy" : "id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org",
+    "name" : "Scripted Module - Client Side",
+    "context" : "AUTHENTICATION_CLIENT_SIDE",
+    "description" : "Default global script for client side Scripted Authentication Module",
+    "language" : "JAVASCRIPT",
+    "creationDate" : "1433147666269",
+    "script" : "LyogRGVmYXVsdCBBdXRoZW50aWNhdGlvbiBjbGllbnQgc2lkZSBzY3JpcHQgdG8gdXNlIGFzIGEgdGVtcGxhdGUgZm9yIG5ldyBzY3JpcHRzICov",
+    "_type" : {
+      "_id" : "globalScript",
+      "name" : "Scripting",
+      "collection" : true
+    }
+  }
+}

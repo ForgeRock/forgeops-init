@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "entityType" : "SaeModule",
+    "entityId" : "SAE",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "SAE",
+    "authenticationLevel" : 0,
+    "_type" : {
+      "_id" : "sae",
+      "name" : "SAE",
+      "collection" : true
+    }
+  }
+}

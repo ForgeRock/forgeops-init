@@ -1,0 +1,16 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "entityType" : "Realms",
+    "entityId" : "Lw",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "Lw",
+    "parentPath" : null,
+    "active" : true,
+    "name" : "/",
+    "aliases" : [ "openam.homeunix.org", "openam.example.com", "openam" ]
+  }
+}

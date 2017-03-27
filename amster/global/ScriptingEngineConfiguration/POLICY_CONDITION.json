@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "entityType" : "ScriptingEngineConfiguration",
+    "entityId" : "engineConfiguration",
+    "pathParams" : {
+      "contexts" : "POLICY_CONDITION"
+    }
+  },
+  "data" : {
+    "_id" : "engineConfiguration",
+    "queueSize" : 10,
+    "useSecurityManager" : true,
+    "idleTimeout" : 60,
+    "blackList" : [ "java.lang.Class", "java.security.AccessController", "java.lang.reflect.*" ],
+    "coreThreads" : 10,
+    "whiteList" : [ "java.lang.Float", "java.util.HashMap$KeyIterator", "com.sun.identity.shared.debug.Debug", "java.lang.Double", "org.forgerock.openam.scripting.api.http.JavaScriptHttpClient", "java.util.HashMap", "java.lang.Character$Subset", "java.lang.Integer", "java.util.TreeSet", "org.forgerock.http.Client", "java.util.ArrayList", "java.util.LinkedHashMap", "java.util.HashSet", "java.lang.Character$UnicodeBlock", "java.lang.Character", "java.lang.Long", "java.lang.Short", "org.forgerock.http.client.*", "java.lang.Math", "java.lang.Boolean", "java.lang.String", "java.lang.Byte", "java.util.LinkedList", "java.lang.Number", "java.lang.StrictMath", "java.util.LinkedHashSet", "org.forgerock.http.protocol.Response", "org.forgerock.http.Context", "java.lang.Void", "groovy.json.JsonSlurper", "org.forgerock.util.promise.NeverThrowsException", "org.forgerock.http.protocol.Request", "org.forgerock.openam.scripting.api.http.GroovyHttpClient", "org.forgerock.http.context.RootContext", "java.util.TreeMap", "org.forgerock.openam.scripting.api.ScriptedSession", "org.forgerock.openam.scripting.api.ScriptedIdentity", "org.forgerock.http.Handler", "java.lang.Object", "org.forgerock.util.promise.Promise" ],
+    "maxThreads" : 50,
+    "serverTimeout" : 0,
+    "_type" : {
+      "_id" : "engineConfiguration",
+      "name" : "Scripting engine configuration",
+      "collection" : false
+    }
+  }
+}

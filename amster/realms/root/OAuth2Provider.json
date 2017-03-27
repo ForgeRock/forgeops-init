@@ -1,0 +1,73 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "entityType" : "OAuth2Provider",
+    "entityId" : "OAuth2Provider",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "advancedOAuth2Config" : {
+      "scopeImplementationClass" : "org.forgerock.openam.oauth2.OpenAMScopeValidator",
+      "customLoginUrlTemplate" : null,
+      "modifiedTimestampAttribute" : null,
+      "supportedScopes" : [ "openid|", "email|Your email address", "address|Your postal address", "phone|Your telephone number(s)", "profile|Your personal information" ],
+      "responseTypeClasses" : [ "id_token|org.forgerock.openidconnect.IdTokenResponseTypeHandler", "code|org.forgerock.oauth2.core.AuthorizationCodeResponseTypeHandler", "device_code|org.forgerock.oauth2.core.TokenResponseTypeHandler", "token|org.forgerock.oauth2.core.TokenResponseTypeHandler" ],
+      "tokenSigningECDSAKeyAlias" : [ "ES512|es512test", "ES384|es384test", "ES256|es256test" ],
+      "hashSalt" : null,
+      "moduleMessageEnabledInPasswordGrant" : false,
+      "tokenSigningHmacSharedSecret" : "ubqXdJuZ3YoGbsl4VAJuBBEaR6O8mZL91wVgjEXsP0E=",
+      "codeVerifierEnforced" : false,
+      "tokenCompressionEnabled" : false,
+      "tokenSigningAlgorithm" : "HS256",
+      "authenticationAttributes" : [ "uid" ],
+      "createdTimestampAttribute" : null,
+      "defaultScopes" : [ "address", "phone", "openid", "profile", "email" ],
+      "displayNameAttribute" : "cn",
+      "keypairName" : "test",
+      "clientsCanSkipConsent" : true,
+      "supportedSubjectTypes" : [ "public" ]
+    },
+    "coreOAuth2Config" : {
+      "refreshTokenLifetime" : 604800,
+      "accessTokenLifetime" : 3600,
+      "issueRefreshToken" : false,
+      "codeLifetime" : 120,
+      "savedConsentAttribute" : null,
+      "issueRefreshTokenOnRefreshedToken" : false,
+      "statelessTokensEnabled" : true
+    },
+    "advancedOIDCConfig" : {
+      "allowDynamicRegistration" : false,
+      "storeOpsTokens" : true,
+      "idTokenInfoClientAuthenticationEnabled" : true,
+      "defaultACR" : null,
+      "claimsParameterSupported" : false,
+      "amrMappings" : { },
+      "alwaysAddClaimsToToken" : false,
+      "generateRegistrationAccessTokens" : true,
+      "loaMapping" : { },
+      "jkwsURI" : null
+    },
+    "coreOIDCConfig" : {
+      "supportedIDTokenEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
+      "jwtTokenLifetime" : 3600,
+      "supportedClaims" : [ "phone_number|Phone number", "family_name|Family name", "given_name|Given name", "locale|Locale", "email|Email address", "profile|Your personal information", "zoneinfo|Time zone", "address|Postal address", "name|Full name" ],
+      "supportedIDTokenEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "RSA1_5", "A256KW", "dir", "A192KW" ],
+      "supportedIDTokenSigningAlgorithms" : [ "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512" ],
+      "oidcClaimsScript" : "36863ffb-40ec-48b9-94b1-9a99f71cc3b5"
+    },
+    "deviceCodeConfig" : {
+      "completionUrl" : null,
+      "devicePollInterval" : 5,
+      "deviceCodeLifetime" : 300,
+      "verificationUrl" : null
+    },
+    "_type" : {
+      "_id" : "oauth-oidc",
+      "name" : "OAuth2 Provider",
+      "collection" : false
+    }
+  }
+}

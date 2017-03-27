@@ -1,0 +1,16 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "entityType" : "Realms",
+    "entityId" : "L3Rlc3Q",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "L3Rlc3Q",
+    "parentPath" : "/",
+    "active" : true,
+    "name" : "test",
+    "aliases" : [ ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "entityType" : "GlobalScripts",
+    "entityId" : "7e3d7067-d50f-4674-8c76-a3e13a810c33",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "7e3d7067-d50f-4674-8c76-a3e13a810c33",
+    "lastModifiedDate" : "1490105312499",
+    "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
+    "lastModifiedBy" : "id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org",
+    "name" : "Scripted Module - Server Side",
+    "context" : "AUTHENTICATION_SERVER_SIDE",
+    "description" : "Default global script for server side Scripted Authentication Module",
+    "language" : "JAVASCRIPT",
+    "creationDate" : "1433147666269",
+    "script" : "dmFyIFNUQVJUX1RJTUUgPSA5OyAgLy8gOWFtCnZhciBFTkRfVElNRSAgID0gMTc7IC8vIDVwbQoKbG9nZ2VyLm1lc3NhZ2UoIlN0YXJ0aW5nIGF1dGhlbnRpY2F0aW9uIGphdmFzY3JpcHQiKTsKbG9nZ2VyLm1lc3NhZ2UoIlVzZXI6ICIgKyB1c2VybmFtZSk7CgovLyBMb2cgb3V0IGN1cnJlbnQgY29va2llcyBpbiB0aGUgcmVxdWVzdAppZiAobG9nZ2VyLm1lc3NhZ2VFbmFibGVkKCkpIHsKICAgIHZhciBjb29raWVzID0gcmVxdWVzdERhdGEuZ2V0SGVhZGVycygnQ29va2llJyk7CiAgICBmb3IgKGNvb2tpZSBpbiBjb29raWVzKSB7CiAgICAgICAgbG9nZ2VyLm1lc3NhZ2UoJ0Nvb2tpZTogJyArIGNvb2tpZXNbY29va2llXSk7CiAgICB9Cn0KCmlmICh1c2VybmFtZSkgewogICAgLy8gRmV0Y2ggdXNlciBpbmZvcm1hdGlvbiB2aWEgUkVTVAogICAgdmFyIHJlc3BvbnNlID0gaHR0cENsaWVudC5nZXQoImh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9vcGVuYW0vanNvbi91c2Vycy8iICsgdXNlcm5hbWUsIHsKICAgICAgICBjb29raWVzIDogW10sCiAgICAgICAgaGVhZGVycyA6IFtdCiAgICB9KTsKICAgIC8vIExvZyBvdXQgcmVzcG9uc2UgZnJvbSBSRVNUIGNhbGwKICAgIGxvZ2dlci5tZXNzYWdlKCJVc2VyIFJFU1QgQ2FsbC4gU3RhdHVzOiAiICsgcmVzcG9uc2UuZ2V0U3RhdHVzQ29kZSgpICsgIiwgQm9keTogIiArIHJlc3BvbnNlLmdldEVudGl0eSgpKTsKfQoKdmFyIG5vdyA9IG5ldyBEYXRlKCk7CmxvZ2dlci5tZXNzYWdlKCJDdXJyZW50IHRpbWU6ICIgKyBub3cuZ2V0SG91cnMoKSk7CmlmIChub3cuZ2V0SG91cnMoKSA8IFNUQVJUX1RJTUUgfHwgbm93LmdldEhvdXJzKCkgPiBFTkRfVElNRSkgewogICAgbG9nZ2VyLmVycm9yKCJMb2dpbiBmb3JiaWRkZW4gb3V0c2lkZSB3b3JrIGhvdXJzISIpOwogICAgYXV0aFN0YXRlID0gRkFJTEVEOwp9IGVsc2UgewogICAgbG9nZ2VyLm1lc3NhZ2UoIkF1dGhlbnRpY2F0aW9uIGFsbG93ZWQhIik7CiAgICBhdXRoU3RhdGUgPSBTVUNDRVNTOwp9",
+    "_type" : {
+      "_id" : "globalScript",
+      "name" : "Scripting",
+      "collection" : true
+    }
+  }
+}
