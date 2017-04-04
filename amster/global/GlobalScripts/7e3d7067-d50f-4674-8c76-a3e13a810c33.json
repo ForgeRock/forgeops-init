@@ -1,14 +1,14 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "GlobalScripts",
     "entityId" : "7e3d7067-d50f-4674-8c76-a3e13a810c33",
     "pathParams" : { }
   },
   "data" : {
     "_id" : "7e3d7067-d50f-4674-8c76-a3e13a810c33",
-    "lastModifiedDate" : "1490105312499",
+    "lastModifiedDate" : "1491250531124",
     "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
     "lastModifiedBy" : "id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org",
     "name" : "Scripted Module - Server Side",

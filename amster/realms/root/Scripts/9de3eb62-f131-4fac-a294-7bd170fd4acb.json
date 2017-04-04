@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "Scripts",
     "entityId" : "9de3eb62-f131-4fac-a294-7bd170fd4acb",
     "pathParams" : { }
@@ -17,6 +17,6 @@
     "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
     "creationDate" : 1433147666269,
     "lastModifiedBy" : "id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org",
-    "lastModifiedDate" : 1488903975535
+    "lastModifiedDate" : 1491250531195
   }
 }

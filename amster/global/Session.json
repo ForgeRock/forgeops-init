@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "Session",
     "entityId" : "Session",
     "pathParams" : { }
@@ -18,7 +18,7 @@
       "openam-session-stateless-blacklist-purge-delay" : 1,
       "statelessSigningRsaCertAlias" : "test",
       "statelessEncryptionAesKey" : null,
-      "statelessEncryptionAesKey-encrypted" : "AAAAA0FFUwIQXZhKUK7nsQ8OYuKKURcKX6WwA2icysK9LVKsGSGOmYf0S6WFdAtca/HJ9umWexRe474uTmYU/HNRYshy6xxvnm0J4fuymZuC",
+      "statelessEncryptionAesKey-encrypted" : "AAAAA0FFUwIQ/JwGA7fXj020mV4U2z5DTDlUggTLP0TQrdo+h+ZhTyGZpGP7/k7pYDUUdq9/jO2FQidgcuqKV0s8Qr8wOVyTys2iH/dlle1B",
       "openam-session-stateless-blacklist-cache-size" : 10000,
       "statelessEncryptionRsaCertAlias" : "test"
     },

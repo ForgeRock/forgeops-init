@@ -1,14 +1,14 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "GlobalScripts",
     "entityId" : "157298c0-7d31-4059-a95b-eeb08473b7e5",
     "pathParams" : { }
   },
   "data" : {
     "_id" : "157298c0-7d31-4059-a95b-eeb08473b7e5",
-    "lastModifiedDate" : "1490105312383",
+    "lastModifiedDate" : "1491250530921",
     "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
     "lastModifiedBy" : "id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org",
     "name" : "Device Id (Match) - Client Side",

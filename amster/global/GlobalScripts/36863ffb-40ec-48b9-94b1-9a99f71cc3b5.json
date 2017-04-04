@@ -1,14 +1,14 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "GlobalScripts",
     "entityId" : "36863ffb-40ec-48b9-94b1-9a99f71cc3b5",
     "pathParams" : { }
   },
   "data" : {
     "_id" : "36863ffb-40ec-48b9-94b1-9a99f71cc3b5",
-    "lastModifiedDate" : "1490105312427",
+    "lastModifiedDate" : "1491250530979",
     "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
     "lastModifiedBy" : "id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org",
     "name" : "OIDC Claims Script",

@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "IdRepositoryUser",
     "entityId" : "dsameuser",
     "pathParams" : { }
@@ -10,7 +10,7 @@
     "_id" : "dsameuser",
     "sunIdentityMSISDNNumber" : null,
     "userPassword" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQ301ww2VddBGhMxUrd376yve/DFOHeohYOOEZzcQfJIozkD7wkfqXzt74wwf6OrHQgrIbJNGPNvyd3uIksTQCdz+/yrkqdFaWCfFshaIDYsvd1/taCkSX1QvryU7m1WXhR2LLNJC+PcpiBtiY/S39NSAhN0fsiKldcKx+hlXHvbJ6rgyMAJkiVZ+bjRF/F3bt+UliBIRmZ6Y=",
+    "userPassword-encrypted" : "AAAAA0FFUwIQVSek9yI8uqInf4G1i5tOb4cOZix22edTF7MbFAkQd7UXz/qdxBFHPi9LxN804StquiGvNt30muUMGl4GTnkup5PoyFqo31jErlmR6WM0eji7lRlR1Waw+XDRonLnAzh1SyXnP81VkFTsGuQOmL+xJ9XBkMKweCSvNRrrF4hh1qO3OYzxEraRgoOJfVwDZt9gcRP4gcXBpzk=",
     "telephoneNumber" : null,
     "mail" : null,
     "iplanet-am-user-alias-list" : null,

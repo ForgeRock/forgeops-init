@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "IdRepositoryUser",
     "entityId" : "anonymous",
     "pathParams" : { }
@@ -10,7 +10,7 @@
     "_id" : "anonymous",
     "sunIdentityMSISDNNumber" : null,
     "userPassword" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQeCLeuTTcGvLk/fHbr9068QvX457alTMDxTYRWDydeaAup5lL6P0N+IMcOgw7Bu45jXFpjurHc10=",
+    "userPassword-encrypted" : "AAAAA0FFUwIQ6KPnCjFzel1su8Cs9KVTiFp8s79l+z8xXlqkPLMQqkwv6ogT94Bgg9YYPITeTBMj1YIF/aScR/0=",
     "telephoneNumber" : null,
     "mail" : null,
     "iplanet-am-user-alias-list" : null,

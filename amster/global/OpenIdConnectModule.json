@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "OpenIdConnectModule",
     "entityId" : "OpenIdConnectModule",
     "pathParams" : { }
@@ -16,6 +16,7 @@
       "acceptedAuthorizedParties" : [ "http://www.example.com/authorized/party", "AuthorizedPartyExample" ],
       "idTokenIssuer" : "accounts.google.com",
       "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
+      "clientSecret" : null,
       "cryptoContextType" : ".well-known/openid-configuration_url",
       "audienceName" : "example"
     },

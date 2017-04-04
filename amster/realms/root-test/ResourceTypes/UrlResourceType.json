@@ -1,0 +1,29 @@
+{
+  "metadata" : {
+    "realm" : "/test",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
+    "entityType" : "ResourceTypes",
+    "entityId" : "UrlResourceType",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "UrlResourceType",
+    "uuid" : "UrlResourceType",
+    "name" : "URL",
+    "description" : "",
+    "patterns" : [ "*://*:*/*", "*://*:*/*?*" ],
+    "actions" : {
+      "HEAD" : true,
+      "DELETE" : true,
+      "POST" : true,
+      "GET" : true,
+      "OPTIONS" : true,
+      "PUT" : true,
+      "PATCH" : true
+    },
+    "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
+    "creationDate" : 1491250529433,
+    "lastModifiedBy" : "id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org",
+    "lastModifiedDate" : 1491250533462
+  }
+}

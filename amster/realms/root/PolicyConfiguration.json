@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "PolicyConfiguration",
     "entityId" : "PolicyConfiguration",
     "pathParams" : { }
@@ -22,7 +22,7 @@
     "sslEnabled" : false,
     "usersBaseDn" : "dc=openam,dc=forgerock,dc=org",
     "bindPassword" : null,
-    "bindPassword-encrypted" : "AAAAA0FFUwIQgCAL+EqB7Y80RaC9EXYU4dA1wuPXSEaJ1KPivVSKytOmWgsBEYsdHA==",
+    "bindPassword-encrypted" : "AAAAA0FFUwIQmfoDDIMijaZnWhtuYHzDxgSSvRcbmBZ4fcQWrhPnrko5/f3Nhkm3eA==",
     "connectionPoolMaximumSize" : 10,
     "maximumSearchResults" : 100,
     "realmSearchFilter" : "(objectclass=sunismanagedorganization)",

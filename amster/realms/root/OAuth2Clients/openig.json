@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "OAuth2Clients",
     "entityId" : "openig",
     "pathParams" : { }
@@ -19,7 +19,7 @@
     "idTokenEncryptionAlgorithm" : "RSA1_5",
     "userinfoResponseFormat" : "JSON",
     "userpassword" : null,
-    "userpassword-encrypted" : "AAAAA0FFUwIQHJ9RcdpFmhyptJ5NuedZkj+KVz9wZ82tnYKpJ+VeAasb8jrE7qOiZA==",
+    "userpassword-encrypted" : "AAAAA0FFUwIQjC3F/5ilfwLEvVL2fxWyRjB8xglJoiCFJ1+/jmnLA47GSYXot7ogcA==",
     "contacts" : [ "" ],
     "jwksCacheTimeout" : 3600000,
     "clientSessionUri" : null,

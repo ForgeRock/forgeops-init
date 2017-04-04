@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "ResourceTypes",
     "entityId" : "166daac9-4c68-4622-b27a-71a36b492deb",
     "pathParams" : { }
@@ -17,8 +17,8 @@
       "GET" : true
     },
     "createdBy" : "id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org",
-    "creationDate" : 1490105314978,
+    "creationDate" : 1491250533330,
     "lastModifiedBy" : "id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org",
-    "lastModifiedDate" : 1490105314978
+    "lastModifiedDate" : 1491250533330
   }
 }

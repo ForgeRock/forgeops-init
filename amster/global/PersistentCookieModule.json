@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "PersistentCookieModule",
     "entityId" : "PersistentCookieModule",
     "pathParams" : { }
@@ -14,7 +14,7 @@
       "maxLife" : 5,
       "useSecureCookie" : true,
       "hmacKey" : null,
-      "hmacKey-encrypted" : "AAAAA0FFUwIQCMEnbLdd2fxx7djDMBb4llamYNzfeEUmEJTXD3jy53d0OKAIlOtTUKsdzl0fuK6nurFX01tBpmI4eX21CNEmu9gYLkIeP5mU",
+      "hmacKey-encrypted" : "AAAAA0FFUwIQsExIY+Tgson/dwCMDtYNpHjmXAUeC38M/vd+b+i7aslBtds2pIH95pkgyDfRmE90/Pn8P9oL1Rh+HWlD9lORPJjQpXXl0wWv",
       "enforceClientIP" : false
     },
     "_type" : {

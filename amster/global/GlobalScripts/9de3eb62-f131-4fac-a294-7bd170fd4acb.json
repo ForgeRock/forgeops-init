@@ -1,15 +1,15 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "GlobalScripts",
     "entityId" : "9de3eb62-f131-4fac-a294-7bd170fd4acb",
     "pathParams" : { }
   },
   "data" : {
     "_id" : "9de3eb62-f131-4fac-a294-7bd170fd4acb",
-    "lastModifiedDate" : "1490105312556",
     "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
+    "lastModifiedDate" : "1491250531195",
     "lastModifiedBy" : "id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org",
     "context" : "POLICY_CONDITION",
     "name" : "Scripted Policy Condition",

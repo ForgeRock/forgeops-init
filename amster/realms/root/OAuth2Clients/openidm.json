@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "14.0.0-SNAPSHOT",
+    "amsterVersion" : "14.5.0-SNAPSHOT",
     "entityType" : "OAuth2Clients",
     "entityId" : "openidm",
     "pathParams" : { }
@@ -19,7 +19,7 @@
     "idTokenEncryptionAlgorithm" : "RSA1_5",
     "userinfoResponseFormat" : "JSON",
     "userpassword" : null,
-    "userpassword-encrypted" : "AAAAA0FFUwIQIyOsSoID7bJQxrCWZuYdOzWrLOOC+RQnm9r35jrq295gPtaqblxjog==",
+    "userpassword-encrypted" : "AAAAA0FFUwIQXSf18RdCIj/FzhRjhO0Lo45L7rBD76osWaD+XGI1fzkKu1IAQH+/Nw==",
     "contacts" : [ "" ],
     "jwksCacheTimeout" : 3600000,
     "clientSessionUri" : null,
