@@ -1,7 +1,8 @@
 #!/bin/bash
 # Clean up amster exported files
 
-cd amster
+cd  amster-sample1
+
 # These files get created as part of the install process, so we can safely remove them from exported config
 # This helps to eliminate files that need the FQDN fixed up between environments.
 rm -f global/Sites/site1.json
