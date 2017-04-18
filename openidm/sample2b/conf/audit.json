@@ -55,7 +55,8 @@
                     "sync",
                     "authentication",
                     "config"
-                ]
+                ],
+                "enabled" : true
             }
         },
         {
@@ -86,7 +87,7 @@
                     "access",
                     "authentication"
                 ],
-                "enabled" : true
+                "enabled" : false
             }
         }
     ],
