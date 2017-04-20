@@ -1,8 +1,11 @@
 # forgeops-init
 
-##Warning
+## Note
 
-**This code is not supported by ForgeRock and it is your responsibility to verify that the software is suitable and safe for use.**
+If you are using this with the 5.0.0 release as documented in the DevOps guide, make sure you are on the correct branch:
+
+`git checkout release/5.0.0`
+
 
 ##About
 
