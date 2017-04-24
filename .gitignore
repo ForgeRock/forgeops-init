@@ -3,3 +3,4 @@ tmp/
 stack-config.iml
 logs/
 .bak
+.vscode/
