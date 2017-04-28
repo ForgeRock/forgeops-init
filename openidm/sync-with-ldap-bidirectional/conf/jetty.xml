@@ -114,6 +114,9 @@
         <Item>TLS_KRB5_WITH_RC4_128_SHA</Item>
         <Item>TLS_KRB5_EXPORT_WITH_RC4_40_SHA</Item>
 
+        <!-- EDE_CBC_SHA -->
+        <Item>.*DES.*</Item>
+
         <!--
         ECDHE-RSA-RC4-SHA is excluded above
         <Item>TLS_ECDHE_RSA_WITH_RC4_128_SHA</Item>

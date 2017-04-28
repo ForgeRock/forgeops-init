@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "14.5.0-SNAPSHOT",
+    "entityType" : "UsernameCollector",
+    "entityId" : "UsernameCollector",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "usernameCollector",
+      "name" : "Username Collector",
+      "collection" : false
+    }
+  }
+}

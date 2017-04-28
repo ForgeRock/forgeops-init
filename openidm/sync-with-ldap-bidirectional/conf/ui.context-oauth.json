@@ -1,0 +1,6 @@
+{
+    "enabled" : true,
+    "urlContextRoot" : "/oauthReturn",
+    "defaultDir" : "&{launcher.install.location}/ui/oauth/default",
+    "extensionDir" : "&{launcher.install.location}/ui/oauth/extension"
+}

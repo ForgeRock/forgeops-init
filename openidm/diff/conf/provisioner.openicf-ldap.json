@@ -10,19 +10,7 @@
         "port" : 389,
         "ssl" : false,
         "principal" : "cn=Directory Manager",
-        "credentials" : {
-            "$crypto" : {
-                "type" : "x-simple-encryption",
-                "value" : {
-                    "cipher" : "AES/CBC/PKCS5Padding",
-                    "salt" : "JTkP1a7h66LO0oQOMmNKeA==",
-                    "data" : "sb8nDg29uzqlF/tt+VIQAw==",
-                    "iv" : "cb7U2NGQHowyHBaQMI+rzQ==",
-                    "key" : "openidm-sym-default",
-                    "mac" : "4yIOzAAI7AhDSR2qNW4r5g=="
-                }
-            }
-        },
+        "credentials" : "password",
         "baseContexts" : [
             "dc=openam,dc=forgerock,dc=org"
         ],

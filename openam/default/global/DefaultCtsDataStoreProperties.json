@@ -1,0 +1,25 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "14.5.0-SNAPSHOT",
+    "entityType" : "DefaultCtsDataStoreProperties",
+    "entityId" : "DefaultCtsDataStoreProperties",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "null/properties/cts",
+    "amconfig.org.forgerock.services.cts.store.common.section" : {
+      "org.forgerock.services.cts.store.location" : "default",
+      "org.forgerock.services.cts.store.root.suffix" : "",
+      "org.forgerock.services.cts.store.max.connections" : "10"
+    },
+    "amconfig.org.forgerock.services.cts.store.external.section" : {
+      "org.forgerock.services.cts.store.ssl.enabled" : "",
+      "org.forgerock.services.cts.store.directory.name" : "",
+      "org.forgerock.services.cts.store.loginid" : "",
+      "org.forgerock.services.cts.store.password" : null,
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQSsY34SNG1QB7Ey2d/tYfH7bujBpgyIK5+qC4A0AiOjk=",
+      "org.forgerock.services.cts.store.heartbeat" : "10"
+    }
+  }
+}

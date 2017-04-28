@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "14.5.0-SNAPSHOT",
+    "entityType" : "ScriptedDecision",
+    "entityId" : "ScriptedDecision",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "scriptedDecision",
+      "name" : "Scripted Decision",
+      "collection" : false
+    }
+  }
+}

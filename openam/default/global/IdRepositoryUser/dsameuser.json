@@ -1,0 +1,33 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "14.5.0-SNAPSHOT",
+    "entityType" : "IdRepositoryUser",
+    "entityId" : "dsameuser",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "dsameuser",
+    "sunIdentityMSISDNNumber" : null,
+    "userPassword" : null,
+    "userPassword-encrypted" : "AAAAA0FFUwIQTu7ZsRCmqgj7AIeAIL4pG2nJ4dAoaE9NmrYxqJjhXy/nApF/WdH47B6kNE1ttJ+diH3BRgjfVnyWsnpzkgjJU2teM4hQe9G79STkjyuHBXVJxIVKBt99kSkhXSnBCdywVzTCH4GZl/uin+C0nGSECCPK8HRP/92dDP09VRVpE4dSYQtZKEpDA/RfHFp2wzT2mEKIAK2+aJU=",
+    "telephoneNumber" : null,
+    "mail" : null,
+    "iplanet-am-user-alias-list" : null,
+    "roles" : [ ],
+    "givenName" : null,
+    "dn" : "cn=dsameuser,ou=DSAME Users,",
+    "cn" : null,
+    "employeeNumber" : null,
+    "postalAddress" : null,
+    "iplanet-am-user-success-url" : null,
+    "inetUserStatus" : "Active",
+    "sn" : null,
+    "iplanet-am-user-failure-url" : null,
+    "_type" : {
+      "_id" : "user",
+      "name" : "User",
+      "collection" : true
+    }
+  }
+}

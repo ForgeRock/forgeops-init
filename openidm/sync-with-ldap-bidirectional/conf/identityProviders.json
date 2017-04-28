@@ -1,21 +1,20 @@
 {
     "providers" : [
         {
-            "name" : "google",
-            "type" : "OPENID_CONNECT",
+            "provider" : "google",
             "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-google\"><img src=\"images/g-logo.png\">{{action}} Google</button>",
-            "authorization_endpoint" : "https://accounts.google.com/o/oauth2/v2/auth",
-            "token_endpoint" : "https://www.googleapis.com/oauth2/v4/token",
-            "userinfo_endpoint" : "https://www.googleapis.com/oauth2/v3/userinfo",
-            "well-known" : "https://accounts.google.com/.well-known/openid-configuration",
-            "client_id" : "",
-            "client_secret" : "",
+            "authorizationEndpoint" : "https://accounts.google.com/o/oauth2/v2/auth",
+            "tokenEndpoint" : "https://www.googleapis.com/oauth2/v4/token",
+            "userInfoEndpoint" : "https://www.googleapis.com/oauth2/v3/userinfo",
+            "wellKnownEndpoint" : "https://accounts.google.com/.well-known/openid-configuration",
+            "clientId" : "",
+            "clientSecret" : "",
             "scope" : [
                 "openid",
                 "profile",
                 "email"
             ],
-            "authenticationId" : "sub",
+            "authenticationIdKey" : "sub",
             "schema" : {
                 "id" : "http://jsonschema.net",
                 "title" : "Google",
@@ -110,22 +109,24 @@
                     "source" : "locale",
                     "target" : "locale"
                 }
-            ]
+            ],
+            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "configClass" : "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration"
         },
         {
-            "name" : "facebook",
-            "type" : "OAUTH",
+            "provider" : "facebook",
             "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-facebook\"><img src=\"images/fb-logo.png\">{{action}} Facebook</button>",
-            "authorization_endpoint" : "https://www.facebook.com/dialog/oauth",
-            "token_endpoint" : "https://graph.facebook.com/v2.7/oauth/access_token",
-            "userinfo_endpoint" : "https://graph.facebook.com/me?fields=id,name,picture,email,first_name,last_name,locale",
-            "client_id" : "",
-            "client_secret" : "",
+            "authorizationEndpoint" : "https://www.facebook.com/dialog/oauth",
+            "tokenEndpoint" : "https://graph.facebook.com/v2.7/oauth/access_token",
+            "userInfoEndpoint" : "https://graph.facebook.com/me?fields=id,name,picture,email,first_name,last_name,locale",
+            "clientId" : "",
+            "clientSecret" : "",
             "scope" : [
                 "email",
                 "user_birthday"
             ],
-            "authenticationId" : "id",
+            "basicAuth" : false,
+            "authenticationIdKey" : "id",
             "schema" : {
                 "id" : "http://jsonschema.net",
                 "title" : "Facebook",
@@ -209,22 +210,24 @@
                     "source" : "locale",
                     "target" : "locale"
                 }
-            ]
+            ],
+            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration"
         },
         {
-            "name" : "linkedIn",
-            "type" : "OAUTH",
+            "provider" : "linkedIn",
             "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-linkedin\"><img src=\"images/ln-logo.png\">{{action}} LinkedIn</button>",
-            "authorization_endpoint" : "https://www.linkedin.com/oauth/v2/authorization",
-            "token_endpoint" : "https://www.linkedin.com/oauth/v2/accessToken",
-            "userinfo_endpoint" : "https://api.linkedin.com/v1/people/~:(id,formatted-name,first-name,last-name,email-address,location)?format=json",
-            "client_id" : "",
-            "client_secret" : "",
+            "authorizationEndpoint" : "https://www.linkedin.com/oauth/v2/authorization",
+            "tokenEndpoint" : "https://www.linkedin.com/oauth/v2/accessToken",
+            "userInfoEndpoint" : "https://api.linkedin.com/v1/people/~:(id,formatted-name,first-name,last-name,email-address,location)?format=json",
+            "clientId" : "",
+            "clientSecret" : "",
             "scope" : [
                 "r_basicprofile",
                 "r_emailaddress"
             ],
-            "authenticationId" : "id",
+            "authenticationIdKey" : "id",
+            "basicAuth" : false,
             "schema" : {
                 "id" : "http://jsonschema.net",
                 "title" : "LinkedIn",
@@ -328,21 +331,23 @@
                         "source" : "source.country.code"
                     }
                 }
-            ]
+            ],
+            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration"
         },
         {
-            "name" : "amazon",
-            "type" : "OAUTH",
+            "provider" : "amazon",
             "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-amazon\"><img src=\"images/amazon-logo.png\">{{action}} Amazon</button>",
-            "authorization_endpoint" : "https://www.amazon.com/ap/oa",
-            "token_endpoint" : "https://api.amazon.com/auth/o2/token",
-            "userinfo_endpoint" : "https://api.amazon.com/user/profile",
-            "client_id" : "",
-            "client_secret" : "",
+            "authorizationEndpoint" : "https://www.amazon.com/ap/oa",
+            "tokenEndpoint" : "https://api.amazon.com/auth/o2/token",
+            "userInfoEndpoint" : "https://api.amazon.com/user/profile",
+            "clientId" : "",
+            "clientSecret" : "",
             "scope" : [
                 "profile"
             ],
-            "authenticationId" : "user_id",
+            "authenticationIdKey" : "user_id",
+            "basicAuth" : false,
             "schema" : {
                 "id" : "http://jsonschema.net",
                 "title" : "Amazon",
@@ -393,30 +398,23 @@
                     "source" : "email",
                     "target" : "username"
                 }
-            ]
+            ],
+            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration"
         },
         {
-            "name": "wordpress",
-            "type": "OAUTH",
+            "provider": "wordpress",
             "icon": "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-wordpress\"><img src=\"images/wordpress-logo.png\">{{action}} Wordpress</button>",
+            "authorizationEndpoint": "https://public-api.wordpress.com/oauth2/authorize",
+            "tokenEndpoint": "https://public-api.wordpress.com/oauth2/token",
+            "userInfoEndpoint": "https://public-api.wordpress.com/rest/v1/me/",
+            "clientId": "",
+            "clientSecret": "",
             "scope": [
                 "auth"
             ],
-            "authenticationId": "username",
-            "propertyMap": [
-                {
-                    "source": "username",
-                    "target": "username"
-                },
-                {
-                    "source": "username",
-                    "target": "id"
-                },
-                {
-                    "source": "email",
-                    "target": "email"
-                }
-            ],
+            "authenticationIdKey": "username",
+            "basicAuth" : false,
             "schema": {
                 "username": "http://jsonschema.net",
                 "title": "Wordpress",
@@ -443,28 +441,39 @@
                 ],
                 "required": []
             },
-            "enabled": true,
-            "client_id": "",
-            "client_secret": "",
-            "authorization_endpoint": "https://public-api.wordpress.com/oauth2/authorize",
-            "token_endpoint": "https://public-api.wordpress.com/oauth2/token",
-            "userinfo_endpoint": "https://public-api.wordpress.com/rest/v1/me/"
-    },
-    {
-          "name" : "microsoft",
-          "type" : "OAUTH",
+            "propertyMap": [
+                {
+                    "source": "username",
+                    "target": "username"
+                },
+                {
+                    "source": "username",
+                    "target": "id"
+                },
+                {
+                    "source": "email",
+                    "target": "email"
+                }
+            ],
+            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration"
+        },
+        {
+          "provider" : "microsoft",
           "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-ms-live\"><img src=\"images/microsoft-logo.png\">{{action}} Microsoft</button>",
-          "authorization_endpoint" : "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
-          "token_endpoint" : "https://login.microsoftonline.com/common/oauth2/v2.0/token",
-          "userinfo_endpoint" : "https://graph.microsoft.com/v1.0/me",
-          "client_id" : "",
-          "client_secret" : "",
+          "authorizationEndpoint" : "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+          "tokenEndpoint" : "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+          "userInfoEndpoint" : "https://graph.microsoft.com/v1.0/me",
+          "clientId" : "",
+          "clientSecret" : "",
           "scope" : [
               "User.Read"
           ],
-          "authenticationId" : "id",
+          "authenticationIdKey" : "id",
+          "basicAuth" : false,
           "schema" : {
               "id" : "http://jsonschema.net",
+              "title": "Microsoft",
               "viewable" : true,
               "type" : "object",
               "$schema" : "http://json-schema.org/draft-03/schema",
@@ -509,32 +518,372 @@
               ],
               "required" : [ ]
           },
-          "propertyMap" : [
+        "propertyMap": [
             {
-              "source" : "id",
-              "target" : "id"
+                "source" : "id",
+                "target" : "id"
             },
             {
-              "source" : "displayName",
-              "target" : "displayName"
+                "source" : "displayName",
+                "target" : "displayName"
             },
             {
-              "source" : "givenName",
-              "target" : "givenName"
+                "source" : "givenName",
+                "target" : "givenName"
             },
             {
-              "source" : "surname",
-              "target" : "familyName"
+                "source" : "surname",
+                "target" : "familyName"
             },
             {
-              "source" : "userPrincipalName",
-              "target" : "email"
+                "source" : "userPrincipalName",
+                "target" : "email"
             },
             {
                 "source" : "userPrincipalName",
                 "target" : "username"
             }
-          ]
-        }
-  ]
+        ],
+          "redirectUri" : "https://localhost:8443/oauthReturn/",
+          "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration"
+    },
+    {
+        "provider" : "vkontakte",
+        "configClass" : "org.forgerock.oauth.clients.vk.VKClientConfiguration",
+        "basicAuth" : false,
+        "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-vk\"><i class=\"fa fa-vk fa-lg\"></i>{{action}} VKontakte</button>",
+        "clientId" : "",
+        "clientSecret" : "",
+        "authorizationEndpoint" : "https://oauth.vk.com/authorize",
+        "tokenEndpoint" : "https://oauth.vk.com/access_token",
+        "userInfoEndpoint" : "https://api.vk.com/method/users.get",
+        "redirectUri" : "",
+        "scope" : [
+            "email"
+        ],
+        "authenticationIdKey" : "uid",
+        "propertyMap" : [
+            {
+                "source" : "uid",
+                "target" : "id"
+            },
+            {
+                "source" : "first_name",
+                "target" : "displayName"
+            },
+            {
+                "source" : "first_name",
+                "target" : "givenName"
+            },
+            {
+                "source" : "last_name",
+                "target" : "familyName"
+            },
+            {
+                "source" : "email",
+                "target" : "email"
+            },
+            {
+                "source" : "email",
+                "target" : "username"
+            }
+        ],
+        "schema" : {
+            "id" : "http://jsonschema.net",
+            "viewable" : true,
+            "type" : "object",
+            "$schema" : "http://json-schema.org/draft-03/schema",
+            "properties" : {
+                "uid" : {
+                    "title" : "ID",
+                    "viewable" : true,
+                    "type" : "string",
+                    "searchable" : true
+                },
+                "name" : {
+                    "title" : "Name",
+                    "viewable" : true,
+                    "type" : "string",
+                    "searchable" : true
+                },
+                "first_name" : {
+                    "title" : "First Name",
+                    "viewable" : true,
+                    "type" : "string",
+                    "searchable" : true
+                },
+                "last_name" : {
+                    "title" : "Last Name",
+                    "viewable" : true,
+                    "type" : "string",
+                    "searchable" : true
+                },
+                "email" : {
+                    "title" : "Email Address",
+                    "viewable" : true,
+                    "type" : "string",
+                    "searchable" : true
+                }
+            },
+            "order" : [
+                "uid",
+                "name",
+                "last_name",
+                "family_name",
+                "email"
+            ],
+            "required" : [ ]
+        },
+        "displayIcon" : "vk"
+    },
+    {
+        "provider" : "instagram",
+        "configClass" : "org.forgerock.oauth.clients.instagram.InstagramClientConfiguration",
+        "basicAuth" : false,
+        "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-instagram\"><i class=\"fa fa-instagram fa-lg\"></i> {{action}} Instagram</button>",
+        "clientId" : "",
+        "clientSecret" : "",
+        "authorizationEndpoint" : "https://api.instagram.com/oauth/authorize/",
+        "tokenEndpoint" : "https://api.instagram.com/oauth/access_token",
+        "userInfoEndpoint" : "https://api.instagram.com/v1/users/self/",
+        "redirectUri" : "",
+        "scope" : [
+            "basic",
+            "public_content"
+        ],
+        "connectionTimeout" : 0,
+        "readTimeout" : 0,
+        "authenticationIdKey" : "id",
+        "propertyMap" : [
+            {
+                "source" : "id",
+                "target" : "id"
+            },
+            {
+                "full_name" : "full_name",
+                "target" : "displayName"
+            },
+            {
+                "source" : "profile_picture",
+                "target" : "photoUrl"
+            },
+            {
+                "source" : "username",
+                "target" : "username"
+            }
+        ],
+        "schema" : {
+            "id" : "http://jsonschema.net",
+            "viewable" : true,
+            "type" : "object",
+            "$schema" : "http://json-schema.org/draft-03/schema",
+            "properties" : {
+                "id" : {
+                    "title" : "ID",
+                    "viewable" : true,
+                    "type" : "string",
+                    "searchable" : true
+                },
+                "full_name" : {
+                    "title" : "Full Name",
+                    "viewable" : true,
+                    "type" : "string",
+                    "searchable" : true
+                },
+                "profile_picture" : {
+                    "title" : "Profile Picture URL",
+                    "viewable" : true,
+                    "type" : "string",
+                    "searchable" : true
+                },
+                "username" : {
+                    "title" : "Username",
+                    "viewable" : true,
+                    "type" : "string",
+                    "searchable" : true
+                }
+
+            },
+            "order" : [
+                "id",
+                "full_name",
+                "profile_picture",
+                "photoUrl",
+                "username"
+            ],
+            "required" : [ ]
+        },
+        "displayIcon" : "instagram"
+    },
+    {
+        "provider" : "wechat",
+        "configClass" : "org.forgerock.oauth.clients.wechat.WeChatClientConfiguration",
+        "basicAuth" : false,
+        "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-wechat\"><i class=\"fa fa-wechat fa-lg\"></i> {{action}} WeChat</button>",
+        "clientId" : "",
+        "clientSecret" : "",
+        "authorizationEndpoint" : "https://open.weixin.qq.com/connect/qrconnect",
+        "tokenEndpoint" : "https://api.wechat.com/sns/oauth2/access_token",
+        "refreshTokenEndpoint" : "https://api.wechat.com/sns/oauth2/refresh_token",
+        "userInfoEndpoint" : "https://api.wechat.com/sns/userinfo",
+        "redirectUri" : "",
+        "scope" : [
+            "snsapi_login"
+        ],
+        "connectionTimeout" : 0,
+        "readTimeout" : 0,
+        "authenticationIdKey" : "openid",
+        "propertyMap" : [
+            {
+                "source": "openid",
+                "target": "id"
+            },
+            {
+                "source": "nickname",
+                "target": "displayName"
+            },
+            {
+                "source": "nickname",
+                "target": "username"
+            },
+            {
+                "source": "headimgurl",
+                "target": "photoUrl"
+            }
+        ],
+        "schema" : {
+            "id": "http://jsonschema.net",
+            "viewable": true,
+            "type": "object",
+            "$schema": "http://json-schema.org/draft-03/schema",
+            "properties": {
+                "openid": {
+                    "title": "ID",
+                    "viewable": true,
+                    "type": "string",
+                    "searchable": true
+                },
+                "nickname": {
+                    "title": "Username",
+                    "viewable": true,
+                    "type": "string",
+                    "searchable": true
+                },
+                "headimgurl": {
+                    "title": "Profile Picture URL",
+                    "viewable": true,
+                    "type": "string",
+                    "searchable": true
+                }
+            },
+            "order": [
+                "openid",
+                "nickname",
+                "headimgurl"
+            ],
+            "required": []
+        },
+        "displayIcon" : "wechat"
+    },
+    {
+        "icon": "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-yahoo\"><i class=\"fa fa-yahoo fa-lg\"></i>{{action}} Yahoo</button>",
+        "scope": [
+            "openid",
+            "sdpp-w"
+        ],
+        "propertyMap": [
+            {
+                "source": "sub",
+                "target": "id"
+            },
+            {
+                "source": "name",
+                "target": "displayName"
+            },
+            {
+                "source": "given_name",
+                "target": "givenName"
+            },
+            {
+                "source": "family_name",
+                "target": "familyName"
+            },
+            {
+                "source": "email",
+                "target": "email"
+            },
+            {
+                "source": "email",
+                "target": "username"
+            },
+            {
+                "source": "locale",
+                "target": "locale"
+            }
+        ],
+        "schema": {
+            "id": "http://jsonschema.net",
+            "viewable": true,
+            "type": "object",
+            "$schema": "http://json-schema.org/draft-03/schema",
+            "properties": {
+                "sub": {
+                    "title": "ID",
+                    "viewable": true,
+                    "type": "string",
+                    "searchable": true
+                },
+                "name": {
+                    "title": "Name",
+                    "viewable": true,
+                    "type": "string",
+                    "searchable": true
+                },
+                "given_name": {
+                    "title": "First Name",
+                    "viewable": true,
+                    "type": "string",
+                    "searchable": true
+                },
+                "family_name": {
+                    "title": "Last Name",
+                    "viewable": true,
+                    "type": "string",
+                    "searchable": true
+                },
+                "email": {
+                    "title": "Email Address",
+                    "viewable": true,
+                    "type": "string",
+                    "searchable": true
+                },
+                "locale": {
+                    "title": "Locale Code",
+                    "viewable": true,
+                    "type": "string",
+                    "searchable": true
+                }
+            },
+            "order": [
+                "sub",
+                "name",
+                "given_name",
+                "family_name",
+                "email",
+                "locale"
+            ],
+            "required": []
+        },
+        "provider": "yahoo",
+        "authorizationEndpoint": "https://api.login.yahoo.com/oauth2/request_auth",
+        "tokenEndpoint": "https://api.login.yahoo.com/oauth2/get_token",
+        "wellKnownEndpoint": "https://login.yahoo.com/.well-known/openid-configuration",
+        "clientId": "",
+        "clientSecret": "",
+        "authenticationIdKey": "sub",
+        "redirectUri": "https://localhost:8443/oauthReturn/",
+        "basicAuth": false,
+        "configClass": "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration"
+    }
+    ]
 }

@@ -38,7 +38,13 @@ var httpAccessConfig =
            "pattern"    : "authentication",
            "roles"      : "*",
            "methods"    : "read,action",
-           "actions"    : "getIdPTokens,logout"
+           "actions"    : "logout"
+        },
+        {
+           "pattern"    : "identityProviders",
+           "roles"      : "*",
+           "methods"    : "action",
+           "actions"    : "getAuthRedirect,handlePostAuth"
         },
         {
            "pattern"    : "identityProviders",
@@ -163,6 +169,14 @@ var httpAccessConfig =
             "methods"   : "action",
             "actions"   : "send",
             "customAuthz" : "(checkIfUIIsEnabled('forgotUsername') || checkIfUIIsEnabled('passwordReset') || checkIfUIIsEnabled('selfRegistration')) && isSelfServiceRequest()"
+        },
+
+        // EndUser service that provides sanitized data needed to support the UI
+        {
+            "pattern"    : "enduser",
+            "roles"      : "openidm-authorized",
+            "methods"    : "action",
+            "actions"    : "*"
         },
 
         // openidm-admin can request nearly anything (except query expressions on repo endpoints)
