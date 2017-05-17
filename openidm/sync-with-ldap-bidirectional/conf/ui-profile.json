@@ -1,0 +1,24 @@
+{
+  "tabs" : [
+    {
+      "name" : "personalInfoTab",
+      "view" : "org/forgerock/openidm/ui/user/profile/personalInfo/PersonalInfoTab"
+    },
+    {
+      "name" : "userPasswordTab",
+      "view" : "org/forgerock/openidm/ui/user/profile/UserPasswordTab"
+    },
+    {
+      "name" : "social",
+      "view" : "org/forgerock/openidm/ui/user/profile/SocialIdentitiesTab"
+    },
+    {
+      "name" : "preference",
+      "view" : "org/forgerock/openidm/ui/user/profile/PreferencesTab"
+    },
+    {
+      "name" : "kba",
+      "view" : "org/forgerock/commons/ui/user/profile/UserProfileKBATab"
+    }
+  ]
+}
