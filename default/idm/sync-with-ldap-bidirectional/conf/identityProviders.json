@@ -111,7 +111,8 @@
                 }
             ],
             "redirectUri" : "https://localhost:8443/oauthReturn/",
-            "configClass" : "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration"
+            "configClass" : "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration",
+            "basicAuth" : false
         },
         {
             "provider" : "facebook",
@@ -341,6 +342,7 @@
             "authorizationEndpoint" : "https://www.amazon.com/ap/oa",
             "tokenEndpoint" : "https://api.amazon.com/auth/o2/token",
             "userInfoEndpoint" : "https://api.amazon.com/user/profile",
+            "enabled" : false,
             "clientId" : "",
             "clientSecret" : "",
             "scope" : [
@@ -407,7 +409,8 @@
             "icon": "<button class=\"btn btn-lg btn-default btn-block btn-social-provider btn-wordpress\"><img src=\"images/wordpress-logo.png\">{{action}} Wordpress</button>",
             "authorizationEndpoint": "https://public-api.wordpress.com/oauth2/authorize",
             "tokenEndpoint": "https://public-api.wordpress.com/oauth2/token",
-            "userInfoEndpoint": "https://public-api.wordpress.com/rest/v1/me/",
+            "userInfoEndpoint": "https://public-api.wordpress.com/rest/v1.1/me/",
+            "enabled": false,
             "clientId": "",
             "clientSecret": "",
             "scope": [
@@ -426,13 +429,13 @@
                         "title": "username",
                         "viewable": true,
                         "type": "string",
-                        "searchable": false
+                        "searchable": true
                     },
                     "email": {
                         "title": "email",
                         "viewable": true,
                         "type": "string",
-                        "searchable": false
+                        "searchable": true
                     }
                 },
                 "order": [
@@ -629,7 +632,7 @@
                 "uid",
                 "name",
                 "last_name",
-                "family_name",
+                "first_name",
                 "email"
             ],
             "required" : [ ]

@@ -6,11 +6,11 @@
         "connectorName" : "org.identityconnectors.ldap.LdapConnector"
     },
     "configurationProperties" : {
-        "host" : "userstore-0.userstore",
+        "host" : "&{userstore.host}",
         "port" : 389,
         "ssl" : false,
         "principal" : "cn=Directory Manager",
-        "credentials" : "password",
+        "credentials" : "&{userstore.password}",
         "baseContexts" : [
             "dc=openam,dc=forgerock,dc=org"
         ],
