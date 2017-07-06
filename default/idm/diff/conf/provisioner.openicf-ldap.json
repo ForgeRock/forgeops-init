@@ -7,7 +7,7 @@
     },
     "configurationProperties" : {
         "host" : "&{userstore.host}",
-        "port" : 389,
+        "port" : "&{userstore.port}",
         "ssl" : false,
         "principal" : "cn=Directory Manager",
         "credentials" : "&{userstore.password}",
