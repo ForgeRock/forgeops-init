@@ -4,11 +4,11 @@
             "name" : "user",
             "onCreate" : {
                 "type" : "text/javascript",
-                "source" : "require('ui/onCreateUser').setDefaultFields(object);require('ui/onCreateUser').createIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');"
+                "source" : "require('ui/onCreateUser').setDefaultFields(object);require('ui/onCreateUser').createIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('ui/onCreateUser').emailUser(object);require('ui/lastChanged').updateLastChanged(object);"
             },
             "onUpdate" : {
                 "type" : "text/javascript",
-                "source" : "require('ui/onUpdateUser').preserveLastSync(object, oldObject, request);require('ui/onUpdateUser').updateIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');"
+                "source" : "require('ui/onUpdateUser').preserveLastSync(object, oldObject, request);require('ui/onUpdateUser').updateIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('ui/onUpdateUser').createNotification(object, oldObject);require('ui/lastChanged').updateLastChanged(object);"
             },
             "onDelete" : {
                 "type" : "text/javascript",
@@ -35,6 +35,7 @@
             "schema" : {
                 "id" : "http://jsonschema.net",
                 "title" : "User",
+                "icon" : "fa-user",
                 "viewable" : true,
                 "$schema" : "http://json-schema.org/draft-03/schema",
                 "order" : [
@@ -61,14 +62,20 @@
                     "effectiveAssignments",
                     "lastSync",
                     "kbaInfo",
-                    "preferences"
+                    "preferences",
+                    "termsAccepted",
+                    "lastChanged",
+                    "consentedMappings"
                 ],
                 "properties" : {
                     "_id" : {
+                        "description" : "User ID",
                         "type" : "string",
                         "viewable" : false,
                         "searchable" : false,
                         "userEditable" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
                         "policies" : [
                             {
                                 "policyId" : "cannot-contain-characters",
@@ -82,6 +89,7 @@
                     },
                     "password" : {
                         "title" : "Password",
+                        "description" : "Password",
                         "type" : "string",
                         "viewable" : false,
                         "searchable" : false,
@@ -92,6 +100,8 @@
                         },
                         "scope" : "private",
                         "isProtected": true,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
                         "policies" : [
                             {
                                 "policyId" : "at-least-X-capitals",
@@ -118,11 +128,15 @@
                         ]
                     },
                     "kbaInfo" : {
+                        "description" : "KBA Info",
                         "type" : "array",
                         "userEditable" : true,
                         "viewable" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : true,
                         "items" : {
                             "type" : "object",
+                            "title" : "KBA Info Items",
                             "properties" : {
                                 "answer" : {
                                     "type" : "string"
@@ -144,10 +158,13 @@
                     },
                     "preferences" : {
                         "title" : "Preferences",
+                        "description" : "Preferences",
                         "viewable" : true,
                         "searchable" : false,
                         "userEditable" : true,
                         "type" : "object",
+                        "usageDescription" : "",
+                        "isPersonal" : false,
                         "properties" : {
                             "updates" : {
                                 "description" : "Send me news and updates",
@@ -166,10 +183,13 @@
                     },
                     "mail" : {
                         "title" : "Email Address",
+                        "description" : "Email Address",
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true,
                         "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : true,
                         "policies" : [
                             {
                                 "policyId" : "valid-email-address-format"
@@ -178,79 +198,111 @@
                     },
                     "sn" : {
                         "title" : "Last Name",
+                        "description" : "Last Name",
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true,
-                        "userEditable" : true
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : true
                     },
                     "description" : {
                         "title" : "Description",
+                        "description" : "Description",
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true,
-                        "userEditable" : true
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false
                     },
                     "address2" : {
                         "type" : "string",
                         "title" : "Address 2",
+                        "description" : "Address 2",
                         "viewable" : true,
-                        "userEditable" : true
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : true
                     },
                     "givenName" : {
                         "title" : "First Name",
+                        "description" : "First Name",
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true,
-                        "userEditable" : true
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : true
                     },
                     "city" : {
                         "type" : "string",
                         "title" : "City",
+                        "description" : "City",
                         "viewable" : true,
-                        "userEditable" : true
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false
                     },
                     "country" : {
                         "type" : "string",
                         "title" : "Country",
+                        "description" : "Country",
                         "viewable" : true,
-                        "userEditable" : true
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false
                     },
                     "postalCode" : {
                         "type" : "string",
                         "title" : "Postal Code",
+                        "description" : "Postal Code",
                         "viewable" : true,
-                        "userEditable" : true
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false
                     },
                     "accountStatus" : {
                         "title" : "Status",
+                        "description" : "Status",
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true,
-                        "userEditable" : false
+                        "userEditable" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : false
                     },
                     "roles" : {
-                        "description" : "",
+                        "description" : "Provisioning Roles",
                         "title" : "Provisioning Roles",
                         "viewable" : true,
                         "userEditable" : false,
                         "returnByDefault" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
                         "type" : "array",
                         "items" : {
                             "type" : "relationship",
+                            "title" : "Provisioning Roles Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "members",
                             "validate" : true,
                             "properties" : {
                                 "_ref" : {
+                                    "description" : "References a relationship from a managed object",
                                     "type" : "string"
                                 },
                                 "_refProperties" : {
+                                    "description" : "Supports metadata within the relationship",
                                     "type" : "object",
+                                    "title" : "_refProperties",
                                     "properties" : {
                                         "_id" : {
+                                            "description" : "_refProperties object ID",
                                             "type" : "string"
                                         },
                                         "_grantType" : {
+                                            "description" : "Grant Type",
                                             "type" : "string",
                                             "label" : "Grant Type"
                                         }
@@ -265,9 +317,6 @@
                                         "queryFilter" : "true",
                                         "fields" : [
                                             "name"
-                                        ],
-                                        "sortKeys" : [
-                                            "name"
                                         ]
                                     }
                                 }
@@ -275,25 +324,32 @@
                         }
                     },
                     "authzRoles" : {
-                        "description" : "",
+                        "description" : "Authorization Roles",
                         "title" : "Authorization Roles",
                         "viewable" : true,
                         "type" : "array",
                         "userEditable" : false,
                         "returnByDefault" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
                         "items" : {
                             "type" : "relationship",
+                            "title" : "Authorization Roles Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "authzMembers",
                             "validate" : true,
                             "properties" : {
                                 "_ref" : {
+                                    "description" : "References a relationship from a managed object",
                                     "type" : "string"
                                 },
                                 "_refProperties" : {
+                                    "description" : "Supports metadata within the relationship",
                                     "type" : "object",
+                                    "title" : "_refProperties",
                                     "properties" : {
                                         "_id" : {
+                                            "description" : "_refProperties object ID",
                                             "type" : "string"
                                         }
                                     }
@@ -308,9 +364,6 @@
                                         "fields" : [
                                             "_id",
                                             "description"
-                                        ],
-                                        "sortKeys" : [
-                                            "_id"
                                         ]
                                     }
                                 },
@@ -321,9 +374,6 @@
                                         "queryFilter" : "true",
                                         "fields" : [
                                             "name"
-                                        ],
-                                        "sortKeys" : [
-                                            "name"
                                         ]
                                     }
                                 }
@@ -331,25 +381,32 @@
                         }
                     },
                     "reports" : {
-                        "description" : "",
+                        "description" : "Direct Reports",
                         "title" : "Direct Reports",
                         "viewable" : true,
                         "userEditable" : false,
                         "type" : "array",
                         "returnByDefault" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
                         "items" : {
                             "type" : "relationship",
+                            "title" : "Direct Reports Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "manager",
                             "validate" : true,
                             "properties" : {
                                 "_ref" : {
+                                    "description" : "References a relationship from a managed object",
                                     "type" : "string"
                                 },
                                 "_refProperties" : {
+                                    "description" : "Supports metadata within the relationship",
                                     "type" : "object",
+                                    "title" : "_refProperties",
                                     "properties" : {
                                         "_id" : {
+                                            "description" : "_refProperties object ID",
                                             "type" : "string"
                                         }
                                     }
@@ -365,9 +422,6 @@
                                             "userName",
                                             "givenName",
                                             "sn"
-                                        ],
-                                        "sortKeys" : [
-                                            "userName"
                                         ]
                                     }
                                 }
@@ -377,58 +431,78 @@
                     "effectiveRoles" : {
                         "type" : "array",
                         "title" : "Effective Roles",
+                        "description" : "Effective Roles",
                         "viewable" : false,
                         "returnByDefault" : true,
                         "isVirtual" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
                         "onRetrieve" : {
                             "type" : "text/javascript",
                              "source" : "require('roles/effectiveRoles').calculateEffectiveRoles(object, 'roles');"
                         },
                         "items" : {
-                            "type" : "object"
+                            "type" : "object",
+                            "title" : "Effective Roles Items"
                         }
                     },
                     "effectiveAssignments" : {
                         "type" : "array",
                         "title" : "Effective Assignments",
+                        "description" : "Effective Assignments",
                         "viewable" : false,
                         "returnByDefault" : true,
                         "isVirtual" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
                         "onRetrieve" : {
                             "type" : "text/javascript",
                             "file" : "roles/effectiveAssignments.js",
                             "effectiveRolesPropName" : "effectiveRoles"
                         },
                         "items" : {
-                            "type" : "object"
+                            "type" : "object",
+                            "title" : "Effective Assignments Items"
                         }
                     },
                     "telephoneNumber" : {
                         "type" : "string",
                         "title" : "Mobile Phone",
+                        "description" : "Mobile Phone",
                         "viewable" : true,
                         "userEditable" : true,
-                        "pattern" : "^\\+?([0-9\\- \\(\\)])*$"
+                        "pattern" : "^\\+?([0-9\\- \\(\\)])*$",
+                        "usageDescription" : "",
+                        "isPersonal" : true
                     },
                     "stateProvince" : {
                         "type" : "string",
                         "title" : "State/Province",
+                        "description" : "State/Province",
                         "viewable" : true,
-                        "userEditable" : true
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false
                     },
                     "postalAddress" : {
                         "type" : "string",
                         "title" : "Address 1",
+                        "description" : "Address 1",
                         "viewable" : true,
-                        "userEditable" : true
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : true
                     },
                     "userName" : {
                         "title" : "Username",
+                        "description" : "Username",
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true,
                         "userEditable" : true,
                         "minLength" : 1,
+                        "usageDescription" : "",
+                        "isPersonal" : true,
                         "policies" : [
                             {
                                 "policyId" : "unique"
@@ -451,18 +525,24 @@
                         "validate" : true,
                         "reverseRelationship" : true,
                         "reversePropertyName" : "reports",
-                        "description" : "",
+                        "description" : "Manager",
                         "title" : "Manager",
                         "viewable" : true,
                         "searchable" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
                         "properties" : {
                             "_ref" : {
+                                "description" : "References a relationship from a managed object",
                                 "type" : "string"
                             },
                             "_refProperties" : {
+                                "description" : "Supports metadata within the relationship",
                                 "type" : "object",
+                                "title" : "_refProperties",
                                 "properties" : {
                                     "_id" : {
+                                        "description" : "_refProperties object ID",
                                         "type" : "string"
                                     }
                                 }
@@ -478,9 +558,6 @@
                                         "userName",
                                         "givenName",
                                         "sn"
-                                    ],
-                                    "sortKeys" : [
-                                        "userName"
                                     ]
                                 }
                             }
@@ -488,18 +565,26 @@
                         "userEditable" : false
                     },
                     "lastSync" : {
+                        "description" : "Last Sync timestamp",
+                        "title" : "Last Sync timestamp",
                         "type" : "object",
                         "scope" : "private",
                         "viewable" : false,
                         "searchable" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
                         "properties" : {
                             "effectiveAssignments" : {
+                                "description" : "Effective Assignments",
+                                "title" : "Effective Assignments",
                                 "type" : "array",
                                 "items" : {
-                                    "type" : "object"
+                                    "type" : "object",
+                                    "title" : "Effective Assignments Items"
                                 }
                             },
                             "timestamp" : {
+                                "description" : "Timestamp",
                                 "type" : "string"
                             }
                         },
@@ -508,6 +593,113 @@
                             "timestamp"
                         ],
                         "required": []
+                    },
+                    "termsAccepted" : {
+                        "title" : "Terms Accepted",
+                        "type" : "object",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
+                        "properties" : {
+                            "termsVersion" : {
+                                "title" : "",
+                                "description" : "Terms & Conditions Version",
+                                "type" : "string",
+                                "viewable" : true,
+                                "userEditable" : false
+                            },
+                            "iso8601date" : {
+                                "title" : "",
+                                "description" : "ISO 8601 Date and time format",
+                                "type" : "string",
+                                "viewable" : true,
+                                "userEditable" : false
+                            }
+                        },
+                        "order" : [
+                            "termsVersion",
+                            "iso8601date"
+                        ],
+                        "description" : "Terms Accepted",
+                        "returnByDefault" : true,
+                        "isVirtual" : false,
+                        "required" : [ ]
+                    },
+                    "lastChanged" : {
+                        "title" : "Last Changed",
+                        "type" : "object",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "userEditable" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
+                        "properties" : {
+                            "date" : {
+                                "title" : "",
+                                "description" : "Last changed date",
+                                "type" : "string",
+                                "viewable" : true,
+                                "searchable" : true,
+                                "userEditable" : true
+                            }
+                        },
+                        "order" : [
+                            "date"
+                        ],
+                        "description" : "Last Changed",
+                        "returnByDefault" : true,
+                        "isVirtual" : false,
+                        "required" : [
+                            "date"
+                        ]
+                    },
+                    "consentedMappings" : {
+                        "title" : "Consented Mappings",
+                        "description" : "Consented Mappings",
+                        "type" : "array",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
+                        "items" : {
+                            "type" : "array",
+                            "title" : "Consented Mappings Items",
+                            "items" : {
+                                "type" : "object",
+                                "title" : "Consented Mappings Items",
+                                "properties" : {
+                                    "mapping" : {
+                                        "title" : "Mapping",
+                                        "description" : "Mapping",
+                                        "type" : "string",
+                                        "viewable" : true,
+                                        "searchable" : true,
+                                        "userEditable" : true
+                                    },
+                                    "consentDate" : {
+                                        "title" : "Consent Date",
+                                        "description" : "Consent Date",
+                                        "type" : "string",
+                                        "viewable" : true,
+                                        "searchable" : true,
+                                        "userEditable" : true
+                                    }
+                                },
+                                "order" : [
+                                    "mapping",
+                                    "consentDate"
+                                ],
+                                "required" : [
+                                    "mapping",
+                                    "consentDate"
+                                ]
+                            }
+                        },
+                        "returnByDefault" : false,
+                        "isVirtual" : false
                     }
                 },
                 "type" : "object",
@@ -553,10 +745,11 @@
                 "$schema" : "http://forgerock.org/json-schema#",
                 "type" : "object",
                 "title" : "Role",
+                "icon" : "fa-check-square-o",
                 "description" : "",
                 "properties" : {
                     "_id" : {
-                        "description" : "",
+                        "description" : "Role ID",
                         "title" : "Name",
                         "viewable" : false,
                         "searchable" : false,
@@ -577,27 +770,33 @@
                         "type" : "string"
                     },
                     "members" : {
-                        "description" : "",
+                        "description" : "Role Members",
                         "title" : "Role Members",
                         "viewable" : true,
                         "type" : "array",
                         "returnByDefault" : false,
                         "items" : {
                             "type" : "relationship",
+                            "title" : "Role Members Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "roles",
                             "validate" : true,
                             "properties" : {
                                 "_ref" : {
+                                    "description" : "References a relationship from a managed object",
                                     "type" : "string"
                                 },
                                 "_refProperties" : {
+                                    "description" : "Supports metadata within the relationship",
                                     "type" : "object",
+                                    "title" : "_refProperties",
                                     "properties" : {
                                         "_id" : {
+                                            "description" : "_refProperties object ID",
                                             "type" : "string"
                                         },
                                         "_grantType" : {
+                                            "description" : "Grant Type",
                                             "type" : "string",
                                             "label" : "Grant Type"
                                         }
@@ -614,9 +813,6 @@
                                             "userName",
                                             "givenName",
                                             "sn"
-                                        ],
-                                        "sortKeys" : [
-                                            "userName"
                                         ]
                                     }
                                 }
@@ -624,24 +820,29 @@
                         }
                     },
                     "authzMembers" : {
-                        "description" : "",
+                        "description" : "Authorization Role Members",
                         "title" : "Authorization Role Members",
                         "viewable" : true,
                         "type" : "array",
                         "returnByDefault" : false,
                         "items" : {
                             "type" : "relationship",
+                            "title" : "Authorization Role Members Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "authzRoles",
                             "validate" : true,
                             "properties" : {
                                 "_ref" : {
+                                    "description" : "References a relationship from a managed object",
                                     "type" : "string"
                                 },
                                 "_refProperties" : {
+                                    "description" : "Supports metadata within the relationship",
                                     "type" : "object",
+                                    "title" : "_refProperties",
                                     "properties" : {
                                         "_id" : {
+                                            "description" : "_refProperties object ID",
                                             "type" : "string"
                                         }
                                     }
@@ -657,9 +858,6 @@
                                             "userName",
                                             "givenName",
                                             "sn"
-                                        ],
-                                        "sortKeys" : [
-                                            "userName"
                                         ]
                                     }
                                 }
@@ -667,24 +865,29 @@
                         }
                     },
                     "assignments" : {
-                        "description" : "",
+                        "description" : "Managed Assignments",
                         "title" : "Managed Assignments",
                         "viewable" : true,
                         "returnByDefault" : false,
                         "type" : "array",
                         "items" : {
                             "type" : "relationship",
+                            "title" : "Managed Assignments Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "roles",
                             "validate" : true,
                             "properties" : {
                                 "_ref" : {
+                                    "description" : "References a relationship from a managed object",
                                     "type" : "string"
                                 },
                                 "_refProperties" : {
+                                    "description" : "Supports metadata within the relationship",
                                     "type" : "object",
+                                    "title" : "_refProperties",
                                     "properties" : {
                                         "_id" : {
+                                            "description" : "_refProperties object ID",
                                             "type" : "string"
                                         }
                                     }
@@ -697,9 +900,6 @@
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
-                                            "name"
-                                        ],
-                                        "sortKeys" : [
                                             "name"
                                         ]
                                     }
@@ -722,8 +922,10 @@
                         "type" : "array",
                         "items" : {
                             "type" : "object",
+                            "title" : "Temporal Constraints Items",
                             "properties" : {
                                 "duration" : {
+                                    "description" : "Duration",
                                     "type" : "string"
                                 }
                             },
@@ -737,8 +939,7 @@
                     }
                 },
                 "required" : [
-                    "name",
-                    "description"
+                    "name"
                 ],
                 "order" : [
                     "_id",
@@ -761,6 +962,7 @@
                 "$schema" : "http://forgerock.org/json-schema#",
                 "type" : "object",
                 "title" : "Assignment",
+                "icon" : "fa-key",
                 "description" : "A role assignment",
                 "properties" : {
                     "_id" : {
@@ -803,17 +1005,22 @@
                         "type" : "array",
                         "items" : {
                             "type" : "object",
+                            "title" : "Assignment Attributes Items",
                             "properties" : {
                                 "assignmentOperation" : {
+                                    "description" : "Assignment operation",
                                     "type" : "string"
                                 },
                                 "unassignmentOperation" : {
+                                    "description" : "Unassignment operation",
                                     "type" : "string"
                                 },
                                 "name" : {
+                                    "description" : "Name",
                                     "type" : "string"
                                 },
                                 "value" : {
+                                    "description" : "Value",
                                     "type" : "string"
                                 }
                             },
@@ -832,11 +1039,12 @@
                         "viewable" : true,
                         "type" : "array",
                         "items" : {
-                            "type" : "string"
+                            "type" : "string",
+                            "title" : "Link Qualifiers Items"
                         }
                     },
                     "roles" : {
-                        "description" : "",
+                        "description" : "Managed Roles",
                         "title" : "Managed Roles",
                         "viewable" : true,
                         "userEditable" : false,
@@ -844,17 +1052,22 @@
                         "returnByDefault" : false,
                         "items" : {
                             "type" : "relationship",
+                            "title" : "Managed Roles Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "assignments",
                             "validate" : true,
                             "properties" : {
                                 "_ref" : {
+                                    "description" : "References a relationship from a managed object",
                                     "type" : "string"
                                 },
                                 "_refProperties" : {
+                                    "description" : "Supports metadata within the relationship",
                                     "type" : "object",
+                                    "title" : "_refProperties",
                                     "properties" : {
                                         "_id" : {
+                                            "description" : "_refProperties object ID",
                                             "type" : "string"
                                         }
                                     }
@@ -867,9 +1080,6 @@
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
-                                            "name"
-                                        ],
-                                        "sortKeys" : [
                                             "name"
                                         ]
                                     }

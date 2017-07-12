@@ -13,8 +13,20 @@
       "view" : "org/forgerock/openidm/ui/user/profile/PreferencesTab"
     },
     {
+      "name" : "trustedDevice",
+      "view" : "org/forgerock/openidm/ui/user/profile/TrustedDevicesTab"
+    },
+    {
+      "name" : "oauthApplication",
+      "view" : "org/forgerock/openidm/ui/user/profile/OauthApplicationsTab"
+    },
+    {
       "name" : "privacyAndConsent",
       "view" : "org/forgerock/openidm/ui/user/profile/PrivacyAndConsentTab"
+    },
+    {
+      "name" : "accountControls",
+      "view" : "org/forgerock/openidm/ui/user/profile/accountControls/AccountControlsTab"
     }
   ]
 }

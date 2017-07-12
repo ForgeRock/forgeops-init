@@ -4,6 +4,20 @@
     "additionalFiles" : [ ],
     "resources" : [
         {
+            "resource" : "selfservice/registration",
+            "calculatedProperties" : {
+                "type" : "text/javascript",
+                "source" : "require('selfServicePolicies').getRegistrationProperties()"
+            }
+        },
+        {
+            "resource" : "selfservice/reset",
+            "calculatedProperties" : {
+                "type" : "text/javascript",
+                "source" : "require('selfServicePolicies').getResetProperties()"
+            }
+        },
+        {
             "resource" : "repo/internal/user/*",
             "properties" : [
                 {

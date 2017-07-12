@@ -1,0 +1,106 @@
+{
+  "file" : "info/uiconfig.js",
+  "type" : "text/javascript",
+  "apiDescription" : {
+    "title" : "Information",
+    "description" : "Service that provides OpenIDM UI information.",
+    "mvccSupported" : false,
+    "read" : {
+      "description" : "Provides the UI configuration of this OpenIDM instance."
+    },
+    "resourceSchema" : {
+      "title" : "UI Info",
+      "type" : "object",
+      "required" : [ "configuration" ],
+      "properties" : {
+        "configuration" : {
+          "type" : "object",
+          "title" : "OpenIDM UI configuration",
+          "required" : [ "selfRegistration", "passwordReset", "forgottenUsername", "roles", "notificationTypes", "defaultNotificationType" ],
+          "properties" : {
+            "selfRegistration" : {
+              "type" : "boolean",
+              "description" : "Whether self-registration is enabled"
+            },
+            "passwordReset" : {
+              "type" : "boolean",
+              "description" : "Whether password reset is enabled"
+            },
+            "forgottenUsername" : {
+              "type" : "boolean",
+              "description" : "Whether forgotten username is enabled"
+            },
+            "lang" : {
+              "type" : "string",
+              "description" : "The user-agent requested language, or default language if not supplied"
+            },
+            "passwordResetLink" : {
+              "type" : "string",
+              "description" : "Link to an external application that can perform password reset"
+            },
+            "roles" : {
+              "type" : "object",
+              "title" : "Maps OpenIDM users' authzRoles to UI roles"
+            },
+            "notificationTypes" : {
+              "type" : "object",
+              "title" : "Configuration for UI notification icons",
+              "required" : [ "info", "warning", "error" ],
+              "properties" : {
+                "info" : {
+                  "type" : "object",
+                  "title" : "Information notification",
+                  "required" : [ "name", "iconPath" ],
+                  "properties" : {
+                    "name" : {
+                      "type" : "string",
+                      "description" : "The translation key for the notification text"
+                    },
+                    "iconPath" : {
+                      "type" : "string",
+                      "description" : "The path to the notification icon"
+                    }
+                  }
+                },
+                "warning" : {
+                  "type" : "object",
+                  "title" : "Warning notification",
+                  "required" : [ "name", "iconPath" ],
+                  "properties" : {
+                    "name" : {
+                      "type" : "string",
+                      "description" : "The translation key for the notification text"
+                    },
+                    "iconPath" : {
+                      "type" : "string",
+                      "description" : "The path to the notification icon"
+                    }
+                  }
+                },
+                "error" : {
+                  "type" : "object",
+                  "title" : "Error notification",
+                  "required" : [ "name", "iconPath" ],
+                  "properties" : {
+                    "name" : {
+                      "type" : "string",
+                      "description" : "The translation key for the notification text"
+                    },
+                    "iconPath" : {
+                      "type" : "string",
+                      "description" : "The path to the notification icon"
+                    }
+                  }
+                }
+              }
+            },
+            "defaultNotificationType" : {
+              "type" : "object",
+              "description" : "The default notification type"
+            }
+          }
+        }
+      }
+    }
+  }
+}

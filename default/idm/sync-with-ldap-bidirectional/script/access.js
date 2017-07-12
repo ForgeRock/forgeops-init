@@ -59,7 +59,7 @@ var httpAccessConfig =
             "actions"    : "*"
         },
         {
-           "pattern"    : "config/ui/configuration",
+           "pattern"    : "info/uiconfig",
            "roles"      : "*",
            "methods"    : "read",
            "actions"    : "*"
@@ -111,19 +111,30 @@ var httpAccessConfig =
            "customAuthz" : "checkIfUIIsEnabled('forgotUsername')"
         },
 
+        // self-service is allowed to call the policy service to validate any route
         {
-            "pattern"   : "policy/managed/user",
-            "roles"     : "*",
-            "methods"   : "read",
-            "actions"   : "",
-            "customAuthz" : "checkIfUIIsEnabled('selfRegistration') || checkIfUIIsEnabled('passwordReset')"
-        },
-        {
-            "pattern"   : "policy/managed/user/-",
+            "pattern"   : "policy/*",
             "roles"     : "*",
             "methods"   : "action",
             "actions"   : "validateObject",
-            "customAuthz" : "checkIfUIIsEnabled('selfRegistration') || checkIfUIIsEnabled('passwordReset')"
+            "customAuthz" : "context.current.name === 'selfservice'"
+        },
+
+        // anonymous users are allowed to evaluate policy only via the selfservice endpoints
+        {
+            "pattern"   : "policy/selfservice/registration",
+            "roles"     : "*",
+            "methods"   : "action,read",
+            "actions"   : "validateObject",
+            "customAuthz" : "checkIfUIIsEnabled('selfRegistration')"
+        },
+
+        {
+            "pattern"   : "policy/selfservice/reset",
+            "roles"     : "*",
+            "methods"   : "action,read",
+            "actions"   : "validateObject",
+            "customAuthz" : "checkIfUIIsEnabled('passwordReset')"
         },
 
         {
@@ -171,9 +182,17 @@ var httpAccessConfig =
             "customAuthz" : "(checkIfUIIsEnabled('forgotUsername') || checkIfUIIsEnabled('passwordReset') || checkIfUIIsEnabled('selfRegistration')) && isSelfServiceRequest()"
         },
 
-        // EndUser service that provides sanitized data needed to support the UI
+        // Schema service that provides sanitized schema data needed to support the UI
         {
-            "pattern"    : "enduser",
+            "pattern"    : "schema/*",
+            "roles"      : "openidm-authorized",
+            "methods"    : "read",
+            "actions"    : "*"
+        },
+
+        // Consent service that provides end-user functions related to Privacy & Consent
+        {
+            "pattern"    : "consent",
             "roles"      : "openidm-authorized",
             "methods"    : "action",
             "actions"    : "*"
@@ -227,7 +246,7 @@ var httpAccessConfig =
         },
         //allow the ability to delete links for a specific mapping
         {
-            "pattern"   : "repo/links",
+            "pattern"   : "repo/link",
             "roles"     : "openidm-admin",
             "methods"   : "action",
             "actions"   : "command",
@@ -261,7 +280,7 @@ var httpAccessConfig =
         {
             "pattern"   : "*",
             "roles"     : "openidm-authorized",
-            "methods"   : "read,action",
+            "methods"   : "read,action,delete",
             "actions"   : "bind,unbind",
             "customAuthz" : "ownDataOnly()"
         },

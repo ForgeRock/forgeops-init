@@ -16,7 +16,7 @@
                     {
                         "name" : "dashboard.quickStart.changePassword",
                         "icon" : "fa-lock",
-                        "href" : "#profile/password"
+                        "href" : "#signinandsecurity/password/"
                     }
                 ]
             }

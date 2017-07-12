@@ -21,9 +21,7 @@
                     "queryOnResource" : "repo/internal/user",
                     "username" : "anonymous",
                     "password" : "anonymous",
-                    "defaultUserRoles" : [
-                        "openidm-reg"
-                    ]
+                    "defaultUserRoles" : [ "openidm-reg" ]
                 },
                 "enabled" : true
             },
@@ -43,7 +41,7 @@
                     },
                     "defaultUserRoles" : [ ]
                 },
-                "enabled" : true
+                "enabled" : false
             },
             {
                 "name" : "INTERNAL_USER",
@@ -59,14 +57,29 @@
                 },
                 "enabled" : true
             },
-            {
-                "name" : "CLIENT_CERT",
+            {   "name" : "CLIENT_CERT",
                 "properties" : {
                     "queryOnResource" : "security/truststore",
-                    "defaultUserRoles" : [
-                        "openidm-cert"
-                    ],
+                    "defaultUserRoles" : [ "openidm-cert" ],
                     "allowedAuthenticationIdPatterns" : [ ]
+                },
+                "enabled" : true
+            },
+            {
+                "name" : "PASSTHROUGH",
+                "properties" : {
+                    "augmentSecurityContext": {
+                        "type" : "text/javascript",
+                        "file" : "auth/populateAsManagedUser.js"
+                    },
+                    "queryOnResource" : "system/ldap/account",
+                    "propertyMapping" : {
+                        "authenticationId" : "uid"
+                    },
+                    "managedUserLink" : "systemLdapAccounts_managedUser",
+                    "defaultUserRoles" : [
+                        "openidm-authorized"
+                    ]
                 },
                 "enabled" : true
             },
