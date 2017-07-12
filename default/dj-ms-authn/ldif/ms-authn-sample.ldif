@@ -1,0 +1,67 @@
+#
+# The "dc=example,dc=com" baseDN
+#
+
+dn: dc=example,dc=com
+objectClass: domain
+objectClass: top
+dc: example
+
+#
+# Create "fr_ms_client" Organizational Unit
+#
+
+dn: ou=fr_ms_client,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: fr_ms_client
+
+#
+# Create example records for "client1", "client2", and "client3"
+#
+
+dn: uid=client1,ou=fr_ms_client,dc=example,dc=com
+uid: client1
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+cn: client1
+sn: client1
+ou: fr_ms_client
+userPassword: client1
+displayName: "Example Client 1"
+# using "carLicense" for "scope"
+carLicense: default
+carLicense: example
+# using "employeeNumber" for optional "tokenExpirationSeconds"
+employeeNumber: 60
+
+dn: uid=client2,ou=fr_ms_client,dc=example,dc=com
+uid: client2
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+cn: client2
+sn: client2
+ou: fr_ms_client
+userPassword: client2
+displayName: "Example Client 2"
+# using "carLicense" for "scope"
+carLicense: default
+
+dn: uid=client3,ou=fr_ms_client,dc=example,dc=com
+uid: client3
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+cn: client3
+sn: client3
+ou: fr_ms_client
+userPassword: client3
+displayName: "Example Client 3"
+# using "carLicense" for "scope"
+carLicense: exchange
+carLicense: introspect
