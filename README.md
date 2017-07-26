@@ -21,12 +21,53 @@ Kubernetes mounts configuration files as a volume at runtime by cloning the
 configuration repository in an init container and making the configuration 
 available to the component containers.
  
-Other configuration strategies are possible, including the following:
 
-  * On Minikube, mapping a local configuration folder on your workstation to a 
-    Kubernetes volume.
-  * Creating immutable Docker containers by cloning the configuration repository 
-    and copying the files into the container as part of the build process.
+## Project Layout 
+
+The layout presented here is purely an example of how you might organize your configuration. The basic
+idea is that configurations are organized by environments (dev, qa, production, prod_east, prod_west, etc.)
+
+The directory structure is:  `/{environment}/{component}/{project}/* `
+
+Where:
+* environment is one of default, dev,qa, prod, etc. Environment names may be mapped to Kubernetes namespaces. It
+is recommended they are short, lower case, and avoid any non alphanumeric characters. The "default" environment
+is a common Kubernetes namespace used on Minikube. This is the recommended folder for out of box deployment.
+* component is one of: am, dj, ig, idm
+* project - is a specific configuration for that component. For example, "my-test-config", "current", "canary".
+These names may be also be mapped as part of the environment, so it is best is to avoid special characters
+other than '-'. 
+
+
+Nested underneath the project folder are the configuration files for the component. For example, json files exported by OpenIDM or 
+by amster. 
+
+In addition, the following top-level directories are suggested:
+
+* bin/  holds utility scripts that are useful for managing configuration files. In the future this may include scripts 
+ to auto-migrate configuration from one environment to another.
+* common/{component}  Holds any configuration files which are 100% common to all environments. 
+
+
+## Migration
+
+Migration from one environment to another (for example from dev to QA to prod) is done manually by
+copying files from one environment to another and adjusting those files as required (for example,
+replacing dev server names with QA).  You may wish to use additional tools or scripts to help automate this
+process.
+
+
+A sample workflow that you might implement:
+
+* A feature is developed in the default or dev environment, and exported/saved to the {project} folder.
+* The feature and/or the entire configuration is copied to the next environment. This can be scripted and 
+ triggered by a git commit hook. The
+ scripts can copy files and perform environment specific search and replace. 
+* If a feature is consistent in all environments, it can be exported to common/{component}. You would
+merge the features in common/ into the target environment.
+* The resulting merged configuration is committed to git. Automated CI/CD tools may run checks on this
+commit to validate the configuration is functional. 
+
 
 ## Repository Organization 
 
