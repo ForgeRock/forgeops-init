@@ -94,25 +94,16 @@ This skeleton repository contains the following top-level directories:
       variety of supporting files used for various purposes.)
     * {project} - An identifier for a set of configuration files.
        
-The following are examples of sets of configuration files provided in the 
-skeleton configuration:
+The following sets of configuration files are provided in the skeleton 
+configuration:
        
+  * `default/am/empty-import` - Contains configuration that populates AM with
+    no configuration. 
   * `default/idm/sync-with-ldap-bidirectional` - Contains configuration that 
     implements bidirectional data synchronization between IDM and LDAP.
-  * `default/am/amster-sample1` - Contains configuration that implements AM
-    configured as follows:
-      * A second realm has been added to the AM configuration.
-      * AM is configured to act as an OpenID Connect 1.0 server.
+  * `default/ig/basic-sample` - Contains configuration to deply the simplest 
+    possible IG server.
     
-The following set of configuration files is supported by ForgeRock:
-
-  * `default/am/empty-import` - Contains configuration that implements a
-    minimally configured AM server.
-    
-_All other sets of configuration files in this skeleton configuration 
-repository are considered samples that are available for modeling configuration
-but are not supported by ForgeRock._     
-
 After creating your own configuration repository, you might have custom sets of 
 configuration files similar to the following:
 
