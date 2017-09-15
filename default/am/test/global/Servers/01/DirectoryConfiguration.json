@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "@project.version@",
+    "entityType" : "DirectoryConfiguration",
+    "entityId" : "http://openam:80/openam",
+    "pathParams" : {
+      "serverName" : "http://openam:80/openam"
+    }
+  },
+  "data" : {
+    "_id" : "01/properties/directoryConfiguration",
+    "directoryConfiguration" : {
+      "minConnectionPool" : 1,
+      "maxConnectionPool" : 10,
+      "bindDn" : "cn=Directory Manager",
+      "bindPassword" : null,
+      "bindPassword-encrypted" : "AAAAA0FFUwIQcZtOBSsS+z35hCWNfMEQ0KRRCf4UvnyuUAF+hn+Iy6dIZII9pJF4ow=="
+    },
+    "directoryServers" : [ {
+      "hostName" : "configstore-0.configstore",
+      "serverName" : "Server1",
+      "connectionType" : "SIMPLE",
+      "portNumber" : "1389"
+    } ]
+  }
+}
