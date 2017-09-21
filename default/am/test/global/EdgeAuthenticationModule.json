@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "@project.version@",
+    "entityType" : "EdgeAuthenticationModule",
+    "entityId" : "EdgeAuthenticationModule",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "defaults" : {
+      "subjectJwkSetAttr" : null,
+      "challengeSigningKey" : null,
+      "authenticationLevel" : 0
+    },
+    "_type" : {
+      "_id" : "authEdgeAuthentication",
+      "name" : "Edge Device Authentication",
+      "collection" : false
+    }
+  }
+}
