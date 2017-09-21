@@ -1,4 +1,4 @@
 {
     "defaultRegistry" : "idm-default",
-    "enabled" : false
+    "enabled" : true
 }
