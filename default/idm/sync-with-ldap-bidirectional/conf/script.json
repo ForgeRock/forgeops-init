@@ -1,7 +1,7 @@
 {
     "properties" : { },
     "ECMAScript" : {
-        "#javascript.debug" : "transport=socket,suspend=y,address=9888,trace=true",
+        "#javascript.debug" : "&{openidm.script.javascript.debug}",
         "javascript.recompile.minimumInterval" : "60000"
     },
     "Groovy" : {

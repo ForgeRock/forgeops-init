@@ -43,13 +43,13 @@
                             "description" : "Auth Module ID",
                             "enum" : [
                                 "JWT_SESSION", "OPENAM_SESSION", "CLIENT_CERT", "DELEGATED", "MANAGED_USER",
-                                "INTERNAL_USER", "STATIC_USER", "PASSTHROUGH", "IWA", "OAUTH", "OPENID_CONNECT",
+                                "INTERNAL_USER", "STATIC_USER", "PASSTHROUGH", "IWA", "SOCIAL_PROVIDERS", "OAUTH_CLIENT",
                                 "TRUSTED_ATTRIBUTE"
                             ],
                             "enum_titles" : [
                                 "JSON Web Token Session", "OpenAM Session", "Client Certificate", "Delegated",
                                 "Managed User", "Internal User", "Static User", "Passthrough",
-                                "Integrated Windows Authentication", "OAuth", "OpenID Connect", "Trusted Attribute"
+                                "Integrated Windows Authentication", "Social Providers", "Single OAuth Client", "Trusted Attribute"
                             ]
                         }
                     }

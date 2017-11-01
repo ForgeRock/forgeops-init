@@ -4,15 +4,15 @@
             "name" : "user",
             "onCreate" : {
                 "type" : "text/javascript",
-                "source" : "require('ui/onCreateUser').setDefaultFields(object);require('ui/onCreateUser').createIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('ui/onCreateUser').emailUser(object);require('ui/lastChanged').updateLastChanged(object);"
+                "source" : "require('onCreateUser').setDefaultFields(object);require('onCreateUser').createIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);require('lastChanged').updateLastChanged(object);"
             },
             "onUpdate" : {
                 "type" : "text/javascript",
-                "source" : "require('ui/onUpdateUser').preserveLastSync(object, oldObject, request);require('ui/onUpdateUser').updateIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('ui/onUpdateUser').createNotification(object, oldObject);require('ui/lastChanged').updateLastChanged(object);"
+                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('onUpdateUser').updateIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);require('lastChanged').updateLastChanged(object);"
             },
             "onDelete" : {
                 "type" : "text/javascript",
-                "file" : "ui/onDelete-user-cleanup.js"
+                "file" : "onDelete-user-cleanup.js"
             },
             "postCreate" : {
                 "type" : "text/javascript",
@@ -29,11 +29,11 @@
             "actions" : {
                 "resetPassword": {
                     "type": "text/javascript",
-                    "source": "require('ui/resetPassword').sendMail(object);"
+                    "source": "require('resetPassword').sendMail(object);"
                 }
             },
             "schema" : {
-                "id" : "http://jsonschema.net",
+                "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
                 "title" : "User",
                 "icon" : "fa-user",
                 "viewable" : true,
@@ -65,7 +65,8 @@
                     "preferences",
                     "termsAccepted",
                     "lastChanged",
-                    "consentedMappings"
+                    "consentedMappings",
+                    "_meta"
                 ],
                 "properties" : {
                     "_id" : {
@@ -139,12 +140,15 @@
                             "title" : "KBA Info Items",
                             "properties" : {
                                 "answer" : {
+                                    "description" : "Answer",
                                     "type" : "string"
                                 },
                                 "customQuestion" : {
+                                    "description" : "Custom question",
                                     "type" : "string"
                                 },
                                 "questionId" : {
+                                    "description" : "Question ID",
                                     "type" : "string"
                                 }
                             },
@@ -275,6 +279,7 @@
                     "roles" : {
                         "description" : "Provisioning Roles",
                         "title" : "Provisioning Roles",
+                        "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User:roles",
                         "viewable" : true,
                         "userEditable" : false,
                         "returnByDefault" : false,
@@ -283,6 +288,7 @@
                         "type" : "array",
                         "items" : {
                             "type" : "relationship",
+                            "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User:roles:items",
                             "title" : "Provisioning Roles Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "members",
@@ -295,7 +301,7 @@
                                 "_refProperties" : {
                                     "description" : "Supports metadata within the relationship",
                                     "type" : "object",
-                                    "title" : "_refProperties",
+                                    "title" : "Provisioning Roles Items _refProperties",
                                     "properties" : {
                                         "_id" : {
                                             "description" : "_refProperties object ID",
@@ -326,6 +332,7 @@
                     "authzRoles" : {
                         "description" : "Authorization Roles",
                         "title" : "Authorization Roles",
+                        "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User:authzRoles",
                         "viewable" : true,
                         "type" : "array",
                         "userEditable" : false,
@@ -335,6 +342,7 @@
                         "items" : {
                             "type" : "relationship",
                             "title" : "Authorization Roles Items",
+                            "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User:authzRoles:items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "authzMembers",
                             "validate" : true,
@@ -346,7 +354,7 @@
                                 "_refProperties" : {
                                     "description" : "Supports metadata within the relationship",
                                     "type" : "object",
-                                    "title" : "_refProperties",
+                                    "title" : "Authorization Roles Items _refProperties",
                                     "properties" : {
                                         "_id" : {
                                             "description" : "_refProperties object ID",
@@ -391,6 +399,7 @@
                         "isPersonal" : false,
                         "items" : {
                             "type" : "relationship",
+                            "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User:reports:items",
                             "title" : "Direct Reports Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "manager",
@@ -403,7 +412,7 @@
                                 "_refProperties" : {
                                     "description" : "Supports metadata within the relationship",
                                     "type" : "object",
-                                    "title" : "_refProperties",
+                                    "title" : "Direct Reports Items _refProperties",
                                     "properties" : {
                                         "_id" : {
                                             "description" : "_refProperties object ID",
@@ -539,7 +548,7 @@
                             "_refProperties" : {
                                 "description" : "Supports metadata within the relationship",
                                 "type" : "object",
-                                "title" : "_refProperties",
+                                "title" : "Manager _refProperties",
                                 "properties" : {
                                     "_id" : {
                                         "description" : "_refProperties object ID",
@@ -669,7 +678,7 @@
                             "title" : "Consented Mappings Items",
                             "items" : {
                                 "type" : "object",
-                                "title" : "Consented Mappings Items",
+                                "title" : "Consented Mappings Item",
                                 "properties" : {
                                     "mapping" : {
                                         "title" : "Mapping",
@@ -700,6 +709,24 @@
                         },
                         "returnByDefault" : false,
                         "isVirtual" : false
+                    },
+                    "_meta" : {
+                        "description" : "Metadata",
+                        "type" : "object",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "isPersonal" : false,
+                        "properties" : {
+                            "creationDate" : {
+                                "description" : "Creation Date",
+                                "title" : "Creation Date",
+                                "type" : "string"
+                            }
+                        },
+                        "order" : [
+                            "creationDate"
+                        ],
+                        "required": []
                     }
                 },
                 "type" : "object",
@@ -742,6 +769,7 @@
                 "file" : "roles/postOperation-roles.js"
             },
             "schema" : {
+                "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:Role",
                 "$schema" : "http://forgerock.org/json-schema#",
                 "type" : "object",
                 "title" : "Role",
@@ -777,6 +805,7 @@
                         "returnByDefault" : false,
                         "items" : {
                             "type" : "relationship",
+                            "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:Role:members:items",
                             "title" : "Role Members Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "roles",
@@ -789,7 +818,7 @@
                                 "_refProperties" : {
                                     "description" : "Supports metadata within the relationship",
                                     "type" : "object",
-                                    "title" : "_refProperties",
+                                    "title" : "Role Members Items _refProperties",
                                     "properties" : {
                                         "_id" : {
                                             "description" : "_refProperties object ID",
@@ -827,6 +856,7 @@
                         "returnByDefault" : false,
                         "items" : {
                             "type" : "relationship",
+                            "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:Role:authzMembers:items",
                             "title" : "Authorization Role Members Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "authzRoles",
@@ -839,7 +869,7 @@
                                 "_refProperties" : {
                                     "description" : "Supports metadata within the relationship",
                                     "type" : "object",
-                                    "title" : "_refProperties",
+                                    "title" : "Authorization Role Members Items _refProperties",
                                     "properties" : {
                                         "_id" : {
                                             "description" : "_refProperties object ID",
@@ -872,6 +902,7 @@
                         "type" : "array",
                         "items" : {
                             "type" : "relationship",
+                            "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:Role:assignments:items",
                             "title" : "Managed Assignments Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "roles",
@@ -883,8 +914,8 @@
                                 },
                                 "_refProperties" : {
                                     "description" : "Supports metadata within the relationship",
+                                    "title" : "Managed Assignments Items _refProperties",
                                     "type" : "object",
-                                    "title" : "_refProperties",
                                     "properties" : {
                                         "_id" : {
                                             "description" : "_refProperties object ID",
@@ -945,8 +976,9 @@
                     "_id",
                     "name",
                     "description",
-                    "assignments",
                     "members",
+                    "authzMembers",
+                    "assignments",
                     "condition",
                     "temporalConstraints"
                 ]
@@ -959,6 +991,7 @@
                 "source" : "require('roles/onSync-assignments').syncUsersOfRolesWithAssignment(resourceName, oldObject, newObject, ['roles']);"
             },
             "schema" : {
+                "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:Assignment",
                 "$schema" : "http://forgerock.org/json-schema#",
                 "type" : "object",
                 "title" : "Assignment",
@@ -1052,6 +1085,7 @@
                         "returnByDefault" : false,
                         "items" : {
                             "type" : "relationship",
+                            "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:Assignment:roles:items",
                             "title" : "Managed Roles Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "assignments",
@@ -1064,7 +1098,7 @@
                                 "_refProperties" : {
                                     "description" : "Supports metadata within the relationship",
                                     "type" : "object",
-                                    "title" : "_refProperties",
+                                    "title" : "Managed Roles Items _refProperties",
                                     "properties" : {
                                         "_id" : {
                                             "description" : "_refProperties object ID",
@@ -1097,8 +1131,10 @@
                     "_id",
                     "name",
                     "description",
+                    "mapping",
                     "attributes",
-                    "linkQualifiers"
+                    "linkQualifiers",
+                    "roles"
                 ]
             }
         }

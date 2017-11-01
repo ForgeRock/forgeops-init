@@ -17,8 +17,8 @@
             "query-cluster-instances" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'state'",
             "query-cluster-events" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'event' AND json_extract_path_text(fullobject, 'instanceId') = ${instanceId}",
 
-            "find-relationships-for-resource" : "SELECT fullobject::text FROM ${_dbSchema}.relationships obj WHERE (((json_extract_path_text(obj.fullobject, 'firstId') = (${fullResourceId})) AND (json_extract_path_text(obj.fullobject, 'firstPropertyName') = (${resourceFieldName})))) OR (((json_extract_path_text(obj.fullobject, 'secondId') = (${fullResourceId})) AND (json_extract_path_text(obj.fullobject, 'secondPropertyName') = (${resourceFieldName}))))",
-            "find-relationship-edges" : "SELECT fullobject::text FROM ${_dbSchema}.relationships obj WHERE (((json_extract_path_text(obj.fullobject, 'firstId') = (${vertex1Id})) AND (json_extract_path_text(obj.fullobject, 'firstPropertyName') = (${vertex1FieldName})) AND (json_extract_path_text(obj.fullobject, 'secondId') = (${vertex2Id})) AND (json_extract_path_text(obj.fullobject, 'secondPropertyName') = (${vertex2FieldName}))) OR ((json_extract_path_text(obj.fullobject, 'firstId') = (${vertex2Id})) AND (json_extract_path_text(obj.fullobject, 'firstPropertyName') = (${vertex2FieldName})) AND (json_extract_path_text(obj.fullobject, 'secondId') = (${vertex1Id})) AND (json_extract_path_text(obj.fullobject, 'secondPropertyName') = (${vertex1FieldName}))))"
+            "find-relationships-for-resource" : "SELECT * FROM ${_dbSchema}.${_mainTable} WHERE ((firstid = ${fullResourceId} AND firstpropertyname = ${resourceFieldName}) OR (secondid = ${fullResourceId} AND secondpropertyname = ${resourceFieldName}))",
+            "find-relationship-edges" : "SELECT * FROM ${_dbSchema}.${_mainTable} WHERE ((firstid = ${vertex1Id} AND firstpropertyname = ${vertex1FieldName}) AND (secondid = ${vertex2Id} AND secondpropertyname = ${vertex2FieldName})) OR ((firstid = ${vertex2Id} AND firstpropertyname = ${vertex2FieldName}) AND (secondid = ${vertex1Id} AND secondpropertyname = ${vertex1FieldName}))"
         },
         "explicitTables" : {
             "query-all-ids" : "SELECT objectid FROM ${_dbSchema}.${_table}",
@@ -66,6 +66,11 @@
                 "propertiesTable" : "schedulerobjectproperties",
                 "searchableDefault" : false
             },
+            "scheduler/*" : {
+                "mainTable" : "schedulerobjects",
+                "propertiesTable" : "schedulerobjectproperties",
+                "searchableDefault" : false
+            },
             "cluster" : {
                 "mainTable" : "clusterobjects",
                 "propertiesTable" : "clusterobjectproperties",
@@ -76,17 +81,24 @@
                 "propertiesTable" : "configobjectproperties",
                 "searchableDefault" : false
             },
-            "relationship": {
+            "relationships" : {
                 "mainTable" : "relationships",
                 "propertiesTable" : "relationshipproperties",
-                "searchableDefault" : false
+                "searchableDefault" : false,
+                "objectToColumn": {
+                    "firstId" : "firstid",
+                    "secondId" : "secondid",
+                    "firstPropertyName" : "firstpropertyname",
+                    "secondPropertyName" : "secondpropertyname",
+                    "properties" : { "column" : "properties", "type" : "JSON_MAP" }
+                }
             },
             "updates" : {
                 "mainTable" : "updateobjects",
                 "propertiesTable" : "updateobjectproperties",
                 "searchableDefault" : false
             },
-            "clusteredreconstate" : {
+            "reconprogressstate" : {
                 "mainTable" : "genericobjects",
                 "propertiesTable" : "genericobjectproperties",
                 "searchableDefault" : false,
@@ -161,6 +173,8 @@
                     "timestamp" : "activitydate",
                     "userId" : "userid",
                     "eventName" : "eventname",
+                    "provider" : "provider",
+                    "method" : "method",
                     "result" : "result",
                     "principal" : {"column" : "principals", "type" : "JSON_LIST"},
                     "context" : {"column" : "context", "type" : "JSON_MAP"},
@@ -207,6 +221,8 @@
                     "revision" : "subjectrev",
                     "passwordChanged" : "passwordchanged",
                     "message" : "message",
+                    "provider" : "provider",
+                    "context" : "context",
                     "status" : "status"
                 }
             },
@@ -288,21 +304,13 @@
                     "roles" : "roles"
                 }
             },
-            "security/keys" : {
-                "table" : "securitykeys",
-                "objectToColumn" : {
-                    "_id" : "objectid",
-                    "_rev" : "rev",
-                    "keyPair" : "keypair"
-                }
-            },
             "clusteredrecontargetids" : {
                 "table" : "clusteredrecontargetids",
                 "objectToColumn" : {
                     "_id" : "objectid",
                     "_rev" : "rev",
                     "reconId" : "reconid",
-                    "targetId" : "targetid"
+                    "targetIds" : {"column" : "targetids", "type" : "JSON_LIST"}
                 }
             }
         }

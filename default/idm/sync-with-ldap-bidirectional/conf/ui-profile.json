@@ -25,6 +25,14 @@
       "view" : "org/forgerock/openidm/ui/user/profile/PrivacyAndConsentTab"
     },
     {
+      "name" : "sharing",
+      "view" : "org/forgerock/openidm/ui/user/profile/uma/SharingTab"
+    },
+    {
+      "name" : "auditHistory",
+      "view" : "org/forgerock/openidm/ui/user/profile/uma/ActivityTab"
+    },
+    {
       "name" : "accountControls",
       "view" : "org/forgerock/openidm/ui/user/profile/accountControls/AccountControlsTab"
     }
