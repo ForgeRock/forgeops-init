@@ -1,8 +1,13 @@
 # forgeops-init
 
-If you are using this repository with the 5.0.0 release as documented in the 
-DevOps guide, check out the `release/5.0.0` branch. Otherwise, check out the 
-`master` branch.
+Holds initial configuration for the ForgeRock platform components. 
+ 
+
+NOTE: You must check out the branch of this project that corresponds to the ForgeOps project branch you are using.
+For example, if you are using the release/5.5.0 forgeops project, checkout the release/5.5.0 branch of
+this project. 
+
+The master of this repository tracks the master of the forgeops project.
 
 
 ## About This Repository
