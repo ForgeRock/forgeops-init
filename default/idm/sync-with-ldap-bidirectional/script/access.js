@@ -38,7 +38,7 @@ var httpAccessConfig =
            "pattern"    : "authentication",
            "roles"      : "*",
            "methods"    : "read,action",
-           "actions"    : "logout"
+           "actions"    : "logout,login"
         },
         {
            "pattern"    : "identityProviders",
