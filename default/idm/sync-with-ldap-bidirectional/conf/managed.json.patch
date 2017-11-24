@@ -1,0 +1,183 @@
+[
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'user', 'onCreate', { \"type\" : \"text/javascript\", \"source\" : \"require('onCreateUser').setDefaultFields(object);require('onCreateUser').createIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);require('lastChanged').updateLastChanged(object);\" })"
+            }
+        }
+    },
+	{
+		"operation": "transform",
+		"field": "/objects",
+		"value": {
+			"script": {
+				"type": "text/javascript",
+				"source": "require('managedPatchHelper').add(content, 'user', 'onUpdate', { \"type\" : \"text/javascript\", \"source\" : \"require('onUpdateUser').preserveLastSync(object, oldObject, request);require('onUpdateUser').updateIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);require('lastChanged').updateLastChanged(object);\" })"
+			}
+		}
+	},
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'user', 'onDelete', {  \"type\" : \"text/javascript\", \"file\" : \"onDelete-user-cleanup.js\" })"
+            }
+        }
+    },
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'user', 'actions.resetPassword', { \"type\": \"text/javascript\", \"source\": \"require('resetPassword').sendMail(object);\" })"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties._meta', _meta)",
+                "globals" : {
+                    "_meta" : {
+                        "description" : "Metadata",
+                        "type" : "object",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "isPersonal" : false,
+                        "scope" : "private",
+                        "properties" : {
+                            "creationDate" : {
+                                "description" : "Creation Date",
+                                "title" : "Creation Date",
+                                "type" : "string"
+                            },
+                            "numberOfLogins" : {
+                                "description" : "Number of Logins",
+                                "title": "Number of Logins",
+                                "type": "number"
+                            },
+                            "stagesCompleted" : {
+                                "description" : "Stages completed successfully",
+                                "title" : "Stages Completed",
+                                "type" : "array",
+                                "items" : {
+                                    "type" : "object",
+                                    "title" : "Completed Stage",
+                                    "properties" : {
+                                        "identifier" : {
+                                            "title" : "Stage Identifier",
+                                            "description" : "Stage identifier",
+                                            "type" : "string"
+                                        },
+                                        "dateCompleted" : {
+                                            "title" : "Date Completed",
+                                            "description" : "Date stage was completed",
+                                            "type" : "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "order" : [
+                            "creationDate",
+                            "numberOfLogins",
+                            "stagesCompleted"
+                        ],
+                        "required": []
+                    }
+                }
+            }
+        }
+    },
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'user', 'schema.order', order)",
+                "globals": {
+                    "order" : [
+                        "_id",
+                        "userName",
+                        "password",
+                        "givenName",
+                        "sn",
+                        "mail",
+                        "description",
+                        "accountStatus",
+                        "telephoneNumber",
+                        "postalAddress",
+                        "address2",
+                        "city",
+                        "postalCode",
+                        "country",
+                        "stateProvince",
+                        "roles",
+                        "manager",
+                        "authzRoles",
+                        "reports",
+                        "effectiveRoles",
+                        "effectiveAssignments",
+                        "lastSync",
+                        "kbaInfo",
+                        "preferences",
+                        "termsAccepted",
+                        "lastChanged",
+                        "consentedMappings",
+                        "_meta"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "require('managedPatchHelper').remove(content, 'assignment', 'schema.order');"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "require('managedPatchHelper').add(content, 'assignment', 'schema.order', [\"_id\", \"name\", \"description\", \"mapping\", \"attributes\",\"linkQualifiers\", \"roles\"]);"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "require('managedPatchHelper').remove(content, 'role', 'schema.order');"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "require('managedPatchHelper').add(content, 'role', 'schema.order', [\"_id\", \"name\", \"description\", \"members\", \"authzMembers\", \"assignments\", \"condition\", \"temporalConstraints\"]);"
+            }
+        }
+    }
+]

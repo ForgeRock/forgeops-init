@@ -1,0 +1,11 @@
+[
+    {
+       "operation":"replace",
+       "field":"/stylesheets",
+       "value":[
+           "css/bootstrap-3.3.7-custom.css",
+           "css/structure.css",
+           "css/theme.css"
+       ]       
+   }
+]
