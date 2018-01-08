@@ -1,0 +1,50 @@
+# Sample global settings for all charts
+
+global:
+  #domain: .forgeops.com
+  domain: .192.168.99.100.xip.io
+  #domain: .forgerocktest.com
+  #domain: .example.com
+  #shortFQDN: true
+  image:
+    repository: forgerock
+    #repository: gcr.io/engineering-devops
+    tag: 6.0.0
+    #tag: 5.5.1
+  git:
+    repo: "git@github.com:wstrange/forgeops-init.git"
+    #branch: cddemo
+    # cddemo branch after merge
+    #branch: 173b90847d61d38520e67d8d9ad7cfe2c7ecce92
+    branch: master
+    # Test of a specific commit
+    #branch: d0562faec4b1621ad53b852aa5ee61f1072575cc
+    #branch: release/5.5master.0
+    #branch: 6.0.0
+    #branch: master
+  exportPath:
+    am: default/am/autosave
+
+postgres-openidm:
+  persistence:
+    enabled: false
+
+# For DJ
+numberSampleUsers: 100
+#djInstance: userstore
+djInstance: configstore
+#
+#ingress:
+#  class: cloudflare-warp
+#
+#openidm:
+#  ingress:
+#    class: cloudflare-warp
+#
+#openam:
+#  ingress:
+#    class: cloudflare-warp
+#
+#openig:
+#  ingress:
+#    class: cloudflare-warp
