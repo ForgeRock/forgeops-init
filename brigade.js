@@ -72,10 +72,14 @@ events.on("exec", (brigadeEvent, project) => {
 
 events.on("push", (event,project) => {
     console.log(util.inspect(event, false, null))
+    var payload = JSON.parse(event.payload) // the github event payload
+    helmUpgrade(payload.after)
 })
 
 events.on("pull_request", (event,project) => {
     console.log(util.inspect(event, false, null))
+    var payload = JSON.parse(event.payload)
+
 })
 
 
