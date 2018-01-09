@@ -72,6 +72,7 @@ events.on("exec", (brigadeEvent, project) => {
 
 events.on("push", (event,project) => {
     console.log(util.inspect(brigadeEvent, false, null))
+    console.log("Done push")
 })
 
 events.on("pull_request", (event,project) => {
