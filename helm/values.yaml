@@ -5,7 +5,7 @@ global:
   domain: .192.168.99.100.xip.io
   #domain: .forgerocktest.com
   #domain: .example.com
-  #shortFQDN: true
+  shortFQDN: true
   image:
     repository: forgerock
     #repository: gcr.io/engineering-devops
@@ -24,6 +24,8 @@ global:
     #branch: master
   exportPath:
     am: default/am/autosave
+  shortFQDN: true
+
 
 postgres-openidm:
   persistence:
@@ -34,8 +36,8 @@ numberSampleUsers: 100
 #djInstance: userstore
 djInstance: configstore
 #
-#ingress:
-#  class: cloudflare-warp
+ingress:
+  class: cloudflare-warp
 #
 #openidm:
 #  ingress:
@@ -45,6 +47,6 @@ djInstance: configstore
 #  ingress:
 #    class: cloudflare-warp
 #
-#openig:
-#  ingress:
-#    class: cloudflare-warp
+openig:
+  ingress:
+    class: cloudflare-warp
