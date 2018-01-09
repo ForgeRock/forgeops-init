@@ -71,11 +71,11 @@ events.on("exec", (brigadeEvent, project) => {
 })
 
 events.on("push", (event,project) => {
-    console.log(util.inspect(brigadeEvent, false, null))
+    console.log(util.inspect(event, false, null))
 })
 
 events.on("pull_request", (event,project) => {
-    console.log(util.inspect(brigadeEvent, false, null))
+    console.log(util.inspect(event, false, null))
 })
 
 
