@@ -5,8 +5,6 @@ const util = require('util')
 const helmTag = "v2.7.2"
 const forgerockRepo = "https://storage.googleapis.com/forgerock-charts"
 
-
-
 function doTest() {
     console.log("Running test...")
 
@@ -19,23 +17,22 @@ function doTest() {
     busybox.run().then( result => {
         console.log("Busybox =" + result)
     })
-
 }
 
-function helmUpgrade(commit) {
+function helmUpgrade(commit, namespace) {
     console.log("Upgrade commit " + commit)
     var helm = new Job("helm", "lachlanevenson/k8s-helm:" + helmTag)
     helm.storage.enabled = false
 
-    var upgrade = "helm upgrade --reuse-values --version 6.0.0 --set global.git.branch=" + commit + " openig forgerock/openig"
+    var cmd = "helm upgrade --namespace " + namespace + " --reuse-values --version 6.0.0 --set global.git.branch=" + commit + " openig forgerock/openig"
 
-    console.log("cmd is " + upgrade)
+    console.log("cmd is " + cmd)
     helm.tasks = [
        //"ls -R /src",
        "helm init --client-only",
        "helm repo add forgerock " + forgerockRepo,
        "helm search forgerock/",
-       upgrade
+       cmd
     ]
 
     console.log("Running helm...")
@@ -73,15 +70,14 @@ events.on("exec", (brigadeEvent, project) => {
 events.on("push", (event,project) => {
     console.log(util.inspect(event, false, null))
     var payload = JSON.parse(event.payload) // the github event payload
-    helmUpgrade(payload.after)
+    helmUpgrade(payload.after,"default")
 })
 
 events.on("pull_request", (event,project) => {
     console.log(util.inspect(event, false, null))
     var payload = JSON.parse(event.payload)
-
+    helmUpgrade(payload.after,"production")
 })
-
 
 events.on("error", (e) => {
     console.log("Error event " + util.inspect(e, false, null) )
