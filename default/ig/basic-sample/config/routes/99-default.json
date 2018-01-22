@@ -3,7 +3,7 @@
     "type": "StaticResponseHandler",
     "config" : {
       "status": 200,
-      "entity": "Hello and Welcome to OpenIG. Your path is ${request.uri.path}. OpenIG is using the default handler for this route."
+      "entity": "hello and Welcome to OpenIG. Your path is ${request.uri.path}. OpenIG is using the default handler for this route."
     }
   }
 }

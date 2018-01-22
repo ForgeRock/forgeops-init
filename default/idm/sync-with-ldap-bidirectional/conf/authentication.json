@@ -20,7 +20,7 @@
                 "properties" : {
                     "queryOnResource" : "repo/internal/user",
                     "username" : "anonymous",
-                    "password" : "anonymous",
+                    "password" : "&{openidm.anonymous.password}",
                     "defaultUserRoles" : [ "openidm-reg" ]
                 },
                 "enabled" : true

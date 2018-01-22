@@ -1,13 +1,19 @@
 {
-  "prefix" : "openig",
-  "mode": "PRODUCTION",
   "heap": [
     {
+      "name": "ClientHandler",
+      "type": "ClientHandler"
+    },
+    {
       "name": "ApiProtectionFilter",
-      "type": "ChainOfFilters",
+      "type": "ScriptableFilter",
       "config": {
-        "filters": []
+        "type": "application/x-groovy",
+        "source": [
+          "return next.handle(context, request)"
+        ]
       }
     }
-  ]
+  ],
+  "mode": "development"
 }
