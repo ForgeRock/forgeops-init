@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "RemoveSessionProperties",
+    "entityId" : "RemoveSessionProperties",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "RemoveSessionPropertiesNode",
+      "name" : "Remove Session Properties",
+      "collection" : false
+    }
+  }
+}

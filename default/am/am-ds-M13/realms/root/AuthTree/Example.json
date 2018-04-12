@@ -1,0 +1,45 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "&{version}",
+    "entityType" : "AuthTree",
+    "entityId" : "Example",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "Example",
+    "entryNodeId" : "70052da0-ef9e-4767-b27e-df831189c9f0",
+    "nodes" : {
+      "70052da0-ef9e-4767-b27e-df831189c9f0" : {
+        "nodeType" : "ZeroPageLoginNode",
+        "displayName" : "Zero Page Login Collector",
+        "connections" : {
+          "true" : "e5ec495a-2ae2-4eca-8afb-9781dea04170",
+          "false" : "92c44010-e1e9-4a4a-8a16-8278d661d68d"
+        }
+      },
+      "92c44010-e1e9-4a4a-8a16-8278d661d68d" : {
+        "nodeType" : "UsernameCollectorNode",
+        "displayName" : "User Name Collector",
+        "connections" : {
+          "outcome" : "4d46c420-999c-435a-ae34-0eca29876fe2"
+        }
+      },
+      "4d46c420-999c-435a-ae34-0eca29876fe2" : {
+        "nodeType" : "PasswordCollectorNode",
+        "displayName" : "Password Collector",
+        "connections" : {
+          "outcome" : "e5ec495a-2ae2-4eca-8afb-9781dea04170"
+        }
+      },
+      "e5ec495a-2ae2-4eca-8afb-9781dea04170" : {
+        "nodeType" : "DataStoreDecisionNode",
+        "displayName" : "Data Store Decision",
+        "connections" : {
+          "true" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false" : "92c44010-e1e9-4a4a-8a16-8278d661d68d"
+        }
+      }
+    }
+  }
+}

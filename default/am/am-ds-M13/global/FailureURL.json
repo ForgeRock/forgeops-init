@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "FailureURL",
+    "entityId" : "FailureURL",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "SetFailureUrlNode",
+      "name" : "Failure URL",
+      "collection" : false
+    }
+  }
+}
