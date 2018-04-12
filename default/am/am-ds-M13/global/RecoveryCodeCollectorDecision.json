@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "RecoveryCodeCollectorDecision",
+    "entityId" : "RecoveryCodeCollectorDecision",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "RecoveryCodeCollectorDecisionNode",
+      "name" : "Recovery Code Collector Decision",
+      "collection" : false
+    }
+  }
+}

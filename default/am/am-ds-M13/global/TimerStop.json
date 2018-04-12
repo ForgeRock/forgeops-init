@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "TimerStop",
+    "entityId" : "TimerStop",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "TimerStopNode",
+      "name" : "Timer Stop",
+      "collection" : false
+    }
+  }
+}

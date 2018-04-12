@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "SocialIgnoreProfile",
+    "entityId" : "SocialIgnoreProfile",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "SocialOAuthIgnoreProfileNode",
+      "name" : "Social Ignore Profile",
+      "collection" : false
+    }
+  }
+}
