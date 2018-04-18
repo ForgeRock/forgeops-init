@@ -31,19 +31,23 @@
         </New>
     </Arg>-->
 
-    <New id="httpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
+    <New id="httpSimpleConfig" class="org.eclipse.jetty.server.HttpConfiguration">
         <!-- remove Server header from HTTP responses, to prevent leaking server-type/version -->
         <Set name="sendServerVersion">false</Set>
         <Set name="outputBufferSize">32768</Set>
         <Set name="requestHeaderSize">8192</Set>
         <Set name="responseHeaderSize">8192</Set>
+    </New>
+
+    <New id="httpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
+        <Arg><Ref refid="httpSimpleConfig"/></Arg>
         <Call name="addCustomizer">
             <Arg><New class="org.eclipse.jetty.server.ForwardedRequestCustomizer"/></Arg>
         </Call>
     </New>
 
     <New id="tlsHttpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
-        <Arg><Ref refid="httpConfig"/></Arg>
+        <Arg><Ref refid="httpSimpleConfig"/></Arg>
         <Set name="secureScheme">https</Set>
         <Set name="securePort">
             <Call class="org.forgerock.openidm.jetty.Param"  name="getProperty">
@@ -53,10 +57,24 @@
         <Call name="addCustomizer">
             <Arg><New class="org.eclipse.jetty.server.SecureRequestCustomizer"/></Arg>
         </Call>
+        <Call name="addCustomizer">
+            <Arg>
+                <New class="org.eclipse.jetty.server.ForwardedRequestCustomizer">
+                    <!-- Prevent host header changes that may occur from URL hijacking attempts -->
+                    <Set name="hostHeader">
+                        <Call class="org.forgerock.openidm.jetty.Param" name="getProperty">
+                            <Arg>openidm.host</Arg>
+                        </Call>:<Call class="org.forgerock.openidm.jetty.Param" name="getProperty">
+                        <Arg>openidm.port.https</Arg>
+                    </Call>
+                    </Set>
+                </New>
+            </Arg>
+        </Call>
     </New>
 
     <New id="mutualAuthHttpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
-        <Arg><Ref refid="httpConfig"/></Arg>
+        <Arg><Ref refid="httpSimpleConfig"/></Arg>
         <Set name="secureScheme">https</Set>
         <Set name="securePort">
             <Call class="org.forgerock.openidm.jetty.Param"  name="getProperty">
@@ -65,6 +83,20 @@
         </Set>
         <Call name="addCustomizer">
             <Arg><New class="org.eclipse.jetty.server.SecureRequestCustomizer"/></Arg>
+        </Call>
+        <Call name="addCustomizer">
+            <Arg>
+                <New class="org.eclipse.jetty.server.ForwardedRequestCustomizer">
+                    <!-- Prevent host header changes that may occur from URL hijacking attempts -->
+                    <Set name="hostHeader">
+                        <Call class="org.forgerock.openidm.jetty.Param" name="getProperty">
+                            <Arg>openidm.host</Arg>
+                        </Call>:<Call class="org.forgerock.openidm.jetty.Param" name="getProperty">
+                        <Arg>openidm.port.mutualauth</Arg>
+                    </Call>
+                    </Set>
+                </New>
+            </Arg>
         </Call>
     </New>
 

@@ -647,6 +647,7 @@
             "tokenEndpoint" : "https://oauth.vk.com/access_token",
             "userInfoEndpoint" : "https://api.vk.com/method/users.get",
             "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "apiVersion" : "5.73",
             "scope" : [
                 "email"
             ],
@@ -660,10 +661,10 @@
                 "buttonCustomStyle" : "background-color: #4c75a3; border-color: #4c75a3;color: white;",
                 "buttonCustomStyleHover" : "background-color: #43658c; border-color: #43658c;color: white;"
             },
-            "authenticationIdKey" : "uid",
+            "authenticationIdKey" : "id",
             "propertyMap" : [
                 {
-                    "source" : "uid",
+                    "source" : "id",
                     "target" : "id"
                 },
                 {
@@ -693,7 +694,7 @@
                 "type" : "object",
                 "$schema" : "http://json-schema.org/draft-03/schema",
                 "properties" : {
-                    "uid" : {
+                    "id" : {
                         "description" : "ID",
                         "title" : "ID",
                         "viewable" : true,
@@ -730,7 +731,7 @@
                     }
                 },
                 "order" : [
-                    "uid",
+                    "id",
                     "name",
                     "last_name",
                     "first_name",
@@ -772,7 +773,7 @@
                     "target" : "id"
                 },
                 {
-                    "full_name" : "full_name",
+                    "source" : "full_name",
                     "target" : "displayName"
                 },
                 {
@@ -818,7 +819,6 @@
                         "type" : "string",
                         "searchable" : true
                     }
-
                 },
                 "order" : [
                     "id",

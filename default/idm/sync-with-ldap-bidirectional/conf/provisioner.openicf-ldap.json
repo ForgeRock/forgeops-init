@@ -1,5 +1,4 @@
 {
-    "name" : "ldap",
     "connectorRef" : {
         "bundleName" : "org.forgerock.openicf.connectors.ldap-connector",
         "bundleVersion" : "[1.4.0.0,1.5.0.0)",
@@ -7,12 +6,15 @@
     },
     "configurationProperties" : {
         "host" : "&{userstore.host}",
-        "port" : "&{userstore.port}",
+        "port" : 1389,
         "ssl" : false,
         "principal" : "cn=Directory Manager",
         "credentials" : "&{userstore.password}",
         "baseContexts" : [
-            "dc=openam,dc=forgerock,dc=org"
+            "&{userstore.basecontext}"
+        ],
+        "baseContextsToSynchronize" : [
+            "&{userstore.basecontext}"
         ],
         "accountSearchFilter" : null,
         "accountSynchronizationFilter" : null,
@@ -33,7 +35,7 @@
         ],
         "vlvSortAttribute" : "uid",
         "passwordAttribute" : "userPassword",
-        "useBlocks" : false,
+        "useBlocks" : true,
         "maintainPosixGroupMembership" : false,
         "failover" : [ ],
         "readSchema" : false,
@@ -50,12 +52,9 @@
         "passwordHashAlgorithm" : null,
         "usePagedResultControl" : true,
         "blockSize" : 100,
-        "uidAttribute" : "dn",
+        "uidAttribute" : "entryUUID",
         "maintainLdapGroupMembership" : false,
-        "respectResourcePasswordPolicyChangeAfterReset" : false,
-        "baseContextsToSynchronize" : [
-            "dc=openam,dc=forgerock,dc=org"
-        ]
+        "respectResourcePasswordPolicyChangeAfterReset" : false
     },
     "resultsHandlerConfig" : {
         "enableNormalizingResultsHandler" : true,
@@ -95,51 +94,38 @@
             "type" : "object",
             "nativeType" : "__ACCOUNT__",
             "properties" : {
-                "cn" : {
-                    "type" : "string",
-                    "nativeName" : "cn",
-                    "nativeType" : "string"
-                },
-                "employeeType" : {
-                    "type" : "string",
-                    "nativeName" : "employeeType",
-                    "nativeType" : "string"
-                },
-                "description" : {
-                    "type" : "string",
-                    "nativeName" : "description",
-                    "nativeType" : "string"
-                },
-                "givenName" : {
-                    "type" : "string",
-                    "nativeName" : "givenName",
-                    "nativeType" : "string"
-                },
-                "mail" : {
-                    "type" : "string",
-                    "nativeName" : "mail",
-                    "nativeType" : "string"
-                },
-                "telephoneNumber" : {
-                    "type" : "string",
-                    "nativeName" : "telephoneNumber",
-                    "nativeType" : "string"
-                },
-                "sn" : {
-                    "type" : "string",
-                    "nativeName" : "sn",
-                    "nativeType" : "string"
-                },
-                "uid" : {
-                    "type" : "string",
-                    "nativeName" : "uid",
-                    "nativeType" : "string"
-                },
                 "dn" : {
                     "type" : "string",
                     "nativeName" : "__NAME__",
                     "nativeType" : "string",
                     "required" : true
+                },
+                "objectClass" : {
+                    "type" : "array",
+                    "items" : {
+                        "type" : "string",
+                        "nativeType" : "string"
+                    },
+                    "nativeType" : "string",
+                    "nativeName" : "objectClass",
+                    "required" : false
+                },
+                "cn" : {
+                    "type" : "string",
+                    "nativeName" : "cn",
+                    "nativeType" : "string",
+                    "required" : true
+                },
+                "sn" : {
+                    "type" : "string",
+                    "nativeName" : "sn",
+                    "nativeType" : "string",
+                    "required" : true
+                },
+                "uid" : {
+                    "type" : "string",
+                    "nativeName" : "uid",
+                    "nativeType" : "string"
                 },
                 "userPassword" : {
                     "type" : "string",
@@ -160,6 +146,35 @@
                     "nativeName" : "ldapGroups",
                     "nativeType" : "string"
                 },
+                "givenName" : {
+                    "type" : "string",
+                    "nativeName" : "givenName",
+                    "nativeType" : "string"
+                },
+                "mail" : {
+                    "type" : "string",
+                    "nativeName" : "mail",
+                    "nativeType" : "string"
+                },
+                "employeeType" : {
+                    "type" : "array",
+                    "items" : {
+                        "type" : "string",
+                        "nativeType" : "string"
+                    },
+                    "nativeName" : "employeeType",
+                    "nativeType" : "string"
+                },
+                "description" : {
+                    "type" : "string",
+                    "nativeName" : "description",
+                    "nativeType" : "string"
+                },
+                "telephoneNumber" : {
+                    "type" : "string",
+                    "nativeName" : "telephoneNumber",
+                    "nativeType" : "string"
+                },
                 "disabled" : {
                     "type" : "string",
                     "nativeName" : "ds-pwp-account-disabled",
@@ -175,18 +190,8 @@
                     "nativeName" : "iplanet-am-user-alias-list",
                     "required" : false
                 },
-                "objectClass" : {
-                    "type" : "array",
-                    "items" : {
-                        "type" : "string",
-                        "nativeType" : "string"
-                    },
-                    "nativeType" : "string",
-                    "nativeName" : "objectClass",
-                    "required" : false
-                },
                 "kbaInfo" : {
-                    "type" : "string",
+                    "type" : "array",
                     "nativeType" : "string",
                     "nativeName" : "kbaInfo",
                     "required" : false
@@ -294,6 +299,5 @@
             "denied" : false,
             "onDeny" : "DO_NOTHING"
         }
-    },
-    "enabled" : true
+    }
 }

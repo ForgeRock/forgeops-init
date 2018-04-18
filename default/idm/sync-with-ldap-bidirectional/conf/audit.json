@@ -22,14 +22,18 @@
                 ],
                 "includeIf" : [ ]
             }
-        }
+        },
+        "caseInsensitiveFields" : [
+            "/access/http/request/headers",
+            "/access/http/response/headers"
+        ]
     },
     "eventHandlers" : [
         {
             "class" : "org.forgerock.audit.handlers.json.JsonAuditEventHandler",
             "config" : {
                 "name" : "json",
-                "logDirectory" : "&{launcher.working.location}/audit",
+                "logDirectory" : "&{idm.data.dir}/audit",
                 "buffering" : {
                     "maxSize" : 100000,
                     "writeInterval" : "100 millis"

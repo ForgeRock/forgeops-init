@@ -4,27 +4,19 @@
             "name" : "user",
             "onCreate" : {
                 "type" : "text/javascript",
-                "source" : "require('onCreateUser').setDefaultFields(object);require('onCreateUser').createIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);require('lastChanged').updateLastChanged(object);"
+                "source" : "require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);"
             },
             "onUpdate" : {
                 "type" : "text/javascript",
-                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('onUpdateUser').updateIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);require('lastChanged').updateLastChanged(object);"
+                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);"
             },
             "onDelete" : {
                 "type" : "text/javascript",
                 "file" : "onDelete-user-cleanup.js"
             },
-            "postCreate" : {
-                "type" : "text/javascript",
-                "file" : "roles/postOperation-roles.js"
-            },
-            "postUpdate" : {
-                "type" : "text/javascript",
-                "file" : "roles/postOperation-roles.js"
-            },
             "postDelete" : {
                 "type" : "text/javascript",
-                "file" : "roles/postOperation-roles.js"
+                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);"
             },
             "actions" : {
                 "resetPassword": {
@@ -63,10 +55,7 @@
                     "lastSync",
                     "kbaInfo",
                     "preferences",
-                    "termsAccepted",
-                    "lastChanged",
-                    "consentedMappings",
-                    "_meta"
+                    "consentedMappings"
                 ],
                 "properties" : {
                     "_id" : {
@@ -286,12 +275,14 @@
                         "usageDescription" : "",
                         "isPersonal" : false,
                         "type" : "array",
+                        "relationshipGrantTemporalConstraintsEnforced" : true,
                         "items" : {
                             "type" : "relationship",
                             "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User:roles:items",
                             "title" : "Provisioning Roles Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "members",
+                            "notifySelf" : true,
                             "validate" : true,
                             "properties" : {
                                 "_ref" : {
@@ -476,8 +467,8 @@
                     },
                     "telephoneNumber" : {
                         "type" : "string",
-                        "title" : "Mobile Phone",
-                        "description" : "Mobile Phone",
+                        "title" : "Telephone Number",
+                        "description" : "Telephone Number",
                         "viewable" : true,
                         "userEditable" : true,
                         "pattern" : "^\\+?([0-9\\- \\(\\)])*$",
@@ -603,67 +594,6 @@
                         ],
                         "required": []
                     },
-                    "termsAccepted" : {
-                        "title" : "Terms Accepted",
-                        "type" : "object",
-                        "viewable" : false,
-                        "searchable" : false,
-                        "userEditable" : true,
-                        "usageDescription" : "",
-                        "isPersonal" : false,
-                        "properties" : {
-                            "termsVersion" : {
-                                "title" : "",
-                                "description" : "Terms & Conditions Version",
-                                "type" : "string",
-                                "viewable" : true,
-                                "userEditable" : false
-                            },
-                            "iso8601date" : {
-                                "title" : "",
-                                "description" : "ISO 8601 Date and time format",
-                                "type" : "string",
-                                "viewable" : true,
-                                "userEditable" : false
-                            }
-                        },
-                        "order" : [
-                            "termsVersion",
-                            "iso8601date"
-                        ],
-                        "description" : "Terms Accepted",
-                        "returnByDefault" : true,
-                        "isVirtual" : false,
-                        "required" : [ ]
-                    },
-                    "lastChanged" : {
-                        "title" : "Last Changed",
-                        "type" : "object",
-                        "viewable" : false,
-                        "searchable" : false,
-                        "userEditable" : false,
-                        "usageDescription" : "",
-                        "isPersonal" : false,
-                        "properties" : {
-                            "date" : {
-                                "title" : "",
-                                "description" : "Last changed date",
-                                "type" : "string",
-                                "viewable" : true,
-                                "searchable" : true,
-                                "userEditable" : true
-                            }
-                        },
-                        "order" : [
-                            "date"
-                        ],
-                        "description" : "Last Changed",
-                        "returnByDefault" : true,
-                        "isVirtual" : false,
-                        "required" : [
-                            "date"
-                        ]
-                    },
                     "consentedMappings" : {
                         "title" : "Consented Mappings",
                         "description" : "Consented Mappings",
@@ -709,24 +639,6 @@
                         },
                         "returnByDefault" : false,
                         "isVirtual" : false
-                    },
-                    "_meta" : {
-                        "description" : "Metadata",
-                        "type" : "object",
-                        "viewable" : false,
-                        "searchable" : false,
-                        "isPersonal" : false,
-                        "properties" : {
-                            "creationDate" : {
-                                "description" : "Creation Date",
-                                "title" : "Creation Date",
-                                "type" : "string"
-                            }
-                        },
-                        "order" : [
-                            "creationDate"
-                        ],
-                        "required": []
                     }
                 },
                 "type" : "object",
@@ -736,6 +648,14 @@
                     "sn",
                     "mail"
                 ]
+            },
+            "meta" : {
+              "property" : "_meta",
+              "resourceCollection" : "internal/usermeta",
+              "trackedProperties" : [
+                  "createDate",
+                  "lastChanged"
+              ]
             }
         },
         {
@@ -743,10 +663,6 @@
             "onDelete" : {
                 "type" : "text/javascript",
                 "file" : "roles/onDelete-roles.js"
-            },
-            "onSync" : {
-                "type" : "text/javascript",
-                "source" : "require('roles/onSync-roles').syncUsersOfRoles(resourceName, oldObject, newObject, ['members']);"
             },
             "onCreate" : {
                 "type" : "text/javascript",
@@ -758,15 +674,15 @@
             },
             "postCreate" : {
                 "type" : "text/javascript",
-                "file" : "roles/postOperation-roles.js"
+                "source" : "require('roles/postOperation-roles').manageTemporalConstraints(resourceName);"
             },
             "postUpdate" : {
                 "type" : "text/javascript",
-                "file" : "roles/postOperation-roles.js"
+                "source" : "require('roles/postOperation-roles').manageTemporalConstraints(resourceName);"
             },
             "postDelete" : {
                 "type" : "text/javascript",
-                "file" : "roles/postOperation-roles.js"
+                "source" : "require('roles/postOperation-roles').manageTemporalConstraints(resourceName);"
             },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:Role",
@@ -803,6 +719,7 @@
                         "viewable" : true,
                         "type" : "array",
                         "returnByDefault" : false,
+                        "relationshipGrantTemporalConstraintsEnforced" : true,
                         "items" : {
                             "type" : "relationship",
                             "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:Role:members:items",
@@ -834,6 +751,7 @@
                             },
                             "resourceCollection" : [
                                 {
+                                    "notify" : true,
                                     "path" : "managed/user",
                                     "label" : "User",
                                     "query" : {
@@ -906,6 +824,7 @@
                             "title" : "Managed Assignments Items",
                             "reverseRelationship" : true,
                             "reversePropertyName" : "roles",
+                            "notifySelf" : true,
                             "validate" : true,
                             "properties" : {
                                 "_ref" : {
@@ -936,7 +855,8 @@
                                     }
                                 }
                             ]
-                        }
+                        },
+                        "notifyRelationships" : ["members"]
                     },
                     "condition" : {
                         "description" : "A conditional filter for this role",
@@ -966,7 +886,8 @@
                             "order" : [
                                 "duration"
                             ]
-                        }
+                        },
+                        "notifyRelationships" : ["members"]
                     }
                 },
                 "required" : [
@@ -986,10 +907,6 @@
         },
         {
             "name" : "assignment",
-            "onSync" : {
-                "type" : "text/javascript",
-                "source" : "require('roles/onSync-assignments').syncUsersOfRolesWithAssignment(resourceName, oldObject, newObject, ['roles']);"
-            },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:Assignment",
                 "$schema" : "http://forgerock.org/json-schema#",
@@ -1064,7 +981,8 @@
                                 "value"
                             ],
                             "required": []
-                        }
+                        },
+                        "notifyRelationships" : ["roles"]
                     },
                     "linkQualifiers" : {
                         "description" : "Conditional link qualifiers to restrict this assignment to.",
@@ -1109,6 +1027,7 @@
                             },
                             "resourceCollection" : [
                                 {
+                                    "notify" : true,
                                     "path" : "managed/role",
                                     "label" : "Role",
                                     "query" : {
