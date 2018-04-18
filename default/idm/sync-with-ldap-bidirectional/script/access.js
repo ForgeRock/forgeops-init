@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 ForgeRock AS. All Rights Reserved
+ * Copyright 2011-2018 ForgeRock AS. All Rights Reserved
  *
  * Use of this code requires a commercial software license with ForgeRock AS.
  * or with one of its affiliates. All use shall be exclusively subject
@@ -38,7 +38,7 @@ var httpAccessConfig =
            "pattern"    : "authentication",
            "roles"      : "*",
            "methods"    : "read,action",
-           "actions"    : "logout,login"
+           "actions"    : "login,logout"
         },
         {
            "pattern"    : "identityProviders",
@@ -110,6 +110,24 @@ var httpAccessConfig =
            "actions"    : "submitRequirements",
            "customAuthz" : "checkIfUIIsEnabled('forgotUsername')"
         },
+        {
+           "pattern"    : "selfservice/profile",
+           "roles"      : "*",
+           "methods"    : "read,action",
+           "actions"    : "submitRequirements"
+        },
+        {
+           "pattern"    : "selfservice/termsAndConditions",
+           "roles"      : "*",
+           "methods"    : "read,action",
+           "actions"    : "submitRequirements"
+        },
+        {
+           "pattern"    : "selfservice/kbaUpdate",
+           "roles"      : "*",
+           "methods"    : "read,action",
+           "actions"    : "submitRequirements"
+        },
 
         // self-service is allowed to call the policy service to validate any route
         {
@@ -151,7 +169,7 @@ var httpAccessConfig =
             "roles"     : "openidm-reg",
             "methods"   : "create",
             "actions"   : "*",
-            "customAuthz" : "checkIfUIIsEnabled('selfRegistration') && isSelfServiceRequest() && onlyEditableManagedObjectProperties('user', ['idpData'])"
+            "customAuthz" : "checkIfUIIsEnabled('selfRegistration') && isSelfServiceRequest() && onlyEditableManagedObjectProperties('user', [])"
         },
         {
             "pattern"   : "managed/user",
@@ -172,7 +190,7 @@ var httpAccessConfig =
             "roles"     : "*",
             "methods"   : "patch,action",
             "actions"   : "patch",
-            "customAuthz" : "(checkIfUIIsEnabled('selfRegistration') || checkIfUIIsEnabled('passwordReset')) && isSelfServiceRequest() && onlyEditableManagedObjectProperties('user', ['idpData'])"
+            "customAuthz" : "(checkIfUIIsEnabled('selfRegistration') || checkIfUIIsEnabled('passwordReset') || checkIfProgressiveProfileIsEnabled()) && isSelfServiceRequest() && onlyEditableManagedObjectProperties('user', [])"
         },
         {
             "pattern"   : "external/email",
@@ -185,7 +203,7 @@ var httpAccessConfig =
         // Schema service that provides sanitized schema data needed to support the UI
         {
             "pattern"    : "schema/*",
-            "roles"      : "openidm-authorized",
+            "roles"      : "openidm-authorized,openidm-authenticated",
             "methods"    : "read",
             "actions"    : "*"
         },
@@ -362,6 +380,12 @@ var httpAccessConfig =
             "methods"   : "patch,action",
             "actions"   : "patch",
             "customAuthz" : "isQueryOneOf({'managed/user': ['for-userName']}) && restrictPatchToFields(['password'])"
+        },
+        // Prometheus related endpoint for authorized users
+        {
+           "pattern"    : "metrics/prometheus",
+           "roles"      : "openidm-prometheus",
+           "methods"    : "read"
         }
     ]
 };

@@ -1,7 +1,7 @@
 {
     "enabled" : false,
-    "type": "cron",
-    "schedule": "30 0/1 * * * ?",
+    "type": "simple",
+    "repeatInterval": 1800000,
     "persisted" : true,
     "concurrentExecution" : false,
     "invokeService": "sync",

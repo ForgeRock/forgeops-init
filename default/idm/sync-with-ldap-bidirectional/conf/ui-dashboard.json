@@ -1,4 +1,4 @@
-{ 
+{
     "dashboard" : {
         "widgets" : [
             {
@@ -25,7 +25,7 @@
     },
     "adminDashboards" : [
         {
-            "name" : "Administration",
+            "name" : "Quick Start",
             "isDefault" : true,
             "widgets" : [
                 {
@@ -73,10 +73,6 @@
                             "href" : "#settings/"
                         }
                     ]
-                },
-                {
-                    "type" : "resourceList",
-                    "size" : "large"
                 }
             ]
         },
@@ -87,13 +83,32 @@
                 {
                     "type" : "audit",
                     "size" : "large",
-                    "minRange": "#b0d4cd",
-                    "maxRange": "#24423c",
-                    "legendRange": {
-                        "week": [10, 30, 90, 270, 810],
-                        "month": [500, 2500, 5000],
-                        "year": [10000, 40000, 100000, 250000]
+                    "minRange" : "#b0d4cd",
+                    "maxRange" : "#24423c",
+                    "legendRange" : {
+                        "week" : [
+                            10,
+                            30,
+                            90,
+                            270,
+                            810
+                        ],
+                        "month" : [
+                            500,
+                            2500,
+                            5000
+                        ],
+                        "year" : [
+                            10000,
+                            40000,
+                            100000,
+                            250000
+                        ]
                     }
+                },
+                {
+                    "type" : "clusterStatus",
+                    "size" : "large"
                 },
                 {
                     "type" : "systemHealthFull",
@@ -118,21 +133,16 @@
                 {
                     "type" : "counter",
                     "size" : "x-small",
-                    "selected" : "socialEnabled"
-                },
-                {
-                    "type" : "counter",
-                    "size" : "x-small",
                     "selected" : "rolesEnabled"
-                },
-                {
-                    "type" : "resourceList",
-                    "size" : "large"
                 },
                 {
                     "type" : "counter",
                     "size" : "x-small",
                     "selected" : "activeConnectors"
+                },
+                {
+                    "type" : "resourceList",
+                    "size" : "large"
                 }
             ]
         },
@@ -141,19 +151,42 @@
             "isDefault" : false,
             "widgets" : [
                 {
-                    "type" : "socialRegistration",
-                    "size" : "small"
+                    "type" : "signIns",
+                    "size" : "x-small",
+                    "widgetTitle" : "Sign-Ins",
+                    "providers" : [
+                        "Username/Password"
+                    ],
+                    "graphType" : "fa-pie-chart"
+                },
+                {
+                    "type" : "passwordResets",
+                    "size" : "x-small",
+                    "widgetTitle" : "Password Resets",
+                    "graphType" : "fa-bar-chart"
+                },
+                {
+                    "type" : "newRegistrations",
+                    "size" : "x-small",
+                    "widgetTitle" : "New Registrations",
+                    "providers" : [
+                        "Username/Password"
+                    ],
+                    "graphType" : "fa-line-chart"
                 },
                 {
                     "type" : "socialLogin",
-                    "size" : "small"
+                    "size" : "x-small",
+                    "timezone" : {
+                        "negative" : true,
+                        "hours" : "07",
+                        "minutes" : "00"
+                    }
                 },
                 {
-                    "type" : "relationship",
-                    "size" : "medium",
-                    "chartType" : "collapsibleTree",
-                    "defaultObject" : "user",
-                    "searchProperty" : "userName"
+                    "type" : "counter",
+                    "size" : "x-small",
+                    "selected" : "socialEnabled"
                 },
                 {
                     "type" : "counter",

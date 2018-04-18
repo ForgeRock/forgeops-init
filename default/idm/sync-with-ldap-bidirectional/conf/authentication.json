@@ -20,7 +20,7 @@
                 "properties" : {
                     "queryOnResource" : "repo/internal/user",
                     "username" : "anonymous",
-                    "password" : "&{openidm.anonymous.password}",
+                    "password" : "anonymous",
                     "defaultUserRoles" : [ "openidm-reg" ]
                 },
                 "enabled" : true
@@ -59,7 +59,7 @@
             },
             {   "name" : "CLIENT_CERT",
                 "properties" : {
-                    "queryOnResource" : "security/truststore",
+                    "queryOnResource" : "managed/user",
                     "defaultUserRoles" : [ "openidm-cert" ],
                     "allowedAuthenticationIdPatterns" : [ ]
                 },
@@ -97,6 +97,18 @@
                     "propertyMapping" : {
                         "userRoles" : "authzRoles"
                     }
+                },
+                "enabled" : true
+            },
+            {
+                "name" : "STATIC_USER",
+                "properties" : {
+                    "queryOnResource" : "repo/internal/user",
+                    "username" : "&{openidm.prometheus.username}",
+                    "password" : "&{openidm.prometheus.password}",
+                    "defaultUserRoles" : [
+                        "openidm-prometheus"
+                    ]
                 },
                 "enabled" : true
             }
