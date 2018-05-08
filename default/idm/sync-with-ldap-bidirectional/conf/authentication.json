@@ -107,7 +107,7 @@
                     "username" : "&{openidm.prometheus.username}",
                     "password" : "&{openidm.prometheus.password}",
                     "defaultUserRoles" : [
-                        "openidm-prometheus"
+                        "&{openidm.prometheus.role}"
                     ]
                 },
                 "enabled" : true
