@@ -7,7 +7,7 @@
   "connectionTimeout" : 30000,
   "connectionPool" : {
     "type" : "hikari",
-    "minimumIdle" : 20,
-    "maximumPoolSize" : 50
+    "minimumIdle" : 10,
+    "maximumPoolSize" : 25
   }
 }
