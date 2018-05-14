@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "RegisterLogoutWebhook",
+    "entityId" : "RegisterLogoutWebhook",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "RegisterLogoutWebhookNode",
+      "name" : "Register Logout Webhook",
+      "collection" : false
+    }
+  }
+}

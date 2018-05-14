@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "SocialGoogleNode",
+    "entityId" : "SocialGoogleNode",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "SocialGoogleNode",
+      "name" : "Social google node",
+      "collection" : false
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "ModifyAuthLevel",
+    "entityId" : "ModifyAuthLevel",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "ModifyAuthLevelNode",
+      "name" : "Modify Auth Level",
+      "collection" : false
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "&{version}",
+    "entityType" : "DataStoreDecision",
+    "entityId" : "0733dd9e-6c69-4f3d-9288-7d64a9d698ff",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "0733dd9e-6c69-4f3d-9288-7d64a9d698ff",
+    "_type" : {
+      "_id" : "DataStoreDecisionNode",
+      "name" : "Data Store Decision",
+      "collection" : true
+    }
+  }
+}

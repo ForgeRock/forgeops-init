@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "LDAPDecision",
+    "entityId" : "LDAPDecision",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "LdapDecisionNode",
+      "name" : "LDAP Decision",
+      "collection" : false
+    }
+  }
+}

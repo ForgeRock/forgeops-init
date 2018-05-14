@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "TimerStart",
+    "entityId" : "TimerStart",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "TimerStartNode",
+      "name" : "Timer Start",
+      "collection" : false
+    }
+  }
+}

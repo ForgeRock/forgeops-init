@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "PageNode",
+    "entityId" : "PageNode",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "PageNode",
+      "name" : "Page Node",
+      "collection" : false
+    }
+  }
+}
