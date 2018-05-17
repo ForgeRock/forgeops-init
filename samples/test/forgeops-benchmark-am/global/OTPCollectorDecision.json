@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0-M13",
+    "entityType" : "OTPCollectorDecision",
+    "entityId" : "OTPCollectorDecision",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "OneTimePasswordCollectorDecisionNode",
+      "name" : "OTP Collector Decision",
+      "collection" : false
+    }
+  }
+}

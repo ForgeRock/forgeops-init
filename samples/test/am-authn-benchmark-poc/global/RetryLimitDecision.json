@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0-M5",
+    "entityType" : "RetryLimitDecision",
+    "entityId" : "RetryLimitDecision",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "RetryLimitDecisionNode",
+      "name" : "Retry Limit Decision",
+      "collection" : false
+    }
+  }
+}
