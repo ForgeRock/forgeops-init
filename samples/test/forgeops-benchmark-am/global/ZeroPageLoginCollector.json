@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0-M13",
+    "entityType" : "ZeroPageLoginCollector",
+    "entityId" : "ZeroPageLoginCollector",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "ZeroPageLoginNode",
+      "name" : "Zero Page Login Collector",
+      "collection" : false
+    }
+  }
+}

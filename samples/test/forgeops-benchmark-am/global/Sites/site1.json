@@ -1,0 +1,15 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0-M13",
+    "entityType" : "Sites",
+    "entityId" : "site1",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "site1",
+    "id" : "02",
+    "url" : "http://openam.benchmark.forgeops.com/openam",
+    "secondaryURLs" : [ ]
+  }
+}

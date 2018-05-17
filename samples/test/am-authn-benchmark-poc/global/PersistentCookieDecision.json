@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0-M5",
+    "entityType" : "PersistentCookieDecision",
+    "entityId" : "PersistentCookieDecision",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "PersistentCookieDecisionNode",
+      "name" : "Persistent Cookie Decision",
+      "collection" : false
+    }
+  }
+}
