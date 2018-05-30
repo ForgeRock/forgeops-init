@@ -15,5 +15,5 @@
       }
     }
   ],
-  "mode": "development"
+  "mode": "PRODUCTION"
 }
