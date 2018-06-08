@@ -22,6 +22,11 @@
       "serverName" : "Server1",
       "connectionType" : "SIMPLE",
       "portNumber" : "1389"
+    }, {
+      "hostName" : "configstore-1.configstore",
+      "serverName" : "Server2",
+      "connectionType" : "SIMPLE",
+      "portNumber" : "1389"
     } ]
   }
 }
