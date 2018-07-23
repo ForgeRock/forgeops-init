@@ -1,0 +1,9 @@
+{
+    "enabled" : true,
+    "urlContextRoot" : "/",
+    "defaultDir" : "&{idm.install.dir}/ui/selfservice/default",
+    "extensionDir" : "&{idm.install.dir}/ui/selfservice/extension",
+    "responseHeaders" : {
+        "X-Frame-Options" : "DENY"
+    }
+}

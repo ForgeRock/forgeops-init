@@ -1,0 +1,29 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "&{version}",
+    "entityType" : "Policies",
+    "entityId" : "agent_testing_policy",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "agent_testing_policy",
+    "name" : "agent_testing_policy",
+    "active" : true,
+    "description" : "",
+    "resources" : [ "http://apache-agent.smoke.forgeops.com:80/policy.html", "http://nginx-agent.smoke.forgeops.com:80/policy.html" ],
+    "actionValues" : {
+      "POST" : false,
+      "GET" : true
+    },
+    "applicationName" : "iPlanetAMWebAgentService",
+    "subject" : {
+      "type" : "AuthenticatedUsers"
+    },
+    "resourceTypeUuid" : "76656a38-5f8e-401b-83aa-4ccb74ce88d2",
+    "lastModifiedBy" : "id=amadmin,ou=user,o=userstore",
+    "lastModifiedDate" : "2018-07-09T13:38:57.987Z",
+    "createdBy" : "id=amadmin,ou=user,o=userstore",
+    "creationDate" : "2018-07-09T13:36:27.978Z"
+  }
+}

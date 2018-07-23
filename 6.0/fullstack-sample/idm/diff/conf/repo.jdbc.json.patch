@@ -1,0 +1,22 @@
+[
+    {
+        "operation" : "remove",
+        "field" : "/resourceMapping/explicitMapping/security%2Fkeys"
+    },
+    {
+        "operation" : "replace",
+        "field" : "/resourceMapping/genericMapping/relationships/searchableDefault",
+        "value" : false
+    },
+    {
+        "operation" : "add",
+        "field" : "/resourceMapping/genericMapping/relationships/objectToColumn",
+        "value" : {
+            "firstId" : "firstid",
+            "secondId" : "secondid",
+            "firstPropertyName" : "firstpropertyname",
+            "secondPropertyName" : "secondpropertyname",
+            "properties" : { "column" : "properties", "type" : "JSON_MAP" }
+        }
+    }
+]
