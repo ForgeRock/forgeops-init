@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0-M5",
+    "entityType" : "AccountLockout",
+    "entityId" : "AccountLockout",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "AccountLockoutNode",
+      "name" : "Account lockout",
+      "collection" : false
+    }
+  }
+}
