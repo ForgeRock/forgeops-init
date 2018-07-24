@@ -1,0 +1,16 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0-M5",
+    "entityType" : "Realms",
+    "entityId" : "Lw",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "Lw",
+    "parentPath" : null,
+    "active" : true,
+    "name" : "/",
+    "aliases" : [ "openam.lee.example.com", "openam" ]
+  }
+}

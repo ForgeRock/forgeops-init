@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0-M13",
+    "entityType" : "ChoiceCollector",
+    "entityId" : "ChoiceCollector",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "ChoiceCollectorNode",
+      "name" : "Choice Collector",
+      "collection" : false
+    }
+  }
+}
