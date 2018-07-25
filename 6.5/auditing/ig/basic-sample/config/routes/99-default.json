@@ -1,0 +1,44 @@
+{
+  "handler": {
+    "type": "StaticResponseHandler",
+    "config" : {
+      "status": 200,
+      "entity": "hello and Welcome to OpenIG. Your path is ${request.uri.path}. OpenIG is using the default handler for this route."
+    }
+  },
+  "auditService": {
+    "name": "AuditService",
+    "type": "AuditService",
+    "config": {
+      "config": {},
+      "event-handlers": [
+        {
+          "class": "org.forgerock.audit.handlers.json.JsonAuditEventHandler",
+          "config": {
+            "name": "json",
+            "logDirectory": "/tmp/logs",
+            "elasticsearchCompatible": false,
+            "topics": [
+              "access"
+            ],
+            "buffering": {
+              "maxSize": 100000,
+              "writeInterval": "100 ms"
+            }, 
+            "fileRotation": {
+              "rotationEnabled": true,
+              "maxFileSize": 100000000,
+              "rotationFileSuffix": "-yyyy.MM.dd-HH.mm.ss",
+            },
+            "fileRetention": {
+                "maxNumberOfHistoryFiles": 1,
+                "maxDiskSpaceToUse": 100000000,
+                "minFreeSpaceRequired": 10000000000,
+                "rotationRetentionCheckInterval": "2 m"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
