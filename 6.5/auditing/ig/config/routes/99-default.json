@@ -24,18 +24,8 @@
             "buffering": {
               "maxSize": 100000,
               "writeInterval": "100 ms"
-            }, 
-            "fileRotation": {
-              "rotationEnabled": true,
-              "maxFileSize": 100000000,
-              "rotationFileSuffix": "-yyyy.MM.dd-HH.mm.ss",
             },
-            "fileRetention": {
-                "maxNumberOfHistoryFiles": 1,
-                "maxDiskSpaceToUse": 100000000,
-                "minFreeSpaceRequired": 10000000000,
-                "rotationRetentionCheckInterval": "2 m"
-            }
+            "rotationRetentionCheckInterval": "1 m"
           }
         }
       ]
