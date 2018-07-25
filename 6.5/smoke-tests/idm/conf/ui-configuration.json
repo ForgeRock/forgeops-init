@@ -1,6 +1,6 @@
 {
     "configuration" : {
-        "selfRegistration" : false,
+        "selfRegistration" : true,
         "passwordReset" : false,
         "forgotUsername" : false,
         "lang" : "en",
