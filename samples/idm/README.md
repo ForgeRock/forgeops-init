@@ -1,4 +1,4 @@
-# IDM configs here
+# IDM samples here.
 
 
 
