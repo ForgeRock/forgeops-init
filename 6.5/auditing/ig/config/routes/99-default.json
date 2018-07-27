@@ -1,0 +1,34 @@
+{
+  "handler": {
+    "type": "StaticResponseHandler",
+    "config" : {
+      "status": 200,
+      "entity": "hello and Welcome to OpenIG. Your path is ${request.uri.path}. OpenIG is using the default handler for this route."
+    }
+  },
+  "auditService": {
+    "name": "AuditService",
+    "type": "AuditService",
+    "config": {
+      "config": {},
+      "event-handlers": [
+        {
+          "class": "org.forgerock.audit.handlers.json.JsonAuditEventHandler",
+          "config": {
+            "name": "json",
+            "logDirectory": "/tmp/logs",
+            "elasticsearchCompatible": false,
+            "topics": [
+              "access"
+            ],
+            "buffering": {
+              "maxSize": 100000,
+              "writeInterval": "100 ms"
+            },
+            "rotationRetentionCheckInterval": "1 m"
+          }
+        }
+      ]
+    }
+  }
+}
