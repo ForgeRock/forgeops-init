@@ -1,0 +1,96 @@
+{
+    "serverAuthContext" : {
+        "sessionModule" : {
+            "name" : "JWT_SESSION",
+            "properties" : {
+                "keyAlias" : "&{openidm.https.keystore.cert.alias}",
+                "privateKeyPassword" : "&{openidm.keystore.password}",
+                "keystoreType" : "&{openidm.keystore.type}",
+                "keystoreFile" : "&{openidm.keystore.location}",
+                "keystorePassword" : "&{openidm.keystore.password}",
+                "sessionOnly" : true,
+                "isHttpOnly" : true,
+                "maxTokenLifeSeconds" : "5",
+                "tokenIdleTimeSeconds" : "5"
+            }
+        },
+        "authModules" : [
+            {
+                "name" : "STATIC_USER",
+                "properties" : {
+                    "queryOnResource" : "endpoint/static/user",
+                    "username" : "anonymous",
+                    "password" : "&{openidm.anonymous.password}",
+                    "defaultUserRoles" : [
+                        "openidm-reg"
+                    ]
+                },
+                "enabled" : true
+            },
+            {
+                "name" : "STATIC_USER",
+                "properties" : {
+                    "queryOnResource" : "endpoint/static/user",
+                    "username" : "openidm-admin",
+                    "password" : "&{openidm.admin.password}",
+                    "defaultUserRoles" : [
+                        "openidm-admin",
+                        "openidm-authorized"
+                    ]
+                },
+                "enabled" : true
+            },
+            {
+                "name" : "OAUTH_CLIENT",
+                "properties" : {
+                    "augmentSecurityContext" : {
+                        "type" : "text/javascript",
+                        "globals" : {
+                            "sessionValidationBaseEndpoint" : "http://openam.alex.forgeops.com/openam/json/sessions/"
+                        },
+                        "file" : "script/amSessionCheck.js"
+                    },
+                    "propertyMapping" : {
+                        "authenticationId" : "uid",
+                        "userRoles" : "authzRoles"
+                    },
+                    "defaultUserRoles" : [
+                        "openidm-authorized"
+                    ],
+                    "idpConfig" : {
+                        "provider" : "OPENAM",
+                        "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider\"><img src=\"images/forgerock_logo.png\">Sign In</button>",
+                        "scope" : [
+                            "openid"
+                        ],
+                        "authenticationIdKey" : "sub",
+                        "clientId" : "openidm",
+                        "clientSecret" : {
+                            "$crypto" : {
+                                "type" : "x-simple-encryption",
+                                "value" : {
+                                    "cipher" : "AES/CBC/PKCS5Padding",
+                                    "salt" : "zu/1nU15X8dYziZidGU80g==",
+                                    "data" : "N12MSQtphpQJAK/JfLK51A==",
+                                    "iv" : "q5Ieu8TP+Dv+9FRCzEQ4/Q==",
+                                    "key" : "openidm-sym-default",
+                                    "mac" : "0AcQRnoupYatE0/CsZAtjA=="
+                                }
+                            }
+                        },
+                        "authorizationEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/authorize",
+                        "tokenEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/access_token",
+                        "endSessionEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/connect/endSession",
+                        "wellKnownEndpoint" : "http://openam.alex.forgeops.com/openam/oauth2/.well-known/openid-configuration",
+                        "redirectUri" : "http://localhost:8080/oauthReturn/",
+                        "configClass" : "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration",
+                        "displayIcon" : "forgerock",
+                        "enabled" : true
+                    },
+                    "queryOnResource" : "managed/user"
+                },
+                "enabled" : true
+            }
+        ]
+    }
+}
