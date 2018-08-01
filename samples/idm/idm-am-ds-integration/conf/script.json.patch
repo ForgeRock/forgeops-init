@@ -1,0 +1,10 @@
+[
+    {
+        "operation" : "replace",
+        "field" : "/ECMAScript/",
+        "value" :  {
+                "#javascript.debug" : "&{openidm.script.javascript.debug}",
+                "javascript.recompile.minimumInterval" : "60000"
+        }
+    }
+]

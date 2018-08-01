@@ -1,0 +1,26 @@
+[
+	{
+        "operation" : "transform",
+        "field" : "/serverAuthContext/authModules",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "content.push(static_user); content;",
+                "globals" : {
+                    "static_user" : {
+                        "name" : "STATIC_USER",
+	        			"properties" : {
+	            			"queryOnResource" : "repo/internal/user",
+	            			"username" : "&{openidm.prometheus.username}",
+	            			"password" : "&{openidm.prometheus.password}",
+	            			"defaultUserRoles" : [
+	            				 "&{openidm.prometheus.role}"
+	            			]
+	        			},
+	        			"enabled" : true
+                    }
+                }
+            }
+        }
+    }
+]
