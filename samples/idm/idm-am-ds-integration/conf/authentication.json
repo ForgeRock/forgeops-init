@@ -65,19 +65,7 @@
                         ],
                         "authenticationIdKey" : "sub",
                         "clientId" : "openidm",
-                        "clientSecret" : {
-                            "$crypto" : {
-                                "type" : "x-simple-encryption",
-                                "value" : {
-                                    "cipher" : "AES/CBC/PKCS5Padding",
-                                    "salt" : "zu/1nU15X8dYziZidGU80g==",
-                                    "data" : "N12MSQtphpQJAK/JfLK51A==",
-                                    "iv" : "q5Ieu8TP+Dv+9FRCzEQ4/Q==",
-                                    "key" : "openidm-sym-default",
-                                    "mac" : "0AcQRnoupYatE0/CsZAtjA=="
-                                }
-                            }
-                        },
+                        "clientSecret" : "openidm",
                         "authorizationEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/authorize",
                         "tokenEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/access_token",
                         "endSessionEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/connect/endSession",
