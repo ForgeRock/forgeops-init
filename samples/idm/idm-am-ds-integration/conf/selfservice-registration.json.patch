@@ -1,0 +1,12 @@
+[
+    {
+        "operation" : "transform",
+        "field" : "stageConfigs",
+        "value" : {
+            "script" : {
+            "type" : "text/javascript",
+            "source" : "content.map(function(obj){if(obj.name==\"termsAndConditions\"){var version=obj.version==null?\"1.0\":obj.version;openidm.create('config/','selfservice.terms',{\"active\":version,\"uiConfig\":{\"displayName\":\"We have updated our terms\",\"purpose\":\"To proceed, accept these terms\",\"buttonText\":\"Accept\"},\"versions\":[{\"version\":version,\"termsTranslations\":obj.termsTranslations,\"createDate\":(new Date()).toISOString()}]});return{\"name\":obj.name};}else{return obj;}});"
+            }
+        }
+    }
+]
