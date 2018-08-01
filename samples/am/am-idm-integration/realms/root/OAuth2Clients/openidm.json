@@ -45,7 +45,7 @@
     "coreOpenIDClientConfig" : {
       "jwtTokenLifetime" : 0,
       "clientSessionUri" : null,
-      "postLogoutRedirectUri" : [ "http://localhost:8080/", "http://localhost:8080/admin/" ],
+      "postLogoutRedirectUri" : [ "http://openidm.alex.forgeops.com/", "http://openidm.alex.forgeops.com/admin/" ],
       "defaultMaxAge" : 600,
       "claims" : [ ],
       "defaultAcrValues" : [ ],
@@ -62,7 +62,7 @@
       "scopes" : [ "openid" ],
       "agentgroup" : null,
       "refreshTokenLifetime" : 0,
-      "redirectionUris" : [ "http://localhost:8080/oauthReturn/" ],
+      "redirectionUris" : [ "http://openidm.alex.forgeops.com/oauthReturn/" ],
       "status" : "Active"
     },
     "coreUmaClientConfig" : {
