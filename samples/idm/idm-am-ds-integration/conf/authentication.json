@@ -70,7 +70,7 @@
                         "tokenEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/access_token",
                         "endSessionEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/connect/endSession",
                         "wellKnownEndpoint" : "http://openam.alex.forgeops.com/openam/oauth2/.well-known/openid-configuration",
-                        "redirectUri" : "http://localhost:8080/oauthReturn/",
+                        "redirectUri" : "http://openidm.alex.forgeops.com/oauthReturn/",
                         "configClass" : "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration",
                         "displayIcon" : "forgerock",
                         "enabled" : true
