@@ -1,0 +1,21 @@
+[
+     {
+        "operation":"replace",
+        "field":"/stylesheets",
+        "value":[
+            "css/bootstrap-3.3.7-custom.css",
+            "css/structure.css",
+            "css/theme.css"
+        ]
+    },
+    {
+       "operation":"replace",
+       "field":"/settings/logo/src",
+       "value":"images/logo-horizontal-white.png"
+   },
+   {
+       "operation":"replace",
+       "field":"/settings/loginLogo/src",
+       "value":"images/login-logo-dark.png"
+   }
+ ]

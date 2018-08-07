@@ -1,0 +1,391 @@
+[
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'user', 'onCreate', { \"type\" : \"text/javascript\", \"source\" : \"require('onCreateUser').setDefaultFields(object);require('onCreateUser').createIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);require('lastChanged').updateLastChanged(object);\" })"
+            }
+        }
+    },
+	{
+		"operation": "transform",
+		"field": "/objects",
+		"value": {
+			"script": {
+				"type": "text/javascript",
+				"source": "require('managedPatchHelper').add(content, 'user', 'onUpdate', { \"type\" : \"text/javascript\", \"source\" : \"require('onUpdateUser').preserveLastSync(object, oldObject, request);require('onUpdateUser').updateIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);require('lastChanged').updateLastChanged(object);\" })"
+			}
+		}
+	},
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'user', 'onDelete', {  \"type\" : \"text/javascript\", \"file\" : \"onDelete-user-cleanup.js\" })"
+            }
+        }
+    },
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').remove(content, 'user', 'actions.resetPassword')"
+            }
+        }
+    },
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').remove(content, 'user', 'schema.properties.lastChanged')"
+            }
+        }
+    },
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'user', 'schema.order', order)",
+                "globals": {
+                    "order" : [
+                        "_id",
+                        "userName",
+                        "password",
+                        "givenName",
+                        "sn",
+                        "mail",
+                        "description",
+                        "accountStatus",
+                        "telephoneNumber",
+                        "postalAddress",
+                        "address2",
+                        "city",
+                        "postalCode",
+                        "country",
+                        "stateProvince",
+                        "roles",
+                        "manager",
+                        "authzRoles",
+                        "reports",
+                        "effectiveRoles",
+                        "effectiveAssignments",
+                        "lastSync",
+                        "kbaInfo",
+                        "preferences",
+                        "consentedMappings"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').remove(content, 'user', 'schema.properties.termsAccepted')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "require('managedPatchHelper').remove(content, 'assignment', 'schema.order');"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "require('managedPatchHelper').add(content, 'assignment', 'schema.order', [\"_id\", \"name\", \"description\", \"mapping\", \"attributes\",\"linkQualifiers\", \"roles\"]);"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "require('managedPatchHelper').remove(content, 'role', 'schema.order');"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "require('managedPatchHelper').add(content, 'role', 'schema.order', [\"_id\", \"name\", \"description\", \"members\", \"authzMembers\", \"assignments\", \"condition\", \"temporalConstraints\"]);"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.remove(content, 'role', 'onSync');"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.remove(content, 'assignment', 'onSync');"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'role', 'schema.properties.assignments.notifyRelationships', [\"members\"]);"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'role', 'schema.properties.temporalConstraints.notifyRelationships', [\"members\"]);"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'assignment', 'schema.properties.attributes.notifyRelationships', [\"roles\"]);"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'onCreate', { \"type\" : \"text/javascript\", \"source\": \"require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);require('lastChanged').updateLastChanged(object);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'onUpdate', { \"type\" : \"text/javascript\", \"source\": \"require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);require('lastChanged').updateLastChanged(object);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'postCreate', { \"type\" : \"text/javascript\", \"source\": \"require('roles/postOperation-roles').manageTemporalConstraints(resourceName);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'postUpdate', { \"type\" : \"text/javascript\", \"source\": \"require('roles/postOperation-roles').manageTemporalConstraints(resourceName);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'postDelete', { \"type\" : \"text/javascript\", \"source\": \"require('roles/postOperation-roles').manageTemporalConstraints(resourceName);require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'role', 'postCreate', { \"type\" : \"text/javascript\", \"source\": \"require('roles/postOperation-roles').manageTemporalConstraints(resourceName);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'role', 'postUpdate', { \"type\" : \"text/javascript\", \"source\": \"require('roles/postOperation-roles').manageTemporalConstraints(resourceName);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'role', 'postDelete', { \"type\" : \"text/javascript\", \"source\": \"require('roles/postOperation-roles').manageTemporalConstraints(resourceName);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.remove(content, 'user', 'postCreate');"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.remove(content, 'user', 'postUpdate');"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'postDelete', { \"type\" : \"text/javascript\", \"source\": \"require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'schema.properties.roles.relationshipGrantTemporalConstraintsEnforced', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'role', 'schema.properties.members.relationshipGrantTemporalConstraintsEnforced', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'onCreate',  { \"type\" : \"text/javascript\", \"source\" : \"require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);require('lastChanged').updateLastChanged(object);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'schema.properties.roles.items.notifySelf', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'role', 'schema.properties.assignments.items.notifySelf', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'role', 'schema.properties.members.items.resourceCollection', [{\"notify\" : true,\"path\" : \"managed/user\",\"label\" : \"User\",\"query\" : {\"queryFilter\" : \"true\",\"fields\" : [\"userName\",\"givenName\",\"sn\"]}}])"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'assignment', 'schema.properties.roles.items.resourceCollection', [{ \"notify\" : true, \"path\" : \"managed/role\", \"label\" : \"Role\", \"query\" : {\"queryFilter\" : \"true\", \"fields\" : [ \"name\" ]}}])"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'onCreate',  { \"type\" : \"text/javascript\", \"source\" : \"require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'onUpdate',  { \"type\" : \"text/javascript\", \"source\" : \"require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);\"})"
+            }
+        }
+    }
+]

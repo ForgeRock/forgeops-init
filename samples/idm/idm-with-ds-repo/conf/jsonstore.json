@@ -1,0 +1,4 @@
+{
+  "cleanupDwellSeconds" : 3600,
+  "entryExpireSeconds" : 1800
+}
