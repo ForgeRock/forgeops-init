@@ -1,0 +1,10 @@
+[
+    {
+        "operation" : "add",
+		"field" : "/auditServiceConfig/caseInsensitiveFields",
+		"value" : [
+		    "/access/http/request/headers",
+			"/access/http/response/headers"
+		]
+	}
+]
