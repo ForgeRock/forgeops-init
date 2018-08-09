@@ -46,7 +46,7 @@
                     "augmentSecurityContext" : {
                         "type" : "text/javascript",
                         "globals" : {
-                            "sessionValidationBaseEndpoint" : "http://openam.alex.forgeops.com/openam/json/sessions/"
+                            "sessionValidationBaseEndpoint" : "http://openam.&{namespace}&{domain}/openam/json/sessions/"
                         },
                         "file" : "script/amSessionCheck.js"
                     },
@@ -67,10 +67,10 @@
                         "clientId" : "openidm",
                         "clientSecret" : "openidm",
                         "authorizationEndpoint" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/authorize",
-                        "tokenEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/access_token",
-                        "endSessionEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/connect/endSession",
-                        "wellKnownEndpoint" : "http://openam.alex.forgeops.com/openam/oauth2/.well-known/openid-configuration",
-                        "redirectUri" : "http://openidm.alex.forgeops.com/oauthReturn/",
+                        "tokenEndpoint" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/access_token",
+                        "endSessionEndpoint" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/connect/endSession",
+                        "wellKnownEndpoint" : "http://openam.&{namespace}&{domain}/openam/oauth2/.well-known/openid-configuration",
+                        "redirectUri" : "http://openidm.&{namespace}&{domain}/oauthReturn/",
                         "configClass" : "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration",
                         "displayIcon" : "forgerock",
                         "enabled" : true

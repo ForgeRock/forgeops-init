@@ -24,7 +24,7 @@
       "jwkStoreCacheMissCacheTime" : 60000,
       "idTokenSignedResponseAlg" : "RS256",
       "idTokenPublicEncryptionKey" : null,
-      "jwksUri" : "http://openam.alex.forgeops.com:80/openam/oauth2/connect/jwk_uri",
+      "jwksUri" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/connect/jwk_uri",
       "userinfoEncryptedResponseAlg" : null,
       "requestParameterSignedAlg" : null,
       "clientJwtPublicKey" : null
@@ -45,7 +45,7 @@
     "coreOpenIDClientConfig" : {
       "jwtTokenLifetime" : 0,
       "clientSessionUri" : null,
-      "postLogoutRedirectUri" : [ "http://openidm.alex.forgeops.com/", "http://openidm.alex.forgeops.com/admin/" ],
+      "postLogoutRedirectUri" : [ "http://openidm.&{namespace}&{domain}/", "http://openidm.&{namespace}&{domain}/admin/" ],
       "defaultMaxAge" : 600,
       "claims" : [ ],
       "defaultAcrValues" : [ ],
@@ -62,7 +62,7 @@
       "scopes" : [ "openid" ],
       "agentgroup" : null,
       "refreshTokenLifetime" : 0,
-      "redirectionUris" : [ "http://openidm.alex.forgeops.com/oauthReturn/" ],
+      "redirectionUris" : [ "http://openidm.&{namespace}&{domain}/oauthReturn/" ],
       "status" : "Active"
     },
     "coreUmaClientConfig" : {
