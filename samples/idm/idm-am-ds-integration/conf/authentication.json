@@ -66,7 +66,7 @@
                         "authenticationIdKey" : "sub",
                         "clientId" : "openidm",
                         "clientSecret" : "openidm",
-                        "authorizationEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/authorize",
+                        "authorizationEndpoint" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/authorize",
                         "tokenEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/access_token",
                         "endSessionEndpoint" : "http://openam.alex.forgeops.com:80/openam/oauth2/connect/endSession",
                         "wellKnownEndpoint" : "http://openam.alex.forgeops.com/openam/oauth2/.well-known/openid-configuration",
