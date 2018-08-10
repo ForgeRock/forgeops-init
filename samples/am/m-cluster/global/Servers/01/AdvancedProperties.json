@@ -1,0 +1,29 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0",
+    "entityType" : "AdvancedProperties",
+    "entityId" : "http://openam:80/openam",
+    "pathParams" : {
+      "serverName" : "http://openam:80/openam"
+    }
+  },
+  "data" : {
+    "_id" : "01/properties/advanced",
+    "bootstrap.file" : "/home/forgerock/.openamcfg/AMConfig_usr_local_tomcat_webapps_openam_",
+    "com.sun.identity.urlconnection.useCache" : false,
+    "com.iplanet.am.buildRevision" : "3676519ec1",
+    "com.iplanet.am.serverMode" : true,
+    "com.iplanet.am.version" : "ForgeRock Access Management 6.0.0 Build 3676519ec1 (2018-May-08 10:07)",
+    "com.sun.embedded.sync.servers" : "on",
+    "com.sun.embedded.replicationport" : "",
+    "com.iplanet.security.SSLSocketFactoryImpl" : "com.sun.identity.shared.ldap.factory.JSSESocketFactory",
+    "com.sun.identity.sm.sms_object_class_name" : "com.sun.identity.sm.ldap.SMSLdapObject",
+    "org.forgerock.amster.com.iplanet.am.lbcookie.value" : "01",
+    "com.iplanet.am.buildVersion" : "ForgeRock Access Management 6.0.0",
+    "com.iplanet.am.buildDate" : "2018-May-08 10:07",
+    "com.sun.identity.common.systemtimerpool.size" : "3",
+    "com.iplanet.am.lbcookie.value" : "01",
+    "opensso.protocol.handler.pkgs" : ""
+  }
+}
