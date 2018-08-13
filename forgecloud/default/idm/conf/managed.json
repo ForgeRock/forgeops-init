@@ -136,9 +136,7 @@
                                 "policyId" : "cannot-contain-others",
                                 "params" : {
                                     "disallowedFields" : [
-                                        "userName",
-                                        "givenName",
-                                        "sn"
+                                        "userName"
                                     ]
                                 }
                             }
