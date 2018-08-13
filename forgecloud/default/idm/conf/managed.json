@@ -732,8 +732,6 @@
                 "type" : "object",
                 "required" : [
                     "userName",
-                    "givenName",
-                    "sn",
                     "mail"
                 ]
             },
