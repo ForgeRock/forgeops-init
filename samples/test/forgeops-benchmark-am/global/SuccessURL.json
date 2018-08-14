@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0-M13",
+    "entityType" : "SuccessURL",
+    "entityId" : "SuccessURL",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "SetSuccessUrlNode",
+      "name" : "Success URL",
+      "collection" : false
+    }
+  }
+}

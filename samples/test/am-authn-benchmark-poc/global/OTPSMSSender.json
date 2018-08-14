@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.0.0-M5",
+    "entityType" : "OTPSMSSender",
+    "entityId" : "OTPSMSSender",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "OneTimePasswordSmsSenderNode",
+      "name" : "OTP SMS Sender",
+      "collection" : false
+    }
+  }
+}
