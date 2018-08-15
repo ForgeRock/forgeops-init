@@ -1,0 +1,27 @@
+apiVersion: skaffold/v1alpha2
+kind: Config
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+  - imageName: gcr.io/engineering-devops/sk-idm
+deploy:
+  # See https://github.com/GoogleContainerTools/skaffold/issues/360
+  helm:
+    releases:
+    - name: sk-idm
+      chartPath: ../../helm/openidm
+      #wait: true
+      valuesFilePath: skaffold-values.yaml
+      values:
+        image: gcr.io/engineering-devops/sk-idm
+      setValues:
+        skaffold: "true"
+        config.strategy: "docker"
+        config.path: "/opt/openidm"
+        domain: ".example.com"
+    # - name: sk-ds
+    #   chartPath: ../../helm/ds
+    #   setValues:
+    #     djInstance: "ds"
+        
