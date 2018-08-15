@@ -14,7 +14,7 @@ Configuration is determined by comparing exported Amster files before a change i
 
 - data.enabled = true
 - data.password = prometheus
-- data.password-encrypted = null
+- **remove** data.password-encrypted
 
 ### global/Realms/root.json
 
