@@ -179,6 +179,20 @@
                             }
                         ]
                     },
+                    "cn" : {
+                        "description" : "Common Name",
+                        "type" : "string",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "userEditable" : false,
+                        "scope" : "private",
+                        "isPersonal" : true,
+                        "isVirtual" : true,
+                        "onStore" : {
+                            "type" : "text/javascript",
+                            "source" : "object.cn || (object.givenName + ' ' + object.sn)"
+                        }
+                    },
                     "sn" : {
                         "title" : "Last Name",
                         "description" : "Last Name",
