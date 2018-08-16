@@ -50,6 +50,22 @@
             }
         },
         {
+            "class": "org.forgerock.audit.handlers.json.stdout.JsonStdoutAuditEventHandler",
+            "config": {
+              "elasticsearchCompatible": false,
+              "name": "stdout",
+              "topics": [
+                "config",
+                "activity",
+                "authentication",
+                "access",
+                "recon",
+                "sync"
+              ],
+              "enabled": true
+            }
+          },
+        {
             "class": "org.forgerock.openidm.audit.impl.RepositoryAuditEventHandler",
             "config": {
                 "name": "repo",
