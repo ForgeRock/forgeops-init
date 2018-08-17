@@ -1,0 +1,26 @@
+{
+    "filters" : [
+        {
+            "condition" : {
+                "type" : "text/javascript",
+                "source" : "context.caller.external === true || context.current.name === 'selfservice'"
+            },
+            "evaluatePrivileges" : true,
+            "onRequest" : {
+                "type" : "text/javascript",
+                "file" : "router-authz.js"
+            }
+        },
+        {
+            "pattern" : "^(managed|system|internal)($|(/.+))",
+            "onRequest" : {
+                "type" : "text/javascript",
+                "file" : "policyFilter.js"
+            },
+            "methods" : [
+                "create",
+                "update"
+            ]
+        }
+    ]
+}
