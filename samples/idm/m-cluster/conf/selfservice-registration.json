@@ -1,0 +1,49 @@
+{
+	"allInOneRegistration": true,
+	"storage": "stateless",
+	"snapshotToken": {
+		"encryptionMethod": "A128CBC_HS256",
+		"jweAlgorithm": "RSAES_PKCS1_V1_5",
+		"jwsAlgorithm": "HS256",
+		"type": "jwt",
+		"tokenExpiry": 300
+	},
+	"stageConfigs": [
+		{
+			"parameterNames": [
+				"returnParams"
+			],
+			"name": "parameters"
+		},
+		{
+			"socialRegistrationEnabled": false,
+			"name": "idmUserDetails",
+			"identityEmailField": "mail",
+			"registrationPreferences": [
+				"marketing",
+				"updates"
+			],
+			"identityServiceUrl": "managed/user",
+			"registrationProperties": [
+				"userName",
+				"givenName",
+				"sn",
+				"mail"
+			]
+		},
+		{
+			"name": "kbaSecurityAnswerDefinitionStage",
+			"kbaConfig": null
+		},
+		{
+			"identityServiceUrl": "managed/user",
+			"name": "selfRegistration"
+		},
+		{
+			"name": "localAutoLogin",
+			"identityUsernameField": "userName",
+			"identityPasswordField": "password",
+			"successUrl": ""
+		}
+	]
+}
