@@ -10,8 +10,9 @@ deploy:
   helm:
     releases:
     - name: sk-idm
-      chartPath: ../../helm/openidm
-      #wait: true
+      chartPath: ../helm/openidm
+      imageStrategy:
+        helm: {}
       valuesFilePath: skaffold-values.yaml
       values:
         image: gcr.io/engineering-devops/sk-idm
