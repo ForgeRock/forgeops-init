@@ -1,0 +1,3 @@
+# Empty values yaml -here to keep skaffold happy
+
+auditLogs: []
