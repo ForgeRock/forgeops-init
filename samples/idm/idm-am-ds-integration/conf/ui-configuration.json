@@ -25,7 +25,7 @@
         },
         "defaultNotificationType" : "info",
         "amDataEndpoints" : {
-            "baseUrl" : "http://openam.alex5.alexops.com/json/realms/root/users/",
+            "baseUrl" : "http://openam.default.forgeops.com/json/realms/root/users/",
             "trustedDevices" : "/devices/trusted/",
             "oauthApplications" : "/oauth2/applications/",
             "resourceSet" : "/oauth2/resources/sets/",
