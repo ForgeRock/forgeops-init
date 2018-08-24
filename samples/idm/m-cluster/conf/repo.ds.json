@@ -462,7 +462,7 @@
           "inetOrgPerson",
           "fr-idm-managed-user-explicit"
         ],
-        jsonAttribute" : "fr-idm-managed-user-json",
+        "jsonAttribute" : "fr-idm-managed-user-json",
         "jsonQueryEqualityMatchingRule" : "caseIgnoreJsonQueryMatchManagedUser"
     },
     "genericMapping": {
