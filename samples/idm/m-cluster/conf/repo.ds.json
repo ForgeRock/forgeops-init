@@ -368,9 +368,7 @@
       "managed/user": {
         "dnTemplate": "ou=people,o=userstore",
         "objectClasses": [
-          "person",
-          "organizationalPerson",
-          "inetOrgPerson",
+          "uidObject",
           "fr-idm-managed-user"
         ],
         "jsonAttribute" : "fr-idm-managed-user-json",
