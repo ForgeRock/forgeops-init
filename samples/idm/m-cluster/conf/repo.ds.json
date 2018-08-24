@@ -353,7 +353,8 @@
             "ldapAttribute": "fr-idm-syncqueue-createdate"
           }
         }
-      },
+      }
+    },
     "genericMapping": {
       "config": {
         "dnTemplate": "ou=config,o=idm"
