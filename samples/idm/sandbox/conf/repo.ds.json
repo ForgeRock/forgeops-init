@@ -11,12 +11,13 @@
             "sslCertAlias" : "client-cert",
             "heartBeatIntervalSeconds" : 60,
             "heartBeatTimeoutMilliSeconds" : 10000,
-            "primaryLdapServers" : [
-                "hostname": "&{openidm.repo.host}",
-                "port": {
+            "primaryLdapServers" : [ 
+                {
+                    "hostname": "&{openidm.repo.host}",
+                    "port": {
                         "$int": "&{openidm.repo.port}"
+                    }
                 }
-              }
             ],
             "secondaryLdapServers" : [ ]
         },
