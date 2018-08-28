@@ -62,7 +62,7 @@
                 "recon",
                 "sync"
               ],
-              "enabled": false
+              "enabled": true
             }
           },
         {
@@ -104,9 +104,7 @@
                 ]
             },
             "watchedFields" : [ ],
-            "passwordFields" : [
-                "password"
-            ]
+            "passwordFields" : [ ]
         }
     },
     "exceptionFormatter" : {
