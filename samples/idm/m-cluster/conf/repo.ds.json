@@ -122,6 +122,106 @@
     "useMvcc": true,
     "mvccAttribute": "etag"
   },
+  "indices": {
+    "fr-idm-json": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-managed-role-json": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-cluster-json": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-relationship-json": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-link-type": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-link-firstid": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-link-secondid": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-link-qualifier": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-lock-nodeid": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-syncqueue-mapping": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-syncqueue-resourceid": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-syncqueue-state": {
+      "type": [
+        "EQUALITY"
+      ]
+    },
+    "fr-idm-syncqueue-remainingretries": {
+      "type": [
+        "EQUALITY"
+      ]
+    }
+  },
+  "schemaProviders": {
+    "Managed Role Json": {
+      "matchingRuleName": "caseIgnoreJsonQueryMatchManagedRole",
+      "matchingRuleOid": "1.3.6.1.4.1.36733.2.3.4.2",
+      "caseSensitiveStrings": false,
+      "fields": [
+        "condition/**",
+        "temporalConstraints/**"
+      ]
+    },
+    "Relationship Json": {
+      "matchingRuleName": "caseIgnoreJsonQueryMatchRelationship",
+      "matchingRuleOid": "1.3.6.1.4.1.36733.2.3.4.3",
+      "caseSensitiveStrings": true,
+      "fields": [
+        "firstResourceCollection",
+        "firstResourceId",
+        "firstPropertyName",
+        "secondResourceCollection",
+        "secondResourceId",
+        "secondPropertyName"
+      ]
+    },
+    "Cluster Object Json": {
+      "matchingRuleName": "caseIgnoreJsonQueryMatchClusterObject",
+      "matchingRuleOid": "1.3.6.1.4.1.36733.2.3.4.4",
+      "caseSensitiveStrings": false,
+      "fields": [
+        "timestamp",
+        "state"
+      ]
+    }
+  },
   "resourceMapping": {
     "defaultMapping": {
       "dnTemplate": "ou=generic,o=idm"
@@ -353,6 +453,134 @@
             "ldapAttribute": "fr-idm-syncqueue-createdate"
           }
         }
+      },
+      "managed/user": {
+        "dnTemplate": "ou=people,o=userstore",
+        "objectClasses": [
+          "person",
+          "organizationalPerson",
+          "inetOrgPerson",
+          "fr-idm-managed-user-explicit"
+        ],
+        "namingStrategy": {
+          "type": "serverNaming",
+          "dnAttribute": "uid",
+          "idAttribute": "entryUUID"
+      },
+      "nativeId" : true,
+        "properties": {
+          "_id": {
+            "type": "simple",
+            "ldapAttribute": "entryUUID",
+            "writability": "createOnly"
+          },
+          "userName": {
+            "primaryKey": true,
+            "type": "simple",
+            "ldapAttribute": "uid"
+          },
+          "cn": {
+            "type": "simple",
+            "ldapAttribute": "cn"
+          },
+          "password": {
+            "type": "json",
+            "ldapAttribute": "fr-idm-password"
+          },
+          "accountStatus": {
+            "type": "simple",
+            "ldapAttribute": "fr-idm-accountStatus"
+          },
+          "roles": {
+            "type": "json",
+            "ldapAttribute": "fr-idm-role",
+            "isMultiValued": true
+          },
+          "effectiveRoles": {
+            "type": "json",
+            "ldapAttribute": "fr-idm-effectiveRole",
+            "isMultiValued": true
+          },
+          "effectiveAssignments": {
+            "type": "json",
+            "ldapAttribute": "fr-idm-effectiveAssignment",
+            "isMultiValued": true
+          },
+          "lastPasswordSet": {
+            "type": "simple",
+            "ldapAttribute": "fr-idm-lastPasswordSet"
+          },
+          "postalCode": {
+            "type": "simple",
+            "ldapAttribute": "postalCode"
+          },
+          "stateProvince": {
+            "type": "simple",
+            "ldapAttribute": "st"
+          },
+          "postalAddress": {
+            "type": "simple",
+            "ldapAttribute": "postalAddress"
+          },
+          "displayName": {
+            "type": "simple",
+            "ldapAttribute": "displayName"
+          },
+          "description": {
+            "type": "simple",
+            "ldapAttribute": "description"
+          },
+          "country": {
+            "type": "simple",
+            "ldapAttribute": "c"
+          },
+          "address2": {
+            "type": "simple",
+            "ldapAttribute": "postalAddress"
+          },
+          "city": {
+            "type": "simple",
+            "ldapAttribute": "l"
+          },
+          "givenName": {
+            "type": "simple",
+            "ldapAttribute": "givenName"
+          },
+          "sn": {
+            "type": "simple",
+            "ldapAttribute": "sn"
+          },
+          "telephoneNumber": {
+            "type": "simple",
+            "ldapAttribute": "telephoneNumber"
+          },
+          "mail": {
+            "type": "simple",
+            "ldapAttribute": "mail"
+          },
+          "siteImage": {
+            "type": "simple",
+            "ldapAttribute": "jpegPhoto"
+          },
+          "lastSync": {
+            "type": "json",
+            "ldapAttribute": "fr-idm-lastSync"
+          },
+          "consentedMappings": {
+            "type": "json",
+            "ldapAttribute": "fr-idm-consentedMapping",
+            "isMultiValued": true
+          },
+          "kbaInfo": {
+            "type": "json",
+            "ldapAttribute": "fr-idm-kbaInfo",
+            "isMultiValued": true
+          },
+          "preferences": {
+            "type": "json",
+            "ldapAttribute": "fr-idm-preferences"
+          }
+        }
       }
     },
     "genericMapping": {
@@ -364,15 +592,6 @@
       },
       "managed/*": {
         "dnTemplate": "ou=managed,o=userstore"
-      },
-      "managed/user": {
-        "dnTemplate": "ou=user,ou=managed,o=userstore",
-        "objectClasses": [
-          "uidObject",
-          "fr-idm-managed-user"
-        ],
-        "jsonAttribute" : "fr-idm-managed-user-json",
-        "jsonQueryEqualityMatchingRule" : "caseIgnoreJsonQueryMatchManagedUser"
       },
       "managed/role": {
         "dnTemplate": "ou=role,ou=managed,o=userstore",
