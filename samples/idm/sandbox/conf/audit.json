@@ -62,7 +62,7 @@
                 "recon",
                 "sync"
               ],
-              "enabled": true
+              "enabled": false
             }
           },
         {
@@ -77,31 +77,19 @@
                     "sync",
                     "authentication",
                     "config"
-                ]
+                ] 
             }
         }
     ],
     "eventTopics" : {
         "config" : {
             "filter" : {
-                "actions" : [
-                    "create",
-                    "update",
-                    "delete",
-                    "patch",
-                    "action"
-                ]
+                "actions" : [ ]
             }
         },
         "activity" : {
             "filter" : {
-                "actions" : [
-                    "create",
-                    "update",
-                    "delete",
-                    "patch",
-                    "action"
-                ]
+                "actions" : [ ]
             },
             "watchedFields" : [ ],
             "passwordFields" : [ ]
