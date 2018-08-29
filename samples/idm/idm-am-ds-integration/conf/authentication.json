@@ -67,7 +67,7 @@
                         "clientId" : "openidm",
                         "clientSecret" : "openidm",
                         "authorizationEndpoint" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/authorize",
-                        "tokenEndpoint" : "http://openam:80/openam/oauth2/access_token",
+                        "tokenEndpoint" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/access_token",
                         "endSessionEndpoint" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/connect/endSession",
                         "wellKnownEndpoint" : "http://openam.&{namespace}&{domain}/openam/oauth2/.well-known/openid-configuration",
                         "redirectUri" : "http://openidm.&{namespace}&{domain}/oauthReturn/",
