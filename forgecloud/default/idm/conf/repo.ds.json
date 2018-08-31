@@ -212,6 +212,7 @@
                     "person",
                     "organizationalPerson",
                     "inetOrgPerson",
+                    "extensibleObject",
                     "iplanet-am-user-service",
                     "devicePrintProfilesContainer",
                     "kbaInfoContainer",
