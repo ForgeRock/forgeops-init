@@ -14,7 +14,7 @@
             "&{userstore.basecontext}"
         ],
         "baseContextsToSynchronize" : [
-            "&{userstore.basecontext}"
+            "ou=people,&{userstore.basecontext}"
         ],
         "accountSearchFilter" : null,
         "accountSynchronizationFilter" : null,
