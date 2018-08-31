@@ -8,7 +8,7 @@
   },
   "data" : {
     "_id" : "prometheus",
-    "password" : "prometheus",
+    "password" : "&{prometheus.password}",
     "enabled" : true,
     "username" : "prometheus",
     "_type" : {

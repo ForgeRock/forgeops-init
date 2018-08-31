@@ -31,8 +31,8 @@
                 "name" : "STATIC_USER",
                 "properties" : {
                     "queryOnResource" : "endpoint/static/user",
-                    "username" : "openidm-admin",
-                    "password" : "openidm-admin",
+                    "username" : "&{openidm.staticUser.username}",
+                    "password" : "&{openidm.staticUser.password}",
                     "defaultUserRoles" : [
                         "openidm-admin",
                         "openidm-authorized"

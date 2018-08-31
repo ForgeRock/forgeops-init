@@ -9,8 +9,7 @@
   "data" : {
     "_id" : "amAdmin",
     "sunIdentityMSISDNNumber" : null,
-    "userPassword" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQUrQBygzJTRJSWDT6vL4oZ4JuZcaJKNifKtMUUDetzXnq3WyWJ1z8Ovbg6DECoKrLkf15K9liWpKn0s05uZ/K7j8pRngMlG9/0n077wkvsPQ4toiBknvplXiknMzmk2/HpIhbyeJhMBvb5/YLr3FzIVAQARtGiyV8shzsiim0yUyVGPHdnTVCscwDqLgSeHIhB0DjQONYRGg=",
+    "userPassword" : "&{amadmin.password.hashed}",
     "telephoneNumber" : null,
     "mail" : null,
     "iplanet-am-user-alias-list" : null,

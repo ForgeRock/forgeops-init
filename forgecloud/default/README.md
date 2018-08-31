@@ -6,6 +6,13 @@ The following notes describe what modifications have been made to base AM/IDM/et
 
 Configuration is determined by comparing exported Amster files before a change is made in the UI and then after.
 
+### global/IdRepositoryUser/amAdmin.json
+
+- data.userPassword = &{amadmin.password.hashed}
+- **remove** data.userPassword-encrypted
+
+**NOTE:** To hash the `amAdmin` password see AM Java source code `org.forgerock.openam.shared.security.crypto.Hashes.secureHash(s)`
+
 ### global/DefaultCtsDataStoreProperties.json
 
 - "org.forgerock.services.cts.store.location" : "external"
@@ -31,7 +38,7 @@ Configuration is determined by comparing exported Amster files before a change i
 ### global/PrometheusReporter/prometheus.json
 
 - data.enabled = true
-- data.password = prometheus
+- data.password = &{prometheus.password}
 - **remove** data.password-encrypted
 
 ### global/Realms/root.json
