@@ -87,9 +87,7 @@
                 ]
             },
             "watchedFields" : [ ],
-            "passwordFields" : [
-                "password"
-            ]
+            "passwordFields" : [ ]
         }
     },
     "exceptionFormatter" : {
