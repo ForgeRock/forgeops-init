@@ -1,0 +1,12 @@
+[
+    {
+        "operation" : "transform",
+        "field" : "/stageConfigs",
+        "value" : {
+            "script": {
+                "type": "text/javascript",
+                "source": "if ([].filter.call(content, function (el) {return (el.name === \"parameters\")}) == 0) {content.unshift({\"name\": \"parameters\",\"parameterNames\" : [\"returnParams\"]}); content} else {content}"
+            }
+        }
+    }
+]
