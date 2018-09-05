@@ -1,0 +1,7 @@
+[
+    {
+        "operation" : "add",
+        "field" : "/prometheusRole",
+        "value" : "&{openidm.prometheus.role}"
+    }
+]

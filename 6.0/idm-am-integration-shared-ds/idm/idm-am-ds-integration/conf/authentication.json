@@ -1,0 +1,84 @@
+{
+    "serverAuthContext" : {
+        "sessionModule" : {
+            "name" : "JWT_SESSION",
+            "properties" : {
+                "keyAlias" : "&{openidm.https.keystore.cert.alias}",
+                "privateKeyPassword" : "&{openidm.keystore.password}",
+                "keystoreType" : "&{openidm.keystore.type}",
+                "keystoreFile" : "&{openidm.keystore.location}",
+                "keystorePassword" : "&{openidm.keystore.password}",
+                "sessionOnly" : true,
+                "isHttpOnly" : true,
+                "maxTokenLifeSeconds" : "5",
+                "tokenIdleTimeSeconds" : "5"
+            }
+        },
+        "authModules" : [
+            {
+                "name" : "STATIC_USER",
+                "properties" : {
+                    "queryOnResource" : "endpoint/static/user",
+                    "username" : "anonymous",
+                    "password" : "&{openidm.anonymous.password}",
+                    "defaultUserRoles" : [
+                        "openidm-reg"
+                    ]
+                },
+                "enabled" : true
+            },
+            {
+                "name" : "STATIC_USER",
+                "properties" : {
+                    "queryOnResource" : "endpoint/static/user",
+                    "username" : "openidm-admin",
+                    "password" : "&{openidm.admin.password}",
+                    "defaultUserRoles" : [
+                        "openidm-admin",
+                        "openidm-authorized"
+                    ]
+                },
+                "enabled" : true
+            },
+            {
+                "name" : "OAUTH_CLIENT",
+                "properties" : {
+                    "augmentSecurityContext" : {
+                        "type" : "text/javascript",
+                        "globals" : {
+                            "sessionValidationBaseEndpoint" : "http://openam.&{namespace}&{domain}/openam/json/sessions/"
+                        },
+                        "file" : "script/amSessionCheck.js"
+                    },
+                    "propertyMapping" : {
+                        "authenticationId" : "uid",
+                        "userRoles" : "authzRoles"
+                    },
+                    "defaultUserRoles" : [
+                        "openidm-authorized"
+                    ],
+                    "idpConfig" : {
+                        "provider" : "OPENAM",
+                        "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider\"><img src=\"images/forgerock_logo.png\">Sign In</button>",
+                        "scope" : [
+                            "openid"
+                        ],
+                        "authenticationIdKey" : "sub",
+                        "clientId" : "openidm",
+                        "clientSecret" : "openidm",
+                        "authorizationEndpoint" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/authorize",
+                        "tokenEndpoint" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/access_token",
+                        "endSessionEndpoint" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/connect/endSession",
+                        "wellKnownEndpoint" : "http://openam.&{namespace}&{domain}/openam/oauth2/.well-known/openid-configuration",
+                        "redirectUri" : "http://openidm.&{namespace}&{domain}/oauthReturn/",
+                        "configClass" : "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration",
+                        "displayIcon" : "forgerock",
+                        "enabled" : true
+                    },
+                    "queryOnResource" : "managed/user"
+                },
+                "enabled" : true
+            }
+        ]
+    }
+}
