@@ -1,0 +1,13 @@
+[
+    {
+        "operation" : "transform",
+        "field" : "/filters",
+        "value" : {
+        	"script" : {
+        		"type" : "text/javascript",
+        		"source" : "content.map(function(obj){if(obj.pattern=='repo/internal/user.*'){obj.pattern='repo/internal/user((/.+)|$)';return obj}else{return obj}})"
+        	}
+
+        }
+    }
+]
