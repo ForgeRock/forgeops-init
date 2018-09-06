@@ -9,7 +9,7 @@
         "type": "ClientHandler",
         "comment": "Log request, pass it to the sample nginx app, log response",
         "capture": "all",
-        "baseURI": "http://web-lee:80"
+        "baseURI": "http://openig.lee.forgeops.com"
       }
     }
   }
