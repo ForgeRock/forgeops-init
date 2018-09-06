@@ -2,7 +2,7 @@
   "handler": {
     "type": "Router",
     "name": "_router",
-    "baseURI": "web-lee:80",
+    "baseURI": "http://lee.forgeops.com:80",
     "capture": "all"
   },
   "heap": [
