@@ -2,7 +2,7 @@
   "handler": {
     "type": "Router",
     "name": "_router",
-    "baseURI": "http://app.example.com:8081",
+    "baseURI": "http://web-lee:80",
     "capture": "all"
   },
   "heap": [

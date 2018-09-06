@@ -1,0 +1,16 @@
+{
+  "name" : "01-nginx-server",
+  "baseURI" : "http://web-lee:80",
+  "condition" : "${matches(request.uri.path, '^/home')}",
+  "handler" : {
+    "type" : "Chain",
+    "config" : {
+      "handler": {
+        "type": "ClientHandler",
+        "comment": "Log request, pass it to the sample nginx app, log response",
+        "capture": "all",
+        "baseURI": "http://web-lee:80"
+      }
+    }
+  }
+}
