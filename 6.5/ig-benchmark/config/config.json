@@ -2,7 +2,7 @@
   "handler": {
     "type": "Router",
     "name": "_router",
-    "baseURI": "http://lee.forgeops.com:80",
+    "baseURI": "lee.forgeops.com",
     "capture": "all"
   },
   "heap": [
