@@ -77,7 +77,7 @@
             "onCreate" : {
                 "type" : "text/javascript",
                 "globals" : { },
-                "source" : "target.dn = 'uid=' + source.userName + ',&{userstore.basecontext}';"
+                "source" : "target.dn = 'uid=' + source.userName + ',ou=people,&{userstore.basecontext}';"
             },
             "properties" : [
                 {
@@ -138,7 +138,7 @@
                     "transform" : {
                         "type" : "text/javascript",
                         "globals" : { },
-                        "source" : "\"uid=\" + source + \",&{userstore.basecontext}\""
+                        "source" : "\"uid=\" + source + \",ou=people,&{userstore.basecontext}\""
                     }
                 }
             ],
