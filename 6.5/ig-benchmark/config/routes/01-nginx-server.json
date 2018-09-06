@@ -1,6 +1,6 @@
 {
   "name" : "01-nginx-server",
-  "baseURI" : "http://lee.forgeops.com:80",
+  "baseURI" : "lee.forgeops.com",
   "condition" : "${matches(request.uri.path, '^/home')}",
   "handler" : {
     "type" : "Chain",
@@ -9,7 +9,7 @@
         "type": "ClientHandler",
         "comment": "Log request, pass it to the sample nginx app, log response",
         "capture": "all",
-        "baseURI": "http://lee.forgeops.com:80"
+        "baseURI": "lee.forgeops.com"
       }
     }
   }
