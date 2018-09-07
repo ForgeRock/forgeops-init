@@ -1,7 +1,0 @@
-[
-     {
-        "operation" : "replace",
-        "field" : "file",
-        "value" : "oauthProxy.js"
-     }
- ]
