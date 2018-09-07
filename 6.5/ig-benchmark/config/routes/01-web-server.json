@@ -1,12 +1,11 @@
 {
   "name" : "01-web",
-  "_baseURI" : "http://app.example.com:8081",
-  "condition" : "${matches(request.uri.path, '^/home/web01')}",
+  "baseURI" : "http://lee.forgeops.com:80",
+  "_condition" : "${matches(request.uri.path, '^/home/web01')}",
   "handler": {
-    "type": "StaticResponseHandler",
-    "config" : {
-      "status": 200,
-      "entity": "web01 page."
-    }
-  }
+    "type": "ClientHandler",
+    "comment": "Log request, pass it to the sample app, log response",
+    "capture": "all",
+    "baseURI": "http://app.example.com:8081"
+  },
 }
