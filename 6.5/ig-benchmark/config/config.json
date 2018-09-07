@@ -1,9 +1,18 @@
 {
   "handler": {
-    "type": "Router",
     "name": "_router",
-    "baseURI": "http://lee.forgeops.com:80",
-    "capture": "all"
+    "type": "Router",
+    "config": {
+      "defaultHandler": {
+        "config": {
+          "entity": "Message from ConfigJson.MyMainRouter.defaultHandler",
+          "reason": "found",
+          "status": 200
+        },
+        "type": "StaticResponseHandler"
+      },
+      "scanInterval": 1
+    }
   },
   "heap": [
     {
