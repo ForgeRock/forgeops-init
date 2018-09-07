@@ -7,5 +7,5 @@
     "comment": "Log request, pass it to the sample app, log response",
     "capture": "all",
     "baseURI": "http://app.example.com:8081"
-  },
+  }
 }
