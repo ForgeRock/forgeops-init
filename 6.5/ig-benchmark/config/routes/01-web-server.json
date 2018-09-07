@@ -1,0 +1,12 @@
+{
+  "name" : "01-web",
+  "_baseURI" : "http://app.example.com:8081",
+  "condition" : "${matches(request.uri.path, '^/home/web01')}",
+  "handler": {
+    "type": "StaticResponseHandler",
+    "config" : {
+      "status": 200,
+      "entity": "web01 page."
+    }
+  }
+}
