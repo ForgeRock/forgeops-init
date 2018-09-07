@@ -2,7 +2,7 @@
   "handler": {
     "type": "Router",
     "name": "_router",
-    "baseURI": "web-lee:80",
+    "baseURI": "http://web-lee:80",
     "capture": "all"
   },
   "heap": [
@@ -11,35 +11,12 @@
       "type": "JwtSession"
     },
     {
-      "name": "MyCapture",
+      "name": "capture",
       "type": "CaptureDecorator",
       "config": {
-        "type": "Slf4jLogSink",
         "captureEntity": true,
-        "captureExchange": true,
-        "logSink": {
-          "config": {
-            "base": "org.forgerock.openig"
-          }
-        }
+        "_captureContext": true
       }
     },
-    {
-      "name": "CommonClientHandler",
-      "type": "ClientHandler",
-      "config": {
-        "_keyManager": null,
-        "_trustManager": null,
-        "connectionTimeout": "10 seconds",
-        "connections": 64,
-        "disableRetries": true,
-        "disableReuseConnection": true,
-        "hostnameVerifier": "ALLOW_ALL",
-        "numberOfWorkers": 4,
-        "soTimeout": "10 seconds"
-      }
-    }
-  ],
-  "monitor": true
+  ]
 }
-
