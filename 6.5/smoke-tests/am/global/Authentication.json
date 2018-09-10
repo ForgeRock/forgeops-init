@@ -17,14 +17,10 @@
     "defaults" : {
       "accountlockout" : {
         "lockoutDuration" : 0,
-        "lockoutEmailAddress" : null,
         "loginFailureLockoutMode" : false,
         "lockoutDurationMultiplier" : 1,
         "lockoutWarnUserCount" : 0,
-        "lockoutAttributeValue" : null,
-        "lockoutAttributeName" : null,
         "loginFailureCount" : 5,
-        "invalidAttemptsDataAttributeName" : null,
         "loginFailureDuration" : 300,
         "storeInvalidAttemptsInDataStore" : true
       },
@@ -45,7 +41,7 @@
         "moduleBasedAuthEnabled" : true,
         "zeroPageLoginAllowedWithoutReferrer" : true,
         "sharedSecret" : null,
-        "sharedSecret-encrypted" : "AAAAA0FFUwIQBBgZpOW4a17CTrKh3ZHoUlbSVxAjP5jhrOUSvFWAMqewIJtZyGzXXAqfs5F4b5Ui1YRaHkqiRcS5YLOIwlRu/09vBr9hQH6v",
+        "sharedSecret-encrypted" : "AAAAA0FFUwIQdBdfGfWJMoU0Ea37NA0uGE/AWXENW9/vTRiaMSbMtgF8WOMsHd5yZHPDS5gaBSfBTWksqWtZi52ZmWq2v2m0AzU7rF0pDbu5",
         "keyAlias" : "test",
         "zeroPageLoginEnabled" : false,
         "zeroPageLoginReferrerWhiteList" : [ ]

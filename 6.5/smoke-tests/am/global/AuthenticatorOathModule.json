@@ -9,7 +9,6 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "oathIssuerName" : null,
       "totpTimeStepsInWindow" : 2,
       "authenticationLevel" : 0,
       "passwordLength" : "6",

@@ -24,7 +24,6 @@
       "subjectsResultTTL" : 10,
       "sslEnabled" : false,
       "usersBaseDn" : "o=userstore",
-      "bindPassword" : null,
       "connectionPoolMaximumSize" : 10,
       "policyHeartbeatTimeUnit" : "SECONDS",
       "realmSearchFilter" : "(objectclass=sunismanagedorganization)",

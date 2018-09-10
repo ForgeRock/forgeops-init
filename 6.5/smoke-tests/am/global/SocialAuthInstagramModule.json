@@ -11,10 +11,8 @@
     "defaults" : {
       "core" : {
         "usesBasicAuth" : false,
-        "clientId" : null,
         "authenticationLevel" : 0,
         "logoutServiceUrl" : "https://instagram.com/accounts/logout",
-        "scopeDelimiter" : null,
         "tokenEndpoint" : "https://api.instagram.com/oauth/access_token",
         "subjectProperty" : "id",
         "logoutBehaviour" : "prompt",
@@ -22,7 +20,6 @@
         "scope" : [ "basic" ],
         "ssoProxyUrl" : "http://openam:80/openam/oauth2c/OAuthProxy.jsp",
         "authorizeEndpoint" : "https://api.instagram.com/oauth/authorize",
-        "clientSecret" : null,
         "userInfoEndpoint" : "https://api.instagram.com/v1/users/self"
       },
       "accountProvisioning" : {

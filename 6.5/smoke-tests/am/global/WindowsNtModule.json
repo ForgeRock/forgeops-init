@@ -9,10 +9,7 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "authenticationHost" : null,
-      "sambaConfigurationFileName" : null,
-      "authenticationLevel" : 0,
-      "authenticationDomain" : null
+      "authenticationLevel" : 0
     },
     "_type" : {
       "_id" : "windowsnt",

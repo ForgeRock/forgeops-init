@@ -9,8 +9,6 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "userSearchFilter" : null,
-      "userBindPassword" : null,
       "searchScope" : "SUBTREE",
       "returnUserDN" : true,
       "profileAttributeMappings" : [ ],

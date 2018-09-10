@@ -11,7 +11,6 @@
     "defaults" : {
       "primaryRadiusServers" : [ "127.0.0.1" ],
       "authenticationLevel" : 0,
-      "sharedSecret" : null,
       "secondaryRadiusServers" : [ "127.0.0.1" ],
       "serverPortNumber" : 1645,
       "serverTimeout" : 3,

@@ -35,7 +35,7 @@
       "webSocketConnectionIntervalInMinutes" : 30,
       "agentConfigChangeNotificationsEnabled" : true,
       "userpassword" : null,
-      "userpassword-encrypted" : "AAAAA0FFUwIQYh55JCj8IDLNVJov+waqQ8A9JKP8CU5Qslj7gYq8OwB+IHplLUiYxkp8tVKh58Uyowqwctf5EKNDKe8ysTsT2EokIxsqgHOeQBC2VJ8JWnJ4z/pVoRWGL0jwgmuyrvtsEVnEzgRrrRBuZ+emu/IZMGQ3cVNDI0E+l4eQZKKKrO9QWF+oG+X/zRFiiJcVuy/5SQc9/s9UQBk=",
+      "userpassword-encrypted" : "AAAAA0FFUwIQMF3aMleX5Cjpvff5QV5VPLb9H8yCAaU4afty8suRuewElE+ErR3eK6aDFxEkKvKORmV2Tz4QPPpjqAgOgs9UpXyzan0OF/lwCzGrkbxn4RqjJiPCroG/OjG7b+9TxAvspQCdfJuLjNBf0sQOPF56MrgWLZC+qBtl+b8Ld//1vY+/a9tMxcdIZw+e7BSm+UpCQkEIpWZBJDU=",
       "debugLogRotation" : true,
       "auditAccessType" : "LOG_NONE",
       "cdssoRootUrl" : [ "agentRootURL=http://apache-agent.smoke.forgeops.com:80/" ],
@@ -77,7 +77,7 @@
       "changeProtocolToHttps" : false,
       "overrideRequestHost" : false,
       "showPasswordInHeader" : false,
-      "customProperties" : [ "AgentType=WebAgent" ],
+      "customProperties" : [ ],
       "useLtpaToken" : false,
       "overrideRequestPort" : false,
       "logonAndImpersonation" : false,
@@ -102,8 +102,8 @@
       "ignorePathInfoForNotEnforcedUrls" : true,
       "continuousSecurityCookies" : { },
       "clientIpValidation" : false,
-      "notEnforcedUrls" : [ "http://apache-agent.smoke.forgeops.com/neu.html" ],
-      "notEnforcedIps" : [ ],
+      "notEnforcedUrls" : [ "" ],
+      "notEnforcedIps" : [ "" ],
       "sessionAttributeMap" : { }
     },
     "amServicesWebAgent" : {

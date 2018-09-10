@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "SecretValues",
+    "entityId" : "default.rsa.sig.key",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "default.rsa.sig.key",
+    "types" : [ "VERIFICATION_KEY", "SIGNING_KEY" ],
+    "_type" : {
+      "_id" : "secretvalues",
+      "name" : "Secrets",
+      "collection" : true
+    }
+  }
+}

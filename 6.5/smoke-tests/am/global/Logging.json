@@ -41,7 +41,6 @@
       "host" : "localhost"
     },
     "database" : {
-      "password" : null,
       "maxRecords" : 500,
       "driver" : "oracle.jdbc.driver.OracleDriver",
       "databaseFailureMemoryBufferSize" : 2,

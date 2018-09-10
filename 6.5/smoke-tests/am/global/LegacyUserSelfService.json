@@ -17,7 +17,8 @@
       "selfRegistrationTokenLifetime" : 900,
       "forgotPasswordConfirmationUrl" : "http://openam:80/openam/XUI/confirm.html",
       "userRegisteredDestination" : "default",
-      "protectedUserAttributes" : [ ]
+      "protectedUserAttributes" : [ ],
+      "confirmationIdHmacKey" : "8kfX3mLWPu9EZwOXvVXhKTDeOZNXVoonPmWXWukzQo0="
     },
     "_type" : {
       "_id" : "security",
