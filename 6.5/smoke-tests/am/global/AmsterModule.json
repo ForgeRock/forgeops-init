@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.5.0-M5",
+    "amsterVersion" : "&{version}",
     "entityType" : "AmsterModule",
     "entityId" : "AmsterModule",
     "pathParams" : { }
