@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "PushNotification",
     "entityId" : "PushNotification",
     "pathParams" : { }
@@ -11,12 +11,8 @@
     "defaults" : {
       "delegateFactory" : "org.forgerock.openam.services.push.sns.SnsHttpDelegateFactory",
       "mdDuration" : 120,
-      "accessKey" : null,
-      "appleEndpoint" : null,
       "mdConcurrency" : 16,
-      "secret" : null,
       "region" : "us-east-1",
-      "googleEndpoint" : null,
       "mdCacheSize" : 10000
     },
     "_type" : {

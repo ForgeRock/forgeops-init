@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "ActiveDirectoryModule",
     "entityId" : "ActiveDirectoryModule",
     "pathParams" : { }
@@ -9,8 +9,6 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "userSearchFilter" : null,
-      "userBindPassword" : null,
       "searchScope" : "SUBTREE",
       "returnUserDN" : true,
       "profileAttributeMappings" : [ ],

@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "Logging",
     "entityId" : "Logging",
     "pathParams" : { }
@@ -41,7 +41,6 @@
       "host" : "localhost"
     },
     "database" : {
-      "password" : null,
       "maxRecords" : 500,
       "driver" : "oracle.jdbc.driver.OracleDriver",
       "databaseFailureMemoryBufferSize" : 2,

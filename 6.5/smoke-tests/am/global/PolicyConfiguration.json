@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "PolicyConfiguration",
     "entityId" : "PolicyConfiguration",
     "pathParams" : { }
@@ -24,7 +24,6 @@
       "subjectsResultTTL" : 10,
       "sslEnabled" : false,
       "usersBaseDn" : "o=userstore",
-      "bindPassword" : null,
       "connectionPoolMaximumSize" : 10,
       "policyHeartbeatTimeUnit" : "SECONDS",
       "realmSearchFilter" : "(objectclass=sunismanagedorganization)",

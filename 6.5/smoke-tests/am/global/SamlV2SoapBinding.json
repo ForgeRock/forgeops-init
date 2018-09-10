@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "SamlV2SoapBinding",
     "entityId" : "SamlV2SoapBinding",
     "pathParams" : { }

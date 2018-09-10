@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "Scripts",
     "entityId" : "9de3eb62-f131-4fac-a294-7bd170fd4acb",
     "pathParams" : { }

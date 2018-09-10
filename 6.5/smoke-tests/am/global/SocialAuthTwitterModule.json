@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "SocialAuthTwitterModule",
     "entityId" : "SocialAuthTwitterModule",
     "pathParams" : { }
@@ -12,14 +12,12 @@
       "core" : {
         "usesBasicAuth" : false,
         "authenticationLevel" : 0,
-        "clientId" : null,
         "tokenEndpoint" : "https://api.twitter.com/oauth/access_token",
         "subjectProperty" : "id_str",
         "requestTokenEndpoint" : "https://api.twitter.com/oauth/request_token",
         "provider" : "Twitter",
         "ssoProxyUrl" : "http://openam:80/openam/oauth2c/OAuthProxy.jsp",
         "authorizeEndpoint" : "https://api.twitter.com/oauth/authenticate",
-        "clientSecret" : null,
         "userInfoEndpoint" : "https://api.twitter.com/1.1/account/verify_credentials.json"
       },
       "accountProvisioning" : {

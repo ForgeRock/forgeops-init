@@ -1,29 +1,22 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "IdRepositoryUser",
     "entityId" : "amAdmin",
     "pathParams" : { }
   },
   "data" : {
     "_id" : "amAdmin",
-    "sunIdentityMSISDNNumber" : null,
     "userPassword" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQbIozqEdbFeYSDsegTQ6zN0fTfeyGnRahkx11Vwls4128UQw18bjkhgQUzCQpd6Uhg7FvVZlZ9LH/pAe/iHDQ6wxORZcrnhsbqaTUvQfcej0QHX7Cuv2EMqiAgKWFMScsbMeUKxgpm9IHSDFWXcAy4B1hZRY01Hok6OGlyvZSHfx3yVddtGX+TX6OKFAqfFPzmst4FSrlNQw=",
-    "telephoneNumber" : null,
-    "mail" : null,
-    "iplanet-am-user-alias-list" : null,
+    "userPassword-encrypted" : "AAAAA0FFUwIQJPIg0FbKstfh+ZWtFhoNPIyS9NAtDwLnyXgApBCNWRkPn/dnZn+pHVbD/BM1xRBTdmJzoUfriVpixWRnmkrB8mfVUq4ydnlwxCJj7qoqMkB37QZ5nQzzGArBVZxOmep0KFxHL/8ZJX7Or5Rt9Di9HvEck+XZkWDxACqxp+0wGSqruOj40lby6baH6K0YytDSuQrzbQMYzOw=",
     "givenName" : "amAdmin",
     "roles" : [ ],
     "dn" : "uid=amAdmin,ou=people,",
     "cn" : "amAdmin",
-    "employeeNumber" : null,
-    "postalAddress" : null,
-    "iplanet-am-user-success-url" : null,
     "inetUserStatus" : "Active",
     "sn" : "amAdmin",
-    "iplanet-am-user-failure-url" : null,
+    "iplanet-am-user-auth-config" : "[Empty]",
     "_type" : {
       "_id" : "user",
       "name" : "User",

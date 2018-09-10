@@ -1,14 +1,15 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "Sites",
     "entityId" : "site1",
     "pathParams" : { }
   },
   "data" : {
     "_id" : "site1",
-    "url" : "http://&{fqdn}/openam",
+    "id" : "02",
+    "url" : "http://openam.smoke.forgeops.com/openam",
     "secondaryURLs" : [ ]
   }
 }

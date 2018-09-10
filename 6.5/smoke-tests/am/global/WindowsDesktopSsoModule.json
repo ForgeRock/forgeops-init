@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "WindowsDesktopSsoModule",
     "entityId" : "WindowsDesktopSsoModule",
     "pathParams" : { }
@@ -9,12 +9,8 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "keytabFileName" : null,
       "trustedKerberosRealms" : [ ],
-      "kerberosServerName" : null,
-      "kerberosRealm" : null,
       "lookupUserInRealm" : false,
-      "principalName" : null,
       "authenticationLevel" : 0,
       "returnPrincipalWithDomainName" : false
     },

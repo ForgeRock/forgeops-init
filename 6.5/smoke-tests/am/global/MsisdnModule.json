@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "MsisdnModule",
     "entityId" : "MsisdnModule",
     "pathParams" : { }
@@ -17,7 +17,6 @@
       "msisdnRequestSearchLocations" : [ "searchRequest", "searchParam", "searchCookie" ],
       "ldapProviderUrl" : [ "configstore-0.configstore:1389" ],
       "msisdnParameterNames" : [ ],
-      "ldapUserBindPassword" : null,
       "trustedGatewayIPAddresses" : [ ],
       "baseSearchDN" : [ "o=userstore" ],
       "returnUserDN" : true

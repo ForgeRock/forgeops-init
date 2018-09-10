@@ -1,29 +1,19 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "IdRepositoryUser",
     "entityId" : "dsameuser",
     "pathParams" : { }
   },
   "data" : {
     "_id" : "dsameuser",
-    "sunIdentityMSISDNNumber" : null,
     "userPassword" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQB4vFkaLQscqAvXuQJg36znfqyEvJzUAqg0fbk+xcDS/bEOBAUe/GU1lZR/V/WWRKVDEWn3nsabS2UrTRkVrFn/1WV+5fFtbcRMHKspsuusFw+0aACSlMyzaO8j9lJS8FLWcHylf2IGxq2OVYlfcOntV3xTJSlw5MzwOEaCotHcRVWN3n/2Tyd+UoF2olvf+CcGsJuQEJwPo=",
-    "telephoneNumber" : null,
-    "iplanet-am-user-alias-list" : null,
-    "mail" : null,
-    "givenName" : null,
+    "userPassword-encrypted" : "AAAAA0FFUwIQrbnFvjTpI2YdPs5bZcQnRglpNMXw7Z8ZcrKW47MRhA3qtlYs1GdCF2VwSLoUpKEied56S/Q/tDz2seA/RJoqau1B/tcJdIrfeVIBFMblwTLCpJzhrP8doLkWrlKrV6mdtCcL3CE9/CUxiVAXj0NMJIn6Ec2V1X4kTcIzyz+ry4Bb1jyBroE/Iib1XfJwwAdY2xC9/lMkGSE=",
     "roles" : [ ],
     "dn" : "cn=dsameuser,ou=DSAME Users,",
-    "cn" : null,
-    "employeeNumber" : null,
-    "postalAddress" : null,
-    "iplanet-am-user-success-url" : null,
     "inetUserStatus" : "Active",
-    "sn" : null,
-    "iplanet-am-user-failure-url" : null,
+    "iplanet-am-user-auth-config" : "[Empty]",
     "_type" : {
       "_id" : "user",
       "name" : "User",

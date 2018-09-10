@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "OAuth2Clients",
     "entityId" : "oauth2",
     "pathParams" : { }
@@ -30,6 +30,7 @@
       "clientJwtPublicKey" : null
     },
     "advancedOAuth2ClientConfig" : {
+      "grantTypes" : [ "authorization_code" ],
       "updateAccessToken" : null,
       "requestUris" : [ ],
       "mixUpMitigation" : false,
@@ -53,13 +54,13 @@
     },
     "coreOAuth2ClientConfig" : {
       "userpassword" : null,
-      "userpassword-encrypted" : "AAAAA0FFUwIQ+QY4pH81AL17SrY3o+tC1SUdkO3sQgCgKLXIYNsTJ9TWzHJC45HNkQ==",
+      "userpassword-encrypted" : "AAAAA0FFUwIQTlPZJe9AUlaYYEhDQe71I+OMnSGCd4CyHAr3u+d9meT3kZaFUf1ZMw==",
       "authorizationCodeLifetime" : 0,
       "accessTokenLifetime" : 0,
-      "defaultScopes" : [ "cn" , "name", "email" ],
+      "defaultScopes" : [ "cn", "name", "mail" ],
       "clientName" : [ ],
       "clientType" : "Confidential",
-      "scopes" : [ "cn" , "name", "email" ],
+      "scopes" : [ "cn", "name", "mail" ],
       "agentgroup" : null,
       "refreshTokenLifetime" : 0,
       "redirectionUris" : [ "http://fake.com" ],

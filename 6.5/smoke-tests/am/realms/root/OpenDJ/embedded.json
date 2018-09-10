@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "OpenDJ",
     "entityId" : "embedded",
     "pathParams" : { }
@@ -10,7 +10,6 @@
     "_id" : "embedded",
     "groupconfig" : {
       "sun-idrepo-ldapv3-config-groups-search-attribute" : "cn",
-      "sun-idrepo-ldapv3-config-memberof" : null,
       "sun-idrepo-ldapv3-config-group-container-value" : "groups",
       "sun-idrepo-ldapv3-config-group-attributes" : [ "dn", "cn", "uniqueMember", "objectclass" ],
       "sun-idrepo-ldapv3-config-group-container-name" : "ou",
@@ -34,8 +33,12 @@
       "sun-idrepo-ldapv3-config-auth-kba-index-attr" : "kbaActiveIndex",
       "sun-idrepo-ldapv3-config-inactive" : "Inactive"
     },
+    "cachecontrol" : {
+      "sun-idrepo-ldapv3-dncache-enabled" : true,
+      "sun-idrepo-ldapv3-dncache-size" : 1500
+    },
     "ldapsettings" : {
-      "sun-idrepo-ldapv3-config-connection_pool_max_size" : 32,
+      "sun-idrepo-ldapv3-config-connection_pool_max_size" : 10,
       "openam-idrepo-ldapv3-behera-support-enabled" : true,
       "sun-idrepo-ldapv3-config-authid" : "cn=Directory Manager",
       "openam-idrepo-ldapv3-proxied-auth-enabled" : false,
@@ -43,16 +46,12 @@
       "sun-idrepo-ldapv3-config-search-scope" : "SCOPE_SUB",
       "sun-idrepo-ldapv3-config-time-limit" : 10,
       "openam-idrepo-ldapv3-heartbeat-interval" : 10,
-      "sun-idrepo-ldapv3-config-ldap-server" : [ "configstore-0.configstore:1389" ],
+      "sun-idrepo-ldapv3-config-ldap-server" : [ "userstore-0.userstore:1389" ],
       "openam-idrepo-ldapv3-heartbeat-timeunit" : "SECONDS",
       "sun-idrepo-ldapv3-config-organization_name" : "o=userstore",
       "sun-idrepo-ldapv3-config-connection-mode" : "LDAP",
       "sun-idrepo-ldapv3-config-authpw" : null,
-      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQQ+Txg+1SwjODex9SgcggwDaN+CHmqlxjmy2R5B8MSoDk8S+FcHvHWA=="
-    },
-    "cachecontrol" : {
-      "sun-idrepo-ldapv3-dncache-enabled" : true,
-      "sun-idrepo-ldapv3-dncache-size" : 1500
+      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQi+3+YpYmlGT8Lg8FS7/kNASy53u/PEoAiQxhNGC5ZYptyouIyzEYgg=="
     },
     "pluginconfig" : {
       "sunIdRepoSupportedOperations" : [ "realm=read,create,edit,delete,service", "group=read,create,edit,delete", "user=read,create,edit,delete,service" ],

@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "JdbcModule",
     "entityId" : "JdbcModule",
     "pathParams" : { }
@@ -16,7 +16,7 @@
       "passwordTransformClass" : "com.sun.identity.authentication.modules.jdbc.ClearTextTransform",
       "connectionPoolJndiName" : "java:comp/env/jdbc/samplePool",
       "password" : null,
-      "password-encrypted" : "AAAAA0FFUwIQ3ISi8+r992Bqah/bAFvwf2knVQizcpL0RhBPgkAWJC+OqKb3lWuYMQ==",
+      "password-encrypted" : "AAAAA0FFUwIQVL71fQYEg1LqLkKDButxb3SJzMfQytytcqWkMgsUhJWgPxgNw+caNQ==",
       "jdbcDriver" : "com.mysql.jdbc.Driver",
       "passwordColumn" : "PASSWORD_COLUMN",
       "authenticationLevel" : 0

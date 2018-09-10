@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M5",
     "entityType" : "LdapModule",
     "entityId" : "LdapModule",
     "pathParams" : { }
@@ -9,9 +9,7 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "userSearchFilter" : null,
       "authenticationLevel" : 0,
-      "userBindPassword" : null,
       "searchScope" : "SUBTREE",
       "returnUserDN" : true,
       "profileAttributeMappings" : [ ],

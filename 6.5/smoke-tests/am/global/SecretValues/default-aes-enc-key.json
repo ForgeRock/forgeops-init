@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M5",
+    "entityType" : "SecretValues",
+    "entityId" : "default.aes.enc.key",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "default.aes.enc.key",
+    "types" : [ "DATA_DECRYPTION_KEY", "DATA_ENCRYPTION_KEY" ],
+    "_type" : {
+      "_id" : "secretvalues",
+      "name" : "Secrets",
+      "collection" : true
+    }
+  }
+}
