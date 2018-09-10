@@ -12,8 +12,8 @@
     "_id" : "01/properties/cts",
     "amconfig.org.forgerock.services.cts.store.common.section" : {
       "org.forgerock.services.cts.store.location" : {
-        "value" : "default",
-        "inherited" : true
+        "value" : "external",
+        "inherited" : false
       },
       "org.forgerock.services.cts.store.root.suffix" : {
         "value" : "",
