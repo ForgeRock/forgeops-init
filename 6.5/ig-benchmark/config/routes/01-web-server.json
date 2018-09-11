@@ -4,7 +4,7 @@
     "condition": "${matches(request.uri.path, '^/static')}",
     "monitor": false,
     "handler": {
-        "capture": "all"
+        "capture": "all",
         "type": "Chain",
         "config": {
             "filters": [{
