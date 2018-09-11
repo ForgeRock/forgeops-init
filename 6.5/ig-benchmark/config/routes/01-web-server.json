@@ -1,6 +1,6 @@
 {
     "name": "01-sso",
-    "baseURI": "http://web-lee:80",
+    "baseURI": "http://lee.forgeops.com:80",
     "condition": "${matches(request.uri.path, '^/static')}",
     "monitor": false,
     "handler": {
@@ -22,7 +22,7 @@
                     "soTimeout": "30 seconds"
                 },
                 "comment": "Log request, pass it to the sample app, log response",
-                "baseURI": "http://web-lee:80"
+                "baseURI": "http://lee.forgeops.com:80"
             }
         }
     },
