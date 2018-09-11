@@ -43,7 +43,7 @@
                     "password": "password"
                 },
                 "sessionCache": {
-                    "enabled": "true"
+                    "enabled": true
                 }
             }
         }
