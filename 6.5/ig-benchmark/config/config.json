@@ -1,9 +1,18 @@
 {
   "handler": {
-    "type": "Router",
     "name": "_router",
-    "baseURI": "http://web-lee:80",
-    "capture": "all"
+    "type": "Router",
+    "config": {
+      "defaultHandler": {
+        "config": {
+          "entity": "Message from ConfigJson.MyMainRouter.defaultHandler",
+          "reason": "found",
+          "status": 200
+        },
+        "type": "StaticResponseHandler"
+      },
+      "scanInterval": 1
+    }
   },
   "heap": [
     {
@@ -11,12 +20,35 @@
       "type": "JwtSession"
     },
     {
-      "name": "capture",
+      "name": "MyCapture",
       "type": "CaptureDecorator",
       "config": {
+        "type": "Slf4jLogSink",
         "captureEntity": true,
-        "_captureContext": true
+        "captureExchange": true,
+        "logSink": {
+          "config": {
+            "base": "org.forgerock.openig"
+          }
+        }
+      }
+    },
+    {
+      "name": "CommonClientHandler",
+      "type": "ClientHandler",
+      "config": {
+        "_keyManager": null,
+        "_trustManager": null,
+        "connectionTimeout": "10 seconds",
+        "connections": 64,
+        "disableRetries": true,
+        "disableReuseConnection": true,
+        "hostnameVerifier": "ALLOW_ALL",
+        "numberOfWorkers": 4,
+        "soTimeout": "10 seconds"
       }
     }
-  ]
+  ],
+  "monitor": true
 }
+
