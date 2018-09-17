@@ -41,7 +41,7 @@
                     },
                     "defaultUserRoles" : [ ]
                 },
-                "enabled" : false
+                "enabled" : true
             },
             {
                 "name" : "INTERNAL_USER",
