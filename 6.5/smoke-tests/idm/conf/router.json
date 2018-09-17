@@ -5,17 +5,27 @@
                 "type" : "text/javascript",
                 "source" : "context.caller.external === true || context.current.name === 'selfservice'"
             },
-            "evaluatePrivileges" : true,
             "onRequest" : {
                 "type" : "text/javascript",
                 "file" : "router-authz.js"
             }
         },
         {
-            "pattern" : "^(managed|system|internal)($|(/.+))",
+            "pattern" : "^(managed|system|repo/internal)($|(/.+))",
             "onRequest" : {
                 "type" : "text/javascript",
                 "file" : "policyFilter.js"
+            },
+            "methods" : [
+                "create",
+                "update"
+            ]
+        },
+        {
+            "pattern" : "repo/internal/user((/.+)|$)",
+            "onRequest" : {
+                "type" : "text/javascript",
+                "source" : "request.content.password = require('crypto').hash(request.content.password);"
             },
             "methods" : [
                 "create",

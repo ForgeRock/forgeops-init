@@ -10,9 +10,19 @@
                 "type" : "text/javascript",
                 "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);"
             },
+            "onDelete" : {
+                "type" : "text/javascript",
+                "file" : "onDelete-user-cleanup.js"
+            },
             "postDelete" : {
                 "type" : "text/javascript",
-                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);require('postDelete-notification-cleanup').removeConnectedNotificationData(oldObject, resourceName, request);"
+                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);"
+            },
+            "actions" : {
+                "resetPassword": {
+                    "type": "text/javascript",
+                    "source": "require('resetPassword').sendMail(object);"
+                }
             },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
@@ -178,20 +188,6 @@
                                 "policyId" : "valid-email-address-format"
                             }
                         ]
-                    },
-                    "cn" : {
-                        "description" : "Common Name",
-                        "type" : "string",
-                        "viewable" : false,
-                        "searchable" : false,
-                        "userEditable" : false,
-                        "scope" : "private",
-                        "isPersonal" : true,
-                        "isVirtual" : true,
-                        "onStore" : {
-                            "type" : "text/javascript",
-                            "source" : "object.cn || (object.givenName + ' ' + object.sn)"
-                        }
                     },
                     "sn" : {
                         "title" : "Last Name",
@@ -360,7 +356,7 @@
                             },
                             "resourceCollection" : [
                                 {
-                                    "path" : "internal/role",
+                                    "path" : "repo/internal/role",
                                     "label" : "Internal Role",
                                     "query" : {
                                         "queryFilter" : "true",
@@ -660,8 +656,6 @@
                   "createDate",
                   "lastChanged"
               ]
-            },
-            "notifications" : {
             }
         },
         {
