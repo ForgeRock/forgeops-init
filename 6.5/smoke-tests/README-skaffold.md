@@ -2,7 +2,7 @@
 
 
 <aside class="warning">
-Skaffold needs access to the helm/ charts. The helm/ directory is a symbolic link to your forgeopps helm/ charts. You needto verify this is correct for your environment.
+Skaffold needs access to the helm/ charts. The helm/ directory is a symbolic link to your forgeopps helm/ charts. You need to verify this is correct for your environment.
 </aside>
 
 The skaffold files do not start any directory services.  Start the directory using helm commands. The directory
