@@ -31,7 +31,7 @@
                 },
                 {
                     "source" : "inetuserstatus",
-                    "target" : "accountStatus"   
+                    "target" : "accountStatus"
                 }
             ],
             "policies" : [
@@ -76,7 +76,8 @@
             "links" : "systemLdapAccounts_managedUser",
             "onCreate" : {
                 "type" : "text/javascript",
-                "source" : "target.dn = 'uid=' + source.userName + ',&{userstore.basecontext}';"
+                "globals" : { },
+                "source" : "target.dn = 'uid=' + source.userName + ',ou=people,&{userstore.basecontext}';"
             },
             "properties" : [
                 {
@@ -122,45 +123,60 @@
                         "type" : "text/javascript",
                         "source" : "!!object.telephoneNumber"
                     }
-                },
-                {
-                    "source" : "accountStatus",   
-                    "target" : "inetuserstatus"
                 }
-                
             ],
             "policies" : [
                 {
-                    "situation" : "CONFIRMED",
-                    "action" : "UPDATE"
+                    "action" : "IGNORE",
+                    "situation" : "AMBIGUOUS"
                 },
                 {
-                    "situation" : "FOUND",
-                    "action" : "LINK"
+                    "action" : "DELETE",
+                    "situation" : "SOURCE_MISSING"
                 },
                 {
-                    "situation" : "ABSENT",
-                    "action" : "CREATE"
+                    "action" : "CREATE",
+                    "situation" : "MISSING"
                 },
                 {
-                    "situation" : "AMBIGUOUS",
-                    "action" : "IGNORE"
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
                 },
                 {
-                    "situation" : "MISSING",
-                    "action" : "IGNORE"
+                    "action" : "IGNORE",
+                    "situation" : "UNQUALIFIED"
                 },
                 {
-                    "situation" : "SOURCE_MISSING",
-                    "action" : "DELETE"
+                    "action" : "IGNORE",
+                    "situation" : "UNASSIGNED"
                 },
                 {
-                    "situation" : "UNQUALIFIED",
-                    "action" : "IGNORE"
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
                 },
                 {
-                    "situation" : "UNASSIGNED",
-                    "action" : "IGNORE"
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "LINK",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
                 }
             ]
         }
