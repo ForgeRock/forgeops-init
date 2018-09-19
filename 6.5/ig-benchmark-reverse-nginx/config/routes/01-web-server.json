@@ -1,5 +1,5 @@
 {
-  "baseURI" : "http://web-lee:80",
+  "baseURI" : "http://web-ig-benchmark:80",
   "handler" : {
     "type" : "ReverseProxyHandler",
     "config" : {
