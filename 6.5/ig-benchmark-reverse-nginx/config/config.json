@@ -1,0 +1,22 @@
+{
+  "handler": {
+    "type": "Router",
+    "name": "_router",
+    "baseURI": "http://web-ig-benchmark:80",
+    "capture": "all"
+  },
+  "heap": [
+    {
+      "name": "JwtSession",
+      "type": "JwtSession"
+    },
+    {
+      "name": "capture",
+      "type": "CaptureDecorator",
+      "config": {
+        "captureEntity": true,
+        "_captureContext": true
+      }
+    }
+  ]
+}
