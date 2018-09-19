@@ -6,6 +6,7 @@
             "org.forgerock.audit.handlers.elasticsearch.ElasticsearchAuditEventHandler",
             "org.forgerock.audit.handlers.jms.JmsAuditEventHandler",
             "org.forgerock.audit.handlers.json.JsonAuditEventHandler",
+            "org.forgerock.audit.handlers.json.stdout.JsonStdoutAuditEventHandler",
             "org.forgerock.openidm.audit.impl.RepositoryAuditEventHandler",
             "org.forgerock.openidm.audit.impl.RouterAuditEventHandler",
             "org.forgerock.audit.handlers.splunk.SplunkAuditEventHandler",

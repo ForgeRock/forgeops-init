@@ -18,7 +18,7 @@
             }
         },
         {
-            "resource" : "repo/internal/user/*",
+            "resource" : "internal/user/*",
             "properties" : [
                 {
                     "name" : "_id",
@@ -43,22 +43,42 @@
                             "policyId" : "not-empty"
                         },
                         {
-                            "policyId" : "at-least-X-capitals",
-                            "params" : {
-                                "numCaps" : 1
-                            }
-                        },
-                        {
-                            "policyId" : "at-least-X-numbers",
-                            "params" : {
-                                "numNums" : 1
-                            }
-                        },
-                        {
                             "policyId" : "minimum-length",
                             "params" : {
                                 "minLength" : 8
                             }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "resource" : "internal/role/*",
+            "properties" : [
+                {
+                    "name" : "name",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "valid-object-name-format"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "resource" : "internal/privilege/*",
+            "properties" : [
+                {
+                    "name" : "name",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "valid-object-name-format"
                         }
                     ]
                 }

@@ -10,10 +10,6 @@
                     "target" : "displayName"
                 },
                 {
-                    "source" : "description",
-                    "target" : "description"
-                },
-                {
                     "source" : "givenName",
                     "target" : "givenName"
                 },
@@ -32,6 +28,10 @@
                 {
                     "source" : "uid",
                     "target" : "userName"
+                },
+                {
+                    "source" : "inetuserstatus",
+                    "target" : "accountStatus"   
                 }
             ],
             "policies" : [
@@ -76,7 +76,6 @@
             "links" : "systemLdapAccounts_managedUser",
             "onCreate" : {
                 "type" : "text/javascript",
-                "globals" : { },
                 "source" : "target.dn = 'uid=' + source.userName + ',&{userstore.basecontext}';"
             },
             "properties" : [
@@ -99,14 +98,6 @@
                 {
                     "source" : "userName",
                     "target" : "uid"
-                },
-                {
-                    "source" : "description",
-                    "target" : "description",
-                    "condition" : {
-                        "type" : "text/javascript",
-                        "source" : "!!object.description"
-                    }
                 },
                 {
                     "source" : "mail",
@@ -133,14 +124,10 @@
                     }
                 },
                 {
-                    "target" : "dn",
-                    "source" : "userName",
-                    "transform" : {
-                        "type" : "text/javascript",
-                        "globals" : { },
-                        "source" : "\"uid=\" + source + \",&{userstore.basecontext}\""
-                    }
+                    "source" : "accountStatus",   
+                    "target" : "inetuserstatus"
                 }
+                
             ],
             "policies" : [
                 {
