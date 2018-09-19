@@ -10,19 +10,9 @@
                 "type" : "text/javascript",
                 "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);"
             },
-            "onDelete" : {
-                "type" : "text/javascript",
-                "file" : "onDelete-user-cleanup.js"
-            },
             "postDelete" : {
                 "type" : "text/javascript",
-                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);"
-            },
-            "actions" : {
-                "resetPassword": {
-                    "type": "text/javascript",
-                    "source": "require('resetPassword').sendMail(object);"
-                }
+                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);require('postDelete-notification-cleanup').removeConnectedNotificationData(oldObject, resourceName, request);"
             },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
@@ -356,7 +346,7 @@
                             },
                             "resourceCollection" : [
                                 {
-                                    "path" : "repo/internal/role",
+                                    "path" : "internal/role",
                                     "label" : "Internal Role",
                                     "query" : {
                                         "queryFilter" : "true",
@@ -656,6 +646,8 @@
                   "createDate",
                   "lastChanged"
               ]
+            },
+            "notifications" : {
             }
         },
         {

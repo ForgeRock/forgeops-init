@@ -11,10 +11,7 @@
         "principal" : "cn=Directory Manager",
         "credentials" : "&{userstore.password}",
         "baseContexts" : [
-            "&{userstore.basecontext}"
-        ],
-        "baseContextsToSynchronize" : [
-            "&{userstore.basecontext}"
+            "ou=people,&{userstore.basecontext}"
         ],
         "accountSearchFilter" : null,
         "accountSynchronizationFilter" : null,
@@ -54,7 +51,10 @@
         "blockSize" : 100,
         "uidAttribute" : "entryUUID",
         "maintainLdapGroupMembership" : false,
-        "respectResourcePasswordPolicyChangeAfterReset" : false
+        "respectResourcePasswordPolicyChangeAfterReset" : false,
+        "baseContextsToSynchronize" : [
+            "ou=people,&{userstore.basecontext}"
+        ]
     },
     "resultsHandlerConfig" : {
         "enableNormalizingResultsHandler" : true,
@@ -98,7 +98,9 @@
                     "type" : "string",
                     "nativeName" : "__NAME__",
                     "nativeType" : "string",
-                    "required" : true
+                    "required" : false,
+                    "flags" : [ ],
+                    "runAsUser" : false
                 },
                 "objectClass" : {
                     "type" : "array",
@@ -299,5 +301,6 @@
             "denied" : false,
             "onDeny" : "DO_NOTHING"
         }
-    }
+    },
+    "enabled" : true
 }
