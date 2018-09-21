@@ -32,7 +32,8 @@ available to the component containers.
 The directory structure is `/{version}/{config}/{component}/*`
 
 **version** refers to the product release version. Currently 6.0 or 6.5.  
-**config** is a name given to that particular sample of configuration.  
+**config** is a name given to that particular sample of configuration. This can
+have multiple directory levels.  
 **component** refers to product name, one of am/ds/ig/idm.
 
 Basic product configuration, as referenced in the get started guides, can be found under `/{version}/default/{component}/*`:
