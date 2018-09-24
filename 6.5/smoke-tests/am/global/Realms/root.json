@@ -11,6 +11,6 @@
     "parentPath" : null,
     "active" : true,
     "name" : "/",
-    "aliases" : [ "userstore", "openam.smoke.forgeops.com", "openam" ]
+    "aliases" : [ "userstore", "&{fqdn}", "openam" ]
   }
 }
