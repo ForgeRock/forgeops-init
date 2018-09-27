@@ -339,6 +339,146 @@
                         "ldapAttribute": "fr-idm-meta"
                     }
                 }
+            },
+            "managed/teammember": {
+                "dnTemplate": "ou=admins,o=userstore",
+                "namingStrategy": {
+                    "type": "serverNaming",
+                    "dnAttribute": "uid",
+                    "idAttribute": "entryUUID"
+                },
+                "nativeId" : true,
+                "objectClasses": [
+                    "person",
+                    "organizationalPerson",
+                    "inetOrgPerson",
+                    "extensibleObject",
+                    "iplanet-am-user-service",
+                    "devicePrintProfilesContainer",
+                    "kbaInfoContainer",
+                    "fr-idm-managed-user-explicit"
+                ],
+                "properties": {
+                    "_id": {
+                        "type": "simple",
+                        "ldapAttribute": "entryUUID",
+                        "writability": "createOnly"
+                    },
+                    "userName": {
+                        "primaryKey": true,
+                        "type": "simple",
+                        "ldapAttribute": "uid"
+                    },
+                    "cn": {
+                        "type": "simple",
+                        "ldapAttribute": "cn"
+                    },
+                    "password": {
+                        "type": "simple",
+                        "ldapAttribute": "userPassword"
+                    },
+                    "aliasList": {
+                        "type": "simple",
+                        "isMultiValued": true,
+                        "ldapAttribute": "iplanet-am-user-alias-list"
+                    },
+                    "accountStatus": {
+                        "type": "simple",
+                        "ldapAttribute": "fr-idm-accountStatus"
+                    },
+                    "effectiveRoles": {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-effectiveRole",
+                        "isMultiValued": true
+                    },
+                    "effectiveAssignments": {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-effectiveAssignment",
+                        "isMultiValued": true
+                    },
+                    "postalCode": {
+                        "type": "simple",
+                        "ldapAttribute": "postalCode"
+                    },
+                    "stateProvince": {
+                        "type": "simple",
+                        "ldapAttribute": "st"
+                    },
+                    "postalAddress": {
+                        "type": "simple",
+                        "ldapAttribute": "postalAddress"
+                    },
+                    "displayName": {
+                        "type": "simple",
+                        "ldapAttribute": "displayName"
+                    },
+                    "description": {
+                        "type": "simple",
+                        "ldapAttribute": "description"
+                    },
+                    "country": {
+                        "type": "simple",
+                        "ldapAttribute": "c"
+                    },
+                    "address2": {
+                        "type": "simple",
+                        "ldapAttribute": "postalAddress"
+                    },
+                    "city": {
+                        "type": "simple",
+                        "ldapAttribute": "l"
+                    },
+                    "givenName": {
+                        "type": "simple",
+                        "ldapAttribute": "givenName"
+                    },
+                    "sn": {
+                        "type": "simple",
+                        "ldapAttribute": "sn"
+                    },
+                    "telephoneNumber": {
+                        "type": "simple",
+                        "ldapAttribute": "telephoneNumber"
+                    },
+                    "mail": {
+                        "type": "simple",
+                        "ldapAttribute": "mail"
+                    },
+                    "organizationName": {
+                        "type": "simple",
+                        "ldapAttribute": "organizationName"
+                    },
+                    "lastSync": {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-lastSync"
+                    },
+                    "termsAccepted": {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-termsAccepted"
+                    },
+                    "lastChanged": {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-lastChanged"
+                    },
+                    "consentedMappings": {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-consentedMapping",
+                        "isMultiValued": true
+                    },
+                    "kbaInfo": {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-kbaInfo",
+                        "isMultiValued": true
+                    },
+                    "preferences": {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-preferences"
+                    },
+                    "_meta": {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-meta"
+                    }
+                }
             }
         },
         "genericMapping": {
