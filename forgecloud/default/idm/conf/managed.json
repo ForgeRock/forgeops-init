@@ -1,6 +1,481 @@
 {
     "objects" : [
         {
+            "name": "teammember",
+            "onCreate": {
+                "type": "text/javascript",
+                "source": "require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);"
+            },
+            "onUpdate": {
+                "type": "text/javascript",
+                "source": "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);"
+            },
+            "onDelete": {
+                "type": "text/javascript",
+                "file": "onDelete-user-cleanup.js"
+            },
+            "postDelete": {
+                "type": "text/javascript",
+                "source": "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);"
+            },
+            "actions": {
+                "resetPassword": {
+                    "type": "text/javascript",
+                    "source": "require('resetPassword').sendMail(object);"
+                },
+                "unbind": {
+                    "type": "text/javascript",
+                    "file": "ui/unBindBehavior.js",
+                    "apiDescriptor": {
+                        "parameters": [{
+                            "name": "provider",
+                            "type": "string",
+                            "required": true
+                        }]
+                    }
+                },
+                "bind": {
+                    "type": "text/javascript",
+                    "file": "ui/bindBehavior.js",
+                    "apiDescriptor": {
+                        "parameters": [{
+                            "name": "provider",
+                            "type": "string",
+                            "required": true
+                        }]
+                    }
+                }
+            },
+            "schema": {
+                "id": "urn:jsonschema:org:forgerock:openidm:managed:api:Teammember",
+                "title": "Teammember",
+                "icon": "fa-user",
+                "viewable": true,
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "order": [
+                    "_id",
+                    "userName",
+                    "password",
+                    "givenName",
+                    "sn",
+                    "mail",
+                    "organizationName",
+                    "description",
+                    "accountStatus",
+                    "telephoneNumber",
+                    "postalAddress",
+                    "address2",
+                    "city",
+                    "postalCode",
+                    "country",
+                    "stateProvince",
+                    "roles",
+                    "manager",
+                    "authzRoles",
+                    "reports",
+                    "effectiveRoles",
+                    "effectiveAssignments",
+                    "lastSync",
+                    "kbaInfo",
+                    "preferences",
+                    "consentedMappings",
+                    "aliasList",
+                    "cn",
+                    "idps"
+                ],
+                "properties": {
+                    "_id": {
+                        "description": "User ID",
+                        "type": "string",
+                        "viewable": false,
+                        "searchable": false,
+                        "userEditable": false,
+                        "usageDescription": "",
+                        "isPersonal": false,
+                        "policies": [{
+                            "policyId": "cannot-contain-characters",
+                            "params": {
+                                "forbiddenChars": [
+                                    "/"
+                                ]
+                            }
+                        }]
+                    },
+                    "password": {
+                        "title": "Password",
+                        "description": "Password",
+                        "type": "string",
+                        "viewable": false,
+                        "searchable": false,
+                        "userEditable": true,
+                        "scope": "private",
+                        "isProtected": true,
+                        "usageDescription": "",
+                        "isPersonal": false
+                    },
+                    "kbaInfo": {
+                        "description": "KBA Info",
+                        "type": "array",
+                        "userEditable": true,
+                        "viewable": false,
+                        "usageDescription": "",
+                        "isPersonal": true,
+                        "items": {
+                            "type": "object",
+                            "title": "KBA Info Items",
+                            "properties": {
+                                "answer": {
+                                    "description": "Answer",
+                                    "type": "string"
+                                },
+                                "customQuestion": {
+                                    "description": "Custom question",
+                                    "type": "string"
+                                },
+                                "questionId": {
+                                    "description": "Question ID",
+                                    "type": "string"
+                                }
+                            },
+                            "order": [
+                                "answer",
+                                "customQuestion",
+                                "questionId"
+                            ],
+                            "required": []
+                        }
+                    },
+                    "preferences": {
+                        "title": "Preferences",
+                        "description": "Preferences",
+                        "viewable": true,
+                        "searchable": false,
+                        "userEditable": true,
+                        "type": "object",
+                        "usageDescription": "",
+                        "isPersonal": false,
+                        "properties": {
+                            "updates": {
+                                "description": "Send me news and updates",
+                                "type": "boolean"
+                            },
+                            "marketing": {
+                                "description": "Send me special offers and services",
+                                "type": "boolean"
+                            }
+                        },
+                        "order": [
+                            "updates",
+                            "marketing"
+                        ],
+                        "required": []
+                    },
+                    "mail": {
+                        "title": "Email Address",
+                        "description": "Email Address",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": true,
+                        "policies": [{
+                            "policyId": "valid-email-address-format"
+                        }]
+                    },
+                    "organizationName": {
+                        "title": "Organization Name",
+                        "description": "Organization Name",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": false,
+                        "usageDescription": "",
+                        "isPersonal": true
+                    },
+                    "sn": {
+                        "title": "Last Name",
+                        "description": "Last Name",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": true
+                    },
+                    "description": {
+                        "title": "Description",
+                        "description": "Description",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": false
+                    },
+                    "address2": {
+                        "type": "string",
+                        "title": "Address 2",
+                        "description": "Address 2",
+                        "viewable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": true
+                    },
+                    "givenName": {
+                        "title": "First Name",
+                        "description": "First Name",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "title": "City",
+                        "description": "City",
+                        "viewable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": false
+                    },
+                    "country": {
+                        "type": "string",
+                        "title": "Country",
+                        "description": "Country",
+                        "viewable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": false
+                    },
+                    "postalCode": {
+                        "type": "string",
+                        "title": "Postal Code",
+                        "description": "Postal Code",
+                        "viewable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": false
+                    },
+                    "accountStatus": {
+                        "title": "Status",
+                        "description": "Status",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": false,
+                        "usageDescription": "",
+                        "isPersonal": false
+                    },
+                    "effectiveRoles": {
+                        "type": "array",
+                        "title": "Effective Roles",
+                        "description": "Effective Roles",
+                        "viewable": false,
+                        "returnByDefault": true,
+                        "isVirtual": true,
+                        "usageDescription": "",
+                        "isPersonal": false,
+                        "onRetrieve": {
+                            "type": "text/javascript",
+                            "source": "require('roles/effectiveRoles').calculateEffectiveRoles(object, 'roles');"
+                        },
+                        "items": {
+                            "type": "object",
+                            "title": "Effective Roles Items"
+                        }
+                    },
+                    "effectiveAssignments": {
+                        "type": "array",
+                        "title": "Effective Assignments",
+                        "description": "Effective Assignments",
+                        "viewable": false,
+                        "returnByDefault": true,
+                        "isVirtual": true,
+                        "usageDescription": "",
+                        "isPersonal": false,
+                        "onRetrieve": {
+                            "type": "text/javascript",
+                            "file": "roles/effectiveAssignments.js",
+                            "effectiveRolesPropName": "effectiveRoles"
+                        },
+                        "items": {
+                            "type": "object",
+                            "title": "Effective Assignments Items"
+                        }
+                    },
+                    "telephoneNumber": {
+                        "type": "string",
+                        "title": "Mobile Phone",
+                        "description": "Mobile Phone",
+                        "viewable": true,
+                        "userEditable": true,
+                        "pattern": "^\\+?([0-9\\- \\(\\)])*$",
+                        "usageDescription": "",
+                        "isPersonal": true
+                    },
+                    "stateProvince": {
+                        "type": "string",
+                        "title": "State/Province",
+                        "description": "State/Province",
+                        "viewable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": false
+                    },
+                    "postalAddress": {
+                        "type": "string",
+                        "title": "Address 1",
+                        "description": "Address 1",
+                        "viewable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": true
+                    },
+                    "userName": {
+                        "title": "Username",
+                        "description": "Username",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": true,
+                        "minLength": 1,
+                        "usageDescription": "",
+                        "isPersonal": true,
+                        "policies": [{
+                                "policyId": "unique"
+                            },
+                            {
+                                "policyId": "cannot-contain-characters",
+                                "params": {
+                                    "forbiddenChars": [
+                                        "/"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "lastSync": {
+                        "description": "Last Sync timestamp",
+                        "title": "Last Sync timestamp",
+                        "type": "object",
+                        "scope": "private",
+                        "viewable": false,
+                        "searchable": false,
+                        "usageDescription": "",
+                        "isPersonal": false,
+                        "properties": {
+                            "effectiveAssignments": {
+                                "description": "Effective Assignments",
+                                "title": "Effective Assignments",
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "title": "Effective Assignments Items"
+                                }
+                            },
+                            "timestamp": {
+                                "description": "Timestamp",
+                                "type": "string"
+                            }
+                        },
+                        "order": [
+                            "effectiveAssignments",
+                            "timestamp"
+                        ],
+                        "required": []
+                    },
+                    "consentedMappings": {
+                        "title": "Consented Mappings",
+                        "description": "Consented Mappings",
+                        "type": "array",
+                        "viewable": false,
+                        "searchable": false,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": false,
+                        "items": {
+                            "type": "array",
+                            "title": "Consented Mappings Items",
+                            "items": {
+                                "type": "object",
+                                "title": "Consented Mappings Item",
+                                "properties": {
+                                    "mapping": {
+                                        "title": "Mapping",
+                                        "description": "Mapping",
+                                        "type": "string",
+                                        "viewable": true,
+                                        "searchable": true,
+                                        "userEditable": true
+                                    },
+                                    "consentDate": {
+                                        "title": "Consent Date",
+                                        "description": "Consent Date",
+                                        "type": "string",
+                                        "viewable": true,
+                                        "searchable": true,
+                                        "userEditable": true
+                                    }
+                                },
+                                "order": [
+                                    "mapping",
+                                    "consentDate"
+                                ],
+                                "required": [
+                                    "mapping",
+                                    "consentDate"
+                                ]
+                            }
+                        },
+                        "returnByDefault": false,
+                        "isVirtual": false
+                    },
+                    "aliasList": {
+                        "description": "Alias List",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "viewable": false,
+                        "searchable": false,
+                        "userEditable": false,
+                        "scope": "private",
+                        "isPersonal": false
+                    },
+                    "cn": {
+                        "description": "Common Name",
+                        "type": "string",
+                        "viewable": false,
+                        "searchable": false,
+                        "userEditable": false,
+                        "scope": "private",
+                        "isPersonal": true,
+                        "isVirtual": true,
+                        "onStore": {
+                            "type": "text/javascript",
+                            "source": "object.cn || (object.givenName + ' ' + object.sn)"
+                        }
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "userName",
+                    "mail"
+                ]
+            },
+            "meta": {
+                "property": "_meta",
+                "resourceCollection": "internal/usermeta",
+                "trackedProperties": [
+                    "createDate",
+                    "lastChanged"
+                ]
+            }
+        },
+        {
             "name" : "user",
             "onCreate" : {
                 "type" : "text/javascript",
@@ -720,6 +1195,7 @@
             }
         },
         {
+
             "name" : "role",
             "onDelete" : {
                 "type" : "text/javascript",
