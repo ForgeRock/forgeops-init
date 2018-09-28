@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "SecretValues",
+    "entityId" : "default.ecdsa.p384.sig.key",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "default.ecdsa.p384.sig.key",
+    "types" : [ "VERIFICATION_KEY", "SIGNING_KEY" ],
+    "_type" : {
+      "_id" : "secretvalues",
+      "name" : "Secrets",
+      "collection" : true
+    }
+  }
+}
