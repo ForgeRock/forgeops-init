@@ -158,7 +158,8 @@
                 "type": "object",
                 "required": [
                     "userName",
-                    "mail"
+                    "mail",
+                    "password"
                 ]
             },
             "meta": {
@@ -877,7 +878,8 @@
                 "type" : "object",
                 "required" : [
                     "userName",
-                    "mail"
+                    "mail",
+                    "sn"
                 ]
             },
             "meta" : {
