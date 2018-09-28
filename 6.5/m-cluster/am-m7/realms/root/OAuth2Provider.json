@@ -35,7 +35,6 @@
       "tokenEncryptionEnabled" : false,
       "createdTimestampAttribute" : null,
       "displayNameAttribute" : "cn",
-      "keypairName" : "test",
       "supportedSubjectTypes" : [ "public" ]
     },
     "coreOIDCConfig" : {
