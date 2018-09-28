@@ -28,7 +28,6 @@
       "advancedOAuth2Config" : {
         "customLoginUrlTemplate" : null,
         "supportedScopes" : [ ],
-        "tokenSigningHmacSharedSecret" : null,
         "tokenSigningHmacSharedSecret-encrypted" : "AAAAA0FFUwIQHb3IoteWfLQcFte+oU9jJ9W7RlpfYAznNU9zrWDiyi1I2/EGQA5+ZJpomSXcnZ6swSOClyUmvkaZ517ExPnwxnPz++M9jWfU",
         "codeVerifierEnforced" : false,
         "tokenSigningAlgorithm" : "HS256",

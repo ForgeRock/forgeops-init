@@ -20,7 +20,6 @@
     "advancedOAuth2Config" : {
       "customLoginUrlTemplate" : null,
       "supportedScopes" : [ "email|Your email address", "openid|", "address|Your postal address", "phone|Your telephone number(s)", "profile|Your personal information" ],
-      "tokenSigningHmacSharedSecret" : null,
       "tokenSigningHmacSharedSecret-encrypted" : "AAAAA0FFUwIQImLB9Y8t+obExfNdL1dE9JQFNOv9SwJ3V+u0ZGmtv0Dx5+zgyk95ntivDbLdqkUlcFEqHm/SC/mf1kJ4KIcoWbXc0+pqZMZA",
       "codeVerifierEnforced" : false,
       "tokenSigningAlgorithm" : "HS256",
