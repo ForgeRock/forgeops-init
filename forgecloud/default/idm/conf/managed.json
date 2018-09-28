@@ -2,22 +2,6 @@
     "objects" : [
         {
             "name": "teammember",
-            "onCreate": {
-                "type": "text/javascript",
-                "source": "require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);"
-            },
-            "onUpdate": {
-                "type": "text/javascript",
-                "source": "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);"
-            },
-            "onDelete": {
-                "type": "text/javascript",
-                "file": "onDelete-user-cleanup.js"
-            },
-            "postDelete": {
-                "type": "text/javascript",
-                "source": "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);"
-            },
             "actions": {
                 "resetPassword": {
                     "type": "text/javascript",
