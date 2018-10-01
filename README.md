@@ -12,7 +12,7 @@ The master of this repository tracks the master of the forgeops project.
 
 ## About This Repository
 
-This repository contains an sample configuration for the ForgeRock 
+This repository contains sample configurations for the ForgeRock 
 Identity Platform on Kubernetes. The configuration can be used with the 
 [forgeops](https://github.com/ForgeRock/forgeops) repository 
 when deploying the reference DevOps examples. 
