@@ -19,8 +19,8 @@ when deploying the reference DevOps examples.
 
 Use this repository as a starting point for your own custom configuration 
 repository for the ForgeRock Identity Platform. For more information about 
-creating a custom configuration repository, see the chapter _Creating a Custom 
-Configuration Repository_ in the _ForgeRock DevOps Guide_.
+creating a custom configuration repository, see the section _Setting up Your  
+Configuration Repository_ in the _ForgeRock DevOps Developers Guide_.
 
 Kubernetes mounts configuration files as a volume at runtime by cloning the 
 configuration repository in an init container and making the configuration 
@@ -36,7 +36,7 @@ The directory structure is `/{version}/{config}/{component}/*`
 have multiple directory levels.  
 **component** refers to product name, one of am/ds/ig/idm.
 
-Basic product configuration, as referenced in the get started guides, can be found under `/{version}/default/{component}/*`:
+Basic product configuration, as referenced in the _DevOps Quick Start Guide_, can be found under `/{version}/default/{component}/*`:
        
   * `/{version}/default/am/empty-import` - Empty folder which triggers default AM deployment with
     no configuration. 
