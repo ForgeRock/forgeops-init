@@ -59,8 +59,8 @@ Directory                   | Contents
 ----------------------------| **CLOUD DEPLOYMENT MODEL**
 \6.5\\**CDM**               | Cloud Deployment Model (Common use ForgeRock Identity Platform deployment).
 \6.5\CDM\\**m-cluster**     | Medium size cluster CDM example configs for AM and IDM.  
-                            || Config common to both products: 
-                            || - Prometheus endpoints exposed. 
+                            || Config common to both products: |
+                            || - Prometheus endpoints exposed. |
                             || - Logging to stdout. 
                             || - Tuned for m-cluster.
 \6.5\CDM\m-cluster\\**AM**  | Single realm. OAuth 2.0 Server and Client. LDAP Auth module default.
