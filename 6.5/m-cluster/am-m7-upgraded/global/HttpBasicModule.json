@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "HttpBasicModule",
+    "entityId" : "HttpBasicModule",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "httpbasic",
+      "collection" : false,
+      "name" : "HTTP Basic"
+    },
+    "defaults" : {
+      "authenticationLevel" : 0,
+      "backendModuleName" : null
+    }
+  }
+}

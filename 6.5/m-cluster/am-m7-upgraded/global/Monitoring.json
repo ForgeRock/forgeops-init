@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "Monitoring",
+    "entityId" : "Monitoring",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "monitoring",
+      "collection" : false,
+      "name" : "Monitoring"
+    },
+    "authfilePath" : "%BASE_DIR%/%SERVER_URI%/openam_mon_auth",
+    "enabled" : true,
+    "httpEnabled" : false,
+    "httpPort" : 8082,
+    "policyHistoryWindowSize" : 10000,
+    "rmiEnabled" : false,
+    "rmiPort" : 9999,
+    "sessionHistoryWindowSize" : 10000,
+    "snmpEnabled" : false,
+    "snmpPort" : 8085
+  }
+}

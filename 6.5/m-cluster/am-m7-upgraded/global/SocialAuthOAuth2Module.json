@@ -1,0 +1,60 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "SocialAuthOAuth2Module",
+    "entityId" : "SocialAuthOAuth2Module",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "authSocialOAuth2",
+      "collection" : false,
+      "name" : "Social Auth OAuth2"
+    },
+    "defaults" : {
+      "accountProvisioning" : {
+        "accountMapperClass" : null,
+        "accountMapperConfiguration" : [ ],
+        "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
+        "anonymousUserName" : "anonymous",
+        "attributeMapperConfiguration" : [ ],
+        "attributeMappingClasses" : [ ],
+        "createAccount" : true,
+        "enableRegistrationService" : false,
+        "mapToAnonymousUser" : false,
+        "promptPasswordFlag" : false,
+        "saveAttributesInSession" : true
+      },
+      "core" : {
+        "authenticationLevel" : 0,
+        "authorizeEndpoint" : null,
+        "clientId" : null,
+        "clientSecret" : null,
+        "issuerName" : null,
+        "logoutBehaviour" : "prompt",
+        "logoutServiceUrl" : "",
+        "mixUpMitigation" : false,
+        "provider" : null,
+        "scope" : [ ],
+        "scopeDelimiter" : null,
+        "ssoProxyUrl" : "http://openam:80/openam/oauth2c/OAuthProxy.jsp",
+        "subjectProperty" : null,
+        "tokenEndpoint" : null,
+        "userInfoEndpoint" : null,
+        "usesBasicAuth" : true
+      },
+      "emailSettings" : {
+        "emailAttribute" : "",
+        "emailGateway" : "org.forgerock.openam.authentication.modules.oauth2.DefaultEmailGatewayImpl",
+        "smtpFromAddress" : null,
+        "smtpHost" : "localhost",
+        "smtpPassword" : null,
+        "smtpPort" : "25",
+        "smtpSslEnabled" : null,
+        "smtpUsername" : ""
+      }
+    }
+  }
+}

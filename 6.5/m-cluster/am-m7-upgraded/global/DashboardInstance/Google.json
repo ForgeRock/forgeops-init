@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "DashboardInstance",
+    "entityId" : "Google",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "Google",
+    "_type" : {
+      "_id" : "instances",
+      "collection" : true,
+      "name" : "Dashboard"
+    },
+    "className" : "SAML2ApplicationClass",
+    "displayName" : "Google",
+    "icfIdentifier" : "idm magic 34",
+    "icon" : "images/logos/googleplus.png",
+    "login" : "http://www.google.com",
+    "name" : "Google"
+  }
+}

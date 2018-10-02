@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "AuthenticationTreesConfiguration",
+    "entityId" : "AuthenticationTreesConfiguration",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "EMPTY",
+      "collection" : false,
+      "name" : "Authentication Trees Configuration"
+    }
+  }
+}

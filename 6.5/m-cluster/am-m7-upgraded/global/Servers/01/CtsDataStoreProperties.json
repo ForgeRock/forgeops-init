@@ -1,0 +1,55 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "CtsDataStoreProperties",
+    "entityId" : "http://openam:80/openam",
+    "pathParams" : {
+      "serverName" : "http://openam:80/openam"
+    }
+  },
+  "data" : {
+    "_id" : "01/properties/cts",
+    "amconfig.org.forgerock.services.cts.store.common.section" : {
+      "org.forgerock.services.cts.store.location" : {
+        "inherited" : true,
+        "value" : "external"
+      },
+      "org.forgerock.services.cts.store.max.connections" : {
+        "inherited" : true,
+        "value" : "66"
+      },
+      "org.forgerock.services.cts.store.root.suffix" : {
+        "inherited" : true,
+        "value" : "o=cts"
+      }
+    },
+    "amconfig.org.forgerock.services.cts.store.external.section" : {
+      "org.forgerock.services.cts.store.affinity.enabled" : {
+        "inherited" : true,
+        "value" : true
+      },
+      "org.forgerock.services.cts.store.directory.name" : {
+        "inherited" : true,
+        "value" : "ctsstore-0.ctsstore:1389,ctsstore-1.ctsstore:1389"
+      },
+      "org.forgerock.services.cts.store.heartbeat" : {
+        "inherited" : true,
+        "value" : "10"
+      },
+      "org.forgerock.services.cts.store.loginid" : {
+        "inherited" : true,
+        "value" : "cn=Directory Manager"
+      },
+      "org.forgerock.services.cts.store.password" : {
+        "inherited" : false,
+        "value" : null
+      },
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQpHW1qfqPOIKMawpox/XHDo2Ogk3s8EYyhw29efFM9zG5kC05BZRtSQ==",
+      "org.forgerock.services.cts.store.ssl.enabled" : {
+        "inherited" : true,
+        "value" : false
+      }
+    }
+  }
+}
