@@ -1,0 +1,36 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "ActiveDirectoryModule",
+    "entityId" : "ActiveDirectoryModule",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "activedirectory",
+      "collection" : false,
+      "name" : "Active Directory"
+    },
+    "defaults" : {
+      "authenticationLevel" : 0,
+      "connectionHeartbeatInterval" : 1,
+      "connectionHeartbeatTimeUnit" : "MINUTES",
+      "openam-auth-ldap-connection-mode" : "LDAP",
+      "operationTimeout" : 0,
+      "primaryLdapServer" : [ "configstore-0.configstore:1389" ],
+      "profileAttributeMappings" : [ ],
+      "returnUserDN" : true,
+      "searchScope" : "SUBTREE",
+      "secondaryLdapServer" : [ ],
+      "trustAllServerCertificates" : false,
+      "userBindDN" : "cn=Directory Manager",
+      "userBindPassword" : null,
+      "userProfileRetrievalAttribute" : "uid",
+      "userSearchAttributes" : [ "uid" ],
+      "userSearchFilter" : null,
+      "userSearchStartDN" : [ "o=userstore" ]
+    }
+  }
+}

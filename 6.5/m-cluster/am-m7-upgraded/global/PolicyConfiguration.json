@@ -1,0 +1,39 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "PolicyConfiguration",
+    "entityId" : "PolicyConfiguration",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "policyconfiguration",
+      "collection" : false,
+      "name" : "Policy Configuration"
+    },
+    "continueEvaluationOnDeny" : false,
+    "defaults" : {
+      "bindDn" : "cn=Directory Manager",
+      "bindPassword" : null,
+      "connectionPoolMaximumSize" : 10,
+      "connectionPoolMinimumSize" : 1,
+      "ldapServer" : [ "configstore-0.configstore:1389" ],
+      "maximumSearchResults" : 100,
+      "policyHeartbeatInterval" : 10,
+      "policyHeartbeatTimeUnit" : "SECONDS",
+      "realmSearchFilter" : "(objectclass=sunismanagedorganization)",
+      "searchTimeout" : 5,
+      "sslEnabled" : false,
+      "subjectsResultTTL" : 10,
+      "userAliasEnabled" : false,
+      "usersBaseDn" : "o=userstore",
+      "usersSearchAttribute" : "uid",
+      "usersSearchFilter" : "(objectclass=inetorgperson)",
+      "usersSearchScope" : "SCOPE_SUB"
+    },
+    "realmAliasReferrals" : false,
+    "resourceComparators" : [ "serviceType=iPlanetAMWebAgentService|class=com.sun.identity.policy.plugins.HttpURLResourceName|wildcard=*|oneLevelWildcard=-*-|delimiter=/|caseSensitive=false", "serviceType=sunIdentityServerDiscoveryService|class=com.sun.identity.policy.plugins.PrefixResourceName|wildcard=*|oneLevelWildcard=-*-|delimiter=;|caseSensitive=false" ]
+  }
+}

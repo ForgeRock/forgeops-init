@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "Dashboard",
+    "entityId" : "Dashboard",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "dashboard",
+      "collection" : false,
+      "name" : "Dashboard"
+    },
+    "defaults" : {
+      "assignedDashboard" : [ "" ]
+    }
+  }
+}

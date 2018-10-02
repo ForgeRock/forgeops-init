@@ -1,0 +1,77 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "OAuth2Clients",
+    "entityId" : "oauth2",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "oauth2",
+    "_type" : {
+      "_id" : "OAuth2Client",
+      "collection" : true,
+      "name" : "OAuth2 Clients"
+    },
+    "advancedOAuth2ClientConfig" : {
+      "contacts" : [ ],
+      "descriptions" : [ ],
+      "isConsentImplied" : false,
+      "mixUpMitigation" : false,
+      "name" : [ ],
+      "requestUris" : [ ],
+      "responseTypes" : [ "code", "token", "id_token", "code token", "token id_token", "code id_token", "code token id_token", "device_code", "device_code id_token" ],
+      "sectorIdentifierUri" : null,
+      "subjectType" : "Public",
+      "tokenEndpointAuthMethod" : "client_secret_basic",
+      "updateAccessToken" : null
+    },
+    "coreOAuth2ClientConfig" : {
+      "accessTokenLifetime" : 0,
+      "agentgroup" : null,
+      "authorizationCodeLifetime" : 0,
+      "clientName" : [ ],
+      "clientType" : "Confidential",
+      "defaultScopes" : [ "cn", "name", "email" ],
+      "redirectionUris" : [ "http://fake.com" ],
+      "refreshTokenLifetime" : 0,
+      "scopes" : [ "cn", "name", "email" ],
+      "status" : "Active",
+      "userpassword" : null,
+      "userpassword-encrypted" : "AAAAA0FFUwIQTKiF3axQBJP0cpFAkpcV498q+Zm+kKNFavlM7Lh0ORZqfFmA9tKDaw=="
+    },
+    "coreOpenIDClientConfig" : {
+      "claims" : [ ],
+      "clientSessionUri" : null,
+      "defaultAcrValues" : [ ],
+      "defaultMaxAge" : 600,
+      "defaultMaxAgeEnabled" : false,
+      "jwtTokenLifetime" : 0,
+      "postLogoutRedirectUri" : [ ]
+    },
+    "coreUmaClientConfig" : {
+      "claimsRedirectionUris" : [ ]
+    },
+    "signEncOAuth2ClientConfig" : {
+      "clientJwtPublicKey" : null,
+      "idTokenEncryptionAlgorithm" : "RSA-OAEP-256",
+      "idTokenEncryptionEnabled" : false,
+      "idTokenEncryptionMethod" : "A128CBC-HS256",
+      "idTokenPublicEncryptionKey" : null,
+      "idTokenSignedResponseAlg" : "RS256",
+      "jwkSet" : null,
+      "jwkStoreCacheMissCacheTime" : 60000,
+      "jwksCacheTimeout" : 3600000,
+      "jwksUri" : "http://openam:80/openam/oauth2/connect/jwk_uri",
+      "publicKeyLocation" : "jwks_uri",
+      "requestParameterEncryptedAlg" : null,
+      "requestParameterEncryptedEncryptionAlgorithm" : "A128CBC-HS256",
+      "requestParameterSignedAlg" : null,
+      "tokenEndpointAuthSigningAlgorithm" : "RS256",
+      "userinfoEncryptedResponseAlg" : null,
+      "userinfoEncryptedResponseEncryptionAlgorithm" : "A128CBC-HS256",
+      "userinfoResponseFormat" : "JSON",
+      "userinfoSignedResponseAlg" : null
+    }
+  }
+}

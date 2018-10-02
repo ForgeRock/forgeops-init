@@ -1,0 +1,25 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "AuthenticationChains",
+    "entityId" : "amsterService",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "amsterService",
+    "_type" : {
+      "_id" : "EMPTY",
+      "collection" : true,
+      "name" : "Authentication Configuration"
+    },
+    "authChainConfiguration" : [ {
+      "criteria" : "REQUIRED",
+      "module" : "Amster",
+      "options" : { }
+    } ],
+    "loginFailureUrl" : [ ],
+    "loginPostProcessClass" : [ ],
+    "loginSuccessUrl" : [ ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "SocialAuthInstagramModule",
+    "entityId" : "SocialAuthInstagramModule",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "authSocialInstagram",
+      "collection" : false,
+      "name" : "Social Auth Instagram"
+    },
+    "defaults" : {
+      "accountProvisioning" : {
+        "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|*|instagram-",
+        "accountMapperConfiguration" : [ "id=uid" ],
+        "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
+        "anonymousUserName" : "anonymous",
+        "attributeMapperConfiguration" : [ "id=uid", "full_name=sn", "username=cn", "username=givenName" ],
+        "attributeMappingClasses" : [ "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|instagram-" ],
+        "createAccount" : true,
+        "enableRegistrationService" : false,
+        "mapToAnonymousUser" : false,
+        "saveAttributesInSession" : true
+      },
+      "core" : {
+        "authenticationLevel" : 0,
+        "authorizeEndpoint" : "https://api.instagram.com/oauth/authorize",
+        "clientId" : null,
+        "clientSecret" : null,
+        "logoutBehaviour" : "prompt",
+        "logoutServiceUrl" : "https://instagram.com/accounts/logout",
+        "provider" : "Instagram",
+        "scope" : [ "basic" ],
+        "scopeDelimiter" : null,
+        "ssoProxyUrl" : "http://openam:80/openam/oauth2c/OAuthProxy.jsp",
+        "subjectProperty" : "id",
+        "tokenEndpoint" : "https://api.instagram.com/oauth/access_token",
+        "userInfoEndpoint" : "https://api.instagram.com/v1/users/self",
+        "usesBasicAuth" : false
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "SocialAuthWeChatModule",
+    "entityId" : "SocialAuthWeChatModule",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "authSocialWeChat",
+      "collection" : false,
+      "name" : "Social Auth WeChat"
+    },
+    "defaults" : {
+      "accountProvisioning" : {
+        "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|*|wechat-",
+        "accountMapperConfiguration" : [ "openid=uid" ],
+        "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
+        "anonymousUserName" : "anonymous",
+        "attributeMapperConfiguration" : [ "nickname=givenName", "openid=uid", "nickname=sn", "nickname=cn" ],
+        "attributeMappingClasses" : [ "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|wechat-" ],
+        "createAccount" : true,
+        "enableRegistrationService" : false,
+        "mapToAnonymousUser" : false,
+        "promptPasswordFlag" : false,
+        "saveAttributesInSession" : true
+      },
+      "authenticationLevel" : 0,
+      "core" : {
+        "authorizeEndpoint" : "https://open.weixin.qq.com/connect/qrconnect",
+        "clientId" : null,
+        "clientSecret" : null,
+        "provider" : "WeChat",
+        "scope" : [ "snsapi_login" ],
+        "scopeDelimiter" : null,
+        "ssoProxyUrl" : "http://openam:80/openam/oauth2c/OAuthProxy.jsp",
+        "subjectProperty" : "openid",
+        "tokenEndpoint" : "https://api.wechat.com/sns/oauth2/access_token",
+        "userInfoEndpoint" : "https://api.wechat.com/sns/userinfo",
+        "usesBasicAuth" : false
+      },
+      "emailSettings" : {
+        "emailAttribute" : "",
+        "emailGateway" : "org.forgerock.openam.authentication.modules.oauth2.DefaultEmailGatewayImpl",
+        "smtpFromAddress" : null,
+        "smtpHost" : "localhost",
+        "smtpPassword" : null,
+        "smtpPort" : "25",
+        "smtpSslEnabled" : null,
+        "smtpUsername" : ""
+      }
+    }
+  }
+}
