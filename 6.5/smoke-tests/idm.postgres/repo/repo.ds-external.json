@@ -114,11 +114,11 @@
   },
   "resourceMapping": {
     "defaultMapping": {
-      "dnTemplate": "ou=generic,dc=openidm,dc=forgerock,dc=com"
+      "dnTemplate": "ou=generic,dc=openidm,dc=forgerock,dc=data"
     },
     "explicitMapping": {
       "internal/user": {
-        "dnTemplate": "ou=users,ou=internal,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate": "ou=users,ou=internal,dc=openidm,dc=forgerock,dc=data",
         "objectClasses": [ "uidObject", "fr-idm-internal-user" ],
         "properties": {
           "_id": {
@@ -130,7 +130,7 @@
         }
       },
       "internal/role": {
-        "dnTemplate": "ou=roles,ou=internal,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate": "ou=roles,ou=internal,dc=openidm,dc=forgerock,dc=data",
         "objectClasses": [ "fr-idm-internal-role" ],
         "properties": {
           "_id": {
@@ -148,7 +148,7 @@
         }
       },
       "internal/privilege": {
-        "dnTemplate": "ou=privileges,ou=internal,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate": "ou=privileges,ou=internal,dc=openidm,dc=forgerock,dc=data",
         "objectClasses": [ "fr-idm-internal-privilege" ],
         "properties": {
           "_id": {
@@ -178,7 +178,7 @@
         }
       },
       "link": {
-        "dnTemplate": "ou=links,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate": "ou=links,dc=openidm,dc=forgerock,dc=data",
         "objectClasses": [ "uidObject", "fr-idm-link" ],
         "properties": {
           "_id": {
@@ -199,7 +199,7 @@
         }
       },
       "clusteredrecontargetids" : {
-        "dnTemplate": "ou=clusteredrecontargetids,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate": "ou=clusteredrecontargetids,dc=openidm,dc=forgerock,dc=data",
         "objectClasses": [ "uidObject", "fr-idm-recon-clusteredTargetIds" ],
         "properties": {
           "_id": {
@@ -214,7 +214,7 @@
         }
       },
       "locks" : {
-        "dnTemplate": "ou=locks,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate": "ou=locks,dc=openidm,dc=forgerock,dc=data",
         "objectClasses": [ "uidObject", "fr-idm-lock" ],
         "properties": {
           "_id": {
@@ -226,7 +226,7 @@
         }
       },
       "sync/queue" : {
-        "dnTemplate": "ou=queue,ou=sync,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate": "ou=queue,ou=sync,dc=openidm,dc=forgerock,dc=data",
         "objectClasses": [ "uidObject", "fr-idm-syncqueue" ],
         "properties": {
           "_id": {
@@ -273,58 +273,58 @@
     },
     "genericMapping": {
       "config": {
-        "dnTemplate": "ou=config,dc=openidm,dc=forgerock,dc=com"
+        "dnTemplate": "ou=config,dc=openidm,dc=forgerock,dc=data"
       },
       "ui/*" : {
-        "dnTemplate": "ou=ui,dc=openidm,dc=forgerock,dc=com"
+        "dnTemplate": "ou=ui,dc=openidm,dc=forgerock,dc=data"
       },
       "managed/*": {
-        "dnTemplate": "ou=managed,dc=openidm,dc=forgerock,dc=com"
+        "dnTemplate": "ou=managed,dc=openidm,dc=forgerock,dc=data"
       },
       "managed/user" : {
-        "dnTemplate" : "ou=user,ou=managed,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate" : "ou=user,ou=managed,dc=openidm,dc=forgerock,dc=data",
         "objectClasses" : [ "uidObject", "fr-idm-managed-user"],
         "jsonAttribute" : "fr-idm-managed-user-json",
         "jsonQueryEqualityMatchingRule" : "caseIgnoreJsonQueryMatchManagedUser"
       },
       "managed/role" : {
-        "dnTemplate" : "ou=role,ou=managed,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate" : "ou=role,ou=managed,dc=openidm,dc=forgerock,dc=data",
         "objectClasses" : [ "uidObject", "fr-idm-managed-role"],
         "jsonAttribute" : "fr-idm-managed-role-json",
         "jsonQueryEqualityMatchingRule" : "caseIgnoreJsonQueryMatchManagedRole"
       },
       "scheduler": {
-        "dnTemplate": "ou=scheduler,dc=openidm,dc=forgerock,dc=com"
+        "dnTemplate": "ou=scheduler,dc=openidm,dc=forgerock,dc=data"
       },
       "scheduler/*": {
-        "dnTemplate": "ou=scheduler,dc=openidm,dc=forgerock,dc=com"
+        "dnTemplate": "ou=scheduler,dc=openidm,dc=forgerock,dc=data"
       },
       "cluster/*": {
-        "dnTemplate": "ou=cluster,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate": "ou=cluster,dc=openidm,dc=forgerock,dc=data",
         "objectClasses" : [ "uidObject", "fr-idm-cluster-obj" ],
         "jsonAttribute" : "fr-idm-cluster-json",
         "jsonQueryEqualityMatchingRule" : "caseIgnoreJsonQueryMatchClusterObject"
       },
       "relationships": {
-        "dnTemplate": "ou=relationships,dc=openidm,dc=forgerock,dc=com",
+        "dnTemplate": "ou=relationships,dc=openidm,dc=forgerock,dc=data",
         "objectClasses" : [ "uidObject", "fr-idm-relationship" ],
         "jsonAttribute" : "fr-idm-relationship-json",
         "jsonQueryEqualityMatchingRule" : "caseIgnoreJsonQueryMatchRelationship"
       },
       "updates": {
-        "dnTemplate": "ou=updates,dc=openidm,dc=forgerock,dc=com"
+        "dnTemplate": "ou=updates,dc=openidm,dc=forgerock,dc=data"
       },
       "reconprogressstate" : {
-        "dnTemplate": "ou=reconprogressstate,dc=openidm,dc=forgerock,dc=com"
+        "dnTemplate": "ou=reconprogressstate,dc=openidm,dc=forgerock,dc=data"
       },
       "jsonstorage" : {
-        "dnTemplate": "ou=jsonstorage,dc=openidm,dc=forgerock,dc=com"
+        "dnTemplate": "ou=jsonstorage,dc=openidm,dc=forgerock,dc=data"
       },
       "internal/usermeta" : {
-        "dnTemplate": "ou=usermeta,ou=internal,dc=openidm,dc=forgerock,dc=com"
+        "dnTemplate": "ou=usermeta,ou=internal,dc=openidm,dc=forgerock,dc=data"
       },
       "internal/notification" : {
-        "dnTemplate": "ou=notification,ou=internal,dc=openidm,dc=forgerock,dc=com"
+        "dnTemplate": "ou=notification,ou=internal,dc=openidm,dc=forgerock,dc=data"
       }
     }
   }

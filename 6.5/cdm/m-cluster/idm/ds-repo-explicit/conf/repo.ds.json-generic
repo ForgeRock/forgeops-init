@@ -363,10 +363,10 @@
         "dnTemplate": "ou=ui,o=idm"
       },
       "managed/*": {
-        "dnTemplate": "ou=managed,o=userstore"
+        "dnTemplate": "ou=managed,dc=data"
       },
       "managed/user": {
-        "dnTemplate": "ou=user,ou=managed,o=userstore",
+        "dnTemplate": "ou=user,ou=managed,dc=data",
         "objectClasses": [
           "uidObject",
           "fr-idm-managed-user"
@@ -375,7 +375,7 @@
         "jsonQueryEqualityMatchingRule" : "caseIgnoreJsonQueryMatchManagedUser"
       },
       "managed/role": {
-        "dnTemplate": "ou=role,ou=managed,o=userstore",
+        "dnTemplate": "ou=role,ou=managed,dc=data",
         "objectClasses": [
           "uidObject",
           "fr-idm-managed-role"

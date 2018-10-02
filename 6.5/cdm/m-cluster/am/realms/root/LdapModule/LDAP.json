@@ -25,7 +25,7 @@
     "primaryLdapServer" : [ "userstore-0.userstore:1389" ],
     "connectionHeartbeatInterval" : 10,
     "secondaryLdapServer" : [ "userstore-1.userstore:1389" ],
-    "userSearchStartDN" : [ "o=userstore" ],
+    "userSearchStartDN" : [ "dc=data" ],
     "trustAllServerCertificates" : false,
     "operationTimeout" : 0,
     "_type" : {

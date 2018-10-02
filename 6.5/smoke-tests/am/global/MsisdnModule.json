@@ -18,7 +18,7 @@
       "ldapProviderUrl" : [ "configstore-0.configstore:1389" ],
       "msisdnParameterNames" : [ ],
       "trustedGatewayIPAddresses" : [ ],
-      "baseSearchDN" : [ "o=userstore" ],
+      "baseSearchDN" : [ "dc=data" ],
       "returnUserDN" : true
     },
     "_type" : {
