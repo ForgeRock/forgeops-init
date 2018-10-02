@@ -1,4 +1,0 @@
-{
-  "username" : "admin",
-  "password" : "&{openidm.repo.password}"
-}
