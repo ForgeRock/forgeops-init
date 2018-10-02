@@ -51,38 +51,42 @@ Basic product configuration, as referenced in the _DevOps Quick Start Guide_, ca
 
 Directory                   | Contents
 ----------------------------|-------------------------------------------
-----------------------------| **DEFAULT CONFIGURATIONS**
-\6.5\\**default**           | Default out of the box configurations to get started using our products.
-\6.5\default\\**am**        | Empty config which triggers default installation of AM.
-\6.5\default\\**idm**       | 
-\6.5\default\\**ig**        | 
-----------------------------| **CLOUD DEPLOYMENT MODEL**
-\6.5\\**CDM**               | Cloud Deployment Model (Common use ForgeRock Identity Platform deployment).
-\6.5\CDM\\**m-cluster**     | Medium size cluster CDM example configs for AM and IDM.  
-|                           | Config common to both products: |
-|                           | - Prometheus endpoints exposed. |
-|                           | - Logging to stdout. 
-|                           | - Tuned for m-cluster.
-\6.5\CDM\m-cluster\\**AM**  | Single realm. OAuth 2.0 Server and Client. LDAP Auth module default.
-|                            | Separate userstore, configstore and ctsstore. 
-\6.5\CDM\m-cluster\\**IDM** | Postgres as repo. Syncronization to LDAP.
+|---------------------------|**BENCHMARKS**||
+|/6.5/**benchmarks**        | Default out of the box configurations to get started using our products.
+|/6.5/benchmarks/**gatling-simulation-files**  | Gatling simulation files for running benchmarks.
+|/6.5/benchmarks/**ig-benchmark-reverse-nginx**  | IG reverse proxy handler in front of static web page(nginx).
+|---------------------------|**DEFAULT CONFIGURATIONS**||
+|/6.5/**default**           | Default out of the box configurations to get started using our products.
+|/6.5/default/**am**        | Empty config which triggers default installation of AM.
+|/6.5/default/**idm**       | Bi-directional LDAP sync with internal repository.
+|/6.5/default/**ig**        | Default handler returning IG home page.
+|---------------------------| **CLOUD DEPLOYMENT MODEL**
+|/6.5/**cdm**               | Cloud Deployment Model (Common use ForgeRock Identity Platform deployment).
+|/6.5/cdm/**m-cluster**     | Medium size cluster CDM example configs for AM and IDM.  
+|/6.5/cdm/m-cluster/**am**  | AM config for medium cluster.
+|/6.5/cdm/m-cluster/**idm** | IDM config for medium cluster.
+|/6.5/**smoke-tests**       | Default out of the box configurations to get started using our products.
+|/6.5/smoke-tests/**am**    | AM smoke tests.
+|/6.5/smoke-tests/**idm.postgres**  | IDM smoke test with postgres repo.
+|/6.5/smoke-tests/**idm**   | IDM smoke test.
+|/6.5/smoke-tests/**ig**    | IG smoke test.
 
 ### 6.0 configurations   
 
 Directory                   | Contents      
-----------------------------|-------------------------------------------
-\6.0\\**default**           | Default out of the box configurations to get started using our products. 
-\6.0\default\\**am**        | Empty config which triggers default installation of AM. 
-\6.0\default\\**idm**       | 
-\6.0\default\\**ig**        | 
-----------------------------|
-\6.0\\**CDM**               | Cloud Deployment Model (Common use ForgeRock Identity Platform deployment).
-\6.0\CDM\\**m-cluster**     | Medium size cluster CDM example configs for AM and IDM.  
+|---------------------------|-------------------------------------------
+|/6.0/**default**           | Default out of the box configurations to get started using our products. 
+|/6.0/default/**am**        | Empty config which triggers default installation of AM. 
+|/6.0/default/**idm**       | Bi-directional LDAP sync with internal repository.
+|/6.0/default/**ig**        | Default handler returning IG home page.
+|---------------------------| **CLOUD DEPLOYMENT MODEL**
+|/6.0/**cdm**               | Cloud Deployment Model (Common use ForgeRock Identity Platform deployment).
+|/6.0/cdm/**m-cluster**     | Medium size cluster CDM example configs for AM and IDM.  
 |                           | Config common to both products:
 |                           | - Prometheus endpoints exposed. Logging to stdout. Tuned for m-cluster.
-\6.0\CDM\m-cluster\\**AM**  | Single realm. OAuth 2.0 Server and Client. LDAP Auth module default.
+|/6.0/cdm/m-cluster/**am**  | Single realm. OAuth 2.0 Server and Client. LDAP Auth module default.
 |                           | Separate userstore, configstore and ctsstore. 
-\6.0\CDM\m-cluster\\**IDM** | Postgres as repo. Syncronization to LDAP.
+|/6.0/cdm/m-cluster/**idm** | Postgres as repo. Syncronization to LDAP.
  
 
 
