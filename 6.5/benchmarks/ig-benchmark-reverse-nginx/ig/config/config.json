@@ -8,7 +8,20 @@
   "heap": [
     {
       "name": "JwtSession",
-      "type": "JwtSession"
+      "type": "JwtSession",
+      "config": {
+          "keystore": {
+              "type": "KeyStore",
+              "config": {
+                  "url": "file://${env['HOME']}/keystore.jks",
+                  "password": "${system['keypass']}"
+              }
+          },
+          "alias": "jwe-key",
+          "password": "${system['keypass']}",
+          "cookieName": "ig-jwt",
+          "cookieDomain": ".test.com"
+      }
     },
     {
       "name": "capture",
