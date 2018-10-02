@@ -11,3 +11,15 @@ m-cluster Sample
 This IDM configuration is associated with the forgeops/config/prod/m-cluster sample.
 This coniguration uses OpenDJ as its repository. See conf/repo.ds.json for further details.
 
+### What is in this config repository?
+IDM config repos that get mounted under /git on each pod via
+the charts 
+
+### Common Config
+- Prometheus endpoints exposed
+- Logging to stdout
+- Tuned for m-cluster
+
+### IDM Config
+- Postgres as repo
+- Syncronization to LDAP

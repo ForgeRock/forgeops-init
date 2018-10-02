@@ -12,3 +12,16 @@ Bi-directional LDAP Sync With Internal Repository Sample
 This sample demonstrates bidirectional synchronization between an LDAP directory
 and an OpenIDM repository. For documentation relating to this sample, see
 https://ea.forgerock.com/docs/idm/samples-guide/index.html#chap-sync-with-ldap-bidirectional
+
+### What is in this config repository?
+IDM config repos that get mounted under /git on each pod via
+the charts 
+
+### Common Config
+- Prometheus endpoints exposed
+- Logging to stdout
+- Tuned for m-cluster
+
+### IDM Config
+- Postgres as repo
+- Syncronization to LDAP

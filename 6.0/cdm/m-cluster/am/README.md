@@ -1,7 +1,7 @@
 # m-cluster (CDM) Sample Config
 
 ### What is in this config repository?
-AM and IDM config repos that get mounted under /git on each pod via
+AM config repos that get mounted under /git on each pod via
 the charts 
 
 ### Common Config
@@ -16,7 +16,4 @@ the charts
 - Separate userstore, configstore and ctsstore
 - LDAP Auth module default
 
-### IDM Config
-- Postgres as repo
-- Syncronization to LDAP
 
