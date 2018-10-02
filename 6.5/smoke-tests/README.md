@@ -21,7 +21,7 @@ This configuration is used with following deployment:
 
 Customizations include:
  - Bidirectional sync to ldap(userstore)
- - Selfservice registartion enabled
+ - Selfservice registration enabled
  - Selfservice password reset enabled
 
 ## IG Configuration

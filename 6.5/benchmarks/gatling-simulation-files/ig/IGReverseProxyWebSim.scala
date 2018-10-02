@@ -8,7 +8,6 @@ import io.gatling.http.protocol.HttpProtocolBuilder
 
 class IGReverseProxyWebSim extends Simulation {
 
-    val userPoolSize: Integer = Integer.getInteger("users", 3)
     val concurrency: Integer = Integer.getInteger("concurrency", 200)
     val duration: Integer = Integer.getInteger("duration", 60)
     val warmup: Integer = Integer.getInteger("warmup", 3)
@@ -16,7 +15,7 @@ class IGReverseProxyWebSim extends Simulation {
     val igPort: String = System.getProperty("ig_port", "80")
     val igProtocol: String = System.getProperty("ig_protocol", "http")
 
-    val igUrl: String = "http://" + igHost + ":" + igPort
+    val igUrl: String = igProtocol + "://" + igHost + ":" + igPort
 
     val httpProtocol: HttpProtocolBuilder = http
         .baseURLs(igUrl)
