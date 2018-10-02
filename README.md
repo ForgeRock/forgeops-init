@@ -55,16 +55,17 @@ Directory                   | Contents
 |/6.5/**benchmarks**        | Default out of the box configurations to get started using our products.
 |/6.5/benchmarks/**gatling-simulation-files**  | Gatling simulation files for running benchmarks.
 |/6.5/benchmarks/**ig-benchmark-reverse-nginx**  | IG reverse proxy handler in front of static web page(nginx).
-|---------------------------|**DEFAULT CONFIGURATIONS**||
-|/6.5/**default**           | Default out of the box configurations to get started using our products.
-|/6.5/default/**am**        | Empty config which triggers default installation of AM.
-|/6.5/default/**idm**       | Bi-directional LDAP sync with internal repository.
-|/6.5/default/**ig**        | Default handler returning IG home page.
 |---------------------------| **CLOUD DEPLOYMENT MODEL**
 |/6.5/**cdm**               | Cloud Deployment Model (Common use ForgeRock Identity Platform deployment).
 |/6.5/cdm/**m-cluster**     | Medium size cluster CDM example configs for AM and IDM.  
 |/6.5/cdm/m-cluster/**am**  | AM config for medium cluster.
 |/6.5/cdm/m-cluster/**idm** | IDM config for medium cluster.
+|---------------------------|**DEFAULT CONFIGURATIONS**||
+|/6.5/**default**           | Default out of the box configurations to get started using our products.
+|/6.5/default/**am**        | Empty config which triggers default installation of AM.
+|/6.5/default/**idm**       | Bi-directional LDAP sync with internal repository.
+|/6.5/default/**ig**        | Default handler returning IG home page.
+|---------------------------|**SMOKE TESTS**||
 |/6.5/**smoke-tests**       | Default out of the box configurations to get started using our products.
 |/6.5/smoke-tests/**am**    | AM smoke tests.
 |/6.5/smoke-tests/**idm.postgres**  | IDM smoke test with postgres repo.
@@ -75,12 +76,21 @@ Directory                   | Contents
 
 Directory                   | Contents      
 |---------------------------|-------------------------------------------
+|---------------------------| **CLOUD DEPLOYMENT MODEL**
+|/6.0/**cdm**               | Cloud Deployment Model (Common use ForgeRock Identity Platform deployment).
+|/6.0/cdm/**m-cluster**     | Medium size cluster CDM example configs for AM and IDM.  
+|                           | Config common to both products:
+|                           | - Prometheus endpoints exposed. Logging to stdout. Tuned for m-cluster.
+|/6.0/cdm/m-cluster/**am**  | Single realm. OAuth 2.0 Server and Client. LDAP Auth module default.
+|                           | Separate userstore, configstore and ctsstore. 
+|/6.0/cdm/m-cluster/**idm** | Postgres as repo. Syncronization to LDAP.
+|---------------------------|**DEFAULT CONFIGURATIONS**||
 |/6.0/**default**           | Default out of the box configurations to get started using our products. 
 |/6.0/default/**am**        | Empty config which triggers default installation of AM. 
 |/6.0/default/**idm**       | Bi-directional LDAP sync with internal repository.
-|/6.0/default/**ig**        | Default handler returning IG home page.
-|---------------------------| **CLOUD DEPLOYMENT MODEL**
-|/6.0/**cdm**               | Cloud Deployment Model (Common use ForgeRock Identity Platform deployment).
+|/6.0/default/**ig**        | Default handler returning IG home page
+|---------------------------| **IDENTITY PLATFORM EXAMPLES**
+|[/6.0/**identity-platform-examples**](https://github.com/lee-baines/forgeops-init/tree/cloud-783-forgeops-readmes/6.0/identity-platform-examples) | Cloud Deployment Model (Common use ForgeRock Identity Platform deployment).
 |/6.0/cdm/**m-cluster**     | Medium size cluster CDM example configs for AM and IDM.  
 |                           | Config common to both products:
 |                           | - Prometheus endpoints exposed. Logging to stdout. Tuned for m-cluster.
