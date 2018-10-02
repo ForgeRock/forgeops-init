@@ -47,6 +47,8 @@ Basic product configuration, as referenced in the _DevOps Quick Start Guide_, ca
     
 ## Contents
 
+The below table summarizes the content of each configuration directory.  Each config directory contains a further readme with specific details about the individual product configurations.
+
 ### 6.5 configurations   
 
 Directory                   | Contents

@@ -1,5 +1,8 @@
-Configuration Example: Custom AM Server with multiple DJ stores
-===============================================================
+# Identity Platform Examples
+
+### Configuration Example: Custom AM Server with multiple DJ stores 
+
+***sub-directory:*** *am-ds*
 
 This sample populates an AM server with the following configuration.
 
@@ -32,5 +35,8 @@ Example custom.yaml snippet for amster
     ctsStores: ctsstore-0.ctsstore:1389,ctsstore-1.ctsstore:1389
     ```
 
+### IDM with AM authentication sharing the same DS userstore.
 
+***sub-directory:*** *idm-am-integration-shared-ds*
 
+This example shows an integration of IDM with AM where both products share the same DS userstore and also AM provides authentication for IDM at both UI-Admin and UI-User levels. Also, IDM uses the same DS for its repository.
