@@ -126,7 +126,7 @@
                     "target" : "locale"
                 }
             ],
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "configClass" : "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration",
             "basicAuth" : false
         },
@@ -201,6 +201,13 @@
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true
+                    },
+                    "picture" : {
+                        "description" : "Picture",
+                        "title" : "Picture",
+                        "viewable" : true,
+                        "type" : "object",
+                        "searchable" : true
                     }
                 },
                 "order" : [
@@ -209,7 +216,8 @@
                     "first_name",
                     "last_name",
                     "email",
-                    "locale"
+                    "locale",
+                    "picture"
                 ],
                 "required" : [ ]
             },
@@ -241,16 +249,24 @@
                 {
                     "source" : "locale",
                     "target" : "locale"
+                },
+                {
+                    "source" : "picture",
+                    "target" : "photoUrl",
+                    "transform" : {
+                        "type" : "text/javascript",
+                        "source" : "source.data.url"
+                    }
                 }
             ],
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration"
         },
         {
             "provider" : "linkedIn",
             "authorizationEndpoint" : "https://www.linkedin.com/oauth/v2/authorization",
             "tokenEndpoint" : "https://www.linkedin.com/oauth/v2/accessToken",
-            "userInfoEndpoint" : "https://api.linkedin.com/v1/people/~:(id,formatted-name,first-name,last-name,email-address,location)?format=json",
+            "userInfoEndpoint" : "https://api.linkedin.com/v1/people/~:(id,formatted-name,first-name,last-name,email-address,location,picture-url)?format=json",
             "clientId" : "",
             "clientSecret" : "",
             "scope" : [
@@ -336,6 +352,13 @@
                                 "title" : "Area Name"
                             }
                         }
+                    },
+                    "pictureUrl" : {
+                        "description" : "Picture Url",
+                        "title" : "Picture Url",
+                        "viewable" : true,
+                        "type" : "string",
+                        "searchable" : true
                     }
                 },
                 "order" : [
@@ -380,9 +403,13 @@
                         "type" : "text/javascript",
                         "source" : "source.country.code"
                     }
+                },
+                {
+                    "source" : "pictureUrl",
+                    "target" : "photoUrl"
                 }
             ],
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration"
         },
         {
@@ -462,7 +489,7 @@
                     "target" : "username"
                 }
             ],
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration"
         },
         {
@@ -531,7 +558,7 @@
                     "target": "email"
                 }
             ],
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration"
         },
         {
@@ -634,7 +661,7 @@
                     "target" : "username"
                 }
             ],
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration"
         },
         {
@@ -646,7 +673,7 @@
             "authorizationEndpoint" : "https://oauth.vk.com/authorize",
             "tokenEndpoint" : "https://oauth.vk.com/access_token",
             "userInfoEndpoint" : "https://api.vk.com/method/users.get",
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "apiVersion" : "5.73",
             "scope" : [
                 "email"
@@ -749,7 +776,7 @@
             "authorizationEndpoint" : "https://api.instagram.com/oauth/authorize/",
             "tokenEndpoint" : "https://api.instagram.com/oauth/access_token",
             "userInfoEndpoint" : "https://api.instagram.com/v1/users/self/",
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "scope" : [
                 "basic",
                 "public_content"
@@ -840,7 +867,7 @@
             "tokenEndpoint" : "https://api.wechat.com/sns/oauth2/access_token",
             "refreshTokenEndpoint" : "https://api.wechat.com/sns/oauth2/refresh_token",
             "userInfoEndpoint" : "https://api.wechat.com/sns/userinfo",
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "scope" : [
                 "snsapi_login"
             ],
@@ -1022,7 +1049,7 @@
             "clientId": "",
             "clientSecret": "",
             "authenticationIdKey": "sub",
-            "redirectUri": "https://localhost:8443/oauthReturn/",
+            "redirectUri": "https://localhost:8443/",
             "basicAuth": false,
             "configClass": "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration"
         },
@@ -1049,7 +1076,7 @@
                 "buttonCustomStyleHover" : "background-color: #21a0df; border-color: #21a0df; color: white;"
             },
             "authenticationIdKey" : "user_id",
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "configClass" : "org.forgerock.oauth.clients.oauth2.OAuth2ClientConfiguration",
             "basicAuth": false,
             "schema" : {
@@ -1162,7 +1189,7 @@
                 "buttonCustomStyleHover" : "background-color: #01abda; border-color: #01abda; color: #fff;"
             },
             "authenticationIdKey" : "id_str",
-            "redirectUri" : "https://localhost:8443/oauthReturn/",
+            "redirectUri" : "https://localhost:8443/",
             "configClass" : "org.forgerock.oauth.clients.twitter.TwitterClientConfiguration",
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:identityProviders:api:Twitter",

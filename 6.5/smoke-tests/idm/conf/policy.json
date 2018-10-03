@@ -60,9 +60,6 @@
                     "policies" : [
                         {
                             "policyId" : "required"
-                        },
-                        {
-                            "policyId" : "valid-object-name-format"
                         }
                     ]
                 }
@@ -78,7 +75,84 @@
                             "policyId" : "required"
                         },
                         {
-                            "policyId" : "valid-object-name-format"
+                            "policyId" : "not-empty"
+                        }
+                    ]
+                },
+                {
+                    "name" : "accessFlags",
+                    "policies" : [
+                        {
+                            "policyId" : "valid-type",
+                            "params" : {
+                                "types" : [
+                                    "array"
+                                ]
+                            }
+                        },
+                        {
+                            "policyId" : "valid-accessFlags-object"
+                        }
+                    ]
+                },
+                {
+                    "name" : "permissions",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "not-empty"
+                        },
+                        {
+                            "policyId" : "valid-type",
+                            "params" : {
+                                "types" : [
+                                    "array"
+                                ]
+                            }
+                        },
+                        {
+                            "policyId" : "valid-permissions"
+                        }
+                    ]
+                },
+                {
+                    "name" : "path",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "not-empty"
+                        },
+                        {
+                            "policyId" : "cannot-contain-characters",
+                            "params" : {
+                                "forbiddenChars" : [
+                                    "/*"
+                                ]
+                            }
+                        },
+                        {
+                            "policyId" : "valid-privilege-path"
+                        }
+                    ]
+                },
+                {
+                    "name" : "filter",
+                    "policies" : [
+                        {
+                            "policyId" : "not-empty"
+                        },
+                        {
+                            "policyId" : "valid-type",
+                            "params" : {
+                                "types" : [
+                                    "string",
+                                    "null"
+                                ]
+                            }
                         }
                     ]
                 }

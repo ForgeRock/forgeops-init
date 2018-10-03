@@ -8,7 +8,7 @@
             },
             "onUpdate" : {
                 "type" : "text/javascript",
-                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);"
+                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');"
             },
             "postDelete" : {
                 "type" : "text/javascript",
@@ -76,7 +76,7 @@
                         "minLength" : 8,
                         "userEditable" : true,
                         "encryption" : {
-                            "key" : "openidm-sym-default"
+                            "purpose": "password.encryption"
                         },
                         "scope" : "private",
                         "isProtected": true,
@@ -351,8 +351,7 @@
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
-                                            "_id",
-                                            "description"
+                                            "name"
                                         ]
                                     }
                                 },
