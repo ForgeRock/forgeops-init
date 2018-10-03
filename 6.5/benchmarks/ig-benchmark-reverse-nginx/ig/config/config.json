@@ -13,7 +13,7 @@
           "keystore": {
               "type": "KeyStore",
               "config": {
-                  "url": "file://${env['HOME']}/keystore.jks",
+                  "url": "file:///var/run/secrets/openig/keystore.jks",
                   "password": "${system['keypass']}"
               }
           },
