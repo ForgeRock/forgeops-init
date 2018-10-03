@@ -18,7 +18,7 @@
               }
           },
           "alias": "jwe-key",
-          "password": "${system['keypass']}",
+          "password": "changeit",
           "cookieName": "ig-jwt",
           "cookieDomain": ".test.com"
       }
