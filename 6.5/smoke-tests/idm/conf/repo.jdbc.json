@@ -14,6 +14,7 @@
             "for-userName" : "SELECT obj.objectid, obj.rev, obj.fullobject::text FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON objtype.id = obj.objecttypes_id WHERE  json_extract_path_text(fullobject, 'userName') = ${uid} AND objtype.objecttype = ${_resource}",
 
             "query-cluster-failed-instances" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'timestamp') <= ${timestamp} AND json_extract_path_text(fullobject, 'state') IN ('1','2')",
+            "query-cluster-running-instances" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'state' AND json_extract_path_text(fullobject, 'state') = '1'",
             "query-cluster-instances" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'state'",
             "query-cluster-events" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'event' AND json_extract_path_text(fullobject, 'instanceId') = ${instanceId}",
 
@@ -184,7 +185,8 @@
                     "_rev" : "rev",
                     "name" : "name",
                     "description" : "description",
-                    "temporalConstraints" : { "column" : "temporalConstraints", "type" : "JSON_LIST" }
+                    "temporalConstraints" : { "column" : "temporalConstraints", "type" : "JSON_LIST" },
+                    "condition" : "condition"
                 }
             },
             "internal/privilege" : {
@@ -354,7 +356,7 @@
                 "objectToColumn" : {
                     "_id" : "objectid",
                     "_rev" : "rev",
-                    "nodeId" : "nodeId"
+                    "nodeId" : "nodeid"
                 }
             },
             "sync/queue" : {
@@ -374,6 +376,14 @@
                     "nodeId" : "nodeId",
                     "remainingRetries" : {"column" : "remainingRetries", "type" : "NUMBER"},
                     "createDate" : "createDate"
+                }
+            },
+            "file" : {
+                "table" : "files",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : "rev",
+                    "content" : "content"
                 }
             }
         }
