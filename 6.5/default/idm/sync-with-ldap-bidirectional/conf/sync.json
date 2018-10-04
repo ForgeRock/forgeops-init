@@ -10,10 +10,6 @@
                     "target" : "displayName"
                 },
                 {
-                    "source" : "description",
-                    "target" : "description"
-                },
-                {
                     "source" : "givenName",
                     "target" : "givenName"
                 },
@@ -32,6 +28,10 @@
                 {
                     "source" : "uid",
                     "target" : "userName"
+                },
+                {
+                    "source" : "inetuserstatus",
+                    "target" : "accountStatus"
                 }
             ],
             "policies" : [
@@ -101,14 +101,6 @@
                     "target" : "uid"
                 },
                 {
-                    "source" : "description",
-                    "target" : "description",
-                    "condition" : {
-                        "type" : "text/javascript",
-                        "source" : "!!object.description"
-                    }
-                },
-                {
                     "source" : "mail",
                     "target" : "mail"
                 },
@@ -131,49 +123,60 @@
                         "type" : "text/javascript",
                         "source" : "!!object.telephoneNumber"
                     }
-                },
-                {
-                    "target" : "dn",
-                    "source" : "userName",
-                    "transform" : {
-                        "type" : "text/javascript",
-                        "globals" : { },
-                        "source" : "\"uid=\" + source + \",ou=people,&{userstore.basecontext}\""
-                    }
                 }
             ],
             "policies" : [
                 {
-                    "situation" : "CONFIRMED",
-                    "action" : "UPDATE"
+                    "action" : "IGNORE",
+                    "situation" : "AMBIGUOUS"
                 },
                 {
-                    "situation" : "FOUND",
-                    "action" : "LINK"
+                    "action" : "DELETE",
+                    "situation" : "SOURCE_MISSING"
                 },
                 {
-                    "situation" : "ABSENT",
-                    "action" : "CREATE"
+                    "action" : "CREATE",
+                    "situation" : "MISSING"
                 },
                 {
-                    "situation" : "AMBIGUOUS",
-                    "action" : "IGNORE"
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
                 },
                 {
-                    "situation" : "MISSING",
-                    "action" : "IGNORE"
+                    "action" : "IGNORE",
+                    "situation" : "UNQUALIFIED"
                 },
                 {
-                    "situation" : "SOURCE_MISSING",
-                    "action" : "DELETE"
+                    "action" : "IGNORE",
+                    "situation" : "UNASSIGNED"
                 },
                 {
-                    "situation" : "UNQUALIFIED",
-                    "action" : "IGNORE"
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
                 },
                 {
-                    "situation" : "UNASSIGNED",
-                    "action" : "IGNORE"
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "LINK",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
                 }
             ]
         }

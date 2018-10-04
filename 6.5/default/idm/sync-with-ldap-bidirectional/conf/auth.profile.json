@@ -4,6 +4,6 @@
     "selfservice/kbaUpdate",
     "selfservice/profile"
   ],
-  "authenticationRole": "openidm-authenticated",
-  "authorizationRole": "openidm-authorized"
+  "authenticationRole": "internal/role/openidm-authenticated",
+  "authorizationRole": "internal/role/openidm-authorized"
 }

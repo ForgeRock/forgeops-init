@@ -1,6 +1,0 @@
-[
-    {
-        "operation" : "remove",
-        "field" : "/resourceMapping/genericMapping/relationships/properties"
-    }
-]
