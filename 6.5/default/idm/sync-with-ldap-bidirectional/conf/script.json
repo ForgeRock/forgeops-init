@@ -2,7 +2,7 @@
     "properties" : { },
     "ECMAScript" : {
         "#javascript.debug" : "&{openidm.script.javascript.debug}",
-        "javascript.recompile.minimumInterval" : "60000"
+        "javascript.recompile.minimumInterval" : 60000
     },
     "Groovy" : {
         "#groovy.warnings" : "likely errors #othere values [none,likely,possible,paranoia]",
@@ -11,14 +11,14 @@
         "groovy.target.directory" : "&{idm.install.dir}/classes",
         "#groovy.target.bytecode" : "1.5",
         "groovy.classpath" : "&{idm.install.dir}/lib",
-        "#groovy.output.verbose" : "false",
-        "#groovy.output.debug" : "false",
-        "#groovy.errors.tolerance" : "10",
+        "#groovy.output.verbose" : false,
+        "#groovy.output.debug" : false,
+        "#groovy.errors.tolerance" : 10,
         "#groovy.script.extension" : ".groovy",
         "#groovy.script.base" : "#any class extends groovy.lang.Script",
-        "groovy.recompile" : "true",
-        "groovy.recompile.minimumInterval" : "60000",
-        "#groovy.target.indy" : "true",
+        "groovy.recompile" : true,
+        "groovy.recompile.minimumInterval" : 60000,
+        "#groovy.target.indy" : true,
         "#groovy.disabled.global.ast.transformations" : ""
     },
     "sources" : {
