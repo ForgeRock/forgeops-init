@@ -8,7 +8,6 @@
   },
   "data" : {
     "_id" : "site1",
-    "id" : "02",
     "url" : "http://openam.smoke.forgeops.com/openam",
     "secondaryURLs" : [ ]
   }
