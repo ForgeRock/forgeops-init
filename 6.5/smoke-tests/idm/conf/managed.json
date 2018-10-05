@@ -4,11 +4,11 @@
             "name" : "user",
             "onCreate" : {
                 "type" : "text/javascript",
-                "source" : "require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);"
+                "source" : "require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);require('roles/effectiveAuthzRoles').calculateEffectiveAuthzRoles(object, 'effectiveAuthzRoles');"
             },
             "onUpdate" : {
                 "type" : "text/javascript",
-                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');"
+                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('roles/effectiveAuthzRoles').calculateEffectiveAuthzRoles(object, 'effectiveAuthzRoles');"
             },
             "postDelete" : {
                 "type" : "text/javascript",
@@ -42,6 +42,7 @@
                     "reports",
                     "effectiveRoles",
                     "effectiveAssignments",
+                    "effectiveAuthzRoles",
                     "lastSync",
                     "kbaInfo",
                     "preferences",
@@ -452,6 +453,20 @@
                         "items" : {
                             "type" : "object",
                             "title" : "Effective Assignments Items"
+                        }
+                    },
+                    "effectiveAuthzRoles" : {
+                        "type" : "array",
+                        "title" : "Effective Authz Roles",
+                        "description" : "Effective Authz Roles",
+                        "viewable" : false,
+                        "returnByDefault" : true,
+                        "isVirtual" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
+                        "items" : {
+                            "type" : "object",
+                            "title" : "Effective Roles and Privileges"
                         }
                     },
                     "telephoneNumber" : {
