@@ -10,7 +10,6 @@
     "_id" : "",
     "defaults" : {
       "authenticationLevel" : 0,
-      "imgUrl" : null,
       "bgcolour" : "#519387",
       "googleLink" : "https://play.google.com/store/apps/details?id=com.forgerock.authenticator",
       "timeoutInMilliSecconds" : 120000,

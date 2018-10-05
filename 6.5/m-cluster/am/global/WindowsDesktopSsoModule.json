@@ -9,12 +9,8 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "keytabFileName" : null,
       "trustedKerberosRealms" : [ ],
-      "kerberosServerName" : null,
-      "kerberosRealm" : null,
       "lookupUserInRealm" : false,
-      "principalName" : null,
       "authenticationLevel" : 0,
       "returnPrincipalWithDomainName" : false
     },

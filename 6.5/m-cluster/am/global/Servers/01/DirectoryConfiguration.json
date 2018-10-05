@@ -11,20 +11,15 @@
   "data" : {
     "_id" : "01/properties/directoryConfiguration",
     "directoryConfiguration" : {
-      "minConnectionPool" : 1,
+      "minConnectionPool" : 5,
       "maxConnectionPool" : 10,
       "bindDn" : "cn=Directory Manager",
       "bindPassword" : null,
-      "bindPassword-encrypted" : "AAAAA0FFUwIQ3FuNz5ug4h0isPHmDWFsY67vpihgj3LT6TTUgj7OM0w8lnX5ChVyTw=="
+      "bindPassword-encrypted" : "AAAAA0FFUwIQmgr8X570+2K2M1IgVrBhxaGgqJ+K6tYpXi8KbzMIXF0Z2qG44mm03A=="
     },
     "directoryServers" : [ {
       "hostName" : "configstore-0.configstore",
       "serverName" : "Server1",
-      "connectionType" : "SIMPLE",
-      "portNumber" : "1389"
-    }, {
-      "hostName" : "configstore-1.configstore",
-      "serverName" : "Server2",
       "connectionType" : "SIMPLE",
       "portNumber" : "1389"
     } ]

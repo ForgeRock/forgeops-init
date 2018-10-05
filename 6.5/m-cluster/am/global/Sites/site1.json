@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.0-M7",
     "entityType" : "Sites",
     "entityId" : "site1",
     "pathParams" : { }
@@ -9,7 +9,7 @@
   "data" : {
     "_id" : "site1",
     "id" : "02",
-    "url" : "http://&{fqdn}/openam",
+    "url" : "http://openam.small.lbk8s.net/openam",
     "secondaryURLs" : [ ]
   }
 }

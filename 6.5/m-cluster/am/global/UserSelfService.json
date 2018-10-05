@@ -51,11 +51,7 @@
       },
       "generalConfig" : {
         "minimumAnswersToDefine" : 1,
-        "captchaSiteKey" : null,
-        "signingSecretKeyAlias" : null,
-        "encryptionKeyPairAlias" : null,
         "minimumAnswersToVerify" : 1,
-        "captchaSecretKey" : null,
         "captchaVerificationUrl" : "https://www.google.com/recaptcha/api/siteverify",
         "kbaQuestions" : [ "4|en|What is your mother's maiden name?", "3|en|What was the name of your childhood pet?", "2|en|What was the model of your first car?", "1|en|What is the name of your favourite restaurant?" ],
         "validQueryAttributes" : [ "uid", "mail", "givenName", "sn" ]

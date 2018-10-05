@@ -9,8 +9,7 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "authenticationLevel" : 0,
-      "backendModuleName" : null
+      "authenticationLevel" : 0
     },
     "_type" : {
       "_id" : "httpbasic",

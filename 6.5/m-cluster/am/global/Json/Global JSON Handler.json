@@ -13,8 +13,7 @@
       "rotationTimes" : [ ],
       "rotationEnabled" : true,
       "rotationFileSuffix" : "-yyyy.MM.dd-HH.mm.ss",
-      "rotationMaxFileSize" : "100000000",
-      "rotationFilePrefix" : null
+      "rotationMaxFileSize" : "100000000"
     },
     "jsonBuffering" : {
       "bufferingMaxSize" : "100000",
