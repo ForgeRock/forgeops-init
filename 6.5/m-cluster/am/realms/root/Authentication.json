@@ -10,14 +10,10 @@
     "_id" : "",
     "accountlockout" : {
       "lockoutDuration" : 0,
-      "lockoutEmailAddress" : null,
       "loginFailureLockoutMode" : false,
       "lockoutDurationMultiplier" : 1,
       "lockoutWarnUserCount" : 0,
-      "lockoutAttributeValue" : null,
-      "lockoutAttributeName" : null,
       "loginFailureCount" : 5,
-      "invalidAttemptsDataAttributeName" : null,
       "loginFailureDuration" : 300,
       "storeInvalidAttemptsInDataStore" : true
     },
@@ -32,20 +28,20 @@
     "userprofile" : {
       "defaultRole" : [ ],
       "aliasAttributeName" : [ "uid" ],
-      "dynamicProfileCreation" : "ignore"
+      "dynamicProfileCreation" : "false"
     },
     "security" : {
       "moduleBasedAuthEnabled" : true,
       "zeroPageLoginAllowedWithoutReferrer" : true,
       "sharedSecret" : null,
-      "sharedSecret-encrypted" : "AAAAA0FFUwIQvUq8uEv1bB+otau1FbZgUXC40FqRDwYOPJLbtVIid7PEeece1YhO94OHhJ438546NpbGbQXVJIvayx1lr20VyDnMNSGz2t3H",
+      "sharedSecret-encrypted" : "AAAAA0FFUwIQC5GwsaYN23ZRKT+pJ1DmwpTmD7lDBv9GsrczNmTeMZ26O2HNunG5Y67DIc7M2vYiosiQarI8EzovwGVpftbtC2TqA0VcOfN8",
       "keyAlias" : "test",
       "zeroPageLoginEnabled" : false,
       "zeroPageLoginReferrerWhiteList" : [ ]
     },
     "postauthprocess" : {
       "usernameGeneratorClass" : "com.sun.identity.authentication.spi.DefaultUserIDGenerator",
-      "loginFailureUrl" : [ ],
+      "loginFailureUrl" : [ "" ],
       "userAttributeSessionMapping" : [ ],
       "loginPostProcessClass" : [ ],
       "usernameGeneratorEnabled" : true,

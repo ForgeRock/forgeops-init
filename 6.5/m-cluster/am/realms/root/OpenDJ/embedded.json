@@ -10,7 +10,6 @@
     "_id" : "embedded",
     "groupconfig" : {
       "sun-idrepo-ldapv3-config-groups-search-attribute" : "cn",
-      "sun-idrepo-ldapv3-config-memberof" : null,
       "sun-idrepo-ldapv3-config-group-container-value" : "groups",
       "sun-idrepo-ldapv3-config-group-attributes" : [ "dn", "cn", "uniqueMember", "objectclass" ],
       "sun-idrepo-ldapv3-config-group-container-name" : "ou",
@@ -35,7 +34,7 @@
       "sun-idrepo-ldapv3-config-inactive" : "Inactive"
     },
     "ldapsettings" : {
-      "sun-idrepo-ldapv3-config-connection_pool_max_size" : 32,
+      "sun-idrepo-ldapv3-config-connection_pool_max_size" : 50,
       "openam-idrepo-ldapv3-behera-support-enabled" : true,
       "sun-idrepo-ldapv3-config-authid" : "cn=Directory Manager",
       "openam-idrepo-ldapv3-proxied-auth-enabled" : false,
@@ -43,12 +42,12 @@
       "sun-idrepo-ldapv3-config-search-scope" : "SCOPE_SUB",
       "sun-idrepo-ldapv3-config-time-limit" : 10,
       "openam-idrepo-ldapv3-heartbeat-interval" : 10,
-      "sun-idrepo-ldapv3-config-ldap-server" : [ "userstore-1.userstore:1389", "userstore-0.userstore:1389" ],
+      "sun-idrepo-ldapv3-config-ldap-server" : [ "userstore-0.userstore:1389" ],
       "openam-idrepo-ldapv3-heartbeat-timeunit" : "SECONDS",
       "sun-idrepo-ldapv3-config-organization_name" : "o=userstore",
       "sun-idrepo-ldapv3-config-connection-mode" : "LDAP",
       "sun-idrepo-ldapv3-config-authpw" : null,
-      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQP8RJ2a15f5XJFzrEGhSwU6ltWK4bQCgJcBWUVErYVA5EXmAzbTHiSQ=="
+      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQH9YPhfemlfra3KVsKcRpKfwjYnxeT4FXihkJOYRvx2badgDzeLHiQQ=="
     },
     "cachecontrol" : {
       "sun-idrepo-ldapv3-dncache-enabled" : true,

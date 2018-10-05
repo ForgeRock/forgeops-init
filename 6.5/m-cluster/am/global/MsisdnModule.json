@@ -17,9 +17,8 @@
       "msisdnRequestSearchLocations" : [ "searchRequest", "searchParam", "searchCookie" ],
       "ldapProviderUrl" : [ "configstore-0.configstore:1389" ],
       "msisdnParameterNames" : [ ],
-      "ldapUserBindPassword" : null,
       "trustedGatewayIPAddresses" : [ ],
-      "baseSearchDN" : [ "o=userstore" ],
+      "baseSearchDN" : [ "dc=data" ],
       "returnUserDN" : true
     },
     "_type" : {

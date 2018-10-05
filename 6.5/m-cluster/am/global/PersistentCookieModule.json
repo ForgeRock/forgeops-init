@@ -10,13 +10,11 @@
     "_id" : "",
     "defaults" : {
       "idleTimeout" : 5,
+      "useHttpOnlyCookie" : true,
       "maxLife" : 5,
       "useSecureCookie" : true,
-      "enforceClientIP" : false,
-      "useHttpOnlyCookie" : true,
       "cookieName" : "session-jwt",
-      "hmacKey" : null,
-      "hmacKey-encrypted" : "AAAAA0FFUwIQAiQ2GE+I04YsRj84CSpx9vW2ToauRv2nNcustvRoo183ZSrhZ/xrHK2izZlf6mpZz4kfkKLxYDLs9V19AlMLayNBWHzS43tn"
+      "enforceClientIP" : false
     },
     "_type" : {
       "_id" : "persistentcookie",

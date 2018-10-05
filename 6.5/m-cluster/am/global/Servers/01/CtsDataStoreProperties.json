@@ -16,11 +16,19 @@
         "inherited" : true
       },
       "org.forgerock.services.cts.store.root.suffix" : {
-        "value" : "o=cts",
+        "value" : "ou=tokens",
         "inherited" : true
       },
       "org.forgerock.services.cts.store.max.connections" : {
         "value" : "66",
+        "inherited" : true
+      },
+      "org.forgerock.services.cts.store.page.size" : {
+        "value" : "0",
+        "inherited" : true
+      },
+      "org.forgerock.services.cts.store.vlv.page.size" : {
+        "value" : "1000",
         "inherited" : true
       }
     },
@@ -39,9 +47,9 @@
       },
       "org.forgerock.services.cts.store.password" : {
         "value" : null,
-        "inherited" : false
+        "inherited" : true
       },
-      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQpHW1qfqPOIKMawpox/XHDo2Ogk3s8EYyhw29efFM9zG5kC05BZRtSQ==",
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQelTcNRH3ReiSLatIKiWHzLkOKE8jrOUKH6H0YZehQYK+KHsIbW/9Sw==",
       "org.forgerock.services.cts.store.heartbeat" : {
         "value" : "10",
         "inherited" : true

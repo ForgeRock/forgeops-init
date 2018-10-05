@@ -9,8 +9,6 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "userSearchFilter" : null,
-      "userBindPassword" : null,
       "searchScope" : "SUBTREE",
       "returnUserDN" : true,
       "profileAttributeMappings" : [ ],
@@ -22,7 +20,7 @@
       "openam-auth-ldap-connection-mode" : "LDAP",
       "connectionHeartbeatInterval" : 1,
       "secondaryLdapServer" : [ ],
-      "userSearchStartDN" : [ "o=userstore" ],
+      "userSearchStartDN" : [ "dc=data" ],
       "trustAllServerCertificates" : false,
       "operationTimeout" : 0,
       "authenticationLevel" : 0

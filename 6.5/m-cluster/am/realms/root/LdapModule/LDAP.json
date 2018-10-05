@@ -9,9 +9,8 @@
   "data" : {
     "_id" : "LDAP",
     "authenticationLevel" : 0,
-    "userSearchFilter" : null,
     "userBindPassword" : null,
-    "userBindPassword-encrypted" : "AAAAA0FFUwIQHTeQ7NN78UHRUQWApRP0SGWgNBAoPHBjSnT/GbBJkvKeBINvyedL8w==",
+    "userBindPassword-encrypted" : "AAAAA0FFUwIQKRp5NWpZH/oKr9JvNRwB3SGo85FzgRpW5mMsfPh9KuIPAs4xcq0ntg==",
     "searchScope" : "SUBTREE",
     "returnUserDN" : true,
     "profileAttributeMappings" : [ ],

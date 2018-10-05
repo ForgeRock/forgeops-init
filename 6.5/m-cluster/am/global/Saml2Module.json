@@ -11,19 +11,16 @@
     "defaults" : {
       "authenticationLevel" : 0,
       "metaAlias" : "/sp",
-      "loginChain" : null,
       "isPassive" : "false",
       "sloRelay" : "http://",
       "forceAuthn" : "false",
-      "authnContextDeclRef" : null,
       "entityName" : "http://",
       "nameIdFormat" : "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent",
       "authComparison" : "exact",
       "reqBinding" : "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
       "sloEnabled" : "false",
       "binding" : "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact",
-      "allowCreate" : "true",
-      "authnContextClassRef" : null
+      "allowCreate" : "true"
     },
     "_type" : {
       "_id" : "authSaml",
