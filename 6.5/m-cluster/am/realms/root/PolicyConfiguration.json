@@ -21,11 +21,11 @@
     "sslEnabled" : false,
     "usersBaseDn" : "dc=data",
     "bindPassword" : null,
-    "bindPassword-encrypted" : "AAAAA0FFUwIQ1Y2qDP+Rtcy8HcSqK6NOXTqY0e6ug4X8hkRbxkk5nEv06bH7cNwhAA==",
+    "bindPassword-encrypted" : "AAAAA0FFUwIQtC2ekcAtBVOOzuYTkoyzw/s4oPwRjclwcYCdyzNPczi6N87veDyESw==",
     "connectionPoolMaximumSize" : 10,
     "policyHeartbeatTimeUnit" : "SECONDS",
-    "realmSearchFilter" : "(objectclass=sunismanagedorganization)",
     "maximumSearchResults" : 100,
+    "realmSearchFilter" : "(objectclass=sunismanagedorganization)",
     "_type" : {
       "_id" : "policyconfiguration",
       "name" : "Policy Configuration",
