@@ -536,11 +536,27 @@
                         "viewable": true,
                         "type": "string",
                         "searchable": true
+                    },
+                    "avatar_URL": {
+                        "description" : "Avatar Url",
+                        "title": "Avatar Url",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true
+                    },
+                    "display_name": {
+                        "description" : "Display Name",
+                        "title": "Display Name",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true
                     }
                 },
                 "order": [
                     "username",
-                    "email"
+                    "email",
+                    "display_name",
+                    "avatar_URL"
                 ],
                 "required": []
             },
@@ -556,6 +572,14 @@
                 {
                     "source": "email",
                     "target": "email"
+                },
+                {
+                    "source" : "avatar_URL",
+                    "target" : "photoUrl"
+                },
+                {
+                    "source" : "display_name",
+                    "target" : "displayName"
                 }
             ],
             "redirectUri" : "https://localhost:8443/",
@@ -1225,13 +1249,21 @@
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true
+                    },
+                    "profile_image_url" : {
+                        "description" : "Profile Image URL",
+                        "title" : "Profile Image URL",
+                        "viewable" : true,
+                        "type" : "string",
+                        "searchable" : true
                     }
                 },
                 "order" : [
                     "id_str",
                     "name",
                     "screen_name",
-                    "email"
+                    "email",
+                    "profile_image_url"
                 ],
                 "required" : [ ]
             },
@@ -1251,6 +1283,10 @@
                 {
                     "source" : "screen_name",
                     "target" : "username"
+                },
+                {
+                    "source" : "profile_image_url",
+                    "target" : "photoUrl"
                 }
             ]
         }
