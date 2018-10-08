@@ -24,7 +24,7 @@
       }
     },
     {
-      "name": "basic-auth"
+      "name": "basic-auth",
       "type": "HttpBasicAuthFilter",
       "config": {
           "username": "testuser",
