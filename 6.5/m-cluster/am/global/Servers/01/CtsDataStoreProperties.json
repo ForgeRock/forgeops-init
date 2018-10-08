@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.5.0-M7",
+    "amsterVersion" : "&{version}",
     "entityType" : "CtsDataStoreProperties",
     "entityId" : "http://openam:80/openam",
     "pathParams" : {
@@ -37,7 +37,7 @@
         "value" : false,
         "inherited" : true
       },
-      "org.forgerock.services.cts.store.directory.name" : {
+      "" : {
         "value" : "ctsstore-0.ctsstore:1389,ctsstore-1.ctsstore:1389",
         "inherited" : true
       },

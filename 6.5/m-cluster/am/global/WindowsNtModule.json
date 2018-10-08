@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.5.0-M7",
+    "amsterVersion" : "&{version}",
     "entityType" : "WindowsNtModule",
     "entityId" : "WindowsNtModule",
     "pathParams" : { }
