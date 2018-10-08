@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "OathModule",
     "entityId" : "OATH",
     "pathParams" : { }
@@ -14,12 +14,8 @@
     "forgerock-oath-maximum-clock-drift" : 0,
     "passwordLength" : "6",
     "authenticationLevel" : 0,
-    "secretKeyAttribute" : null,
     "timeStepSize" : 30,
-    "hotpCounterAttribute" : null,
     "minimumSecretKeyLength" : "32",
-    "lastLoginTimeAttribute" : null,
-    "forgerock-oath-observed-clock-drift-attribute-name" : null,
     "oathOtpMaxRetry" : 3,
     "oathAlgorithm" : "HOTP",
     "truncationOffset" : -1,

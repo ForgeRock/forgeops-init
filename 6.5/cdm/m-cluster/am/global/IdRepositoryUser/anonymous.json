@@ -1,29 +1,22 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "IdRepositoryUser",
     "entityId" : "anonymous",
     "pathParams" : { }
   },
   "data" : {
     "_id" : "anonymous",
-    "sunIdentityMSISDNNumber" : null,
     "userPassword" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQth5vV0OYYwkFCFsLZGRMaf2BksofVOYyPbFvxbAte2YhGQCg49VcLOcP3XqpDXMxZGZIPgq8a/A=",
-    "telephoneNumber" : null,
-    "mail" : null,
-    "iplanet-am-user-alias-list" : null,
+    "userPassword-encrypted" : "AAAAA0FFUwIQbGanHU+THdLupCnqxyOPMkRAODnxSZjkvMAACL3qdP214Gvut4EC01KpBzeHVWabbERSEkaxo98=",
     "roles" : [ ],
     "givenName" : "anonymous",
     "dn" : "uid=anonymous,ou=people,",
     "cn" : "anonymous",
-    "employeeNumber" : null,
-    "postalAddress" : null,
-    "iplanet-am-user-success-url" : null,
     "inetUserStatus" : "Active",
     "sn" : "anonymous",
-    "iplanet-am-user-failure-url" : null,
+    "iplanet-am-user-auth-config" : "[Empty]",
     "_type" : {
       "_id" : "user",
       "name" : "User",

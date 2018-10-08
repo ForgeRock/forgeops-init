@@ -11,6 +11,6 @@
     "parentPath" : null,
     "active" : true,
     "name" : "/",
-    "aliases" : [ "userstore", "openam", "&{fqdn}" ]
+    "aliases" : [ "&{fqdn}", "data", "openam" ]
   }
 }

@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "Authentication",
     "entityId" : "Authentication",
     "pathParams" : { }
@@ -10,14 +10,10 @@
     "_id" : "",
     "accountlockout" : {
       "lockoutDuration" : 0,
-      "lockoutEmailAddress" : null,
       "loginFailureLockoutMode" : false,
       "lockoutDurationMultiplier" : 1,
       "lockoutWarnUserCount" : 0,
-      "lockoutAttributeValue" : null,
-      "lockoutAttributeName" : null,
       "loginFailureCount" : 5,
-      "invalidAttemptsDataAttributeName" : null,
       "loginFailureDuration" : 300,
       "storeInvalidAttemptsInDataStore" : true
     },
@@ -32,13 +28,13 @@
     "userprofile" : {
       "defaultRole" : [ ],
       "aliasAttributeName" : [ "uid" ],
-      "dynamicProfileCreation" : "ignore"
+      "dynamicProfileCreation" : "false"
     },
     "security" : {
       "moduleBasedAuthEnabled" : true,
       "zeroPageLoginAllowedWithoutReferrer" : true,
       "sharedSecret" : null,
-      "sharedSecret-encrypted" : "AAAAA0FFUwIQvUq8uEv1bB+otau1FbZgUXC40FqRDwYOPJLbtVIid7PEeece1YhO94OHhJ438546NpbGbQXVJIvayx1lr20VyDnMNSGz2t3H",
+      "sharedSecret-encrypted" : "AAAAA0FFUwIQQ5pQCH1PxISH6Rf7HzhXQe9+EoSudhNwQ3TBdjUcmPjl6Ev4yUrQd/h2Ci9PPOjzrmStonzL9ERZdMiWhcsaENEJnjLxgaRY",
       "keyAlias" : "test",
       "zeroPageLoginEnabled" : false,
       "zeroPageLoginReferrerWhiteList" : [ ]

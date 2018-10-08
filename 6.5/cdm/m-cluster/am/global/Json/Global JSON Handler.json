@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "Json",
     "entityId" : "Global JSON Handler",
     "pathParams" : { }
@@ -13,8 +13,7 @@
       "rotationTimes" : [ ],
       "rotationEnabled" : true,
       "rotationFileSuffix" : "-yyyy.MM.dd-HH.mm.ss",
-      "rotationMaxFileSize" : "100000000",
-      "rotationFilePrefix" : null
+      "rotationMaxFileSize" : "100000000"
     },
     "jsonBuffering" : {
       "bufferingMaxSize" : "100000",

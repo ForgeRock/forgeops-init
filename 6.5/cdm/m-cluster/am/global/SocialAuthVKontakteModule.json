@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "SocialAuthVKontakteModule",
     "entityId" : "SocialAuthVKontakteModule",
     "pathParams" : { }
@@ -10,11 +10,8 @@
     "_id" : "",
     "defaults" : {
       "emailSettings" : {
-        "smtpFromAddress" : null,
         "emailGateway" : "org.forgerock.openam.authentication.modules.oauth2.DefaultEmailGatewayImpl",
-        "smtpSslEnabled" : null,
         "smtpPort" : "25",
-        "smtpPassword" : null,
         "smtpUsername" : "",
         "smtpHost" : "localhost",
         "emailAttribute" : ""
@@ -39,10 +36,8 @@
         "provider" : "VKontakte",
         "scope" : [ "email" ],
         "ssoProxyUrl" : "http://openam:80/openam/oauth2c/OAuthProxy.jsp",
-        "clientSecret" : null,
         "forgerock-am-auth-socialauthvk-auth-level" : 0,
         "userInfoEndpoint" : "https://api.vk.com/method/users.get",
-        "clientId" : null,
         "authorizeEndpoint" : "https://oauth.vk.com/authorize"
       }
     },

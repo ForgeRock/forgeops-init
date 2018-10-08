@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "OAuth2Clients",
     "entityId" : "clientOIDC_0",
     "pathParams" : { }
@@ -30,12 +30,13 @@
       "clientJwtPublicKey" : null
     },
     "advancedOAuth2ClientConfig" : {
+      "grantTypes" : [ "authorization_code" ],
       "updateAccessToken" : null,
       "requestUris" : [ ],
       "mixUpMitigation" : false,
       "tokenEndpointAuthMethod" : "client_secret_basic",
       "sectorIdentifierUri" : null,
-      "isConsentImplied" : true,
+      "isConsentImplied" : false,
       "contacts" : [ ],
       "responseTypes" : [ "code", "token", "id_token", "code token", "token id_token", "code id_token", "code token id_token", "device_code", "device_code id_token" ],
       "descriptions" : [ ],
@@ -53,7 +54,7 @@
     },
     "coreOAuth2ClientConfig" : {
       "userpassword" : null,
-      "userpassword-encrypted" : "AAAAA0FFUwIQ8Gi5QQvZGLJJvbK/9ScSoHG7/X6EW0FUGcn3/NurWc0oAMIBVJZScw==",
+      "userpassword-encrypted" : "AAAAA0FFUwIQssT0zRa+QPNBQMN2vjOdAzDeJbYH4k2kZ3vHl0zEtUrSaFX+hK1eCg==",
       "authorizationCodeLifetime" : 120,
       "accessTokenLifetime" : 3600,
       "defaultScopes" : [ "cn" ],

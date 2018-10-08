@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "PolicyConfiguration",
     "entityId" : "PolicyConfiguration",
     "pathParams" : { }
@@ -21,7 +21,7 @@
     "sslEnabled" : false,
     "usersBaseDn" : "dc=data",
     "bindPassword" : null,
-    "bindPassword-encrypted" : "AAAAA0FFUwIQvdH2ll+ZEo3NKJ3UWf6VQfXcEuezSH7vfqxLT3Wtw/MDV1znhUyFzw==",
+    "bindPassword-encrypted" : "AAAAA0FFUwIQtC2ekcAtBVOOzuYTkoyzw/s4oPwRjclwcYCdyzNPczi6N87veDyESw==",
     "connectionPoolMaximumSize" : 10,
     "policyHeartbeatTimeUnit" : "SECONDS",
     "maximumSearchResults" : 100,

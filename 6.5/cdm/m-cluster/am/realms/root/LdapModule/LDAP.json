@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "LdapModule",
     "entityId" : "LDAP",
     "pathParams" : { }
@@ -9,9 +9,8 @@
   "data" : {
     "_id" : "LDAP",
     "authenticationLevel" : 0,
-    "userSearchFilter" : null,
     "userBindPassword" : null,
-    "userBindPassword-encrypted" : "AAAAA0FFUwIQHTeQ7NN78UHRUQWApRP0SGWgNBAoPHBjSnT/GbBJkvKeBINvyedL8w==",
+    "userBindPassword-encrypted" : "AAAAA0FFUwIQ1DlPytaFkQrfu8FPNINEtEfXynla3GC0bLqoFEmZKRf5n2NSeRAHMQ==",
     "searchScope" : "SUBTREE",
     "returnUserDN" : true,
     "profileAttributeMappings" : [ ],
@@ -25,7 +24,7 @@
     "primaryLdapServer" : [ "userstore-0.userstore:1389" ],
     "connectionHeartbeatInterval" : 10,
     "secondaryLdapServer" : [ "userstore-1.userstore:1389" ],
-    "userSearchStartDN" : [ "dc=data" ],
+    "userSearchStartDN" : [ "o=userstore" ],
     "trustAllServerCertificates" : false,
     "operationTimeout" : 0,
     "_type" : {

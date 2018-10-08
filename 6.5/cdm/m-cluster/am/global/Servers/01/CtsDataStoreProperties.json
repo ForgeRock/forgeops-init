@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "CtsDataStoreProperties",
     "entityId" : "http://openam:80/openam",
     "pathParams" : {
@@ -16,11 +16,19 @@
         "inherited" : true
       },
       "org.forgerock.services.cts.store.root.suffix" : {
-        "value" : "o=cts",
+        "value" : "ou=tokens",
         "inherited" : true
       },
       "org.forgerock.services.cts.store.max.connections" : {
         "value" : "66",
+        "inherited" : true
+      },
+      "org.forgerock.services.cts.store.page.size" : {
+        "value" : "0",
+        "inherited" : true
+      },
+      "org.forgerock.services.cts.store.vlv.page.size" : {
+        "value" : "1000",
         "inherited" : true
       }
     },
@@ -29,7 +37,7 @@
         "value" : false,
         "inherited" : true
       },
-      "org.forgerock.services.cts.store.directory.name" : {
+      "" : {
         "value" : "ctsstore-0.ctsstore:1389,ctsstore-1.ctsstore:1389",
         "inherited" : true
       },
@@ -41,7 +49,7 @@
         "value" : null,
         "inherited" : false
       },
-      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQpHW1qfqPOIKMawpox/XHDo2Ogk3s8EYyhw29efFM9zG5kC05BZRtSQ==",
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQ575EEhlSiZfzesE705poz3eZKGFO7PERoo9Pc5+grRfYsbbNAOZ/SA==",
       "org.forgerock.services.cts.store.heartbeat" : {
         "value" : "10",
         "inherited" : true
