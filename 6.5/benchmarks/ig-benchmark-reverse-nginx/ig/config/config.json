@@ -29,10 +29,26 @@
       "config": {
           "username": "testuser",
           "password": "password",
-          "failureHandler": "BasicAuthFailureHandler",
+          "failureHandler": "AuthFailureHandler",
           "cacheHeader": false
       }
     },
+    {
+      "name": "AuthFailureHandler",
+      "type": "StaticResponseHandler",
+      "config": {
+        "status": 401,
+        "reason": "Auth failure",
+        "entity": "<html>
+                   <h2>Epic #FAIL</h2>
+                   </html>",
+        "headers": {
+          "content-type": [
+            "text/html"
+          ]
+        }        
+      }
+    },    
     {
       "name": "capture",
       "type": "CaptureDecorator",
