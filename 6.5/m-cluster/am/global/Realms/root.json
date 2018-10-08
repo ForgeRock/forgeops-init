@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.5.0-M7",
+    "amsterVersion" : "&{version}",
     "entityType" : "Realms",
     "entityId" : "Lw",
     "pathParams" : { }
@@ -11,6 +11,6 @@
     "parentPath" : null,
     "active" : true,
     "name" : "/",
-    "aliases" : [ "openam.small.lbk8s.net", "data", "openam" ]
+    "aliases" : [ "&{fqdn}", "data", "openam" ]
   }
 }
