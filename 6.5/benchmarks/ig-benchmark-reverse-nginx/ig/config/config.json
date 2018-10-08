@@ -14,11 +14,11 @@
               "type": "KeyStore",
               "config": {
                   "url": "file:///var/run/secrets/openig/keystore.jks",
-                  "password": "${system['keypass']}"
+                  "password": "changeit"
               }
           },
           "alias": "jwe-key",
-          "password": "${system['keypass']}",
+          "password": "changeit",
           "cookieName": "ig-jwt",
           "cookieDomain": ".test.com"
       }
