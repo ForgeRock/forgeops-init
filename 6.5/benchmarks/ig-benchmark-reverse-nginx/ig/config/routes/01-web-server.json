@@ -9,32 +9,5 @@
       "soTimeout" : "30 seconds"
     }
   },
-  "heap": [
-    {
-      "name": "JwtSession",
-      "type": "JwtSession",
-      "config": {
-          "keystore": {
-              "type": "KeyStore",
-              "config": {
-                  "url": "file:///var/run/secrets/openig/keystore.jks",
-                  "password": "password"
-              }
-          },
-          "alias": "jwe-key",
-          "password": "password",
-          "cookieName": "ig-jwt",
-          "cookieDomain": ".test.com"
-      }
-    },
-    {
-      "name": "capture",
-      "type": "CaptureDecorator",
-      "config": {
-        "captureEntity": true,
-        "_captureContext": true
-      }
-    }
-  ],  
   "_condition" : "${matches(request.uri.path, '^/static/resource.*')}"
 }
