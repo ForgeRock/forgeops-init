@@ -24,6 +24,15 @@
       }
     },
     {
+      "name": "basic-auth"
+      "type": "HttpBasicAuthFilter",
+      "config": {
+          "username": "testuser",
+          "password": "password",
+          "cacheHeader": false
+      }
+    },
+    {
       "name": "capture",
       "type": "CaptureDecorator",
       "config": {
