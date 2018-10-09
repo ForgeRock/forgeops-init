@@ -1,12 +1,8 @@
 {
   "baseURI" : "http://ig-benchmark-web:80",
-  "handler" : {
-    "type" : "ReverseProxyHandler",
-    "config" : {
-      "asyncBehavior" : "non_streaming",
-      "connections" : 100,
-      "numberOfWorkers" : 20,
-      "soTimeout" : "30 seconds",
+  "handler": {
+    "type": "chain",
+    "config": {
       "filters": [
         {
           "name": "basic-auth",
@@ -19,21 +15,16 @@
           }
         }
       ],
-      "handler": {
-        "name": "AuthFailureHandler",
-        "type": "StaticResponseHandler",
-        "config": {
-          "status": 401,
-          "reason": "Auth failure",
-          "entity": "<html><h2>Authentication Failure</h2></html>",
-          "headers": {
-            "content-type": [
-              "text/html"
-            ]
-          }
+      "session": "JwtSession",
+      "handler" : {
+        "type" : "ReverseProxyHandler",
+        "config" : {
+          "asyncBehavior" : "non_streaming",
+          "connections" : 100,
+          "numberOfWorkers" : 20,
+          "soTimeout" : "30 seconds"
         }
-      },
-      "session": "JwtSession"      
+      }
     }
   }
 }
