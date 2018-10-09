@@ -1,7 +1,7 @@
 {
   "baseURI" : "http://ig-benchmark-web:80",
   "handler": {
-    "type": "chain",
+    "type": "Chain",
     "config": {
       "filters": [
         {
@@ -26,5 +26,6 @@
       }, 
       "session": "JwtSession"
     }
-  }
+  },
+  "_condition": "${matches(request.uri.path, '^/static/resource.*')}"
 }
