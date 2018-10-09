@@ -3,47 +3,33 @@
     "type": "Router",
     "name": "_router",
     "baseURI": "http://ig-benchmark-web:80",
-    "capture": "all",
-    "heap": [
-      {
-        "name": "JwtSession",
-        "type": "JwtSession",
-        "config": {
+    "capture": "all"
+  },
+  "heap": [
+    {
+      "name": "JwtSession",
+      "type": "JwtSession",
+      "config": {
           "keystore": {
-            "type": "KeyStore",
-            "config": {
-              "url": "file:///var/run/secrets/openig/keystore.jks",
-              "password": "password"
-            }
+              "type": "KeyStore",
+              "config": {
+                  "url": "file:///var/run/secrets/openig/keystore.jks",
+                  "password": "changeit"
+              }
           },
           "alias": "jwe-key",
-          "password": "password",
+          "password": "changeit",
           "cookieName": "ig-jwt",
           "cookieDomain": ".test.com"
-        }
-      },
-      {
-        "name": "AuthFailureHandler",
-        "type": "StaticResponseHandler",
-        "config": {
-          "status": 401,
-          "reason": "Auth failure",
-          "entity": "<html><h2>Authentication Failure</h2></html>",
-          "headers": {
-            "content-type": [
-              "text/html"
-            ]
-          }
-        }
-      },
-      {
-        "name": "capture",
-        "type": "CaptureDecorator",
-        "config": {
-          "captureEntity": true,
-          "_captureContext": true
-        }
       }
-    ]
-  }
-}  
+    },
+    {
+      "name": "capture",
+      "type": "CaptureDecorator",
+      "config": {
+        "captureEntity": true,
+        "_captureContext": true
+      }
+    }
+  ]
+}
