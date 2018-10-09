@@ -1,30 +1,13 @@
 {
   "baseURI" : "http://ig-benchmark-web:80",
-  "handler": {
-    "type": "Chain",
-    "config": {
-      "filters": [
-        {
-          "name": "basic-auth",
-          "type": "HttpBasicAuthFilter",
-          "config": {
-            "username": "testuser",
-            "password": "password",
-            "failureHandler": "AuthFailureHandler",
-            "cacheHeader": false
-          }
-        }
-      ],
-      "handler" : {
-        "type" : "ReverseProxyHandler",
-        "config" : {
-          "asyncBehavior" : "non_streaming",
-          "connections" : 100,
-          "numberOfWorkers" : 20,
-          "soTimeout" : "30 seconds"
-        }
-      }
+  "handler" : {
+    "type" : "ReverseProxyHandler",
+    "config" : {
+      "asyncBehavior" : "non_streaming",
+      "connections" : 100,
+      "numberOfWorkers" : 20,
+      "soTimeout" : "30 seconds"
     }
   },
-  "_condition": "${matches(request.uri.path, '^/static/resource.*')}"
+  "_condition" : "${matches(request.uri.path, '^/static/resource.*')}"
 }
