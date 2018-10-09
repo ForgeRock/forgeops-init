@@ -4,34 +4,33 @@
     "name": "_router",
     "baseURI": "http://ig-benchmark-web:80",
     "capture": "all",
-    "config": {
-      "filters": [
-        {
-          "name": "basic-auth",
-          "type": "HttpBasicAuthFilter",
-          "config": {
-            "username": "testuser",
-            "password": "password",
-            "failureHandler": "AuthFailureHandler",
-            "cacheHeader": false
-          }
-        }
-      ],
-      "handler": {
-        "name": "AuthFailureHandler",
-        "type": "StaticResponseHandler",
+    "heap": [
+      {
+        "name": "JwtSession",
+        "type": "JwtSession",
         "config": {
-          "status": 401,
-          "reason": "Auth failure",
-          "entity": "<html><h2>Authentication Failure</h2></html>",
-          "headers": {
-            "content-type": [
-              "text/html"
-            ]
-          }
+          "keystore": {
+            "type": "KeyStore",
+            "config": {
+              "url": "file:///var/run/secrets/openig/keystore.jks",
+              "password": "password"
+            }
+          },
+          "alias": "jwe-key",
+          "password": "password",
+          "cookieName": "ig-jwt",
+          "cookieDomain": ".test.com"
         }
       },
-      "session": "JwtSession"
-    }
+      {
+        "name": "capture",
+        "type": "CaptureDecorator",
+        "config": {
+          "captureEntity": true,
+          "_captureContext": true
+        }
+      }
+    ],
+    "_condition": "${matches(request.uri.path, '^/static/resource.*')}"
   }
 }  
