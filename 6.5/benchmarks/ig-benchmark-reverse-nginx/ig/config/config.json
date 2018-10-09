@@ -40,7 +40,7 @@
         "status": 401,
         "reason": "Auth failure",
         "entity": "<html>
-                   <h2>Epic #FAIL</h2>
+                   <h2>Authentication Failure</h2>
                    </html>",
         "headers": {
           "content-type": [
