@@ -23,8 +23,7 @@
           "numberOfWorkers" : 20,
           "soTimeout" : "30 seconds"
         }
-      }, 
-      "session": "JwtSession"
+      }
     }
   },
   "_condition": "${matches(request.uri.path, '^/static/resource.*')}"
