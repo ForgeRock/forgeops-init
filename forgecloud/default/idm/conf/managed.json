@@ -1,6 +1,237 @@
 {
     "objects" : [
         {
+            "name": "teammember",
+            "actions": {
+                "resetPassword": {
+                    "type": "text/javascript",
+                    "source": "require('resetPassword').sendMail(object);"
+                },
+                "unbind": {
+                    "type": "text/javascript",
+                    "file": "ui/unBindBehavior.js",
+                    "apiDescriptor": {
+                        "parameters": [{
+                            "name": "provider",
+                            "type": "string",
+                            "required": true
+                        }]
+                    }
+                },
+                "bind": {
+                    "type": "text/javascript",
+                    "file": "ui/bindBehavior.js",
+                    "apiDescriptor": {
+                        "parameters": [{
+                            "name": "provider",
+                            "type": "string",
+                            "required": true
+                        }]
+                    }
+                }
+            },
+            "schema": {
+                "id": "urn:jsonschema:org:forgerock:openidm:managed:api:Teammember",
+                "title": "Teammember",
+                "icon": "fa-user",
+                "viewable": true,
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "order": [
+                    "_id",
+                    "userName",
+                    "password",
+                    "givenName",
+                    "sn",
+                    "mail",
+                    "cn",
+                    "authzRoles"
+                ],
+                "properties": {
+                    "authzRoles" : {
+                        "description" : "Authorization Roles",
+                        "title" : "Authorization Roles",
+                        "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User:authzRoles",
+                        "viewable" : true,
+                        "type" : "array",
+                        "userEditable" : false,
+                        "returnByDefault" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
+                        "items" : {
+                            "type" : "relationship",
+                            "title" : "Authorization Roles Items",
+                            "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User:authzRoles:items",
+                            "reverseRelationship" : true,
+                            "reversePropertyName" : "authzMembers",
+                            "validate" : true,
+                            "properties" : {
+                                "_ref" : {
+                                    "description" : "References a relationship from a managed object",
+                                    "type" : "string"
+                                },
+                                "_refProperties" : {
+                                    "description" : "Supports metadata within the relationship",
+                                    "type" : "object",
+                                    "title" : "Authorization Roles Items _refProperties",
+                                    "properties" : {
+                                        "_id" : {
+                                            "description" : "_refProperties object ID",
+                                            "type" : "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "resourceCollection" : [
+                                {
+                                    "path" : "repo/internal/role",
+                                    "label" : "Internal Role",
+                                    "query" : {
+                                        "queryFilter" : "true",
+                                        "fields" : [
+                                            "_id",
+                                            "description"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "path" : "managed/role",
+                                    "label" : "Role",
+                                    "query" : {
+                                        "queryFilter" : "true",
+                                        "fields" : [
+                                            "name"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "_id": {
+                        "description": "User ID",
+                        "type": "string",
+                        "viewable": false,
+                        "searchable": false,
+                        "userEditable": false,
+                        "usageDescription": "",
+                        "isPersonal": false,
+                        "policies": [{
+                            "policyId": "cannot-contain-characters",
+                            "params": {
+                                "forbiddenChars": [
+                                    "/"
+                                ]
+                            }
+                        }]
+                    },
+                    "password": {
+                        "title": "Password",
+                        "description": "Password",
+                        "type": "string",
+                        "viewable": false,
+                        "searchable": false,
+                        "userEditable": true,
+                        "scope": "private",
+                        "isProtected": true,
+                        "usageDescription": "",
+                        "isPersonal": false
+                    },
+                    "mail": {
+                        "title": "Email Address",
+                        "description": "Email Address",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": true,
+                        "policies": [{
+                            "policyId": "valid-email-address-format"
+                        }]
+                    },
+                    "sn": {
+                        "title": "Last Name",
+                        "description": "Last Name",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": true
+                    },
+                    "givenName": {
+                        "title": "First Name",
+                        "description": "First Name",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": true
+                    },
+                    "country": {
+                        "type": "string",
+                        "title": "Country",
+                        "description": "Country",
+                        "viewable": true,
+                        "userEditable": true,
+                        "usageDescription": "",
+                        "isPersonal": false
+                    },
+                    "userName": {
+                        "title": "Username",
+                        "description": "Username",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true,
+                        "userEditable": true,
+                        "minLength": 1,
+                        "usageDescription": "",
+                        "isPersonal": true,
+                        "policies": [{
+                                "policyId": "unique"
+                            },
+                            {
+                                "policyId": "cannot-contain-characters",
+                                "params": {
+                                    "forbiddenChars": [
+                                        "/"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "cn": {
+                        "description": "Common Name",
+                        "type": "string",
+                        "viewable": false,
+                        "searchable": false,
+                        "userEditable": false,
+                        "scope": "private",
+                        "isPersonal": true,
+                        "isVirtual": true,
+                        "onStore": {
+                            "type": "text/javascript",
+                            "source": "object.cn || (object.givenName + ' ' + object.sn)"
+                        }
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "userName",
+                    "mail",
+                    "password"
+                ]
+            },
+            "meta": {
+                "property": "_meta",
+                "resourceCollection": "internal/usermeta",
+                "trackedProperties": [
+                    "createDate",
+                    "lastChanged"
+                ]
+            }
+        },
+        {
             "name" : "user",
             "onCreate" : {
                 "type" : "text/javascript",
@@ -82,6 +313,7 @@
                     "lastSync",
                     "kbaInfo",
                     "preferences",
+                    "customAttributes",
                     "consentedMappings",
                     "aliasList",
                     "cn",
@@ -150,6 +382,21 @@
                             ],
                             "required" : [ ]
                         }
+                    },
+                    "customAttributes": {
+                        "title" : "Custom Attributes",
+                        "description" : "Custom Attributes",
+                        "viewable" : true,
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "type" : "object",
+                        "usageDescription" : "",
+                        "isPersonal" : false,
+                        "properties" : {
+                        },
+                        "order" : [
+                        ],
+                        "required" : [ ]
                     },
                     "preferences" : {
                         "title" : "Preferences",
@@ -707,7 +954,8 @@
                 "type" : "object",
                 "required" : [
                     "userName",
-                    "mail"
+                    "mail",
+                    "sn"
                 ]
             },
             "meta" : {
@@ -720,6 +968,7 @@
             }
         },
         {
+
             "name" : "role",
             "onDelete" : {
                 "type" : "text/javascript",

@@ -330,6 +330,10 @@
                         "ldapAttribute": "fr-idm-kbaInfo",
                         "isMultiValued": true
                     },
+                    "customAttributes": {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-json"
+                    },
                     "preferences": {
                         "type": "json",
                         "ldapAttribute": "fr-idm-preferences"
@@ -337,6 +341,53 @@
                     "_meta": {
                         "type": "json",
                         "ldapAttribute": "fr-idm-meta"
+                    }
+                }
+            },
+            "managed/teammember": {
+                "dnTemplate": "ou=admins,o=userstore",
+                "namingStrategy": {
+                    "type": "serverNaming",
+                    "dnAttribute": "uid",
+                    "idAttribute": "entryUUID"
+                },
+                "nativeId" : true,
+                "objectClasses": [
+                    "person",
+                    "organizationalPerson",
+                    "inetOrgPerson",
+                    "extensibleObject"
+                ],
+                "properties": {
+                    "_id": {
+                        "type": "simple",
+                        "ldapAttribute": "entryUUID",
+                        "writability": "createOnly"
+                    },
+                    "userName": {
+                        "primaryKey": true,
+                        "type": "simple",
+                        "ldapAttribute": "uid"
+                    },
+                    "cn": {
+                        "type": "simple",
+                        "ldapAttribute": "cn"
+                    },
+                    "password": {
+                        "type": "simple",
+                        "ldapAttribute": "userPassword"
+                    },
+                    "givenName": {
+                        "type": "simple",
+                        "ldapAttribute": "givenName"
+                    },
+                    "sn": {
+                        "type": "simple",
+                        "ldapAttribute": "sn"
+                    },
+                    "mail": {
+                        "type": "simple",
+                        "ldapAttribute": "mail"
                     }
                 }
             }
