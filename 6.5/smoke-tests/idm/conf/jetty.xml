@@ -132,6 +132,11 @@
 
     </Array>
 
+    <Array  id= "excludedProtocols" type="java.lang.String">
+        <Item>SSLv3</Item>
+        <Item>TLSv1</Item>
+    </Array>
+
     <New id="sslContextFactory" class="org.eclipse.jetty.util.ssl.SslContextFactory">
         <Set name="keyStorePath"><Get class="org.forgerock.openidm.jetty.Param" name="keystoreLocation"/></Set>
         <Set name="keyStorePassword"><Get class="org.forgerock.openidm.jetty.Param" name="keystorePassword"/></Set>
@@ -143,9 +148,7 @@
         <Set name="trustStorePassword"><Get class="org.forgerock.openidm.jetty.Param" name="truststorePassword"/></Set>
         <Set name="certAlias"><Get class="org.forgerock.openidm.jetty.Param" name="certAlias"/></Set>
         <Set name="ExcludeProtocols">
-            <Array type="java.lang.String">
-                <Item>SSLv3</Item>
-            </Array>
+            <Ref refid="excludedProtocols"/>
         </Set>
         <Set name="ExcludeCipherSuites">
             <Ref refid="excludedCipherSuites"/>
@@ -164,9 +167,7 @@
         <Set name="needClientAuth">true</Set>
         <Set name="certAlias"><Get class="org.forgerock.openidm.jetty.Param" name="certAlias"/></Set>
         <Set name="ExcludeProtocols">
-            <Array type="java.lang.String">
-                <Item>SSLv3</Item>
-            </Array>
+            <Ref refid="excludedProtocols"/>
         </Set>
         <Set name="ExcludeCipherSuites">
             <Ref refid="excludedCipherSuites"/>
