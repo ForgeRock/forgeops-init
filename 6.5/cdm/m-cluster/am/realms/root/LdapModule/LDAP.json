@@ -10,7 +10,7 @@
     "_id" : "LDAP",
     "authenticationLevel" : 0,
     "userBindPassword" : null,
-    "userBindPassword-encrypted" : "AAAAA0FFUwIQ1DlPytaFkQrfu8FPNINEtEfXynla3GC0bLqoFEmZKRf5n2NSeRAHMQ==",
+    "userBindPassword-encrypted" : "AAAAA0FFUwIQsdSOl44UMckpXd8boPQV816e0OwZ+PdjLXWE5VXLnwF33BYW7LMPAQ==",
     "searchScope" : "SUBTREE",
     "returnUserDN" : true,
     "profileAttributeMappings" : [ ],
@@ -24,7 +24,7 @@
     "primaryLdapServer" : [ "userstore-0.userstore:1389" ],
     "connectionHeartbeatInterval" : 10,
     "secondaryLdapServer" : [ "userstore-1.userstore:1389" ],
-    "userSearchStartDN" : [ "o=userstore" ],
+    "userSearchStartDN" : [ "dc=data" ],
     "trustAllServerCertificates" : false,
     "operationTimeout" : 0,
     "_type" : {
