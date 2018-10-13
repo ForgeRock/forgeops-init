@@ -39,7 +39,7 @@
       },
       "advancedOAuth2Config" : {
         "supportedScopes" : [ ],
-        "codeVerifierEnforced" : false,
+        "codeVerifierEnforced" : "false",
         "tokenSigningAlgorithm" : "HS256",
         "authenticationAttributes" : [ "uid" ],
         "defaultScopes" : [ ],

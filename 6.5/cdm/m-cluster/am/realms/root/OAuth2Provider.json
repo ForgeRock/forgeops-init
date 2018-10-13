@@ -27,7 +27,7 @@
     },
     "advancedOAuth2Config" : {
       "supportedScopes" : [ "email|Your email address", "openid|", "address|Your postal address", "phone|Your telephone number(s)", "profile|Your personal information" ],
-      "codeVerifierEnforced" : false,
+      "codeVerifierEnforced" : "false",
       "tokenSigningAlgorithm" : "HS256",
       "authenticationAttributes" : [ "uid" ],
       "defaultScopes" : [ "address", "phone", "openid", "profile", "email" ],
