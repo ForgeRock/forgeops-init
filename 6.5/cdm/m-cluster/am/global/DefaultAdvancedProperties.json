@@ -89,7 +89,7 @@
     "com.sun.identity.plugin.session.class" : "@SESSION_PROVIDER_CLASS@",
     "org.forgerock.openam.session.stateless.encryption.method" : "A128CBC-HS256",
     "com.sun.identity.authentication.setCookieToAllDomains" : true,
-    "org.forgerock.services.cts.store.reaper.enabled" : true,
+    "org.forgerock.services.cts.store.reaper.enabled" : false,
     "com.sun.embedded.sync.servers" : "on",
     "com.sun.identity.auth.cookieName" : "AMAuthCookie",
     "com.iplanet.am.daemons" : "securid",
