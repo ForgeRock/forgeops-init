@@ -46,7 +46,7 @@
     },
     "amconfig.header.securitykey" : {
       "com.sun.identity.saml.xmlsig.keystore" : {
-        "value" : "%BASE_DIR%/%SERVER_URI%/keystore.jceks",
+        "value" : "/var/run/secrets/openam/keystore.jceks",
         "inherited" : true
       },
       "com.sun.identity.saml.xmlsig.storetype" : {
@@ -54,11 +54,11 @@
         "inherited" : true
       },
       "com.sun.identity.saml.xmlsig.storepass" : {
-        "value" : "%BASE_DIR%/%SERVER_URI%/.storepass",
+        "value" : "/var/run/secrets/openam/.storepass",
         "inherited" : true
       },
       "com.sun.identity.saml.xmlsig.keypass" : {
-        "value" : "%BASE_DIR%/%SERVER_URI%/.keypass",
+        "value" : "/var/run/secrets/openam/.keypass",
         "inherited" : true
       },
       "com.sun.identity.saml.xmlsig.certalias" : {
