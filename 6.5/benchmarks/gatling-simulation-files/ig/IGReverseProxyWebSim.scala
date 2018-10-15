@@ -12,8 +12,8 @@ class IGReverseProxyWebSim extends Simulation {
     val duration: Integer = Integer.getInteger("duration", 60)
     val warmup: Integer = Integer.getInteger("warmup", 3)
     val igHost: String = System.getProperty("ig_host", "openig.example.forgeops.com")
-    val igPort: String = System.getProperty("ig_port", "80")
-    val igProtocol: String = System.getProperty("ig_protocol", "http")
+    val igPort: String = System.getProperty("ig_port", "443")
+    val igProtocol: String = System.getProperty("ig_protocol", "https")
 
     val igUrl: String = igProtocol + "://" + igHost + ":" + igPort
 
