@@ -239,8 +239,7 @@
                     },
                     "name" : {
                         "type": "json",
-                        "ldapAttribute": "fr-idm-name",
-                        "isMultiValued": true
+                        "ldapAttribute": "fr-idm-name"
                     },
                     "emails":{
                         "type": "json",
