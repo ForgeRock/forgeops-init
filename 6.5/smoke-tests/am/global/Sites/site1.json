@@ -8,8 +8,7 @@
   },
   "data" : {
     "_id" : "site1",
-    "id" : "02",
-    "url" : "http://&{fqdn}/openam",
+    "url" : "https://&{fqdn}/openam",
     "secondaryURLs" : [ ]
   }
 }
