@@ -233,22 +233,6 @@
         },
         {
             "name" : "user",
-            "onCreate" : {
-                "type" : "text/javascript",
-                "source" : "require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);"
-            },
-            "onUpdate" : {
-                "type" : "text/javascript",
-                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);"
-            },
-            "onDelete" : {
-                "type" : "text/javascript",
-                "file" : "onDelete-user-cleanup.js"
-            },
-            "postDelete" : {
-                "type" : "text/javascript",
-                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);"
-            },
             "actions" : {
                 "resetPassword" : {
                     "type" : "text/javascript",
@@ -291,35 +275,44 @@
                     "_id",
                     "userName",
                     "password",
-                    "givenName",
+                    "name",
+                    "emails",
+                    "displayName",
+                    "nickName",
+                    "profileUrl",
+                    "userType",
+                    "title",
+                    "preferredLanguage",
+                    "locale",
+                    "timezone",
+                    "active",
+                    "kbaInfo",
+                    "customAttributes",
+                    "preferences",
+                    "cn",
                     "sn",
                     "mail",
-                    "organizationName",
-                    "description",
-                    "accountStatus",
-                    "telephoneNumber",
-                    "postalAddress",
-                    "address2",
-                    "city",
-                    "postalCode",
-                    "country",
-                    "stateProvince",
-                    "roles",
-                    "manager",
-                    "authzRoles",
-                    "reports",
-                    "effectiveRoles",
-                    "effectiveAssignments",
-                    "lastSync",
-                    "kbaInfo",
-                    "preferences",
-                    "customAttributes",
-                    "consentedMappings",
-                    "aliasList",
-                    "cn",
-                    "idps"
-                ],
+                    "ims",
+                    "photos",
+                    "x509Certificates",
+                    "addresses",
+                    "phoneNumbers"
+               ],
                 "properties" : {
+                    "mail": {
+                         "title": "Email Address",
+                         "description": "Email Address",
+                         "viewable": true,
+                         "type": "string"
+                     },
+                    "profileUrl" : {
+                        "title" : "profile url",
+                        "description" : "profile url",
+                        "type" : "string",
+                        "viewable" : true,
+                        "searchable" : true,
+                        "userEditable" : true
+                    },
                     "_id" : {
                         "description" : "User ID",
                         "type" : "string",
@@ -408,36 +401,282 @@
                         "usageDescription" : "",
                         "isPersonal" : false,
                         "properties" : {
-                            "updates" : {
-                                "description" : "Send me news and updates",
-                                "type" : "boolean"
-                            },
-                            "marketing" : {
-                                "description" : "Send me special offers and services",
-                                "type" : "boolean"
-                            }
                         },
                         "order" : [
-                            "updates",
-                            "marketing"
                         ],
                         "required" : [ ]
                     },
-                    "mail" : {
-                        "title" : "Email Address",
-                        "description" : "Email Address",
-                        "viewable" : true,
-                        "type" : "string",
+                    "phoneNumbers":{
+                        "title": "phone numbers",
+                        "description": "phone numbers",
+                        "viewable": true,
+                        "type" : "array",
                         "searchable" : true,
                         "userEditable" : true,
-                        "usageDescription" : "",
-                        "isPersonal" : true,
-                        "policies" : [
-                            {
-                                "policyId" : "valid-email-address-format"
-                            }
-                        ]
+                        "items": {
+                            "type":"object",
+                            "title": "phone items",
+                            "properties" : {
+                                "value" : {
+                                    "description" : "value",
+                                    "type" : "string"
+                                },
+                                "type" : {
+                                    "description" : "type",
+                                    "type" : "string"
+                                }
+                            },
+                            "order" : [
+                                "type",
+                                "value"
+                            ],
+                            "required" : [ ]
+                        }
                     },
+                    "ims":{
+                        "title": "ims",
+                        "description": "ims",
+                        "viewable": true,
+                        "type" : "array",
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "items": {
+                            "type":"object",
+                            "title": "im items",
+                            "properties" : {
+                                "value" : {
+                                    "description" : "value",
+                                    "type" : "string"
+                                },
+                                "type" : {
+                                    "description" : "type",
+                                    "type" : "string"
+                                }
+                            },
+                            "order" : [
+                                "type",
+                                "value"
+                            ],
+                            "required" : [ ]
+                        }
+                    },
+                    "addresses":{
+                        "title": "addresses",
+                        "description": "addresses",
+                        "viewable": true,
+                        "type" : "array",
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "items": {
+                            "type":"object",
+                            "title": "address items",
+                            "properties" : {
+                                "type" : {
+                                    "description" : "type",
+                                    "type" : "string"
+                                },
+                                "streetAddress" : {
+                                    "description" : "streetAddress",
+                                    "type" : "string"
+                                },
+                                "locality" : {
+                                    "description" : "locality",
+                                    "type" : "string"
+                                },
+                                "region" : {
+                                    "description" : "region",
+                                    "type" : "string"
+                                },
+                                "postalCode" : {
+                                    "description" : "postalCode",
+                                    "type" : "string"
+                                },
+                                "country" : {
+                                    "description" : "country",
+                                    "type" : "string"
+                                },
+                                "formatted" : {
+                                    "description" : "formatted",
+                                    "type" : "string"
+                                },
+                                "primary" : {
+                                    "description" : "primary",
+                                    "type" : "boolean"
+                                }
+                            },
+                            "order" : [
+                                "type",
+                                "streetAddress",
+                                "locality",
+                                "region",
+                                "postalCode",
+                                "country",
+                                "formatted",
+                                "primary"
+                            ],
+                            "required" : [ ]
+                        }
+                    },
+                    "x509Certificates":{
+                        "title": "509 certs",
+                        "description": "509 certs",
+                        "viewable": true,
+                        "type" : "array",
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "items": {
+                            "type":"object",
+                            "title": "cert items",
+                            "properties" : {
+                                "value" : {
+                                    "description" : "value",
+                                    "type" : "string"
+                                }
+                            },
+                            "order" : [
+                                "value"
+                            ],
+                            "required" : [ ]
+                        }
+                    },
+                    "photos":{
+                        "title": "photos",
+                        "description": "photos",
+                        "viewable": true,
+                        "type" : "array",
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "items": {
+                            "type":"object",
+                            "title": "photo items",
+                            "properties" : {
+                                "value" : {
+                                    "description" : "value",
+                                    "type" : "string"
+                                },
+                                "type" : {
+                                    "description" : "type",
+                                    "type" : "string"
+                                }
+                            },
+                            "order" : [
+                                "type",
+                                "value"
+                            ],
+                            "required" : [ ]
+                        }
+                    },
+                    "emails" : {
+                        "title": "Emails",
+                        "description": "Emails",
+                        "viewable": true,
+                        "type" : "array",
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "items": {
+                            "type":"object",
+                            "title": "email items",
+                            "properties" : {
+                                "value" : {
+                                    "description" : "value",
+                                    "type" : "string",
+                                    "policies": [{
+                                        "policyId": "valid-email-address-format"
+                                    }]
+                                },
+                                "type" : {
+                                    "description" : "type",
+                                    "type" : "string"
+                                },
+                                "primary": {
+                                    "description": "primary",
+                                    "type": "boolean"
+                                }
+                            },
+                            "order" : [
+                                "type",
+                                "value",
+                                "primary"
+                            ],
+                            "required" : [ ]
+                        }
+                    },
+                    "name": {
+                        "description" : "Name",
+                        "type" : "object",
+                        "properties" : {
+                            "formatted": "string",
+                            "familyName": "string",
+                            "givenName": "string",
+                            "middleName": "string",
+                            "honorificPrefix": "string",
+                            "honorificSuffix": "string"
+                        }
+                      },
+                    "cn" : {
+                        "description" : "Common Name",
+                        "type" : "string",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "userEditable" : false,
+                        "scope" : "private",
+                        "isPersonal" : true,
+                        "isVirtual" : true,
+                        "onStore" : {
+                            "type" : "text/javascript",
+                            "source" : "object.cn || (object.givenName + ' ' + object.sn)"
+                        }
+                    },
+                    "displayName": {
+                        "description": "display name",
+                        "viewable": true,
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "type" : "string"
+                    },
+                    "nickName" : {
+                        "description" : "nickname",
+                        "viewable": true,
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "type" : "string"
+                    },
+                    "userType": {
+                        "description" : "user type",
+                        "viewable": true,
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "type" : "string"
+                    },
+                    "title": {
+                        "description" : "title ",
+                        "viewable": true,
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "type" : "string"
+                    },
+                    "preferredLanguage": {
+                        "description" : "preferred language",
+                        "viewable": true,
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "type" : "string"
+                    },
+                    "locale": {
+                        "description" : "locale",
+                        "viewable": true,
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "type" : "string"
+                    },
+                    "timezone": {
+                        "description" : "timezone",
+                        "viewable": true,
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "type" : "string"
+                    },
+                    
                     "organizationName" : {
                         "title" : "Organization Name",
                         "description" : "Organization Name",
@@ -514,7 +753,7 @@
                         "usageDescription" : "",
                         "isPersonal" : false
                     },
-                    "accountStatus" : {
+                    "active" : {
                         "title" : "Status",
                         "description" : "Status",
                         "viewable" : true,
@@ -908,20 +1147,7 @@
                         "scope" : "private",
                         "isPersonal" : false
                     },
-                    "cn" : {
-                        "description" : "Common Name",
-                        "type" : "string",
-                        "viewable" : false,
-                        "searchable" : false,
-                        "userEditable" : false,
-                        "scope" : "private",
-                        "isPersonal" : true,
-                        "isVirtual" : true,
-                        "onStore" : {
-                            "type" : "text/javascript",
-                            "source" : "object.cn || (object.givenName + ' ' + object.sn)"
-                        }
-                    },
+                    
                     "idps" : {
                         "title" : "Identity Providers",
                         "viewable" : true,

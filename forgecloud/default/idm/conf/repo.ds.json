@@ -237,12 +237,75 @@
                         "type": "simple",
                         "ldapAttribute": "userPassword"
                     },
+                    "name" : {
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-name",
+                        "isMultiValued": true
+                    },
+                    "emails":{
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-emails",
+                        "isMultiValued": true
+                    }, 
+                    "phoneNumbers":{
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-phone-numbers",
+                        "isMultiValued": true
+                    },
+                    "ims":{
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-ims",
+                        "isMultiValued": true
+                    },
+                    "addresses":{
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-addresses",
+                        "isMultiValued": true
+                    },
+                    "x509Certificates":{
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-x509-certificates",
+                        "isMultiValued": true
+                    },
+                    "photos":{
+                        "type": "json",
+                        "ldapAttribute": "fr-idm-photos",
+                        "isMultiValued": true
+                    },
+                    "nickName":{                        
+                        "type": "simple",
+                        "ldapAttribute": "fr-idm-nick-name"
+                    },
+                    "profileUrl":{                        
+                        "type": "simple",
+                        "ldapAttribute": "fr-idm-profile-url"
+                    },
+                    "userType":{                        
+                        "type": "simple",
+                        "ldapAttribute": "fr-idm-user-type"
+                    },
+                    "title":{                        
+                        "type": "simple",
+                        "ldapAttribute": "fr-idm-title"
+                    },
+                    "preferredLanguage": {
+                            "type": "simple",
+                            "ldapAttribute": "fr-idm-preferred-language"
+                    },
+                    "locale":{                        
+                        "type": "simple",
+                        "ldapAttribute": "fr-idm-locale"
+                    },
+                    "timezone": {                        
+                        "type": "simple",
+                        "ldapAttribute": "fr-idm-timezone"
+                    },
                     "aliasList": {
                         "type": "simple",
                         "isMultiValued": true,
                         "ldapAttribute": "iplanet-am-user-alias-list"
                     },
-                    "accountStatus": {
+                    "active": {
                         "type": "simple",
                         "ldapAttribute": "fr-idm-accountStatus"
                     },
