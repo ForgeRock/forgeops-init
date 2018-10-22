@@ -3,12 +3,12 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "SecretValues",
-    "entityId" : "storepass",
+    "entityId" : "am.default.authentication.modules.persistentcookie.signing",
     "pathParams" : { }
   },
   "data" : {
-    "_id" : "storepass",
-    "types" : [ "GENERIC_SECRET" ],
+    "_id" : "am.default.authentication.modules.persistentcookie.signing",
+    "types" : [ "VERIFICATION_KEY", "SIGNING_KEY" ],
     "_type" : {
       "_id" : "secretvalues",
       "name" : "Secrets",

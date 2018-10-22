@@ -3,12 +3,12 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "SecretValues",
-    "entityId" : "entrypass",
+    "entityId" : "am.default.authentication.modules.persistentcookie.encryption",
     "pathParams" : { }
   },
   "data" : {
-    "_id" : "entrypass",
-    "types" : [ "GENERIC_SECRET" ],
+    "_id" : "am.default.authentication.modules.persistentcookie.encryption",
+    "types" : [ "KEY_ENCRYPTION_KEY", "KEY_DECRYPTION_KEY" ],
     "_type" : {
       "_id" : "secretvalues",
       "name" : "Secrets",

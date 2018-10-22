@@ -20,8 +20,8 @@
         "inherited" : false
       },
       "org.forgerock.services.cts.store.max.connections" : {
-        "value" : "10",
-        "inherited" : true
+        "value" : "32",
+        "inherited" : false
       },
       "org.forgerock.services.cts.store.page.size" : {
         "value" : "0",
@@ -49,14 +49,14 @@
         "value" : null,
         "inherited" : false
       },
-      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQinmy0aHSx2JIJI03vx9BuvR5edU/nD2EjKFIvyj6RWg3sXNoTZHRhw==",
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQ8lphE+wOWcXwyfKB3kYr1k98KCdj2t5c1i6/VgKUtUJL840vR/4elw==",
       "org.forgerock.services.cts.store.heartbeat" : {
-        "value" : "30",
-        "inherited" : false
+        "value" : "10",
+        "inherited" : true
       },
       "org.forgerock.services.cts.store.affinity.enabled" : {
-        "value" : false,
-        "inherited" : false
+        "value" : null,
+        "inherited" : true
       }
     }
   }

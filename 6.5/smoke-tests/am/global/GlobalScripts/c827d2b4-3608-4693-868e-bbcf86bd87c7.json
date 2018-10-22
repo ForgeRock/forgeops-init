@@ -16,7 +16,7 @@
     "description" : "Default global script for client side Scripted Authentication Module",
     "language" : "JAVASCRIPT",
     "creationDate" : "1433147666269",
-    "script" : "LyoKICogQ29weXJpZ2h0IDIwMTYtMjAxNyBGb3JnZVJvY2sgQVMuIEFsbCBSaWdodHMgUmVzZXJ2ZWQKICoKICogVXNlIG9mIHRoaXMgY29kZSByZXF1aXJlcyBhIGNvbW1lcmNpYWwgc29mdHdhcmUgbGljZW5zZSB3aXRoIEZvcmdlUm9jayBBUy4KICogb3Igd2l0aCBvbmUgb2YgaXRzIGFmZmlsaWF0ZXMuIEFsbCB1c2Ugc2hhbGwgYmUgZXhjbHVzaXZlbHkgc3ViamVjdAogKiB0byBzdWNoIGxpY2Vuc2UgYmV0d2VlbiB0aGUgbGljZW5zZWUgYW5kIEZvcmdlUm9jayBBUy4KICovCi8qIERlZmF1bHQgQXV0aGVudGljYXRpb24gY2xpZW50IHNpZGUgc2NyaXB0IHRvIHVzZSBhcyBhIHRlbXBsYXRlIGZvciBuZXcgc2NyaXB0cyAqLw==",
+    "script" : "LyoKICogQ29weXJpZ2h0IDIwMTYtMjAxNyBGb3JnZVJvY2sgQVMuIEFsbCBSaWdodHMgUmVzZXJ2ZWQKICoKICogVXNlIG9mIHRoaXMgY29kZSByZXF1aXJlcyBhIGNvbW1lcmNpYWwgc29mdHdhcmUgbGljZW5zZSB3aXRoIEZvcmdlUm9jayBBUy4KICogb3Igd2l0aCBvbmUgb2YgaXRzIGFmZmlsaWF0ZXMuIEFsbCB1c2Ugc2hhbGwgYmUgZXhjbHVzaXZlbHkgc3ViamVjdAogKiB0byBzdWNoIGxpY2Vuc2UgYmV0d2VlbiB0aGUgbGljZW5zZWUgYW5kIEZvcmdlUm9jayBBUy4KICovCi8qIERlZmF1bHQgQXV0aGVudGljYXRpb24gY2xpZW50IHNpZGUgc2NyaXB0IHRvIHVzZSBhcyBhIHRlbXBsYXRlIGZvciBuZXcgc2NyaXB0cyAqLwo=",
     "_type" : {
       "_id" : "globalScript",
       "name" : "Scripting",
