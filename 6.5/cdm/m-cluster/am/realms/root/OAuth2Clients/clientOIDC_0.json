@@ -36,7 +36,7 @@
       "mixUpMitigation" : false,
       "tokenEndpointAuthMethod" : "client_secret_basic",
       "sectorIdentifierUri" : null,
-      "isConsentImplied" : false,
+      "isConsentImplied" : true,
       "contacts" : [ ],
       "responseTypes" : [ "code", "token", "id_token", "code token", "token id_token", "code id_token", "code token id_token", "device_code", "device_code id_token" ],
       "descriptions" : [ ],

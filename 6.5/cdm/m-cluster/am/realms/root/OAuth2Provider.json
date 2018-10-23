@@ -28,7 +28,7 @@
     "advancedOAuth2Config" : {
       "supportedScopes" : [ "email|Your email address", "openid|", "address|Your postal address", "phone|Your telephone number(s)", "profile|Your personal information" ],
       "codeVerifierEnforced" : "false",
-      "tokenSigningAlgorithm" : "HS256",
+      "tokenSigningAlgorithm" : "RS256",
       "authenticationAttributes" : [ "uid" ],
       "defaultScopes" : [ "address", "phone", "openid", "profile", "email" ],
       "scopeImplementationClass" : "org.forgerock.openam.oauth2.OpenAMScopeValidator",
@@ -88,7 +88,7 @@
       "enableRemoteConsent" : false,
       "supportedRcsRequestSigningAlgorithms" : [ "PS384", "RS384", "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
       "supportedRcsResponseSigningAlgorithms" : [ "PS384", "RS384", "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
-      "clientsCanSkipConsent" : false,
+      "clientsCanSkipConsent" : true,
       "supportedRcsRequestEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "RSA1_5", "A256KW", "dir", "A192KW" ],
       "supportedRcsResponseEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
       "supportedRcsRequestEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
