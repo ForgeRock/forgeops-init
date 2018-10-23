@@ -285,7 +285,7 @@
                     "preferredLanguage",
                     "locale",
                     "timezone",
-                    "active",
+                    "accountStatus",
                     "kbaInfo",
                     "customAttributes",
                     "preferences",
@@ -296,7 +296,8 @@
                     "photos",
                     "x509Certificates",
                     "addresses",
-                    "phoneNumbers"
+                    "phoneNumbers",
+                    "externalId"
                ],
                 "properties" : {
                     "mail": {
@@ -753,7 +754,7 @@
                         "usageDescription" : "",
                         "isPersonal" : false
                     },
-                    "active" : {
+                    "accountStatus" : {
                         "title" : "Status",
                         "description" : "Status",
                         "viewable" : true,
@@ -762,6 +763,13 @@
                         "userEditable" : false,
                         "usageDescription" : "",
                         "isPersonal" : false
+                    },
+                    "externalId": {
+                        "description": "originating SCIM system ID",
+                        "viewable": true,
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "type" : "string"
                     },
                     "roles" : {
                         "description" : "Provisioning Roles",

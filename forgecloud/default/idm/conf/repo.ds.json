@@ -304,9 +304,13 @@
                         "isMultiValued": true,
                         "ldapAttribute": "iplanet-am-user-alias-list"
                     },
-                    "active": {
+                    "accountStatus": {
                         "type": "simple",
                         "ldapAttribute": "fr-idm-accountStatus"
+                    },
+                    "externalId": {
+                        "type": "simple",
+                        "ldapAttribute": "fr-idm-external-id"
                     },
                     "effectiveRoles": {
                         "type": "json",
