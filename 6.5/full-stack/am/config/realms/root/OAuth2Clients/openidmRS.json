@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.0.0-M4",
+    "amsterVersion" : "6.5.0-M9",
     "entityType" : "OAuth2Clients",
     "entityId" : "openidmRS",
     "pathParams" : { }
@@ -24,7 +24,7 @@
       "jwkStoreCacheMissCacheTime" : 60000,
       "idTokenSignedResponseAlg" : "RS256",
       "idTokenPublicEncryptionKey" : null,
-      "jwksUri" : "http://openam.&{namespace}&{domain}:80/openam/oauth2/connect/jwk_uri",
+      "jwksUri" : "http://am-service.sample.svc.cluster.local:80/openam/oauth2/connect/jwk_uri",
       "userinfoEncryptedResponseAlg" : null,
       "requestParameterSignedAlg" : null,
       "clientJwtPublicKey" : null
@@ -57,7 +57,7 @@
       "defaultScopes" : [ ],
       "clientName" : [ ],
       "clientType" : "Confidential",
-      "scopes" : [ "openid", "policy", "email", "am-introspect-all-tokens", "profile", "consent_read", "workflow_tasks", "notifications" ],
+      "scopes" : [ "am-introspect-all-tokens" ],
       "agentgroup" : null,
       "refreshTokenLifetime" : 0,
       "redirectionUris" : [ ],
