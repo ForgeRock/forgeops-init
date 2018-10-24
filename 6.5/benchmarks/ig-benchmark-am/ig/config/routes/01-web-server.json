@@ -1,5 +1,5 @@
 {
-  "name" : "01-sso",
+  "name" : "01-web-server",
   "baseURI" : "http://lee-web:80",
   "condition" : "${matches(request.uri.path, '^/static')}",
   "handler": {
