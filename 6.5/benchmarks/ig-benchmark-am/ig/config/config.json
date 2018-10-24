@@ -30,7 +30,7 @@
         "config": {
             "url": "https://openam.lee.forgeops.com/openam",
             "version": "6.5.0-M7",
-            "realm": "root",
+            "realm": "/",
             "agent": {
                 "username": "ig-agent",
                 "password": "password"
