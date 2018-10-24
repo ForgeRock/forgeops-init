@@ -1,0 +1,45 @@
+{
+  "handler": {
+    "name": "_router",
+    "type": "Router",
+    "baseURI": "http://lee-web:80",
+    "capture": "all"
+  },
+  "heap": [
+    {
+      "name": "JwtSession",
+      "type": "JwtSession"
+    },
+    {
+      "name": "MyCapture",
+      "type": "CaptureDecorator",
+      "config": {
+        "type": "Slf4jLogSink",
+        "captureEntity": true,
+        "captureExchange": true,
+        "logSink": {
+          "config": {
+            "base": "org.forgerock.openig"
+          }
+        }
+      }
+    },
+    {
+        "name": "AmService-1",
+        "type": "AmService",
+        "config": {
+            "url": "http://openam:80/openam",
+            "version": "6.5.0-M7",
+            "realm": "root",
+            "agent": {
+                "username": "ig-agent",
+                "password": "password"
+            },
+            "sessionCache": {
+                "enabled": true
+            }
+        }
+    }
+  ],
+  "monitor": true
+}
