@@ -28,7 +28,7 @@
         "name": "AmService-1",
         "type": "AmService",
         "config": {
-            "url": "https://openam.lee.forgeops.com:80/openam",
+            "url": "https://openam.lee.forgeops.com:443/openam",
             "version": "6.5.0-M7",
             "realm": "root",
             "agent": {
