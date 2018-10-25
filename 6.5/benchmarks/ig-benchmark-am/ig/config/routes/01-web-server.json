@@ -21,7 +21,7 @@
           "soTimeout": "30 seconds"
         },
         "comment": "Log request, pass it to the sample app, log response",
-        "_baseURI" : "http://lee-web:80"       
+        "baseURI" : "http://lee-web:80"       
       },
       "status": 200,
       "entity": "web01 page."
