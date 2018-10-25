@@ -16,7 +16,7 @@
     "statelessGrantTokenUpgradeCompatibilityMode" : false,
     "idTokenAuthenticitySigningPurpose" : "default.hmac.sig.key",
     "agentIdTokenSigningPurpose" : "default.rsa.sig.key",
-    "storageScheme" : "CTS_ONE_TO_ONE_MODEL",
+    "storageScheme" : "CTS_GRANT_SET_MODEL",
     "agentIdTokenVerificationPurpose" : "default.rsa.sig.key",
     "jwtTokenLifetimeValidationEnabled" : true,
     "defaults" : {
