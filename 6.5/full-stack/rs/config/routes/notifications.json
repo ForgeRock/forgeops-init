@@ -1,6 +1,6 @@
 {
     "name": "notifications",
-    "baseURI": "https://idm-service.sample.svc.cluster.local:8444",
+    "baseURI": "https://openidm.sample.forgeops.com:8444",
     "condition": "${matches(request.uri.path, '^/openidm/endpoint/usernotifications')}",
     "handler": {
         "type": "Chain",
