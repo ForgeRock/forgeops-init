@@ -28,7 +28,7 @@
         "name": "AmService-1",
         "type": "AmService",
         "config": {
-            "url": "https://openam/openam",
+            "url": "http://openam:80/openam",
             "version": "6.5.0-M7",
             "realm": "/",
             "agent": {
