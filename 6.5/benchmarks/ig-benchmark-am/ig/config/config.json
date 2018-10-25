@@ -21,28 +21,35 @@
           "config": {
             "base": "org.forgerock.openig"
           }
+          
         }
       }
     },
     {
-        "name": "AmService-1",
-        "type": "AmService",
-        "config": {
-            "url": "https://openam.lee.forgeops.com/openam",
-            "version": "6.5.0-M9",
-            "realm": "/",
-            "agent": {
-                "username": "ig-agent",
-                "password": "password"
-            },
-            "sessionCache": {
-                "enabled": true
-            },
-            "trustManager": {
+      "name": "AmService-1",
+      "type": "AmService",
+      "config": {
+          "url": "https://openam.lee.forgeops.com/openam",
+          "version": "6.5.0-M9",
+          "realm": "/",
+          "agent": {
+              "username": "ig-agent",
+              "password": "password"
+          },
+          "sessionCache": {
+              "enabled": true
+          }        
+      }
+    },
+  {
+      "name": "ForgeRockClientHandler",
+      "type": "ClientHandler",
+      "config": {
+          "trustManager": {
               "type": "TrustAllManager"
-            }          
-        }
-    }
+            }
+      }
+  }  
   ],
   "monitor": true
 }
