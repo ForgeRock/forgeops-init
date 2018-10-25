@@ -28,7 +28,7 @@
         "name": "AmService-1",
         "type": "AmService",
         "config": {
-            "url": "http://openam.lee.svc.cluster.local/openam",
+            "url": "https://openam.lee.forgeops.com/openam",
             "version": "6.5.0-M7",
             "realm": "/",
             "agent": {
