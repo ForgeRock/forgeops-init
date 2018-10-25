@@ -1,7 +1,7 @@
 {
   "name" : "01-web-server",
   "baseURI" : "http://lee-web:80",
-  "condition" : "${matches(request.uri.path, '^/static')}",
+  "_condition" : "${matches(request.uri.path, '^/static')}",
   "handler": {
     "type": "Chain",
     "config" : {
