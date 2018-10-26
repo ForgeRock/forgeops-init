@@ -1,7 +1,7 @@
 {
   "name" : "01-web-server",
   "baseURI" : "http://lee-web.lee.svc.cluster.local:80",
-  "condition" : "${true}",
+  "condition" : "${matches(request.uri.path, '^/web')}",
   "handler": {
     "type": "Chain",
     "config" : {
