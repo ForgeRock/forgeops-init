@@ -23,10 +23,10 @@
       "com.iplanet.am.cookie.encode" : false
     },
     "amconfig.header.securitykey" : {
-      "com.sun.identity.saml.xmlsig.keystore" : "/var/run/secrets/openam/keystore.jceks",
+      "com.sun.identity.saml.xmlsig.keystore" : "/var/run/secrets/openam/keystore/keystore.jceks",
       "com.sun.identity.saml.xmlsig.storetype" : "JCEKS",
-      "com.sun.identity.saml.xmlsig.storepass" : "/var/run/secrets/openam/.storepass",
-      "com.sun.identity.saml.xmlsig.keypass" : "/var/run/secrets/openam/.keypass",
+      "com.sun.identity.saml.xmlsig.storepass" : "/var/run/secrets/openam/password/storepass",
+      "com.sun.identity.saml.xmlsig.keypass" : "/var/run/secrets/openam/password/keypass",
       "com.sun.identity.saml.xmlsig.certalias" : "test"
     },
     "amconfig.header.crlcache" : {
