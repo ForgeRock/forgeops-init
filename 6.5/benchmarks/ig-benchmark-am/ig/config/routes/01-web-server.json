@@ -1,7 +1,7 @@
 {
   "name" : "01-web-server",
-  "baseURI" : "http://lee-web:80",
-  "condition" : "${request.uri.host == 'lee-web'}",
+  "baseURI" : "http://lee-web.lee.svc.cluster.local:80",
+  "condition" : "${true}",
   "handler": {
     "type": "Chain",
     "config" : {
@@ -35,7 +35,7 @@
           "soTimeout": "30 seconds"
         },
         "comment": "Log request, pass it to the sample app, log response",
-        "baseURI" : "http://lee-web:80"       
+        "baseURI" : "http://lee-web.lee.svc.cluster.local:80"       
       },
       "status": 200,
       "entity": "web01 page."
