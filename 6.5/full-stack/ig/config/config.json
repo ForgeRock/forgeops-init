@@ -50,7 +50,7 @@
                         "keystore": {
                             "type": "KeyStore",
                             "config": {
-                                "url": "file:///git/config/6.5/full-stack/rs/keystore.jks",
+                                "url": "file:///git/config/6.5/full-stack/ig/keystore.jks",
                                 "password": "changeit"
                             }
                         },
@@ -63,7 +63,7 @@
                         "keystore": {
                             "type": "KeyStore",
                             "config": {
-                                "url": "file:///git/config/6.5/full-stack/rs/keystore.jks",
+                                "url": "file:///git/config/6.5/full-stack/ig/keystore.jks",
                                 "password": "changeit"
                             }
                         }
