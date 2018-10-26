@@ -1,6 +1,6 @@
 {
     "name": "openid",
-    "baseURI": "https://openidm.sample.forgeops.com:8444",
+    "baseURI": "https://openidm.&{namespace}&{domain}:8444",
     "condition": "${matches(request.uri.path, '^/openidm/info/login') or matches(request.uri.path, '^/openidm/info/version') or matches(request.uri.path, '^/openidm/authentication') or matches(request.uri.path, '^/openidm/config/ui/profile$') or matches(request.uri.path, '^/openidm/config/ui/dashboard$') or matches(request.uri.path, '^/openidm/policy/.+') or matches(request.uri.path, '^/openidm/schema/.+')}",
     "handler": {
         "type": "Chain",

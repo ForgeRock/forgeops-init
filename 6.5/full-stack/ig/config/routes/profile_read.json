@@ -1,6 +1,6 @@
 {
     "name": "profile_read",
-    "baseURI": "https://openidm.sample.forgeops.com:8444",
+    "baseURI": "https://openidm.&{namespace}&{domain}:8444",
     "condition": "${(matches(request.uri.path, '^/openidm/managed/user/.+$') or matches(request.uri.path, '^/openidm/endpoint/static/user/.+$')) and matches(request.method, 'GET')}",
     "handler": {
         "type": "Chain",
