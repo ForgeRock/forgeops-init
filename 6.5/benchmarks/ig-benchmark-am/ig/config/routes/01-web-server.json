@@ -5,13 +5,27 @@
   "handler": {
     "type": "Chain",
     "config" : {
-      "filters": [{
-        "name": "ssoFilter",
-        "type": "SingleSignOnFilter",
-        "config": {
-          "amService": "AmService-1"
+      "filters": [
+        {
+          "name": "ssoFilter",
+          "type": "SingleSignOnFilter",
+          "config": {
+            "amService": "AmService-1"
+          }
+        },
+        {
+          "name": "PolicyEnforcementFilter-1",
+          "type": "PolicyEnforcementFilter",
+          "config": {
+            "pepUsername": "ig-agent",
+            "pepPassword": "password",
+            "pepRealm": "/",
+            "application": "PEP policy set",
+            "ssoTokenSubject": "${contexts.ssoToken.value}",
+            "amService": "AmService-1"
+          }
         }
-      }],
+      ],
       "handler": {
         "type": "ReverseProxyHandler",
         "config": {
