@@ -2,7 +2,7 @@
   "handler": {
     "name": "_router",
     "type": "Router",
-    "baseURI": "https://www.forgerock.com:443",
+    "baseURI": "http://lee-web:80",
     "capture": "all"
   },
   "heap": [
