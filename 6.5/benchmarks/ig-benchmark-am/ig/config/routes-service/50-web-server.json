@@ -1,10 +1,10 @@
 {
-  "name" : "01-web-server",
-  "baseURI" : "http://lee-web.lee.svc.cluster.local:80",
-  "condition" : "${false}",
+  "name": "01-web-server",
+  "baseURI": "http://lee-web.lee.svc.cluster.local:80",
+  "condition": "${false}",
   "handler": {
     "type": "Chain",
-    "config" : {
+    "config": {
       "filters": [
         {
           "name": "ssoFilter",
@@ -22,7 +22,12 @@
             "pepRealm": "/",
             "application": "PEP policy set",
             "ssoTokenSubject": "${contexts.ssoToken.value}",
-            "amService": "AmService-1"
+            "amService": "AmService-1",
+            "cache": {
+              "enabled": false,
+              "defaultTimeout": "1 hour",
+              "maximumTimeToCache": "1 day"
+            }
           }
         }
       ],
