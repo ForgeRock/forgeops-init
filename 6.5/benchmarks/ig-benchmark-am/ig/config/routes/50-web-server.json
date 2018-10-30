@@ -1,7 +1,8 @@
 {
   "name" : "01-web-server",
   "baseURI" : "http://lee-web.lee.svc.cluster.local:80",
-  "condition" : "${request.uri.host != env['MY_POD_IP']}",
+  "_condition" : "${request.uri.host != env['MY_POD_IP']}",
+  "condition" : "${false}",
   "handler": {
     "type": "Chain",
     "config" : {
