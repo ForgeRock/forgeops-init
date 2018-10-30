@@ -39,7 +39,12 @@
                     ],
                     "handler": "ForgeRockClientHandler"
                   }
-                }
+                },
+                  "cache": {
+  "enabled": false,
+  "defaultTimeout": "1 hour",
+  "maxTimeout": "1 day"
+}
               }
             }
           }
