@@ -2,28 +2,12 @@
   "handler": {
     "name": "_router",
     "type": "Router",
-    "baseURI": "http://lee-web.lee.svc.cluster.local:80",
     "capture": "all"
   },
   "heap": [
     {
       "name": "JwtSession",
       "type": "JwtSession"
-    },
-    {
-      "name": "MyCapture",
-      "type": "CaptureDecorator",
-      "config": {
-        "type": "Slf4jLogSink",
-        "captureEntity": true,
-        "captureExchange": true,
-        "logSink": {
-          "config": {
-            "base": "org.forgerock.openig"
-          }
-          
-        }
-      }
     },
     {
       "name": "AmService-1",
