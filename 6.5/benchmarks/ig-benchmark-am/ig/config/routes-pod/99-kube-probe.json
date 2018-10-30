@@ -1,6 +1,6 @@
 {
    "name": "Kubernetes endpoints",
-   "condition": "${request.uri.host == env['MY_POD_IP'] and matches(request.uri.path, '^/kube')}",
+   "condition": "${matches(request.uri.path, '^/kube')}",
    "handler": {
       "type": "DispatchHandler",
       "config": {
@@ -24,6 +24,6 @@
              }
            }
          ]
-      } 
+      }
    }
 }
