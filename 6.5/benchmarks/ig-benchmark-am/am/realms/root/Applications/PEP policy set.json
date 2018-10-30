@@ -1,0 +1,29 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "Applications",
+    "entityId" : "PEP policy set",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "PEP policy set",
+    "displayName" : null,
+    "description" : null,
+    "saveIndex" : null,
+    "searchIndex" : null,
+    "applicationType" : "iPlanetAMWebAgentService",
+    "entitlementCombiner" : "DenyOverride",
+    "subjects" : [ "Policy", "NOT", "OR", "JwtClaim", "AuthenticatedUsers", "AND", "Identity", "NONE" ],
+    "resourceTypeUuids" : [ "76656a38-5f8e-401b-83aa-4ccb74ce88d2" ],
+    "resourceComparator" : null,
+    "conditions" : [ "LEAuthLevel", "Policy", "Script", "AuthenticateToService", "SimpleTime", "AMIdentityMembership", "OR", "IPv6", "IPv4", "SessionProperty", "AuthScheme", "AuthLevel", "NOT", "Transaction", "AuthenticateToRealm", "AND", "ResourceEnvIP", "LDAPFilter", "OAuth2Scope", "Session" ],
+    "attributeNames" : [ ],
+    "createdBy" : "id=amadmin,ou=user,dc=data",
+    "lastModifiedBy" : "id=amadmin,ou=user,dc=data",
+    "creationDate" : 1540543333957,
+    "lastModifiedDate" : 1540543333957,
+    "editable" : true,
+    "name" : "PEP policy set"
+  }
+}
