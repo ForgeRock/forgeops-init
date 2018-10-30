@@ -18,6 +18,7 @@
     "com.sun.embedded.replicationport" : "",
     "com.iplanet.security.SSLSocketFactoryImpl" : "com.sun.identity.shared.ldap.factory.JSSESocketFactory",
     "com.sun.identity.common.systemtimerpool.size" : "3",
+    "org.forgerock.amster.com.iplanet.am.lbcookie.value" : "01",
     "com.iplanet.am.lbcookie.value" : "01",
     "opensso.protocol.handler.pkgs" : ""
   }
