@@ -32,7 +32,8 @@
           "trustManager": {
               "type": "TrustAllManager"
             }
-      }
+      },
+      "capture": "all"
   }  
   ],
   "monitor": true
