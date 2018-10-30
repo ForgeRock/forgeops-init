@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0-M7",
+    "entityType" : "SecretValues",
+    "entityId" : "am.default.authentication.modules.persistentcookie.encryption",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "am.default.authentication.modules.persistentcookie.encryption",
+    "types" : [ "KEY_ENCRYPTION_KEY", "KEY_DECRYPTION_KEY" ],
+    "_type" : {
+      "_id" : "secretvalues",
+      "name" : "Secrets",
+      "collection" : true
+    }
+  }
+}
