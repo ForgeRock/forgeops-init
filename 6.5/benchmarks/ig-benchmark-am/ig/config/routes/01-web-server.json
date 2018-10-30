@@ -34,7 +34,7 @@
           "numberOfWorkers": 20,
           "soTimeout": "30 seconds"
         },
-        "comment": "Log request, pass it to the sample app, log response",
+        "comment": "Log request, pass it to the sample app, log response"
       }
     }
   }
