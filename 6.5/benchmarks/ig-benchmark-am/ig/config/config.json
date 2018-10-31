@@ -4,7 +4,7 @@
     "config": {
       "bindings": [
         {
-          "condition": "${matches(request.uri.host, env['MY_POD_IP'])}",
+          "condition": "${(request.uri.host).isEqual(env['MY_POD_IP'])}",
           "handler": {
             "name": "router-pod",
             "type": "Router",
