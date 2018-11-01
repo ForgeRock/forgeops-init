@@ -1,7 +1,7 @@
 {
   "name": "03-rs-introspect",
   "monitor": false,
-  "condition": "${matches(request.uri.path, '^/rs-introspect')}",
+  "condition": "${matches(request.uri.path, '^/rs-tokenintrospect')}",
   "handler": {
     "type": "Chain",
     "config": {
