@@ -41,8 +41,8 @@
           "soTimeout": "30 seconds"
         },
         "capture": "all",
-        "comment": "Log request, pass it to the sample app, log response",
-        "baseURI": "http://lee-web.lee.svc.cluster.local:80"
+        "comment": "Log request, pass it to the sample app, log response"
+        "baseURI": "http://lee-web.lee.svc.cluster.local:80",
       }
     }
   }
