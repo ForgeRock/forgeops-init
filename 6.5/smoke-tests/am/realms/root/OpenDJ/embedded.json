@@ -44,7 +44,7 @@
       "openam-idrepo-ldapv3-heartbeat-interval" : 10,
       "sun-idrepo-ldapv3-config-ldap-server" : [ "configstore-0.configstore:1389" ],
       "openam-idrepo-ldapv3-heartbeat-timeunit" : "SECONDS",
-      "sun-idrepo-ldapv3-config-organization_name" : "dc=data",
+      "sun-idrepo-ldapv3-config-organization_name" : "ou=identities",
       "sun-idrepo-ldapv3-config-connection-mode" : "LDAP",
       "sun-idrepo-ldapv3-config-authpw" : null,
       "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQ84IvVz6qFSj+muQTnUtEuEPNs13iRoSPvDNOcT34O7ql7yAy8m0cVQ=="
@@ -61,7 +61,7 @@
     "persistentsearch" : {
       "sun-idrepo-ldapv3-config-psearch-scope" : "SCOPE_SUB",
       "sun-idrepo-ldapv3-config-psearch-filter" : "(&(!(objectclass=frCoreToken))(!(ou:dn:=services))(!(ou:dn:=tokens)))",
-      "sun-idrepo-ldapv3-config-psearchbase" : "dc=data"
+      "sun-idrepo-ldapv3-config-psearchbase" : "ou=identities"
     },
     "errorhandling" : {
       "com.iplanet.am.ldap.connection.delay.between.retries" : 1000
