@@ -42,7 +42,7 @@
         },
         "capture": "all",
         "comment": "Log request, pass it to the sample app, log response"
-        "baseURI": "http://lee-web.lee.svc.cluster.local:80",
+        "baseURI": "http://lee-web.lee.svc.cluster.local:80"
       }
     }
   }
