@@ -1,5 +1,5 @@
 {
-  "baseURI" : "http://ig-benchmark-web:80",
+  "baseURI" : "http://lee-web.lee.svc.cluster.local:80",
   "handler" : {
     "type" : "ReverseProxyHandler",
     "config" : {
