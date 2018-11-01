@@ -37,7 +37,7 @@
         "config": {
           "bindings": [
             {
-              "condition": "${matches(request.uri.path, '^/rs-tokeninfo')}",
+              "_condition": "${matches(request.uri.path, '^/rs-tokeninfo')}",
               "handler": {
                 "name": "router-resource",
                 "type": "Router",
