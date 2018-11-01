@@ -1,5 +1,5 @@
 {
-  "name": "03-rs-introspect",
+  "name": "03-rs-tokenintrospect",
   "monitor": false,
   "condition": "${matches(request.uri.path, '^/rs-tokenintrospect')}",
   "handler": {
