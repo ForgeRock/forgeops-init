@@ -33,23 +33,12 @@
         }
       ],
       "handler": {
-        "type": "DispatchHandler",
+        "type": "StaticResponseHandler",
         "config": {
-          "bindings": [
-            {
-              "_condition": "${matches(request.uri.path, '^/rs-tokeninfo')}",
-              "handler": {
-                "name": "router-resource",
-                "type": "Router",
-                "config": {
-                  "scanInterval": "disabled",
-                  "directory": "${openig.configDirectory}/routes-resource"
-                }
-              }
-            }
-          ]
+          "status": 200,
+          "entity": "<html><body><h2>Decoded access token with introspect endpoint: ${contexts.oauth2.accessToken.info}</h2></body></html>"
         }
-      }
+      }      
     }
   }
 }
