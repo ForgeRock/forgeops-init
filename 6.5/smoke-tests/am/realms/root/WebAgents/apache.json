@@ -39,7 +39,7 @@
       "debugLogRotation" : true,
       "auditAccessType" : "LOG_NONE",
       "cdssoRootUrl" : [ "agentRootURL=http://apache-agent.smoke.forgeops.com:80/" ],
-      "fqdnDefault" : "apache-agent.agent.forgeops.com",
+      "fqdnDefault" : "apache-agent.smoke.forgeops.com",
       "agentNotificationUrl" : "http://apache-agent:80/UpdateAgentCacheServlet?shortcircuit=false",
       "accessDeniedUrl" : null,
       "localAuditRotationSize" : 52428800,
