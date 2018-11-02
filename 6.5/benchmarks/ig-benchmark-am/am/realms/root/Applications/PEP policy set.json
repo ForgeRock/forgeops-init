@@ -12,18 +12,18 @@
     "description" : null,
     "attributeNames" : [ ],
     "createdBy" : "id=amadmin,ou=user,dc=data",
-    "resourceTypeUuids" : [ "76656a38-5f8e-401b-83aa-4ccb74ce88d2" ],
     "lastModifiedBy" : "id=amadmin,ou=user,dc=data",
     "creationDate" : 1540543333957,
-    "lastModifiedDate" : 1540887625513,
-    "resourceComparator" : null,
+    "lastModifiedDate" : 1541061369623,
     "editable" : true,
     "subjects" : [ "Policy", "NOT", "OR", "JwtClaim", "AuthenticatedUsers", "AND", "Identity", "NONE" ],
     "saveIndex" : null,
     "searchIndex" : null,
     "entitlementCombiner" : "DenyOverride",
-    "conditions" : [ "LEAuthLevel", "Policy", "Script", "AuthenticateToService", "SimpleTime", "AMIdentityMembership", "OR", "IPv6", "IPv4", "SessionProperty", "AuthScheme", "AuthLevel", "NOT", "Transaction", "AuthenticateToRealm", "AND", "ResourceEnvIP", "LDAPFilter", "OAuth2Scope", "Session" ],
+    "resourceComparator" : null,
     "applicationType" : "iPlanetAMWebAgentService",
+    "resourceTypeUuids" : [ "76656a38-5f8e-401b-83aa-4ccb74ce88d2" ],
+    "conditions" : [ "LEAuthLevel", "Policy", "Script", "AuthenticateToService", "SimpleTime", "AMIdentityMembership", "OR", "IPv6", "IPv4", "SessionProperty", "AuthScheme", "AuthLevel", "NOT", "Transaction", "AuthenticateToRealm", "AND", "ResourceEnvIP", "LDAPFilter", "OAuth2Scope", "Session" ],
     "name" : "PEP policy set"
   }
 }
