@@ -57,13 +57,14 @@
     },
     "coreOAuth2ClientConfig" : {
       "userpassword" : null,
-      "userpassword-encrypted" : "AAAAA0FFUwIQgisJEgDd/kB1T8vKx1usRCCbsIuz+k3TbIZsTvMm4go5vRLPjul6BA==",
+      "userpassword-encrypted" : "AAAAA0FFUwIQx3pKTx9YKJ9GJQLY/G9TnBRmPyeOkTHEW0EzT6+JSxHwVrGyQ3E7jQ==",
       "authorizationCodeLifetime" : 0,
       "accessTokenLifetime" : 0,
       "defaultScopes" : [ ],
       "clientName" : [ ],
       "clientType" : "Confidential",
       "scopes" : [ "mail", "employeenumber" ],
+      "agentgroup" : null,
       "refreshTokenLifetime" : 0,
       "redirectionUris" : [ ],
       "status" : "Active"
