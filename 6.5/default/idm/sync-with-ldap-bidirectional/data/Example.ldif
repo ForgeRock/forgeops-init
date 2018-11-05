@@ -5,27 +5,27 @@
 # or with one of its affiliates. All use shall be exclusively subject
 # to such license between the licensee and ForgeRock AS.
 #
-dn: dc=data
+dn: ou=identities
 objectClass: domain
 objectClass: top
 dc: data
 
-dn: ou=People,dc=data
+dn: ou=People,ou=identities
 ou: people
 description: people
 objectclass: organizationalunit
 
-dn: ou=Customers,dc=data
+dn: ou=Customers,ou=identities
 ou: people
 description: people
 objectclass: organizationalunit
 
-dn: ou=Contractors,dc=data
+dn: ou=Contractors,ou=identities
 ou: people
 description: people
 objectclass: organizationalunit
 
-dn: uid=jdoe,ou=People,dc=data
+dn: uid=jdoe,ou=People,ou=identities
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
@@ -39,7 +39,7 @@ mail: jdoe@example.com
 description: Created for OpenIDM
 userPassword: password
 
-dn: uid=bjensen,ou=People,dc=data
+dn: uid=bjensen,ou=People,ou=identities
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
@@ -53,34 +53,34 @@ mail: bjensen@example.com
 description: Created for OpenIDM
 userPassword: password
 
-dn: ou=Groups,dc=data
+dn: ou=Groups,ou=identities
 ou: Groups
 objectClass: organizationalUnit
 objectClass: top
 
-dn: cn=openidm,ou=Groups,dc=data
-uniqueMember: uid=jdoe,ou=People,dc=data
+dn: cn=openidm,ou=Groups,ou=identities
+uniqueMember: uid=jdoe,ou=People,ou=identities
 cn: openidm
 objectClass: groupOfUniqueNames
 objectClass: top
 
-dn: cn=openidm2,ou=Groups,dc=data
-uniqueMember: uid=bjensen,ou=People,dc=data
+dn: cn=openidm2,ou=Groups,ou=identities
+uniqueMember: uid=bjensen,ou=People,ou=identities
 cn: openidm2
 objectClass: groupOfUniqueNames
 objectClass: top
 
-dn: cn=Employees,ou=Groups,dc=data
+dn: cn=Employees,ou=Groups,ou=identities
 cn: Employees
 objectClass: groupOfUniqueNames
 objectClass: top
 
-dn: cn=Contractors,ou=Groups,dc=data
+dn: cn=Contractors,ou=Groups,ou=identities
 cn: Contractors
 objectClass: groupOfUniqueNames
 objectClass: top
 
-dn: cn=Chat Users,ou=Groups,dc=data
+dn: cn=Chat Users,ou=Groups,ou=identities
 cn: Chat Users
 objectClass: groupOfUniqueNames
 objectClass: top

@@ -20,7 +20,7 @@
               "name": "token-resolver-1",
               "type": "TokenIntrospectionAccessTokenResolver",
               "config": {
-                "endpoint": "https://openam.lee.forgeops.com/openam/oauth2/introspect",
+                "endpoint": "https://openam.lee.forgeops.com//oauth2/introspect",
                 "providerHandler": {
                   "type": "Chain",
                   "config": {

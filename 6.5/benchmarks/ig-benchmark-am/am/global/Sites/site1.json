@@ -9,7 +9,7 @@
   "data" : {
     "_id" : "site1",
     "id" : "02",
-    "url" : "https://openam.lee.forgeops.com/openam",
+    "url" : "https://openam.lee.forgeops.com/",
     "secondaryURLs" : [ ]
   }
 }
