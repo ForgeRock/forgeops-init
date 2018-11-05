@@ -19,7 +19,7 @@
     "usersSearchScope" : "SCOPE_SUB",
     "subjectsResultTTL" : 10,
     "sslEnabled" : false,
-    "usersBaseDn" : "dc=data",
+    "usersBaseDn" : "ou=identities",
     "bindPassword" : null,
     "bindPassword-encrypted" : "AAAAA0FFUwIQjPoZHOIeTmcJ3ZX+Lq2zbLUfJazMUU2V6R4avXD/7wfkIOUQ92RXvg==",
     "connectionPoolMaximumSize" : 10,

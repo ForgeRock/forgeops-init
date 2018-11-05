@@ -24,7 +24,7 @@
     "primaryLdapServer" : [ "configstore-0.configstore:1389" ],
     "connectionHeartbeatInterval" : 10,
     "secondaryLdapServer" : [ ],
-    "userSearchStartDN" : [ "dc=data" ],
+    "userSearchStartDN" : [ "ou=identities" ],
     "trustAllServerCertificates" : false,
     "operationTimeout" : 0,
     "_type" : {

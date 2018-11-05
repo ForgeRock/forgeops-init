@@ -13,7 +13,7 @@
       "cookieName" : "iPlanetDirectoryPro",
       "cdsso" : false,
       "cdssoCookieDomain" : [ "" ],
-      "cdssoUrls" : [ "http://openam.lee.svc.cluster.local:80/openam/cdcservlet" ],
+      "cdssoUrls" : [ "http://openam.lee.svc.cluster.local:80/cdcservlet" ],
       "cdssoRedirectUri" : "agent/cdsso-oauth2",
       "cookieResetEnabled" : false,
       "cookieResetList" : [ "" ]
@@ -111,7 +111,7 @@
       "policyEvaluationApplication" : "iPlanetAMWebAgentService",
       "policyEvaluationRealm" : "/",
       "retrieveClientHostname" : false,
-      "amLogoutUrl" : [ "http://openam.lee.svc.cluster.local:80/openam/UI/Logout" ],
+      "amLogoutUrl" : [ "http://openam.lee.svc.cluster.local:80/UI/Logout" ],
       "userIdParameterType" : "session",
       "amLoginUrl" : [ ],
       "ssoCachePollingInterval" : 3,

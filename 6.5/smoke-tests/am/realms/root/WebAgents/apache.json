@@ -13,7 +13,7 @@
       "cookieName" : "iPlanetDirectoryPro",
       "cdsso" : false,
       "cdssoCookieDomain" : [ "" ],
-      "cdssoUrls" : [ "https://openam.smoke.forgeops.com:80/openam/cdcservlet" ],
+      "cdssoUrls" : [ "https://login.smoke.forgeops.com:80/cdcservlet" ],
       "cdssoRedirectUri" : "agent/cdsso-oauth2",
       "cookieResetEnabled" : false,
       "cookieResetList" : [ "" ]
@@ -111,7 +111,7 @@
       "policyEvaluationApplication" : "iPlanetAMWebAgentService",
       "policyEvaluationRealm" : "/",
       "retrieveClientHostname" : false,
-      "amLogoutUrl" : [ "https://openam.smoke.forgeops.com:80/openam/UI/Logout" ],
+      "amLogoutUrl" : [ "https://login.smoke.forgeops.com:80/UI/Logout" ],
       "userIdParameterType" : "session",
       "amLoginUrl" : [ ],
       "ssoCachePollingInterval" : 3,

@@ -455,7 +455,7 @@
         }
       },
       "managed/user": {
-        "dnTemplate": "ou=people,dc=data",
+        "dnTemplate": "ou=people,ou=identities",
         "objectClasses": [
           "person",
           "organizationalPerson",
@@ -591,10 +591,10 @@
         "dnTemplate": "ou=ui,o=idm"
       },
       "managed/*": {
-        "dnTemplate": "ou=managed,dc=data"
+        "dnTemplate": "ou=managed,ou=identities"
       },
       "managed/role": {
-        "dnTemplate": "ou=role,ou=managed,dc=data",
+        "dnTemplate": "ou=role,ou=managed,ou=identities",
         "objectClasses": [
           "uidObject",
           "fr-idm-managed-role"
