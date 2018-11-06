@@ -45,7 +45,7 @@
       "userAttributeSessionMapping" : [ ],
       "loginPostProcessClass" : [ ],
       "usernameGeneratorEnabled" : true,
-      "loginSuccessUrl" : [ "/openam/console" ]
+      "loginSuccessUrl" : [ "/console" ]
     },
     "core" : {
       "orgConfig" : "neoLdapService",
