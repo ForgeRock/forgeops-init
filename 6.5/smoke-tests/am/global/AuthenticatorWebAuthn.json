@@ -11,14 +11,14 @@
     "defaults" : {
       "authenticatorWebAuthnDeviceSettingsEncryptionScheme" : "NONE",
       "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword" : null,
-      "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQJy9AjUcuZlBY7vwOlYtBgsOBIxMIlgCcriDfz6scXPyGn7sKaNjBrA==",
-      "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreType" : "JKS",
+      "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQslT83WyIWbCtvZ1ygANtLpsAIuCBIbija/mCLk44TWcW27G+uoagpw==",
+      "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreType" : "JCEKS",
       "webauthnAttrName" : "webauthnDeviceProfiles",
-      "authenticatorWebAuthnDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/openam/keystore.jks"
+      "authenticatorWebAuthnDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/keystore.jceks"
     },
     "_type" : {
       "_id" : "authenticatorWebAuthnService",
-      "name" : "ForgeRock Authenticator (WebAuthn) Service",
+      "name" : "WebAuthn Profile Encryption Service",
       "collection" : false
     }
   }

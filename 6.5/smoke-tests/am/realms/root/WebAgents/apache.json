@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "${version}",
+    "amsterVersion" : "&{version}",
     "entityType" : "WebAgents",
     "entityId" : "apache",
     "pathParams" : { }
@@ -12,18 +12,18 @@
       "secureCookies" : false,
       "cookieName" : "iPlanetDirectoryPro",
       "cdsso" : false,
-      "cdssoCookieDomain" : [ "" ],
-      "cdssoUrls" : [ "https://login.smoke.forgeops.com:80/cdcservlet" ],
+      "cdssoCookieDomain" : [ ],
+      "cdssoUrls" : [ "https://login.smoke.forgeops.com:443/cdcservlet" ],
       "cdssoRedirectUri" : "agent/cdsso-oauth2",
       "cookieResetEnabled" : false,
-      "cookieResetList" : [ "" ]
+      "cookieResetList" : [ ]
     },
     "globalWebAgentConfig" : {
       "configurationCleanupInterval" : 30,
       "auditLogLocation" : "REMOTE",
       "fqdnMapping" : { },
       "notificationsEnabled" : true,
-      "remoteLogFilename" : "amAgent_apache-agent_agent_forgeops_com_80.log",
+      "remoteLogFilename" : "amAgent_apache-agent_smoke_forgeops_com_80.log",
       "remoteLogSendInterval" : 5,
       "ssoOnlyMode" : false,
       "agentUriPrefix" : "http://apache-agent.smoke.forgeops.com:80/amagent",
@@ -35,7 +35,7 @@
       "webSocketConnectionIntervalInMinutes" : 30,
       "agentConfigChangeNotificationsEnabled" : true,
       "userpassword" : null,
-      "userpassword-encrypted" : "AAAAA0FFUwIQHKJNTdRl180fnLE9MXy35F6Xch7WA76HNRTIPsXXZCBjBdiVmyiSO3Y6rrVZ8ViNE/78Ro+w+WuqlzcGyt1O8iYQ7hJZWV7PZ+PnJGZ7dPDgP5ryyi7QNyrEp+siYxC+AbowWfsyeo6ad4ZlqmFySXOiOtUGXs/4uArmodtuWL8Emj6KzelGNfKaxmTEmgCe33gcfOkaLLg=",
+      "userpassword-encrypted" : "AAAAA0FFUwIQx8ML431C5dMyokNqRhT/bYwdhrvYI8ikBYuxW9vH587KMJX1ZvHwc7kjhvIaU6gecelRlmiJnRNEESfSXQH8/Czy0lhD+ig1Co/83YWjjLmKg3ribQYYXRTckqwVuLWAw5d98ZF9IVg9EDdgH7XGNn54IDdUeCcc+jAdbKnlDorAAw7YOkmr15d18x6p58z+Trta6AcMYyY=",
       "debugLogRotation" : true,
       "auditAccessType" : "LOG_NONE",
       "cdssoRootUrl" : [ "agentRootURL=http://apache-agent.smoke.forgeops.com:80/" ],
@@ -111,17 +111,17 @@
       "policyEvaluationApplication" : "iPlanetAMWebAgentService",
       "policyEvaluationRealm" : "/",
       "retrieveClientHostname" : false,
-      "amLogoutUrl" : [ "https://login.smoke.forgeops.com:80/UI/Logout" ],
+      "amLogoutUrl" : [ "https://login.smoke.forgeops.com:443/UI/Logout" ],
       "userIdParameterType" : "session",
-      "amLoginUrl" : [ ],
+      "amLoginUrl" : [ "https://login.smoke.forgeops.com:443/" ],
       "ssoCachePollingInterval" : 3,
       "agentConnectionTimeout" : 2,
       "policyCachePollingInterval" : 3,
-      "logoutResetCookies" : [ "" ],
+      "logoutResetCookies" : [ ],
       "policyClockSkew" : 0,
       "fetchPoliciesFromRootResource" : false,
+      "applicationLogoutUrls" : [ ],
       "primaryServerPollingPeriod" : 5,
-      "applicationLogoutUrls" : [ "" ],
       "logoutRedirectUrl" : null
     },
     "_type" : {

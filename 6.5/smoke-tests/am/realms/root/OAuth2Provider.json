@@ -38,30 +38,6 @@
       "displayNameAttribute" : "cn",
       "supportedSubjectTypes" : [ "public" ]
     },
-    "secrets" : {
-      "tokenVerificationPurposeHS384" : "default.hmac.sig.key",
-      "tokenEncryptionPurposeAES" : "default.aes.enc.key",
-      "tokenDecryptionPurposeAES" : "default.aes.enc.key",
-      "tokenVerificationPurposeES256" : "default.ecdsa.p256.sig.key",
-      "tokenSigningPurposeES512" : "default.ecdsa.p521.sig.key",
-      "tokenSigningPurposeRSA" : "default.rsa.sig.key",
-      "tokenVerificationPurposeHS256" : "default.hmac.sig.key",
-      "tokenVerificationPurposeES384" : "default.ecdsa.p384.sig.key",
-      "tokenSigningPurposeES384" : "default.ecdsa.p384.sig.key",
-      "tokenSigningPurposeHS256" : "default.hmac.sig.key",
-      "tokenDecryptionPurposeRSA-OAEP-256" : "default.rsa.enc.key",
-      "tokenEncryptionPurposeRSA-OAEP-256" : "default.rsa.enc.key",
-      "tokenVerificationPurposeRSA" : "default.rsa.sig.key",
-      "tokenVerificationPurposeES512" : "default.ecdsa.p521.sig.key",
-      "tokenSigningPurposeES256" : "default.ecdsa.p256.sig.key",
-      "tokenEncryptionPurposeRSA1_5" : "default.rsa.enc.key",
-      "tokenEncryptionPurposeRSA-OAEP" : "default.rsa.enc.key",
-      "tokenSigningPurposeHS384" : "default.hmac.sig.key",
-      "tokenDecryptionPurposeRSA1_5" : "default.rsa.enc.key",
-      "tokenVerificationPurposeHS512" : "default.hmac.sig.key",
-      "tokenDecryptionPurposeRSA-OAEP" : "default.rsa.enc.key",
-      "tokenSigningPurposeHS512" : "default.hmac.sig.key"
-    },
     "advancedOIDCConfig" : {
       "storeOpsTokens" : true,
       "defaultACR" : [ ],
@@ -74,6 +50,7 @@
       "authorisedOpenIdConnectSSOClients" : [ ],
       "idTokenInfoClientAuthenticationEnabled" : true,
       "supportedRequestParameterSigningAlgorithms" : [ "PS384", "RS384", "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
+      "supportedTokenEndpointAuthenticationSigningAlgorithms" : [ "PS384", "RS384", "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
       "loaMapping" : { }
     },
     "clientDynamicRegistrationConfig" : {

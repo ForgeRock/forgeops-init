@@ -34,7 +34,7 @@
       "moduleBasedAuthEnabled" : true,
       "zeroPageLoginAllowedWithoutReferrer" : true,
       "sharedSecret" : null,
-      "sharedSecret-encrypted" : "AAAAA0FFUwIQX1opOcOgo+v7QNOYNOnyZIWQz4AICioUW/zFGhBqmRg0vYCGotfe/+yvj8WQfnrCVzy97nsXbq17eT1dR2per7q3IWJp68sW",
+      "sharedSecret-encrypted" : "AAAAA0FFUwIQSfQr7XOWAf1Iefx3Uj9RuwZ8PIhpvE4FT0qoaG2IGpeSMibi+MR4L6BpXKqQkSOqxVRnJylh4X7c52lDuTzjo2+uOnnx6AlT",
       "keyAlias" : "test",
       "zeroPageLoginEnabled" : false,
       "zeroPageLoginReferrerWhiteList" : [ ]
@@ -45,7 +45,7 @@
       "userAttributeSessionMapping" : [ ],
       "loginPostProcessClass" : [ ],
       "usernameGeneratorEnabled" : true,
-      "loginSuccessUrl" : [ "/openam/console" ]
+      "loginSuccessUrl" : [ "/console" ]
     },
     "core" : {
       "orgConfig" : "ldapService",

@@ -18,7 +18,7 @@
       "forgotPasswordConfirmationUrl" : "http://openam:80/XUI/confirm.html",
       "userRegisteredDestination" : "default",
       "protectedUserAttributes" : [ ],
-      "confirmationIdHmacKey" : "7K0isl4Lou/Zytdh2k/gh1DEtOKKCk6/JAifF8F8H5c="
+      "confirmationIdHmacKey" : "RXG/znwrMFdb7nlG2SaLEkKr+5Cu1Ro4esW2cQuMugw="
     },
     "_type" : {
       "_id" : "security",

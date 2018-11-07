@@ -24,8 +24,8 @@
       "jwkStoreCacheMissCacheTime" : 60000,
       "idTokenSignedResponseAlg" : "RS256",
       "idTokenPublicEncryptionKey" : null,
-      "jwksUri" : "http://openam:80/oauth2/connect/jwk_uri",
       "userinfoEncryptedResponseAlg" : null,
+      "jwksUri" : "http://openam:80/oauth2/connect/jwk_uri",
       "requestParameterSignedAlg" : null,
       "clientJwtPublicKey" : null
     },
@@ -57,7 +57,7 @@
     },
     "coreOAuth2ClientConfig" : {
       "userpassword" : null,
-      "userpassword-encrypted" : "AAAAA0FFUwIQNmrduOIHQ1iMW7vjB3W/hH6+CSHGct0r++Rz/KwfOIX8BWC3YB6OKw==",
+      "userpassword-encrypted" : "AAAAA0FFUwIQ0qMLQURjJOronxDtTvly9eHgN2S1kK2oRisHqHvopb8FddVpHFqbmA==",
       "authorizationCodeLifetime" : 0,
       "accessTokenLifetime" : 0,
       "defaultScopes" : [ "cn", "name", "mail" ],

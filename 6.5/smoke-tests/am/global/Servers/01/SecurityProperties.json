@@ -3,9 +3,9 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "SecurityProperties",
-    "entityId" : "http://openam:80/openam",
+    "entityId" : "http://openam:80",
     "pathParams" : {
-      "serverName" : "http://openam:80/openam"
+      "serverName" : "http://openam:80"
     }
   },
   "data" : {
@@ -46,7 +46,7 @@
     },
     "amconfig.header.securitykey" : {
       "com.sun.identity.saml.xmlsig.keystore" : {
-        "value" : "/var/run/secrets/openam/keystore/keystore.jceks",
+        "value" : "%BASE_DIR%/%SERVER_URI%/keystore.jceks",
         "inherited" : true
       },
       "com.sun.identity.saml.xmlsig.storetype" : {
@@ -54,11 +54,11 @@
         "inherited" : true
       },
       "com.sun.identity.saml.xmlsig.storepass" : {
-        "value" : "/var/run/secrets/openam/password/storepass",
+        "value" : "%BASE_DIR%/%SERVER_URI%/.storepass",
         "inherited" : true
       },
       "com.sun.identity.saml.xmlsig.keypass" : {
-        "value" : "/var/run/secrets/openam/password/keypass",
+        "value" : "%BASE_DIR%/%SERVER_URI%/.keypass",
         "inherited" : true
       },
       "com.sun.identity.saml.xmlsig.certalias" : {

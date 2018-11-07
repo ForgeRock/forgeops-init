@@ -3,14 +3,14 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "KeyStoreMappings",
-    "entityId" : "default.ecdsa.p256.sig.key",
+    "entityId" : "am.services.oauth2.stateless.signing.ES256",
     "pathParams" : {
       "KeyStoreSecretStore" : "default-keystore"
     }
   },
   "data" : {
-    "_id" : "default.ecdsa.p256.sig.key",
-    "secretId" : "default.ecdsa.p256.sig.key",
+    "_id" : "am.services.oauth2.stateless.signing.ES256",
+    "secretId" : "am.services.oauth2.stateless.signing.ES256",
     "aliases" : [ "es256test" ],
     "_type" : {
       "_id" : "mappings",
