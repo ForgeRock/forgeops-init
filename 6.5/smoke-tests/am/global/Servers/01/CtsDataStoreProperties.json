@@ -16,7 +16,7 @@
         "inherited" : false
       },
       "org.forgerock.services.cts.store.root.suffix" : {
-        "value" : "o=cts",
+        "value" : "ou=tokens",
         "inherited" : false
       },
       "org.forgerock.services.cts.store.max.connections" : {
