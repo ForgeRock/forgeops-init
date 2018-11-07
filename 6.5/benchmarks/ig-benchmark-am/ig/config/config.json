@@ -37,7 +37,7 @@
       "name": "AmService-1",
       "type": "AmService",
       "config": {
-          "url": "https://login.lee.forgeops.com/XUI/#login",
+          "url": "https://login.lee.forgeops.com",
           "version": "6.5.0-M11",
           "realm": "/",
           "agent": {
