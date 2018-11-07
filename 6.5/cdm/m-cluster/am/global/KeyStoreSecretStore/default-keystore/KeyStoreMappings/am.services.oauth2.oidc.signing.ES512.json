@@ -3,15 +3,15 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "KeyStoreMappings",
-    "entityId" : "am.default.authentication.modules.persistentcookie.signing",
+    "entityId" : "am.services.oauth2.oidc.signing.ES512",
     "pathParams" : {
       "KeyStoreSecretStore" : "default-keystore"
     }
   },
   "data" : {
-    "_id" : "am.default.authentication.modules.persistentcookie.signing",
-    "secretId" : "am.default.authentication.modules.persistentcookie.signing",
-    "aliases" : [ "hmacsigningtest" ],
+    "_id" : "am.services.oauth2.oidc.signing.ES512",
+    "secretId" : "am.services.oauth2.oidc.signing.ES512",
+    "aliases" : [ "es512test" ],
     "_type" : {
       "_id" : "mappings",
       "name" : "Mappings",

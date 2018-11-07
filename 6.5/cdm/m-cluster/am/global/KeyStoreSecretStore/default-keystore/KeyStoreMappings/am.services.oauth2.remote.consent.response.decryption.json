@@ -3,15 +3,15 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "KeyStoreMappings",
-    "entityId" : "default.hmac.sig.key",
+    "entityId" : "am.services.oauth2.remote.consent.response.decryption",
     "pathParams" : {
       "KeyStoreSecretStore" : "default-keystore"
     }
   },
   "data" : {
-    "_id" : "default.hmac.sig.key",
-    "secretId" : "default.hmac.sig.key",
-    "aliases" : [ "hmacsigningtest" ],
+    "_id" : "am.services.oauth2.remote.consent.response.decryption",
+    "secretId" : "am.services.oauth2.remote.consent.response.decryption",
+    "aliases" : [ "test" ],
     "_type" : {
       "_id" : "mappings",
       "name" : "Mappings",

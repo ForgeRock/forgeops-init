@@ -3,15 +3,15 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "KeyStoreMappings",
-    "entityId" : "default.rsa.sig.key",
+    "entityId" : "am.services.oauth2.stateless.signing.ES384",
     "pathParams" : {
       "KeyStoreSecretStore" : "default-keystore"
     }
   },
   "data" : {
-    "_id" : "default.rsa.sig.key",
-    "secretId" : "default.rsa.sig.key",
-    "aliases" : [ "test" ],
+    "_id" : "am.services.oauth2.stateless.signing.ES384",
+    "secretId" : "am.services.oauth2.stateless.signing.ES384",
+    "aliases" : [ "es384test" ],
     "_type" : {
       "_id" : "mappings",
       "name" : "Mappings",
