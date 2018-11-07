@@ -3,15 +3,15 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "KeyStoreMappings",
-    "entityId" : "default.ecdsa.p521.sig.key",
+    "entityId" : "am.services.oauth2.oidc.decryption.RSA.OAEP.256",
     "pathParams" : {
       "KeyStoreSecretStore" : "default-keystore"
     }
   },
   "data" : {
-    "_id" : "default.ecdsa.p521.sig.key",
-    "secretId" : "default.ecdsa.p521.sig.key",
-    "aliases" : [ "es512test" ],
+    "_id" : "am.services.oauth2.oidc.decryption.RSA.OAEP.256",
+    "secretId" : "am.services.oauth2.oidc.decryption.RSA.OAEP.256",
+    "aliases" : [ "test" ],
     "_type" : {
       "_id" : "mappings",
       "name" : "Mappings",
