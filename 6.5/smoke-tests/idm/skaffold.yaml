@@ -1,38 +1,31 @@
-apiVersion: skaffold/v1alpha3
+apiVersion: skaffold/v1alpha5
 kind: Config
 build:
+  artifacts:
+  - image: forgerock/sk-idm
   tagPolicy:
     sha256: {}
-  artifacts:
-  - imageName: gcr.io/engineering-devops/sk-idm
 deploy:
-  # See https://github.com/GoogleContainerTools/skaffold/issues/360
   helm:
     releases:
     - name: sk-idm
-      # Provide absolute path to IDM helm chart. 
-      # See https://github.com/GoogleContainerTools/skaffold/issues/1071
       chartPath: /Users/warren.strange/tmp/forgeops/helm/openidm
+      values:
+        image: forgerock/sk-idm
+      setValues:
+        config.path: /opt/openidm/p
+        config.strategy: docker
+        domain: .example.com
+        skaffold: "true"
       imageStrategy:
         helm: {}
-      # valuesFilePath: skaffold-values.yaml
-      values:
-        image: gcr.io/engineering-devops/sk-idm
-      setValues:
-        skaffold: "true"
-        config.strategy: "docker"
-        config.path: "/opt/openidm"
-        domain: ".example.com"
-    # It is recommended to start these services independently rather than use skaffold
-    # - name: sk-postgres
-    #   # See https://github.com/GoogleContainerTools/skaffold/issues/1071
-    #   # chartPath: ./../../../forgeops/helm/postgres-openidm
-    #   chartPath: /Users/warren.strange/tmp/forgeops/helm/postgres-openidm
+    - name: sk-postgres
+      chartPath: /Users/warren.strange/tmp/forgeops/helm/postgres-openidm
     #   setValues:
     #         domain: ".example.com"
-    # - name: sk-userstore
-    #   # See https://github.com/GoogleContainerTools/skaffold/issues/1071
-    #   # chartPath: ./../../../forgeops/helm/postgres-openidm
-    #   chartPath: /Users/warren.strange/tmp/forgeops/helm/ds
-    #   setValues:
-    #     instance: userstore
+    - name: sk-userstore
+      # See https://github.com/GoogleContainerTools/skaffold/issues/1071
+      chartPath: ../../../../forgeops/helm/ds
+      # chartPath: /Users/warren.strange/tmp/forgeops/helm/ds
+      setValues:
+        instance: userstore

@@ -354,8 +354,8 @@
                         }
                     },
                     "pictureUrl" : {
-                        "description" : "Picture Url",
-                        "title" : "Picture Url",
+                        "description" : "Picture URL",
+                        "title" : "Picture URL",
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true
@@ -696,7 +696,7 @@
             "clientSecret" : "",
             "authorizationEndpoint" : "https://oauth.vk.com/authorize",
             "tokenEndpoint" : "https://oauth.vk.com/access_token",
-            "userInfoEndpoint" : "https://api.vk.com/method/users.get",
+            "userInfoEndpoint" : "https://api.vk.com/method/users.get?fields=photo_50",
             "redirectUri" : "https://localhost:8443/",
             "apiVersion" : "5.73",
             "scope" : [
@@ -737,6 +737,10 @@
                 {
                     "source" : "email",
                     "target" : "username"
+                },
+                {
+                    "source" : "photo_50",
+                    "target" : "photoUrl"
                 }
             ],
             "schema" : {
@@ -776,6 +780,13 @@
                     "email" : {
                         "description" : "Email Address",
                         "title" : "Email Address",
+                        "viewable" : true,
+                        "type" : "string",
+                        "searchable" : true
+                    },
+                    "photo_50" : {
+                        "description" : "Photo URL",
+                        "title" : "Photo URL",
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true
@@ -1191,6 +1202,10 @@
                 {
                     "source" : "zoneInfo",
                     "target" : "locale"
+                },
+                {
+                    "source" : "picture",
+                    "target" : "photoUrl"
                 }
             ]
         },

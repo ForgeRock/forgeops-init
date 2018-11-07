@@ -48,45 +48,29 @@
     },
     "resourceMapping" : {
         "default" : {
-            "mainTable" : "genericobjects",
-            "propertiesTable" : "genericobjectproperties",
-            "searchableDefault" : true
+            "mainTable" : "genericobjects"
         },
         "genericMapping" : {
             "managed/*" : {
-                "mainTable" : "managedobjects",
-                "propertiesTable" : "managedobjectproperties",
-                "searchableDefault" : true
+                "mainTable" : "managedobjects"
             },
             "managed/user" : {
-                "mainTable" : "managedobjects",
-                "propertiesTable" : "managedobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "managedobjects"
             },
             "scheduler" : {
-                "mainTable" : "schedulerobjects",
-                "propertiesTable" : "schedulerobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "schedulerobjects"
             },
             "scheduler/*" : {
-                "mainTable" : "schedulerobjects",
-                "propertiesTable" : "schedulerobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "schedulerobjects"
             },
             "cluster" : {
-                "mainTable" : "clusterobjects",
-                "propertiesTable" : "clusterobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "clusterobjects"
             },
             "config" : {
-                "mainTable" : "configobjects",
-                "propertiesTable" : "configobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "configobjects"
             },
             "relationships" : {
                 "mainTable" : "relationships",
-                "propertiesTable" : "relationshipproperties",
-                "searchableDefault" : false,
                 "objectToColumn": {
                     "firstResourceCollection" : "firstresourcecollection",
                     "firstResourceId" : "firstresourceid",
@@ -98,50 +82,19 @@
                 }
             },
             "updates" : {
-                "mainTable" : "updateobjects",
-                "propertiesTable" : "updateobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "updateobjects"
             },
             "reconprogressstate" : {
-                "mainTable" : "genericobjects",
-                "propertiesTable" : "genericobjectproperties",
-                "searchableDefault" : false,
-                "properties" : {
-                    "/reconId" : {
-                        "searchable" : true
-                    },
-                    "/startTime" : {
-                        "searchable" : true
-                    }
-                }
+                "mainTable" : "genericobjects"
             },
             "jsonstorage" : {
-                "mainTable" : "genericobjects",
-                "propertiesTable" : "genericobjectproperties",
-                "searchableDefault" : false,
-                "properties" : {
-                    "/timestamp" : {
-                        "searchable" : true
-                    }
-                }
+                "mainTable" : "genericobjects"
             },
             "internal/usermeta" : {
-                "mainTable" : "genericobjects",
-                "propertiesTable" : "genericobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "genericobjects"
             },
             "internal/notification" : {
-                "mainTable" : "notificationobjects",
-                "propertiesTable" : "notificationobjectproperties",
-                "searchableDefault" : false,
-                "properties" : {
-                    "/createDate" : {
-                        "searchable" : true
-                    },
-                    "/notificationType" : {
-                        "searchable" : true
-                    }
-                }
+                "mainTable" : "notificationobjects"
             }
         },
         "explicitMapping" : {
