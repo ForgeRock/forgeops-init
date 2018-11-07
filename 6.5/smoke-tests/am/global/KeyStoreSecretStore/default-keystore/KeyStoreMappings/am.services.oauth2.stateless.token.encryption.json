@@ -3,14 +3,14 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "KeyStoreMappings",
-    "entityId" : "default.aes.enc.key",
+    "entityId" : "am.services.oauth2.stateless.token.encryption",
     "pathParams" : {
       "KeyStoreSecretStore" : "default-keystore"
     }
   },
   "data" : {
-    "_id" : "default.aes.enc.key",
-    "secretId" : "default.aes.enc.key",
+    "_id" : "am.services.oauth2.stateless.token.encryption",
+    "secretId" : "am.services.oauth2.stateless.token.encryption",
     "aliases" : [ "directenctest" ],
     "_type" : {
       "_id" : "mappings",

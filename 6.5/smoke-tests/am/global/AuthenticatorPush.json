@@ -9,12 +9,12 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "authenticatorPushDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/openam/keystore.jks",
+      "authenticatorPushDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/keystore.jks",
       "authenticatorPushDeviceSettingsEncryptionKeystorePassword" : null,
-      "authenticatorPushDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQOWOsrG2YveEe2ovQW6EJkc7c/LY1w4olxVVKh4iqKcLO7UoFTa2QaA==",
+      "authenticatorPushDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQM23NwPB3RF1loicz7JdV17Lb2X/5UjchCM+wp+hDWmLePf86998HDg==",
       "pushAttrName" : "pushDeviceProfiles",
       "authenticatorPushDeviceSettingsEncryptionKeystoreType" : "JKS",
-      "authenticatorPushSkippableName" : "oath2faEnabled",
+      "authenticatorPushSkippableName" : "push2faEnabled",
       "authenticatorPushDeviceSettingsEncryptionScheme" : "NONE"
     },
     "_type" : {

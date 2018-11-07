@@ -3,9 +3,9 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "CtsDataStoreProperties",
-    "entityId" : "http://openam:80/openam",
+    "entityId" : "http://openam:80",
     "pathParams" : {
-      "serverName" : "http://openam:80/openam"
+      "serverName" : "http://openam:80"
     }
   },
   "data" : {
@@ -16,11 +16,11 @@
         "inherited" : false
       },
       "org.forgerock.services.cts.store.root.suffix" : {
-        "value" : "ou=tokens",
+        "value" : "o=cts",
         "inherited" : false
       },
       "org.forgerock.services.cts.store.max.connections" : {
-        "value" : "32",
+        "value" : "66",
         "inherited" : false
       },
       "org.forgerock.services.cts.store.page.size" : {
@@ -34,8 +34,8 @@
     },
     "amconfig.org.forgerock.services.cts.store.external.section" : {
       "org.forgerock.services.cts.store.ssl.enabled" : {
-        "value" : false,
-        "inherited" : false
+        "value" : "",
+        "inherited" : true
       },
       "org.forgerock.services.cts.store.directory.name" : {
         "value" : "ctsstore-0.ctsstore:1389",
@@ -49,10 +49,10 @@
         "value" : null,
         "inherited" : false
       },
-      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQ8lphE+wOWcXwyfKB3kYr1k98KCdj2t5c1i6/VgKUtUJL840vR/4elw==",
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQh8DTqw2Hewien4NbruKjpWz46EaB5bRSB0sGEQ8oA6kJmVuGklgr2g==",
       "org.forgerock.services.cts.store.heartbeat" : {
         "value" : "10",
-        "inherited" : true
+        "inherited" : false
       },
       "org.forgerock.services.cts.store.affinity.enabled" : {
         "value" : null,

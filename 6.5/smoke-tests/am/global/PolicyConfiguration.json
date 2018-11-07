@@ -23,7 +23,7 @@
       "usersSearchScope" : "SCOPE_SUB",
       "subjectsResultTTL" : 10,
       "sslEnabled" : false,
-      "usersBaseDn" : "ou=identities",
+      "usersBaseDn" : "ou=am-config",
       "connectionPoolMaximumSize" : 10,
       "policyHeartbeatTimeUnit" : "SECONDS",
       "realmSearchFilter" : "(objectclass=sunismanagedorganization)",

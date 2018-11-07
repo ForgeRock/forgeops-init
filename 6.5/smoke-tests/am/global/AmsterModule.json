@@ -11,7 +11,7 @@
     "defaults" : {
       "authenticationLevel" : 0,
       "enabled" : true,
-      "authorizedKeys" : "/var/run/secrets/openam/authorized_keys"
+      "authorizedKeys" : "/home/forgerock/openam/authorized_keys"
     },
     "_type" : {
       "_id" : "amster",

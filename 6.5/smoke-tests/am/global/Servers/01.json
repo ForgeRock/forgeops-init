@@ -8,7 +8,7 @@
   },
   "data" : {
     "_id" : "01",
-    "url" : "http://openam:80/openam",
+    "url" : "http://openam:80",
     "siteName" : "site1"
   }
 }

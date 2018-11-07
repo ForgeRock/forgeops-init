@@ -3,15 +3,15 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "KeyStoreMappings",
-    "entityId" : "default.rsa.enc.key",
+    "entityId" : "am.global.services.oauth2.oidc.agent.idtoken.signing",
     "pathParams" : {
       "KeyStoreSecretStore" : "default-keystore"
     }
   },
   "data" : {
-    "_id" : "default.rsa.enc.key",
-    "secretId" : "default.rsa.enc.key",
-    "aliases" : [ "test" ],
+    "_id" : "am.global.services.oauth2.oidc.agent.idtoken.signing",
+    "secretId" : "am.global.services.oauth2.oidc.agent.idtoken.signing",
+    "aliases" : [ "rsajwtsigningkey" ],
     "_type" : {
       "_id" : "mappings",
       "name" : "Mappings",
