@@ -76,12 +76,26 @@
                         },
                         {
                             "policyId" : "not-empty"
+                        },
+                        {
+                            "policyId" : "valid-type",
+                            "params" : {
+                                "types" : [
+                                    "string"
+                                ]
+                            }
                         }
                     ]
                 },
                 {
                     "name" : "accessFlags",
                     "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "not-empty"
+                        },
                         {
                             "policyId" : "valid-type",
                             "params" : {
@@ -92,6 +106,22 @@
                         },
                         {
                             "policyId" : "valid-accessFlags-object"
+                        }
+                    ]
+                },
+                {
+                    "name" : "actions",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "valid-type",
+                            "params" : {
+                                "types" : [
+                                    "array"
+                                ]
+                            }
                         }
                     ]
                 },

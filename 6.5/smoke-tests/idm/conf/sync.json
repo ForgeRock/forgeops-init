@@ -10,6 +10,10 @@
                     "target" : "displayName"
                 },
                 {
+                    "source" : "description",
+                    "target" : "description"
+                },
+                {
                     "source" : "givenName",
                     "target" : "givenName"
                 },
@@ -99,6 +103,14 @@
                 {
                     "source" : "userName",
                     "target" : "uid"
+                },
+                {
+                    "source" : "description",
+                    "target" : "description",
+                    "condition" : {
+                        "type" : "text/javascript",
+                        "source" : "!!object.description"
+                    }
                 },
                 {
                     "source" : "mail",

@@ -7,7 +7,25 @@
     ],
     "condition" : {
         "type" : "text/javascript",
-        "source" : "(method === 'update' && content.password === undefined) || (method === 'patch' && patchOperations.filter(function(op){ return op.field === '/password' } ).length == 0 && patchOperations.filter(function(op){ return op.field.indexOf('/lastSync') !== -1 } ).length == 0)"
+        "globals" : {
+            "propertiesToCheck" : [
+                "userName",
+                "givenName",
+                "sn",
+                "mail",
+                "description",
+                "accountStatus",
+                "telephoneNumber",
+                "postalAddress",
+                "address2",
+                "city",
+                "postalCode",
+                "country",
+                "stateProvince",
+                "preferences"
+            ]
+        },
+        "file" : "propertiesModifiedFilter.js"
     },
     "target" : {
         "resource" : "managed/user/{{response/_id}}"

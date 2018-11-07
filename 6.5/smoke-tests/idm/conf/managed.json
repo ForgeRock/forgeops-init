@@ -4,11 +4,11 @@
             "name" : "user",
             "onCreate" : {
                 "type" : "text/javascript",
-                "source" : "require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);require('roles/effectiveAuthzRoles').calculateEffectiveAuthzRoles(object, 'effectiveAuthzRoles');"
+                "source" : "require('onCreateUser').setDefaultFields(object);require('onCreateUser').emailUser(object);require('roles/effectiveAuthzRoles').calculateEffectiveAuthzRoles(object, 'effectiveAuthzRoles');"
             },
             "onUpdate" : {
                 "type" : "text/javascript",
-                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('roles/effectiveAuthzRoles').calculateEffectiveAuthzRoles(object, 'effectiveAuthzRoles');"
+                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/effectiveAuthzRoles').calculateEffectiveAuthzRoles(object, 'effectiveAuthzRoles');"
             },
             "postDelete" : {
                 "type" : "text/javascript",
@@ -349,6 +349,7 @@
                                 {
                                     "path" : "internal/role",
                                     "label" : "Internal Role",
+                                    "conditionalAssociationField" : "condition",
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
@@ -359,6 +360,7 @@
                                 {
                                     "path" : "managed/role",
                                     "label" : "Role",
+                                    "conditionalAssociationField" : "condition",
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
