@@ -37,8 +37,8 @@
       "name": "AmService-1",
       "type": "AmService",
       "config": {
-          "url": "https://login.lee.forgeops.com/openam",
-          "version": "6.5.0-M9",
+          "url": "https://login.lee.forgeops.com/XUI/#login",
+          "version": "6.5.0-M11",
           "realm": "/",
           "agent": {
               "username": "ig-agent",
