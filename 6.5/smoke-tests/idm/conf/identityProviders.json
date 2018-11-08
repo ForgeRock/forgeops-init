@@ -1017,6 +1017,10 @@
                 {
                     "source": "locale",
                     "target": "locale"
+                },
+                {
+                    "source": "picture",
+                    "target": "photoUrl"
                 }
             ],
             "schema": {
@@ -1063,6 +1067,13 @@
                     "locale": {
                         "description" : "Locale Code",
                         "title": "Locale Code",
+                        "viewable": true,
+                        "type": "string",
+                        "searchable": true
+                    },
+                    "picture": {
+                        "description" : "Profile Photo URL",
+                        "title": "Profile Photo URL",
                         "viewable": true,
                         "type": "string",
                         "searchable": true
@@ -1162,6 +1173,13 @@
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true
+                    },
+                    "picture" : {
+                        "description" : "Picture URL",
+                        "title" : "Picture URL",
+                        "viewable" : true,
+                        "type" : "string",
+                        "searchable" : true
                     }
                 },
                 "order" : [
@@ -1170,7 +1188,8 @@
                     "given_name",
                     "family_name",
                     "email",
-                    "zoneInfo"
+                    "zoneInfo",
+                    "picture"
                 ],
                 "required" : [ ]
             },
