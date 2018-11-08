@@ -11,10 +11,10 @@
         "principal" : "cn=Directory Manager",
         "credentials" : "&{userstore.password}",
         "baseContexts" : [
-            "ou=identities,&{userstore.basecontext}"
+            "&{userstore.basecontext}"
         ],
         "baseContextsToSynchronize" : [
-            "ou=identities,&{userstore.basecontext}"
+            "&{userstore.basecontext}"
         ],
         "accountSearchFilter" : null,
         "accountSynchronizationFilter" : null,

@@ -77,7 +77,7 @@
             "onCreate" : {
                 "type" : "text/javascript",
                 "globals" : { },
-                "source" : "target.dn = 'uid=' + source.userName + ',ou=identities,&{userstore.basecontext}';"
+                "source" : "target.dn = 'uid=' + source.userName + ',&{userstore.basecontext}';"
             },
             "properties" : [
                 {
