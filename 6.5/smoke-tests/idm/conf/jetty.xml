@@ -41,9 +41,10 @@
 
     <New id="httpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
         <Arg><Ref refid="httpSimpleConfig"/></Arg>
-        <!-- <Call name="addCustomizer">
+        <Call name="addCustomizer">
             <Arg>
                 <New class="org.eclipse.jetty.server.ForwardedRequestCustomizer">
+                    <!-- Prevent host header changes that may occur from URL hijacking attempts -->
                     <Set name="hostHeader">
                         <Call class="org.forgerock.openidm.jetty.Param" name="getProperty">
                             <Arg>openidm.host</Arg>
@@ -53,8 +54,7 @@
                     </Set>
                 </New>
             </Arg>
-        </Call> 
-        -->
+        </Call>
     </New>
 
     <New id="tlsHttpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
@@ -68,13 +68,10 @@
         <Call name="addCustomizer">
             <Arg><New class="org.eclipse.jetty.server.SecureRequestCustomizer"/></Arg>
         </Call>
-
-        <!-- Prevent host header changes that may occur from URL hijacking attempts -->
-        <!-- IF deployed behind a load balancer that protects the endpoint this is not required -->
-        <!-- <Call name="addCustomizer">
+        <Call name="addCustomizer">
             <Arg>
                 <New class="org.eclipse.jetty.server.ForwardedRequestCustomizer">
-            
+                    <!-- Prevent host header changes that may occur from URL hijacking attempts -->
                     <Set name="hostHeader">
                         <Call class="org.forgerock.openidm.jetty.Param" name="getProperty">
                             <Arg>openidm.host</Arg>
@@ -84,7 +81,7 @@
                     </Set>
                 </New>
             </Arg>
-        </Call> -->
+        </Call>
     </New>
 
     <New id="mutualAuthHttpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
@@ -98,10 +95,10 @@
         <Call name="addCustomizer">
             <Arg><New class="org.eclipse.jetty.server.SecureRequestCustomizer"/></Arg>
         </Call>
-        <!-- Prevent host header changes that may occur from URL hijacking attempts -->
-        <!-- <Call name="addCustomizer">
+        <Call name="addCustomizer">
             <Arg>
                 <New class="org.eclipse.jetty.server.ForwardedRequestCustomizer">
+                    <!-- Prevent host header changes that may occur from URL hijacking attempts -->
                     <Set name="hostHeader">
                         <Call class="org.forgerock.openidm.jetty.Param" name="getProperty">
                             <Arg>openidm.host</Arg>
@@ -111,7 +108,7 @@
                     </Set>
                 </New>
             </Arg>
-        </Call> -->
+        </Call>
     </New>
 
     <Array id="excludedCipherSuites" type="java.lang.String">

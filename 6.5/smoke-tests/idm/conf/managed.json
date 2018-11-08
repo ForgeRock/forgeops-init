@@ -301,6 +301,7 @@
                                 {
                                     "path" : "managed/role",
                                     "label" : "Role",
+                                    "conditionalAssociationField" : "condition",
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
