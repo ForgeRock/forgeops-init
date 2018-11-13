@@ -77,7 +77,7 @@
                         "minLength" : 8,
                         "userEditable" : true,
                         "encryption" : {
-                            "purpose": "password.encryption"
+                            "purpose": "idm.password.encryption"
                         },
                         "scope" : "private",
                         "isProtected": true,
