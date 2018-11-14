@@ -65,7 +65,7 @@ class IGGenerateTokensSim extends Simulation {
       createCSVFile()
       feed(userFeeder)
         .exec(
-          http("AccessToken stage")
+          http("Generate Token stage")
             .post("/oauth2/access_token")
             .queryParam("realm", realm)
             .formParam("grant_type", "password")
