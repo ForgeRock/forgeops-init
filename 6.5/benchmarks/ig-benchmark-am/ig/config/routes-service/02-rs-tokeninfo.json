@@ -1,7 +1,6 @@
 {
   "name": "02-rs-tokeninfo",
   "condition": "${matches(request.uri.path, '^/rs-tokeninfo')}",
-  "baseURI" : "http://lee-web:80",
   "monitor": false,
   "heap": [],
   "handler": {
@@ -36,6 +35,7 @@
       "handler" : {
         "type" : "ReverseProxyHandler",
         "config" : {
+          "uri" : "http://lee-web:80",
           "asyncBehavior" : "non_streaming",
           "connections" : 100,
           "numberOfWorkers" : 20,
