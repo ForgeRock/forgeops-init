@@ -57,7 +57,6 @@ class IGGenerateTokensSim extends Simulation {
 
   val httpProtocol: HttpProtocolBuilder = http
     .baseURLs(amUrl)
-    .inferHtmlResources()
     .header("Accept-API-Version", "resource=2.0, protocol=1.0")
 
   val generateTokenScenario: ScenarioBuilder = scenario("OAuth2 Auth code flow")
