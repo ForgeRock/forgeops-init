@@ -32,17 +32,13 @@
           }
         }
       ],
-      "handler" : {
-        "type" : "ReverseProxyHandler",
-        "config" : {
-          "baseURI" : "https://www.lee.forgeops.com:443",
-          "capture": "all",
-          "asyncBehavior" : "non_streaming",
-          "connections" : 100,
-          "numberOfWorkers" : 20,
-          "soTimeout" : "30 seconds"
+      "handler": {
+        "type": "StaticResponseHandler",
+        "config": {
+          "status": 200,
+          "entity": "<html><body><h2>Decoded access token with introspect endpoint: ${contexts.oauth2.accessToken.info}</h2></body></html>"
         }
-      }   
+      } 
     }
   }
 }
