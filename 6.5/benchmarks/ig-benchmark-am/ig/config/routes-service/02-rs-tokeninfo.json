@@ -35,7 +35,7 @@
       "handler" : {
         "type" : "ReverseProxyHandler",
         "config" : {
-          "baseURI" : "http://lee-web:80",
+          "baseURI" : "https://www.lee.forgeops.com:443",
           "capture": "all",
           "asyncBehavior" : "non_streaming",
           "connections" : 100,
