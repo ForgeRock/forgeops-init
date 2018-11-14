@@ -35,7 +35,8 @@
       "handler" : {
         "type" : "ReverseProxyHandler",
         "config" : {
-          "uri" : "http://lee-web:80",
+          "baseURI" : "http://lee-web:80",
+          "capture": "all",
           "asyncBehavior" : "non_streaming",
           "connections" : 100,
           "numberOfWorkers" : 20,
