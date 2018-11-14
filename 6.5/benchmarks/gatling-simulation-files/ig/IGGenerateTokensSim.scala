@@ -17,7 +17,7 @@ class IGGenerateTokensSim extends Simulation {
   val warmup: Integer = Integer.getInteger("warmup", 1)
   val amHost: String = System.getProperty("am_host", "login.lee.forgeops.com")
   val amPort: String = System.getProperty("am_port", "443")
-  val amProtocol: String = System.getProperty("am_protocol", "https")
+  val amProtocol: String = System.getProperty("am_protocol", "http")
 
   val oauth2ClientId: String = System.getProperty("oauth2_client_id", "client-application")
   val oauth2ClientPassword: String = System.getProperty("oauth2_client_pw", "password")
