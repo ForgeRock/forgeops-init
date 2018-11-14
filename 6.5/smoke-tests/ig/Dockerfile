@@ -1,7 +1,8 @@
-ARG REPO=gcr.io/engineering-devops/openig
-ARG TAG=6.5.0
+ARG REPO=forgerock-docker-public.bintray.io/forgerock/openig
+#ARG TAG=6.5.0-RC2
+ARG TAG=latest
 FROM $REPO:$TAG
-#FROM gcr.io/engineering-devops/openig:6.5.0
+#FROM forgerock-docker-public.bintray.io/forgerock/openig:6.5.0-RC2
 
 COPY --chown=forgerock config/ /git/config
 
