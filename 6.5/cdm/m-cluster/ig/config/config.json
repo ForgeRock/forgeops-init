@@ -38,7 +38,6 @@
       "type": "AmService",
       "config": {
           "url": "http://&{AMURL}",
-          "version": "6.5.0-M11",
           "realm": "/",
           "agent": {
               "username": "ig-agent",
