@@ -37,7 +37,7 @@
       "name": "AmService-1",
       "type": "AmService",
       "config": {
-          "url": "https://&{AMURL}",
+          "url": "http://&{AMURL}",
           "version": "6.5.0-M11",
           "realm": "/",
           "agent": {
