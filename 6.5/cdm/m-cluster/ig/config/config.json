@@ -37,7 +37,7 @@
       "name": "AmService-1",
       "type": "AmService",
       "config": {
-          "url": "http://&{AMURL}",
+          "url": "http://openam.small.svc.cluster.local/XUI/?module=DataStore",
           "version": "6.5.0-M11",
           "realm": "/",
           "agent": {
