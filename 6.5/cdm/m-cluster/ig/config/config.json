@@ -56,7 +56,7 @@
               "type": "TrustAllManager"
             }
       },
-      "capture": "all"
+      "_capture": "all"
   }
   ],
   "monitor": true
