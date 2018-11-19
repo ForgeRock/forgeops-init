@@ -8,7 +8,7 @@
   },
   "data" : {
     "_id" : "site1",
-    "url" : "https://login.smoke.forgeops.com/",
+    "url" : "https://&{fqdn}/",
     "secondaryURLs" : [ ]
   }
 }
