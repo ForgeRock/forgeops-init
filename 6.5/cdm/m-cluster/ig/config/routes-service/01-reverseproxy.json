@@ -1,5 +1,5 @@
 {
-  "baseURI" : "http://small-web:80",
+  "baseURI" : "http://prod-web:80",
   "handler" : {
     "type" : "ReverseProxyHandler",
     "config" : {
