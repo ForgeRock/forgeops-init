@@ -9,42 +9,39 @@ import java.io.File
 import java.io.PrintWriter
 import java.io.FileOutputStream
 
-class IGGenerateTokensSim extends Simulation {
+class IGGenerateTokens extends Simulation {
 
-  val userPoolSize: Integer = Integer.getInteger("users", 3)
-  val concurrency: Integer = Integer.getInteger("concurrency", 10)
-  val duration: Integer = Integer.getInteger("duration", 5)
+  val userPoolSize: Integer = Integer.getInteger("users", 1000)
+  val concurrency: Integer = Integer.getInteger("concurrency", 25)
+  val duration: Integer = Integer.getInteger("duration", 30)
   val warmup: Integer = Integer.getInteger("warmup", 1)
-  val amHost: String = System.getProperty("am_host", "login.lee.forgeops.com")
+  val amHost: String = System.getProperty("am_host", "login.prod.perf.forgerock-qa.com")
   val amPort: String = System.getProperty("am_port", "443")
   val amProtocol: String = System.getProperty("am_protocol", "https")
-
   val oauth2ClientId: String = System.getProperty("oauth2_client_id", "client-application")
   val oauth2ClientPassword: String = System.getProperty("oauth2_client_pw", "password")
   val getTokenInfo: String = System.getProperty("get_token_info", "False")
-
   val realm: String = System.getProperty("realm", "/")
   val scope: String = System.getProperty("scope", "mail employeenumber")
   val tokenVarName = "token"
   var accessTokenVarName = "access_token"
-
+  
   val amUrl: String = amProtocol + "://" + amHost + ":" + amPort
   val random = new util.Random
-
   val header = "tokens"
-  val csvFile = "/data/tokens.csv"
-
+  val csvFile = "tokens.csv"
+  
   val userFeeder: Iterator[Map[String, String]] = Iterator.continually(Map(
     """username""" -> ("""user.""" + random.nextInt(userPoolSize).toString),
     """password""" -> "password")
   )
-
+  
   def getXOpenAMHeaders(username: String, password: String): scala.collection.immutable.Map[String, String] = {
     scala.collection.immutable.Map(
       "X-OpenAM-Username" -> username,
       "X-OpenAM-Password" -> password)
   }
-
+  
   def createCSVFile() = {
     val s1 = new File(csvFile)
     if (s1.exists) {
@@ -54,19 +51,18 @@ class IGGenerateTokensSim extends Simulation {
     writer.println(header)
     writer.close()
   }
-
+  
   val httpProtocol: HttpProtocolBuilder = http
     .baseURLs(amUrl)
     .inferHtmlResources()
-    .contentTypeHeader("""application/json""")
     .header("Accept-API-Version", "resource=2.0, protocol=1.0")
-
+    
   val generateTokenScenario: ScenarioBuilder = scenario("OAuth2 Auth code flow")
     .during(duration) {
       createCSVFile()
       feed(userFeeder)
         .exec(
-          http("Generate Token stage")
+          http("Request Token stage")
             .post("/oauth2/access_token")
             .queryParam("realm", realm)
             .formParam("grant_type", "password")
@@ -88,3 +84,4 @@ class IGGenerateTokensSim extends Simulation {
 
   setUp(generateTokenScenario.inject(rampUsers(concurrency) over warmup)).protocols(httpProtocol)
 }
+
