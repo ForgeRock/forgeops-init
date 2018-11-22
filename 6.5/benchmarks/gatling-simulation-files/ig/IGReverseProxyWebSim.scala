@@ -6,7 +6,7 @@ import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
-class ReverseProxy extends Simulation {
+class IGReverseProxyWebSim extends Simulation {
 
     val userPoolSize: Integer = Integer.getInteger("users", 3)
     val concurrency: Integer = Integer.getInteger("concurrency", 25)
