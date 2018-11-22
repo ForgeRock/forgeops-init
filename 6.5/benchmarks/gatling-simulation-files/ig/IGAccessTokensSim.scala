@@ -11,7 +11,7 @@ class IGAccessTokenSim extends Simulation {
   val concurrency: Integer = Integer.getInteger("concurrency", 10)
   val duration: Integer = Integer.getInteger("duration", 600)
   val warmup: Integer = Integer.getInteger("warmup", 1)
-  val igHost: String = System.getProperty("ig_host", "openig.small.freng.org")
+  val igHost: String = System.getProperty("ig_host", "openig.prod.perf.forgerock-qa.com")
   val igPort: String = System.getProperty("ig_port", "443")
   val igProtocol: String = System.getProperty("ig_protocol", "https")
   val getTokenInfo: String = System.getProperty("get_token_info", "False")
