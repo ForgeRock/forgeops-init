@@ -21,7 +21,7 @@
     "userProfileRetrievalAttribute" : "uid",
     "minimumPasswordLength" : "8",
     "openam-auth-ldap-connection-mode" : "LDAP",
-    "primaryLdapServer" : [ "userstore.userstore:1389" ],
+    "primaryLdapServer" : [ "userstore:1389" ],
     "connectionHeartbeatInterval" : 10,
     "secondaryLdapServer" : [ "userstore-1.userstore:1389","userstore-0.userstore:1389" ],
     "userSearchStartDN" : [ "ou=identities" ],

@@ -42,7 +42,7 @@
       "sun-idrepo-ldapv3-config-search-scope" : "SCOPE_SUB",
       "sun-idrepo-ldapv3-config-time-limit" : 10,
       "openam-idrepo-ldapv3-heartbeat-interval" : 10,
-      "sun-idrepo-ldapv3-config-ldap-server" : [ "userstore-1:userstore:1389", "userstore-0.userstore:1389" ],
+      "sun-idrepo-ldapv3-config-ldap-server" : [ "userstore:1389", userstore-1:userstore:1389", "userstore-0.userstore:1389" ],
       "openam-idrepo-ldapv3-heartbeat-timeunit" : "SECONDS",
       "sun-idrepo-ldapv3-config-organization_name" : "ou=identities",
       "sun-idrepo-ldapv3-config-connection-mode" : "LDAP",
