@@ -21,7 +21,7 @@ class IDMUpdateManagedUsers extends  Simulation {
     val idmProtocol: String = System.getProperty("idm_protocol", "http")
     val duration: Integer = Integer.getInteger("duration", 10).toInt
 
-    val idmUrl: String = "http://" + idmHost + ":" + idmPort
+    val idmUrl: String = idmProtocol + "://" + idmHost + ":" + idmPort
     val random = new util.Random
     val counter = new LongCounter
     def t: Integer = 0

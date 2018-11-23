@@ -35,7 +35,7 @@ class AMAccessTokenSim extends Simulation {
     val codeVarName = "authcode"
     var accessTokenVarName = "access_token"
 
-    val amUrl: String = "http://" + amHost + ":" + amPort
+    val amUrl: String = amProtocol + "://" + amHost + ":" + amPort
     val random = new util.Random
 
     val userFeeder: Iterator[Map[String, String]] = Iterator.continually(Map(

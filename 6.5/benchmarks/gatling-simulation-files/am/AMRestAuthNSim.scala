@@ -23,7 +23,7 @@ class AMRestAuthNSim extends Simulation {
     val amPort: String = System.getProperty("am_port", "80")
     val amProtocol: String = System.getProperty("am_protocol", "http")
 
-    val amUrl: String = "http://" + amHost + ":" + amPort
+    val amUrl: String = amProtocol + "://" + amHost + ":" + amPort
     val random = new util.Random
 
     val userFeeder: Iterator[Map[String, String]] = Iterator.continually(Map(
