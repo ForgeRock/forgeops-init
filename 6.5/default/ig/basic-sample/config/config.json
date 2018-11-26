@@ -47,20 +47,7 @@
         "numberOfWorkers": 4,
         "soTimeout": "10 seconds"
       }
-    },
-    {
-      "name": "MetricsProtectionFilter",
-      "type": "ScriptableFilter",
-      "config": {
-        "type": "application/x-groovy",
-        "file": "BasicAuthResourceServerFilter.groovy",
-        "args": {
-          "realm": "/",
-          "username": "prometheus",
-          "password": "prometheus"
-        }
-      }
-    }    
+    }
   ],
   "monitor": true
 }
