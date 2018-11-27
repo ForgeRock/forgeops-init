@@ -8,7 +8,7 @@
   },
   "data" : {
     "_id" : "",
-    "cookieDomains" : [ ],
+    "cookieDomains" : [ "&{domain}" ],
     "locale" : "en_US",
     "_type" : {
       "_id" : "platform",
