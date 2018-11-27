@@ -13,15 +13,15 @@
     "amconfig.org.forgerock.services.cts.store.common.section" : {
       "org.forgerock.services.cts.store.location" : {
         "value" : "external",
-        "inherited" : false
+        "inherited" : true
       },
       "org.forgerock.services.cts.store.root.suffix" : {
         "value" : "ou=tokens",
-        "inherited" : false
+        "inherited" : true
       },
       "org.forgerock.services.cts.store.max.connections" : {
         "value" : "66",
-        "inherited" : false
+        "inherited" : true
       },
       "org.forgerock.services.cts.store.page.size" : {
         "value" : "0",
@@ -34,28 +34,28 @@
     },
     "amconfig.org.forgerock.services.cts.store.external.section" : {
       "org.forgerock.services.cts.store.ssl.enabled" : {
-        "value" : "",
+        "value" : false,
         "inherited" : true
       },
       "org.forgerock.services.cts.store.directory.name" : {
         "value" : "ctsstore-0.ctsstore:1389",
-        "inherited" : false
+        "inherited" : true
       },
       "org.forgerock.services.cts.store.loginid" : {
         "value" : "cn=Directory manager",
-        "inherited" : false
+        "inherited" : true
       },
       "org.forgerock.services.cts.store.password" : {
         "value" : null,
-        "inherited" : false
+        "inherited" : true
       },
-      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQh8DTqw2Hewien4NbruKjpWz46EaB5bRSB0sGEQ8oA6kJmVuGklgr2g==",
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQJh8Z+LsIOhC0pqz1Oit04xLB6OQGeejZGf1aqVI1pr/rLXFoGVQpAw==",
       "org.forgerock.services.cts.store.heartbeat" : {
         "value" : "10",
-        "inherited" : false
+        "inherited" : true
       },
       "org.forgerock.services.cts.store.affinity.enabled" : {
-        "value" : null,
+        "value" : false,
         "inherited" : true
       }
     }
