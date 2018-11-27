@@ -1,3 +1,3 @@
-FROM gcr.io/engineering-devops/amster:6.5.0
+FROM gcr.io/engineering-devops/amster:&{version}
 
 COPY --chown=forgerock . /git/
