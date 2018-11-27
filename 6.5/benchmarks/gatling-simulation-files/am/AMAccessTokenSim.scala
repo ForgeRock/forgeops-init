@@ -15,27 +15,28 @@ import io.gatling.http.protocol.HttpProtocolBuilder
 
 class AMAccessTokenSim extends Simulation {
 
-    val userPoolSize: Integer = Integer.getInteger("users", 3)
-    val concurrency: Integer = Integer.getInteger("concurrency", 10)
-    val duration: Integer = Integer.getInteger("duration", 60)
+    val userPoolSize: Integer = Integer.getInteger("users", 10)
+    val concurrency: Integer = Integer.getInteger("concurrency", 1)
+    val duration: Integer = Integer.getInteger("duration", 30)
     val warmup: Integer = Integer.getInteger("warmup", 1)
-    val amHost: String = System.getProperty("am_host", "login.example.forgeops.com")
+    val amHost: String = System.getProperty("am_host", "login.example.domain.com")
     val amPort: String = System.getProperty("am_port", "80")
     val amProtocol: String = System.getProperty("am_protocol", "http")
 
-    val oauth2ClientId: String = System.getProperty("oauth2_client_id", "oauth2")
+    val oauth2ClientId: String = System.getProperty("oauth2_client_id", "clientOIDC_0")
     val oauth2ClientPassword: String = System.getProperty("oauth2_client_pw", "password")
     val oauth2RedirectUri: String = System.getProperty("oauth2_redirect_uri", "http://fake.com")
     val getTokenInfo: String = System.getProperty("get_token_info", "False")
+    val scope: String = System.getProperty("am_oauth2_scope","profile")
 
     val realm: String = System.getProperty("realm", "/")
     val state = 1234
-    val scope = "cn"
+
     val tokenVarName = "token"
     val codeVarName = "authcode"
     var accessTokenVarName = "access_token"
 
-    val amUrl: String = "http://" + amHost + ":" + amPort
+    val amUrl: String = amProtocol + "://" + amHost + ":" + amPort
     val random = new util.Random
 
     val userFeeder: Iterator[Map[String, String]] = Iterator.continually(Map(
@@ -57,6 +58,7 @@ class AMAccessTokenSim extends Simulation {
     val accessTokenScenario: ScenarioBuilder = scenario("OAuth2 Auth code flow")
         .during(duration) {
             feed(userFeeder)
+            .exec(flushCookieJar)
             .exec(
                 http("Rest login stage")
                     .post("/json/authenticate")
@@ -78,7 +80,7 @@ class AMAccessTokenSim extends Simulation {
                     .formParam("decision", "Allow")
                     .formParam("csrf", "${%s}".format(tokenVarName))
                     .disableFollowRedirect
-                    .check(headerRegex("Location", """code=([^&\s]*)&?""")
+                    .check(headerRegex("Location", """(?<=code=)(.+?)(?=&)""")
                         .saveAs(codeVarName))
                     .check(status.is(302))
 

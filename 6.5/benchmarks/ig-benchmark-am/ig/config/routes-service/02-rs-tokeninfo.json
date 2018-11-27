@@ -38,7 +38,7 @@
           "status": 200,
           "entity": "<html><body><h2>Decoded access token with introspect endpoint: ${contexts.oauth2.accessToken.info}</h2></body></html>"
         }
-      }      
+      } 
     }
   }
 }

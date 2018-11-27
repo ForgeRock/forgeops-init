@@ -20,7 +20,7 @@ class IDMDeleteManagedUsers extends Simulation{
     val idmPort: String = System.getProperty("idm_port", "80")
     val idmProtocol: String = System.getProperty("idm_protocol", "http")
 
-    val idmUrl: String = "http://" + idmHost + ":" + idmPort
+    val idmUrl: String = idmProtocol + "://" + idmHost + ":" + idmPort
     val random = new util.Random
     val counter = new LongCounter
     def t: Integer = 0

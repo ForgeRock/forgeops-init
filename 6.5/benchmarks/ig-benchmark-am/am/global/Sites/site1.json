@@ -1,15 +1,14 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.5.0-M7",
+    "amsterVersion" : "&{version}",
     "entityType" : "Sites",
     "entityId" : "site1",
     "pathParams" : { }
   },
   "data" : {
     "_id" : "site1",
-    "id" : "02",
-    "url" : "https://openam.lee.forgeops.com/",
+    "url" : "https://&{fqdn}/openam",
     "secondaryURLs" : [ ]
   }
 }
