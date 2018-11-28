@@ -13,7 +13,7 @@ import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
-class IDMCreateManagedUsers extends Simulation {
+class IDMCreateManagedUsersPOST extends Simulation {
     val concurrency: Integer = Integer.getInteger("concurrency", 10)
     val warmup: Integer = Integer.getInteger("warmup", 10)
     val idmHost: String = System.getProperty("idm_host", "openidm.example.forgeops.com")
