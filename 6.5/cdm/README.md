@@ -23,6 +23,7 @@ the charts
 - OAuth 2.0 Server and Client
 - Separate userstore, configstore and ctsstore
 - LDAP Auth module default
+- To log into admin console use https://fqdn/XUI/?service=adminconsoleservice
 
 ### IDM Config (Bi-directional LDAP Sync With Internal Repository Sample)
 
