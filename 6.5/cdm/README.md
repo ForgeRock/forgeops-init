@@ -6,17 +6,17 @@ Use of this code requires a commercial software license with ForgeRock AS.
 or with one of its affiliates. All use shall be exclusively subject
 to such license between the licensee and ForgeRock AS.
 
-# m-cluster (CDM) Sample Config
+# CDM Sample Config
 
 ### What is in this config repository?
-AM and IDM config repos that get mounted under /git on each pod via
-the charts 
+- This config repo is needed for the charts under forgeops/samples/config/prod
+- These repos get mounted under /git on each pod via the corresponding forgeops helm charts
+- Refer to https://github.com/ForgeRock/forgeops/blob/master/samples/config/prod/README.md for further details
 
 ### Common Config
 - Prometheus endpoints exposed
 - Logging to stdout
-- Tuned for m-cluster
-
+- Tuned for performance such as Connection Pools and Product specific tunables
 
 ### AM Config
 - Single realm
@@ -25,13 +25,14 @@ the charts
 - LDAP Auth module default
 - To log into admin console use https://fqdn/XUI/?service=adminconsoleservice
 
-### IDM Config (Bi-directional LDAP Sync With Internal Repository Sample)
+### IDM Config
+- PostgreSQL as repo
+- Syncronization to LDAP (userstore)
+- This sample demonstrates bidirectional synchronization between an LDAP directory and an OpenIDM repository. For documentation relating to this sample, see https://backstage.forgerock.com/docs/idm/samples-guide/index.html#chap-sync-with-ldap-bidirectional
 
-This sample demonstrates bidirectional synchronization between an LDAP directory
-and an OpenIDM repository. For documentation relating to this sample, see
-https://ea.forgerock.com/docs/idm/samples-guide/index.html#chap-sync-with-ldap-bidirectional
 
-- Postgres as repo
-- Syncronization to LDAP
 
+### IG Config
+- Reverse Proxy
+- Resource Server
 
