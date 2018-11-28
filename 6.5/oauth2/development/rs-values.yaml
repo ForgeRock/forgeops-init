@@ -1,0 +1,21 @@
+  domain: .forgeops.com
+  service:
+    name: rs-service
+  resources:
+    requests:
+      memory: "128Mi"
+  component: rs
+  config:
+    strategy: files
+    path: /var/openig
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/enable-cors: "true"
+      nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+      nginx.ingress.kubernetes.io/cors-allow-methods: "PUT,GET,POST,HEAD,PATCH,DELETE"
+      nginx.ingress.kubernetes.io/cors-allow-headers: "authorization,x-requested-with,cache-control,content-type,x-openidm-nosession,x-openidm-password,x-openidm-username,if-match,if-none-match"
+      nginx.ingress.kubernetes.io/cors-allow-credentials: "false"
+      nginx.ingress.kubernetes.io/cors-max-age: "600"
+      nginx.ingress.kubernetes.io/configuration-snippet: |
+        more_set_headers "Access-Control-Expose-Headers: WWW-Authenticate";
