@@ -1,8 +1,0 @@
-  domain: .forgeops.com
-  platform:
-    idmProtectedByIg: true
-
-  certmanager:
-    acme: true
-    issuer: letsencrypt-prod
-    issuerKind: ClusterIssuer
