@@ -2,11 +2,11 @@ apiVersion: skaffold/v1alpha5
 kind: Config
 build:
   artifacts:
-  - image: forgerock-docker-public.bintray.io/forgerock/skaffold/oauth2/rs
+  - image: gcr.io/engineering-devops/skaffold/oauth2/rs
     context: ../rs
-  - image: forgerock-docker-public.bintray.io/forgerock/skaffold/oauth2/amster
+  - image: gcr.io/engineering-devops/skaffold/oauth2/amster
     context: ../amster
-  - image: forgerock-docker-public.bintray.io/forgerock/skaffold/oauth2/idm
+  - image: gcr.io/engineering-devops/skaffold/oauth2/idm
     context: ../idm
   tagPolicy:
     sha256: {}
@@ -17,48 +17,46 @@ deploy:
     releases:
     - name: sk-frconfig
       chartPath: helm/frconfig
-      valuesFiles:
-      - frconfig-values.yaml
-      namespace: sample
+      setValues:
+        domain: .forgeops.com
+        platform.idmProtectedByIg: true
+        certmanager.acme: false
+        certmanager.issuer: ca-issuer
+        certmanager.issuerKind: Issuer
 
     - name: sk-amster
       chartPath: helm/amster
       valuesFiles:
       - amster-values.yaml
       values:
-        image: forgerock-docker-public.bintray.io/forgerock/skaffold/oauth2/amster
+        image: gcr.io/engineering-devops/skaffold/oauth2/amster
       imageStrategy:
         helm: {}
-      namespace: sample
 
     - name: sk-rs
       chartPath: helm/openig
       valuesFiles:
       - rs-values.yaml
       values:
-        image: forgerock-docker-public.bintray.io/forgerock/skaffold/oauth2/rs
+        image: gcr.io/engineering-devops/skaffold/oauth2/rs
       imageStrategy:
         helm: {}
-      namespace: sample
 
     - name: sk-idm
       chartPath: helm/openidm
       valuesFiles:
       - idm-values.yaml
       values:
-        image: forgerock-docker-public.bintray.io/forgerock/skaffold/oauth2/idm
+        image: gcr.io/engineering-devops/skaffold/oauth2/idm
       imageStrategy:
         helm: {}
-      namespace: sample
 
     - name: sk-openam
       chartPath: helm/openam
       valuesFiles:
       - openam-values.yaml
-      namespace: sample
 
     - name: sk-configstore
       chartPath: helm/ds
       valuesFiles:
       - configstore-values.yaml
-      namespace: sample
