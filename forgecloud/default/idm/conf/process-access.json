@@ -4,14 +4,14 @@
             "propertiesCheck" : {
                 "property" : "_id",
                 "matches" : ".*",
-                "requiresRole" : "openidm-authorized"
+                "requiresRole" : "internal/role/openidm-authorized"
             }
         },
         {
             "propertiesCheck" : {
                 "property" : "_id",
                 "matches" : ".*",
-                "requiresRole" : "openidm-admin"
+                "requiresRole" : "internal/role/openidm-admin"
             }
         }
     ]

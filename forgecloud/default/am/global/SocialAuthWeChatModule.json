@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "SocialAuthWeChatModule",
     "entityId" : "SocialAuthWeChatModule",
     "pathParams" : { }
@@ -11,23 +11,18 @@
     "defaults" : {
       "core" : {
         "usesBasicAuth" : false,
-        "scopeDelimiter" : null,
         "tokenEndpoint" : "https://api.wechat.com/sns/oauth2/access_token",
         "subjectProperty" : "openid",
         "provider" : "WeChat",
         "scope" : [ "snsapi_login" ],
-        "ssoProxyUrl" : "http://openam:80/openam/oauth2c/OAuthProxy.jsp",
-        "clientSecret" : null,
+        "ssoProxyUrl" : "http://openam:80/oauth2c/OAuthProxy.jsp",
         "userInfoEndpoint" : "https://api.wechat.com/sns/userinfo",
-        "clientId" : null,
-        "authorizeEndpoint" : "https://open.weixin.qq.com/connect/qrconnect"
+        "authorizeEndpoint" : "https://open.weixin.qq.com/connect/qrconnect",
+        "authenticationLevel" : 0
       },
       "emailSettings" : {
-        "smtpFromAddress" : null,
         "emailGateway" : "org.forgerock.openam.authentication.modules.oauth2.DefaultEmailGatewayImpl",
-        "smtpSslEnabled" : null,
         "smtpPort" : "25",
-        "smtpPassword" : null,
         "smtpUsername" : "",
         "smtpHost" : "localhost",
         "emailAttribute" : ""
@@ -44,8 +39,7 @@
         "promptPasswordFlag" : false,
         "anonymousUserName" : "anonymous",
         "saveAttributesInSession" : true
-      },
-      "authenticationLevel" : 0
+      }
     },
     "_type" : {
       "_id" : "authSocialWeChat",

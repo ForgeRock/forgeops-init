@@ -125,29 +125,38 @@
     },
     "resourceMapping": {
         "defaultMapping": {
-            "dnTemplate": "ou=generic,o=userstore"
+            "dnTemplate": "ou=generic,dc=openidm,dc=example,dc=com"
         },
         "explicitMapping": {
             "internal/role": {
-                "dnTemplate": "ou=roles,ou=internal,o=idm",
+                "dnTemplate": "ou=roles,ou=internal,dc=openidm,dc=example,dc=com",
                 "objectClasses": [
                     "fr-idm-internal-role"
                 ],
                 "properties": {
                     "_id": {
-                        "type": "simple",
-                        "ldapAttribute": "cn",
-                        "isRequired": true,
-                        "writability": "createOnly"
+                      "type": "simple",
+                      "ldapAttribute": "cn",
+                      "isRequired": true,
+                      "writability": "createOnly"
+                    },
+                    "name": {
+                      "type": "simple",
+                      "ldapAttribute": "fr-idm-name"
                     },
                     "description": {
-                        "type": "simple",
-                        "ldapAttribute": "description"
+                      "type": "simple",
+                      "ldapAttribute": "description"
+                    },
+                    "temporalConstraints": {
+                      "type": "json",
+                      "ldapAttribute": "fr-idm-temporal-constraints",
+                      "isMultiValued": true
                     }
-                }
+                  }
             },
             "link": {
-                "dnTemplate": "ou=links,o=idm",
+                "dnTemplate": "ou=links,dc=openidm,dc=example,dc=com",
                 "objectClasses": [
                     "uidObject",
                     "fr-idm-link"
@@ -178,7 +187,7 @@
                 }
             },
             "clusteredrecontargetids": {
-                "dnTemplate": "ou=clusteredrecontargetids,o=idm",
+                "dnTemplate": "ou=clusteredrecontargetids,dc=openidm,dc=example,dc=com",
                 "objectClasses": [
                     "uidObject",
                     "fr-idm-recon-clusteredTargetIds"
@@ -201,7 +210,7 @@
                 }
             },
             "managed/user": {
-                "dnTemplate": "ou=People,o=userstore",
+                "dnTemplate": "ou=people,ou=identities",
                 "namingStrategy": {
                     "type": "serverNaming",
                     "dnAttribute": "uid",
@@ -215,7 +224,6 @@
                     "extensibleObject",
                     "iplanet-am-user-service",
                     "devicePrintProfilesContainer",
-                    "kbaInfoContainer",
                     "fr-idm-managed-user-explicit"
                 ],
                 "properties": {
@@ -239,7 +247,7 @@
                     },
                     "name" : {
                         "type": "json",
-                        "ldapAttribute": "fr-idm-name"
+                        "ldapAttribute": "fr-idm-name-object"
                     },
                     "emails":{
                         "type": "json",
@@ -411,7 +419,7 @@
                 }
             },
             "managed/teammember": {
-                "dnTemplate": "ou=admins,o=userstore",
+                "dnTemplate": "ou=admins,ou=identities",
                 "namingStrategy": {
                     "type": "serverNaming",
                     "dnAttribute": "uid",
@@ -460,16 +468,16 @@
         },
         "genericMapping": {
             "ui/*": {
-                "dnTemplate": "ou=ui,o=idm"
+                "dnTemplate": "ou=ui,dc=openidm,dc=example,dc=com"
             },
             "config": {
-                "dnTemplate": "ou=config,o=idm"
+                "dnTemplate": "ou=config,dc=openidm,dc=example,dc=com"
             },
             "managed/*": {
-                "dnTemplate": "ou=managed,o=userstore"
+                "dnTemplate": "ou=managed,ou=identities"
             },
             "managed/role": {
-                "dnTemplate": "ou=role,ou=managed,o=userstore",
+                "dnTemplate": "ou=role,ou=managed,ou=identities",
                 "objectClasses": [
                     "uidObject",
                     "fr-idm-managed-role"
@@ -478,13 +486,13 @@
                 "jsonQueryEqualityMatchingRule" : "caseIgnoreJsonQueryMatchManagedRole"
             },
             "scheduler": {
-                "dnTemplate": "ou=scheduler,o=idm"
+                "dnTemplate": "ou=scheduler,dc=openidm,dc=example,dc=com"
             },
             "scheduler/*": {
-                "dnTemplate": "ou=scheduler,o=idm"
+                "dnTemplate": "ou=scheduler,dc=openidm,dc=example,dc=com"
             },
             "cluster/*": {
-                "dnTemplate": "ou=cluster,o=idm",
+                "dnTemplate": "ou=cluster,dc=openidm,dc=example,dc=com",
                 "objectClasses": [
                     "uidObject",
                     "fr-idm-cluster-obj"
@@ -493,7 +501,7 @@
                 "jsonQueryEqualityMatchingRule" : "caseIgnoreJsonQueryMatchClusterObject"
             },
             "relationships": {
-                "dnTemplate": "ou=relationships,o=idm",
+                "dnTemplate": "ou=relationships,dc=openidm,dc=example,dc=com",
                 "objectClasses": [
                     "uidObject",
                     "fr-idm-relationship"
@@ -502,16 +510,16 @@
                 "jsonQueryEqualityMatchingRule" : "caseIgnoreJsonQueryMatchRelationship"
             },
             "updates": {
-                "dnTemplate": "ou=updates,o=idm"
+                "dnTemplate": "ou=updates,dc=openidm,dc=example,dc=com"
             },
             "reconprogressstate": {
-                "dnTemplate": "ou=reconprogressstate,o=idm"
+                "dnTemplate": "ou=reconprogressstate,dc=openidm,dc=example,dc=com"
             },
             "jsonstorage": {
-                "dnTemplate": "ou=jsonstorage,o=idm"
+                "dnTemplate": "ou=jsonstorage,dc=openidm,dc=example,dc=com"
             },
             "internal/usermeta" : {
-                "dnTemplate": "ou=usermeta,ou=internal,o=idm"
+                "dnTemplate": "ou=usermeta,ou=internal,dc=openidm,dc=example,dc=com"
             }
         }
     }

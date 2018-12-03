@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "SecurID",
     "entityId" : "SecurID",
     "pathParams" : { }
@@ -9,7 +9,7 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "serverConfigPath" : "/home/forgerock/openam/openam/auth/ace/data",
+      "serverConfigPath" : "/home/forgerock/openam/auth/ace/data",
       "authenticationLevel" : 0
     },
     "_type" : {

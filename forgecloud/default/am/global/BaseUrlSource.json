@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "BaseUrlSource",
     "entityId" : "BaseUrlSource",
     "pathParams" : { }
@@ -9,10 +9,8 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "contextPath" : "/openam",
-      "fixedValue" : null,
-      "source" : "REQUEST_VALUES",
-      "extensionClassName" : null
+      "contextPath" : "",
+      "source" : "REQUEST_VALUES"
     },
     "_type" : {
       "_id" : "baseurl",
