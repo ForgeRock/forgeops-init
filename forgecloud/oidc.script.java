@@ -83,12 +83,86 @@ defaultClaimResolver = { claim ->
  *
  * If no match is found an exception is thrown.
  */
-userProfileClaimResolver = { attribute, claim, identity ->
+
+nameResolver = { attribute, claim, identity ->
     userProfileValue = fromSet(claim.getName(), identity.getAttribute(attribute))
     if (userProfileValue != null && (claim.getValues() == null || claim.getValues().isEmpty() || claim.getValues().contains(userProfileValue))) { 
-        return [(claim.getName()): toJson(userProfileValue)]
+        def value = toJson(userProfileValue)
+        // @todo name including all name parts, possibly including titles and suffixes, ordered according to the End-User's locale and preferences.
+        if (value instanceof groovy.json.internal.LazyMap) {
+            if (value.givenName && value.familyName) {
+                return [
+                    "family_name": value.familyName,
+                    "given_name": value.givenName,
+                    "name": "$value.givenName $value.familyName".trim(),
+                ]
+            } else if (value.familyName) {
+                return [
+                    "family_name": value.familyName,
+                    "name": value.familyName,
+                ]
+            } else if (value.givenName) {
+                return [
+                    "given_name": value.givenName,
+                    "name": value.givenName,
+                ]
+            }
+            return [
+                "name": value,
+            ]
+        } else {
+            return [
+                "name": value,
+            ]
+        }
     }
     [:]
+}
+
+attributeResolver = { attribute, field, usePrimary, addVerified, claim, identity ->
+    name = claim.getName()
+    value = fromSet(name, identity.getAttribute(attribute))
+    if (value != null && (claim.getValues() == null || claim.getValues().isEmpty() || claim.getValues().contains(value))) { 
+        value = toJson(value)
+        if (usePrimary) {
+            value = getPrimaryOrFirst(value)
+        }
+        if (addVerified) {
+            return [
+                ("${name}_verified"): value.verified == true ? true : false,
+                (name): field ? value[field] : value,
+            ]
+        }
+        return [
+            (name): field ? value[field] : value,
+        ]
+    }
+    [:]
+}
+
+basicResolver = { attribute, claim, identity ->
+    name = claim.getName()
+    userProfileValue = fromSet(name, identity.getAttribute(attribute))
+    if (userProfileValue != null && (claim.getValues() == null || claim.getValues().isEmpty() || claim.getValues().contains(userProfileValue))) { 
+        def value = toJson(userProfileValue)
+        value = getPrimaryOrFirst(value)
+        return [(name): value]
+    }
+    [:]
+}
+
+getPrimaryOrFirst = { value ->
+    if (value instanceof java.util.ArrayList) {
+        // look for primary
+        for (item in value) {
+            if (item.primary) {
+                return item
+            }
+        }
+        // return first
+        return value[0]
+    }
+    return value
 }
 
 toJson = { value ->
@@ -197,36 +271,50 @@ parseLocaleAwareString = { s ->
  */
 // [ {claim}: {attribute retriever}, ... ]
 claimAttributes = [
-        "name": userProfileClaimResolver.curry("fr-idm-name"),
-        "nickname": userProfileClaimResolver.curry("fr-idm-nick-name"),
-        "title": userProfileClaimResolver.curry("fr-idm-title"),
-        "timezone": userProfileClaimResolver.curry("fr-idm-timezone"),
-        "userType": userProfileClaimResolver.curry("fr-idm-user-type"),
-        "locale": userProfileClaimResolver.curry("fr-idm-locale"),
-        "phone": userProfileClaimResolver.curry("fr-idm-phone-numbers"),
-        "addresses": userProfileClaimResolver.curry("fr-idm-addresses"),
-        "emails": userProfileClaimResolver.curry("fr-idm-emails"),
-
-        // "email": userProfileClaimResolver.curry("mail"),
-        // "address": { claim, identity -> [ "formatted" : userProfileClaimResolver("postaladdress", claim, identity) ] },
-        // "phone_number": userProfileClaimResolver.curry("telephonenumber"),
-        // "given_name": userProfileClaimResolver.curry("givenname"),
-        // "zoneinfo": userProfileClaimResolver.curry("preferredtimezone"),
-        // "family_name": userProfileClaimResolver.curry("sn"),
-        // "locale": userProfileClaimResolver.curry("preferredlocale")
+        "address": attributeResolver.curry("fr-idm-addresses", false, true, false),
+        "birthdate": basicResolver.curry("fr-idm-birthdate"),
+        "email": attributeResolver.curry("fr-idm-emails", "value", true, true),
+        "gender": basicResolver.curry("fr-idm-gender"),
+        "locale": basicResolver.curry("fr-idm-locale"),
+        "name": nameResolver.curry("fr-idm-name"),
+        "nickname": basicResolver.curry("fr-idm-nick-name"),
+        "phone": attributeResolver.curry("fr-idm-phone-numbers", "value", true, true),
+        "picture": attributeResolver.curry("fr-idm-photos", "value", true, false),
+        "preferred_username": basicResolver.curry("userName"),
+        "profile_url": basicResolver.curry("fr-idm-profile-url"),
+        "title": basicResolver.curry("fr-idm-title"),
+        "updated_at": basicResolver.curry("fr-idm-lastChanged"),
+        "username": basicResolver.curry("userName"),
+        "website": basicResolver.curry("fr-idm-website"),
+        "zoneinfo": basicResolver.curry("fr-idm-timezone"),
 ]
-
 
 // -------------- UPDATE THIS TO CHANGE SCOPE TO CLAIM MAPPINGS --------------
 /*
  * Map of scopes to claim objects.
  */
 // {scope}: [ {claim}, ... ]
+// https://trello.com/c/wHA3ebp1/1021-id-token-and-userinfo-endpoint-not-returning-all-user-data
 scopeClaimsMap = [
-        "email": [ "emails" ],
-        "address": [ "addresses" ],
+        "email": [ "email" ],
+        "address": [ "address" ],
         "phone": [ "phone" ],
-        "profile": [ "name", "name", "title", "timezone", "userType", "locale" ]
+        "profile": [ 
+            "birthdate",
+            "gender",
+            "locale",
+            "name", 
+            "nickname",
+            "picture",
+            "preferred_username",
+            "profile_url",
+            "title", 
+            "updated_at",
+            "username",
+            "website",
+            "zoneinfo", 
+            // "address",
+        ]
 ]
 
 // ---------------- UPDATE BELOW FOR ADVANCED USAGES -------------------
