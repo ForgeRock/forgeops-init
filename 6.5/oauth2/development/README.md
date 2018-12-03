@@ -18,15 +18,20 @@ GKE:
 
 Choose whichever option works best for you. Steps for setting up either are described below:
 
+## Initial Preparation
+
+Have the following installed locally:
+
+- Docker https://docs.docker.com/install/
+- kubectl https://kubernetes.io/docs/tasks/tools/install-kubectl/
+- Helm https://github.com/helm/helm#install
+- Skaffold https://github.com/GoogleContainerTools/skaffold#installation
+
+Clone the [forgeops](https://github.com/ForgeRock/forgeops/) git repository at the same level as this forgeops-init folder. So it should be available at ../../../../forgeops (relative to this folder). This is necessary for the "helm" symbolic link to map to the helm charts published in forgeops.
+
 ## Using Minikube
 
-Be sure you have the following installed locally:
-
- - Minikube https://kubernetes.io/docs/tasks/tools/install-minikube/
- - Docker https://docs.docker.com/install/
- - kubectl https://kubernetes.io/docs/tasks/tools/install-kubectl/
- - Helm https://github.com/helm/helm#install
- - Skaffold https://github.com/GoogleContainerTools/skaffold#installation
+Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 1. Prepare your minikube VM. This is only needed the first time the VM is created; if you restart your host or your VM, you do not need to repeat this step.
 
@@ -118,6 +123,8 @@ Be sure you have the following installed locally:
     You can use amadmin / password to login as the am admin.
     You can use user.0  / password to login as a basic end-user.
 
+    Review the [Access the running platform](../README.md#accessing-the-running-platform) section of the general project README for more details.
+
 9. You can now start a sample OAuth2 client from the [Example OAuth 2 Clients Project](https://github.com/ForgeRock/exampleOAuth2Clients).
 
 10. You can stop the sample any time by just hitting Ctrl^c to exit skaffold. It will automatically remove the running processes.
@@ -132,13 +139,7 @@ Be sure you have the following installed locally:
 
 ## Using GKE
 
-Be sure you have the following installed locally:
-
- - Google Cloud SDK https://cloud.google.com/sdk/install
- - kubectl https://kubernetes.io/docs/tasks/tools/install-kubectl/
- - Docker https://docs.docker.com/install/
- - Helm https://github.com/helm/helm#install
- - Skaffold https://github.com/GoogleContainerTools/skaffold#installation
+Install the Google Cloud SDK: https://cloud.google.com/sdk/install
 
 1. Login to the GKE dashboard at https://console.cloud.google.com/kubernetes and choose your project from the "Select a project" dialog. If you can't find your project there, talk to your system administrator about setting one up for you to use.
 
@@ -153,7 +154,7 @@ Be sure you have the following installed locally:
     Run this command in your terminal - this will setup kubectl for your use. Afterward, set your kubectl context to use your own namespace (named from your currently-logged-in name):
 
     ```
-    kubectl config set-context my-context --cluster=`kubectl config current-context` --user=`kubectl config current-context` --namespace=`whoami`
+    kubectl config set-context my-context --cluster=`kubectl config current-context` --user=`kubectl config current-context` --namespace=`whoami| sed -e "s/\./_/"`
     kubectl config use-context my-context
     ```
 
@@ -223,6 +224,8 @@ Be sure you have the following installed locally:
 
     You can use amadmin / password to login as the am admin.
     You can use user.0  / password to login as a basic end-user.
+
+    Review the [Access the running platform](../README.md#accessing-the-running-platform) section of the general project README for more details.
 
 9. You can now start a sample OAuth2 client from the [Example OAuth 2 Clients Project](https://github.com/ForgeRock/exampleOAuth2Clients). Be sure to adjust the URLs within each client to match your running instance.
 
