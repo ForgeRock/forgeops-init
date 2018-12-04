@@ -14,7 +14,7 @@ class IGAccessTokenSim extends Simulation {
   val igHost: String = System.getProperty("ig_host", "openig.prod.perf.forgerock-qa.com")
   val igPort: String = System.getProperty("ig_port", "443")
   val igProtocol: String = System.getProperty("ig_protocol", "https")
-  val getTokenInfo: String = System.getProperty("get_token_info", "False")
+    
   val igUrl: String = igProtocol + "://" + igHost + ":" + igPort
   val random = new util.Random
   
