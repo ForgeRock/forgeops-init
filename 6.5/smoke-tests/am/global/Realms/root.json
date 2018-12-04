@@ -11,10 +11,6 @@
     "parentPath" : null,
     "active" : true,
     "name" : "/",
-<<<<<<< HEAD
     "aliases" : [ "&{fqdn}", "data", "openam", "openam.&{namespace}.svc.cluster.local"]
-=======
-    "aliases" : [ "&{fqdn}", "data", "openam", "login.&{namespace}.svc.cluster.local"]
->>>>>>> IG smoke-tests config based on m-cluster one
   }
 }
