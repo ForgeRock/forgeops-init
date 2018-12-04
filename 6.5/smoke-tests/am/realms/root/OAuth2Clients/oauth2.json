@@ -30,7 +30,10 @@
       "clientJwtPublicKey" : null
     },
     "advancedOAuth2ClientConfig" : {
-      "grantTypes" : [ "authorization_code" ],
+      "grantTypes" : [ 
+        "authorization_code",
+        "password" 
+      ],
       "updateAccessToken" : null,
       "requestUris" : [ ],
       "clientUri" : [ ],
