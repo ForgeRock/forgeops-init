@@ -18,9 +18,10 @@ class IGGenerateTokens extends Simulation {
   val amHost: String = System.getProperty("am_host", "login.prod.perf.forgerock-qa.com")
   val amPort: String = System.getProperty("am_port", "443")
   val amProtocol: String = System.getProperty("am_protocol", "https")
+  
   val oauth2ClientId: String = System.getProperty("oauth2_client_id", "client-application")
   val oauth2ClientPassword: String = System.getProperty("oauth2_client_pw", "password")
-  val getTokenInfo: String = System.getProperty("get_token_info", "False")
+  
   val realm: String = System.getProperty("realm", "/")
   val scope: String = System.getProperty("scope", "mail employeenumber")
   val tokenVarName = "token"
@@ -28,6 +29,7 @@ class IGGenerateTokens extends Simulation {
   
   val amUrl: String = amProtocol + "://" + amHost + ":" + amPort
   val random = new util.Random
+  
   val header = "tokens"
   val csvFile = "tokens.csv"
   
