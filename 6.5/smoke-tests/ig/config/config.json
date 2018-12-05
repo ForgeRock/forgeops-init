@@ -1,17 +1,31 @@
 {
   "handler": {
-    "name": "_router",
-    "type": "Router",
+    "type": "DispatchHandler",
     "config": {
-      "defaultHandler": {
-        "config": {
-          "entity": "Message from ConfigJson.MyMainRouter.defaultHandler",
-          "reason": "found",
-          "status": 200
+      "bindings": [
+        {
+          "condition": "${request.uri.host == env['MY_POD_IP']}",
+          "handler": {
+            "name": "router-pod",
+            "type": "Router",
+            "config": {
+              "scanInterval": "disabled",
+              "directory": "${openig.configDirectory}/routes-pod"
+            }
+          }
         },
-        "type": "StaticResponseHandler"
-      },
-      "scanInterval": 1
+        {
+          "condition": "${request.uri.host != env['MY_POD_IP']}",
+          "handler": {
+            "name": "router-service",
+            "type": "Router",
+            "config": {
+              "scanInterval": "disabled",
+              "directory": "${openig.configDirectory}/routes-service"
+            }
+          }
+        }
+      ]
     }
   },
   "heap": [
@@ -20,35 +34,30 @@
       "type": "JwtSession"
     },
     {
-      "name": "MyCapture",
-      "type": "CaptureDecorator",
+      "name": "AmService-1",
+      "type": "AmService",
       "config": {
-        "type": "Slf4jLogSink",
-        "captureEntity": true,
-        "captureExchange": true,
-        "logSink": {
-          "config": {
-            "base": "org.forgerock.openig"
+          "url": "http://openam.&{namespace}.svc.cluster.local",
+          "realm": "/",
+          "agent": {
+              "username": "ig-agent",
+              "password": "password"
+          },
+          "sessionCache": {
+              "enabled": true
           }
-        }
       }
     },
-    {
-      "name": "CommonClientHandler",
+  {
+      "name": "ForgeRockClientHandler",
       "type": "ClientHandler",
       "config": {
-        "_keyManager": null,
-        "_trustManager": null,
-        "connectionTimeout": "10 seconds",
-        "connections": 64,
-        "disableRetries": true,
-        "disableReuseConnection": true,
-        "hostnameVerifier": "ALLOW_ALL",
-        "numberOfWorkers": 4,
-        "soTimeout": "10 seconds"
-      }
-    }
+          "trustManager": {
+              "type": "TrustAllManager"
+            }
+      },
+      "_capture": "all"
+  }
   ],
   "monitor": true
 }
-

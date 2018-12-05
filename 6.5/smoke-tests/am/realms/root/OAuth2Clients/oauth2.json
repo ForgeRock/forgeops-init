@@ -30,7 +30,10 @@
       "clientJwtPublicKey" : null
     },
     "advancedOAuth2ClientConfig" : {
-      "grantTypes" : [ "authorization_code" ],
+      "grantTypes" : [ 
+        "authorization_code",
+        "password" 
+      ],
       "updateAccessToken" : null,
       "requestUris" : [ ],
       "clientUri" : [ ],
@@ -63,7 +66,7 @@
       "defaultScopes" : [ "cn", "profile" ],
       "clientName" : [ ],
       "clientType" : "Confidential",
-      "scopes" : [ "cn", "name", "profile", "mail" ],
+      "scopes" : [ "cn", "name", "profile", "mail", "employeenumber" ],
       "agentgroup" : null,
       "refreshTokenLifetime" : 0,
       "redirectionUris" : [ "http://fake.com" ],

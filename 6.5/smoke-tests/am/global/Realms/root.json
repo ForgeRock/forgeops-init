@@ -11,6 +11,6 @@
     "parentPath" : null,
     "active" : true,
     "name" : "/",
-    "aliases" : [ "am-config", "openam", "&{fqdn}" ]
+    "aliases" : [ "&{fqdn}", "data", "openam", "openam.&{namespace}.svc.cluster.local"]
   }
 }
