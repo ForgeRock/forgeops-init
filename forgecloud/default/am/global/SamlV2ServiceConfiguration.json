@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "SamlV2ServiceConfiguration",
     "entityId" : "SamlV2ServiceConfiguration",
     "pathParams" : { }
@@ -23,7 +23,7 @@
     "xmlEncryptionClass" : "com.sun.identity.saml2.xmlenc.FMEncProvider",
     "defaults" : {
       "metadataSigningKeyPass" : null,
-      "metadataSigningKeyPass-encrypted" : "AAAAA0FFUwIQk6Cync+x8jJT/wQOfkKzVbMXxzIMMO7kDU4DGXWxbMJD89ZFmPhbjg==",
+      "metadataSigningKeyPass-encrypted" : "AAAAA0FFUwIQL6KVP15DG4PyQ5XHEvaNvN/dbsqzngfkgOt7FE4kXohVTDALyWZg9w==",
       "metadataSigningKey" : "test"
     },
     "_type" : {

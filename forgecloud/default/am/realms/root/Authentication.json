@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "Authentication",
     "entityId" : "Authentication",
     "pathParams" : { }
@@ -10,14 +10,10 @@
     "_id" : "",
     "accountlockout" : {
       "lockoutDuration" : 0,
-      "lockoutEmailAddress" : null,
       "loginFailureLockoutMode" : false,
       "lockoutDurationMultiplier" : 1,
       "lockoutWarnUserCount" : 0,
-      "lockoutAttributeValue" : null,
-      "lockoutAttributeName" : null,
       "loginFailureCount" : 5,
-      "invalidAttemptsDataAttributeName" : null,
       "loginFailureDuration" : 300,
       "storeInvalidAttemptsInDataStore" : true
     },
@@ -38,7 +34,7 @@
       "moduleBasedAuthEnabled" : true,
       "zeroPageLoginAllowedWithoutReferrer" : true,
       "sharedSecret" : null,
-      "sharedSecret-encrypted" : "AAAAA0FFUwIQHlU6+vYg8Xf1khnPgFJsAWuJ/q9ZEQo3ekuQVyhKCDOxTYaBs417ZzkNK1HedC4d2G4Zsq9il+5ghIDIoKnIlgdrx7lBXBvD",
+      "sharedSecret-encrypted" : "AAAAA0FFUwIQSfQr7XOWAf1Iefx3Uj9RuwZ8PIhpvE4FT0qoaG2IGpeSMibi+MR4L6BpXKqQkSOqxVRnJylh4X7c52lDuTzjo2+uOnnx6AlT",
       "keyAlias" : "test",
       "zeroPageLoginEnabled" : false,
       "zeroPageLoginReferrerWhiteList" : [ ]
@@ -49,7 +45,7 @@
       "userAttributeSessionMapping" : [ ],
       "loginPostProcessClass" : [ ],
       "usernameGeneratorEnabled" : true,
-      "loginSuccessUrl" : [ "/openam/console" ]
+      "loginSuccessUrl" : [ "/console" ]
     },
     "core" : {
       "orgConfig" : "ldapService",

@@ -1,11 +1,11 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "CtsDataStoreProperties",
-    "entityId" : "http://openam:80/openam",
+    "entityId" : "http://openam:80",
     "pathParams" : {
-      "serverName" : "http://openam:80/openam"
+      "serverName" : "http://openam:80"
     }
   },
   "data" : {
@@ -13,41 +13,49 @@
     "amconfig.org.forgerock.services.cts.store.common.section" : {
       "org.forgerock.services.cts.store.location" : {
         "value" : "external",
-        "inherited" : true
+        "inherited" : false
       },
       "org.forgerock.services.cts.store.root.suffix" : {
-        "value" : "ou=famrecords,ou=openam-session,ou=tokens,o=cts",
-        "inherited" : true
+        "value" : "ou=tokens",
+        "inherited" : false
       },
       "org.forgerock.services.cts.store.max.connections" : {
-        "value" : "10",
+        "value" : "66",
+        "inherited" : false
+      },
+      "org.forgerock.services.cts.store.page.size" : {
+        "value" : "0",
+        "inherited" : true
+      },
+      "org.forgerock.services.cts.store.vlv.page.size" : {
+        "value" : "1000",
         "inherited" : true
       }
     },
     "amconfig.org.forgerock.services.cts.store.external.section" : {
       "org.forgerock.services.cts.store.ssl.enabled" : {
-        "value" : false,
+        "value" : "",
         "inherited" : true
       },
       "org.forgerock.services.cts.store.directory.name" : {
         "value" : "ctsstore-0.ctsstore:1389",
-        "inherited" : true
+        "inherited" : false
       },
       "org.forgerock.services.cts.store.loginid" : {
-        "value" : "cn=Directory Manager",
-        "inherited" : true
+        "value" : "cn=Directory manager",
+        "inherited" : false
       },
       "org.forgerock.services.cts.store.password" : {
         "value" : null,
-        "inherited" : true
+        "inherited" : false
       },
-      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQ8QIspnz8ylVKUkLHAeHqat5JwKuS4XpzdMZfMRcxH7r2BeHYH9GbNg==",
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQh8DTqw2Hewien4NbruKjpWz46EaB5bRSB0sGEQ8oA6kJmVuGklgr2g==",
       "org.forgerock.services.cts.store.heartbeat" : {
         "value" : "10",
-        "inherited" : true
+        "inherited" : false
       },
       "org.forgerock.services.cts.store.affinity.enabled" : {
-        "value" : false,
+        "value" : null,
         "inherited" : true
       }
     }

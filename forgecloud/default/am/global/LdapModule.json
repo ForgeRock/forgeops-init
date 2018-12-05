@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "LdapModule",
     "entityId" : "LdapModule",
     "pathParams" : { }
@@ -9,9 +9,7 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "userSearchFilter" : null,
       "authenticationLevel" : 0,
-      "userBindPassword" : null,
       "searchScope" : "SUBTREE",
       "returnUserDN" : true,
       "profileAttributeMappings" : [ ],
@@ -25,7 +23,7 @@
       "openam-auth-ldap-connection-mode" : "LDAP",
       "connectionHeartbeatInterval" : 10,
       "secondaryLdapServer" : [ ],
-      "userSearchStartDN" : [ "o=userstore" ],
+      "userSearchStartDN" : [ "ou=identities" ],
       "trustAllServerCertificates" : false,
       "operationTimeout" : 0
     },
