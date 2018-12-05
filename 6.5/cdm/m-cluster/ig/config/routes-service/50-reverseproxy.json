@@ -1,3 +1,4 @@
+
 {
   "baseURI" : "http://&{namespace}-web:80",
   "handler" : {
