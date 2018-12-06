@@ -285,7 +285,8 @@
                     "preferredLanguage",
                     "locale",
                     "timezone",
-                    "accountStatus",
+                    "active",
+                    "lockTime",
                     "kbaInfo",
                     "customAttributes",
                     "preferences",
@@ -754,17 +755,17 @@
                         "usageDescription" : "",
                         "isPersonal" : false
                     },
-                    "accountStatus" : {
-                        "title" : "Status",
-                        "description" : "Status",
+                    "active" : {
+                        "title" : "Active",
+                        "description" : "Active",
                         "viewable" : true,
-                        "type" : "string",
+                        "type" : "boolean",
                         "searchable" : true,
                         "userEditable" : false,
-                        "usageDescription" : "Whether the account is locked (true/false)",
+                        "usageDescription" : "Whether the account is locked",
                         "isPersonal" : false
                     },
-                    "accountLockTime": {
+                    "lockTime": {
                       "title" : "Lock Time",
                       "description" : "Lock Time",
                       "viewable" : true,

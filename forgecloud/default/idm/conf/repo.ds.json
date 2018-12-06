@@ -304,11 +304,11 @@
                         "isMultiValued": true,
                         "ldapAttribute": "iplanet-am-user-alias-list"
                     },
-                    "accountStatus": {
+                    "active": {
                         "type": "simple",
                         "ldapAttribute": "ds-pwp-account-disabled"
                     },
-                    "accountLockTime": {
+                    "lockTime": {
                         "type": "simple",
                         "ldapAttribute": "pwdAccountLockedTime"
                     },
