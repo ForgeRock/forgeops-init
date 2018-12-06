@@ -21,7 +21,7 @@
     "employeeNumber" : null,
     "postalAddress" : null,
     "iplanet-am-user-success-url" : null,
-    "inetUserStatus" : "Active",
+    "ds-pwp-account-disabled" : false,
     "sn" : "anonymous",
     "iplanet-am-user-failure-url" : null,
     "_type" : {
