@@ -285,7 +285,7 @@
                     "preferredLanguage",
                     "locale",
                     "timezone",
-                    "accountStatus",
+                    "accountStatus2",
                     "kbaInfo",
                     "customAttributes",
                     "preferences",
@@ -754,7 +754,7 @@
                         "usageDescription" : "",
                         "isPersonal" : false
                     },
-                    "accountStatus" : {
+                    "accountStatus2" : {
                         "title" : "Status Test",
                         "description" : "Status Test2",
                         "viewable" : true,

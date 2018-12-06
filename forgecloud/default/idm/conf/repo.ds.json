@@ -304,7 +304,7 @@
                         "isMultiValued": true,
                         "ldapAttribute": "iplanet-am-user-alias-list"
                     },
-                    "accountStatus": {
+                    "accountStatus2": {
                         "type": "simple",
                         "ldapAttribute": "fr-idm-accountStatus"
                     },
