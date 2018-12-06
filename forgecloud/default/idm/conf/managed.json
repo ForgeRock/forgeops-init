@@ -755,8 +755,8 @@
                         "isPersonal" : false
                     },
                     "accountStatus" : {
-                        "title" : "Status",
-                        "description" : "Status",
+                        "title" : "Status Test",
+                        "description" : "Status Test2",
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true,
