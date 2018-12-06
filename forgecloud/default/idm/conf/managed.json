@@ -285,7 +285,7 @@
                     "preferredLanguage",
                     "locale",
                     "timezone",
-                    "accountStatus2",
+                    "accountStatus",
                     "kbaInfo",
                     "customAttributes",
                     "preferences",
@@ -625,7 +625,7 @@
                         "isVirtual" : true,
                         "onStore" : {
                             "type" : "text/javascript",
-                            "source" : "object.cn || (object.givenName + ' ' + object.sn)"
+                            "source" : "object.cn || (object.name.givenName + ' ' + object.name.familyName)"
                         }
                     },
                     "displayName": {
@@ -754,15 +754,25 @@
                         "usageDescription" : "",
                         "isPersonal" : false
                     },
-                    "accountStatus2" : {
-                        "title" : "Status Test",
-                        "description" : "Status Test2",
+                    "accountStatus" : {
+                        "title" : "Status",
+                        "description" : "Status",
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true,
                         "userEditable" : false,
-                        "usageDescription" : "",
+                        "usageDescription" : "Whether the account is locked (true/false)",
                         "isPersonal" : false
+                    },
+                    "accountLockTime": {
+                      "title" : "Lock Time",
+                      "description" : "Lock Time",
+                      "viewable" : true,
+                      "type" : "string",
+                      "searchable" : true,
+                      "userEditable" : false,
+                      "usageDescription" : "When the user account was last locked",
+                      "isPersonal" : false
                     },
                     "externalId": {
                         "description": "originating SCIM system ID",
