@@ -267,7 +267,7 @@
             },
             "onUpdate" : {
               "type" : "text/javascript",
-              "source" : "switch (object.accountStatus) { case 'Active': object.lockTime = ''; object.isDisabled = false; break; case 'Deactivated': object.isDisabled = true; break; }"
+              "source" : "object.givenName = object.accountStatus; switch (object.accountStatus) { case 'Active': object.lockTime = ''; /*object.isDisabled = false;*/ break; case 'Deactivated': object.isDisabled = true; break; }"
             },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
