@@ -285,7 +285,7 @@
                     "preferredLanguage",
                     "locale",
                     "timezone",
-                    "active",
+                    "accountStatus",
                     "lockTime",
                     "kbaInfo",
                     "customAttributes",
@@ -678,7 +678,6 @@
                         "userEditable" : true,
                         "type" : "string"
                     },
-                    
                     "organizationName" : {
                         "title" : "Organization Name",
                         "description" : "Organization Name",
@@ -755,25 +754,43 @@
                         "usageDescription" : "",
                         "isPersonal" : false
                     },
-                    "active" : {
-                        "title" : "Active",
-                        "description" : "Active",
+                    "accountStatus" : {
+                        "title" : "Status",
+                        "description" : "Status",
                         "viewable" : true,
-                        "type" : "boolean",
+                        "type" : "string",
                         "searchable" : true,
+                        "userEditable" : false,
+                        "usageDescription" : "Account status",
+                        "isPersonal" : false,
+                        "onRetrieve": {
+                          "type": "text/javascript",
+                          "source": "object.lockTime ? 'Locked' : (object.isDisabled ? 'Deactivated' : 'Active')"
+                        },
+                        "onStore" : {
+                          "type" : "text/javascript",
+                          "source" : "switch (object.accountStatus) { case 'Active': object.lockTime = ''; object.isDisabled = false; break; case 'Deactivated': object.isDisabled = true; break; }"
+                        }
+                    },
+                    "isDisabled" : {
+                        "title" : "isDisabled",
+                        "description" : "isDisabled",
+                        "viewable" : false,
+                        "type" : "boolean",
+                        "searchable" : false,
                         "userEditable" : false,
                         "usageDescription" : "Whether the account is locked",
                         "isPersonal" : false
                     },
                     "lockTime": {
-                      "title" : "Lock Time",
-                      "description" : "Lock Time",
-                      "viewable" : true,
-                      "type" : "string",
-                      "searchable" : true,
-                      "userEditable" : false,
-                      "usageDescription" : "When the user account was last locked",
-                      "isPersonal" : false
+                        "title" : "Lock Time",
+                        "description" : "Lock Time",
+                        "viewable" : true,
+                        "type" : "string",
+                        "searchable" : false,
+                        "userEditable" : false,
+                        "usageDescription" : "When the user account was last locked",
+                        "isPersonal" : false
                     },
                     "externalId": {
                         "description": "originating SCIM system ID",

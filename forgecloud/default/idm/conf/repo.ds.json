@@ -304,7 +304,7 @@
                         "isMultiValued": true,
                         "ldapAttribute": "iplanet-am-user-alias-list"
                     },
-                    "active": {
+                    "isDisabled": {
                         "type": "simple",
                         "ldapAttribute": "ds-pwp-account-disabled"
                     },
