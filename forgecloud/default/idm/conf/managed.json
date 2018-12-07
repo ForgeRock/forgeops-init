@@ -760,7 +760,7 @@
                         "viewable" : true,
                         "type" : "string",
                         "searchable" : true,
-                        "userEditable" : false,
+                        "userEditable" : true,
                         "usageDescription" : "Account status",
                         "isPersonal" : false,
                         "onRetrieve": {
@@ -777,6 +777,7 @@
                         "description" : "isDisabled",
                         "viewable" : false,
                         "type" : "boolean",
+                        "returnByDefault" : false,
                         "searchable" : false,
                         "userEditable" : false,
                         "usageDescription" : "Whether the account is locked",
@@ -785,8 +786,9 @@
                     "lockTime": {
                         "title" : "Lock Time",
                         "description" : "Lock Time",
-                        "viewable" : true,
+                        "viewable" : false,
                         "type" : "string",
+                        "returnByDefault" : false,
                         "searchable" : false,
                         "userEditable" : false,
                         "usageDescription" : "When the user account was last locked",
