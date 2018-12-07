@@ -267,7 +267,7 @@
             },
             "onUpdate" : {
               "type" : "text/javascript",
-              "source" : "var s = object.accountStatus; if (oldObject.accountStatus !== 'Locked' && s === 'Locked') { throw new Error('Manual locking is not supported.'); } else if (s !== 'Locked') { object.isDisabled = (s !== 'Active'); }"
+              "source" : "var s = object.accountStatus; delete object.accountStatus; if (oldObject.accountStatus !== 'Locked' && s === 'Locked') { throw new Error('Manual locking is not supported.'); } else if (s !== 'Locked') { object.isDisabled = (s !== 'Active'); }"
             },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
@@ -758,22 +758,22 @@
                         "usageDescription" : "",
                         "isPersonal" : false
                     },
-                    "accountStatus" : {
-                        "description" : "Status",
-                        "isPersonal" : false,
-                        "isVirtual" : true,
-                        "returnByDefault": true,
-                        "searchable" : true,
-                        "title" : "Status",
-                        "type" : "string",
-                        "usageDescription" : "Account status",
-                        "userEditable" : true,
-                        "viewable" : true,
-                        "onRetrieve": {
-                          "type": "text/javascript",
-                          "source": "object.isDisabled ? 'Deactivated' : (object.lockTime ? 'Locked' : 'Active')"
-                        }
-                    },
+"accountStatus" : {
+    "description" : "Status",
+    "isPersonal" : false,
+    "isVirtual" : true,
+    "returnByDefault": true,
+    "searchable" : true,
+    "title" : "Status",
+    "type" : "string",
+    "usageDescription" : "Account status",
+    "userEditable" : true,
+    "viewable" : true,
+    "onRetrieve": {
+      "type": "text/javascript",
+      "source": "object.isDisabled ? 'Deactivated' : (object.lockTime ? 'Locked' : 'Active')"
+    }
+},
                     "isDisabled" : {
                         "description" : "Whether the account is deactivated",
                         "isPersonal" : false,
