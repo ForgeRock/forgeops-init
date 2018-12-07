@@ -265,9 +265,13 @@
                     }
                 }
             },
+            "onStore": {
+              "type": "text/javascript",
+              "source": "delete object.accountStatus"
+            },
             "onUpdate" : {
               "type" : "text/javascript",
-              "source" : "var s = object.accountStatus; if (oldObject.accountStatus !== 'Locked' && s === 'Locked') { throw new Error('Manual locking is not supported.'); } else if (s !== 'Locked') { object.isDisabled = (s !== 'Active'); }"
+              "source" : "var s = newObject.accountStatus; if (oldObject.accountStatus !== 'Locked' && s === 'Locked') { throw new Error('Manual locking is not supported.'); } else if (s !== 'Locked') { object.isDisabled = (s !== 'Active'); };"
             },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
@@ -279,6 +283,7 @@
                     "_id",
                     "userName",
                     "password",
+                    "accountStatus",
                     "name",
                     "emails",
                     "displayName",
@@ -289,7 +294,6 @@
                     "preferredLanguage",
                     "locale",
                     "timezone",
-                    "accountStatus",
                     "lockTime",
                     "kbaInfo",
                     "customAttributes",
@@ -761,7 +765,7 @@
                     "accountStatus" : {
                         "description" : "Status",
                         "isPersonal" : false,
-                        "isVirtual" : false,
+                        "isVirtual" : true,
                         "returnByDefault": true,
                         "searchable" : true,
                         "title" : "Status",
