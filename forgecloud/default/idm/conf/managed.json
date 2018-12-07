@@ -267,7 +267,7 @@
             },
             "onUpdate" : {
               "type" : "text/javascript",
-              "source" : "object.givenName = object.accountStatus; switch (object.accountStatus) { case 'Active': object.lockTime = ''; /*object.isDisabled = false;*/ break; case 'Deactivated': object.isDisabled = true; break; }"
+              "source" : "var s = object.accountStatus; if (oldObject.accountStatus !== 'Locked' && s === 'Locked') { throw new Error('Manual locking is not supported.'); } else if (s !== 'Locked') { object.isDisabled = (s !== 'Active'); }"
             },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
@@ -303,7 +303,7 @@
                     "addresses",
                     "phoneNumbers",
                     "externalId"
-               ],
+                ],
                 "properties" : {
                     "mail": {
                          "title": "Email Address",
@@ -759,17 +759,19 @@
                         "isPersonal" : false
                     },
                     "accountStatus" : {
-                        "title" : "Status",
                         "description" : "Status",
-                        "viewable" : true,
-                        "type" : "string",
-                        "searchable" : true,
-                        "userEditable" : true,
-                        "usageDescription" : "Account status",
                         "isPersonal" : false,
+                        "isVirtual" : true,
+                        "returnByDefault": false,
+                        "searchable" : true,
+                        "title" : "Status",
+                        "type" : "string",
+                        "usageDescription" : "Account status",
+                        "userEditable" : true,
+                        "viewable" : true,
                         "onRetrieve": {
                           "type": "text/javascript",
-                          "source": "object.lockTime ? 'Locked' : (object.isDisabled ? 'Deactivated' : 'Active')"
+                          "source": "object.isDisabled ? 'Deactivated' : (object.lockTime ? 'Locked' : 'Active')"
                         }
                     },
                     "isDisabled" : {
