@@ -267,7 +267,7 @@
             },
             "onUpdate" : {
               "type" : "text/javascript",
-              "source" : "var s = object.accountStatus; if (oldObject.accountStatus !== 'Locked' && s === 'Locked') { throw new Error('Manual locking is not supported.'); } else if (s !== 'Locked') { object.isDisabled = (s !== 'Active'); }"
+              "source" : "var s = object.accountStatus; if (!oldObject.lockTime !== 'Locked' && s === 'Locked') { throw new Error('Manual locking is not supported.'); } else if (s !== 'Locked') { object.isDisabled = (s !== 'Active'); }"
             },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
@@ -761,7 +761,7 @@
                     "accountStatus" : {
                         "description" : "Status",
                         "isPersonal" : false,
-                        "isVirtual" : true,
+                        "isVirtual" : false,
                         "returnByDefault": true,
                         "searchable" : true,
                         "title" : "Status",
