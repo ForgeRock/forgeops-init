@@ -762,7 +762,7 @@
                         "description" : "Status",
                         "isPersonal" : false,
                         "isVirtual" : true,
-                        "returnByDefault": false,
+                        "returnByDefault": true,
                         "searchable" : true,
                         "title" : "Status",
                         "type" : "string",
@@ -775,26 +775,26 @@
                         }
                     },
                     "isDisabled" : {
-                        "title" : "isDisabled",
-                        "description" : "isDisabled",
-                        "viewable" : false,
-                        "type" : "boolean",
+                        "description" : "Whether the account is deactivated",
+                        "isPersonal" : false,
                         "returnByDefault" : false,
                         "searchable" : false,
+                        "title" : "Deactivated",
+                        "type" : "boolean",
+                        "usageDescription" : "Whether the account is deactivated",
                         "userEditable" : false,
-                        "usageDescription" : "Whether the account is locked",
-                        "isPersonal" : false
+                        "viewable" : false
                     },
                     "lockTime": {
-                        "title" : "Lock Time",
                         "description" : "Lock Time",
-                        "viewable" : false,
-                        "type" : "string",
+                        "isPersonal" : false,
                         "returnByDefault" : false,
                         "searchable" : false,
-                        "userEditable" : false,
+                        "title" : "Lock Time",
+                        "type" : "string",
                         "usageDescription" : "When the user account was last locked",
-                        "isPersonal" : false
+                        "userEditable" : false,
+                        "viewable" : false
                     },
                     "externalId": {
                         "description": "originating SCIM system ID",
