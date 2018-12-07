@@ -271,11 +271,7 @@
             },
             "onStore": {
               "type": "text/javascript",
-              "source": "delete object.accountStatus"
-            },
-            "onUpdate" : {
-              "type" : "text/javascript",
-              "source" : "var s = newObject.accountStatus; if (oldObject.accountStatus !== 'Locked' && s === 'Locked') { throw new Error('Manual locking is not supported.'); } else if (s !== 'Locked') { object.isDisabled = (s !== 'Active'); };"
+              "source": "object.isDisabled = object.accountStatus === 'Deactivated'; delete object.accountStatus;"
             },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
