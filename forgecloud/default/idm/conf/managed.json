@@ -265,6 +265,10 @@
                     }
                 }
             },
+            "onUpdate" : {
+              "type" : "text/javascript",
+              "source" : "switch (object.accountStatus) { case 'Active': object.lockTime = ''; object.isDisabled = false; break; case 'Deactivated': object.isDisabled = true; break; }"
+            },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
                 "title" : "User",
@@ -766,10 +770,6 @@
                         "onRetrieve": {
                           "type": "text/javascript",
                           "source": "object.lockTime ? 'Locked' : (object.isDisabled ? 'Deactivated' : 'Active')"
-                        },
-                        "onStore" : {
-                          "type" : "text/javascript",
-                          "source" : "switch (object.accountStatus) { case 'Active': object.lockTime = ''; object.isDisabled = false; break; case 'Deactivated': object.isDisabled = true; break; }"
                         }
                     },
                     "isDisabled" : {
