@@ -265,6 +265,10 @@
                     }
                 }
             },
+            "onRetrieve": {
+              "type": "text/javascript",
+              "source": "object.accountStatus = object.isDisabled ? 'Deactivated' : (object.lockTime ? 'Locked' : 'Active')"
+            },
             "onStore": {
               "type": "text/javascript",
               "source": "delete object.accountStatus"
@@ -772,11 +776,7 @@
                         "type" : "string",
                         "usageDescription" : "Account status",
                         "userEditable" : true,
-                        "viewable" : true,
-                        "onRetrieve": {
-                          "type": "text/javascript",
-                          "source": "object.isDisabled ? 'Deactivated' : (object.lockTime ? 'Locked' : 'Active')"
-                        }
+                        "viewable" : true
                     },
                     "isDisabled" : {
                         "description" : "Whether the account is deactivated",
