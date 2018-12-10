@@ -312,9 +312,13 @@
                         "isMultiValued": true,
                         "ldapAttribute": "iplanet-am-user-alias-list"
                     },
-                    "accountStatus": {
+                    "isDisabled": {
                         "type": "simple",
-                        "ldapAttribute": "fr-idm-accountStatus"
+                        "ldapAttribute": "ds-pwp-account-disabled"
+                    },
+                    "lockTime": {
+                        "type": "simple",
+                        "ldapAttribute": "pwdAccountLockedTime"
                     },
                     "externalId": {
                         "type": "simple",
