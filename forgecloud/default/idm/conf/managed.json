@@ -269,18 +269,14 @@
                     }
                 }
             },
-            "onCreate" : {
-                "type" : "text/javascript",
-                "source" : "require('onCreateUser').setDefaultFields(object);require('onCreateUser').emailUser(object);"
+            "onRetrieve": {
+              "type": "text/javascript",
+              "source": "object.accountStatus = (object.isDisabled == 'true') ? 'Deactivated' : (object.lockTime ? 'Locked' : 'Active')"
             },
-            "onUpdate" : {
-                "type" : "text/javascript",
-                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);"
+            "onStore": {
+              "type": "text/javascript",
+              "source": "object.isDisabled = object.accountStatus === 'Deactivated'; delete object.accountStatus;"
             },
-            "postDelete" : {
-                "type" : "text/javascript",
-                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);require('postDelete-notification-cleanup').removeConnectedNotificationData(oldObject, resourceName, request);"
-            },            
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
                 "title" : "User",
@@ -291,6 +287,7 @@
                     "_id",
                     "userName",
                     "password",
+                    "accountStatus",
                     "name",
                     "emails",
                     "displayName",
@@ -301,7 +298,7 @@
                     "preferredLanguage",
                     "locale",
                     "timezone",
-                    "accountStatus",
+                    "lockTime",
                     "kbaInfo",
                     "customAttributes",
                     "preferences",
@@ -314,7 +311,7 @@
                     "addresses",
                     "phoneNumbers",
                     "externalId"
-               ],
+                ],
                 "properties" : {
                     "mail": {
                          "title": "Email Address",
@@ -641,7 +638,7 @@
                         "isVirtual" : true,
                         "onStore" : {
                             "type" : "text/javascript",
-                            "source" : "object.cn || (object.givenName + ' ' + object.sn)"
+                            "source" : "object.cn || (object.name.givenName + ' ' + object.name.familyName)"
                         }
                     },
                     "displayName": {
@@ -693,7 +690,6 @@
                         "userEditable" : true,
                         "type" : "string"
                     },
-                    
                     "organizationName" : {
                         "title" : "Organization Name",
                         "description" : "Organization Name",
@@ -771,14 +767,38 @@
                         "isPersonal" : false
                     },
                     "accountStatus" : {
-                        "title" : "Status",
                         "description" : "Status",
-                        "viewable" : true,
-                        "type" : "string",
+                        "isPersonal" : false,
+                        "isVirtual" : true,
+                        "returnByDefault": true,
                         "searchable" : true,
+                        "title" : "Status",
+                        "type" : "string",
+                        "usageDescription" : "Account status",
+                        "userEditable" : true,
+                        "viewable" : true
+                    },
+                    "isDisabled" : {
+                        "description" : "Whether the account is deactivated",
+                        "isPersonal" : false,
+                        "returnByDefault" : false,
+                        "searchable" : false,
+                        "title" : "Deactivated",
+                        "type" : "boolean",
+                        "usageDescription" : "Whether the account is deactivated",
                         "userEditable" : false,
-                        "usageDescription" : "",
-                        "isPersonal" : false
+                        "viewable" : false
+                    },
+                    "lockTime": {
+                        "description" : "Lock Time",
+                        "isPersonal" : false,
+                        "returnByDefault" : false,
+                        "searchable" : false,
+                        "title" : "Lock Time",
+                        "type" : "string",
+                        "usageDescription" : "When the user account was last locked",
+                        "userEditable" : false,
+                        "viewable" : false
                     },
                     "externalId": {
                         "description": "originating SCIM system ID",

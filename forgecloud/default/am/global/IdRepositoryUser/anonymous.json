@@ -14,7 +14,10 @@
     "roles" : [ ],
     "dn" : "uid=anonymous,ou=people,",
     "cn" : "anonymous",
-    "inetUserStatus" : "Active",
+    "employeeNumber" : null,
+    "postalAddress" : null,
+    "iplanet-am-user-success-url" : null,
+    "ds-pwp-account-disabled" : false,
     "sn" : "anonymous",
     "iplanet-am-user-auth-config" : "[Empty]",
     "_type" : {
