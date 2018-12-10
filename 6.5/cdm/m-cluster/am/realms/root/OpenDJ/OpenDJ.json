@@ -3,11 +3,11 @@
     "realm" : "/",
     "amsterVersion" : "&{version}",
     "entityType" : "OpenDJ",
-    "entityId" : "embedded",
+    "entityId" : "OpenDJ",
     "pathParams" : { }
   },
   "data" : {
-    "_id" : "embedded",
+    "_id" : "OpenDJ",
     "groupconfig" : {
       "sun-idrepo-ldapv3-config-groups-search-attribute" : "cn",
       "sun-idrepo-ldapv3-config-group-container-value" : "groups",
