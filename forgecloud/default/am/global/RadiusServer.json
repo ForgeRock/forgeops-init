@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "RadiusServer",
     "entityId" : "RadiusServer",
     "pathParams" : { }

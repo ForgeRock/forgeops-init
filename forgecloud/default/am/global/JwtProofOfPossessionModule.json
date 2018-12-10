@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "JwtProofOfPossessionModule",
     "entityId" : "JwtProofOfPossessionModule",
     "pathParams" : { }
@@ -9,12 +9,10 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "subjectJwkSetAttr" : null,
       "responseEncryptionMethod" : "ECDHE",
       "responseEncryptionCipher" : "A128GCM",
       "enableTlsSessionBinding" : true,
-      "authenticationLevel" : 0,
-      "challengeSigningKey" : null
+      "authenticationLevel" : 0
     },
     "_type" : {
       "_id" : "authJwtPoP",

@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "Applications",
     "entityId" : "iPlanetAMWebAgentService",
     "pathParams" : { }
@@ -12,18 +12,18 @@
     "description" : "The built-in Application used by OpenAM Policy Agents.",
     "resourceTypeUuids" : [ "76656a38-5f8e-401b-83aa-4ccb74ce88d2" ],
     "attributeNames" : [ ],
-    "createdBy" : "id=dsameuser,ou=user,o=userstore",
-    "lastModifiedDate" : 1533566454079,
-    "creationDate" : 1533566454079,
-    "lastModifiedBy" : "id=dsameuser,ou=user,o=userstore",
-    "entitlementCombiner" : "DenyOverride",
+    "createdBy" : "id=dsameuser,ou=user,ou=am-config",
+    "conditions" : [ "LEAuthLevel", "Script", "AuthenticateToService", "SimpleTime", "AMIdentityMembership", "OR", "IPv6", "IPv4", "SessionProperty", "AuthScheme", "AuthLevel", "NOT", "Transaction", "AuthenticateToRealm", "AND", "ResourceEnvIP", "LDAPFilter", "OAuth2Scope", "Session" ],
+    "resourceComparator" : null,
+    "lastModifiedDate" : 1541588382640,
+    "lastModifiedBy" : "id=dsameuser,ou=user,ou=am-config",
+    "creationDate" : 1541588382640,
     "subjects" : [ "NOT", "OR", "JwtClaim", "AuthenticatedUsers", "AND", "Identity", "NONE" ],
-    "applicationType" : "iPlanetAMWebAgentService",
     "saveIndex" : null,
     "searchIndex" : null,
-    "resourceComparator" : null,
+    "entitlementCombiner" : "DenyOverride",
     "editable" : true,
-    "conditions" : [ "LEAuthLevel", "Script", "AuthenticateToService", "SimpleTime", "AMIdentityMembership", "OR", "IPv6", "IPv4", "SessionProperty", "AuthScheme", "AuthLevel", "NOT", "Transaction", "AuthenticateToRealm", "AND", "ResourceEnvIP", "LDAPFilter", "OAuth2Scope", "Session" ],
+    "applicationType" : "iPlanetAMWebAgentService",
     "name" : "iPlanetAMWebAgentService"
   }
 }

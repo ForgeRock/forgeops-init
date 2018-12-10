@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "User",
     "entityId" : "User",
     "pathParams" : { }
@@ -9,9 +9,7 @@
   "data" : {
     "_id" : "",
     "dynamic" : {
-      "defaultUserStatus" : "Active",
-      "preferredTimezone" : null,
-      "adminDNStartingView" : null
+      "defaultUserStatus" : "Active"
     },
     "_type" : {
       "_id" : "user",

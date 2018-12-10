@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "CommonFederationConfiguration",
     "entityId" : "CommonFederationConfiguration",
     "pathParams" : { }
@@ -25,12 +25,12 @@
     },
     "algorithms" : {
       "transformationAlgorithm" : "http://www.w3.org/2001/10/xml-exc-c14n#",
-      "QuerySignatureAlgorithmRSA" : "http://www.w3.org/2000/09/xmldsig#rsa-sha1",
-      "signatureAlgorithm" : "http://www.w3.org/2000/09/xmldsig#rsa-sha1",
+      "QuerySignatureAlgorithmRSA" : "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256",
+      "signatureAlgorithm" : "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256",
       "QuerySignatureAlgorithmEC" : "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512",
       "canonicalizationAlgorithm" : "http://www.w3.org/2001/10/xml-exc-c14n#",
-      "QuerySignatureAlgorithmDSA" : "http://www.w3.org/2000/09/xmldsig#dsa-sha1",
-      "DigestAlgorithm" : "http://www.w3.org/2000/09/xmldsig#sha1"
+      "QuerySignatureAlgorithmDSA" : "http://www.w3.org/2009/xmldsig11#dsa-sha256",
+      "DigestAlgorithm" : "http://www.w3.org/2001/04/xmlenc#sha256"
     },
     "montoring" : {
       "monitoringAgentClass" : "com.sun.identity.plugin.monitoring.impl.AgentProvider",
