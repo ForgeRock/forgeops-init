@@ -1,14 +1,13 @@
-{
-  "metadata" : {
-    "realm" : null,
-    "amsterVersion" : "6.0.0",
-    "entityType" : "IdRepositoryUser",
-    "entityId" : "amAdmin",
-    "pathParams" : { }
-  },
-  "data" : {
-    "_id" : "amAdmin",
-    "sunIdentityMSISDNNumber" : null,
+ {
+   "metadata" : {
+     "realm" : null,
+    "amsterVersion" : "&{version}",
+     "entityType" : "IdRepositoryUser",
+     "entityId" : "amAdmin",
+     "pathParams" : { }
+   },
+   "data" : {
+     "_id" : "amAdmin",
     "userPassword" : "&{amadmin.password.hashed}",
     "telephoneNumber" : null,
     "mail" : null,

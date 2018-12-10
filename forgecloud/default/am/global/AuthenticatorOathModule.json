@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "AuthenticatorOathModule",
     "entityId" : "AuthenticatorOathModule",
     "pathParams" : { }
@@ -9,7 +9,6 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "oathIssuerName" : null,
       "totpTimeStepsInWindow" : 2,
       "authenticationLevel" : 0,
       "passwordLength" : "6",

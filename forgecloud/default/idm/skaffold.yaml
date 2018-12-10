@@ -1,0 +1,31 @@
+apiVersion: skaffold/v1alpha5
+kind: Config
+build:
+  artifacts:
+  - image: forgerock/sk-idm
+  tagPolicy:
+    sha256: {}
+deploy:
+  helm:
+    releases:
+    - name: sk-idm
+      chartPath: /Users/warren.strange/tmp/forgeops/helm/openidm
+      values:
+        image: forgerock/sk-idm
+      setValues:
+        config.path: /opt/openidm/p
+        config.strategy: docker
+        domain: .example.com
+        skaffold: "true"
+      imageStrategy:
+        helm: {}
+    - name: sk-postgres
+      chartPath: /Users/warren.strange/tmp/forgeops/helm/postgres-openidm
+    #   setValues:
+    #         domain: ".example.com"
+    - name: sk-userstore
+      # See https://github.com/GoogleContainerTools/skaffold/issues/1071
+      chartPath: ../../../../forgeops/helm/ds
+      # chartPath: /Users/warren.strange/tmp/forgeops/helm/ds
+      setValues:
+        instance: userstore

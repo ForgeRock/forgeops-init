@@ -4,3 +4,4 @@ stack-config.iml
 logs/
 .bak
 .vscode/
+.DS_Store

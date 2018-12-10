@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.0.0",
+    "amsterVersion" : "&{version}",
     "entityType" : "HotpModule",
     "entityId" : "HOTP",
     "pathParams" : { }
@@ -24,7 +24,7 @@
     "userProfileTelephoneAttribute" : "telephoneNumber",
     "smtpFromAddress" : "no-reply@openam.org",
     "smtpUserPassword" : null,
-    "smtpUserPassword-encrypted" : "AAAAA0FFUwIQbTw75mW+MwKOb0bNw2c8y217nkkNM8couoeuGFiAnfXfIMGMHGUfpA==",
+    "smtpUserPassword-encrypted" : "AAAAA0FFUwIQcyefKhnpdoWFRyhtEfS01mkGS2EP7d12Y/+EoU7SxBIfhzpgk3HdCw==",
     "_type" : {
       "_id" : "hotp",
       "name" : "HOTP",
