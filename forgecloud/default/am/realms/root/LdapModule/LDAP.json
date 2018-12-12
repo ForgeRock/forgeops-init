@@ -24,7 +24,7 @@
     "openam-auth-ldap-connection-mode" : "LDAP",
     "connectionHeartbeatInterval" : 10,
     "secondaryLdapServer" : [ ],
-    "userSearchStartDN" : [ "ou=am-config" ],
+    "userSearchStartDN" : [ "ou=identities" ],
     "trustAllServerCertificates" : false,
     "operationTimeout" : 0,
     "_type" : {
