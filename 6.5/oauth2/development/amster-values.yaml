@@ -1,6 +1,4 @@
   domain: .forgeops.com
-  configStore:
-    suffix:  "ou=identities"
   resources:
     requests:
       memory: "64Mi"

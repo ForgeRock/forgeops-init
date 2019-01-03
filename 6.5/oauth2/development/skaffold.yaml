@@ -53,8 +53,8 @@ deploy:
 
     - name: sk-openam
       chartPath: helm/openam
-      valuesFiles:
-      - openam-values.yaml
+      setValues:
+        domain: .forgeops.com
 
     - name: sk-configstore
       chartPath: helm/ds
