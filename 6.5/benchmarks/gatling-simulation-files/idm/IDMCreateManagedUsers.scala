@@ -57,10 +57,11 @@ class IDMCreateManagedUsers extends Simulation {
         during(duration) {
             feed(userFeeder)
                 .exec(
-                    http("Create managed user via POST")
-                        .post(idmUrl + "/openidm/managed/user?_action=create")
+                    http("Create managed user via PUT")
+                        .put(idmUrl + "/openidm/managed/user/testuser${id}")
                         .body(StringBody(getGeneratedUser("${id}"))).asJSON
                         .headers(getXIDMHeaders("openidm-admin", "openidm-admin"))
+                        .header("if-none-match", "*")
                 )
         }
 

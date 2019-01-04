@@ -14,6 +14,7 @@
             "for-userName" : "SELECT obj.objectid, obj.rev, obj.fullobject::text FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON objtype.id = obj.objecttypes_id WHERE  json_extract_path_text(fullobject, 'userName') = ${uid} AND objtype.objecttype = ${_resource}",
 
             "query-cluster-failed-instances" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'timestamp') <= ${timestamp} AND json_extract_path_text(fullobject, 'state') IN ('1','2')",
+            "query-cluster-running-instances" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'state' AND json_extract_path_text(fullobject, 'state') = '1'",
             "query-cluster-instances" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'state'",
             "query-cluster-events" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'event' AND json_extract_path_text(fullobject, 'instanceId') = ${instanceId}",
 
@@ -47,45 +48,29 @@
     },
     "resourceMapping" : {
         "default" : {
-            "mainTable" : "genericobjects",
-            "propertiesTable" : "genericobjectproperties",
-            "searchableDefault" : true
+            "mainTable" : "genericobjects"
         },
         "genericMapping" : {
             "managed/*" : {
-                "mainTable" : "managedobjects",
-                "propertiesTable" : "managedobjectproperties",
-                "searchableDefault" : true
+                "mainTable" : "managedobjects"
             },
             "managed/user" : {
-                "mainTable" : "managedobjects",
-                "propertiesTable" : "managedobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "managedobjects"
             },
             "scheduler" : {
-                "mainTable" : "schedulerobjects",
-                "propertiesTable" : "schedulerobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "schedulerobjects"
             },
             "scheduler/*" : {
-                "mainTable" : "schedulerobjects",
-                "propertiesTable" : "schedulerobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "schedulerobjects"
             },
             "cluster" : {
-                "mainTable" : "clusterobjects",
-                "propertiesTable" : "clusterobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "clusterobjects"
             },
             "config" : {
-                "mainTable" : "configobjects",
-                "propertiesTable" : "configobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "configobjects"
             },
             "relationships" : {
                 "mainTable" : "relationships",
-                "propertiesTable" : "relationshipproperties",
-                "searchableDefault" : false,
                 "objectToColumn": {
                     "firstResourceCollection" : "firstresourcecollection",
                     "firstResourceId" : "firstresourceid",
@@ -97,50 +82,19 @@
                 }
             },
             "updates" : {
-                "mainTable" : "updateobjects",
-                "propertiesTable" : "updateobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "updateobjects"
             },
             "reconprogressstate" : {
-                "mainTable" : "genericobjects",
-                "propertiesTable" : "genericobjectproperties",
-                "searchableDefault" : false,
-                "properties" : {
-                    "/reconId" : {
-                        "searchable" : true
-                    },
-                    "/startTime" : {
-                        "searchable" : true
-                    }
-                }
+                "mainTable" : "genericobjects"
             },
             "jsonstorage" : {
-                "mainTable" : "genericobjects",
-                "propertiesTable" : "genericobjectproperties",
-                "searchableDefault" : false,
-                "properties" : {
-                    "/timestamp" : {
-                        "searchable" : true
-                    }
-                }
+                "mainTable" : "genericobjects"
             },
             "internal/usermeta" : {
-                "mainTable" : "genericobjects",
-                "propertiesTable" : "genericobjectproperties",
-                "searchableDefault" : false
+                "mainTable" : "genericobjects"
             },
             "internal/notification" : {
-                "mainTable" : "notificationobjects",
-                "propertiesTable" : "notificationobjectproperties",
-                "searchableDefault" : false,
-                "properties" : {
-                    "/createDate" : {
-                        "searchable" : true
-                    },
-                    "/notificationType" : {
-                        "searchable" : true
-                    }
-                }
+                "mainTable" : "notificationobjects"
             }
         },
         "explicitMapping" : {
@@ -184,7 +138,8 @@
                     "_rev" : "rev",
                     "name" : "name",
                     "description" : "description",
-                    "temporalConstraints" : { "column" : "temporalConstraints", "type" : "JSON_LIST" }
+                    "temporalConstraints" : { "column" : "temporalConstraints", "type" : "JSON_LIST" },
+                    "condition" : "condition"
                 }
             },
             "internal/privilege" : {
@@ -354,7 +309,7 @@
                 "objectToColumn" : {
                     "_id" : "objectid",
                     "_rev" : "rev",
-                    "nodeId" : "nodeId"
+                    "nodeId" : "nodeid"
                 }
             },
             "sync/queue" : {
@@ -374,6 +329,14 @@
                     "nodeId" : "nodeId",
                     "remainingRetries" : {"column" : "remainingRetries", "type" : "NUMBER"},
                     "createDate" : "createDate"
+                }
+            },
+            "file" : {
+                "table" : "files",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : "rev",
+                    "content" : "content"
                 }
             }
         }

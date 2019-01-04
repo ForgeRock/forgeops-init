@@ -1,25 +1,23 @@
-apiVersion: skaffold/v1alpha2
+apiVersion: skaffold/v1alpha5
 kind: Config
 build:
+  artifacts:
+  - image: forgerock/igtest
   tagPolicy:
     sha256: {}
-  artifacts:
-  - imageName: gcr.io/engineering-devops/igtest
-    # docker:
-    #   buildArgs:
-    #     FOO: "bar"
 deploy:
-  # See https://github.com/GoogleContainerTools/skaffold/issues/360
   helm:
     releases:
+    - name: sk-frconfig
+      chartPath: ../helm/frconfig
+      setValues:
+        domain: .example.com
     - name: ig-test
       chartPath: ../helm/openig
+      values:
+        image: forgerock/igtest
+      setValues:
+        config.path: /git
+        config.strategy: docker
       imageStrategy:
         helm: {}
-      values:
-        image: gcr.io/engineering-devops/igtest
-      # Current skaffold bug - needs to have a values path
-      valuesFilePath: skaffold-values.yaml
-      setValues:
-        config.strategy: "docker"
-        config.path: "/git"

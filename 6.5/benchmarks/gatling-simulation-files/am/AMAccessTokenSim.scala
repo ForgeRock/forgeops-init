@@ -15,27 +15,28 @@ import io.gatling.http.protocol.HttpProtocolBuilder
 
 class AMAccessTokenSim extends Simulation {
 
-    val userPoolSize: Integer = Integer.getInteger("users", 3)
-    val concurrency: Integer = Integer.getInteger("concurrency", 10)
-    val duration: Integer = Integer.getInteger("duration", 60)
+    val userPoolSize: Integer = Integer.getInteger("users", 10)
+    val concurrency: Integer = Integer.getInteger("concurrency", 1)
+    val duration: Integer = Integer.getInteger("duration", 30)
     val warmup: Integer = Integer.getInteger("warmup", 1)
-    val amHost: String = System.getProperty("am_host", "openam.example.forgeops.com")
+    val amHost: String = System.getProperty("am_host", "login.example.domain.com")
     val amPort: String = System.getProperty("am_port", "80")
     val amProtocol: String = System.getProperty("am_protocol", "http")
 
-    val oauth2ClientId: String = System.getProperty("oauth2_client_id", "oauth2")
+    val oauth2ClientId: String = System.getProperty("oauth2_client_id", "clientOIDC_0")
     val oauth2ClientPassword: String = System.getProperty("oauth2_client_pw", "password")
     val oauth2RedirectUri: String = System.getProperty("oauth2_redirect_uri", "http://fake.com")
     val getTokenInfo: String = System.getProperty("get_token_info", "False")
+    val scope: String = System.getProperty("am_oauth2_scope","profile")
 
     val realm: String = System.getProperty("realm", "/")
     val state = 1234
-    val scope = "cn"
+
     val tokenVarName = "token"
     val codeVarName = "authcode"
     var accessTokenVarName = "access_token"
 
-    val amUrl: String = "http://" + amHost + ":" + amPort
+    val amUrl: String = amProtocol + "://" + amHost + ":" + amPort
     val random = new util.Random
 
     val userFeeder: Iterator[Map[String, String]] = Iterator.continually(Map(
@@ -57,9 +58,10 @@ class AMAccessTokenSim extends Simulation {
     val accessTokenScenario: ScenarioBuilder = scenario("OAuth2 Auth code flow")
         .during(duration) {
             feed(userFeeder)
+            .exec(flushCookieJar)
             .exec(
                 http("Rest login stage")
-                    .post("/openam/json/authenticate")
+                    .post("/json/authenticate")
                     .disableUrlEncoding
                     .header("Content-Type", "application/json")
                     .headers(getXOpenAMHeaders("${username}", "${password}"))
@@ -68,7 +70,7 @@ class AMAccessTokenSim extends Simulation {
                 addCookie(Cookie("iPlanetDirectoryPro", _.get(tokenVarName).as[String]))
             ).exec(
                 http("Authorize stage")
-                    .post("/openam/oauth2/authorize")
+                    .post("/oauth2/authorize")
                     .queryParam("client_id", oauth2ClientId)
                     .queryParam("scope", scope)
                     .queryParam("state", state)
@@ -78,13 +80,13 @@ class AMAccessTokenSim extends Simulation {
                     .formParam("decision", "Allow")
                     .formParam("csrf", "${%s}".format(tokenVarName))
                     .disableFollowRedirect
-                    .check(headerRegex("Location", """code=([^&\s]*)&?""")
+                    .check(headerRegex("Location", """(?<=code=)(.+?)(?=&)""")
                         .saveAs(codeVarName))
                     .check(status.is(302))
 
             ).exec(
                 http("AccessToken stage")
-                  .post("/openam/oauth2/access_token")
+                  .post("/oauth2/access_token")
                   .queryParam("realm", realm)
                   .formParam("grant_type", "authorization_code")
                   .formParam("code", _.get(codeVarName).as[String])
@@ -94,7 +96,7 @@ class AMAccessTokenSim extends Simulation {
             ).doIf(getTokenInfo.toLowerCase.equals("true")) {
                 exec(
                     http("IdTokenInfo stage")
-                    .get("/openam/oauth2/tokeninfo")
+                    .get("/oauth2/tokeninfo")
                     .queryParam("access_token", _.get(accessTokenVarName).as[String])
                     .check(jsonPath("$.access_token").exists)
                 )

@@ -11,21 +11,20 @@
         "principal" : "cn=Directory Manager",
         "credentials" : "&{userstore.password}",
         "baseContexts" : [
-            "ou=people,&{userstore.basecontext}"
+            "&{userstore.basecontext}"
+        ],
+        "baseContextsToSynchronize" : [
+            "&{userstore.basecontext}"
         ],
         "accountSearchFilter" : null,
         "accountSynchronizationFilter" : null,
         "groupSearchFilter" : null,
         "groupSynchronizationFilter" : null,
-        "passwordAttributeToSynchronize" : null,
-        "synchronizePasswords" : false,
         "removeLogEntryObjectClassFromFilter" : true,
         "modifiersNamesToFilterOut" : [ ],
-        "passwordDecryptionKey" : null,
         "changeLogBlockSize" : 100,
         "attributesToSynchronize" : [ ],
         "changeNumberAttribute" : "changeNumber",
-        "passwordDecryptionInitializationVector" : null,
         "filterWithOrInsteadOfAnd" : false,
         "objectClassesToSynchronize" : [
             "inetOrgPerson"
@@ -51,10 +50,7 @@
         "blockSize" : 100,
         "uidAttribute" : "entryUUID",
         "maintainLdapGroupMembership" : false,
-        "respectResourcePasswordPolicyChangeAfterReset" : false,
-        "baseContextsToSynchronize" : [
-            "ou=people,&{userstore.basecontext}"
-        ]
+        "respectResourcePasswordPolicyChangeAfterReset" : false
     },
     "resultsHandlerConfig" : {
         "enableNormalizingResultsHandler" : true,
@@ -98,9 +94,7 @@
                     "type" : "string",
                     "nativeName" : "__NAME__",
                     "nativeType" : "string",
-                    "required" : false,
-                    "flags" : [ ],
-                    "runAsUser" : false
+                    "required" : true
                 },
                 "objectClass" : {
                     "type" : "array",
@@ -301,6 +295,5 @@
             "denied" : false,
             "onDeny" : "DO_NOTHING"
         }
-    },
-    "enabled" : true
+    }
 }

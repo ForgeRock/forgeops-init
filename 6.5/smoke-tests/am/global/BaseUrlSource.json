@@ -9,7 +9,7 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "contextPath" : "/openam",
+      "contextPath" : "",
       "source" : "REQUEST_VALUES"
     },
     "_type" : {

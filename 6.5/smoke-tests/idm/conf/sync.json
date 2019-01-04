@@ -10,6 +10,10 @@
                     "target" : "displayName"
                 },
                 {
+                    "source" : "description",
+                    "target" : "description"
+                },
+                {
                     "source" : "givenName",
                     "target" : "givenName"
                 },
@@ -28,10 +32,6 @@
                 {
                     "source" : "uid",
                     "target" : "userName"
-                },
-                {
-                    "source" : "inetuserstatus",
-                    "target" : "accountStatus"
                 }
             ],
             "policies" : [
@@ -77,7 +77,7 @@
             "onCreate" : {
                 "type" : "text/javascript",
                 "globals" : { },
-                "source" : "target.dn = 'uid=' + source.userName + ',ou=people,&{userstore.basecontext}';"
+                "source" : "target.dn = 'uid=' + source.userName + ',&{userstore.basecontext}';"
             },
             "properties" : [
                 {
@@ -99,6 +99,14 @@
                 {
                     "source" : "userName",
                     "target" : "uid"
+                },
+                {
+                    "source" : "description",
+                    "target" : "description",
+                    "condition" : {
+                        "type" : "text/javascript",
+                        "source" : "!!object.description"
+                    }
                 },
                 {
                     "source" : "mail",
@@ -127,56 +135,36 @@
             ],
             "policies" : [
                 {
-                    "action" : "IGNORE",
-                    "situation" : "AMBIGUOUS"
+                    "situation" : "CONFIRMED",
+                    "action" : "UPDATE"
                 },
                 {
-                    "action" : "DELETE",
-                    "situation" : "SOURCE_MISSING"
+                    "situation" : "FOUND",
+                    "action" : "LINK"
                 },
                 {
-                    "action" : "CREATE",
-                    "situation" : "MISSING"
+                    "situation" : "ABSENT",
+                    "action" : "CREATE"
                 },
                 {
-                    "action" : "EXCEPTION",
-                    "situation" : "FOUND_ALREADY_LINKED"
+                    "situation" : "AMBIGUOUS",
+                    "action" : "IGNORE"
                 },
                 {
-                    "action" : "IGNORE",
-                    "situation" : "UNQUALIFIED"
+                    "situation" : "MISSING",
+                    "action" : "IGNORE"
                 },
                 {
-                    "action" : "IGNORE",
-                    "situation" : "UNASSIGNED"
+                    "situation" : "SOURCE_MISSING",
+                    "action" : "DELETE"
                 },
                 {
-                    "action" : "EXCEPTION",
-                    "situation" : "LINK_ONLY"
+                    "situation" : "UNQUALIFIED",
+                    "action" : "IGNORE"
                 },
                 {
-                    "action" : "IGNORE",
-                    "situation" : "TARGET_IGNORED"
-                },
-                {
-                    "action" : "IGNORE",
-                    "situation" : "SOURCE_IGNORED"
-                },
-                {
-                    "action" : "IGNORE",
-                    "situation" : "ALL_GONE"
-                },
-                {
-                    "action" : "UPDATE",
-                    "situation" : "CONFIRMED"
-                },
-                {
-                    "action" : "LINK",
-                    "situation" : "FOUND"
-                },
-                {
-                    "action" : "CREATE",
-                    "situation" : "ABSENT"
+                    "situation" : "UNASSIGNED",
+                    "action" : "IGNORE"
                 }
             ]
         }

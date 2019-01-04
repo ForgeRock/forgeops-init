@@ -41,7 +41,7 @@
         "moduleBasedAuthEnabled" : true,
         "zeroPageLoginAllowedWithoutReferrer" : true,
         "sharedSecret" : null,
-        "sharedSecret-encrypted" : "AAAAA0FFUwIQdBdfGfWJMoU0Ea37NA0uGE/AWXENW9/vTRiaMSbMtgF8WOMsHd5yZHPDS5gaBSfBTWksqWtZi52ZmWq2v2m0AzU7rF0pDbu5",
+        "sharedSecret-encrypted" : "AAAAA0FFUwIQHIPL/0+NesYjhUVZ2AGJ6/WVeNwUu/AWoM6Ul8Sap9ARE0yNUCeTPbKw5Yq4/9AZazoAvGZD6hQnuKxmHtzyHtcIt66qs10Z",
         "keyAlias" : "test",
         "zeroPageLoginEnabled" : false,
         "zeroPageLoginReferrerWhiteList" : [ ]
@@ -52,7 +52,7 @@
         "userAttributeSessionMapping" : [ ],
         "loginPostProcessClass" : [ ],
         "usernameGeneratorEnabled" : true,
-        "loginSuccessUrl" : [ "/openam/console" ]
+        "loginSuccessUrl" : [ "/console" ]
       },
       "core" : {
         "orgConfig" : "[Empty]",

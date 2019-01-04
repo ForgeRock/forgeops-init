@@ -19,11 +19,11 @@ class AMRestAuthNSim extends Simulation {
     val concurrency: Integer = Integer.getInteger("concurrency", 10)
     val duration: Integer = Integer.getInteger("duration", 60)
     val warmup: Integer = Integer.getInteger("warmup", 1)
-    val amHost: String = System.getProperty("am_host", "openam.example.forgeops.com")
+    val amHost: String = System.getProperty("am_host", "login.example.forgeops.com")
     val amPort: String = System.getProperty("am_port", "80")
     val amProtocol: String = System.getProperty("am_protocol", "http")
 
-    val amUrl: String = "http://" + amHost + ":" + amPort
+    val amUrl: String = amProtocol + "://" + amHost + ":" + amPort
     val random = new util.Random
 
     val userFeeder: Iterator[Map[String, String]] = Iterator.continually(Map(
@@ -47,7 +47,7 @@ class AMRestAuthNSim extends Simulation {
         .during(duration) {
             feed(userFeeder)
             .exec(http("Rest login")
-                .post("/openam/json/authenticate")
+                .post("/json/authenticate")
                 .disableUrlEncoding
                 .headers(getXOpenAMHeaders("${username}", "${password}")))
         }

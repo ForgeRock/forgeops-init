@@ -5,32 +5,27 @@
 # or with one of its affiliates. All use shall be exclusively subject
 # to such license between the licensee and ForgeRock AS.
 #
-dn: dc=com
+dn: ou=identities
 objectClass: domain
 objectClass: top
-dc: com
+dc: data
 
-dn: dc=example,dc=com
-objectClass: domain
-objectClass: top
-dc: example
-
-dn: ou=People,dc=example,dc=com
+dn: ou=People,ou=identities
 ou: people
 description: people
 objectclass: organizationalunit
 
-dn: ou=Customers,dc=example,dc=com
+dn: ou=Customers,ou=identities
 ou: people
 description: people
 objectclass: organizationalunit
 
-dn: ou=Contractors,dc=example,dc=com
+dn: ou=Contractors,ou=identities
 ou: people
 description: people
 objectclass: organizationalunit
 
-dn: uid=jdoe,ou=People,dc=example,dc=com
+dn: uid=jdoe,ou=People,ou=identities
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
@@ -44,7 +39,7 @@ mail: jdoe@example.com
 description: Created for OpenIDM
 userPassword: password
 
-dn: uid=bjensen,ou=People,dc=example,dc=com
+dn: uid=bjensen,ou=People,ou=identities
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
@@ -58,34 +53,34 @@ mail: bjensen@example.com
 description: Created for OpenIDM
 userPassword: password
 
-dn: ou=Groups,dc=example,dc=com
+dn: ou=Groups,ou=identities
 ou: Groups
 objectClass: organizationalUnit
 objectClass: top
 
-dn: cn=openidm,ou=Groups,dc=example,dc=com
-uniqueMember: uid=jdoe,ou=People,dc=example,dc=com
+dn: cn=openidm,ou=Groups,ou=identities
+uniqueMember: uid=jdoe,ou=People,ou=identities
 cn: openidm
 objectClass: groupOfUniqueNames
 objectClass: top
 
-dn: cn=openidm2,ou=Groups,dc=example,dc=com
-uniqueMember: uid=bjensen,ou=People,dc=example,dc=com
+dn: cn=openidm2,ou=Groups,ou=identities
+uniqueMember: uid=bjensen,ou=People,ou=identities
 cn: openidm2
 objectClass: groupOfUniqueNames
 objectClass: top
 
-dn: cn=Employees,ou=Groups,dc=example,dc=com
+dn: cn=Employees,ou=Groups,ou=identities
 cn: Employees
 objectClass: groupOfUniqueNames
 objectClass: top
 
-dn: cn=Contractors,ou=Groups,dc=example,dc=com
+dn: cn=Contractors,ou=Groups,ou=identities
 cn: Contractors
 objectClass: groupOfUniqueNames
 objectClass: top
 
-dn: cn=Chat Users,ou=Groups,dc=example,dc=com
+dn: cn=Chat Users,ou=Groups,ou=identities
 cn: Chat Users
 objectClass: groupOfUniqueNames
 objectClass: top

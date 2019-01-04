@@ -4,25 +4,15 @@
             "name" : "user",
             "onCreate" : {
                 "type" : "text/javascript",
-                "source" : "require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);"
+                "source" : "require('onCreateUser').setDefaultFields(object);require('onCreateUser').emailUser(object);"
             },
             "onUpdate" : {
                 "type" : "text/javascript",
-                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);"
-            },
-            "onDelete" : {
-                "type" : "text/javascript",
-                "file" : "onDelete-user-cleanup.js"
+                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);"
             },
             "postDelete" : {
                 "type" : "text/javascript",
-                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);"
-            },
-            "actions" : {
-                "resetPassword": {
-                    "type": "text/javascript",
-                    "source": "require('resetPassword').sendMail(object);"
-                }
+                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);require('postDelete-notification-cleanup').removeConnectedNotificationData(oldObject, resourceName, request);"
             },
             "schema" : {
                 "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:User",
@@ -86,7 +76,7 @@
                         "minLength" : 8,
                         "userEditable" : true,
                         "encryption" : {
-                            "key" : "openidm-sym-default"
+                            "purpose": "idm.password.encryption"
                         },
                         "scope" : "private",
                         "isProtected": true,
@@ -310,6 +300,7 @@
                                 {
                                     "path" : "managed/role",
                                     "label" : "Role",
+                                    "conditionalAssociationField" : "condition",
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
@@ -356,19 +347,20 @@
                             },
                             "resourceCollection" : [
                                 {
-                                    "path" : "repo/internal/role",
+                                    "path" : "internal/role",
                                     "label" : "Internal Role",
+                                    "conditionalAssociationField" : "condition",
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
-                                            "_id",
-                                            "description"
+                                            "name"
                                         ]
                                     }
                                 },
                                 {
                                     "path" : "managed/role",
                                     "label" : "Role",
+                                    "conditionalAssociationField" : "condition",
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
@@ -656,6 +648,8 @@
                   "createDate",
                   "lastChanged"
               ]
+            },
+            "notifications" : {
             }
         },
         {
@@ -663,14 +657,6 @@
             "onDelete" : {
                 "type" : "text/javascript",
                 "file" : "roles/onDelete-roles.js"
-            },
-            "onCreate" : {
-                "type" : "text/javascript",
-                "source" : "require('roles/conditionalRoles').roleCreate(object);"
-            },
-            "onUpdate" : {
-                "type" : "text/javascript",
-                "source" : "require('roles/conditionalRoles').roleUpdate(oldObject, object);"
             },
             "postCreate" : {
                 "type" : "text/javascript",
@@ -752,6 +738,7 @@
                             "resourceCollection" : [
                                 {
                                     "notify" : true,
+                                    "conditionalAssociation" : true,
                                     "path" : "managed/user",
                                     "label" : "User",
                                     "query" : {
@@ -799,6 +786,7 @@
                             "resourceCollection" : [
                                 {
                                     "path" : "managed/user",
+                                    "conditionalAssociation" : true,
                                     "label" : "User",
                                     "query" : {
                                         "queryFilter" : "true",
@@ -863,6 +851,7 @@
                         "title" : "Condition",
                         "viewable" : false,
                         "searchable" : false,
+                        "isConditional" : true,
                         "type" : "string"
                     },
                     "temporalConstraints" : {

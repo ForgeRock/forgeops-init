@@ -10,7 +10,7 @@
     "_id" : "LDAP",
     "authenticationLevel" : 0,
     "userBindPassword" : null,
-    "userBindPassword-encrypted" : "AAAAA0FFUwIQkpZR0tmAna9Ssk1orHOeQJZoEss5vYgrL0rWpiAqA0mHSRylbDpFMQ==",
+    "userBindPassword-encrypted" : "AAAAA0FFUwIQnjzif2Sje5j04ov7kpFoQAu7wbJ3J6OCDjEJgX9QL/tyRqhDfaov2g==",
     "searchScope" : "SUBTREE",
     "returnUserDN" : true,
     "profileAttributeMappings" : [ ],
@@ -24,7 +24,7 @@
     "openam-auth-ldap-connection-mode" : "LDAP",
     "connectionHeartbeatInterval" : 10,
     "secondaryLdapServer" : [ ],
-    "userSearchStartDN" : [ "o=userstore" ],
+    "userSearchStartDN" : [ "ou=am-config" ],
     "trustAllServerCertificates" : false,
     "operationTimeout" : 0,
     "_type" : {
