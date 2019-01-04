@@ -245,6 +245,7 @@ To export changes made to the running AM pod, you'll first need to find the amst
 
     kubectl cp $AMSTER_POD:/tmp/export ../amster/config
 
+Skaffold will automatically port-forward the http port for IDM. As a result, you can access the admin UI at http://localhost:8080/admin/. Login with openig/openig.
 
 To export changes made to IDM:
 
