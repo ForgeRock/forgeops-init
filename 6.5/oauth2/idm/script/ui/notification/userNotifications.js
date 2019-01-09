@@ -19,7 +19,7 @@
         var response = openidm.read(context.security.authorization.component + "/" + context.security.authorization.id, null, ["_notifications/*"]);
 
         return {
-            "notifications" : response['_notifications']
+            "notifications" : response['_notifications'] || []
         };
 
     } else if (request.method === "delete") {
