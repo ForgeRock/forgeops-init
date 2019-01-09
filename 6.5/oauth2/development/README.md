@@ -173,6 +173,7 @@ Install the Google Cloud SDK: https://cloud.google.com/sdk/install
         -e "s/certmanager.acme: false/certmanager.acme: true/" \
         -e "s/certmanager.issuer: ca-issuer/certmanager.issuer: letsencrypt-prod/" \
         -e "s/certmanager.issuerKind: Issuer/certmanager.issuerKind: ClusterIssuer/" \
+        -e "s/sk-/`whoami| sed -e "s/\./_/"`-sk-/g" \
         skaffold.yaml > my-skaffold.yaml
     ```
 
