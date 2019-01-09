@@ -1,7 +1,7 @@
 {
     "name": "profile_update",
     "baseURI": "http://idm-service:8080",
-    "condition": "${(matches(request.uri.path, '^/openidm/managed/user/.+$')) and matches(request.method, 'PATCH')}",
+    "condition": "${(matches(request.uri.path, '^/openidm/managed/user/.+$') or matches(request.uri.path, '^/openidm/selfservice/user/.+$')) and matches(request.method, 'PATCH')}",
     "handler": {
         "type": "Chain",
         "config": {
@@ -42,6 +42,7 @@
                         "file": "checkOwnResource.groovy",
                         "clientHandler": "IDMClient",
                         "args": {
+                            "resourcePath": "managed/user",
                             "subjectField": "userName",
                             "failureResponse": "${heap['authzFailureResponse']}"
                         }
