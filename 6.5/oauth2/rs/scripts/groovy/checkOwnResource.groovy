@@ -1,8 +1,19 @@
+import org.forgerock.http.util.Uris
 String sub = contexts.oauth2.accessToken.info.sub
 def env = System.getenv()
+def uri = request.getUri()
 
 Request readRequest = new Request(request)
     .setMethod("GET")
+    .setUri(Uris.create(
+        uri.scheme,
+        null,
+        uri.host,
+        uri.port,
+        "/openidm/" + resourcePath,
+        "_queryFilter=" + Uris.urlEncodeQueryParameterNameOrValue("${subjectField} eq '${sub}'"),
+        null
+    ))
 
 readRequest.getHeaders().remove('if-match')
 
@@ -13,7 +24,7 @@ return http.send(readRequest).thenAsync( new AsyncFunction() {
     Promise apply (response) {
         if (response.status == Status.OK) {
             def responseObj = response.entity.json
-            if (responseObj[subjectField] != sub) {
+            if (responseObj.result.size() != 1) {
                 return failureResponse.handle(context, request)
             } else {
                 return next.handle(context, request)
