@@ -72,6 +72,7 @@ Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
     echo "$(minikube ip) \
         login.sample.forgeops.com \
         rs.sample.forgeops.com" \
+        end-user-ui.sample.forgeops.com \
     | sudo tee -a /etc/hosts
     ```
 
@@ -114,14 +115,20 @@ Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
 
     You may also find it useful to import this CA certificate into your operating system's trust store. Consult your OS documentation for how to do so.
 
-8. You can access the platform by opening this URL:
+8. You can access the platform by opening this URL (to get the default client):
 
     ```
-    https://login.sample.forgeops.com/console
+    https://end-user-ui.sample.forgeops.com/
     ```
 
     You can use amadmin / password to login as the am admin.
     You can use user.0  / password to login as a basic end-user.
+
+    You can also open this URL to access the AM admin console:
+
+    ```
+    https://login.sample.forgeops.com/console
+    ```
 
     Review the [Access the running platform](../README.md#accessing-the-running-platform) section of the general project README for more details.
 
@@ -151,7 +158,7 @@ Install the Google Cloud SDK: https://cloud.google.com/sdk/install
     gcloud container clusters get-credentials eng-shared --zone us-east1-c --project engineering-devops
     ```
 
-    Run this command in your terminal - this will setup kubectl for your use. Afterward, set your kubectl context to use your own namespace (named from your currently-logged-in name):
+    Run this command in your terminal - this will setup kubectl for your use. Afterwards, set your kubectl context to use your own namespace (named from your currently-logged-in name):
 
     ```
     kubectl config set-context my-context --cluster=`kubectl config current-context` --user=`kubectl config current-context` --namespace=`whoami| sed -e "s/\./_/"`
@@ -217,11 +224,16 @@ Install the Google Cloud SDK: https://cloud.google.com/sdk/install
 
 8. Access the running platform.
 
-    Find the URL to login with using this command:
+    Find the URL for the AM admin console with using this command:
     ```
     echo https://`kubectl get ing -o jsonpath="{.items[0].spec.rules[0].host}" -l chart=openam-6.5.0`/console
     ```
     Open that URL and you will be redirected to the AM login page.
+
+    Find the URL to the default OAuth2 client with this command:
+    ```
+    echo https://`kubectl get ing -o jsonpath="{.items[0].spec.rules[0].host}" -l chart=end-user-ui-0.1.0`/
+    ```
 
     You can use amadmin / password to login as the am admin.
     You can use user.0  / password to login as a basic end-user.
