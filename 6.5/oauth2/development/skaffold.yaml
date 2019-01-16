@@ -22,7 +22,8 @@ deploy:
         certmanager.issuer: ca-issuer
         certmanager.issuerKind: Issuer
         domain: .forgeops.com
-        platform.idmProtectedByIg: "true"
+        secret.env.IG_CLIENT_USERNAME: "openig"
+        secret.env.IG_CLIENT_PASSWORD: "openig"
     - name: sk-amster
       chartPath: helm/amster
       valuesFiles:
