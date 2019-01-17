@@ -2,6 +2,7 @@
   service:
     name: idm-service
     externalPort: 8080
+    type: NodePort
   resources:
     requests:
       memory: "512Mi"

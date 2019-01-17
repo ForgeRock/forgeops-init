@@ -1,27 +1,22 @@
-{
+ {
     "serverAuthContext" : {
         "sessionModule" : {
             "name" : "JWT_SESSION",
             "properties" : {
-                "keyAlias" : "&{openidm.https.keystore.cert.alias}",
-                "privateKeyPassword" : "&{openidm.keystore.password}",
-                "keystoreType" : "&{openidm.keystore.type}",
-                "keystoreFile" : "&{openidm.keystore.location}",
-                "keystorePassword" : "&{openidm.keystore.password}",
-                "maxTokenLifeMinutes" : "120",
-                "tokenIdleTimeMinutes" : "30",
+                "maxTokenLifeMinutes" : 120,
+                "tokenIdleTimeMinutes" : 30,
                 "sessionOnly" : true,
-                "isHttpOnly" : true
-            },
-            "enabled" : false
+                "isHttpOnly" : true,
+                "enableDynamicRoles" : false
+            }
         },
         "authModules" : [
             {
                 "name" : "STATIC_USER",
                 "properties" : {
-                    "queryOnResource" : "endpoint/static/user",
+                    "queryOnResource" : "internal/user",
                     "username" : "anonymous",
-                    "password" : "&{openidm.anonymous.password}",
+                    "password" : "anonymous",
                     "defaultUserRoles" : [
                         "internal/role/openidm-reg"
                     ]
@@ -29,35 +24,50 @@
                 "enabled" : true
             },
             {
-                "name" : "STATIC_USER",
+                "name" : "MANAGED_USER",
                 "properties" : {
-                    "queryOnResource" : "endpoint/static/user",
-                    "username" : "&{ig.client.username}",
-                    "password" : "&{ig.client.password}",
+                    "augmentSecurityContext": {
+                        "type" : "text/javascript",
+                        "source" : "require('auth/customAuthz').setProtectedAttributes(security)"
+                    },
+                    "queryId" : "credential-query",
+                    "queryOnResource" : "managed/user",
+                    "propertyMapping" : {
+                        "authenticationId" : "username",
+                        "userCredential" : "password",
+                        "userRoles" : "authzRoles"
+                    },
+                    "defaultUserRoles" : [ ]
+                },
+                "enabled" : true
+            },
+            {
+                "name" : "INTERNAL_USER",
+                "properties" : {
+                    "queryId" : "credential-internaluser-query",
+                    "queryOnResource" : "internal/user",
+                    "propertyMapping" : {
+                        "authenticationId" : "username",
+                        "userCredential" : "password",
+                        "userRoles" : "authzRoles"
+                    },
+                    "defaultUserRoles" : [ ]
+                },
+                "enabled" : true
+            },
+            {
+                "name" : "SOCIAL_PROVIDERS",
+                "properties" : {
                     "defaultUserRoles" : [
-                        "internal/role/openidm-admin",
                         "internal/role/openidm-authorized"
                     ],
-                    "runAsProperties": {
-                        "adminRoles": [
-                            "internal/role/openidm-admin"
-                        ],
-                        "disallowedRunAsRoles": [ ],
-                        "queryOnResource": "managed/user",
-                        "propertyMapping": {
-                            "authenticationId" : "userName",
-                            "userRoles": "authzRoles"
-                        },
-                        "defaultUserRoles" : [
-                            "internal/role/openidm-authorized"
-                        ],
-                        "augmentSecurityContext" : {
-                            "type" : "text/javascript",
-                            "file" : "augmentSecurityContext.js",
-                            "globals" : {
-                                "authzHeaderName" : "X-Authorization-Map"
-                            }
-                        }
+                    "augmentSecurityContext" : {
+                        "type" : "text/javascript",
+                        "globals" : { },
+                        "file" : "auth/populateAsManagedUserFromRelationship.js"
+                    },
+                    "propertyMapping" : {
+                        "userRoles" : "authzRoles"
                     }
                 },
                 "enabled" : true
@@ -65,32 +75,12 @@
             {
                 "name" : "STATIC_USER",
                 "properties" : {
-                    "queryOnResource" : "endpoint/static/user",
-                    "username" : "&{ig.client.username}",
-                    "password" : "&{ig.client.password}",
+                    "queryOnResource" : "internal/user",
+                    "username" : "&{openidm.prometheus.username}",
+                    "password" : "&{openidm.prometheus.password}",
                     "defaultUserRoles" : [
-                        "internal/role/openidm-admin",
-                        "internal/role/openidm-authorized"
-                    ],
-                    "runAsProperties": {
-                        "adminRoles": [
-                            "internal/role/openidm-admin"
-                        ],
-                        "disallowedRunAsRoles": [ ],
-                        "queryId" : "credential-query",
-                        "queryOnResource": "endpoint/static/user",
-                        "propertyMapping": {
-                            "authenticationId" : "userName"
-                        },
-                        "defaultUserRoles" : [ ],
-                        "augmentSecurityContext" : {
-                            "type" : "text/javascript",
-                            "file" : "augmentSecurityContext.js",
-                            "globals" : {
-                                "authzHeaderName" : "X-Authorization-Map"
-                            }
-                        }
-                    }
+                        "&{openidm.prometheus.role}"
+                    ]
                 },
                 "enabled" : true
             }

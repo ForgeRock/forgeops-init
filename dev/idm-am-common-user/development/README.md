@@ -68,7 +68,8 @@ Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
 
     ```
     echo "$(minikube ip) \
-        login.sample.forgeops.com" \
+        login.sample.forgeops.com \
+        openidm.sample.forgeops.com" \
     | sudo tee -a /etc/hosts
     ```
 
@@ -112,13 +113,18 @@ Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
     You may also find it useful to import this CA certificate into your operating system's trust store. Consult your OS documentation for how to do so.
 
 8. You can access the platform by opening this URL:
+    To access AM:
 
     ```
     https://login.sample.forgeops.com/console
     ```
 
     You can use amadmin / password to login as the am admin.
-    You can use user.0  / password to login as a basic end-user.
+
+    To access IDM:
+    ```
+    https://openidm.sample.forgeops.com/admin/
+    ```
 
     Review the [Access the running platform](../README.md#accessing-the-running-platform) section of the general project README for more details.
 

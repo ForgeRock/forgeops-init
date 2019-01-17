@@ -17,7 +17,7 @@ deploy:
       chartPath: helm/frconfig
       setValues:
         domain: .forgeops.com
-        platform.idmProtectedByIg: true
+        platform.idmProtectedByIg: false
         certmanager.acme: false
         certmanager.issuer: ca-issuer
         certmanager.issuerKind: Issuer
