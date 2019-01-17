@@ -9,3 +9,9 @@
   config:
     strategy: files
     path: /opt/openidm
+  openidm:
+    repo:
+      host: configstore-0.configstore
+      port: 1389
+      user: "cn=Directory Manager"
+      password: password

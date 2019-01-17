@@ -4,5 +4,3 @@
     type: NodePort
     externalPort: 80
     internalPort: 8080
-  config:
-    strategy: files

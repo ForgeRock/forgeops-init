@@ -2,9 +2,9 @@ apiVersion: skaffold/v1alpha5
 kind: Config
 build:
   artifacts:
-  - image: gcr.io/engineering-devops/skaffold/oauth2/amster
+  - image: gcr.io/engineering-devops/skaffold/idm-am-common-user/amster
     context: ../amster
-  - image: gcr.io/engineering-devops/skaffold/oauth2/idm
+  - image: gcr.io/engineering-devops/skaffold/idm-am-common-user/idm
     context: ../idm
   tagPolicy:
     sha256: {}
@@ -17,7 +17,6 @@ deploy:
       chartPath: helm/frconfig
       setValues:
         domain: .forgeops.com
-        platform.idmProtectedByIg: false
         certmanager.acme: false
         certmanager.issuer: ca-issuer
         certmanager.issuerKind: Issuer
@@ -27,7 +26,7 @@ deploy:
       valuesFiles:
       - amster-values.yaml
       values:
-        image: gcr.io/engineering-devops/skaffold/oauth2/amster
+        image: gcr.io/engineering-devops/skaffold/idm-am-common-user/amster
       imageStrategy:
         helm: {}
 
@@ -36,7 +35,7 @@ deploy:
       valuesFiles:
       - idm-values.yaml
       values:
-        image: gcr.io/engineering-devops/skaffold/oauth2/idm
+        image: gcr.io/engineering-devops/skaffold/idm-am-common-user/idm
       imageStrategy:
         helm: {}
 

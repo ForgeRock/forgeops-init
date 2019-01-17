@@ -62,7 +62,7 @@ Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
     skaffold dev
     ```
 
-    This will build the docker images and incorporate them into the helm templates, followed by managing the release of the charts. Any changes made to the configuration files for each docker image (found under ../amster, ../idm, ../rs) will be watched by skaffold, and will result in an automatic rebuild of the associated image followed by a redeployment into the cluster.
+    This will build the docker images and incorporate them into the helm templates, followed by managing the release of the charts. Any changes made to the configuration files for each docker image (found under ../amster and ../idm) will be watched by skaffold, and will result in an automatic rebuild of the associated image followed by a redeployment into the cluster.
 
 4. You need to add the ingress IP to your local hosts file.
 
@@ -126,6 +126,8 @@ Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
     https://openidm.sample.forgeops.com/admin/
     ```
 
+    You can use openidm-admin / openidm-admin to login as the idm admin.
+
     Review the [Access the running platform](../README.md#accessing-the-running-platform) section of the general project README for more details.
 
 9. You can stop the sample any time by just hitting Ctrl^c to exit skaffold. It will automatically remove the running processes.
@@ -174,6 +176,7 @@ Install the Google Cloud SDK: https://cloud.google.com/sdk/install
         -e "s/certmanager.acme: false/certmanager.acme: true/" \
         -e "s/certmanager.issuer: ca-issuer/certmanager.issuer: letsencrypt-prod/" \
         -e "s/certmanager.issuerKind: Issuer/certmanager.issuerKind: ClusterIssuer/" \
+        -e "s/sk-/`whoami| sed -e "s/\./_/"`-sk-/g" \
         skaffold.yaml > my-skaffold.yaml
     ```
 

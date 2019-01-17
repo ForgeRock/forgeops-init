@@ -13,8 +13,10 @@
             "heartBeatTimeoutMilliSeconds": 10000,
             "primaryLdapServers": [
                 {
-                    "hostname": "configstore-0.configstore",
-                    "port": 1389
+                    "hostname": "&{openidm.repo.host}",
+                    "port": {
+                        "$int" : "&{openidm.repo.port}"
+                    }
                 }
             ],
             "secondaryLdapServers": [ ]
@@ -23,8 +25,8 @@
             "inheritFrom": "bind",
             "authentication": {
                 "simple": {
-                    "bindDn": "cn=Directory Manager",
-                    "bindPassword": "password"
+                    "bindDn": "&{openidm.repo.user}",
+                    "bindPassword": "&{openidm.repo.password}"
                 }
             }
         }
@@ -330,11 +332,6 @@
                     "password": {
                         "type": "simple",
                         "ldapAttribute": "userPassword"
-                    },
-                    "aliasList": {
-                        "type": "simple",
-                        "isMultiValued": true,
-                        "ldapAttribute": "iplanet-am-user-alias-list"
                     },
                     "accountStatus": {
                         "type": "simple",
