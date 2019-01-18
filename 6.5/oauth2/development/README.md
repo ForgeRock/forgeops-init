@@ -173,6 +173,7 @@ Install the Google Cloud SDK: https://cloud.google.com/sdk/install
         -e "s/certmanager.acme: false/certmanager.acme: true/" \
         -e "s/certmanager.issuer: ca-issuer/certmanager.issuer: letsencrypt-prod/" \
         -e "s/certmanager.issuerKind: Issuer/certmanager.issuerKind: ClusterIssuer/" \
+        -e "s/sk-/`whoami| sed -e "s/\./_/"`-sk-/g" \
         skaffold.yaml > my-skaffold.yaml
     ```
 
@@ -245,6 +246,7 @@ To export changes made to the running AM pod, you'll first need to find the amst
 
     kubectl cp $AMSTER_POD:/tmp/export ../amster/config
 
+Skaffold will automatically port-forward the http port for IDM. As a result, you can access the admin UI at http://localhost:8080/admin/. Login with openig/openig.
 
 To export changes made to IDM:
 

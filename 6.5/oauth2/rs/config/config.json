@@ -64,6 +64,7 @@
                             "messageType": "REQUEST",
                             "add": {
                                 "X-Requested-With": ["IG"],
+                                "X-OpenIDM-NoSession": ["true"],
                                 "X-OpenIDM-Username": ["&{ig.client.username}"],
                                 "X-OpenIDM-Password": ["&{ig.client.password}"]
                             }

@@ -13,7 +13,7 @@
                 "sessionOnly" : true,
                 "isHttpOnly" : true
             },
-            "enabled" : false
+            "enabled" : true
         },
         "authModules" : [
             {

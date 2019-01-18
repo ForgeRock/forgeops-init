@@ -1,4 +1,4 @@
-apiVersion: skaffold/v1alpha5
+apiVersion: skaffold/v1beta2
 kind: Config
 build:
   artifacts:
@@ -18,12 +18,12 @@ deploy:
     - name: sk-frconfig
       chartPath: helm/frconfig
       setValues:
-        domain: .forgeops.com
-        platform.idmProtectedByIg: true
-        certmanager.acme: false
+        certmanager.acme: "false"
         certmanager.issuer: ca-issuer
         certmanager.issuerKind: Issuer
-
+        domain: .forgeops.com
+        secret.env.IG_CLIENT_USERNAME: "openig"
+        secret.env.IG_CLIENT_PASSWORD: "openig"
     - name: sk-amster
       chartPath: helm/amster
       valuesFiles:
@@ -32,7 +32,6 @@ deploy:
         image: gcr.io/engineering-devops/skaffold/oauth2/amster
       imageStrategy:
         helm: {}
-
     - name: sk-rs
       chartPath: helm/openig
       valuesFiles:
@@ -41,7 +40,6 @@ deploy:
         image: gcr.io/engineering-devops/skaffold/oauth2/rs
       imageStrategy:
         helm: {}
-
     - name: sk-idm
       chartPath: helm/openidm
       valuesFiles:
@@ -50,12 +48,10 @@ deploy:
         image: gcr.io/engineering-devops/skaffold/oauth2/idm
       imageStrategy:
         helm: {}
-
     - name: sk-openam
       chartPath: helm/openam
       setValues:
         domain: .forgeops.com
-
     - name: sk-configstore
       chartPath: helm/ds
       valuesFiles:
