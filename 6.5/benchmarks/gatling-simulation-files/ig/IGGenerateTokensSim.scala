@@ -60,7 +60,7 @@ class IGGenerateTokensSim extends Simulation {
             .post("/oauth2/access_token")
              .queryParam("realm", realm)
             .formParam("grant_type", "password")
-            .formParam("scope", "cn")
+            .formParam("scope", scope)
             .formParam("username", "user.${user}")
             .formParam("password", "password")
             .basicAuth(oauth2ClientId, oauth2ClientPassword)
