@@ -16,7 +16,7 @@ class IGGenerateTokensSim extends Simulation {
 
   val amProtocol: String = System.getProperty("am_protocol", "https")
   
-  val oauth2ClientId: String = System.getProperty("oauth2_client_id", "oauth2")
+  val oauth2ClientId: String = System.getProperty("oauth2_client_id", "client-application")
   val oauth2ClientPassword: String = System.getProperty("oauth2_client_pw", "password")
   
   val realm: String = System.getProperty("realm", "/")
