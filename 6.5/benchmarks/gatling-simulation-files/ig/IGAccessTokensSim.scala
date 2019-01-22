@@ -1,12 +1,12 @@
 package ig
-  
+
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
-class IGAccessTokenSim extends Simulation {
+class IGAccessTokensSim extends Simulation {
 
   val concurrency: Integer = Integer.getInteger("concurrency", 10)
   val duration: Integer = Integer.getInteger("duration", 600)
@@ -17,14 +17,8 @@ class IGAccessTokenSim extends Simulation {
     
   val igUrl: String = igProtocol + "://" + igHost + ":" + igPort
   val random = new util.Random
-  
-  val csvFile = "/opt/CEBT/sync_folder/simulations/pavel/ig/tokens.csv"
-  
-  def getXOpenAMHeaders(username: String, password: String): scala.collection.immutable.Map[String, String] = {
-    scala.collection.immutable.Map(
-      "X-OpenAM-Username" -> username,
-      "X-OpenAM-Password" -> password)
-  }
+
+  val csvFile: String = System.getProperty("csv_file_path", "/tmp/tokens.csv")
   
   val httpProtocol: HttpProtocolBuilder = http
     .baseURLs(igUrl)
