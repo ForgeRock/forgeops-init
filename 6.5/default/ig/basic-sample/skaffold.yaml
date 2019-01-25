@@ -4,8 +4,8 @@ build:
   artifacts:
   # - image: forgerock/igtest
   - image:  gcr.io/engineering-devops/sk-ig
-  googleCloudBuild:
-    projectId: engineering-devops
+  # googleCloudBuild:
+  #   projectId: engineering-devops
   tagPolicy:
     sha256: {}
 deploy:
@@ -16,7 +16,7 @@ deploy:
     #   setValues:
     #     domain: .forgeops.com
     - name: ig-test
-      chartPath: ../helm/openig
+      chartPath: ../../../helm-link/openig
       values:
         image: gcr.io/engineering-devops/sk-ig
       setValues:
