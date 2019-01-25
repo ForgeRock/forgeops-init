@@ -1,25 +1,24 @@
-apiVersion: skaffold/v1alpha2
+apiVersion: skaffold/v1beta2
 kind: Config
 build:
+  artifacts:
+  - image: gcr.io/engineering-devops/sk-amster
+  # kaniko: {}
+  googleCloudBuild:
+      projectId: engineering-devops
   tagPolicy:
     sha256: {}
-  artifacts:
-  - imageName: gcr.io/engineering-devops/sk-amster
-# See https://github.com/GoogleContainerTools/skaffold/issues/360
 deploy:
   helm:
     releases:
     - name: sk-amster
-      chartPath: ../helm/amster  
-      imageStrategy:
-        helm: {}
+      chartPath: ../helm/amster
       values:
         image: gcr.io/engineering-devops/sk-amster
-      # Current skaffold bug - needs to have a values path
-      valuesFilePath: skaffold-values.yaml
       setValues:
+        config.importPath: /git
+        config.strategy: docker
+        domain: .forgeops.com
         skaffold: "true"
-        config.strategy: "docker"
-        config.importPath: "/git"
-        domain: ".example.com"
-  
+      imageStrategy:
+        helm: {}
