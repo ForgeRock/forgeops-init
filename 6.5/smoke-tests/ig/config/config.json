@@ -37,8 +37,8 @@
       "name": "AmService-1",
       "type": "AmService",
       "config": {
-          "url": "http://openam.&{namespace}.svc.cluster.local",
-          "realm": "/",
+          "url": "http://openam",
+          "realm": "/am",
           "agent": {
               "username": "ig-agent",
               "password": "password"
