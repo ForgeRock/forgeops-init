@@ -43,7 +43,7 @@ Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
     kubectl config set-context sample-context --namespace=sample --cluster=minikube --user=minikube && \
     sleep 2 && \
     helm init --wait && \
-    helm upgrade -i cert-manager --namespace kube-system stable/cert-manager
+    helm upgrade -i cert-manager --namespace kube-system stable/cert-manager --version 0.5.2
     ```
 
 2. You will need to run these commands every time the VM starts (after first step as well as after every VM reboot).

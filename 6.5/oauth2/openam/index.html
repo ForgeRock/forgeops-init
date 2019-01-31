@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright 2012-2018 ForgeRock AS. All Rights Reserved
+  ~
+  ~ Use of this code requires a commercial software license with ForgeRock AS.
+  ~ or with one of its affiliates. All use shall be exclusively subject
+  ~ to such license between the licensee and ForgeRock AS.
+  -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ForgeRock Access Management</title>
+<style>
+body.endUserUIClient {
+    background-color: #ffffff !important;
+    overflow-y: auto !important;
+}
+body.endUserUIClient * {
+    visibility: hidden;
+}
+
+body.endUserUIClient #content>.container, body.endUserUIClient #content>.container * {
+    visibility: visible;
+}
+
+body.endUserUIClient #content>.container {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+</style>
+    </head>
+    <!--[if IE 9]>
+    <body style="display:none" class="ie9">
+    <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!-->
+    <body style="display:none">
+    <!--<![endif]-->
+        <div id="messages" class="clearfix"></div>
+        <div id="wrapper">Loading...</div>
+
+    <script>
+    try {
+        var client_id = (new URL((new URL(window.location.href)).searchParams.get("goto"))).searchParams.get("client_id");
+        document.getElementsByTagName('body')[0].className = client_id;
+    } catch (e) {
+
+    }
+    </script>
+
+    <script type="text/javascript" src="main.be0f90f3fb.js"></script></body>
+</html>
