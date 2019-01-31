@@ -6,7 +6,7 @@ import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
-class IGAccessTokensSim extends Simulation {
+class IGAccessTokensNoCacheSim extends Simulation {
 
   val concurrency: Integer = Integer.getInteger("concurrency", 10)
   val duration: Integer = Integer.getInteger("duration", 600)
