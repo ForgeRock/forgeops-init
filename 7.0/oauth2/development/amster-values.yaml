@@ -1,0 +1,7 @@
+  domain: .forgeops.com
+  resources:
+    requests:
+      memory: "64Mi"
+  config:
+    strategy: files
+    importPath: /opt/amster/config/
