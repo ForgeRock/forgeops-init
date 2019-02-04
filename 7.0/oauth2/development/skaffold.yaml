@@ -1,0 +1,74 @@
+apiVersion: skaffold/v1beta2
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/engineering-devops/skaffold/oauth2/rs
+    context: ../rs
+  - image: gcr.io/engineering-devops/skaffold/oauth2/amster
+    context: ../amster
+  - image: gcr.io/engineering-devops/skaffold/oauth2/idm
+    context: ../idm
+  - image: gcr.io/engineering-devops/skaffold/oauth2/end-user-ui
+    context: ../end-user-ui
+  - image: gcr.io/engineering-devops/skaffold/oauth2/openam
+    context: ../openam
+  tagPolicy:
+    sha256: {}
+  local:
+    push: false
+deploy:
+  helm:
+    releases:
+    - name: sk-frconfig
+      chartPath: helm/frconfig
+      setValues:
+        certmanager.acme: "false"
+        certmanager.issuer: ca-issuer
+        certmanager.issuerKind: Issuer
+        domain: .forgeops.com
+        secret.env.IG_CLIENT_USERNAME: "openig"
+        secret.env.IG_CLIENT_PASSWORD: "openig"
+    - name: sk-end-user-ui
+      setValues:
+        domain: .forgeops.com
+      chartPath: helm/end-user-ui
+      values:
+        image: gcr.io/engineering-devops/skaffold/oauth2/end-user-ui
+      imageStrategy:
+        helm: {}
+    - name: sk-amster
+      chartPath: helm/amster
+      valuesFiles:
+      - amster-values.yaml
+      values:
+        image: gcr.io/engineering-devops/skaffold/oauth2/amster
+      imageStrategy:
+        helm: {}
+    - name: sk-rs
+      chartPath: helm/openig
+      valuesFiles:
+      - rs-values.yaml
+      values:
+        image: gcr.io/engineering-devops/skaffold/oauth2/rs
+      imageStrategy:
+        helm: {}
+    - name: sk-idm
+      chartPath: helm/openidm
+      valuesFiles:
+      - idm-values.yaml
+      values:
+        image: gcr.io/engineering-devops/skaffold/oauth2/idm
+      imageStrategy:
+        helm: {}
+    - name: sk-openam
+      chartPath: helm/openam
+      values:
+        image: gcr.io/engineering-devops/skaffold/oauth2/openam
+      imageStrategy:
+        helm: {}
+      setValues:
+        domain: .forgeops.com
+    - name: sk-configstore
+      chartPath: helm/ds
+      valuesFiles:
+      - configstore-values.yaml
