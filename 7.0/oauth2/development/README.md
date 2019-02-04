@@ -67,13 +67,8 @@ Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
 4. You need to add the ingress IP to your local hosts file.
 
     ```
-    grep -v rs.sample.forgeops.com /etc/hosts \
-    | sudo tee /etc/hosts && \
-    echo "$(minikube ip) \
-        login.sample.forgeops.com \
-        rs.sample.forgeops.com" \
-        end-user-ui.sample.forgeops.com \
-    | sudo tee -a /etc/hosts
+    grep -v sample.iam.forgeops.com /etc/hosts | sudo tee /etc/hosts && \
+    echo "$(minikube ip) sample.iam.forgeops.com" | sudo tee -a /etc/hosts
     ```
 
 5. Wait for all of the services to become ready. You will see output on you terminal from the idm, amster and rs pods.
@@ -118,7 +113,7 @@ Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
 8. You can access the platform by opening this URL (to get the default client):
 
     ```
-    https://end-user-ui.sample.forgeops.com/
+    https://sample.iam.forgeops.com/enduser/
     ```
 
     You can use amadmin / password to login as the am admin.
@@ -127,7 +122,7 @@ Install Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
     You can also open this URL to access the AM admin console:
 
     ```
-    https://login.sample.forgeops.com/console
+    https://sample.iam.forgeops.com/am/console
     ```
 
     Review the [Access the running platform](../README.md#accessing-the-running-platform) section of the general project README for more details.
