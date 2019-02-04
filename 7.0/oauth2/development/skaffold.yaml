@@ -25,12 +25,12 @@ deploy:
         certmanager.acme: "false"
         certmanager.issuer: ca-issuer
         certmanager.issuerKind: Issuer
-        domain: .forgeops.com
+        domain: forgeops.com
         secret.env.IG_CLIENT_USERNAME: "openig"
         secret.env.IG_CLIENT_PASSWORD: "openig"
     - name: sk-end-user-ui
       setValues:
-        domain: .forgeops.com
+        domain: forgeops.com
       chartPath: helm/end-user-ui
       values:
         image: gcr.io/engineering-devops/skaffold/oauth2/end-user-ui
@@ -66,8 +66,8 @@ deploy:
         image: gcr.io/engineering-devops/skaffold/oauth2/openam
       imageStrategy:
         helm: {}
-      setValues:
-        domain: .forgeops.com
+      valuesFiles:
+      - am-values.yaml
     - name: sk-configstore
       chartPath: helm/ds
       valuesFiles:

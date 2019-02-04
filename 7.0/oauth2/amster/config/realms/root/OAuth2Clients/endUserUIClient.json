@@ -25,7 +25,7 @@
       "idTokenSignedResponseAlg" : "RS256",
       "idTokenPublicEncryptionKey" : null,
       "userinfoEncryptedResponseAlg" : null,
-      "jwksUri" : "http://openam:80/oauth2/connect/jwk_uri",
+      "jwksUri" : "http://openam:80/am/oauth2/connect/jwk_uri",
       "requestParameterSignedAlg" : null,
       "clientJwtPublicKey" : null
     },
@@ -64,7 +64,7 @@
       "scopes" : [ "openid", "profile", "profile_update", "consent_read", "workflow_tasks", "notifications" ],
       "agentgroup" : null,
       "refreshTokenLifetime" : 0,
-      "redirectionUris" : [ "https://end-user-ui.sample.forgeops.com/appAuthHelperRedirect.html", "https://end-user-ui.sample.forgeops.com/sessionCheck.html","http://localhost:8081/appAuthHelperRedirect.html", "http://localhost:8081/sessionCheck.html" ],
+      "redirectionUris" : [ "https://sample.iam.forgeops.com/enduser/appAuthHelperRedirect.html", "https://sample.iam.forgeops.com/enduser/sessionCheck.html","http://localhost:8081/appAuthHelperRedirect.html", "http://localhost:8081/sessionCheck.html" ],
       "status" : "Active"
     },
     "coreUmaClientConfig" : {

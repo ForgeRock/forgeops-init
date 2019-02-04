@@ -1,9 +1,2 @@
-  baseDN: "ou=identities"
-  instance: configstore
-  persistence: false
-  opendjJavaArgs: "-Xmx400m"
-  resources:
-    limits:
-      memory: 600Mi
-    requests:
-      memory: 400Mi
+instance: configstore
+persistence: false

@@ -4,7 +4,7 @@
             "name": "AccessTokenResolver",
             "type": "TokenIntrospectionAccessTokenResolver",
             "config": {
-                "endpoint": "http://openam:80/oauth2/introspect",
+                "endpoint": "http://openam:80/am/oauth2/introspect",
                 "providerHandler": {
                     "type": "Chain",
                     "config": {

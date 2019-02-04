@@ -2,7 +2,7 @@ FROM forgerock-docker-public.bintray.io/forgerock/end-user-ui:6.5.0
 
 WORKDIR /tmp/end-user-ui
 
-RUN git remote add jakefeasel https://github.com/jakefeasel/end-user-ui.git && git fetch jakefeasel && git checkout oauth2
+RUN git remote add jakefeasel https://github.com/jakefeasel/end-user-ui.git && git fetch jakefeasel && git checkout oauth2EmbeddedLogin7.0
 
 RUN npm install && npm run build
 

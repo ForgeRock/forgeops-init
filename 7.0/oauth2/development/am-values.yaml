@@ -1,0 +1,8 @@
+domain: forgeops.com
+ingress:
+  annotations:
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT,GET,POST,HEAD,PATCH,DELETE"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "authorization,x-requested-with"
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "false"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
