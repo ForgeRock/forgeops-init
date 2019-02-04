@@ -1,3 +1,5 @@
+  image:
+    pullPolicy: IfNotPresent
   domain: forgeops.com
   service:
     name: rs-service
