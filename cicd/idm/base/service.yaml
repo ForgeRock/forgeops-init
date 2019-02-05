@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: openidm-openidm
+    component: openidm
+    vendor: forgerock
+  name: openidm
+spec:
+  ports:
+  - name: openidm
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: openidm
+    release: openidm
+  type: null

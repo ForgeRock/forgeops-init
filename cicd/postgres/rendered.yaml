@@ -1,0 +1,1177 @@
+apiVersion: v1
+data:
+  01_openidm.sql: |+
+    DROP SCHEMA IF EXISTS openidm CASCADE;
+    CREATE SCHEMA openidm AUTHORIZATION openidm;
+
+    -- -----------------------------------------------------
+    -- Table openidm.objecttypes
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.objecttypes (
+      id BIGSERIAL NOT NULL,
+      objecttype VARCHAR(255) NOT NULL,
+      PRIMARY KEY (id),
+      CONSTRAINT idx_objecttypes_objecttype UNIQUE (objecttype)
+    );
+
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.genericobjects
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.genericobjects (
+      id BIGSERIAL NOT NULL,
+      objecttypes_id BIGINT NOT NULL,
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      fullobject JSON,
+      PRIMARY KEY (id),
+      CONSTRAINT fk_genericobjects_objecttypes FOREIGN KEY (objecttypes_id) REFERENCES openidm.objecttypes (id) ON DELETE CASCADE ON UPDATE NO ACTION,
+      CONSTRAINT idx_genericobjects_object UNIQUE (objecttypes_id, objectid)
+    );
+    CREATE INDEX idx_genericobjects_reconid on openidm.genericobjects (json_extract_path_text(fullobject, 'reconId'), objecttypes_id);
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.managedobjects
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.managedobjects (
+      id BIGSERIAL NOT NULL,
+      objecttypes_id BIGINT NOT NULL,
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      fullobject JSON,
+      PRIMARY KEY (id),
+      CONSTRAINT fk_managedobjects_objectypes FOREIGN KEY (objecttypes_id) REFERENCES openidm.objecttypes (id) ON DELETE CASCADE ON UPDATE NO ACTION
+    );
+
+    CREATE UNIQUE INDEX idx_managedobjects_object ON openidm.managedobjects (objecttypes_id,objectid);
+    -- Note that the next two indices apply only to role objects, as only role objects have a condition or temporalConstraints
+    CREATE INDEX idx_json_managedobjects_roleCondition ON openidm.managedobjects
+        ( json_extract_path_text(fullobject, 'condition') );
+    CREATE INDEX idx_json_managedobjects_roleTemporalConstraints ON openidm.managedobjects
+        ( json_extract_path_text(fullobject, 'temporalConstraints') );
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.configobjects
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.configobjects (
+      id BIGSERIAL NOT NULL,
+      objecttypes_id BIGINT NOT NULL,
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      fullobject JSON,
+      PRIMARY KEY (id),
+      CONSTRAINT fk_configobjects_objecttypes FOREIGN KEY (objecttypes_id) REFERENCES openidm.objecttypes (id) ON DELETE CASCADE ON UPDATE NO ACTION
+    );
+
+    CREATE UNIQUE INDEX idx_configobjects_object ON openidm.configobjects (objecttypes_id,objectid);
+    CREATE INDEX fk_configobjects_objecttypes ON openidm.configobjects (objecttypes_id);
+
+    -- -----------------------------------------------------
+    -- Table openidm.notificationobjects
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.notificationobjects (
+      id BIGSERIAL NOT NULL,
+      objecttypes_id BIGINT NOT NULL,
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      fullobject JSON,
+      PRIMARY KEY (id),
+      CONSTRAINT fk_notificationobjects_objecttypes FOREIGN KEY (objecttypes_id) REFERENCES openidm.objecttypes (id) ON DELETE CASCADE ON UPDATE NO ACTION
+    );
+
+    CREATE UNIQUE INDEX idx_notificationobjects_object ON openidm.notificationobjects (objecttypes_id,objectid);
+    CREATE INDEX fk_notificationobjects_objecttypes ON openidm.notificationobjects (objecttypes_id);
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.relationships
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.relationships (
+      id BIGSERIAL NOT NULL,
+      objecttypes_id BIGINT NOT NULL,
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      fullobject JSON,
+      firstresourcecollection VARCHAR(255),
+      firstresourceid VARCHAR(56),
+      firstpropertyname VARCHAR(100),
+      secondresourcecollection VARCHAR(255),
+      secondresourceid VARCHAR(56),
+      secondpropertyname VARCHAR(100),
+      properties JSON,
+      PRIMARY KEY (id),
+      CONSTRAINT fk_relationships_objecttypes FOREIGN KEY (objecttypes_id) REFERENCES openidm.objecttypes (id) ON DELETE CASCADE ON UPDATE NO ACTION,
+      CONSTRAINT idx_relationships_object UNIQUE (objecttypes_id, objectid)
+    );
+    CREATE INDEX idx_json_relationships ON openidm.relationships ( json_extract_path_text(fullobject, 'firstResourceCollection'), json_extract_path_text(fullobject, 'firstResourceId'), json_extract_path_text(fullobject, 'firstPropertyName'), json_extract_path_text(fullobject, 'secondResourceCollection'), json_extract_path_text(fullobject, 'secondResourceId'), json_extract_path_text(fullobject, 'secondPropertyName') );
+    CREATE INDEX idx_json_relationships_first_object ON openidm.relationships ( firstresourcecollection, firstresourceid, firstpropertyname );
+    CREATE INDEX idx_json_relationships_second_object ON openidm.relationships ( secondresourcecollection, secondresourceid, secondpropertyname );
+
+    -- -----------------------------------------------------
+    -- Table openidm.links
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.links (
+      objectid VARCHAR(38) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      linktype VARCHAR(50) NOT NULL,
+      linkqualifier VARCHAR(50) NOT NULL,
+      firstid VARCHAR(255) NOT NULL,
+      secondid VARCHAR(255) NOT NULL,
+      PRIMARY KEY (objectid)
+    );
+
+    CREATE UNIQUE INDEX idx_links_first ON openidm.links (linktype, linkqualifier, firstid);
+    CREATE UNIQUE INDEX idx_links_second ON openidm.links (linktype, linkqualifier, secondid);
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.internaluser
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.internaluser (
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      pwd VARCHAR(510) DEFAULT NULL,
+      PRIMARY KEY (objectid)
+    );
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.internalrole
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.internalrole (
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      name VARCHAR(64) DEFAULT NULL,
+      description VARCHAR(510) DEFAULT NULL,
+      temporalConstraints VARCHAR(1024) DEFAULT NULL,
+      condition VARCHAR(1024) DEFAULT NULL,
+      PRIMARY KEY (objectid)
+    );
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.internalprivilege
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.internalprivilege (
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      name VARCHAR(64) DEFAULT NULL,
+      description VARCHAR(510) DEFAULT NULL,
+      path VARCHAR(1024) NOT NULL,
+      permissions VARCHAR(1024) NOT NULL,
+      actions VARCHAR(1024) DEFAULT NULL,
+      filter VARCHAR(1024) DEFAULT NULL,
+      accessflags TEXT DEFAULT NULL,
+      PRIMARY KEY (objectid)
+    );
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.schedulerobjects
+    -- -----------------------------------------------------
+    CREATE TABLE openidm.schedulerobjects (
+      id BIGSERIAL NOT NULL,
+      objecttypes_id BIGINT NOT NULL,
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      fullobject JSON,
+      PRIMARY KEY (id),
+      CONSTRAINT fk_schedulerobjects_objectypes FOREIGN KEY (objecttypes_id) REFERENCES openidm.objecttypes (id) ON DELETE CASCADE ON UPDATE NO ACTION
+    );
+
+    CREATE UNIQUE INDEX idx_schedulerobjects_object ON openidm.schedulerobjects (objecttypes_id,objectid);
+    CREATE INDEX fk_schedulerobjects_objectypes ON openidm.schedulerobjects (objecttypes_id);
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.uinotification
+    -- -----------------------------------------------------
+    CREATE TABLE openidm.uinotification (
+      objectid VARCHAR(38) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      notificationType VARCHAR(255) NOT NULL,
+      createDate VARCHAR(38) NOT NULL,
+      message TEXT NOT NULL,
+      requester VARCHAR(255) NULL,
+      receiverId VARCHAR(255) NOT NULL,
+      requesterId VARCHAR(255) NULL,
+      notificationSubtype VARCHAR(255) NULL,
+      PRIMARY KEY (objectid)
+    );
+    CREATE INDEX idx_uinotification_receiverId ON openidm.uinotification (receiverId);
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.clusterobjects
+    -- -----------------------------------------------------
+    CREATE TABLE openidm.clusterobjects (
+      id BIGSERIAL NOT NULL,
+      objecttypes_id BIGINT NOT NULL,
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      fullobject JSON,
+      PRIMARY KEY (id),
+      CONSTRAINT fk_clusterobjects_objectypes FOREIGN KEY (objecttypes_id) REFERENCES openidm.objecttypes (id) ON DELETE CASCADE ON UPDATE NO ACTION
+    );
+
+    CREATE UNIQUE INDEX idx_clusterobjects_object ON openidm.clusterobjects (objecttypes_id,objectid);
+    CREATE INDEX fk_clusterobjects_objectypes ON openidm.clusterobjects (objecttypes_id);
+
+    CREATE INDEX idx_json_clusterobjects_timestamp ON openidm.clusterobjects ( json_extract_path_text(fullobject, 'timestamp') );
+    CREATE INDEX idx_json_clusterobjects_state ON openidm.clusterobjects ( json_extract_path_text(fullobject, 'state') );
+    CREATE INDEX idx_json_clusterobjects_event_instanceid ON openidm.clusterobjects ( json_extract_path_text(fullobject, 'type'), json_extract_path_text(fullobject, 'instanceId') );
+
+    -- -----------------------------------------------------
+    -- Table openidm.clusteredrecontargetids
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.clusteredrecontargetids (
+      objectid VARCHAR(38) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      reconid VARCHAR(255) NOT NULL,
+      targetids JSON NOT NULL,
+      PRIMARY KEY (objectid)
+    );
+
+    CREATE INDEX idx_clusteredrecontargetids_reconid ON openidm.clusteredrecontargetids (reconid);
+
+    -- -----------------------------------------------------
+    -- Table openidm.updateobjects
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.updateobjects (
+      id BIGSERIAL NOT NULL,
+      objecttypes_id BIGINT NOT NULL,
+      objectid VARCHAR(255) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      fullobject JSON,
+      PRIMARY KEY (id),
+      CONSTRAINT fk_updateobjects_objecttypes FOREIGN KEY (objecttypes_id) REFERENCES openidm.objecttypes (id) ON DELETE CASCADE ON UPDATE NO ACTION,
+      CONSTRAINT idx_updateobjects_object UNIQUE (objecttypes_id, objectid)
+    );
+
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.syncqueue
+    -- -----------------------------------------------------
+    CREATE TABLE openidm.syncqueue (
+      objectid VARCHAR(38) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      syncAction VARCHAR(38) NOT NULL,
+      resourceCollection VARCHAR(38) NOT NULL,
+      resourceId VARCHAR(255) NOT NULL,
+      mapping VARCHAR(255) NOT NULL,
+      objectRev VARCHAR(38) DEFAULT NULL,
+      oldObject JSON,
+      newObject JSON,
+      context JSON,
+      state VARCHAR(38) NOT NULL,
+      nodeId VARCHAR(255) DEFAULT NULL,
+      remainingRetries VARCHAR(38) NOT NULL,
+      createDate VARCHAR(38) NOT NULL,
+      PRIMARY KEY (objectid)
+    );
+    CREATE INDEX indx_syncqueue_mapping_state_createdate ON openidm.syncqueue (mapping, state, createDate);
+    CREATE INDEX indx_syncqueue_mapping_retries ON openidm.syncqueue (mapping, remainingRetries);
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.locks
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.locks (
+      objectid VARCHAR(38) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      nodeid VARCHAR(255),
+      PRIMARY KEY (objectid)
+    );
+
+    CREATE INDEX idx_locks_nodeid ON openidm.locks (nodeid);
+
+
+    -- -----------------------------------------------------
+    -- Table openidm.files
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.files (
+      objectid VARCHAR(38) NOT NULL,
+      rev VARCHAR(38) NOT NULL,
+      content TEXT,
+      PRIMARY KEY (objectid)
+    );
+
+  02_default_schema_optimization.sql: |+
+    -- This script is optional; run it after you have executed the 'createuser' and 'openidm' scripts. It is designed
+    -- to optimize the performance of the queries used in the default repo.jdbc.json file for PostgreSQL and the default
+    -- schema, along with the default UI.
+
+    -- This file has to be executed by a user with SUPERUSER privileges, so that the extension can be created.
+    -- By default this is the 'postgres' user. For example:
+
+    -- psql -U postgres openidm < default_schema_optimization.sql
+
+
+    -- These btree indexes are great for sorting and exact matches.
+    CREATE UNIQUE INDEX idx_json_managedobjects_userName ON openidm.managedobjects
+        ( json_extract_path_text(fullobject, 'userName'), objecttypes_id );
+    CREATE INDEX idx_json_managedobjects_givenName ON openidm.managedobjects
+        ( json_extract_path_text(fullobject, 'givenName') );
+    CREATE INDEX idx_json_managedobjects_sn ON openidm.managedobjects
+        ( json_extract_path_text(fullobject, 'sn') );
+    CREATE INDEX idx_json_managedobjects_mail ON openidm.managedobjects
+        ( json_extract_path_text(fullobject, 'mail') );
+    CREATE INDEX idx_json_managedobjects_accountStatus ON openidm.managedobjects
+        ( json_extract_path_text(fullobject, 'accountStatus') );
+
+    -- The PosgreSQL contrib extension 'pg_trgm' is needed to perform fast LIKE queries. Be sure you have installed
+    -- the 'postgresql-contrib' packages necessary to support it.
+
+    -- More info here http://www.depesz.com/2011/02/19/waiting-for-9-1-faster-likeilike/
+
+    create extension pg_trgm;
+
+    -- These "gin" indexes are great for performing LIKE operations. Use if you plan on doing
+    -- a lot of these types of queries. Below are some examples you might create if you are
+    -- using the default project schema with the default OpenIDM UI. Only enable these if you
+    -- need to perform the LIKE queries, otherwise you will incur a cost on creation with no
+    -- associated benefit.
+
+    CREATE INDEX idx_json_managedobjects_userName_gin ON openidm.managedobjects
+      USING gin (json_extract_path_text(fullobject, 'userName') gin_trgm_ops);
+    CREATE INDEX idx_json_managedobjects_givenName_gin ON openidm.managedobjects
+      USING gin (json_extract_path_text(fullobject, 'givenName') gin_trgm_ops);
+    CREATE INDEX idx_json_managedobjects_sn_gin ON openidm.managedobjects
+      USING gin (json_extract_path_text(fullobject, 'sn') gin_trgm_ops);
+    CREATE INDEX idx_json_managedobjects_mail_gin ON openidm.managedobjects
+      USING gin (json_extract_path_text(fullobject, 'mail') gin_trgm_ops);
+    CREATE INDEX idx_json_managedobjects_accountStatus_gin ON openidm.managedobjects
+      USING gin (json_extract_path_text(fullobject, 'accountStatus') gin_trgm_ops);
+
+  03_audit.sql: |-
+    -- -----------------------------------------------------
+    -- Table openidm.auditauthentication
+    -- -----------------------------------------------------
+    CREATE TABLE openidm.auditauthentication (
+      objectid VARCHAR(56) NOT NULL,
+      transactionid VARCHAR(255) NOT NULL,
+      activitydate VARCHAR(29) NOT NULL,
+      userid VARCHAR(255) DEFAULT NULL,
+      eventname VARCHAR(50) DEFAULT NULL,
+      provider VARCHAR(255) DEFAULT NULL,
+      method VARCHAR(25) DEFAULT NULL,
+      result VARCHAR(255) DEFAULT NULL,
+      principals TEXT,
+      context TEXT,
+      entries TEXT,
+      trackingids TEXT,
+      PRIMARY KEY (objectid)
+    );
+
+    -- -----------------------------------------------------
+    -- Table openidm.auditaccess
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.auditaccess (
+      objectid VARCHAR(56) NOT NULL,
+      activitydate VARCHAR(29) NOT NULL,
+      eventname VARCHAR(255),
+      transactionid VARCHAR(255) NOT NULL,
+      userid VARCHAR(255) DEFAULT NULL,
+      trackingids TEXT,
+      server_ip VARCHAR(40),
+      server_port VARCHAR(5),
+      client_ip VARCHAR(40),
+      client_port VARCHAR(5),
+      request_protocol VARCHAR(255) NULL ,
+      request_operation VARCHAR(255) NULL ,
+      request_detail TEXT NULL ,
+      http_request_secure VARCHAR(255) NULL ,
+      http_request_method VARCHAR(255) NULL ,
+      http_request_path VARCHAR(255) NULL ,
+      http_request_queryparameters TEXT NULL ,
+      http_request_headers TEXT NULL ,
+      http_request_cookies TEXT NULL ,
+      http_response_headers TEXT NULL ,
+      response_status VARCHAR(255) NULL ,
+      response_statuscode VARCHAR(255) NULL ,
+      response_elapsedtime VARCHAR(255) NULL ,
+      response_elapsedtimeunits VARCHAR(255) NULL ,
+      response_detail TEXT NULL ,
+      roles TEXT NULL ,
+      PRIMARY KEY (objectid)
+    );
+
+    -- -----------------------------------------------------
+    -- Table openidm.auditconfig
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.auditconfig (
+      objectid VARCHAR(56) NOT NULL,
+      activitydate VARCHAR(29) NOT NULL,
+      eventname VARCHAR(255) DEFAULT NULL,
+      transactionid VARCHAR(255) NOT NULL,
+      userid VARCHAR(255) DEFAULT NULL,
+      trackingids TEXT,
+      runas VARCHAR(255) DEFAULT NULL,
+      configobjectid VARCHAR(255) NULL ,
+      operation VARCHAR(255) NULL ,
+      beforeObject TEXT,
+      afterObject TEXT,
+      changedfields TEXT DEFAULT NULL,
+      rev VARCHAR(255) DEFAULT NULL,
+      PRIMARY KEY (objectid)
+    );
+
+    -- -----------------------------------------------------
+    -- Table openidm.auditactivity
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.auditactivity (
+      objectid VARCHAR(56) NOT NULL,
+      activitydate VARCHAR(29) NOT NULL,
+      eventname VARCHAR(255) DEFAULT NULL,
+      transactionid VARCHAR(255) NOT NULL,
+      userid VARCHAR(255) DEFAULT NULL,
+      trackingids TEXT,
+      runas VARCHAR(255) DEFAULT NULL,
+      activityobjectid VARCHAR(255) NULL ,
+      operation VARCHAR(255) NULL ,
+      subjectbefore TEXT,
+      subjectafter TEXT,
+      changedfields TEXT DEFAULT NULL,
+      subjectrev VARCHAR(255) DEFAULT NULL,
+      passwordchanged VARCHAR(5) DEFAULT NULL,
+      message TEXT,
+      provider VARCHAR(255) DEFAULT NULL,
+      context VARCHAR(25) DEFAULT NULL,
+      status VARCHAR(20),
+      PRIMARY KEY (objectid)
+    );
+
+    -- -----------------------------------------------------
+    -- Table openidm.auditrecon
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.auditrecon (
+      objectid VARCHAR(56) NOT NULL,
+      transactionid VARCHAR(255) NOT NULL,
+      activitydate VARCHAR(29) NOT NULL,
+      eventname VARCHAR(50) DEFAULT NULL,
+      userid VARCHAR(255) DEFAULT NULL,
+      trackingids TEXT,
+      activity VARCHAR(24) DEFAULT NULL,
+      exceptiondetail TEXT,
+      linkqualifier VARCHAR(255) DEFAULT NULL,
+      mapping VARCHAR(511) DEFAULT NULL,
+      message TEXT,
+      messagedetail TEXT,
+      situation VARCHAR(24) DEFAULT NULL,
+      sourceobjectid VARCHAR(511) DEFAULT NULL,
+      status VARCHAR(20) DEFAULT NULL,
+      targetobjectid VARCHAR(511) DEFAULT NULL,
+      reconciling VARCHAR(12) DEFAULT NULL,
+      ambiguoustargetobjectids TEXT,
+      reconaction VARCHAR(36) DEFAULT NULL,
+      entrytype VARCHAR(7) DEFAULT NULL,
+      reconid VARCHAR(56) DEFAULT NULL,
+      PRIMARY KEY (objectid)
+    );
+
+    CREATE INDEX idx_auditrecon_reconid ON openidm.auditrecon (reconid);
+    CREATE INDEX idx_auditrecon_entrytype ON openidm.auditrecon (entrytype);
+
+    -- -----------------------------------------------------
+    -- Table openidm.auditsync
+    -- -----------------------------------------------------
+
+    CREATE TABLE openidm.auditsync (
+      objectid VARCHAR(56) NOT NULL,
+      transactionid VARCHAR(255) NOT NULL,
+      activitydate VARCHAR(29) NOT NULL,
+      eventname VARCHAR(50) DEFAULT NULL,
+      userid VARCHAR(255) DEFAULT NULL,
+      trackingids TEXT,
+      activity VARCHAR(24) DEFAULT NULL,
+      exceptiondetail TEXT,
+      linkqualifier VARCHAR(255) DEFAULT NULL,
+      mapping VARCHAR(511) DEFAULT NULL,
+      message TEXT,
+      messagedetail TEXT,
+      situation VARCHAR(24) DEFAULT NULL,
+      sourceobjectid VARCHAR(511) DEFAULT NULL,
+      status VARCHAR(20) DEFAULT NULL,
+      targetobjectid VARCHAR(511) DEFAULT NULL,
+      PRIMARY KEY (objectid)
+    );
+  activiti.postgres.create.engine.sql: |
+    create table ACT_GE_PROPERTY (
+        NAME_ varchar(64),
+        VALUE_ varchar(300),
+        REV_ integer,
+        primary key (NAME_)
+    );
+
+    insert into ACT_GE_PROPERTY
+    values ('schema.version', '5.15', 1);
+
+    insert into ACT_GE_PROPERTY
+    values ('schema.history', 'create(5.15)', 1);
+
+    insert into ACT_GE_PROPERTY
+    values ('next.dbid', '1', 1);
+
+    create table ACT_GE_BYTEARRAY (
+        ID_ varchar(64),
+        REV_ integer,
+        NAME_ varchar(255),
+        DEPLOYMENT_ID_ varchar(64),
+        BYTES_ bytea,
+        GENERATED_ boolean,
+        primary key (ID_)
+    );
+
+    create table ACT_RE_DEPLOYMENT (
+        ID_ varchar(64),
+        NAME_ varchar(255),
+        CATEGORY_ varchar(255),
+        TENANT_ID_ varchar(255) default '',
+        DEPLOY_TIME_ timestamp,
+        primary key (ID_)
+    );
+
+    create table ACT_RE_MODEL (
+        ID_ varchar(64) not null,
+        REV_ integer,
+        NAME_ varchar(255),
+        KEY_ varchar(255),
+        CATEGORY_ varchar(255),
+        CREATE_TIME_ timestamp,
+        LAST_UPDATE_TIME_ timestamp,
+        VERSION_ integer,
+        META_INFO_ varchar(4000),
+        DEPLOYMENT_ID_ varchar(64),
+        EDITOR_SOURCE_VALUE_ID_ varchar(64),
+        EDITOR_SOURCE_EXTRA_VALUE_ID_ varchar(64),
+        TENANT_ID_ varchar(255) default '',
+        primary key (ID_)
+    );
+
+    create table ACT_RU_EXECUTION (
+        ID_ varchar(64),
+        REV_ integer,
+        PROC_INST_ID_ varchar(64),
+        BUSINESS_KEY_ varchar(255),
+        PARENT_ID_ varchar(64),
+        PROC_DEF_ID_ varchar(64),
+        SUPER_EXEC_ varchar(64),
+        ACT_ID_ varchar(255),
+        IS_ACTIVE_ boolean,
+        IS_CONCURRENT_ boolean,
+        IS_SCOPE_ boolean,
+        IS_EVENT_SCOPE_ boolean,
+        SUSPENSION_STATE_ integer,
+        CACHED_ENT_STATE_ integer,
+        TENANT_ID_ varchar(255) default '',
+        primary key (ID_)
+    );
+
+    create table ACT_RU_JOB (
+        ID_ varchar(64) NOT NULL,
+        REV_ integer,
+        TYPE_ varchar(255) NOT NULL,
+        LOCK_EXP_TIME_ timestamp,
+        LOCK_OWNER_ varchar(255),
+        EXCLUSIVE_ boolean,
+        EXECUTION_ID_ varchar(64),
+        PROCESS_INSTANCE_ID_ varchar(64),
+        PROC_DEF_ID_ varchar(64),
+        RETRIES_ integer,
+        EXCEPTION_STACK_ID_ varchar(64),
+        EXCEPTION_MSG_ varchar(4000),
+        DUEDATE_ timestamp,
+        REPEAT_ varchar(255),
+        HANDLER_TYPE_ varchar(255),
+        HANDLER_CFG_ varchar(4000),
+        TENANT_ID_ varchar(255) default '',
+        primary key (ID_)
+    );
+
+    create table ACT_RE_PROCDEF (
+        ID_ varchar(64) NOT NULL,
+        REV_ integer,
+        CATEGORY_ varchar(255),
+        NAME_ varchar(255),
+        KEY_ varchar(255) NOT NULL,
+        VERSION_ integer NOT NULL,
+        DEPLOYMENT_ID_ varchar(64),
+        RESOURCE_NAME_ varchar(4000),
+        DGRM_RESOURCE_NAME_ varchar(4000),
+        DESCRIPTION_ varchar(4000),
+        HAS_START_FORM_KEY_ boolean,
+        SUSPENSION_STATE_ integer,
+        TENANT_ID_ varchar(255) default '',
+        primary key (ID_)
+    );
+
+    create table ACT_RU_TASK (
+        ID_ varchar(64),
+        REV_ integer,
+        EXECUTION_ID_ varchar(64),
+        PROC_INST_ID_ varchar(64),
+        PROC_DEF_ID_ varchar(64),
+        NAME_ varchar(255),
+        PARENT_TASK_ID_ varchar(64),
+        DESCRIPTION_ varchar(4000),
+        TASK_DEF_KEY_ varchar(255),
+        OWNER_ varchar(255),
+        ASSIGNEE_ varchar(255),
+        DELEGATION_ varchar(64),
+        PRIORITY_ integer,
+        CREATE_TIME_ timestamp,
+        DUE_DATE_ timestamp,
+        CATEGORY_ varchar(255),
+        SUSPENSION_STATE_ integer,
+        TENANT_ID_ varchar(255) default '',
+        primary key (ID_)
+    );
+
+    create table ACT_RU_IDENTITYLINK (
+        ID_ varchar(64),
+        REV_ integer,
+        GROUP_ID_ varchar(255),
+        TYPE_ varchar(255),
+        USER_ID_ varchar(255),
+        TASK_ID_ varchar(64),
+        PROC_INST_ID_ varchar(64),
+        PROC_DEF_ID_ varchar (64),
+        primary key (ID_)
+    );
+
+    create table ACT_RU_VARIABLE (
+        ID_ varchar(64) not null,
+        REV_ integer,
+        TYPE_ varchar(255) not null,
+        NAME_ varchar(255) not null,
+        EXECUTION_ID_ varchar(64),
+        PROC_INST_ID_ varchar(64),
+        TASK_ID_ varchar(64),
+        BYTEARRAY_ID_ varchar(64),
+        DOUBLE_ double precision,
+        LONG_ bigint,
+        TEXT_ varchar(4000),
+        TEXT2_ varchar(4000),
+        primary key (ID_)
+    );
+
+    create table ACT_RU_EVENT_SUBSCR (
+        ID_ varchar(64) not null,
+        REV_ integer,
+        EVENT_TYPE_ varchar(255) not null,
+        EVENT_NAME_ varchar(255),
+        EXECUTION_ID_ varchar(64),
+        PROC_INST_ID_ varchar(64),
+        ACTIVITY_ID_ varchar(64),
+        CONFIGURATION_ varchar(255),
+        CREATED_ timestamp not null,
+        PROC_DEF_ID_ varchar(64),
+        TENANT_ID_ varchar(255) default '',
+        primary key (ID_)
+    );
+
+    create index ACT_IDX_EXEC_BUSKEY on ACT_RU_EXECUTION(BUSINESS_KEY_);
+    create index ACT_IDX_TASK_CREATE on ACT_RU_TASK(CREATE_TIME_);
+    create index ACT_IDX_IDENT_LNK_USER on ACT_RU_IDENTITYLINK(USER_ID_);
+    create index ACT_IDX_IDENT_LNK_GROUP on ACT_RU_IDENTITYLINK(GROUP_ID_);
+    create index ACT_IDX_EVENT_SUBSCR_CONFIG_ on ACT_RU_EVENT_SUBSCR(CONFIGURATION_);
+    create index ACT_IDX_VARIABLE_TASK_ID on ACT_RU_VARIABLE(TASK_ID_);
+
+    create index ACT_IDX_BYTEAR_DEPL on ACT_GE_BYTEARRAY(DEPLOYMENT_ID_);
+    alter table ACT_GE_BYTEARRAY
+        add constraint ACT_FK_BYTEARR_DEPL
+        foreign key (DEPLOYMENT_ID_)
+        references ACT_RE_DEPLOYMENT (ID_);
+
+    alter table ACT_RE_PROCDEF
+        add constraint ACT_UNIQ_PROCDEF
+        unique (KEY_,VERSION_, TENANT_ID_);
+
+    create index ACT_IDX_EXE_PROCINST on ACT_RU_EXECUTION(PROC_INST_ID_);
+    alter table ACT_RU_EXECUTION
+        add constraint ACT_FK_EXE_PROCINST
+        foreign key (PROC_INST_ID_)
+        references ACT_RU_EXECUTION (ID_);
+
+    create index ACT_IDX_EXE_PARENT on ACT_RU_EXECUTION(PARENT_ID_);
+    alter table ACT_RU_EXECUTION
+        add constraint ACT_FK_EXE_PARENT
+        foreign key (PARENT_ID_)
+        references ACT_RU_EXECUTION (ID_);
+
+    create index ACT_IDX_EXE_SUPER on ACT_RU_EXECUTION(SUPER_EXEC_);
+    alter table ACT_RU_EXECUTION
+        add constraint ACT_FK_EXE_SUPER
+        foreign key (SUPER_EXEC_)
+        references ACT_RU_EXECUTION (ID_);
+
+    create index ACT_IDX_EXE_PROCDEF on ACT_RU_EXECUTION(PROC_DEF_ID_);
+    alter table ACT_RU_EXECUTION
+        add constraint ACT_FK_EXE_PROCDEF
+        foreign key (PROC_DEF_ID_)
+        references ACT_RE_PROCDEF (ID_);
+
+
+    create index ACT_IDX_TSKASS_TASK on ACT_RU_IDENTITYLINK(TASK_ID_);
+    alter table ACT_RU_IDENTITYLINK
+        add constraint ACT_FK_TSKASS_TASK
+        foreign key (TASK_ID_)
+        references ACT_RU_TASK (ID_);
+
+    create index ACT_IDX_ATHRZ_PROCEDEF on ACT_RU_IDENTITYLINK(PROC_DEF_ID_);
+    alter table ACT_RU_IDENTITYLINK
+        add constraint ACT_FK_ATHRZ_PROCEDEF
+        foreign key (PROC_DEF_ID_)
+        references ACT_RE_PROCDEF (ID_);
+
+    create index ACT_IDX_IDL_PROCINST on ACT_RU_IDENTITYLINK(PROC_INST_ID_);
+    alter table ACT_RU_IDENTITYLINK
+        add constraint ACT_FK_IDL_PROCINST
+        foreign key (PROC_INST_ID_)
+        references ACT_RU_EXECUTION (ID_);
+
+    create index ACT_IDX_TASK_EXEC on ACT_RU_TASK(EXECUTION_ID_);
+    alter table ACT_RU_TASK
+        add constraint ACT_FK_TASK_EXE
+        foreign key (EXECUTION_ID_)
+        references ACT_RU_EXECUTION (ID_);
+
+    create index ACT_IDX_TASK_PROCINST on ACT_RU_TASK(PROC_INST_ID_);
+    alter table ACT_RU_TASK
+        add constraint ACT_FK_TASK_PROCINST
+        foreign key (PROC_INST_ID_)
+        references ACT_RU_EXECUTION (ID_);
+
+    create index ACT_IDX_TASK_PROCDEF on ACT_RU_TASK(PROC_DEF_ID_);
+    alter table ACT_RU_TASK
+      add constraint ACT_FK_TASK_PROCDEF
+      foreign key (PROC_DEF_ID_)
+      references ACT_RE_PROCDEF (ID_);
+
+    create index ACT_IDX_VAR_EXE on ACT_RU_VARIABLE(EXECUTION_ID_);
+    alter table ACT_RU_VARIABLE
+        add constraint ACT_FK_VAR_EXE
+        foreign key (EXECUTION_ID_)
+        references ACT_RU_EXECUTION (ID_);
+
+    create index ACT_IDX_VAR_PROCINST on ACT_RU_VARIABLE(PROC_INST_ID_);
+    alter table ACT_RU_VARIABLE
+        add constraint ACT_FK_VAR_PROCINST
+        foreign key (PROC_INST_ID_)
+        references ACT_RU_EXECUTION(ID_);
+
+    create index ACT_IDX_VAR_BYTEARRAY on ACT_RU_VARIABLE(BYTEARRAY_ID_);
+    alter table ACT_RU_VARIABLE
+        add constraint ACT_FK_VAR_BYTEARRAY
+        foreign key (BYTEARRAY_ID_)
+        references ACT_GE_BYTEARRAY (ID_);
+
+    create index ACT_IDX_JOB_EXCEPTION on ACT_RU_JOB(EXCEPTION_STACK_ID_);
+    alter table ACT_RU_JOB
+        add constraint ACT_FK_JOB_EXCEPTION
+        foreign key (EXCEPTION_STACK_ID_)
+        references ACT_GE_BYTEARRAY (ID_);
+
+    create index ACT_IDX_EVENT_SUBSCR on ACT_RU_EVENT_SUBSCR(EXECUTION_ID_);
+    alter table ACT_RU_EVENT_SUBSCR
+        add constraint ACT_FK_EVENT_EXEC
+        foreign key (EXECUTION_ID_)
+        references ACT_RU_EXECUTION(ID_);
+
+    create index ACT_IDX_MODEL_SOURCE on ACT_RE_MODEL(EDITOR_SOURCE_VALUE_ID_);
+    alter table ACT_RE_MODEL
+        add constraint ACT_FK_MODEL_SOURCE
+        foreign key (EDITOR_SOURCE_VALUE_ID_)
+        references ACT_GE_BYTEARRAY (ID_);
+
+    create index ACT_IDX_MODEL_SOURCE_EXTRA on ACT_RE_MODEL(EDITOR_SOURCE_EXTRA_VALUE_ID_);
+    alter table ACT_RE_MODEL
+        add constraint ACT_FK_MODEL_SOURCE_EXTRA
+        foreign key (EDITOR_SOURCE_EXTRA_VALUE_ID_)
+        references ACT_GE_BYTEARRAY (ID_);
+
+    create index ACT_IDX_MODEL_DEPLOYMENT on ACT_RE_MODEL(DEPLOYMENT_ID_);
+    alter table ACT_RE_MODEL
+        add constraint ACT_FK_MODEL_DEPLOYMENT
+        foreign key (DEPLOYMENT_ID_)
+        references ACT_RE_DEPLOYMENT (ID_);
+  activiti.postgres.create.history.sql: |-
+    create table ACT_HI_PROCINST (
+        ID_ varchar(64) not null,
+        PROC_INST_ID_ varchar(64) not null,
+        BUSINESS_KEY_ varchar(255),
+        PROC_DEF_ID_ varchar(64) not null,
+        START_TIME_ timestamp not null,
+        END_TIME_ timestamp,
+        DURATION_ bigint,
+        START_USER_ID_ varchar(255),
+        START_ACT_ID_ varchar(255),
+        END_ACT_ID_ varchar(255),
+        SUPER_PROCESS_INSTANCE_ID_ varchar(64),
+        DELETE_REASON_ varchar(4000),
+        TENANT_ID_ varchar(255) default '',
+        primary key (ID_),
+        unique (PROC_INST_ID_)
+    );
+
+    create table ACT_HI_ACTINST (
+        ID_ varchar(64) not null,
+        PROC_DEF_ID_ varchar(64) not null,
+        PROC_INST_ID_ varchar(64) not null,
+        EXECUTION_ID_ varchar(64) not null,
+        ACT_ID_ varchar(255) not null,
+        TASK_ID_ varchar(64),
+        CALL_PROC_INST_ID_ varchar(64),
+        ACT_NAME_ varchar(255),
+        ACT_TYPE_ varchar(255) not null,
+        ASSIGNEE_ varchar(255),
+        START_TIME_ timestamp not null,
+        END_TIME_ timestamp,
+        DURATION_ bigint,
+        TENANT_ID_ varchar(255) default '',
+        primary key (ID_)
+    );
+
+    create table ACT_HI_TASKINST (
+        ID_ varchar(64) not null,
+        PROC_DEF_ID_ varchar(64),
+        TASK_DEF_KEY_ varchar(255),
+        PROC_INST_ID_ varchar(64),
+        EXECUTION_ID_ varchar(64),
+        NAME_ varchar(255),
+        PARENT_TASK_ID_ varchar(64),
+        DESCRIPTION_ varchar(4000),
+        OWNER_ varchar(255),
+        ASSIGNEE_ varchar(255),
+        START_TIME_ timestamp not null,
+        CLAIM_TIME_ timestamp,
+        END_TIME_ timestamp,
+        DURATION_ bigint,
+        DELETE_REASON_ varchar(4000),
+        PRIORITY_ integer,
+        DUE_DATE_ timestamp,
+        FORM_KEY_ varchar(255),
+        CATEGORY_ varchar(255),
+        TENANT_ID_ varchar(255) default '',
+        primary key (ID_)
+    );
+
+    create table ACT_HI_VARINST (
+        ID_ varchar(64) not null,
+        PROC_INST_ID_ varchar(64),
+        EXECUTION_ID_ varchar(64),
+        TASK_ID_ varchar(64),
+        NAME_ varchar(255) not null,
+        VAR_TYPE_ varchar(100),
+        REV_ integer,
+        BYTEARRAY_ID_ varchar(64),
+        DOUBLE_ double precision,
+        LONG_ bigint,
+        TEXT_ varchar(4000),
+        TEXT2_ varchar(4000),
+        CREATE_TIME_ timestamp,
+        LAST_UPDATED_TIME_ timestamp,
+        primary key (ID_)
+    );
+
+    create table ACT_HI_DETAIL (
+        ID_ varchar(64) not null,
+        TYPE_ varchar(255) not null,
+        PROC_INST_ID_ varchar(64),
+        EXECUTION_ID_ varchar(64),
+        TASK_ID_ varchar(64),
+        ACT_INST_ID_ varchar(64),
+        NAME_ varchar(255) not null,
+        VAR_TYPE_ varchar(64),
+        REV_ integer,
+        TIME_ timestamp not null,
+        BYTEARRAY_ID_ varchar(64),
+        DOUBLE_ double precision,
+        LONG_ bigint,
+        TEXT_ varchar(4000),
+        TEXT2_ varchar(4000),
+        primary key (ID_)
+    );
+
+    create table ACT_HI_COMMENT (
+        ID_ varchar(64) not null,
+        TYPE_ varchar(255),
+        TIME_ timestamp not null,
+        USER_ID_ varchar(255),
+        TASK_ID_ varchar(64),
+        PROC_INST_ID_ varchar(64),
+        ACTION_ varchar(255),
+        MESSAGE_ varchar(4000),
+        FULL_MSG_ bytea,
+        primary key (ID_)
+    );
+
+    create table ACT_HI_ATTACHMENT (
+        ID_ varchar(64) not null,
+        REV_ integer,
+        USER_ID_ varchar(255),
+        NAME_ varchar(255),
+        DESCRIPTION_ varchar(4000),
+        TYPE_ varchar(255),
+        TASK_ID_ varchar(64),
+        PROC_INST_ID_ varchar(64),
+        URL_ varchar(4000),
+        CONTENT_ID_ varchar(64),
+        primary key (ID_)
+    );
+
+    create table ACT_HI_IDENTITYLINK (
+        ID_ varchar(64),
+        GROUP_ID_ varchar(255),
+        TYPE_ varchar(255),
+        USER_ID_ varchar(255),
+        TASK_ID_ varchar(64),
+        PROC_INST_ID_ varchar(64),
+        primary key (ID_)
+    );
+
+
+    create index ACT_IDX_HI_PRO_INST_END on ACT_HI_PROCINST(END_TIME_);
+    create index ACT_IDX_HI_PRO_I_BUSKEY on ACT_HI_PROCINST(BUSINESS_KEY_);
+    create index ACT_IDX_HI_ACT_INST_START on ACT_HI_ACTINST(START_TIME_);
+    create index ACT_IDX_HI_ACT_INST_END on ACT_HI_ACTINST(END_TIME_);
+    create index ACT_IDX_HI_DETAIL_PROC_INST on ACT_HI_DETAIL(PROC_INST_ID_);
+    create index ACT_IDX_HI_DETAIL_ACT_INST on ACT_HI_DETAIL(ACT_INST_ID_);
+    create index ACT_IDX_HI_DETAIL_TIME on ACT_HI_DETAIL(TIME_);
+    create index ACT_IDX_HI_DETAIL_NAME on ACT_HI_DETAIL(NAME_);
+    create index ACT_IDX_HI_DETAIL_TASK_ID on ACT_HI_DETAIL(TASK_ID_);
+    create index ACT_IDX_HI_PROCVAR_PROC_INST on ACT_HI_VARINST(PROC_INST_ID_);
+    create index ACT_IDX_HI_PROCVAR_NAME_TYPE on ACT_HI_VARINST(NAME_, VAR_TYPE_);
+    create index ACT_IDX_HI_ACT_INST_PROCINST on ACT_HI_ACTINST(PROC_INST_ID_, ACT_ID_);
+    create index ACT_IDX_HI_ACT_INST_EXEC on ACT_HI_ACTINST(EXECUTION_ID_, ACT_ID_);
+    create index ACT_IDX_HI_IDENT_LNK_USER on ACT_HI_IDENTITYLINK(USER_ID_);
+    create index ACT_IDX_HI_IDENT_LNK_TASK on ACT_HI_IDENTITYLINK(TASK_ID_);
+    create index ACT_IDX_HI_IDENT_LNK_PROCINST on ACT_HI_IDENTITYLINK(PROC_INST_ID_);
+  activiti.postgres.create.identity.sql: |
+    create table ACT_ID_GROUP (
+        ID_ varchar(64),
+        REV_ integer,
+        NAME_ varchar(255),
+        TYPE_ varchar(255),
+        primary key (ID_)
+    );
+
+    create table ACT_ID_MEMBERSHIP (
+        USER_ID_ varchar(64),
+        GROUP_ID_ varchar(64),
+        primary key (USER_ID_, GROUP_ID_)
+    );
+
+    create table ACT_ID_USER (
+        ID_ varchar(64),
+        REV_ integer,
+        FIRST_ varchar(255),
+        LAST_ varchar(255),
+        EMAIL_ varchar(255),
+        PWD_ varchar(255),
+        PICTURE_ID_ varchar(64),
+        primary key (ID_)
+    );
+
+    create table ACT_ID_INFO (
+        ID_ varchar(64),
+        REV_ integer,
+        USER_ID_ varchar(64),
+        TYPE_ varchar(64),
+        KEY_ varchar(255),
+        VALUE_ varchar(255),
+        PASSWORD_ bytea,
+        PARENT_ID_ varchar(255),
+        primary key (ID_)
+    );
+
+    create index ACT_IDX_MEMB_GROUP on ACT_ID_MEMBERSHIP(GROUP_ID_);
+    alter table ACT_ID_MEMBERSHIP
+        add constraint ACT_FK_MEMB_GROUP
+        foreign key (GROUP_ID_)
+        references ACT_ID_GROUP (ID_);
+
+    create index ACT_IDX_MEMB_USER on ACT_ID_MEMBERSHIP(USER_ID_);
+    alter table ACT_ID_MEMBERSHIP
+        add constraint ACT_FK_MEMB_USER
+        foreign key (USER_ID_)
+        references ACT_ID_USER (ID_);
+  sample-explicit-managed-user.sql: |-
+    DROP TABLE IF EXISTS openidm.managed_user;
+
+    CREATE TABLE openidm.managed_user (
+        objectid VARCHAR(38) NOT NULL,
+        rev VARCHAR(38) NOT NULL,
+        username VARCHAR(255),
+        password VARCHAR(511),
+        accountstatus VARCHAR(255),
+        postalcode VARCHAR(255),
+        stateprovince VARCHAR(255),
+        postaladdress VARCHAR(255),
+        address2 VARCHAR(255),
+        country VARCHAR(255),
+        city VARCHAR(255),
+        givenname VARCHAR(255),
+        description VARCHAR(255),
+        sn VARCHAR(255),
+        telephonenumber VARCHAR(255),
+        mail VARCHAR(255),
+        kbainfo TEXT,
+        lastsync TEXT,
+        preferences TEXT,
+        consentedmappings TEXT,
+        effectiveassignments TEXT,
+        effectiveroles TEXT,
+        effectiveauthzroles TEXT,
+        PRIMARY KEY (objectid));
+
+    CREATE UNIQUE INDEX idx_managed_user_userName ON openidm.managed_user (username ASC);
+    CREATE INDEX idx_managed_user_givenName ON openidm.managed_user (givenname ASC);
+    CREATE INDEX idx_managed_user_sn ON openidm.managed_user (sn ASC);
+    CREATE INDEX idx_managed_user_mail ON openidm.managed_user (mail ASC);
+    CREATE INDEX idx_managed_user_accountStatus ON openidm.managed_user (accountstatus ASC);
+kind: ConfigMap
+metadata:
+  name: openidm-sql
+---
+apiVersion: v1
+data:
+  postgres-password: b3BlbmlkbQ==
+kind: Secret
+metadata:
+  labels:
+    app: postgres-openidm
+    release: postgres-openidm
+  name: postgres-openidm
+type: Opaque
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: postgres-openidm-postgres-openidm
+    release: postgres-openidm
+  name: postgresql
+spec:
+  ports:
+  - name: postgresql
+    port: 5432
+    targetPort: postgresql
+  selector:
+    app: postgres-openidm
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: postgres-openidm
+    release: postgres-openidm
+  name: postgres-openidm
+spec:
+  template:
+    metadata:
+      labels:
+        app: postgres-openidm
+    spec:
+      containers:
+      - args:
+        - -c
+        - shared_buffers=128MB
+        - -c
+        - max_connections=100
+        env:
+        - name: POSTGRES_USER
+          value: openidm
+        - name: PGUSER
+          value: openidm
+        - name: POSTGRES_DB
+          value: ""
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: postgres-password
+              name: postgres-openidm
+        image: postgres:10.5-alpine
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          exec:
+            command:
+            - pg_isready
+          initialDelaySeconds: 30
+          timeoutSeconds: 3
+        name: postgres
+        ports:
+        - containerPort: 5432
+          name: postgresql
+        readinessProbe:
+          exec:
+            command:
+            - pg_isready
+          initialDelaySeconds: 30
+          timeoutSeconds: 3
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data/pgdata
+          name: data
+        - mountPath: /docker-entrypoint-initdb.d
+          name: sql
+      initContainers:
+      - command:
+        - rm
+        - -fr
+        - /var/lib/postgresql/data/pgdata/lost+found
+        image: busybox:1.25.0
+        imagePullPolicy: IfNotPresent
+        name: init
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data/pgdata
+          name: data
+      volumes:
+      - configMap:
+          name: openidm-sql
+        name: sql
+      - name: data
+        persistentVolumeClaim:
+          claimName: postgres-openidm
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: postgres-openidm-postgres-openidm
+    release: postgres-openidm
+  name: postgres-openidm
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Gi
+  storageClassName: standard

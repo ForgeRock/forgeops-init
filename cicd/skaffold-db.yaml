@@ -1,0 +1,11 @@
+# For development
+# skaffold -f skaffold.db deploy
+apiVersion: skaffold/v1beta4
+kind: Config
+deploy:
+    kubectl:
+      manifests:
+      - userstore/rendered.yaml
+      - postgres/rendered.yaml
+      - frconfig/rendered.yaml
+      

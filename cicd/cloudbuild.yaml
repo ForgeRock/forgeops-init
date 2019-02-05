@@ -1,0 +1,37 @@
+timeout: 500s
+steps:
+# Run skaffold . This creates docker images
+# that are tagged with the short sha git commit hash.
+- name: gcr.io/$PROJECT_ID/skaffold:alpha
+  # For locally submitted builds comment this out...
+  dir: cicd
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-east1-c'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=eng-shared'
+  - 'GCLOUD_PROJECT=$PROJECT_ID'
+  - 'SHORT_SHA=$SHORT_SHA'
+  - 'BRANCH_NAME=$BRANCH_NAME'
+  entrypoint: bash
+  args:
+  - '-c'
+  - |
+    gcloud container clusters get-credentials --zone "$$CLOUDSDK_COMPUTE_ZONE" "$$CLOUDSDK_CONTAINER_CLUSTER"
+    ./build.sh
+# Run kustomize to finish the deployment. Once kubectl gets kustomize integrated, this step can be 
+# merged into the previous one.
+- name: gcr.io/$PROJECT_ID/kustomize:latest
+  dir: cicd
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-east1-c'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=eng-shared'
+  - 'GCLOUD_PROJECT=$PROJECT_ID'
+  - 'SHORT_SHA=$SHORT_SHA'
+  entrypoint: bash
+  args:
+  - '-c'
+  - |
+    gcloud container clusters get-credentials --zone "$$CLOUDSDK_COMPUTE_ZONE" "$$CLOUDSDK_CONTAINER_CLUSTER"
+    ./kustomize.sh
+images:
+- 'gcr.io/$PROJECT_ID/sk-ig'
+- 'gcr.io/$PROJECT_ID/sk-idm'

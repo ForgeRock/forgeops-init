@@ -1,0 +1,192 @@
+{
+    "type" : "text/javascript",
+    "file" : "policy.js",
+    "additionalFiles" : [ ],
+    "resources" : [
+        {
+            "resource" : "selfservice/registration",
+            "calculatedProperties" : {
+                "type" : "text/javascript",
+                "source" : "require('selfServicePolicies').getRegistrationProperties()"
+            }
+        },
+        {
+            "resource" : "selfservice/reset",
+            "calculatedProperties" : {
+                "type" : "text/javascript",
+                "source" : "require('selfServicePolicies').getResetProperties()"
+            }
+        },
+        {
+            "resource" : "internal/user/*",
+            "properties" : [
+                {
+                    "name" : "_id",
+                    "policies" : [
+                        {
+                            "policyId" : "cannot-contain-characters",
+                            "params" : {
+                                "forbiddenChars" : [
+                                    "/"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name" : "password",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "not-empty"
+                        },
+                        {
+                            "policyId" : "minimum-length",
+                            "params" : {
+                                "minLength" : 8
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "resource" : "internal/role/*",
+            "properties" : [
+                {
+                    "name" : "name",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "resource" : "internal/privilege/*",
+            "properties" : [
+                {
+                    "name" : "name",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "not-empty"
+                        },
+                        {
+                            "policyId" : "valid-type",
+                            "params" : {
+                                "types" : [
+                                    "string"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name" : "accessFlags",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "not-empty"
+                        },
+                        {
+                            "policyId" : "valid-type",
+                            "params" : {
+                                "types" : [
+                                    "array"
+                                ]
+                            }
+                        },
+                        {
+                            "policyId" : "valid-accessFlags-object"
+                        }
+                    ]
+                },
+                {
+                    "name" : "actions",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "valid-type",
+                            "params" : {
+                                "types" : [
+                                    "array"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name" : "permissions",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "not-empty"
+                        },
+                        {
+                            "policyId" : "valid-type",
+                            "params" : {
+                                "types" : [
+                                    "array"
+                                ]
+                            }
+                        },
+                        {
+                            "policyId" : "valid-permissions"
+                        }
+                    ]
+                },
+                {
+                    "name" : "path",
+                    "policies" : [
+                        {
+                            "policyId" : "required"
+                        },
+                        {
+                            "policyId" : "not-empty"
+                        },
+                        {
+                            "policyId" : "cannot-contain-characters",
+                            "params" : {
+                                "forbiddenChars" : [
+                                    "/*"
+                                ]
+                            }
+                        },
+                        {
+                            "policyId" : "valid-privilege-path"
+                        }
+                    ]
+                },
+                {
+                    "name" : "filter",
+                    "policies" : [
+                        {
+                            "policyId" : "not-empty"
+                        },
+                        {
+                            "policyId" : "valid-type",
+                            "params" : {
+                                "types" : [
+                                    "string",
+                                    "null"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

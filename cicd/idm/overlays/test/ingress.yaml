@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: route
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  labels:
+    app: openidm-openidm
+    release: openidm
+    vendor: forgerock
+  name: openidm
+spec:
+  rules:
+  - host: test.iam.forgeops.com
+    http:
+      paths:
+      - backend:
+          serviceName: openidm
+          servicePort: 80
+        path: /idm
+      - backend:
+          serviceName: openidm
+          servicePort: 80
+        path: /api
+      - backend:
+          serviceName: openidm
+          servicePort: 80
+        path: /openidm
+      - backend:
+          serviceName: openidm
+          servicePort: 80
+        path: /oauthReturn
+      - backend:
+          serviceName: openidm
+          servicePort: 80
+        path: /admin
+  tls:
+  - hosts:
+    - test.iam.forgeops.com

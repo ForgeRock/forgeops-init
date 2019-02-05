@@ -1,0 +1,9 @@
+{
+    "enabled" : true,
+    "threadPool" : {
+        "steadyPoolThreads" : 2,
+        "maxPoolThreads" : 10,
+        "threadKeepAlive" : 60,
+        "maxQueueSize" : 20000
+    }
+}

@@ -1,0 +1,17 @@
+apiVersion: skaffold/v1beta4
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/engineering-devops/sk-ig
+    context: docker
+  tagPolicy:
+    sha256: {}
+deploy:
+  kustomize:
+    path: overlays/ship
+profiles:
+  # This profile works for git commits, not for manually submitted cloud builds
+  - name: gcb
+    build:
+      tagPolicy:
+        gitCommit: {}

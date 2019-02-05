@@ -1,0 +1,35 @@
+{
+  "v1": {
+    "config": null,
+    "helmValues": "# Copyright (c) 2016-2018 ForgeRock AS. Use of this source code is subject to the\n# Common Development and Distribution License (CDDL) that can be found in the LICENSE file\n#\n# Default values for OpenIG.\n# This is a YAML-formatted file.\n# Declare variables to be passed into your templates.\nreplicaCount: 1\ndomain: forgeops.com\nsubdomain: iam\n# Configuration parameters. Common to all charts that require configuration from a\n# source. Currently the only source is a git repo.\nconfig:\n  # Name of the configMap that holds the configuration repository URL and of\n  # the secret required to access it.\n  name: frconfig\n  # Path to our project\n  path: /ig\n  # strategy defines how products get their configuration .\n  # Using the git strategy, each helm chart pulls the configuration from git using an init container.\n  strategy: docker\nsecret:\n  name: openig-secrets-env\n# Tomcat JVM options.\ncatalinaOpts: -Xmx512m\n\nimage:\n  repository: gcr.io/engineering-devops/sk-ig\n  tag: latest\n  # Switch to IfNotPresent once we have milestone builds\n  pullPolicy: Always\ngitImage:\n  repository: forgerock-docker-public.bintray.io/forgerock/git\n  tag: 6.5.0\n  pullPolicy: IfNotPresent\nresources:\n#  limits:\n#    cpu: 1000m\n#    memory: 1024Mi\n  requests:\n    cpu: 200m\n    memory: 512Mi\n# These are both used to form the FQDN for the load balancer.  See _helpers.tpl\ncomponent: openig\nservice:\n  name: openig\n  type: ClusterIP\n  externalPort: 80\n  internalPort: 8080\ningress:\n  class: nginx\n  enabled: true\n  annotations:\n    kubernetes.io/ingress.class: nginx\n    nginx.ingress.kubernetes.io/affinity: cookie\n    nginx.ingress.kubernetes.io/ssl-redirect: \"true\"\n\n# Audit log details for log streaming sidecar containers\n\nauditLogs: []\n# auditLogs:\n#   - name: access-logs\n#     path: \"/tmp/logs/access.audit.json\"\n#   - name: debug-logs\n#     path: \"/tmp/logs/route-system.log\"\n\nistio:\n  enabled: false\n# healthURI: /\n# readinessURI: /\n\n# These values are for the smoke test. TODO: Normalize all IG configs\nhealthURI: /kube/liveness\nreadinessURI: /kube/readiness\n",
+    "releaseName": "openig",
+    "helmValuesDefaults": "# Copyright (c) 2016-2018 ForgeRock AS. Use of this source code is subject to the\n# Common Development and Distribution License (CDDL) that can be found in the LICENSE file\n#\n# Default values for OpenIG.\n# This is a YAML-formatted file.\n# Declare variables to be passed into your templates.\nreplicaCount: 1\n\ndomain: example.com\nsubdomain: iam\n\n# Configuration parameters. Common to all charts that require configuration from a\n# source. Currently the only source is a git repo.\nconfig:\n  # Name of the configMap that holds the configuration repository URL and of\n  # the secret required to access it.\n  name: frconfig\n  # Path to our project\n  path: /git/config/6.5/default/ig/basic-sample\n  # strategy defines how products get their configuration .\n  # Using the git strategy, each helm chart pulls the configuration from git using an init container.\n  strategy: git\n\nsecret:\n  name: openig-secrets-env\n\n# Tomcat JVM options.\ncatalinaOpts: \"-Xmx512m\"\n\nimage:\n  repository: forgerock-docker-public.bintray.io/forgerock/ig\n  tag: latest\n  # Switch to IfNotPresent once we have milestone builds\n  pullPolicy: Always\n\ngitImage:\n  repository: forgerock-docker-public.bintray.io/forgerock/git\n  tag: 6.5.0\n  pullPolicy: IfNotPresent\n\nresources:\n#  limits:\n#    cpu: 1000m\n#    memory: 1024Mi\n  requests:\n    cpu: 200m\n    memory: 512Mi\n\n# These are both used to form the FQDN for the load balancer.  See _helpers.tpl\ncomponent: openig\n\nservice:\n  name: openig\n  type: ClusterIP\n  externalPort: 80\n  internalPort: 8080\n\ningress:\n  class: nginx\n  enabled: true\n  annotations:\n    kubernetes.io/ingress.class: nginx\n    nginx.ingress.kubernetes.io/affinity: \"cookie\"\n    nginx.ingress.kubernetes.io/ssl-redirect: \"true\"\n\n# Audit log details for log streaming sidecar containers\n\nauditLogs: []\n# auditLogs:\n#   - name: access-logs\n#     path: \"/tmp/logs/access.audit.json\"\n#   - name: debug-logs\n#     path: \"/tmp/logs/route-system.log\"\n\nistio:\n  enabled: false\n\n# healthURI: /\n# readinessURI: /\n\n# These values are for the smoke test. TODO: Normalize all IG configs\nhealthURI: /kube/liveness\nreadinessURI: /kube/readiness\n",
+    "kustomize": {
+      "overlays": {
+        "ship": {
+          "patches": {
+            "/ingress.yaml": "apiVersion: extensions/v1beta1\nkind: Ingress\nmetadata:\n  annotations:\n    kubernetes.io/ingress.class: nginx\n    nginx.ingress.kubernetes.io/affinity: cookie\n    nginx.ingress.kubernetes.io/ssl-redirect: \"true\"\n  labels:\n    app: openig-openig\n    release: openig\n    vendor: forgerock\n  name: openig\nspec:\n  rules:\n  - host: warren.iam.forgeops.com\n    http:\n      paths:\n      - backend:\n          serviceName: openig\n          servicePort: 80\n        path: /ig\n  tls:\n  - hosts:\n    - warren.iam.forgeops.com"
+          }
+        }
+      }
+    },
+    "upstream": "https://github.com/ForgeRock/forgeops/tree/master/helm/openig",
+    "metadata": {
+      "applicationType": "helm",
+      "name": "openig",
+      "releaseNotes": "Revert \"CLOUD-1112 Add configure.py script to customize deployment (#555)\" (#559)\n\nThis reverts commit 5ef644e3f23d880da3bdb8e6fa3a3206ea6bfc19.",
+      "version": "6.5.0"
+    },
+    "contentSHA": "db08ac0bbbfa97e477d73875eeff399588aed54dbaf8f812d160e972822bd57e",
+    "lifecycle": {
+      "stepsCompleted": {
+        "intro": true,
+        "kustomize": true,
+        "kustomize-intro": true,
+        "outro": true,
+        "render": true,
+        "values": true
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+  DOMAIN: forgeops.com
+  GIT_AUTOSAVE_BRANCH: autosave-default
+  GIT_CHECKOUT_BRANCH: cicd
+  GIT_REPO: https://github.com/wstrange/forgeops-init.git
+kind: ConfigMap
+metadata:
+  name: frconfig
+---
+apiVersion: v1
+data:
+  domain: Zm9yZ2VvcHMuY29t
+kind: Secret
+metadata:
+  name: frconfig-platform
+type: Opaque
+---
+apiVersion: v1
+data:
+  id_rsa: VGhpcyBpcyBhIGR1bW15IHNlY3JldCBmb3IgZ2l0IHNzaCBhY2Nlc3MuIElmIHlvdSBhcmUgdXNpbmcgYSBwcml2YXRlIGdpdCByZXBvCnRoYXQgcmVxdWlyZXMgYW4gc3NoIGtleSwgcmVwbGFjZSB0aGlzIGZpbGUgd2l0aCB5b3VyIGdlbmVyYXRlZCBpZF9yc2Ega2V5LApTZWUgdGhlIFJFQURNRS4K
+kind: Secret
+metadata:
+  name: frconfig
+type: Opaque
