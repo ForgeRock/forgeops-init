@@ -1,0 +1,11 @@
+kind: ""
+apiversion: ""
+resources:
+- ConfigMap-idm-boot-properties.yaml
+- ConfigMap-idm-logging-properties.yaml
+- ConfigMap-openidm-openidm.yaml
+- idm.yaml
+- ingress.yaml
+- openidm-secrets-env.yaml
+- secrets.yaml
+- service.yaml

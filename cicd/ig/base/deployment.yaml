@@ -1,0 +1,64 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    component: openig
+    vendor: forgerock
+  name: openig-openig
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
+      labels:
+        app: openig
+        component: openig
+        release: openig
+        vendor: forgerock
+    spec:
+      containers:
+      - env:
+        - name: OPENIG_BASE
+          value: /ig
+        - name: CATALINA_OPTS
+          value: -Xmx512m
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MY_POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        envFrom:
+        - configMapRef:
+            name: frconfig
+        - secretRef:
+            name: frconfig-platform
+        - secretRef:
+            name: openig-secrets-env
+        image: gcr.io/engineering-devops/sk-ig:latest
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /kube/liveness
+            port: 8080
+          periodSeconds: 30
+          timeoutSeconds: 10
+        name: openig
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /kube/readiness
+            port: 8080
+          initialDelaySeconds: 5
+        resources:
+          requests:
+            cpu: 200m
+            memory: 512Mi
+        volumeMounts: null
+      volumes:
+      - emptyDir: {}
+        name: logs

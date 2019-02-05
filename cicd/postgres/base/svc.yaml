@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: postgres-openidm-postgres-openidm
+    release: postgres-openidm
+  name: postgresql
+spec:
+  ports:
+  - name: postgresql
+    port: 5432
+    targetPort: postgresql
+  selector:
+    app: postgres-openidm
