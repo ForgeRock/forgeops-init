@@ -1,0 +1,24 @@
+apiVersion: skaffold/v1beta2
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/engineering-devops/sk-amster
+  # kaniko: {}
+  googleCloudBuild:
+      projectId: engineering-devops
+  tagPolicy:
+    sha256: {}
+deploy:
+  helm:
+    releases:
+    - name: sk-amster
+      chartPath: ../helm/amster
+      values:
+        image: gcr.io/engineering-devops/sk-amster
+      setValues:
+        config.importPath: /git
+        config.strategy: docker
+        domain: .forgeops.com
+        skaffold: "true"
+      imageStrategy:
+        helm: {}
