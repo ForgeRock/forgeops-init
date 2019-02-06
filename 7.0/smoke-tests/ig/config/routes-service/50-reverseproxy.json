@@ -1,5 +1,5 @@
 {
-  "baseURI" : "http://&{namespace}-web:80",
+  "baseURI" : "http://web:80",
   "handler" : {
     "type" : "ReverseProxyHandler",
     "config" : {
