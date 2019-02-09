@@ -87,9 +87,9 @@ kubectl rollout undo  deployment/openig-openig --to-revision=2
 
 ## CD Process
 
-When the deployer is happy with the resulting configuration, the changes are committed witoth gitband pushed to a branch on github.
+When the deployer is happy with the resulting configuration, the changes are committed with git and pushed to a branch on github.
 
-For the demo, we are using a [Google Cloud Build](https://cloud.google.com/cloud-build/) hook that triggers on a commit to Github (set this up for your project here `https://console.cloud.google.com/cloud-build/builds` ).
+For the demo, we are using a [Google Cloud Build](https://cloud.google.com/cloud-build/) hook that triggers on a commit to Github (set this up for your project [here](https://console.cloud.google.com/cloud-build/builds).
 
 On a commit, the trigger fires and runs the cloudbuild task specified in `cloudbuild.yaml`.
 
@@ -99,7 +99,7 @@ The deployment flow is  similiar to the the 'dev' flow, with some exceptions:
 * `skaffold deploy` is used instead of `skaffold dev`. This is a one shot "deploy and exit" flow.
 * We use kustomize overlays to change the attributes that are unique to the `test` deployment (namespace, ingress, etc.)
 
-If the apps are already deployed, a rolling update is done. Provided we have "immutable" containers (this does not work yet for AM - stay tuned!) we should be able to use deployments to roll back / forward.
+Applications are deployed using rolling updates. This does not work yet for AM - stay tuned! Again, you can use `kubectl` to perform rollbacks.
 
 ## Notes
 
@@ -108,3 +108,9 @@ During development you will create a lot of images. Skaffold does not yet garbag
 ```docker system prune```
 
 For GKE and other repositories a garbage collection task is required.
+
+## Future Directions
+
+* Run in-namespace QA suite. Promote to 'production' namespace on success.
+* Label deployments with versions to support canary releases (using istio, for example)
+* Helm 3. Solves the tiller issues.

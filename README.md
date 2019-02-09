@@ -91,5 +91,6 @@ Directory                   | Contents
 
  The 7.0 directory currently contains a copy of the idm 6.5 configuration, with the UI contexts updated to align with the new istio ingress (/idm, /admin, /openidm). It is otherwise identical to the 6.5 configuration.
 
+#### CI/CD POC
 
-
+cicd/ contains a work in progress demonstration (7.0)
