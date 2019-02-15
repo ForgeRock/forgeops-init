@@ -22,6 +22,7 @@ deploy:
     - name: sk-frconfig
       chartPath: helm/frconfig
       setValues:
+        certmanager.enabled: true
         certmanager.acme: "false"
         certmanager.issuer: ca-issuer
         certmanager.issuerKind: Issuer

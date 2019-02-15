@@ -172,6 +172,7 @@ Install the Google Cloud SDK: https://cloud.google.com/sdk/install
     ```
     sed -e "s/engineering-devops/$(gcloud config list --flatten=core --format='value(project)')/" \
         -e "s/push: false/push: true/" \
+        -e "s/certmanager.enabled: true/istio.enabled: true/" \
         -e "s/certmanager.acme: false/certmanager.acme: true/" \
         -e "s/certmanager.issuer: ca-issuer/certmanager.issuer: letsencrypt-prod/" \
         -e "s/certmanager.issuerKind: Issuer/certmanager.issuerKind: ClusterIssuer/" \
@@ -221,13 +222,13 @@ Install the Google Cloud SDK: https://cloud.google.com/sdk/install
 
     Find the URL for the AM admin console with using this command:
     ```
-    echo https://`kubectl get ing -o jsonpath="{.items[0].spec.rules[0].host}" -l chart=openam-6.5.0`/console
+    echo https://`kubectl get ing -o jsonpath="{.items[0].spec.rules[0].host}" -l chart=openam-6.5.0`/am/console
     ```
     Open that URL and you will be redirected to the AM login page.
 
     Find the URL to the default OAuth2 client with this command:
     ```
-    echo https://`kubectl get ing -o jsonpath="{.items[0].spec.rules[0].host}" -l chart=end-user-ui-0.1.0`/
+    echo https://`kubectl get ing -o jsonpath="{.items[0].spec.rules[0].host}" -l chart=end-user-ui-0.1.0`/enduser/
     ```
 
     You can use amadmin / password to login as the am admin.
