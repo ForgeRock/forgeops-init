@@ -27,7 +27,7 @@ Have the following installed locally:
 - Helm https://github.com/helm/helm#install
 - Skaffold https://github.com/GoogleContainerTools/skaffold#installation
 
-Clone the [forgeops](https://github.com/ForgeRock/forgeops/) git repository at the same level as this forgeops-init folder. So it should be available at ../../../../forgeops (relative to this folder). This is necessary for the "helm" symbolic link to map to the helm charts published in forgeops.
+Clone the [forgeops](https://github.com/ForgeRock/forgeops/) git repository at the same level as this forgeops-init folder. So it should be available at ../../../../forgeops (relative to this folder). This is necessary for the "helm" symbolic link to map to the helm charts published in forgeops. *Important* You must have the 6.5.1 tag of ForgeOps checked out to work with this project.
 
 ## Using Minikube
 
