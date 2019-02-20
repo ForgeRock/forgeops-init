@@ -40,7 +40,7 @@
                     "config": {
                         "onResponse": [
                             {
-                                "condition": "${response.entity.json.userName != contexts.oauth2.accessToken.info.sub}",
+                                "condition": "${!response.entity.json.userName.equalsIgnoreCase(contexts.oauth2.accessToken.info.sub)}",
                                 "handler": "authzFailureResponse"
                             }
                         ]
