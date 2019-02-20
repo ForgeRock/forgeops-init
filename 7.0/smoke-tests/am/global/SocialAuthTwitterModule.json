@@ -16,7 +16,7 @@
         "subjectProperty" : "id_str",
         "requestTokenEndpoint" : "https://api.twitter.com/oauth/request_token",
         "provider" : "Twitter",
-        "ssoProxyUrl" : "http://openam:80/oauth2c/OAuthProxy.jsp",
+        "ssoProxyUrl" : "http://openam:80/am/oauth2c/OAuthProxy.jsp",
         "authorizeEndpoint" : "https://api.twitter.com/oauth/authenticate",
         "userInfoEndpoint" : "https://api.twitter.com/1.1/account/verify_credentials.json"
       },

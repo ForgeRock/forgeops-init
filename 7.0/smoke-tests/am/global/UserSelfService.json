@@ -34,8 +34,8 @@
         "forgottenUsernameServiceConfigClass" : "org.forgerock.openam.selfservice.config.flows.ForgottenUsernameConfigProvider",
         "userRegistrationServiceConfigClass" : "org.forgerock.openam.selfservice.config.flows.UserRegistrationConfigProvider",
         "forgottenPasswordServiceConfigClass" : "org.forgerock.openam.selfservice.config.flows.ForgottenPasswordConfigProvider",
-        "forgottenPasswordConfirmationUrl" : "http://openam:80/XUI/?realm=${realm}#passwordReset/",
-        "userRegistrationConfirmationUrl" : "http://openam:80/XUI/?realm=${realm}#register/"
+        "forgottenPasswordConfirmationUrl" : "http://openam:80/am/XUI/?realm=${realm}#passwordReset/",
+        "userRegistrationConfirmationUrl" : "http://openam:80/am/XUI/?realm=${realm}#register/"
       },
       "userRegistration" : {
         "userRegistrationEmailVerificationFirstEnabled" : false,

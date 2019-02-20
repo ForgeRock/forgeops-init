@@ -35,7 +35,7 @@
         "apiVersion" : "5.73",
         "provider" : "VKontakte",
         "scope" : [ "email" ],
-        "ssoProxyUrl" : "http://openam:80/oauth2c/OAuthProxy.jsp",
+        "ssoProxyUrl" : "http://openam:80/am/oauth2c/OAuthProxy.jsp",
         "forgerock-am-auth-socialauthvk-auth-level" : 0,
         "userInfoEndpoint" : "https://api.vk.com/method/users.get",
         "authorizeEndpoint" : "https://oauth.vk.com/authorize"

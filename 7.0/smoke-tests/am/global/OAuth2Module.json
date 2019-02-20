@@ -10,7 +10,7 @@
     "_id" : "",
     "defaults" : {
       "mixUpMitigation" : false,
-      "ssoProxyUrl" : "http://openam:80/oauth2c/OAuthProxy.jsp",
+      "ssoProxyUrl" : "http://openam:80/am/oauth2c/OAuthProxy.jsp",
       "authenticationLevel" : 0,
       "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper",
       "accountMapperConfiguration" : [ "id=facebook-id", "email=mail" ],
