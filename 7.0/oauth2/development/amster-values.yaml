@@ -1,4 +1,5 @@
   domain: forgeops.com
+  amadminPassword: password
   resources:
     requests:
       memory: "64Mi"
