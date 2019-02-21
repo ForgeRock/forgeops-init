@@ -1,0 +1,16 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0",
+    "entityType" : "Realms",
+    "entityId" : "L3l1bA",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "L3l1bA",
+    "parentPath" : "/",
+    "active" : true,
+    "name" : "yul",
+    "aliases" : [ ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0",
+    "entityType" : "Realms",
+    "entityId" : "Lw",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "Lw",
+    "parentPath" : null,
+    "active" : true,
+    "name" : "/",
+    "aliases" : [ "login.frudevops-yul2.frudevops-yul2.com", "openam", "am-config" ]
+  }
+}
