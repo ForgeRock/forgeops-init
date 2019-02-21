@@ -21,7 +21,7 @@
     },
     "amconfig.header.mailserver" : {
       "com.iplanet.am.smtphost" : "localhost",
-      "com.iplanet.am.smtpport" : "25"
+      "com.iplanet.am.smtpport" : "2525"
     }
   }
 }

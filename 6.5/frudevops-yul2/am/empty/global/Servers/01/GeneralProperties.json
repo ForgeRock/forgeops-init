@@ -51,7 +51,7 @@
         "inherited" : true
       },
       "com.iplanet.am.smtpport" : {
-        "value" : "25",
+        "value" : "2525",
         "inherited" : true
       }
     }
