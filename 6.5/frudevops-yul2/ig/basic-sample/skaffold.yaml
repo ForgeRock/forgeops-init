@@ -1,0 +1,27 @@
+apiVersion: skaffold/v1beta2
+kind: Config
+build:
+  artifacts:
+  # - image: forgerock/igtest
+  - image:  gcr.io/engineering-devops/sk-ig
+  # googleCloudBuild:
+  #   projectId: engineering-devops
+  tagPolicy:
+    sha256: {}
+deploy:
+  helm:
+    releases:
+    # - name: sk-frconfig
+    #   chartPath: ../helm/frconfig
+    #   setValues:
+    #     domain: .forgeops.com
+    - name: ig-test
+      chartPath: ../../../helm-link/openig
+      values:
+        image: gcr.io/engineering-devops/sk-ig
+      setValues:
+        config.path: /git
+        config.strategy: docker
+        domain: .forgeops.com
+      imageStrategy:
+        helm: {}
