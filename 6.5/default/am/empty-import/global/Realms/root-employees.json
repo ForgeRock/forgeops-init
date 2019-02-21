@@ -1,0 +1,16 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0",
+    "entityType" : "Realms",
+    "entityId" : "L2VtcGxveWVlcw",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "L2VtcGxveWVlcw",
+    "parentPath" : "/",
+    "active" : true,
+    "name" : "employees",
+    "aliases" : [ ]
+  }
+}
