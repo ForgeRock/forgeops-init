@@ -35,7 +35,6 @@
     "montoring" : {
       "monitoringAgentClass" : "com.sun.identity.plugin.monitoring.impl.AgentProvider",
       "monitoringSaml2Class" : "com.sun.identity.plugin.monitoring.impl.FedMonSAML2SvcProvider",
-      "monitoringIdffClass" : "com.sun.identity.plugin.monitoring.impl.FedMonIDFFSvcProvider",
       "monitoringSaml1Class" : "com.sun.identity.plugin.monitoring.impl.FedMonSAML1SvcProvider"
     },
     "_type" : {

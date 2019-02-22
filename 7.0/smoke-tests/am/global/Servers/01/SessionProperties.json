@@ -3,9 +3,9 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "SessionProperties",
-    "entityId" : "http://openam:80",
+    "entityId" : "http://openam:80/am",
     "pathParams" : {
-      "serverName" : "http://openam:80"
+      "serverName" : "http://openam:80/am"
     }
   },
   "data" : {

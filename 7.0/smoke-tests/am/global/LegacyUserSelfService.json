@@ -11,11 +11,11 @@
     "defaults" : {
       "forgotPasswordTokenLifetime" : 900,
       "selfServiceEnabled" : false,
-      "selfRegistrationConfirmationUrl" : "http://openam:80/XUI/confirm.html",
+      "selfRegistrationConfirmationUrl" : "http://openam:80/am/XUI/confirm.html",
       "forgotPasswordEnabled" : false,
       "selfRegistrationEnabled" : false,
       "selfRegistrationTokenLifetime" : 900,
-      "forgotPasswordConfirmationUrl" : "http://openam:80/XUI/confirm.html",
+      "forgotPasswordConfirmationUrl" : "http://openam:80/am/XUI/confirm.html",
       "userRegisteredDestination" : "default",
       "protectedUserAttributes" : [ ],
       "confirmationIdHmacKey" : "diF2gZs5OJvR3t6Iyqr+S428iWAGfeyUpgkDbR3k9vo="

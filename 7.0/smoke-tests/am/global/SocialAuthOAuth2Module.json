@@ -13,7 +13,7 @@
         "usesBasicAuth" : true,
         "logoutBehaviour" : "prompt",
         "scope" : [ ],
-        "ssoProxyUrl" : "http://openam:80/oauth2c/OAuthProxy.jsp",
+        "ssoProxyUrl" : "http://openam:80/am/oauth2c/OAuthProxy.jsp",
         "logoutServiceUrl" : "",
         "authenticationLevel" : 0,
         "mixUpMitigation" : false

@@ -18,7 +18,7 @@
         "logoutBehaviour" : "prompt",
         "provider" : "Instagram",
         "scope" : [ "basic" ],
-        "ssoProxyUrl" : "http://openam:80/oauth2c/OAuthProxy.jsp",
+        "ssoProxyUrl" : "http://openam:80/am/oauth2c/OAuthProxy.jsp",
         "authorizeEndpoint" : "https://api.instagram.com/oauth/authorize",
         "userInfoEndpoint" : "https://api.instagram.com/v1/users/self"
       },

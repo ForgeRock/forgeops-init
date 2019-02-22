@@ -18,10 +18,8 @@
     "endpointConfig" : {
       "stsMexUrl" : "%protocol://%host:%port%uri/sts/mex",
       "idsvcsRestUrl" : "%protocol://%host:%port%uri/identity/",
-      "securityTokenManagerUrl" : "%protocol://%host:%port%uri/SecurityTokenManagerServlet/SecurityTokenManagerIF",
       "stsUrl" : "%protocol://%host:%port%uri/sts",
-      "jaxwsUrl" : "%protocol://%host:%port%uri/identityservices/",
-      "federationAssertionManagerUrl" : "%protocol://%host:%port%uri/FSAssertionManagerServlet/FSAssertionManagerIF"
+      "jaxwsUrl" : "%protocol://%host:%port%uri/identityservices/"
     },
     "federationConfig" : {
       "samlAssertionManagerUrl" : "%protocol://%host:%port%uri/AssertionManagerServlet/AssertionManagerIF",
