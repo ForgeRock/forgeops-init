@@ -13,8 +13,8 @@ class IGGenerateTokensSim extends Simulation {
   val userPoolSize: Integer = Integer.getInteger("users", 1000)
   val amHost: String = System.getProperty("am_host", "login.prod.perf.forgerock-qa.com")
   val amPort: String = System.getProperty("am_port", "443")
-
   val amProtocol: String = System.getProperty("am_protocol", "https")
+  val amContext: String = System.getProperty("am_context", "")
   
   val oauth2ClientId: String = System.getProperty("oauth2_client_id", "client-application")
   val oauth2ClientPassword: String = System.getProperty("oauth2_client_pw", "password")
@@ -24,7 +24,7 @@ class IGGenerateTokensSim extends Simulation {
   val tokenVarName = "token"
   var accessTokenVarName = "access_token"
   
-  val amUrl: String = amProtocol + "://" + amHost + ":" + amPort + "/am"
+  val amUrl: String = amProtocol + "://" + amHost + ":" + amPort + amContext
   val random = new util.Random
   
   val header = "tokens"
