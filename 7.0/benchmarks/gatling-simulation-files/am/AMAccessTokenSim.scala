@@ -62,7 +62,7 @@ class AMAccessTokenSim extends Simulation {
             .exec(flushCookieJar)
             .exec(
                 http("Rest login stage")
-                    .post("/am/json/authenticate")
+                    .post("/json/authenticate")
                     .disableUrlEncoding
                     .header("Content-Type", "application/json")
                     .headers(getXOpenAMHeaders("${username}", "${password}"))
@@ -71,7 +71,7 @@ class AMAccessTokenSim extends Simulation {
                 addCookie(Cookie("iPlanetDirectoryPro", _.get(tokenVarName).as[String]))
             ).exec(
                 http("Authorize stage")
-                    .post("/am/oauth2/authorize")
+                    .post("/oauth2/authorize")
                     .queryParam("client_id", oauth2ClientId)
                     .queryParam("scope", scope)
                     .queryParam("state", state)
@@ -87,7 +87,7 @@ class AMAccessTokenSim extends Simulation {
 
             ).exec(
                 http("AccessToken stage")
-                  .post("/am/oauth2/access_token")
+                  .post("/oauth2/access_token")
                   .queryParam("realm", realm)
                   .formParam("grant_type", "authorization_code")
                   .formParam("code", _.get(codeVarName).as[String])
@@ -97,7 +97,7 @@ class AMAccessTokenSim extends Simulation {
             ).doIf(getTokenInfo.toLowerCase.equals("true")) {
                 exec(
                     http("IdTokenInfo stage")
-                    .get("/am/oauth2/tokeninfo")
+                    .get("/oauth2/tokeninfo")
                     .queryParam("access_token", _.get(accessTokenVarName).as[String])
                     .check(jsonPath("$.access_token").exists)
                 )
