@@ -20,8 +20,9 @@ class IDMReadManagedUsers extends Simulation{
     val idmHost: String = System.getProperty("idm_host", "openidm.example.forgeops.com")
     val idmPort: String = System.getProperty("idm_port", "80")
     val idmProtocol: String = System.getProperty("idm_protocol", "http")
+    val idmContext: String = System.getProperty("idm_context", "")
 
-    val idmUrl: String = idmProtocol + "://" + idmHost + ":" + idmPort + "/idm"
+    val idmUrl: String = idmProtocol + "://" + idmHost + ":" + idmPort + idmContext
     val random = new util.Random
     val counter = new LongCounter
     def t: Integer = 0

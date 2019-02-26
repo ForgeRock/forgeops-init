@@ -22,6 +22,7 @@ class AMAccessTokenSim extends Simulation {
     val amHost: String = System.getProperty("am_host", "login.example.domain.com")
     val amPort: String = System.getProperty("am_port", "80")
     val amProtocol: String = System.getProperty("am_protocol", "http")
+    val amContext: String = System.getProperty("am_context", "/am")
 
     val oauth2ClientId: String = System.getProperty("oauth2_client_id", "clientOIDC_0")
     val oauth2ClientPassword: String = System.getProperty("oauth2_client_pw", "password")
@@ -36,7 +37,7 @@ class AMAccessTokenSim extends Simulation {
     val codeVarName = "authcode"
     var accessTokenVarName = "access_token"
 
-    val amUrl: String = amProtocol + "://" + amHost + ":" + amPort + "/am"
+    val amUrl: String = amProtocol + "://" + amHost + ":" + amPort + amContext
     val random = new util.Random
 
     val userFeeder: Iterator[Map[String, String]] = Iterator.continually(Map(
