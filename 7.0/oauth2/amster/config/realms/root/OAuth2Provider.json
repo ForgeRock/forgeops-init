@@ -49,7 +49,6 @@
       "supportedRequestParameterEncryptionEnc" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
       "claimsParameterSupported" : false,
       "amrMappings" : { },
-      "requireRequestUriRegistration" : false,
       "alwaysAddClaimsToToken" : true,
       "supportedRequestParameterEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "RSA1_5", "A256KW", "dir", "A192KW" ],
       "authorisedOpenIdConnectSSOClients" : [ ],

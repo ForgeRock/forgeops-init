@@ -1,4 +1,4 @@
-FROM forgerock-docker-public.bintray.io/forgerock/openam:7.0.0
-
+FROM forgerock-docker-public.bintray.io/forgerock/am:7.0.0-SNAPSHOT
+RUN cp /usr/local/tomcat/webapps/am/XUI/main.*.js /usr/local/tomcat/webapps/am/XUI/main.normalized.js 
 COPY web.xml /usr/local/tomcat/webapps/am/WEB-INF
 COPY index.html /usr/local/tomcat/webapps/am/XUI

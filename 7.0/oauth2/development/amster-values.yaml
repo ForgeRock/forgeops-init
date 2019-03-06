@@ -1,4 +1,6 @@
   domain: forgeops.com
+  userStore:
+    host: configstore-0.configstore
   amadminPassword: password
   resources:
     requests:
