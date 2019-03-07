@@ -248,7 +248,7 @@ To export changes made to the running AM pod, you'll first need to find the amst
     export AMSTER_POD=`kubectl get po -o jsonpath="{.items[0].metadata.name}" -l component=amster`
 
     kubectl exec -it $AMSTER_POD /opt/amster/amster
-      connect http://openam -k /var/run/secrets/amster/id_rsa
+      connect http://openam/am -k /var/run/secrets/amster/id_rsa
       export-config --path /tmp/export
       :quit
 

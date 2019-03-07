@@ -1,4 +1,4 @@
-FROM forgerock-docker-public.bintray.io/forgerock/end-user-ui:6.5.0
+FROM forgerock-docker-public.bintray.io/forgerock/end-user-ui:7.0.0-SNAPSHOT
 
 WORKDIR /tmp/end-user-ui
 
