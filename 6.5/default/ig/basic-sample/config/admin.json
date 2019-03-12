@@ -28,6 +28,6 @@
       }
     }    
   ],
-  "mode": "PRODUCTION",
+  "mode": "DEVELOPMENT",
   "prefix": "openig"
 }
