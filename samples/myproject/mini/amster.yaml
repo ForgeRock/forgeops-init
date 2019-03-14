@@ -6,10 +6,15 @@
 
 # For production set CPU limits to help Kube Schedule the pods.
 resources:
- limits:
-   memory: 756Mi
- requests:
-   memory: 756Mi
+  limits:
+    memory: 756Mi
+  requests:
+    memory: 756Mi
 
 # Use the config store as the cts
 # ctsStores: "configstore-0.configstore:1389"
+image:
+  repository: eu.gcr.io/jamboree-234414/forgerock/amster
+
+
+amadminPassword: Frdp-2010
