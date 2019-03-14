@@ -1,0 +1,29 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "6.5.0.1",
+    "entityType" : "Applications",
+    "entityId" : "iPlanetAMWebAgentService",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "iPlanetAMWebAgentService",
+    "displayName" : "Default Policy Set",
+    "lastModifiedBy" : "id=dsameuser,ou=user,ou=am-config",
+    "description" : "The built-in Application used by OpenAM Policy Agents.",
+    "attributeNames" : [ ],
+    "saveIndex" : null,
+    "searchIndex" : null,
+    "entitlementCombiner" : "DenyOverride",
+    "resourceComparator" : null,
+    "editable" : true,
+    "resourceTypeUuids" : [ "76656a38-5f8e-401b-83aa-4ccb74ce88d2" ],
+    "creationDate" : 1552580678195,
+    "lastModifiedDate" : 1552580678195,
+    "createdBy" : "id=dsameuser,ou=user,ou=am-config",
+    "subjects" : [ "NOT", "OR", "JwtClaim", "AuthenticatedUsers", "AND", "Identity", "NONE" ],
+    "applicationType" : "iPlanetAMWebAgentService",
+    "conditions" : [ "LEAuthLevel", "Script", "AuthenticateToService", "SimpleTime", "AMIdentityMembership", "OR", "IPv6", "IPv4", "SessionProperty", "AuthScheme", "AuthLevel", "NOT", "Transaction", "AuthenticateToRealm", "AND", "ResourceEnvIP", "LDAPFilter", "OAuth2Scope", "Session" ],
+    "name" : "iPlanetAMWebAgentService"
+  }
+}

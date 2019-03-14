@@ -1,0 +1,15 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.0.1",
+    "entityType" : "Sites",
+    "entityId" : "site1",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "site1",
+    "id" : "02",
+    "url" : "https://micheal-dev.emea.frk8s.net/am",
+    "secondaryURLs" : [ ]
+  }
+}

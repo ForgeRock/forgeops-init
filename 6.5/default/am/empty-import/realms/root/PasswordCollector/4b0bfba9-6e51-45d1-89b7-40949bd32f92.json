@@ -1,0 +1,17 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "6.5.0.1",
+    "entityType" : "PasswordCollector",
+    "entityId" : "4b0bfba9-6e51-45d1-89b7-40949bd32f92",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "4b0bfba9-6e51-45d1-89b7-40949bd32f92",
+    "_type" : {
+      "_id" : "PasswordCollectorNode",
+      "name" : "Password Collector",
+      "collection" : true
+    }
+  }
+}
