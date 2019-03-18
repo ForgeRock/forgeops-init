@@ -3,11 +3,11 @@
     "realm": "/",
     "amsterVersion": "&{version}",
     "entityType": "PasswordCollector",
-    "entityId": "4d46c420-999c-435a-ae34-0eca29876fe2",
+    "entityId": "592d58e2-e49f-478f-944d-cfb1103eb8bc",
     "pathParams": {}
   },
   "data": {
-    "_id": "4d46c420-999c-435a-ae34-0eca29876fe2",
+    "_id": "592d58e2-e49f-478f-944d-cfb1103eb8bc",
     "_type": {
       "_id": "PasswordCollectorNode",
       "name": "Password Collector",
