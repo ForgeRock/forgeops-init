@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "OTPSmsSender",
+    "entityId": "24c88533-aa3c-4c04-99f9-8c2b6ead7597",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "24c88533-aa3c-4c04-99f9-8c2b6ead7597",
+    "hostName": "smtp.sendgrid.net ",
+    "password": null,
+    "password-encrypted": "AAAAA0FFUwIQAh+8OS+WzjZXmDc5sJQwWBhRGv60V7JaHXvkjW/x+h6gz2DimXhoJQ==",
+    "sslOption": "SSL",
+    "hostPort": 0,
+    "fromEmailAddress": "no-reply@no-reply.com",
+    "smsGatewayImplementationClass": "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
+    "mobilePhoneAttributeName": "telephoneNumber",
+    "username": "amadmin",
+    "_type": {
+      "_id": "OneTimePasswordSmsSenderNode",
+      "name": "OTP SMS Sender",
+      "collection": true
+    }
+  }
+}
