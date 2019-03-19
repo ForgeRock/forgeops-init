@@ -2,7 +2,7 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "OTPSmsSender",
+    "entityType": "OTPSMSSender",
     "entityId": "24c88533-aa3c-4c04-99f9-8c2b6ead7597",
     "pathParams": {}
   },
