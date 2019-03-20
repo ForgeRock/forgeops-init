@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "ActiveDirectoryModule",
     "entityId" : "ActiveDirectoryModule",
     "pathParams" : { }
@@ -12,7 +12,7 @@
       "searchScope" : "SUBTREE",
       "returnUserDN" : true,
       "profileAttributeMappings" : [ ],
-      "userBindDN" : "cn=Directory Manager",
+      "userBindDN" : "cn=Directory manager",
       "userSearchAttributes" : [ "uid" ],
       "connectionHeartbeatTimeUnit" : "MINUTES",
       "userProfileRetrievalAttribute" : "uid",

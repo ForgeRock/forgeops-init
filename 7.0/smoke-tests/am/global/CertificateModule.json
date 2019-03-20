@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "CertificateModule",
     "entityId" : "CertificateModule",
     "pathParams" : { }
@@ -21,7 +21,7 @@
       "authenticationLevel" : 0,
       "certificateAttributeToProfileMapping" : "subject CN",
       "ldapSearchStartDN" : [ ],
-      "userBindDN" : "cn=Directory Manager",
+      "userBindDN" : "cn=Directory manager",
       "trustedRemoteHosts" : [ "none" ],
       "matchCACertificateToCRL" : false,
       "iplanet-am-auth-cert-gw-cert-preferred" : false,

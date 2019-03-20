@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "MsisdnModule",
     "entityId" : "MsisdnModule",
     "pathParams" : { }
@@ -11,7 +11,7 @@
     "defaults" : {
       "authenticationLevel" : 0,
       "userProfileMsisdnAttribute" : "sunIdentityMSISDNNumber",
-      "ldapUserBindDN" : "cn=Directory Manager",
+      "ldapUserBindDN" : "cn=Directory manager",
       "msisdnUserNamingAttribute" : "uid",
       "ldapSslEnabled" : false,
       "msisdnRequestSearchLocations" : [ "searchRequest", "searchParam", "searchCookie" ],
