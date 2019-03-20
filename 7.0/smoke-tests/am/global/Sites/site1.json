@@ -9,7 +9,7 @@
   "data" : {
     "_id" : "site1",
     "id" : "02",
-    "url" : "https://&{fqdn}/am",
+    "url" : "https://&{fqdn}/",
     "secondaryURLs" : [ ]
   }
 }
