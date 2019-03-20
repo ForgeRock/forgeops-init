@@ -9,9 +9,9 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "deviceIdSettingsEncryptionKeystore" : "/home/forgerock/openam/keystore.jks",
+      "deviceIdSettingsEncryptionKeystore" : "/home/forgerock/openam/am/keystore.jks",
       "deviceIdSettingsEncryptionKeystorePassword" : null,
-      "deviceIdSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQAY4VpM9+t6vNtgaaGyi8bwaYO/CHGQYhVbWzJW5vJQvO1JQZgz7CYA==",
+      "deviceIdSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQF7EWaq49Ad4axcZqchlBQVt8w/2TfClEe7I80J/Hm8cE1bjSpDAcIQ==",
       "deviceIdAttrName" : "devicePrintProfiles",
       "deviceIdSettingsEncryptionKeystoreType" : "JKS",
       "deviceIdSettingsEncryptionScheme" : "NONE"

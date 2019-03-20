@@ -9,9 +9,9 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "authenticatorPushDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/keystore.jks",
+      "authenticatorPushDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/am/keystore.jks",
       "authenticatorPushDeviceSettingsEncryptionKeystorePassword" : null,
-      "authenticatorPushDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQ8K9DLdQE2v/5w6BJ/Z6gY6Jq3XulX6rX9lT4Hz54IA7n2e8fxEUbsA==",
+      "authenticatorPushDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQo4ZY3TfYoJcIf830DILaLWTDVWsGqnhyK5mvlTBkRJTyh9mb1kz3pg==",
       "pushAttrName" : "pushDeviceProfiles",
       "authenticatorPushDeviceSettingsEncryptionKeystoreType" : "JKS",
       "authenticatorPushSkippableName" : "push2faEnabled",

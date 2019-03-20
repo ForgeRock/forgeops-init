@@ -17,12 +17,12 @@
     },
     "amconfig.org.forgerock.services.cts.store.external.section" : {
       "org.forgerock.services.cts.store.ssl.enabled" : false,
-      "org.forgerock.services.cts.store.directory.name" : "ctsstore-0.ctsstore:1389",
-      "org.forgerock.services.cts.store.loginid" : "cn=Directory manager",
+      "org.forgerock.services.cts.store.directory.name" : "ctsstore-0.ctsstore:1389,ctsstore-1.ctsstore:1389",
+      "org.forgerock.services.cts.store.loginid" : "cn=Directory Manager",
       "org.forgerock.services.cts.store.password" : null,
-      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQpuGUjQ3mP0l1u1VAtgQEgGethCbXzzldpR4YOfGofgUbTG1Dpr86lA==",
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQgV3VeVtX1XNQLbfqHr6LgUKGB6ZzgkPJOvao1lDyQMA6Kps2GJiu3A==",
       "org.forgerock.services.cts.store.heartbeat" : "10",
-      "org.forgerock.services.cts.store.affinity.enabled" : false
+      "org.forgerock.services.cts.store.affinity.enabled" : true
     }
   }
 }

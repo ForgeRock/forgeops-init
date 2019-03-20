@@ -11,6 +11,6 @@
     "parentPath" : null,
     "active" : true,
     "name" : "/",
-    "aliases" : [ "&{fqdn}", "data", "openam", "openam.&{namespace}.svc.cluster.local"]
+    "aliases" : [ "&{fqdn}", "data", "openam", "openam.&{namespace}.svc.cluster.local" ]
   }
 }

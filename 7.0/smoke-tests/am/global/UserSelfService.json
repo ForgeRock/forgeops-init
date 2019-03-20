@@ -57,6 +57,7 @@
         "validQueryAttributes" : [ "uid", "mail", "givenName", "sn" ]
       },
       "profileManagement" : {
+        "profileAttributeWhitelist" : [ "uid", "telephoneNumber", "mail", "givenName", "kbaInfo", "sn", "cn" ],
         "profileProtectedUserAttributes" : [ ]
       }
     },
