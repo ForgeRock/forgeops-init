@@ -11,7 +11,7 @@
     "defaults" : {
       "authenticationLevel" : 0,
       "userProfileMsisdnAttribute" : "sunIdentityMSISDNNumber",
-      "ldapUserBindDN" : "cn=Directory manager",
+      "ldapUserBindDN" : "cn=Directory Manager",
       "msisdnUserNamingAttribute" : "uid",
       "ldapSslEnabled" : false,
       "msisdnRequestSearchLocations" : [ "searchRequest", "searchParam", "searchCookie" ],

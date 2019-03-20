@@ -21,7 +21,7 @@
       "authenticationLevel" : 0,
       "certificateAttributeToProfileMapping" : "subject CN",
       "ldapSearchStartDN" : [ ],
-      "userBindDN" : "cn=Directory manager",
+      "userBindDN" : "cn=Directory Manager",
       "trustedRemoteHosts" : [ "none" ],
       "matchCACertificateToCRL" : false,
       "iplanet-am-auth-cert-gw-cert-preferred" : false,

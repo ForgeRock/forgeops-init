@@ -13,7 +13,7 @@
       "searchScope" : "SUBTREE",
       "returnUserDN" : true,
       "profileAttributeMappings" : [ ],
-      "userBindDN" : "cn=Directory manager",
+      "userBindDN" : "cn=Directory Manager",
       "userSearchAttributes" : [ "uid" ],
       "connectionHeartbeatTimeUnit" : "SECONDS",
       "beheraPasswordPolicySupportEnabled" : true,
