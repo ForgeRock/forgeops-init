@@ -3,11 +3,11 @@
     "realm": "/",
     "amsterVersion": "&{version}",
     "entityType": "ScriptedDecision",
-    "entityId": "c8a49d3b-9c0e-4186-aee4-49c24af0f54e",
+    "entityId": "5376e8e6-044a-4eb9-ab3b-76fddc507a50",
     "pathParams": {}
   },
   "data": {
-    "_id": "c8a49d3b-9c0e-4186-aee4-49c24af0f54e",
+    "_id": "5376e8e6-044a-4eb9-ab3b-76fddc507a50",
     "outcomes": ["outcome"],
     "script": "e8946bd5-1f92-4a46-b745-847485b36659",
     "_type": {

@@ -3,11 +3,11 @@
     "realm": "/",
     "amsterVersion": "&{version}",
     "entityType": "ChoiceCollector",
-    "entityId": "92d385b7-55fb-456c-aaf0-ce51137765e3",
+    "entityId": "938f0196-c745-4f2c-8d2d-b78f7b28624c",
     "pathParams": {}
   },
   "data": {
-    "_id": "92d385b7-55fb-456c-aaf0-ce51137765e3",
+    "_id": "938f0196-c745-4f2c-8d2d-b78f7b28624c",
     "defaultChoice": "SMS",
     "choices": ["SMS", "Email"],
     "prompt": "How would you like to receive your One Time Passcode?",

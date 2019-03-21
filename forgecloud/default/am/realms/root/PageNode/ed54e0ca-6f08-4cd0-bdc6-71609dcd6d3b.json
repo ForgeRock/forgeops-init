@@ -3,19 +3,19 @@
     "realm": "/",
     "amsterVersion": "&{version}",
     "entityType": "PageNode",
-    "entityId": "25a0d9b7-638c-4488-af18-d60e92e214bc",
+    "entityId": "ed54e0ca-6f08-4cd0-bdc6-71609dcd6d3b",
     "pathParams": {}
   },
   "data": {
-    "_id": "25a0d9b7-638c-4488-af18-d60e92e214bc",
+    "_id": "ed54e0ca-6f08-4cd0-bdc6-71609dcd6d3b",
     "nodes": [
       {
-        "_id": "aff2ae7a-0812-4952-9ae0-869f23a727bd",
+        "_id": "9af84914-d8af-4585-9209-3111a6b8146b",
         "nodeType": "UsernameCollectorNode",
         "displayName": "Username Collector"
       },
       {
-        "_id": "589d5672-6610-487e-a59a-e8842121394a",
+        "_id": "dd291659-f1fc-41ec-b4e6-55a8f9a00760",
         "nodeType": "PasswordCollectorNode",
         "displayName": "Password Collector"
       }

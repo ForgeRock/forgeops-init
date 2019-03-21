@@ -3,12 +3,12 @@
     "realm": "/",
     "amsterVersion": "&{version}",
     "entityType": "OTPCollectorDecision",
-    "entityId": "4c8281b5-bd4f-4fd4-b87b-1452d28732f9",
+    "entityId": "59ab6f99-2b41-44ef-ad47-5e68d088e374",
     "pathParams": {}
   },
   "data": {
-    "_id": "4c8281b5-bd4f-4fd4-b87b-1452d28732f9",
-    "passwordExpiryTime": 5,
+    "_id": "59ab6f99-2b41-44ef-ad47-5e68d088e374",
+    "passwordExpiryTime": 8,
     "_type": {
       "_id": "OneTimePasswordCollectorDecisionNode",
       "name": "OTP Collector Decision",

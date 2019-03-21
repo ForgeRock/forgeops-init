@@ -9,23 +9,37 @@
   "data": {
     "_id": "SecondFactorCustom",
     "nodes": {
-      "92d385b7-55fb-456c-aaf0-ce51137765e3": {
+      "938f0196-c745-4f2c-8d2d-b78f7b28624c": {
         "displayName": "Choice Collector",
         "nodeType": "ChoiceCollectorNode",
         "connections": {
-          "SMS": "fd03e962-5dde-4142-89c2-419ddbffdfeb",
-          "Email": "aaa96a50-834e-4af7-a6f2-50bf6f381587"
+          "SMS": "e27301eb-8258-4573-8b8f-e2c6c67de841",
+          "Email": "66f44b11-b08f-419d-ad0f-1776edf2fc36"
         }
       },
-      "c18000d4-0480-4a12-a5bf-808b268a464f": {
+      "14bf4d09-130a-430b-aff9-4bee28640480": {
         "displayName": "Data Store Decision",
         "nodeType": "DataStoreDecisionNode",
         "connections": {
-          "true": "92d385b7-55fb-456c-aaf0-ce51137765e3",
-          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "938f0196-c745-4f2c-8d2d-b78f7b28624c"
         }
       },
-      "4c8281b5-bd4f-4fd4-b87b-1452d28732f9": {
+      "66f44b11-b08f-419d-ad0f-1776edf2fc36": {
+        "displayName": "HOTP Generator",
+        "nodeType": "OneTimePasswordGeneratorNode",
+        "connections": {
+          "outcome": "5376e8e6-044a-4eb9-ab3b-76fddc507a50"
+        }
+      },
+      "e27301eb-8258-4573-8b8f-e2c6c67de841": {
+        "displayName": "HOTP Generator",
+        "nodeType": "OneTimePasswordGeneratorNode",
+        "connections": {
+          "outcome": "72c4fb7e-1ec1-4093-a75b-e6db426bfdae"
+        }
+      },
+      "59ab6f99-2b41-44ef-ad47-5e68d088e374": {
         "displayName": "OTP Collector Decision",
         "nodeType": "OneTimePasswordCollectorDecisionNode",
         "connections": {
@@ -33,42 +47,28 @@
           "false": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "25a0d9b7-638c-4488-af18-d60e92e214bc": {
+      "ed54e0ca-6f08-4cd0-bdc6-71609dcd6d3b": {
         "displayName": "Page Node",
         "nodeType": "PageNode",
         "connections": {
-          "outcome": "c18000d4-0480-4a12-a5bf-808b268a464f"
+          "outcome": "14bf4d09-130a-430b-aff9-4bee28640480"
         }
       },
-      "c8a49d3b-9c0e-4186-aee4-49c24af0f54e": {
-        "displayName": "Email with Sendgrid",
+      "72c4fb7e-1ec1-4093-a75b-e6db426bfdae": {
+        "displayName": "Scripted Decision",
         "nodeType": "ScriptedDecisionNode",
         "connections": {
-          "outcome": "4c8281b5-bd4f-4fd4-b87b-1452d28732f9"
+          "outcome": "59ab6f99-2b41-44ef-ad47-5e68d088e374"
         }
       },
-      "d141ee0e-152e-4faf-8b8d-2b1f1f8af606": {
-        "displayName": "SMS with Twilio",
+      "5376e8e6-044a-4eb9-ab3b-76fddc507a50": {
+        "displayName": "Scripted Decision",
         "nodeType": "ScriptedDecisionNode",
         "connections": {
-          "outcome": "4c8281b5-bd4f-4fd4-b87b-1452d28732f9"
-        }
-      },
-      "fd03e962-5dde-4142-89c2-419ddbffdfeb": {
-        "displayName": "HOTP Generator",
-        "nodeType": "OneTimePasswordGeneratorNode",
-        "connections": {
-          "outcome": "d141ee0e-152e-4faf-8b8d-2b1f1f8af606"
-        }
-      },
-      "aaa96a50-834e-4af7-a6f2-50bf6f381587": {
-        "displayName": "HOTP Generator",
-        "nodeType": "OneTimePasswordGeneratorNode",
-        "connections": {
-          "outcome": "c8a49d3b-9c0e-4186-aee4-49c24af0f54e"
+          "outcome": "59ab6f99-2b41-44ef-ad47-5e68d088e374"
         }
       }
     },
-    "entryNodeId": "25a0d9b7-638c-4488-af18-d60e92e214bc"
+    "entryNodeId": "ed54e0ca-6f08-4cd0-bdc6-71609dcd6d3b"
   }
 }
