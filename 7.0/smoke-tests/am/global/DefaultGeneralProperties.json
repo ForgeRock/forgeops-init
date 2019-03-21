@@ -10,7 +10,7 @@
     "_id" : "null/properties/general",
     "amconfig.header.installdir" : {
       "com.iplanet.services.configpath" : "%BASE_DIR%",
-      "com.iplanet.am.locale" : "en_US",
+      "com.iplanet.am.locale" : "en",
       "com.sun.identity.client.notification.url" : "%SERVER_PROTO%://%SERVER_HOST%:%SERVER_PORT%/%SERVER_URI%/notificationservice",
       "com.iplanet.am.util.xml.validating" : "off"
     },

@@ -38,24 +38,24 @@
         "inherited" : true
       },
       "org.forgerock.services.cts.store.directory.name" : {
-        "value" : "ctsstore-0.ctsstore:1389",
+        "value" : "ctsstore-0.ctsstore:1389,ctsstore-1.ctsstore:1389",
         "inherited" : true
       },
       "org.forgerock.services.cts.store.loginid" : {
-        "value" : "cn=Directory manager",
+        "value" : "cn=Directory Manager",
         "inherited" : true
       },
       "org.forgerock.services.cts.store.password" : {
         "value" : null,
         "inherited" : true
       },
-      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQJh8Z+LsIOhC0pqz1Oit04xLB6OQGeejZGf1aqVI1pr/rLXFoGVQpAw==",
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQpnxjnCiBu6NtwUrcy4hDotc/1WlEJEZaGtyHZiUMFzjC7XT+nvDB0A==",
       "org.forgerock.services.cts.store.heartbeat" : {
         "value" : "10",
         "inherited" : true
       },
       "org.forgerock.services.cts.store.affinity.enabled" : {
-        "value" : false,
+        "value" : true,
         "inherited" : true
       }
     }

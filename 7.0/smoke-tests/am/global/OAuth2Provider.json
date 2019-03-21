@@ -23,6 +23,7 @@
         "codeLifetime" : 120,
         "issueRefreshTokenOnRefreshedToken" : true,
         "issueRefreshToken" : true,
+        "accessTokenModificationScript" : "d22f9a0c-426a-4466-b95e-d0f125b0d5fa",
         "statelessTokensEnabled" : false
       },
       "coreOIDCConfig" : {
@@ -30,7 +31,7 @@
         "jwtTokenLifetime" : 3600,
         "supportedClaims" : [ ],
         "supportedIDTokenEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "RSA1_5", "A256KW", "dir", "A192KW" ],
-        "supportedIDTokenSigningAlgorithms" : [ "RS384", "PS284", "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
+        "supportedIDTokenSigningAlgorithms" : [ "PS384", "RS384", "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
         "oidcClaimsScript" : "36863ffb-40ec-48b9-94b1-9a99f71cc3b5"
       },
       "advancedOAuth2Config" : {
@@ -41,6 +42,7 @@
         "defaultScopes" : [ ],
         "scopeImplementationClass" : "org.forgerock.openam.oauth2.OpenAMScopeValidator",
         "responseTypeClasses" : [ "code|org.forgerock.oauth2.core.AuthorizationCodeResponseTypeHandler", "device_code|org.forgerock.oauth2.core.TokenResponseTypeHandler", "token|org.forgerock.oauth2.core.TokenResponseTypeHandler" ],
+        "tlsCertificateBoundAccessTokensEnabled" : true,
         "moduleMessageEnabledInPasswordGrant" : false,
         "tokenEncryptionEnabled" : false,
         "grantTypes" : [ "implicit", "refresh_token", "urn:ietf:params:oauth:grant-type:saml2-bearer", "password", "client_credentials", "urn:ietf:params:oauth:grant-type:device_code", "authorization_code", "urn:ietf:params:oauth:grant-type:uma-ticket" ],
@@ -61,7 +63,6 @@
         "claimsParameterSupported" : false,
         "amrMappings" : { },
         "supportedUserInfoEncryptionEnc" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
-        "requireRequestUriRegistration" : false,
         "alwaysAddClaimsToToken" : false,
         "supportedUserInfoSigningAlgorithms" : [ "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512" ],
         "supportedRequestParameterEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "RSA1_5", "A256KW", "dir", "A192KW" ],
