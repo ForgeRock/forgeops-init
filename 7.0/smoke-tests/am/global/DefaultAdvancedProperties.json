@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "amsterVersion" : "&{version}",
     "entityType" : "DefaultAdvancedProperties",
     "entityId" : "DefaultAdvancedProperties",
     "pathParams" : { }
@@ -68,7 +68,7 @@
     "com.sun.identity.session.repository.enableAttributeCompression" : false,
     "org.forgerock.openam.auth.transactionauth.returnErrorOnAuthFailure" : false,
     "org.forgerock.openam.authLevel.excludeRequiredOrRequisite" : false,
-    "com.iplanet.am.buildVersion" : "ForgeRock Access Management 7.0.0-SNAPSHOT",
+    "com.iplanet.am.buildVersion" : "ForgeRock Access Management &{version}",
     "org.forgerock.openam.cdc.validLoginURIs" : "/UI/Login",
     "org.forgerock.openam.redirecturlvalidator.maxUrlLength" : "2000",
     "com.iplanet.am.installdir" : "%BASE_DIR%/%SERVER_URI%",
@@ -102,7 +102,7 @@
     "org.forgerock.openam.devices.recovery.use_insecure_storage" : false,
     "com.iplanet.am.jssproxy.SSLTrustHostList" : "",
     "com.sun.identity.sm.cache.ttl" : "30",
-    "com.iplanet.am.version" : "ForgeRock Access Management 7.0.0-SNAPSHOT Build c4707966df (2019-March-19 17:07)",
+    "com.iplanet.am.version" : "ForgeRock Access Management &{version} Build c4707966df (2019-March-19 17:07)",
     "com.iplanet.services.cdc.invalidGotoStrings" : "<,>,javascript:,javascript%3a,%3c,%3e",
     "com.sun.identity.cookie.httponly" : false,
     "org.forgerock.openam.encryption.key.iterations" : "10000",

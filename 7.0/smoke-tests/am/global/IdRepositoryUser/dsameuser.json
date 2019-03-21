@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "amsterVersion" : "&{version}",
     "entityType" : "IdRepositoryUser",
     "entityId" : "dsameuser",
     "pathParams" : { }
@@ -9,7 +9,7 @@
   "data" : {
     "_id" : "dsameuser",
     "userPassword" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQf3j+v4ZO7v0qxha4j7v7XImCzMgm0E80BJf9NIigagqGGNWsXP4E4vHIKgUSTMqws+kZ86JUB/gXIeON9OnkNWWDLT6lsNnUwkwUwwHF6XUIGqBKB1rKQ5nQxKZrE/a29shO69S1LfLuZPtxvW8HazFilzoePkcNtXtKYE3lrAjLcyulqGBR+F+OtpR71/wF3YQ5jWgooqI=",
+    "userPassword-encrypted" : "AAAAA0FFUwIQMLprSZqGCuw0wQQwrDnmpQjLGu1JaXzX/mch5nL1yQBtKcNwKmXrNZpFNv44YvevT9tKc4SKxTuArJvfgO7rkVQzCKRB60I1yTdEtExW4+HAOYWvVV9tIil0OYLovF9EQDTX/HqD76XrBdn577+WmJIcNTwPf4FDRWY04/djwKJzdsPNSHQhPI2n4SHHuDMeXv/HT27o6pc=",
     "roles" : [ ],
     "dn" : "cn=dsameuser,ou=DSAME Users,",
     "inetUserStatus" : "Active",

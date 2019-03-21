@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "amsterVersion" : "&{version}",
     "entityType" : "LegacyUserSelfService",
     "entityId" : "LegacyUserSelfService",
     "pathParams" : { }
@@ -18,7 +18,7 @@
       "forgotPasswordConfirmationUrl" : "http://openam:80/am/XUI/confirm.html",
       "userRegisteredDestination" : "default",
       "protectedUserAttributes" : [ ],
-      "confirmationIdHmacKey" : "c4r7z8mKUo/mQyL953oLhg7li5Eovy3D7LhJVbw9Ik4="
+      "confirmationIdHmacKey" : "zPv44MUk5yBCv7nu7/MuGo/uTwxVar1TZawhcW2g4D4="
     },
     "_type" : {
       "_id" : "security",

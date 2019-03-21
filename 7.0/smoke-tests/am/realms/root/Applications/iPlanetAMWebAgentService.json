@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "amsterVersion" : "&{version}",
     "entityType" : "Applications",
     "entityId" : "iPlanetAMWebAgentService",
     "pathParams" : { }
@@ -10,20 +10,20 @@
     "_id" : "iPlanetAMWebAgentService",
     "displayName" : "Default Policy Set",
     "name" : "iPlanetAMWebAgentService",
-    "editable" : true,
+    "resourceTypeUuids" : [ "76656a38-5f8e-401b-83aa-4ccb74ce88d2" ],
     "description" : "The built-in Application used by OpenAM Policy Agents.",
     "attributeNames" : [ ],
     "createdBy" : "id=dsameuser,ou=user,ou=am-config",
     "conditions" : [ "LEAuthLevel", "Script", "AuthenticateToService", "SimpleTime", "AMIdentityMembership", "OR", "IPv6", "IPv4", "SessionProperty", "AuthScheme", "AuthLevel", "NOT", "Transaction", "AuthenticateToRealm", "AND", "ResourceEnvIP", "LDAPFilter", "OAuth2Scope", "Session" ],
-    "lastModifiedDate" : 1553075575614,
-    "subjects" : [ "NOT", "OR", "JwtClaim", "AuthenticatedUsers", "AND", "Identity", "NONE" ],
+    "resourceComparator" : null,
+    "creationDate" : 1553186077056,
+    "lastModifiedDate" : 1553186077056,
     "lastModifiedBy" : "id=dsameuser,ou=user,ou=am-config",
-    "creationDate" : 1553075575614,
+    "subjects" : [ "NOT", "OR", "JwtClaim", "AuthenticatedUsers", "AND", "Identity", "NONE" ],
     "saveIndex" : null,
     "searchIndex" : null,
-    "resourceComparator" : null,
-    "applicationType" : "iPlanetAMWebAgentService",
     "entitlementCombiner" : "DenyOverride",
-    "resourceTypeUuids" : [ "76656a38-5f8e-401b-83aa-4ccb74ce88d2" ]
+    "editable" : true,
+    "applicationType" : "iPlanetAMWebAgentService"
   }
 }
