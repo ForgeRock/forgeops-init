@@ -44,14 +44,14 @@
         "displayName": "Email with Sendgrid",
         "nodeType": "ScriptedDecisionNode",
         "connections": {
-          "true": "4c8281b5-bd4f-4fd4-b87b-1452d28732f9"
+          "outcome": "4c8281b5-bd4f-4fd4-b87b-1452d28732f9"
         }
       },
       "d141ee0e-152e-4faf-8b8d-2b1f1f8af606": {
         "displayName": "SMS with Twilio",
         "nodeType": "ScriptedDecisionNode",
         "connections": {
-          "true": "4c8281b5-bd4f-4fd4-b87b-1452d28732f9"
+          "outcome": "4c8281b5-bd4f-4fd4-b87b-1452d28732f9"
         }
       },
       "fd03e962-5dde-4142-89c2-419ddbffdfeb": {
