@@ -9,7 +9,7 @@
   "data" : {
     "_id" : "",
     "defaults" : {
-      "contextPath" : "",
+      "contextPath" : "/am",
       "source" : "REQUEST_VALUES"
     },
     "_type" : {

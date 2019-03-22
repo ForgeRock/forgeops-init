@@ -5,7 +5,7 @@
     "entityType" : "ScriptingEngineConfiguration",
     "entityId" : "engineConfiguration",
     "pathParams" : {
-      "contexts" : "OIDC_CLAIMS"
+      "contexts" : "OAUTH2_ACCESS_TOKEN_MODIFICATION"
     }
   },
   "data" : {

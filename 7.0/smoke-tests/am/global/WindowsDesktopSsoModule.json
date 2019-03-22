@@ -9,6 +9,7 @@
   "data" : {
     "_id" : "",
     "defaults" : {
+      "kerberosServiceIsinitiator" : true,
       "trustedKerberosRealms" : [ ],
       "lookupUserInRealm" : false,
       "authenticationLevel" : 0,

@@ -9,6 +9,7 @@
   "data" : {
     "_id" : "",
     "defaults" : {
+      "resourceTypesManagedInternally" : true,
       "deletePoliciesOnDeleteRS" : true,
       "resharingMode" : "IMPLICIT",
       "permissionTicketLifetime" : 120,
