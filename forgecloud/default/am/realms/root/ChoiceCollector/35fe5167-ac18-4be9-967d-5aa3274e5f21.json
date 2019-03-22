@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "ChoiceCollector",
+    "entityId": "35fe5167-ac18-4be9-967d-5aa3274e5f21",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "35fe5167-ac18-4be9-967d-5aa3274e5f21",
+    "defaultChoice": "Yes",
+    "choices": ["Yes", "No"],
+    "prompt": "Would you like to register a device?",
+    "_type": {
+      "_id": "ChoiceCollectorNode",
+      "name": "Choice Collector",
+      "collection": true
+    }
+  }
+}
