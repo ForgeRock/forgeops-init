@@ -1,0 +1,20 @@
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  labels:
+    app: ds-ds
+    component: ds
+    instance: userstore
+    release: ds
+    vendor: forgerock
+  name: userstore
+spec:
+  replicas: 2
+  template:
+    spec:
+      $setElementOrder/containers:
+      - name: ds
+      containers:
+      - image: forgerock-docker-public.bintray.io/forgerock/ds-paas:latest
+        imagePullPolicy: Always
+        name: ds

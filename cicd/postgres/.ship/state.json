@@ -1,0 +1,16 @@
+{
+  "v1": {
+    "config": {},
+    "helmValues": "\n\n## Specify a imagePullPolicy.\n## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'.\n## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images.\n##\n# imagePullPolicy:\n\n## Create a database user.\n## Default: postgres\n# postgresUser:\n## Default: random 10 character string\n# postgresPassword:\n\n## Create a database\n## Default: the postgres user\n# postgresDatabase:\n\n# For postgres we  use the standard vanilla image on the Docker hub.\npostgres:\n  image: postgres\n  tag: 10.5-alpine\n\npostgresUser: openidm\npostgresPassword: openidm\n\n## Persist data\npersistence: true\n  \naccessMode: ReadWriteOnce\nstorageClassName: standard\nstorageSize: 8Gi\n\n\n# The metrics configuration has been taken from the master Helm postgres chart\n# This has not been tested.\nmetrics:\n  enabled: false\n  image: wrouesnel/postgres_exporter\n  imageTag: v0.1.1\n  imagePullPolicy: IfNotPresent\n  resources:\n    requests:\n      memory: 256Mi\n      cpu: 100m\n\n## Configure resource requests and limits.\n## ref: http://kubernetes.io/docs/user-guide/compute-resources/.\n##\nresources:\n  requests:\n    memory: 256Mi\n    cpu: 100m\n",
+    "releaseName": "postgres-openidm",
+    "helmValuesDefaults": "\n\n## Specify a imagePullPolicy.\n## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'.\n## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images.\n##\n# imagePullPolicy:\n\n## Create a database user.\n## Default: postgres\n# postgresUser:\n## Default: random 10 character string\n# postgresPassword:\n\n## Create a database\n## Default: the postgres user\n# postgresDatabase:\n\n# For postgres we  use the standard vanilla image on the Docker hub.\npostgres:\n  image: postgres\n  tag: 10.5-alpine\n\npostgresUser: openidm\npostgresPassword: openidm\n\n## Persist data\npersistence: true\n  \naccessMode: ReadWriteOnce\nstorageClassName: standard\nstorageSize: 8Gi\n\n\n# The metrics configuration has been taken from the master Helm postgres chart\n# This has not been tested.\nmetrics:\n  enabled: false\n  image: wrouesnel/postgres_exporter\n  imageTag: v0.1.1\n  imagePullPolicy: IfNotPresent\n  resources:\n    requests:\n      memory: 256Mi\n      cpu: 100m\n\n## Configure resource requests and limits.\n## ref: http://kubernetes.io/docs/user-guide/compute-resources/.\n##\nresources:\n  requests:\n    memory: 256Mi\n    cpu: 100m\n",
+    "upstream": "https://github.com/ForgeRock/forgeops/tree/master/helm/postgres-openidm",
+    "metadata": {
+      "applicationType": "helm",
+      "name": "postgres-openidm",
+      "releaseNotes": "update idm entrypoint to properly expand the openidm-util jar; remove SQL create user that is not required",
+      "version": "6.5.0"
+    },
+    "contentSHA": "b6f50a7531af5d3d2d3a26ad1b2243997d7e2d082dd46983a6a60652a3cb0c90"
+  }
+}

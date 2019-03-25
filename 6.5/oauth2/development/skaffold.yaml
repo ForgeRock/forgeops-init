@@ -8,6 +8,10 @@ build:
     context: ../amster
   - image: gcr.io/engineering-devops/skaffold/oauth2/idm
     context: ../idm
+  - image: gcr.io/engineering-devops/skaffold/oauth2/end-user-ui
+    context: ../end-user-ui
+  - image: gcr.io/engineering-devops/skaffold/oauth2/openam
+    context: ../openam
   tagPolicy:
     sha256: {}
   local:
@@ -24,6 +28,14 @@ deploy:
         domain: .forgeops.com
         secret.env.IG_CLIENT_USERNAME: "openig"
         secret.env.IG_CLIENT_PASSWORD: "openig"
+    - name: sk-end-user-ui
+      setValues:
+        domain: .forgeops.com
+      chartPath: helm/end-user-ui
+      values:
+        image: gcr.io/engineering-devops/skaffold/oauth2/end-user-ui
+      imageStrategy:
+        helm: {}
     - name: sk-amster
       chartPath: helm/amster
       valuesFiles:
@@ -50,6 +62,10 @@ deploy:
         helm: {}
     - name: sk-openam
       chartPath: helm/openam
+      values:
+        image: gcr.io/engineering-devops/skaffold/oauth2/openam
+      imageStrategy:
+        helm: {}
       setValues:
         domain: .forgeops.com
     - name: sk-configstore

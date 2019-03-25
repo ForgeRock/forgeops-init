@@ -1,0 +1,32 @@
+{
+    "name": "openid",
+    "baseURI": "http://idm-service:8080",
+    "condition": "${(matches(request.uri.path, '^/openidm/authentication') and matches(request.uri.query, '(^|&)_action=login($|&)') and matches(request.method, 'POST')) or (matches(request.uri.path, '^/openidm/privilege') and matches(request.uri.query, '(^|&)_action=listPrivileges($|&)') and matches(request.method, 'POST')) or matches(request.uri.path, '^/openidm/info/login') or matches(request.uri.path, '^/openidm/info/version') or matches(request.uri.path, '^/openidm/config/ui/profile$') or matches(request.uri.path, '^/openidm/config/ui/dashboard$') or matches(request.uri.path, '^/openidm/policy/.+') or matches(request.uri.path, '^/openidm/schema/.+') or matches(request.uri.path, '^/openidm/selfservice/kba') or matches(request.uri.path, '^/openidm/identityProviders')}",
+    "handler": {
+        "type": "Chain",
+        "config": {
+            "filters": [
+                {
+                    "type": "OAuth2ResourceServerFilter",
+                    "config": {
+                        "scopes": [
+                            "openid"
+                        ],
+                        "requireHttps": false,
+                        "accessTokenResolver": "AccessTokenResolver",
+                        "cacheExpiration": "2 minutes"
+                    }
+                },
+                {
+                    "name": "SetTrustedAttributeHeaders",
+                    "type": "ScriptableFilter",
+                    "config": {
+                        "type": "application/x-groovy",
+                        "file": "constructSecurityContextHeaders.groovy"
+                    }
+                }
+            ],
+            "handler": "IDMClient"
+        }
+    }
+}

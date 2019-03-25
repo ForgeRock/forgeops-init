@@ -1,6 +1,6 @@
 tmp/
 .idea
-stack-config.iml
+*.iml
 logs/
 .bak
 .vscode/

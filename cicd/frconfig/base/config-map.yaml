@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  DOMAIN: forgeops.com
+  GIT_AUTOSAVE_BRANCH: autosave-default
+  GIT_CHECKOUT_BRANCH: cicd
+  GIT_REPO: https://github.com/wstrange/forgeops-init.git
+kind: ConfigMap
+metadata:
+  name: frconfig

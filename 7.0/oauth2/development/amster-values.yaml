@@ -1,0 +1,10 @@
+  domain: forgeops.com
+  userStore:
+    host: configstore-0.configstore
+  amadminPassword: password
+  resources:
+    requests:
+      memory: "64Mi"
+  config:
+    strategy: files
+    importPath: /opt/amster/config/

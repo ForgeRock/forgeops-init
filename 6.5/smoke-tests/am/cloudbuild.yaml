@@ -1,0 +1,13 @@
+timeout: 3000s
+steps:
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ["info"]
+- name: 'gcr.io/cloud-builders/docker'
+  dir: '.'
+  args: [
+          'build',
+          '--network=host',
+          '-t', 'gcr.io/$PROJECT_ID/sk-amster:test', '.',
+        ]
+images:
+- gcr.io/$PROJECT_ID/sk-amster:test

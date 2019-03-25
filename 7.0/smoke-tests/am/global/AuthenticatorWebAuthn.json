@@ -1,0 +1,25 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "AuthenticatorWebAuthn",
+    "entityId" : "AuthenticatorWebAuthn",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "defaults" : {
+      "authenticatorWebAuthnDeviceSettingsEncryptionScheme" : "NONE",
+      "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword" : null,
+      "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQvniN3bSqrugMdN4U8tPViZ9DHG6VnqZc6CQrnWgjU0z1Pa+ig1oZPg==",
+      "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreType" : "JCEKS",
+      "webauthnAttrName" : "webauthnDeviceProfiles",
+      "authenticatorWebAuthnDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/am/keystore.jceks"
+    },
+    "_type" : {
+      "_id" : "authenticatorWebAuthnService",
+      "name" : "WebAuthn Profile Encryption Service",
+      "collection" : false
+    }
+  }
+}

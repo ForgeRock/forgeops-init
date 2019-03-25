@@ -1,0 +1,25 @@
+apiVersion: skaffold/v1beta4
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/engineering-devops/sk-ig
+    context: ig/docker
+  - image: gcr.io/engineering-devops/sk-idm
+    context: idm/docker
+  tagPolicy:
+    gitCommit: {}
+# deploy:
+#   kubectl:
+#     manifests:
+#     - userstore/rendered.yaml
+#     - postgres/rendered.yaml
+#   # kustomize:
+#   #   path: overlays/gke
+profiles:
+  # This profile works for git commits, not for manually submitted cloud builds
+  - name: gcb
+    build:
+      tagPolicy:
+        gitCommit: {}
+      googleCloudBuild:
+        projectId: engineering-devops

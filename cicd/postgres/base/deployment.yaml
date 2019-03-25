@@ -1,0 +1,78 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: postgres-openidm
+    release: postgres-openidm
+  name: postgres-openidm
+spec:
+  template:
+    metadata:
+      labels:
+        app: postgres-openidm
+    spec:
+      containers:
+      - args:
+        - -c
+        - shared_buffers=128MB
+        - -c
+        - max_connections=100
+        env:
+        - name: POSTGRES_USER
+          value: openidm
+        - name: PGUSER
+          value: openidm
+        - name: POSTGRES_DB
+          value: ""
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: postgres-password
+              name: postgres-openidm
+        image: postgres:10.5-alpine
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          exec:
+            command:
+            - pg_isready
+          initialDelaySeconds: 30
+          timeoutSeconds: 3
+        name: postgres
+        ports:
+        - containerPort: 5432
+          name: postgresql
+        readinessProbe:
+          exec:
+            command:
+            - pg_isready
+          initialDelaySeconds: 30
+          timeoutSeconds: 3
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data/pgdata
+          name: data
+        - mountPath: /docker-entrypoint-initdb.d
+          name: sql
+      initContainers:
+      - command:
+        - rm
+        - -fr
+        - /var/lib/postgresql/data/pgdata/lost+found
+        image: busybox:1.25.0
+        imagePullPolicy: IfNotPresent
+        name: init
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data/pgdata
+          name: data
+      volumes:
+      - configMap:
+          name: openidm-sql
+        name: sql
+      - name: data
+        persistentVolumeClaim:
+          claimName: postgres-openidm

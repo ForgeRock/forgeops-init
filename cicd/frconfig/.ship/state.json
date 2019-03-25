@@ -1,0 +1,26 @@
+{
+  "v1": {
+    "config": null,
+    "helmValues": "# Default values for frconfig.\n# This is a YAML-formatted file.\n\n# Top level domain, including the leading dot. This is used to form the wild-card cert request for cert-manager.\ndomain: forgeops.com\n\nconfig:\n  # The default name that products use when looking for the configmap and secret is `frconfig`.\n  # To create per-product configurations, you can deploy multiple instances of this chart\n  # using a different name. The corresponding product chart also need to override config.name.\n  # See README.md for more information.\n  name: frconfig\n\nsecret:\n  env:\n    domain: forgeops.com\n\ngit:\n  # git repo to clone. The value below is a public git repo that does not require authentication.\n  repo: \"https://github.com/wstrange/forgeops-init.git\"\n  branch: cicd\n\n# Cert manager defaults\ncertmanager:\n  enabled: false\n  # The default issuer is to use the CA certs issuer.\n  issuer: ca-issuer\n  # And a local to namespace issuer\n  issuerKind: Issuer\n  # For lets encrypt use this:\n  #acme: true\n  #issuer: letsencrypt-prod\n  #issuerKind: ClusterIssuer\n\nistio:\n  enabled: false\n  subdomain: test\n",
+    "releaseName": "frconfig",
+    "helmValuesDefaults": "# Default values for frconfig.\n# This is a YAML-formatted file.\n\n# Top level domain, including the leading dot. This is used to form the wild-card cert request for cert-manager.\ndomain: example.com\n\nconfig:\n  # The default name that products use when looking for the configmap and secret is `frconfig`.\n  # To create per-product configurations, you can deploy multiple instances of this chart\n  # using a different name. The corresponding product chart also need to override config.name.\n  # See README.md for more information.\n  name: frconfig\n\nsecret:\n  env:\n    {}\n\ngit:\n  # git repo to clone. The value below is a public git repo that does not require authentication.\n  repo: \"https://github.com/ForgeRock/forgeops-init.git\"\n  branch: master\n\n# Cert manager defaults\ncertmanager:\n  enabled: false\n  # The default issuer is to use the CA certs issuer.\n  issuer: ca-issuer\n  # And a local to namespace issuer\n  issuerKind: Issuer\n  # For lets encrypt use this:\n  #acme: true\n  #issuer: letsencrypt-prod\n  #issuerKind: ClusterIssuer\n\nistio:\n  enabled: false\n  subdomain: iam\n",
+    "upstream": "https://github.com/ForgeRock/forgeops/tree/master/helm/frconfig",
+    "metadata": {
+      "applicationType": "helm",
+      "name": "frconfig",
+      "releaseNotes": "istio phase 2\n\nUpdates for AM istio support. Moved am to /am context root\n\nadd AM istio templates. Add istio install script to bin/\n\nRemove tlsSecret from all ingress to let it default to nginx\n\nUpdate idm/ig ingress to align with new fqdn\n\nFixed domain: setting to strip the leading dot.  Created mini dev sample config",
+      "version": "6.5.0"
+    },
+    "contentSHA": "c32a62dd144b587116ace7046f99d7adf260ccfb0fce2ab5a388f63f609ef4de",
+    "lifecycle": {
+      "stepsCompleted": {
+        "intro": true,
+        "kustomize": true,
+        "kustomize-intro": true,
+        "outro": true,
+        "render": true,
+        "values": true
+      }
+    }
+  }
+}
