@@ -9,12 +9,11 @@
   "data": {
     "_id": "27687c7e-71d7-44a1-8721-5631593cc7d4",
     "password": null,
-    "password-encrypted": "AAAAA0FFUwIQnXZmReMpHZ9dqfnnGhO+sV1W/+N2oq+k1LOakuAXzLX03kU7Cjgyqw==",
     "sslOption": "SSL",
     "hostPort": 0,
     "emailAttribute": "mail",
     "smsGatewayImplementationClass": "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
-    "username": "amadmin",
+    "username": "mailServerUser",
     "_type": {
       "_id": "OneTimePasswordSmtpSenderNode",
       "name": "OTP Email Sender",
