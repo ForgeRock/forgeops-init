@@ -5,3 +5,4 @@ logs/
 .bak
 .vscode/
 .DS_Store
+preconfigured/
