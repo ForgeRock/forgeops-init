@@ -1,0 +1,6 @@
+  domain: forgeops.com
+  service:
+    name: openam
+    type: NodePort
+    externalPort: 80
+    internalPort: 8080
