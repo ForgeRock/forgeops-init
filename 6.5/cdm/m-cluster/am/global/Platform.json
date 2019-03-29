@@ -8,7 +8,7 @@
   },
   "data" : {
     "_id" : "",
-    "cookieDomains" : [ "&{cookie.domain}" ],
+    "cookieDomains" : [ "forgeops.com" ],
     "locale" : "en_US",
     "_type" : {
       "_id" : "platform",

@@ -13,6 +13,7 @@
       "provisioningEncryptionAlgorithm" : "RSAES_PKCS1_V1_5",
       "provisioningEncryptionMethod" : "A128CBC_HS256",
       "provisioningSigningKeyAlias" : "openidm-selfservice-key",
+      "jwtSigningCompatibilityMode" : false,
       "enabled" : false,
       "provisioningSigningAlgorithm" : "HS256"
     },

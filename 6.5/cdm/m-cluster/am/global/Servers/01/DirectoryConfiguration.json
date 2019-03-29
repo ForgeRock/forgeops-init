@@ -15,20 +15,18 @@
       "maxConnectionPool" : 10,
       "bindDn" : "cn=Directory Manager",
       "bindPassword" : null,
-      "bindPassword-encrypted" : "AAAAA0FFUwIQ/ugqlJaeg/TzW4aZNlVV+GSKuZfzTo35zDMAa3MRO/7rAqrhhMF6Kw=="
+      "bindPassword-encrypted" : "AAAAA0FFUwIQRqZ9BOefa51ePyP7ukrEPBY7bvfENIwLplgGgCaaOrNqUpvJrPob1A=="
     },
     "directoryServers" : [ {
       "hostName" : "configstore-0.configstore",
       "serverName" : "Server1",
       "connectionType" : "SIMPLE",
       "portNumber" : "1389"
-    },
-    {
+    }, {
       "hostName" : "configstore-1.configstore",
       "serverName" : "Server2",
       "connectionType" : "SIMPLE",
       "portNumber" : "1389"
-    }
-   ]
+    } ]
   }
 }

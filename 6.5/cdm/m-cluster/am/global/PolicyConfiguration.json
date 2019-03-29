@@ -27,7 +27,8 @@
       "connectionPoolMaximumSize" : 10,
       "policyHeartbeatTimeUnit" : "SECONDS",
       "realmSearchFilter" : "(objectclass=sunismanagedorganization)",
-      "maximumSearchResults" : 100
+      "maximumSearchResults" : 100,
+      "checkIfResourceTypeExists" : true
     },
     "_type" : {
       "_id" : "policyconfiguration",

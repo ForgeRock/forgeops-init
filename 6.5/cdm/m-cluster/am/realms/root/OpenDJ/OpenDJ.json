@@ -38,16 +38,18 @@
       "openam-idrepo-ldapv3-behera-support-enabled" : true,
       "sun-idrepo-ldapv3-config-authid" : "cn=Directory Manager",
       "openam-idrepo-ldapv3-proxied-auth-enabled" : false,
+      "openam-idrepo-ldapv3-contains-iot-identities-enriched-as-oauth2client" : false,
       "sun-idrepo-ldapv3-config-max-result" : 1000,
       "sun-idrepo-ldapv3-config-search-scope" : "SCOPE_SUB",
       "sun-idrepo-ldapv3-config-time-limit" : 10,
+      "sun-idrepo-ldapv3-config-connection_pool_min_size" : 1,
       "openam-idrepo-ldapv3-heartbeat-interval" : 10,
       "sun-idrepo-ldapv3-config-ldap-server" : [ "userstore:1389" ],
       "openam-idrepo-ldapv3-heartbeat-timeunit" : "SECONDS",
       "sun-idrepo-ldapv3-config-organization_name" : "ou=identities",
       "sun-idrepo-ldapv3-config-connection-mode" : "LDAP",
       "sun-idrepo-ldapv3-config-authpw" : null,
-      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQ2HwlOAlJIrqWbz3OaM/yD8h6XxT1RdDWRKKwSGhXFL8rrf4R6ceOXg=="
+      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQNV2onGmYTm62gDX6s+yNMs+9pq4GLECpbpFluAQlc/xifb1iXxQrSw=="
     },
     "cachecontrol" : {
       "sun-idrepo-ldapv3-dncache-enabled" : true,

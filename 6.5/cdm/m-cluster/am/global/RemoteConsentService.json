@@ -10,8 +10,8 @@
     "_id" : "",
     "defaults" : {
       "jwkStoreCacheTimeout" : 60,
-      "consentResponseTimeLimit" : 2,
-      "jwkStoreCacheMissCacheTime" : 1
+      "jwkStoreCacheMissCacheTime" : 1,
+      "consentResponseTimeLimit" : 2
     },
     "_type" : {
       "_id" : "RemoteConsentService",
