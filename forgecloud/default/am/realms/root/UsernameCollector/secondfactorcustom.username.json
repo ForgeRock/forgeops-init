@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "UsernameCollector",
+    "entityId": "secondfactorcustom.username",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "secondfactorcustom.username",
+    "_type": {
+      "_id": "UsernameCollectorNode",
+      "name": "Username Collector",
+      "collection": true
+    }
+  }
+}

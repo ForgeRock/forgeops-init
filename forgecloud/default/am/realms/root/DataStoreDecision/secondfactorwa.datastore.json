@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "DataStoreDecision",
+    "entityId": "secondfactorwa.datastore",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "secondfactorwa.datastore",
+    "_type": {
+      "_id": "DataStoreDecisionNode",
+      "name": "Data Store Decision",
+      "collection": true
+    }
+  }
+}

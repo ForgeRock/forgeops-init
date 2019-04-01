@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "WebAuthnAuthenticationNode",
+    "entityId": "secondfactorwa.waauth",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "secondfactorwa.waauth",
+    "isRecoveryCodeAllowed": false,
+    "userVerificationRequirement": "PREFERRED",
+    "timeout": 60,
+    "_type": {
+      "_id": "WebAuthnAuthenticationNode",
+      "name": "WebAuthn Authentication Node",
+      "collection": true
+    }
+  }
+}

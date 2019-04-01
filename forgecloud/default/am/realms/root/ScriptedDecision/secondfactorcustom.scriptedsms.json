@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "ScriptedDecision",
+    "entityId": "secondfactorcustom.scriptedsms",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "secondfactorcustom.scriptedsms",
+    "outcomes": ["outcome"],
+    "script": "927773f6-a045-4467-9757-acd76b589ad2",
+    "_type": {
+      "_id": "ScriptedDecisionNode",
+      "name": "Scripted Decision",
+      "collection": true
+    }
+  }
+}

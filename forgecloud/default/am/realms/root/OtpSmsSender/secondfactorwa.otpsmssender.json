@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "OTPSMSSender",
+    "entityId": "secondfactorwa.otpsmssender",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "secondfactorwa.otpsmssender",
+    "password": null,
+    "sslOption": "SSL",
+    "hostPort": 0,
+    "smsGatewayImplementationClass": "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
+    "mobilePhoneAttributeName": "telephoneNumber",
+    "username": "mailServerUser",
+    "_type": {
+      "_id": "OneTimePasswordSmsSenderNode",
+      "name": "OTP SMS Sender",
+      "collection": true
+    }
+  }
+}

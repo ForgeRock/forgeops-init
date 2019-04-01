@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "ChoiceCollector",
+    "entityId": "secondfactorwa.choice.register",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "secondfactorwa.choice.register",
+    "defaultChoice": "Yes",
+    "choices": ["Yes", "No"],
+    "prompt": "Would you like to register a device?",
+    "_type": {
+      "_id": "ChoiceCollectorNode",
+      "name": "Choice Collector",
+      "collection": true
+    }
+  }
+}

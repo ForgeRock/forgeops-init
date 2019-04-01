@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "OTPEmailSender",
+    "entityId": "secondfactor.otpemailsender",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "secondfactor.otpemailsender",
+    "password": null,
+    "sslOption": "SSL",
+    "hostPort": 0,
+    "emailAttribute": "mail",
+    "smsGatewayImplementationClass": "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
+    "username": "mailServerUser",
+    "_type": {
+      "_id": "OneTimePasswordSmtpSenderNode",
+      "name": "OTP Email Sender",
+      "collection": true
+    }
+  }
+}

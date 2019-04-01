@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "ChoiceCollector",
+    "entityId": "secondfactorcustom.choice",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "secondfactorcustom.choice",
+    "defaultChoice": "SMS",
+    "choices": ["SMS", "Email"],
+    "prompt": "How would you like to receive your One Time Passcode?",
+    "_type": {
+      "_id": "ChoiceCollectorNode",
+      "name": "Choice Collector",
+      "collection": true
+    }
+  }
+}

@@ -9,52 +9,52 @@
   "data": {
     "_id": "SecondFactorWebAuthn",
     "nodes": {
-      "741d048d-54ad-4dcf-9c68-8ccc359b095d": {
+      "secondfactorwa.choice.device": {
         "displayName": "Choice Collector",
         "nodeType": "ChoiceCollectorNode",
         "connections": {
-          "Device": "95e56571-c389-492f-9e62-2d906e332297",
-          "SMS": "fcae334f-9edb-4425-8f36-90e1352fa11f",
-          "Email": "0f389639-3789-43e7-9087-38a2b327e46b"
+          "Device": "secondfactorwa.waauth",
+          "SMS": "secondfactorwa.hotpsms",
+          "Email": "secondfactorwa.hotpemail"
         }
       },
-      "11e6c792-c956-4bae-a2fa-3601c8ac1d44": {
+      "secondfactorwa.datastore": {
         "displayName": "Data Store Decision",
         "nodeType": "DataStoreDecisionNode",
         "connections": {
-          "true": "741d048d-54ad-4dcf-9c68-8ccc359b095d",
+          "true": "secondfactorwa.choice.device",
           "false": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "fcae334f-9edb-4425-8f36-90e1352fa11f": {
+      "secondfactorwa.hotpsms": {
         "displayName": "HOTP Generator",
         "nodeType": "OneTimePasswordGeneratorNode",
         "connections": {
-          "outcome": "56a7efed-ad2b-4fe2-b878-9f690d42c670"
+          "outcome": "secondfactorwa.otpsmssender"
         }
       },
-      "0f389639-3789-43e7-9087-38a2b327e46b": {
+      "secondfactorwa.hotpemail": {
         "displayName": "HOTP Generator",
         "nodeType": "OneTimePasswordGeneratorNode",
         "connections": {
-          "outcome": "64e8e5bf-24c7-40b7-a4ee-81921772ccd9"
+          "outcome": "secondfactorwa.otpemailsender"
         }
       },
-      "64e8e5bf-24c7-40b7-a4ee-81921772ccd9": {
+      "secondfactorwa.otpemailsender": {
         "displayName": "OTP Email Sender",
         "nodeType": "OneTimePasswordSmtpSenderNode",
         "connections": {
-          "outcome": "941e9a38-07cb-43b7-928e-8be6c836dfd3"
+          "outcome": "secondfactorwa.otpcollector"
         }
       },
-      "56a7efed-ad2b-4fe2-b878-9f690d42c670": {
+      "secondfactorwa.otpsmssender": {
         "displayName": "OTP SMS Sender",
         "nodeType": "OneTimePasswordSmsSenderNode",
         "connections": {
-          "outcome": "941e9a38-07cb-43b7-928e-8be6c836dfd3"
+          "outcome": "secondfactorwa.otpcollector"
         }
       },
-      "941e9a38-07cb-43b7-928e-8be6c836dfd3": {
+      "secondfactorwa.otpcollector": {
         "displayName": "OTP Collector Decision",
         "nodeType": "OneTimePasswordCollectorDecisionNode",
         "connections": {
@@ -62,25 +62,25 @@
           "false": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "ab6af75d-83c3-4aef-9115-59394d62cb53": {
+      "secondfactorwa.page": {
         "displayName": "Page Node",
         "nodeType": "PageNode",
         "connections": {
-          "outcome": "11e6c792-c956-4bae-a2fa-3601c8ac1d44"
+          "outcome": "secondfactorwa.datastore"
         }
       },
-      "95e56571-c389-492f-9e62-2d906e332297": {
+      "secondfactorwa.waauth": {
         "displayName": "WebAuthn Authentication Node",
         "nodeType": "WebAuthnAuthenticationNode",
         "connections": {
           "unsupported": "e301438c-0bd0-429c-ab0c-66126501069a",
           "success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
-          "noDevice": "35fe5167-ac18-4be9-967d-5aa3274e5f21",
+          "noDevice": "secondfactorwa.choice.register",
           "failure": "e301438c-0bd0-429c-ab0c-66126501069a",
           "error": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "66b4f6a2-72b6-4723-851a-851a291cc12b": {
+      "secondfactorwa.waregistration": {
         "displayName": "WebAuthn Registration Node",
         "nodeType": "WebAuthnRegistrationNode",
         "connections": {
@@ -90,15 +90,15 @@
           "error": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "35fe5167-ac18-4be9-967d-5aa3274e5f21": {
+      "secondfactorwa.choice.register": {
         "displayName": "Choice Collector",
         "nodeType": "ChoiceCollectorNode",
         "connections": {
-          "Yes": "66b4f6a2-72b6-4723-851a-851a291cc12b",
+          "Yes": "secondfactorwa.waregistration",
           "No": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       }
     },
-    "entryNodeId": "ab6af75d-83c3-4aef-9115-59394d62cb53"
+    "entryNodeId": "secondfactorwa.page"
   }
 }

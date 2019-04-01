@@ -9,37 +9,37 @@
   "data": {
     "_id": "SecondFactorCustom",
     "nodes": {
-      "938f0196-c745-4f2c-8d2d-b78f7b28624c": {
+      "secondfactorcustom.choice": {
         "displayName": "Choice Collector",
         "nodeType": "ChoiceCollectorNode",
         "connections": {
-          "SMS": "e27301eb-8258-4573-8b8f-e2c6c67de841",
-          "Email": "66f44b11-b08f-419d-ad0f-1776edf2fc36"
+          "SMS": "secondfactorcustom.hotpsms",
+          "Email": "secondfactorcustom.hotpemail"
         }
       },
-      "14bf4d09-130a-430b-aff9-4bee28640480": {
+      "secondfactorcustom.datastore": {
         "displayName": "Data Store Decision",
         "nodeType": "DataStoreDecisionNode",
         "connections": {
           "false": "e301438c-0bd0-429c-ab0c-66126501069a",
-          "true": "938f0196-c745-4f2c-8d2d-b78f7b28624c"
+          "true": "secondfactorcustom.choice"
         }
       },
-      "66f44b11-b08f-419d-ad0f-1776edf2fc36": {
+      "secondfactorcustom.hotpemail": {
         "displayName": "HOTP Generator",
         "nodeType": "OneTimePasswordGeneratorNode",
         "connections": {
-          "outcome": "5376e8e6-044a-4eb9-ab3b-76fddc507a50"
+          "outcome": "secondfactorcustom.scriptedemail"
         }
       },
-      "e27301eb-8258-4573-8b8f-e2c6c67de841": {
+      "secondfactorcustom.hotpsms": {
         "displayName": "HOTP Generator",
         "nodeType": "OneTimePasswordGeneratorNode",
         "connections": {
-          "outcome": "72c4fb7e-1ec1-4093-a75b-e6db426bfdae"
+          "outcome": "secondfactorcustom.scriptedsms"
         }
       },
-      "59ab6f99-2b41-44ef-ad47-5e68d088e374": {
+      "secondfactorcustom.otpcollector": {
         "displayName": "OTP Collector Decision",
         "nodeType": "OneTimePasswordCollectorDecisionNode",
         "connections": {
@@ -47,28 +47,28 @@
           "false": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "ed54e0ca-6f08-4cd0-bdc6-71609dcd6d3b": {
+      "secondfactorcustom.page": {
         "displayName": "Page Node",
         "nodeType": "PageNode",
         "connections": {
-          "outcome": "14bf4d09-130a-430b-aff9-4bee28640480"
+          "outcome": "secondfactorcustom.datastore"
         }
       },
-      "72c4fb7e-1ec1-4093-a75b-e6db426bfdae": {
+      "secondfactorcustom.scriptedsms": {
         "displayName": "Scripted Decision",
         "nodeType": "ScriptedDecisionNode",
         "connections": {
-          "outcome": "59ab6f99-2b41-44ef-ad47-5e68d088e374"
+          "outcome": "secondfactorcustom.otpcollector"
         }
       },
-      "5376e8e6-044a-4eb9-ab3b-76fddc507a50": {
+      "secondfactorcustom.scriptedemail": {
         "displayName": "Scripted Decision",
         "nodeType": "ScriptedDecisionNode",
         "connections": {
-          "outcome": "59ab6f99-2b41-44ef-ad47-5e68d088e374"
+          "outcome": "secondfactorcustom.otpcollector"
         }
       }
     },
-    "entryNodeId": "ed54e0ca-6f08-4cd0-bdc6-71609dcd6d3b"
+    "entryNodeId": "secondfactorcustom.page"
   }
 }
