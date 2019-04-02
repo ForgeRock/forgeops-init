@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "OTPCollectorDecision",
+    "entityId": "secondfactorwa.otpcollector",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "secondfactorwa.otpcollector",
+    "passwordExpiryTime": 5,
+    "_type": {
+      "_id": "OneTimePasswordCollectorDecisionNode",
+      "name": "OTP Collector Decision",
+      "collection": true
+    }
+  }
+}
