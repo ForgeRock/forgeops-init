@@ -9,37 +9,37 @@
   "data": {
     "_id": "SecondFactor",
     "nodes": {
-      "secondfactor.choice": {
+      "2828df85-caba-43c4-87d9-47a10ab3464c": {
         "displayName": "Choice Collector",
         "nodeType": "ChoiceCollectorNode",
         "connections": {
-          "SMS": "secondfactor.hotpsms",
-          "Email": "secondfactor.hotpemail"
+          "SMS": "d4aea03e-030e-4ee5-a0f3-54a2a2ed865f",
+          "Email": "4e894576-6605-4b96-b5c9-fceda1c7c461"
         }
       },
-      "secondfactor.datastore": {
+      "1620cb9e-7d51-4d62-bffe-dcbfaa3fd575": {
         "displayName": "Data Store Decision",
         "nodeType": "DataStoreDecisionNode",
         "connections": {
-          "true": "secondfactor.choice",
+          "true": "2828df85-caba-43c4-87d9-47a10ab3464c",
           "false": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "secondfactor.hotpsms": {
+      "d4aea03e-030e-4ee5-a0f3-54a2a2ed865f": {
         "displayName": "HOTP Generator",
         "nodeType": "OneTimePasswordGeneratorNode",
         "connections": {
-          "outcome": "secondfactor.otpsmssender"
+          "outcome": "24c88533-aa3c-4c04-99f9-8c2b6ead7597"
         }
       },
-      "secondfactor.hotpemail": {
+      "4e894576-6605-4b96-b5c9-fceda1c7c461": {
         "displayName": "HOTP Generator",
         "nodeType": "OneTimePasswordGeneratorNode",
         "connections": {
-          "outcome": "secondfactor.otpemailsender"
+          "outcome": "27687c7e-71d7-44a1-8721-5631593cc7d4"
         }
       },
-      "secondfactor.otpcollector": {
+      "beeaa2a2-c22d-495c-9b33-87a7bfb2be93": {
         "displayName": "OTP Collector Decision",
         "nodeType": "OneTimePasswordCollectorDecisionNode",
         "connections": {
@@ -47,28 +47,28 @@
           "false": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "secondfactor.otpemailsender": {
+      "27687c7e-71d7-44a1-8721-5631593cc7d4": {
         "displayName": "OTP Email Sender",
         "nodeType": "OneTimePasswordSmtpSenderNode",
         "connections": {
-          "outcome": "secondfactor.otpcollector"
+          "outcome": "beeaa2a2-c22d-495c-9b33-87a7bfb2be93"
         }
       },
-      "secondfactor.otpsmssender": {
+      "24c88533-aa3c-4c04-99f9-8c2b6ead7597": {
         "displayName": "OTP SMS Sender",
         "nodeType": "OneTimePasswordSmsSenderNode",
         "connections": {
-          "outcome": "secondfactor.otpcollector"
+          "outcome": "beeaa2a2-c22d-495c-9b33-87a7bfb2be93"
         }
       },
-      "secondfactor.page": {
+      "c67ce6e6-d7d8-4b2d-958b-f13e30689c7a": {
         "displayName": "Page Node",
         "nodeType": "PageNode",
         "connections": {
-          "outcome": "secondfactor.datastore"
+          "outcome": "1620cb9e-7d51-4d62-bffe-dcbfaa3fd575"
         }
       }
     },
-    "entryNodeId": "secondfactor.page"
+    "entryNodeId": "c67ce6e6-d7d8-4b2d-958b-f13e30689c7a"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "HOTPGenerator",
+    "entityId": "e27301eb-8258-4573-8b8f-e2c6c67de841",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "e27301eb-8258-4573-8b8f-e2c6c67de841",
+    "length": 8,
+    "_type": {
+      "_id": "OneTimePasswordGeneratorNode",
+      "name": "HOTP Generator",
+      "collection": true
+    }
+  }
+}
