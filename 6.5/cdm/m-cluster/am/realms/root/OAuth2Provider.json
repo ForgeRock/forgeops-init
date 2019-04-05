@@ -37,7 +37,7 @@
       "moduleMessageEnabledInPasswordGrant" : false,
       "tokenEncryptionEnabled" : false,
       "tokenCompressionEnabled" : false,
-      "grantTypes" : [ "implicit", "urn:ietf:params:oauth:grant-type:saml2-bearer", "refresh_token", "password", "client_credentials", "urn:ietf:params:oauth:grant-type:device_code", "authorization_code", "urn:ietf:params:oauth:grant-type:uma-ticket" ],
+      "grantTypes" : [ "implicit", "refresh_token", "urn:ietf:params:oauth:grant-type:saml2-bearer", "password", "client_credentials", "urn:ietf:params:oauth:grant-type:device_code", "authorization_code", "urn:ietf:params:oauth:grant-type:uma-ticket" ],
       "displayNameAttribute" : "cn",
       "supportedSubjectTypes" : [ "public" ]
     },
@@ -50,7 +50,7 @@
       "supportedUserInfoEncryptionEnc" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
       "alwaysAddClaimsToToken" : false,
       "supportedUserInfoSigningAlgorithms" : [ "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512" ],
-      "supportedRequestParameterEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "A256KW", "RSA1_5", "dir", "A192KW" ],
+      "supportedRequestParameterEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "RSA1_5", "A256KW", "dir", "A192KW" ],
       "authorisedOpenIdConnectSSOClients" : [ ],
       "idTokenInfoClientAuthenticationEnabled" : true,
       "supportedRequestParameterSigningAlgorithms" : [ "PS384", "RS384", "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
@@ -74,6 +74,7 @@
       "supportedRcsResponseEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
       "supportedRcsRequestEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
       "remoteConsentServiceId" : "[Empty]",
+      "savedConsentAttribute" : "",
       "supportedRcsResponseEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "A256KW", "RSA1_5", "dir", "A192KW" ]
     },
     "deviceCodeConfig" : {

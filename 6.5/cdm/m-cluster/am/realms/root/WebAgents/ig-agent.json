@@ -35,7 +35,7 @@
       "webSocketConnectionIntervalInMinutes" : 30,
       "agentConfigChangeNotificationsEnabled" : true,
       "userpassword" : null,
-      "userpassword-encrypted" : "AAAAA0FFUwIQZ1WScZkJz8KvOpO00NGj6P6n3BjStlySV35uJn/aQ26ajxranhM+/5NiDhaGOEiseo3ZNGZ6GF5PQemahNyLHjyC+bQwkHLOjfdeF9hvg91CT7RWB+EAQYdOdk7IH5jwZksExZlBBeinVIgd1oMFRFrv1nzYNKaO+jeU702TsucjBOV74uertcPgMvcbpe97TE19UvwZ5Wk=",
+      "userpassword-encrypted" : "AAAAA0FFUwIQ4c80TEWGJwkQlJTuKUqnBovWFeEEH6O57k1uskFbf1VzapuGki3bPb1QvRT0YMDmaPJ6zm+y0x60pu5Ch0Dksul4LFsiNvJJf2rIqXG4wgGIMJulZxDd2EminVeknoTFWwH2Dr20l6TUYj5zz7gXqKdBDrpQb7ZBHZJeJb+GdBgqp8SkVpchLmav4E4emyEDk9hFaRuTQ/Y=",
       "debugLogRotation" : true,
       "auditAccessType" : "LOG_NONE",
       "cdssoRootUrl" : [ "agentRootURL=http://openig.lee.svc.cluster.local:80/" ],
