@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.1-RC2",
     "entityType" : "AuthenticatorPushModule",
     "entityId" : "AuthenticatorPushModule",
     "pathParams" : { }

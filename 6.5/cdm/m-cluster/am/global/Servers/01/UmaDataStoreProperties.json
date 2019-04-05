@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.1-RC2",
     "entityType" : "UmaDataStoreProperties",
     "entityId" : "http://openam:80",
     "pathParams" : {
