@@ -49,7 +49,7 @@
       "sun-idrepo-ldapv3-config-organization_name" : "ou=identities",
       "sun-idrepo-ldapv3-config-connection-mode" : "LDAP",
       "sun-idrepo-ldapv3-config-authpw" : null,
-      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQ4HlDQ6KuDqLaGUDAmUWDk7MPpQTvQL8kqnliYvdq5qFgPCJFjfvt6Q=="
+      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQJHlNILTa3G0M08fYvYXwWJVrPW2EXLuq5E1mzPcdLW7manqrjNrisQ=="
     },
     "cachecontrol" : {
       "sun-idrepo-ldapv3-dncache-enabled" : true,
