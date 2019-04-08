@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.1",
     "entityType" : "Sites",
     "entityId" : "site1",
     "pathParams" : { }

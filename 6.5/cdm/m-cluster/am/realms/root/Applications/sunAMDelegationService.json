@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.1",
     "entityType" : "Applications",
     "entityId" : "sunAMDelegationService",
     "pathParams" : { }

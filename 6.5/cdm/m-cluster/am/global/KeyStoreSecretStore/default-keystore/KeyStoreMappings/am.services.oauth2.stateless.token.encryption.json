@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.1",
     "entityType" : "KeyStoreMappings",
     "entityId" : "am.services.oauth2.stateless.token.encryption",
     "pathParams" : {

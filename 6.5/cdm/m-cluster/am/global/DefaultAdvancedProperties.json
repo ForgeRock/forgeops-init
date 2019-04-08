@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "6.5.1",
     "entityType" : "DefaultAdvancedProperties",
     "entityId" : "DefaultAdvancedProperties",
     "pathParams" : { }
@@ -9,7 +9,7 @@
   "data" : {
     "_id" : "null/properties/advanced",
     "com.iplanet.am.directory.ssl.enabled" : false,
-    "com.iplanet.am.version" : "ForgeRock Access Management &{version} Build 24e379e3e1 (2019-April-05 09:02)",
+    "com.iplanet.am.version" : "ForgeRock Access Management 6.5.1 Build 24e379e3e1 (2019-April-05 09:02)",
     "openam.auth.distAuthCookieName" : "AMDistAuthCookie",
     "com.sun.identity.webcontainer" : "WEB_CONTAINER",
     "com.sun.identity.security.checkcaller" : false,
@@ -72,7 +72,7 @@
     "com.sun.identity.session.repository.enableAttributeCompression" : false,
     "com.iplanet.am.console.host" : "%SERVER_HOST%",
     "org.forgerock.openam.auth.transactionauth.returnErrorOnAuthFailure" : false,
-    "com.iplanet.am.buildVersion" : "ForgeRock Access Management &{version}",
+    "com.iplanet.am.buildVersion" : "ForgeRock Access Management 6.5.1",
     "org.forgerock.openam.authLevel.excludeRequiredOrRequisite" : false,
     "org.forgerock.openam.cdc.validLoginURIs" : "/UI/Login",
     "org.forgerock.openam.redirecturlvalidator.maxUrlLength" : "2000",
