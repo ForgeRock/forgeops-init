@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.5.1-RC2",
+    "amsterVersion" : "&{version}",
     "entityType" : "DirectoryConfiguration",
     "entityId" : "http://openam:80",
     "pathParams" : {
@@ -15,7 +15,7 @@
       "maxConnectionPool" : 10,
       "bindDn" : "cn=Directory Manager",
       "bindPassword" : null,
-      "bindPassword-encrypted" : "AAAAA0FFUwIQNUo59/Q5iQ99tGcjr7cRH5zjtR6WTySK48kVxC0Tex8hDTGIR+62yA=="
+      "bindPassword-encrypted" : "AAAAA0FFUwIQgh5yvi17AXprA/Q9o6OW9YPI7kYiNltqvBrR78QLY2UWeooe5ngVWw=="
     },
     "directoryServers" : [ {
       "hostName" : "configstore-0.configstore",

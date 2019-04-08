@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.5.1-RC2",
+    "amsterVersion" : "&{version}",
     "entityType" : "CtsDataStoreProperties",
     "entityId" : "http://openam:80",
     "pathParams" : {
@@ -49,7 +49,7 @@
         "value" : null,
         "inherited" : false
       },
-      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQu2KOomcucSqFCxIzOrdrV427YynFvb3OEGBf1Xcd7vHuPwe6HwtcKw==",
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQFnAJoYgvhn8W36+08dePzDBvgHKVoBAigLbdtJS2iTJ4xUOy2qPDcg==",
       "org.forgerock.services.cts.store.heartbeat" : {
         "value" : "10",
         "inherited" : true

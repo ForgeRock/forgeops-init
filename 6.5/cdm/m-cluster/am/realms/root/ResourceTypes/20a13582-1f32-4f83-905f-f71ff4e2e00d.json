@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.5.1-RC2",
+    "amsterVersion" : "&{version}",
     "entityType" : "ResourceTypes",
     "entityId" : "20a13582-1f32-4f83-905f-f71ff4e2e00d",
     "pathParams" : { }
@@ -20,6 +20,6 @@
     "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
     "creationDate" : 1422892465848,
     "lastModifiedBy" : "id=amadmin,ou=user,ou=am-config",
-    "lastModifiedDate" : 1554476920217
+    "lastModifiedDate" : 1554716986631
   }
 }

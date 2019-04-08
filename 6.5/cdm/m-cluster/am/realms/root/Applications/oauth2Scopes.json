@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.5.1-RC2",
+    "amsterVersion" : "&{version}",
     "entityType" : "Applications",
     "entityId" : "oauth2Scopes",
     "pathParams" : { }
@@ -9,21 +9,21 @@
   "data" : {
     "_id" : "oauth2Scopes",
     "displayName" : "Default OAuth2 Scopes Policy Set",
+    "editable" : true,
     "description" : "The built-in Application used by the OAuth2 scope authorization process.",
+    "conditions" : [ "LEAuthLevel", "Script", "AuthenticateToService", "SimpleTime", "AMIdentityMembership", "OR", "IPv6", "IPv4", "SessionProperty", "AuthScheme", "AuthLevel", "NOT", "Transaction", "AuthenticateToRealm", "AND", "ResourceEnvIP", "LDAPFilter", "OAuth2Scope", "Session" ],
     "attributeNames" : [ ],
+    "createdBy" : "id=dsameuser,ou=user,dc=data",
+    "resourceTypeUuids" : [ "d60b7a71-1dc6-44a5-8e48-e4b9d92dee8b" ],
+    "subjects" : [ "NOT", "OR", "JwtClaim", "AuthenticatedUsers", "AND", "Identity", "NONE" ],
+    "lastModifiedDate" : 1554716986709,
+    "lastModifiedBy" : "id=amadmin,ou=user,ou=am-config",
+    "entitlementCombiner" : "DenyOverride",
+    "resourceComparator" : null,
     "saveIndex" : null,
     "searchIndex" : null,
-    "resourceComparator" : null,
     "applicationType" : "iPlanetAMWebAgentService",
-    "entitlementCombiner" : "DenyOverride",
-    "subjects" : [ "NOT", "OR", "JwtClaim", "AuthenticatedUsers", "AND", "Identity", "NONE" ],
-    "createdBy" : "id=dsameuser,ou=user,dc=data",
-    "conditions" : [ "LEAuthLevel", "Script", "AuthenticateToService", "SimpleTime", "AMIdentityMembership", "OR", "IPv6", "IPv4", "SessionProperty", "AuthScheme", "AuthLevel", "NOT", "Transaction", "AuthenticateToRealm", "AND", "ResourceEnvIP", "LDAPFilter", "OAuth2Scope", "Session" ],
-    "lastModifiedBy" : "id=amadmin,ou=user,ou=am-config",
     "creationDate" : 1539343439044,
-    "lastModifiedDate" : 1554476920298,
-    "resourceTypeUuids" : [ "d60b7a71-1dc6-44a5-8e48-e4b9d92dee8b" ],
-    "editable" : true,
     "name" : "oauth2Scopes"
   }
 }

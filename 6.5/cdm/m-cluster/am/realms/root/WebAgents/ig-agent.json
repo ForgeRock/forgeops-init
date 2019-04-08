@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.5.1-RC2",
+    "amsterVersion" : "&{version}",
     "entityType" : "WebAgents",
     "entityId" : "ig-agent",
     "pathParams" : { }
@@ -35,7 +35,7 @@
       "webSocketConnectionIntervalInMinutes" : 30,
       "agentConfigChangeNotificationsEnabled" : true,
       "userpassword" : null,
-      "userpassword-encrypted" : "AAAAA0FFUwIQ4c80TEWGJwkQlJTuKUqnBovWFeEEH6O57k1uskFbf1VzapuGki3bPb1QvRT0YMDmaPJ6zm+y0x60pu5Ch0Dksul4LFsiNvJJf2rIqXG4wgGIMJulZxDd2EminVeknoTFWwH2Dr20l6TUYj5zz7gXqKdBDrpQb7ZBHZJeJb+GdBgqp8SkVpchLmav4E4emyEDk9hFaRuTQ/Y=",
+      "userpassword-encrypted" : "AAAAA0FFUwIQ2vaA6y5dXzcCw1Bj6KdmonOWOOoayGs2GwX97q+xMCMoPaB6nDm7Is7CywsGcmi0qPKpSoBCOoy4GOEJMmZBk4aHO1nP6Lx5ZU9eMkGS9xLkZscWww1me9mDyHjVLvtFORq1sLj3SDaG2AbaBz5AvzBSHGiDlEIntfci3JJy1BvWfK6CMeJKbcgNvThMFoiZLj26+W4mJTs=",
       "debugLogRotation" : true,
       "auditAccessType" : "LOG_NONE",
       "cdssoRootUrl" : [ "agentRootURL=http://openig.lee.svc.cluster.local:80/" ],

@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.5.1-RC2",
+    "amsterVersion" : "&{version}",
     "entityType" : "PolicyConfiguration",
     "entityId" : "PolicyConfiguration",
     "pathParams" : { }
@@ -13,7 +13,7 @@
     "continueEvaluationOnDeny" : false,
     "defaults" : {
       "policyHeartbeatInterval" : 10,
-      "bindDn" : "cn=Directory Manager",
+      "bindDn" : "cn=Directory manager",
       "ldapServer" : [ "configstore-0.configstore:1389" ],
       "connectionPoolMinimumSize" : 1,
       "usersSearchAttribute" : "uid",

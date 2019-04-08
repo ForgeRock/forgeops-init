@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.5.1-RC2",
+    "amsterVersion" : "&{version}",
     "entityType" : "KeyStoreMappings",
     "entityId" : "am.applications.agents.remote.consent.request.signing.ES384",
     "pathParams" : {
