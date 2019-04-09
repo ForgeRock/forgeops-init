@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "SocialAuthOAuth2Module",
     "entityId" : "SocialAuthOAuth2Module",
     "pathParams" : { }

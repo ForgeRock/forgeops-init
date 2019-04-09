@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "WebAgents",
     "entityId" : "ig-agent",
     "pathParams" : { }
@@ -13,7 +13,7 @@
       "cookieName" : "iPlanetDirectoryPro",
       "cdsso" : false,
       "cdssoCookieDomain" : [ "" ],
-      "cdssoUrls" : [ "http://openam.&{namespace}.svc.cluster.local:80/cdcservlet" ],
+      "cdssoUrls" : [ "http://openam.prod.svc.cluster.local:80/cdcservlet" ],
       "cdssoRedirectUri" : "agent/cdsso-oauth2",
       "cookieResetEnabled" : false,
       "cookieResetList" : [ "" ]
@@ -26,7 +26,7 @@
       "remoteLogFilename" : "amAgent_openig_prod_svc_cluster_local_80.log",
       "remoteLogSendInterval" : 5,
       "ssoOnlyMode" : false,
-      "agentUriPrefix" : "http://openig.&{namespace}.svc.cluster.local:80/amagent",
+      "agentUriPrefix" : "http://openig.prod.svc.cluster.local:80/amagent",
       "configurationPollingInterval" : 60,
       "agentgroup" : null,
       "fqdnCheck" : false,
@@ -37,9 +37,9 @@
       "userpassword" : null,
       "debugLogRotation" : true,
       "auditAccessType" : "LOG_NONE",
-      "cdssoRootUrl" : [ "agentRootURL=http://openig.&{namespace}.svc.cluster.local:80/" ],
-      "fqdnDefault" : "openig.&{namespace}.svc.cluster.local",
-      "agentNotificationUrl" : "http://openig.&{namespace}.svc.cluster.local:80/UpdateAgentCacheServlet?shortcircuit=false",
+      "cdssoRootUrl" : [ "agentRootURL=http://openig.prod.svc.cluster.local:80/" ],
+      "fqdnDefault" : "openig.prod.svc.cluster.local",
+      "agentNotificationUrl" : "http://openig.prod.svc.cluster.local:80/UpdateAgentCacheServlet?shortcircuit=false",
       "accessDeniedUrl" : null,
       "localAuditRotationSize" : 52428800,
       "jwtName" : "am-auth-jwt",
@@ -110,7 +110,7 @@
       "policyEvaluationApplication" : "iPlanetAMWebAgentService",
       "policyEvaluationRealm" : "/",
       "retrieveClientHostname" : false,
-      "amLogoutUrl" : [ "http://openam.&{namespace}.svc.cluster.local:80/UI/Logout" ],
+      "amLogoutUrl" : [ "http://openam.prod.svc.cluster.local:80/UI/Logout" ],
       "userIdParameterType" : "session",
       "amLoginUrl" : [ ],
       "ssoCachePollingInterval" : 3,

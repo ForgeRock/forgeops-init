@@ -1,14 +1,15 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "Sites",
     "entityId" : "site1",
     "pathParams" : { }
   },
   "data" : {
     "_id" : "site1",
-    "url" : "https://&{fqdn}/am",
+    "id" : "02",
+    "url" : "https://prod.iam.forgerock-qa.com/am",
     "secondaryURLs" : [ ]
   }
 }

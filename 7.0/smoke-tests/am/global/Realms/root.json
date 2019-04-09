@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "&{version}",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "Realms",
     "entityId" : "Lw",
     "pathParams" : { }
@@ -11,6 +11,6 @@
     "parentPath" : null,
     "active" : true,
     "name" : "/",
-    "aliases" : [ "&{fqdn}", "am-config", "openam" ]
+    "aliases" : [ "prod.iam.forgerock-qa.com", "am-config", "openam" ]
   }
 }
