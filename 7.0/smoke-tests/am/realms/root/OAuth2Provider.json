@@ -31,7 +31,7 @@
       "codeVerifierEnforced" : "false",
       "tokenSigningAlgorithm" : "HS256",
       "authenticationAttributes" : [ "uid" ],
-      "passwordGrantAuthService" : "[Empty]",
+      "passwordGrantAuthService" : "ldapService",
       "defaultScopes" : [ "address", "phone", "openid", "profile", "email" ],
       "scopeImplementationClass" : "org.forgerock.openam.oauth2.OpenAMScopeValidator",
       "responseTypeClasses" : [ "code|org.forgerock.oauth2.core.AuthorizationCodeResponseTypeHandler", "device_code|org.forgerock.oauth2.core.TokenResponseTypeHandler", "token|org.forgerock.oauth2.core.TokenResponseTypeHandler" ],
@@ -81,6 +81,10 @@
     "deviceCodeConfig" : {
       "devicePollInterval" : 5,
       "deviceCodeLifetime" : 300
+    },
+    "cibaConfig" : {
+      "cibaAuthReqIdLifetime" : 600,
+      "cibaMinimumPollingInterval" : 2
     },
     "_type" : {
       "_id" : "oauth-oidc",
