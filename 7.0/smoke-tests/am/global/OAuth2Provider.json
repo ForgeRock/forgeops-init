@@ -45,7 +45,7 @@
         "tlsCertificateBoundAccessTokensEnabled" : true,
         "moduleMessageEnabledInPasswordGrant" : false,
         "tokenEncryptionEnabled" : false,
-        "grantTypes" : [ "implicit", "refresh_token", "urn:ietf:params:oauth:grant-type:saml2-bearer", "password", "client_credentials", "urn:ietf:params:oauth:grant-type:device_code", "authorization_code", "urn:ietf:params:oauth:grant-type:uma-ticket" ],
+        "grantTypes" : [ "implicit", "refresh_token", "urn:ietf:params:oauth:grant-type:saml2-bearer", "password", "client_credentials", "urn:ietf:params:oauth:grant-type:device_code", "authorization_code", "urn:ietf:params:oauth:grant-type:uma-ticket", "urn:openid:params:modrna:grant‑type:backchannel_request" ],
         "displayNameAttribute" : "cn",
         "supportedSubjectTypes" : [ "public" ]
       },
@@ -87,6 +87,10 @@
       "deviceCodeConfig" : {
         "devicePollInterval" : 5,
         "deviceCodeLifetime" : 300
+      },
+      "cibaConfig" : {
+        "cibaAuthReqIdLifetime" : 600,
+        "cibaMinimumPollingInterval" : 2
       }
     },
     "_type" : {

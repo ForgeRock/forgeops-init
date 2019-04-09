@@ -82,6 +82,10 @@
       "devicePollInterval" : 5,
       "deviceCodeLifetime" : 300
     },
+    "cibaConfig" : {
+      "cibaAuthReqIdLifetime" : 600,
+      "cibaMinimumPollingInterval" : 2
+    },
     "_type" : {
       "_id" : "oauth-oidc",
       "name" : "OAuth2 Provider",

@@ -48,8 +48,7 @@
       "openam-idrepo-ldapv3-heartbeat-timeunit" : "SECONDS",
       "sun-idrepo-ldapv3-config-organization_name" : "ou=identities",
       "sun-idrepo-ldapv3-config-connection-mode" : "LDAP",
-      "sun-idrepo-ldapv3-config-authpw" : null,
-      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQo0CoraiZVlPgyUpn6uAoO4Ip0KcfgVI/OR8HjYz3Yeowp4YbULMGiw=="
+      "sun-idrepo-ldapv3-config-authpw" : null
     },
     "cachecontrol" : {
       "sun-idrepo-ldapv3-dncache-enabled" : true,
