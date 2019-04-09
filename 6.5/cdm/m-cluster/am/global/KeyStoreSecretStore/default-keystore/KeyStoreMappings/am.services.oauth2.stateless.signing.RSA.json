@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : null,
-    "amsterVersion" : "6.5.1",
+    "amsterVersion" : "&{version}",
     "entityType" : "KeyStoreMappings",
     "entityId" : "am.services.oauth2.stateless.signing.RSA",
     "pathParams" : {
