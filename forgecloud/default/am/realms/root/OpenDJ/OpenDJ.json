@@ -11,20 +11,12 @@
     "groupconfig": {
       "sun-idrepo-ldapv3-config-groups-search-attribute": "cn",
       "sun-idrepo-ldapv3-config-group-container-value": "groups",
-      "sun-idrepo-ldapv3-config-group-attributes": [
-        "dn",
-        "cn",
-        "uniqueMember",
-        "objectclass"
-      ],
+      "sun-idrepo-ldapv3-config-group-attributes": ["dn", "cn", "uniqueMember", "objectclass"],
       "sun-idrepo-ldapv3-config-group-container-name": "ou",
       "sun-idrepo-ldapv3-config-uniquemember": "uniqueMember",
       "sun-idrepo-ldapv3-config-groups-search-filter": "(objectclass=groupOfUniqueNames)",
       "sun-idrepo-ldapv3-config-memberurl": "memberUrl",
-      "sun-idrepo-ldapv3-config-group-objectclass": [
-        "top",
-        "groupofuniquenames"
-      ]
+      "sun-idrepo-ldapv3-config-group-objectclass": ["top", "groupofuniquenames"]
     },
     "userconfig": {
       "sun-idrepo-ldapv3-config-auth-kba-attempts-attr": ["kbaInfoAttempts"],
@@ -159,6 +151,7 @@
         "fr-idm-preferred-language",
         "fr-idm-phone-numbers",
         "fr-idm-timezone",
+        "fr-idm-name-object",
         "fr-idm-nick-name",
         "fr-idm-profile-url",
         "fr-idm-birthdate",
@@ -185,9 +178,7 @@
       "sun-idrepo-ldapv3-config-search-scope": "SCOPE_SUB",
       "sun-idrepo-ldapv3-config-time-limit": 10,
       "openam-idrepo-ldapv3-heartbeat-interval": 10,
-      "sun-idrepo-ldapv3-config-ldap-server": [
-        "configstore-0.configstore:1389"
-      ],
+      "sun-idrepo-ldapv3-config-ldap-server": ["configstore-0.configstore:1389"],
       "openam-idrepo-ldapv3-heartbeat-timeunit": "SECONDS",
       "sun-idrepo-ldapv3-config-organization_name": "ou=identities",
       "sun-idrepo-ldapv3-config-connection-mode": "LDAP",
