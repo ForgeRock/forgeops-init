@@ -1,4 +1,8 @@
   domain: forgeops.com
+  image:
+    repository: gcr.io/forgerock-io/am/docker-build
+    tag: latest
+    pullPolicy: IfNotPresent
   service:
     name: openam
     type: NodePort
@@ -6,3 +10,4 @@
     internalPort: 8080
   configSecret: userstore
   configLdapHost: userstore-0.userstore
+  configSecretName: userstore

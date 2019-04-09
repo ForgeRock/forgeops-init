@@ -1,10 +1,13 @@
-  domain: forgeops.com
-  amadminPassword: password
-  userStore:
-    host: userstore-0.userstore
-  resources:
-    requests:
-      memory: "64Mi"
-  config:
-    strategy: files
-    importPath: /opt/amster/config/
+domain: forgeops.com
+amadminPassword: password
+resources:
+  requests:
+    memory: "64Mi"
+config:
+  strategy: files
+  importPath: /opt/amster/config/
+configStore:
+  host: userstore-0.userstore
+userStore:
+  storeType: "LDAPv3ForForgeRockIAM"
+  host: userstore-0.userstore
