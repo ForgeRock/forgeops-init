@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "amsterVersion" : "&{version}",
     "entityType" : "PolicyConfiguration",
     "entityId" : "PolicyConfiguration",
     "pathParams" : { }
@@ -23,8 +23,8 @@
     "bindPassword" : null,
     "connectionPoolMaximumSize" : 10,
     "policyHeartbeatTimeUnit" : "SECONDS",
-    "realmSearchFilter" : "(objectclass=sunismanagedorganization)",
     "maximumSearchResults" : 100,
+    "realmSearchFilter" : "(objectclass=sunismanagedorganization)",
     "checkIfResourceTypeExists" : true,
     "_type" : {
       "_id" : "policyconfiguration",

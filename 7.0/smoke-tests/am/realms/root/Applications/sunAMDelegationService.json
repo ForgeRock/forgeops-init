@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "amsterVersion" : "&{version}",
     "entityType" : "Applications",
     "entityId" : "sunAMDelegationService",
     "pathParams" : { }
@@ -13,16 +13,16 @@
     "resourceTypeUuids" : [ "20a13582-1f32-4f83-905f-f71ff4e2e00d" ],
     "description" : null,
     "attributeNames" : [ ],
-    "createdBy" : "id=dsameuser,ou=user,ou=am-config",
     "conditions" : [ ],
-    "lastModifiedBy" : "id=dsameuser,ou=user,ou=am-config",
+    "createdBy" : "id=dsameuser,ou=user,ou=am-config",
+    "resourceComparator" : null,
+    "lastModifiedBy" : "id=amadmin,ou=user,ou=am-config",
     "creationDate" : 1554817362704,
-    "lastModifiedDate" : 1554817362704,
+    "lastModifiedDate" : 1554894789351,
     "subjects" : [ "NOT", "OR", "AuthenticatedUsers", "AND", "Identity" ],
     "saveIndex" : null,
     "searchIndex" : null,
     "entitlementCombiner" : "DenyOverride",
-    "resourceComparator" : null,
     "editable" : true,
     "applicationType" : "sunAMDelegationService"
   }

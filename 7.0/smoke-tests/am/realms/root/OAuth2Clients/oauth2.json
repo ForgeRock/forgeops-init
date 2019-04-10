@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "amsterVersion" : "&{version}",
     "entityType" : "OAuth2Clients",
     "entityId" : "oauth2",
     "pathParams" : { }
@@ -66,7 +66,6 @@
       "clientName" : [ ],
       "clientType" : "Confidential",
       "scopes" : [ "profile", "mail", "employeenumber", "name", "cn" ],
-      "agentgroup" : null,
       "refreshTokenLifetime" : 604800,
       "redirectionUris" : [ "http://fake.com" ],
       "status" : "Active"
