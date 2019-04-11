@@ -10,6 +10,7 @@
     "_id" : "LDAP",
     "authenticationLevel" : 0,
     "userBindPassword" : null,
+    "userBindPassword-encrypted" : "AAAAA0FFUwIQIVC8PuAaPDYKFTmUaURN+sqOoLVIsf5tMS/cCceFnA5qO2s7jaLzNA==",
     "searchScope" : "SUBTREE",
     "returnUserDN" : true,
     "profileAttributeMappings" : [ ],
@@ -28,7 +29,7 @@
     "operationTimeout" : 0,
     "_type" : {
       "_id" : "ldap",
-      "name" : "LDAP",
+      "name" : "serverconfig",
       "collection" : true
     }
   }

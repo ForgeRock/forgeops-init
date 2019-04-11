@@ -13,7 +13,7 @@
     },
     "_type" : {
       "_id" : "EMPTY",
-      "name" : "Authentication Configuration",
+      "name" : "iPlanetAMAuthConfiguration",
       "collection" : false
     }
   }

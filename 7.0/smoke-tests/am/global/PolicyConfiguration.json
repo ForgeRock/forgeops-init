@@ -32,7 +32,7 @@
     },
     "_type" : {
       "_id" : "policyconfiguration",
-      "name" : "Policy Configuration",
+      "name" : "iPlanetAMPolicyConfigService",
       "collection" : false
     }
   }

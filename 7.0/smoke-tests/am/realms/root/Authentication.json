@@ -34,6 +34,7 @@
       "moduleBasedAuthEnabled" : true,
       "zeroPageLoginAllowedWithoutReferrer" : true,
       "sharedSecret" : null,
+      "sharedSecret-encrypted" : "AAAAA0FFUwIQUHuAM9xQl8b5a8EWjWBdG32dZfSqs1k5uJjDav6l/sd0oabZ4e2kRWFnm0q+PFu8IdJPqSK4XlvDe11GvSLSKUcPLwMoqL97",
       "keyAlias" : "test",
       "zeroPageLoginEnabled" : false,
       "zeroPageLoginReferrerWhiteList" : [ ]
@@ -57,7 +58,7 @@
     },
     "_type" : {
       "_id" : "EMPTY",
-      "name" : "Core",
+      "name" : "iPlanetAMAuthService",
       "collection" : false
     }
   }

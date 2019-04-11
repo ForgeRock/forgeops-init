@@ -13,7 +13,7 @@
     },
     "_type" : {
       "_id" : "federation",
-      "name" : "Federation",
+      "name" : "sunAMAuthFederationService",
       "collection" : false
     }
   }

@@ -24,11 +24,12 @@
       "otpValidityDuration" : 5,
       "userProfileTelephoneAttribute" : "telephoneNumber",
       "smtpFromAddress" : "no-reply@openam.org",
-      "smtpUserPassword" : null
+      "smtpUserPassword" : null,
+      "smtpUserPassword-encrypted" : "AAAAA0FFUwIQeoB44TPx9lT/ex7ZyVJ9zks8tDco95DRPecIaIekmo/rrtHVA17gxQ=="
     },
     "_type" : {
       "_id" : "hotp",
-      "name" : "HOTP",
+      "name" : "sunAMAuthHOTPService",
       "collection" : false
     }
   }

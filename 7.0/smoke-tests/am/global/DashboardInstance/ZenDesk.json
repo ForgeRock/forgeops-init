@@ -16,7 +16,7 @@
     "name" : "ZenDesk",
     "_type" : {
       "_id" : "instances",
-      "name" : "Dashboard",
+      "name" : "dashboardApp",
       "collection" : true
     }
   }

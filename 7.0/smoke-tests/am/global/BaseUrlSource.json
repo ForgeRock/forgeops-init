@@ -14,7 +14,7 @@
     },
     "_type" : {
       "_id" : "baseurl",
-      "name" : "Base URL Source",
+      "name" : "amRealmBaseURL",
       "collection" : false
     }
   }

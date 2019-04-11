@@ -13,7 +13,7 @@
     },
     "_type" : {
       "_id" : "amSessionPropertyWhitelist",
-      "name" : "Session Property Whitelist Service",
+      "name" : "SessionPropertyWhitelistService",
       "collection" : false
     }
   }

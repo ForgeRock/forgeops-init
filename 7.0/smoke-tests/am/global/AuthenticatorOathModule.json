@@ -23,7 +23,7 @@
     },
     "_type" : {
       "_id" : "authenticatoroath",
-      "name" : "ForgeRock Authenticator (OATH)",
+      "name" : "iPlanetAMAuthAuthenticatorOATHService",
       "collection" : false
     }
   }

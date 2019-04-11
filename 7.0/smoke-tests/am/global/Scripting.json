@@ -11,7 +11,7 @@
     "defaultContext" : "POLICY_CONDITION",
     "_type" : {
       "_id" : "scripting",
-      "name" : "Scripting",
+      "name" : "ScriptingService",
       "collection" : false
     }
   }

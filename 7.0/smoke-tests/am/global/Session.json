@@ -10,6 +10,7 @@
     "_id" : "",
     "stateless" : {
       "statelessSigningHmacSecret" : null,
+      "statelessSigningHmacSecret-encrypted" : "AAAAA0FFUwIQehCXurO3q/ySNT7rVdQ20ZdlqkeEECfI4aVMwxgKZ8RbgJ8WsBzXKzfH//llIVLekCwKlmwUhky0CAk3DStsOL994FiWgYkJ",
       "openam-session-stateless-blacklist-poll-interval" : 60,
       "statelessSigningType" : "HS256",
       "openam-session-stateless-enable-session-blacklisting" : false,
@@ -18,6 +19,7 @@
       "openam-session-stateless-blacklist-purge-delay" : 1,
       "statelessSigningRsaCertAlias" : "test",
       "statelessEncryptionAesKey" : null,
+      "statelessEncryptionAesKey-encrypted" : "AAAAA0FFUwIQ+QNzaAxe6ZZxtilgYI+98zJ151Xk1o4BiOB9iyCc4bAr4oibfx84qSUPT7j6v2BLtmAwdsa/zjcdwE5JcBRoAXejw+8wgega",
       "openam-session-stateless-blacklist-cache-size" : 10000,
       "statelessEncryptionRsaCertAlias" : "test"
     },
@@ -49,7 +51,7 @@
     },
     "_type" : {
       "_id" : "session",
-      "name" : "Session",
+      "name" : "iPlanetAMSessionService",
       "collection" : false
     }
   }

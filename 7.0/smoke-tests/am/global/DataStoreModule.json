@@ -13,7 +13,7 @@
     },
     "_type" : {
       "_id" : "datastore",
-      "name" : "Data Store",
+      "name" : "sunAMAuthDataStoreService",
       "collection" : false
     }
   }

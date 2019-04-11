@@ -13,7 +13,7 @@
     },
     "_type" : {
       "_id" : "windowsnt",
-      "name" : "Windows NT",
+      "name" : "iPlanetAMAuthNTService",
       "collection" : false
     }
   }

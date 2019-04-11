@@ -39,7 +39,7 @@
     },
     "_type" : {
       "_id" : "federation/common",
-      "name" : "Common Federation Configuration",
+      "name" : "sunFAMFederationCommon",
       "collection" : false
     }
   }

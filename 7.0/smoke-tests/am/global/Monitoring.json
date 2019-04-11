@@ -20,7 +20,7 @@
     "snmpPort" : 8085,
     "_type" : {
       "_id" : "monitoring",
-      "name" : "Monitoring",
+      "name" : "iPlanetAMMonitoringService",
       "collection" : false
     }
   }

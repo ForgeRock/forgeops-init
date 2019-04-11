@@ -30,7 +30,7 @@
     },
     "_type" : {
       "_id" : "naming",
-      "name" : "Naming",
+      "name" : "iPlanetAMNamingService",
       "collection" : false
     }
   }

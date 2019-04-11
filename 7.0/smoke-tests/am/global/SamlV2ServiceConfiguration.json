@@ -23,11 +23,12 @@
     "xmlEncryptionClass" : "com.sun.identity.saml2.xmlenc.FMEncProvider",
     "defaults" : {
       "metadataSigningKeyPass" : null,
+      "metadataSigningKeyPass-encrypted" : "AAAAA0FFUwIQyZz/GJbQ/y5OTgI7GalteGlzlkXZumjmfE6jh+gSyiul3agtXsXiMA==",
       "metadataSigningKey" : "test"
     },
     "_type" : {
       "_id" : "saml2",
-      "name" : "SAML v2.0 Service Configuration",
+      "name" : "sunFAMSAML2Configuration",
       "collection" : false
     }
   }

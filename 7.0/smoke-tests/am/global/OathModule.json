@@ -28,7 +28,7 @@
     },
     "_type" : {
       "_id" : "oath",
-      "name" : "OATH",
+      "name" : "iPlanetAMAuthOATHService",
       "collection" : false
     }
   }

@@ -29,7 +29,7 @@
     },
     "_type" : {
       "_id" : "ldap",
-      "name" : "LDAP",
+      "name" : "iPlanetAMAuthLDAPService",
       "collection" : false
     }
   }

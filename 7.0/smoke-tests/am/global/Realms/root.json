@@ -11,6 +11,6 @@
     "parentPath" : null,
     "active" : true,
     "name" : "/",
-    "aliases" : [ "&{fqdn}", "am-config", "openam" ]
+    "aliases" : [ "&{fqdn}", "openam", "am-config" ]
   }
 }
