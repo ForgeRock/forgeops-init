@@ -95,7 +95,7 @@
         "nodeType": "ChoiceCollectorNode",
         "connections": {
           "Yes": "66b4f6a2-72b6-4723-851a-851a291cc12b",
-          "No": "e301438c-0bd0-429c-ab0c-66126501069a"
+          "No": "741d048d-54ad-4dcf-9c68-8ccc359b095d"
         }
       }
     },
