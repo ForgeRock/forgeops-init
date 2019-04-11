@@ -21,14 +21,15 @@
     "sslEnabled" : false,
     "usersBaseDn" : "ou=identities",
     "bindPassword" : null,
+    "bindPassword-encrypted" : "AAAAA0FFUwIQ3QNgrpJAsrFAmix3RNcW5UxFBWW6GeKZkKaAqkipwz0r2au1OZkuJQ==",
     "connectionPoolMaximumSize" : 10,
     "policyHeartbeatTimeUnit" : "SECONDS",
-    "maximumSearchResults" : 100,
     "realmSearchFilter" : "(objectclass=sunismanagedorganization)",
+    "maximumSearchResults" : 100,
     "checkIfResourceTypeExists" : true,
     "_type" : {
       "_id" : "policyconfiguration",
-      "name" : "Policy Configuration",
+      "name" : "iPlanetAMPolicyConfigService",
       "collection" : false
     }
   }

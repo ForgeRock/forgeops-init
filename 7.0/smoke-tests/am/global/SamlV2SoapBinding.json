@@ -11,7 +11,7 @@
     "requestHandlers" : [ ],
     "_type" : {
       "_id" : "federation/saml2soapbinding",
-      "name" : "SAML v2.0 SOAP Binding",
+      "name" : "sunfmSAML2SOAPBindingService",
       "collection" : false
     }
   }

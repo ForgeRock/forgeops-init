@@ -22,7 +22,7 @@
     },
     "_type" : {
       "_id" : "openidconnect",
-      "name" : "OpenID Connect id_token bearer",
+      "name" : "iPlanetAMAuthOpenIdConnectService",
       "collection" : false
     }
   }

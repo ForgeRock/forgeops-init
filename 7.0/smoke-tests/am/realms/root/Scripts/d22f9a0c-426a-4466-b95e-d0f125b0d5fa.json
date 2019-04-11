@@ -14,9 +14,9 @@
     "default" : true,
     "language" : "GROOVY",
     "context" : "OAUTH2_ACCESS_TOKEN_MODIFICATION",
-    "createdBy" : "null",
-    "creationDate" : 0,
-    "lastModifiedBy" : "null",
-    "lastModifiedDate" : 0
+    "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
+    "creationDate" : 1433147666269,
+    "lastModifiedBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
+    "lastModifiedDate" : 1433147666269
   }
 }

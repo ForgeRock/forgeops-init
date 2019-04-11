@@ -18,11 +18,11 @@
       "forgotPasswordConfirmationUrl" : "http://openam:80/am/XUI/confirm.html",
       "userRegisteredDestination" : "default",
       "protectedUserAttributes" : [ ],
-      "confirmationIdHmacKey" : "peRqKwtB4beTbTvmKajd2EbrZBr3X/+d8a9PZgSW7C4="
+      "confirmationIdHmacKey" : "spJgOeg7URKjihD3DNZSwIvA05ALZj8wa+XZT1pUwoQ="
     },
     "_type" : {
       "_id" : "security",
-      "name" : "Legacy User Self Service",
+      "name" : "RestSecurity",
       "collection" : false
     }
   }

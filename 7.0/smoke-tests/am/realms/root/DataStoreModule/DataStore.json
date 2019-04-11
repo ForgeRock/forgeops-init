@@ -11,7 +11,7 @@
     "authenticationLevel" : 0,
     "_type" : {
       "_id" : "datastore",
-      "name" : "Data Store",
+      "name" : "serverconfig",
       "collection" : true
     }
   }

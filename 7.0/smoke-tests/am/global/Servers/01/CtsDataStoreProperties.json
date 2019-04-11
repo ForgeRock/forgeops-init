@@ -49,6 +49,7 @@
         "value" : null,
         "inherited" : true
       },
+      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQpA5cN6xaU5YykRBVLCZG6hVU/TqVeUSjXGBvFiM/AvIO7ULKzUg9SQ==",
       "org.forgerock.services.cts.store.heartbeat" : {
         "value" : "10",
         "inherited" : true

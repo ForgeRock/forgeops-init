@@ -24,7 +24,7 @@
     },
     "_type" : {
       "_id" : "authSaml",
-      "name" : "SAML2",
+      "name" : "iPlanetAMAuthSAML2Service",
       "collection" : false
     }
   }

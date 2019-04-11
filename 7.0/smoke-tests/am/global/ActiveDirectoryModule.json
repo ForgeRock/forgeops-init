@@ -27,7 +27,7 @@
     },
     "_type" : {
       "_id" : "activedirectory",
-      "name" : "Active Directory",
+      "name" : "sunAMAuthADService",
       "collection" : false
     }
   }

@@ -12,7 +12,7 @@
     "defaultScript" : "9de3eb62-f131-4fac-a294-7bd170fd4acb",
     "_type" : {
       "_id" : "contexts",
-      "name" : "Scripting",
+      "name" : "scriptContext",
       "collection" : true
     }
   }

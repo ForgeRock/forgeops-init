@@ -11,7 +11,7 @@
     "authenticationLevel" : 0,
     "_type" : {
       "_id" : "federation",
-      "name" : "Federation",
+      "name" : "serverconfig",
       "collection" : true
     }
   }

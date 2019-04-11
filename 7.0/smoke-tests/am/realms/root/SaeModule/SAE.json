@@ -11,7 +11,7 @@
     "authenticationLevel" : 0,
     "_type" : {
       "_id" : "sae",
-      "name" : "SAE",
+      "name" : "serverconfig",
       "collection" : true
     }
   }

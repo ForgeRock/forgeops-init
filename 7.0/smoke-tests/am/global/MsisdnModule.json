@@ -23,7 +23,7 @@
     },
     "_type" : {
       "_id" : "msisdn",
-      "name" : "MSISDN",
+      "name" : "sunAMAuthMSISDNService",
       "collection" : false
     }
   }

@@ -16,7 +16,7 @@
     },
     "_type" : {
       "_id" : "email",
-      "name" : "Email Service",
+      "name" : "MailServer",
       "collection" : false
     }
   }

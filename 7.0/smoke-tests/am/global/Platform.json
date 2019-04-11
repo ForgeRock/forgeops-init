@@ -12,7 +12,7 @@
     "locale" : "en_US",
     "_type" : {
       "_id" : "platform",
-      "name" : "Platform",
+      "name" : "iPlanetAMPlatformService",
       "collection" : false
     }
   }

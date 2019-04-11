@@ -22,7 +22,7 @@
     },
     "_type" : {
       "_id" : "uma",
-      "name" : "UMA Provider",
+      "name" : "UmaProvider",
       "collection" : false
     }
   }

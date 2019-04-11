@@ -16,7 +16,7 @@
     },
     "_type" : {
       "_id" : "deviceidmatch",
-      "name" : "Device Id (Match)",
+      "name" : "iPlanetAMAuthDeviceIdMatchService",
       "collection" : false
     }
   }

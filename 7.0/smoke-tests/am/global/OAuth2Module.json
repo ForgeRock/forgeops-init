@@ -38,7 +38,7 @@
     },
     "_type" : {
       "_id" : "oauth2",
-      "name" : "Legacy OAuth 2.0 / OpenID Connect",
+      "name" : "sunAMAuthOAuthService",
       "collection" : false
     }
   }

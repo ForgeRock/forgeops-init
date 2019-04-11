@@ -17,7 +17,7 @@
     },
     "_type" : {
       "_id" : "windowsdesktopsso",
-      "name" : "Windows Desktop SSO",
+      "name" : "iPlanetAMAuthWindowsDesktopSSOService",
       "collection" : false
     }
   }

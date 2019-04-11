@@ -79,7 +79,7 @@
     },
     "_type" : {
       "_id" : "adaptiverisk",
-      "name" : "Adaptive Risk ",
+      "name" : "sunAMAuthAdaptiveService",
       "collection" : false
     }
   }

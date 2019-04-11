@@ -18,7 +18,7 @@
     },
     "_type" : {
       "_id" : "radius",
-      "name" : "RADIUS",
+      "name" : "iPlanetAMAuthRadiusService",
       "collection" : false
     }
   }

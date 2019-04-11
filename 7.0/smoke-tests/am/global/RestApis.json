@@ -15,7 +15,7 @@
     "descriptionsState" : "STATIC",
     "_type" : {
       "_id" : "rest",
-      "name" : "REST APIs",
+      "name" : "RestApisService",
       "collection" : false
     }
   }

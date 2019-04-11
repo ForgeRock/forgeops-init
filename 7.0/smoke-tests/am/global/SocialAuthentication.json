@@ -16,7 +16,7 @@
     },
     "_type" : {
       "_id" : "socialauthentication",
-      "name" : "Social Authentication Implementations",
+      "name" : "socialAuthNService",
       "collection" : false
     }
   }

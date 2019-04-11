@@ -9,9 +9,10 @@
   "data" : {
     "_id" : "LDAP",
     "authenticationLevel" : 0,
+    "userBindPassword" : null,
+    "userBindPassword-encrypted" : "AAAAA0FFUwIQIVC8PuAaPDYKFTmUaURN+sqOoLVIsf5tMS/cCceFnA5qO2s7jaLzNA==",
     "searchScope" : "SUBTREE",
     "returnUserDN" : true,
-    "userBindPassword" : null,
     "profileAttributeMappings" : [ ],
     "userBindDN" : "cn=Directory manager",
     "userSearchAttributes" : [ "uid" ],
@@ -19,8 +20,8 @@
     "beheraPasswordPolicySupportEnabled" : true,
     "userProfileRetrievalAttribute" : "uid",
     "minimumPasswordLength" : "8",
-    "openam-auth-ldap-connection-mode" : "LDAP",
     "primaryLdapServer" : [ "userstore-0.userstore:1389" ],
+    "openam-auth-ldap-connection-mode" : "LDAP",
     "connectionHeartbeatInterval" : 10,
     "secondaryLdapServer" : [ ],
     "userSearchStartDN" : [ "ou=identities" ],
@@ -28,7 +29,7 @@
     "operationTimeout" : 0,
     "_type" : {
       "_id" : "ldap",
-      "name" : "LDAP",
+      "name" : "serverconfig",
       "collection" : true
     }
   }

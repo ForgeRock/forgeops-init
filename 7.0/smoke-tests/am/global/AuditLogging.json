@@ -18,7 +18,7 @@
     },
     "_type" : {
       "_id" : "audit",
-      "name" : "Audit Logging",
+      "name" : "AuditService",
       "collection" : false
     }
   }

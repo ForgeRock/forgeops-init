@@ -60,12 +60,14 @@
     },
     "coreOAuth2ClientConfig" : {
       "userpassword" : null,
+      "userpassword-encrypted" : "AAAAA0FFUwIQ1eeotqAUS02Wv2ZvofQdr45FujzPRXJjM45qOqaiKbY8D0lHCbwamg==",
       "authorizationCodeLifetime" : 120,
       "accessTokenLifetime" : 3600,
       "defaultScopes" : [ "cn", "profile" ],
       "clientName" : [ ],
       "clientType" : "Confidential",
       "scopes" : [ "profile", "mail", "employeenumber", "name", "cn" ],
+      "agentgroup" : null,
       "refreshTokenLifetime" : 604800,
       "redirectionUris" : [ "http://fake.com" ],
       "status" : "Active"

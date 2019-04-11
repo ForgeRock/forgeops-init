@@ -16,7 +16,7 @@
     "radiusThreadPoolKeepaliveSeconds" : 10,
     "_type" : {
       "_id" : "RadiusServerService",
-      "name" : "RADIUS Server",
+      "name" : "RadiusServerService",
       "collection" : false
     }
   }

@@ -12,7 +12,7 @@
     "defaultScript" : "[Empty]",
     "_type" : {
       "_id" : "contexts",
-      "name" : "Scripting",
+      "name" : "scriptContext",
       "collection" : true
     }
   }

@@ -15,7 +15,7 @@
     },
     "_type" : {
       "_id" : "deviceidsave",
-      "name" : "Device Id (Save)",
+      "name" : "iPlanetAMAuthDeviceIdSaveService",
       "collection" : false
     }
   }

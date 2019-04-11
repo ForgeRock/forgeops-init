@@ -15,7 +15,7 @@
     },
     "_type" : {
       "_id" : "globalization",
-      "name" : "Globalization Settings",
+      "name" : "iPlanetG11NSettings",
       "collection" : false
     }
   }

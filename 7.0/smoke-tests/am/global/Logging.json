@@ -48,7 +48,7 @@
     },
     "_type" : {
       "_id" : "logging",
-      "name" : "Logging",
+      "name" : "iPlanetAMLoggingService",
       "collection" : false
     }
   }
