@@ -44,7 +44,7 @@ deploy:
       valuesFiles:
       - openam-values.yaml
 
-    - name: sk-configstore
+    - name: sk-userstore
       chartPath: helm/ds
       valuesFiles:
-      - configstore-values.yaml
+      - userstore-values.yaml

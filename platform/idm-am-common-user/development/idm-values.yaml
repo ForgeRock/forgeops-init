@@ -11,7 +11,7 @@
     path: /opt/openidm
   openidm:
     repo:
-      host: configstore-0.configstore
+      host: userstore-0.userstore
       port: 1389
       user: "uid=admin",
       password: password
