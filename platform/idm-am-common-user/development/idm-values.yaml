@@ -13,5 +13,5 @@
     repo:
       host: configstore-0.configstore
       port: 1389
-      user: "cn=Directory Manager"
+      user: "uid=admin",
       password: password

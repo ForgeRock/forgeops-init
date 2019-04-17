@@ -42,7 +42,7 @@
         "inherited" : true
       },
       "org.forgerock.services.cts.store.loginid" : {
-        "value" : "cn=Directory Manager",
+        "value" : "uid=admin",
         "inherited" : true
       },
       "org.forgerock.services.cts.store.password" : {

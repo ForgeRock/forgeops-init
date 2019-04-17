@@ -13,7 +13,7 @@
     "continueEvaluationOnDeny" : false,
     "defaults" : {
       "policyHeartbeatInterval" : 10,
-      "bindDn" : "cn=Directory manager",
+      "bindDn" : "uid=admin",
       "ldapServer" : [ "userstore-0.userstore:1389" ],
       "connectionPoolMinimumSize" : 1,
       "usersSearchAttribute" : "uid",

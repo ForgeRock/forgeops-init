@@ -12,7 +12,7 @@
       "searchScope" : "SUBTREE",
       "returnUserDN" : true,
       "profileAttributeMappings" : [ ],
-      "userBindDN" : "cn=Directory manager",
+      "userBindDN" : "uid=admin",
       "userSearchAttributes" : [ "uid" ],
       "connectionHeartbeatTimeUnit" : "MINUTES",
       "userProfileRetrievalAttribute" : "uid",

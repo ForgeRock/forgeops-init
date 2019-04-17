@@ -8,7 +8,7 @@
         "host" : "&{userstore.host}",
         "port" : 1389,
         "ssl" : false,
-        "principal" : "cn=Directory Manager",
+        "principal" : "uid=admin",
         "credentials" : "&{userstore.password}",
         "baseContexts" : [
             "ou=people,&{userstore.basecontext}"
