@@ -1,0 +1,58 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.1",
+    "entityType" : "Session",
+    "entityId" : "Session",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "stateless" : {
+      "statelessSigningHmacSecret" : null,
+      "statelessSigningHmacSecret-encrypted" : "AAAAA0FFUwIQ+A/6p0JowVO6M5eubsQhhKtLwdZSd9RXk665KYw4Y3yM0h/X2VaGQRsKUYCQrFKKnE9oKBXHG/qa90Nats5tiZbUMQ8JaPfa",
+      "openam-session-stateless-blacklist-poll-interval" : 60,
+      "statelessSigningType" : "HS256",
+      "openam-session-stateless-enable-session-blacklisting" : false,
+      "statelessCompressionType" : "NONE",
+      "statelessEncryptionType" : "DIRECT",
+      "openam-session-stateless-blacklist-purge-delay" : 1,
+      "statelessSigningRsaCertAlias" : "test",
+      "statelessEncryptionAesKey" : null,
+      "statelessEncryptionAesKey-encrypted" : "AAAAA0FFUwIQ3GOnqw1iur7DOQCKRp3ozf7AjCGRC3iJwSftvG8xEx3czxKoHoTQ2SW2A77PrqYpKFIezV+AgfJ9E20VqpElSmHMccm5PX/o",
+      "openam-session-stateless-blacklist-cache-size" : 10000,
+      "statelessEncryptionRsaCertAlias" : "test"
+    },
+    "general" : {
+      "timeoutHandlers" : [ ],
+      "latestAccessTimeUpdateFrequency" : 60,
+      "dnRestrictionOnly" : false
+    },
+    "notifications" : {
+      "propertyChangeNotifications" : "OFF",
+      "notificationPropertyList" : [ ]
+    },
+    "iplanet-am-session-constraint-resulting-behavior" : "DESTROY_OLD_SESSION",
+    "quotas" : {
+      "iplanet-am-session-enable-session-constraint" : "OFF",
+      "denyLoginWhenRepoDown" : "NO",
+      "quotaConstraintMaxWaitTime" : 6000,
+      "behaviourWhenQuotaExhausted" : "org.forgerock.openam.session.service.DestroyNextExpiringAction"
+    },
+    "search" : {
+      "maxSessionListSize" : 120,
+      "sessionListRetrievalTimeout" : 5
+    },
+    "dynamic" : {
+      "maxSessionTime" : 120,
+      "maxIdleTime" : 30,
+      "quotaLimit" : 5,
+      "maxCachingTime" : 3
+    },
+    "_type" : {
+      "_id" : "session",
+      "name" : "Session",
+      "collection" : false
+    }
+  }
+}

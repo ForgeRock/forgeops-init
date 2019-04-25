@@ -1,0 +1,19 @@
+{
+  "metadata" : {
+    "realm" : "/wso2",
+    "amsterVersion" : "6.5.1",
+    "entityType" : "CircleOfTrust",
+    "entityId" : "wso2",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "wso2",
+    "status" : "active",
+    "trustedProviders" : [ "https://login.openam.nologin.test:443/wso2|saml2" ],
+    "_type" : {
+      "_id" : "circlesoftrust",
+      "name" : "Circle of Trust",
+      "collection" : true
+    }
+  }
+}

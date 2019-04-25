@@ -1,0 +1,16 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.1",
+    "entityType" : "Realms",
+    "entityId" : "L3dzbzI",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "L3dzbzI",
+    "parentPath" : "/",
+    "active" : true,
+    "name" : "wso2",
+    "aliases" : [ ]
+  }
+}
