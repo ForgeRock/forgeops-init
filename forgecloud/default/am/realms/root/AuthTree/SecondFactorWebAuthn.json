@@ -13,9 +13,9 @@
         "displayName": "Choice Collector",
         "nodeType": "ChoiceCollectorNode",
         "connections": {
-          "Device": "95e56571-c389-492f-9e62-2d906e332297",
-          "SMS": "fcae334f-9edb-4425-8f36-90e1352fa11f",
-          "Email": "0f389639-3789-43e7-9087-38a2b327e46b"
+          "Use your device": "95e56571-c389-492f-9e62-2d906e332297",
+          "Email a code": "0f389639-3789-43e7-9087-38a2b327e46b",
+          "Text a code": "fcae334f-9edb-4425-8f36-90e1352fa11f"
         }
       },
       "11e6c792-c956-4bae-a2fa-3601c8ac1d44": {

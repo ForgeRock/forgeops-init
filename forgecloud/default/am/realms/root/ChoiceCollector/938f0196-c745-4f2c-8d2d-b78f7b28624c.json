@@ -8,8 +8,8 @@
   },
   "data": {
     "_id": "938f0196-c745-4f2c-8d2d-b78f7b28624c",
-    "defaultChoice": "SMS",
-    "choices": ["SMS", "Email"],
+    "defaultChoice": "Receive an email",
+    "choices": ["Receive an email", "Receive a text"],
     "prompt": "How would you like to receive your One Time Passcode?",
     "_type": {
       "_id": "ChoiceCollectorNode",

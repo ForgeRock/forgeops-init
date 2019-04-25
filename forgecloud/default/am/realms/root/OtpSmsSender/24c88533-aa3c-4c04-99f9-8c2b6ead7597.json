@@ -9,7 +9,7 @@
   "data": {
     "_id": "24c88533-aa3c-4c04-99f9-8c2b6ead7597",
     "password": null,
-    "sslOption": "SSL",
+    "sslOption": "START_TLS",
     "hostPort": 0,
     "smsGatewayImplementationClass": "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
     "mobilePhoneAttributeName": "telephoneNumber",

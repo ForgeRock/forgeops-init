@@ -13,8 +13,8 @@
         "displayName": "Choice Collector",
         "nodeType": "ChoiceCollectorNode",
         "connections": {
-          "SMS": "e27301eb-8258-4573-8b8f-e2c6c67de841",
-          "Email": "66f44b11-b08f-419d-ad0f-1776edf2fc36"
+          "Receive an email": "66f44b11-b08f-419d-ad0f-1776edf2fc36",
+          "Receive a text": "e27301eb-8258-4573-8b8f-e2c6c67de841"
         }
       },
       "14bf4d09-130a-430b-aff9-4bee28640480": {
