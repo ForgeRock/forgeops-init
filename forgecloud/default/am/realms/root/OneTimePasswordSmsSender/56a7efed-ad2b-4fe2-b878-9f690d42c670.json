@@ -1,0 +1,22 @@
+{
+  "data": {
+    "_id": "56a7efed-ad2b-4fe2-b878-9f690d42c670",
+    "sslOption": "SSL",
+    "hostPort": 0,
+    "smsGatewayImplementationClass": "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
+    "mobilePhoneAttributeName": "telephoneNumber",
+    "username": "mailServerUser",
+    "_type": {
+      "_id": "OneTimePasswordSmsSenderNode",
+      "name": "OTP SMS Sender",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "OneTimePasswordSmsSenderNode",
+    "entityId": "56a7efed-ad2b-4fe2-b878-9f690d42c670",
+    "pathParams": {}
+  }
+}

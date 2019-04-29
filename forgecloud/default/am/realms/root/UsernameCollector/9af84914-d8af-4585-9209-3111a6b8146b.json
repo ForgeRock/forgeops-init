@@ -1,11 +1,4 @@
 {
-  "metadata": {
-    "realm": "/",
-    "amsterVersion": "&{version}",
-    "entityType": "UsernameCollector",
-    "entityId": "9af84914-d8af-4585-9209-3111a6b8146b",
-    "pathParams": {}
-  },
   "data": {
     "_id": "9af84914-d8af-4585-9209-3111a6b8146b",
     "_type": {
@@ -13,5 +6,12 @@
       "name": "Username Collector",
       "collection": true
     }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "UsernameCollectorNode",
+    "entityId": "9af84914-d8af-4585-9209-3111a6b8146b",
+    "pathParams": {}
   }
 }

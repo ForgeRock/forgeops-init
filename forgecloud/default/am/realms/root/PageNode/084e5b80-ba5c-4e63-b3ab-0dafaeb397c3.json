@@ -1,0 +1,29 @@
+{
+  "data": {
+    "_id": "084e5b80-ba5c-4e63-b3ab-0dafaeb397c3",
+    "nodes": [
+      {
+        "_id": "ef428b4a-6324-4b90-9e1b-ec64f67e3aef",
+        "nodeType": "ScriptedDecisionNode",
+        "displayName": "Metadata"
+      },
+      {
+        "_id": "59ab6f99-2b41-44ef-ad47-5e68d088e374",
+        "nodeType": "OneTimePasswordCollectorDecisionNode",
+        "displayName": "OTP Collector Decision"
+      }
+    ],
+    "_type": {
+      "_id": "PageNode",
+      "name": "Page Node",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "PageNode",
+    "entityId": "084e5b80-ba5c-4e63-b3ab-0dafaeb397c3",
+    "pathParams": {}
+  }
+}

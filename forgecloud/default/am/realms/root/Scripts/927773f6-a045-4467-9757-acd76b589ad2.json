@@ -1,11 +1,4 @@
 {
-  "metadata": {
-    "realm": "/",
-    "amsterVersion": "&{version}",
-    "entityType": "Scripts",
-    "entityId": "927773f6-a045-4467-9757-acd76b589ad2",
-    "pathParams": {}
-  },
   "data": {
     "_id": "927773f6-a045-4467-9757-acd76b589ad2",
     "name": "SMS with Twilio",
@@ -18,5 +11,12 @@
     "creationDate": 0,
     "lastModifiedBy": "null",
     "lastModifiedDate": 0
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "Scripts",
+    "entityId": "927773f6-a045-4467-9757-acd76b589ad2",
+    "pathParams": {}
   }
 }

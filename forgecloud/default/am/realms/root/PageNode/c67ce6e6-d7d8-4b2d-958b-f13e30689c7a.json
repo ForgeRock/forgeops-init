@@ -1,14 +1,12 @@
 {
-  "metadata": {
-    "realm": "/",
-    "amsterVersion": "&{version}",
-    "entityType": "PageNode",
-    "entityId": "c67ce6e6-d7d8-4b2d-958b-f13e30689c7a",
-    "pathParams": {}
-  },
   "data": {
     "_id": "c67ce6e6-d7d8-4b2d-958b-f13e30689c7a",
     "nodes": [
+      {
+        "_id": "22dd44d8-18c1-4ed3-8b6c-4ed14d94d911",
+        "nodeType": "ScriptedDecisionNode",
+        "displayName": "Metadata"
+      },
       {
         "_id": "fa66fe4b-1b9a-4e00-99c3-560ce3e2a6f9",
         "nodeType": "UsernameCollectorNode",
@@ -25,5 +23,12 @@
       "name": "Page Node",
       "collection": true
     }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "PageNode",
+    "entityId": "c67ce6e6-d7d8-4b2d-958b-f13e30689c7a",
+    "pathParams": {}
   }
 }

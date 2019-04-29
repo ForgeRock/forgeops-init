@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "27687c7e-71d7-44a1-8721-5631593cc7d4",
+    "hostName": "smtp.sendgrid.net",
+    "password": null,
+    "password-encrypted": "AAAAA0FFUwIQP3Hky2ZVKofnpsj8MS6hWxfmt1w5P7IUwQeiHKg5uXnYaioFlbusbPqCnMZ+M/6XsLMjMcLkfschMxP6DNNLOyXEl7pk0O8AXOcxxkGLkQHHkwOPwB2R6qDgj16Xjefl",
+    "sslOption": "START_TLS",
+    "hostPort": 587,
+    "emailAttribute": "mail",
+    "smsGatewayImplementationClass": "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
+    "fromEmailAddress": "noreply@forgerock.com",
+    "username": "apikey",
+    "_type": {
+      "_id": "OneTimePasswordSmtpSenderNode",
+      "name": "OTP Email Sender",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "OneTimePasswordSmtpSenderNode",
+    "entityId": "27687c7e-71d7-44a1-8721-5631593cc7d4",
+    "pathParams": {}
+  }
+}

@@ -1,11 +1,4 @@
 {
-  "metadata": {
-    "realm": "/",
-    "amsterVersion": "&{version}",
-    "entityType": "Scripts",
-    "entityId": "e8946bd5-1f92-4a46-b745-847485b36659",
-    "pathParams": {}
-  },
   "data": {
     "_id": "e8946bd5-1f92-4a46-b745-847485b36659",
     "name": "Email with Sendgrid",
@@ -18,5 +11,12 @@
     "creationDate": 0,
     "lastModifiedBy": "null",
     "lastModifiedDate": 0
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "Scripts",
+    "entityId": "e8946bd5-1f92-4a46-b745-847485b36659",
+    "pathParams": {}
   }
 }
