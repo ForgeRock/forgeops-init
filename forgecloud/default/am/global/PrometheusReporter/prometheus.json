@@ -10,7 +10,7 @@
      "_id" : "prometheus",
     "password" : "&{prometheus.password}",
     "authenticationType" : "BASIC",
-    "enabled" : false,
+    "enabled" : true,
      "username" : "prometheus",
      "_type" : {
        "_id" : "prometheus",

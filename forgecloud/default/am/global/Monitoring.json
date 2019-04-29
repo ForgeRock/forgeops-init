@@ -8,7 +8,7 @@
    },
    "data" : {
      "_id" : "",
-    "enabled" : false,
+    "enabled" : true,
      "httpEnabled" : false,
      "snmpEnabled" : false,
      "authfilePath" : "%BASE_DIR%/%SERVER_URI%/openam_mon_auth",
