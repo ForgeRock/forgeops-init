@@ -91,11 +91,11 @@
         }
       },
       "35fe5167-ac18-4be9-967d-5aa3274e5f21": {
-        "displayName": "Choice Collector",
+        "displayName": "Register a Device Choice",
         "nodeType": "ChoiceCollectorNode",
         "connections": {
-          "Yes": "66b4f6a2-72b6-4723-851a-851a291cc12b",
-          "No": "741d048d-54ad-4dcf-9c68-8ccc359b095d"
+          "No": "741d048d-54ad-4dcf-9c68-8ccc359b095d",
+          "Yes": "66b4f6a2-72b6-4723-851a-851a291cc12b"
         }
       }
     },
