@@ -2,7 +2,7 @@
   "data": {
     "_id": "f29ed20a-fe9d-406c-9330-313e80a247f2",
     "outcomes": ["true"],
-    "script": "0ef2c223-77dc-4ac8-be1f-feda88828626",
+    "script": "0c92978b-a6ef-4d9c-970b-c938fcb6bf34",
     "_type": {
       "_id": "ScriptedDecisionNode",
       "name": "Scripted Decision",
