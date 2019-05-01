@@ -17,6 +17,7 @@
     "blackList": ["java.lang.Class", "java.security.AccessController", "java.lang.reflect.*"],
     "whiteList": [
       "com.sun.identity.authentication.spi.MetadataCallback",
+      "com.sun.identity.idm.AMIdentity",
       "com.sun.identity.shared.debug.Debug",
       "groovy.json.JsonSlurper",
       "java.lang.Boolean",
@@ -48,6 +49,7 @@
       "java.util.TreeSet",
       "org.codehaus.groovy.runtime.GStringImpl",
       "org.codehaus.groovy.runtime.ScriptBytecodeAdapter",
+      "org.forgerock.guice.core.InjectorHolder",
       "org.forgerock.http.client.*",
       "org.forgerock.http.Client",
       "org.forgerock.http.context.RootContext",
@@ -68,6 +70,7 @@
       "org.forgerock.json.JsonValue",
       "org.forgerock.openam.auth.node.api.Action",
       "org.forgerock.openam.auth.node.api.Action$ActionBuilder",
+      "org.forgerock.openam.auth.nodes.IdentityProvider",
       "org.forgerock.openam.scripting.api.http.GroovyHttpClient",
       "org.forgerock.openam.scripting.api.http.JavaScriptHttpClient",
       "org.forgerock.openam.scripting.api.ScriptedIdentity",
