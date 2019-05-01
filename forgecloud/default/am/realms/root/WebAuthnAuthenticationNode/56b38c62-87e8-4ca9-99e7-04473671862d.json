@@ -1,6 +1,6 @@
 {
   "data": {
-    "_id": "95e56571-c389-492f-9e62-2d906e332297",
+    "_id": "56b38c62-87e8-4ca9-99e7-04473671862d",
     "isRecoveryCodeAllowed": false,
     "userVerificationRequirement": "PREFERRED",
     "timeout": 60,
@@ -13,8 +13,8 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "WebAuthnAuthentication",
-    "entityId": "95e56571-c389-492f-9e62-2d906e332297",
+    "entityType": "WebAuthnAuthenticationNode",
+    "entityId": "56b38c62-87e8-4ca9-99e7-04473671862d",
     "pathParams": {}
   }
 }
