@@ -15,7 +15,7 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "OneTimePasswordSmsSender",
+    "entityType": "OTPSMSSender",
     "entityId": "56a7efed-ad2b-4fe2-b878-9f690d42c670",
     "pathParams": {}
   }

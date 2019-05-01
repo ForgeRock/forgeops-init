@@ -11,7 +11,7 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "OneTimePasswordCollectorDecision",
+    "entityType": "OTPCollectorDecision",
     "entityId": "59ab6f99-2b41-44ef-ad47-5e68d088e374",
     "pathParams": {}
   }

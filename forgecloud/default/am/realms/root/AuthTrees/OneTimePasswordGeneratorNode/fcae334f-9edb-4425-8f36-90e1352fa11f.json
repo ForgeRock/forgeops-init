@@ -11,7 +11,7 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "OneTimePasswordGenerator",
+    "entityType": "HOTPGenerator",
     "entityId": "fcae334f-9edb-4425-8f36-90e1352fa11f",
     "pathParams": {}
   }
