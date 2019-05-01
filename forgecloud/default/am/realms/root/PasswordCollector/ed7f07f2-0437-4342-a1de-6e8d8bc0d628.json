@@ -10,7 +10,7 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "PasswordCollectorNode",
+    "entityType": "PasswordCollector",
     "entityId": "ed7f07f2-0437-4342-a1de-6e8d8bc0d628",
     "pathParams": {}
   }

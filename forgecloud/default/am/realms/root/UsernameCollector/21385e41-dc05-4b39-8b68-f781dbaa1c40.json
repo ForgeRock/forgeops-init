@@ -10,7 +10,7 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "UsernameCollectorNode",
+    "entityType": "UsernameCollector",
     "entityId": "21385e41-dc05-4b39-8b68-f781dbaa1c40",
     "pathParams": {}
   }

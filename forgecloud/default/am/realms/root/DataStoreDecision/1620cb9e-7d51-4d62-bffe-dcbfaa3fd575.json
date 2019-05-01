@@ -10,7 +10,7 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "DataStoreDecisionNode",
+    "entityType": "DataStoreDecision",
     "entityId": "1620cb9e-7d51-4d62-bffe-dcbfaa3fd575",
     "pathParams": {}
   }

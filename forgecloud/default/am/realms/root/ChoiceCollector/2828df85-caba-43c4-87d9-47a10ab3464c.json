@@ -2,10 +2,7 @@
   "data": {
     "_id": "2828df85-caba-43c4-87d9-47a10ab3464c",
     "defaultChoice": "SMS",
-    "choices": [
-      "SMS",
-      "Email"
-    ],
+    "choices": ["SMS", "Email"],
     "prompt": "How would you like to receive your One Time Passcode?",
     "_type": {
       "_id": "ChoiceCollectorNode",
@@ -16,7 +13,7 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "ChoiceCollectorNode",
+    "entityType": "ChoiceCollector",
     "entityId": "2828df85-caba-43c4-87d9-47a10ab3464c",
     "pathParams": {}
   }

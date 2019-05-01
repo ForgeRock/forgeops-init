@@ -1,9 +1,7 @@
 {
   "data": {
     "_id": "5802f4c0-ea38-4ed0-a7dc-e4975efe23a1",
-    "outcomes": [
-      "true"
-    ],
+    "outcomes": ["true"],
     "script": "7b8ba3d2-14bf-4651-967c-525a21c04f8d",
     "_type": {
       "_id": "ScriptedDecisionNode",
@@ -14,7 +12,7 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "ScriptedDecisionNode",
+    "entityType": "ScriptedDecision",
     "entityId": "5802f4c0-ea38-4ed0-a7dc-e4975efe23a1",
     "pathParams": {}
   }
