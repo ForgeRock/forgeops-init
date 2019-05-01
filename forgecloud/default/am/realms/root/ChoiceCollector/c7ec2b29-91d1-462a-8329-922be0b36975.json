@@ -2,7 +2,10 @@
   "data": {
     "_id": "c7ec2b29-91d1-462a-8329-922be0b36975",
     "defaultChoice": "Yes",
-    "choices": ["Yes", "No"],
+    "choices": [
+      "Yes",
+      "No"
+    ],
     "prompt": "Do you want to register a device?",
     "_type": {
       "_id": "ChoiceCollectorNode",

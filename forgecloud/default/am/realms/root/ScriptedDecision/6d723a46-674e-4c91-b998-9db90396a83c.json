@@ -1,7 +1,9 @@
 {
   "data": {
     "_id": "6d723a46-674e-4c91-b998-9db90396a83c",
-    "outcomes": ["true"],
+    "outcomes": [
+      "true"
+    ],
     "script": "881cf3f6-30b7-4383-9bcf-08e4563978b8",
     "_type": {
       "_id": "ScriptedDecisionNode",

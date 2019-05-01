@@ -13,7 +13,7 @@
   "metadata": {
     "realm": "/",
     "amsterVersion": "&{version}",
-    "entityType": "WebAuthnAuthenticationNode",
+    "entityType": "WebAuthnAuthentication",
     "entityId": "95e56571-c389-492f-9e62-2d906e332297",
     "pathParams": {}
   }

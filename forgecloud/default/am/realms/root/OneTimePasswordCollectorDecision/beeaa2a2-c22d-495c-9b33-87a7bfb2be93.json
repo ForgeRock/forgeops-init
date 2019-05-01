@@ -1,0 +1,18 @@
+{
+  "data": {
+    "_id": "beeaa2a2-c22d-495c-9b33-87a7bfb2be93",
+    "passwordExpiryTime": 5,
+    "_type": {
+      "_id": "OneTimePasswordCollectorDecisionNode",
+      "name": "OTP Collector Decision",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "OneTimePasswordCollectorDecision",
+    "entityId": "beeaa2a2-c22d-495c-9b33-87a7bfb2be93",
+    "pathParams": {}
+  }
+}
