@@ -13,7 +13,7 @@
     "directoryConfiguration" : {
       "minConnectionPool" : 1,
       "maxConnectionPool" : 10,
-      "bindDn" : "cn=Directory Manager",
+      "bindDn" : "uid=admin",
       "bindPassword" : null,
       "bindPassword-encrypted" : "AAAAA0FFUwIQf9uka/G/OqDHnch18ULCmmLUCqn73A/kChY6yzjJekfMhFTnsKddhg=="
     },

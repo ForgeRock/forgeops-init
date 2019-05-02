@@ -23,7 +23,7 @@
             "inheritFrom": "bind",
             "authentication": {
                 "simple": {
-                    "bindDn": "cn=Directory Manager",
+                    "bindDn": "uid=admin",
                     "bindPassword": "password"
                 }
             }

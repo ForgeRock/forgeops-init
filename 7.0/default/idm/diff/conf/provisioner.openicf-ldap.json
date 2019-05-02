@@ -9,7 +9,7 @@
         "host" : "&{userstore.host}",
         "port" : "&{userstore.port}",
         "ssl" : false,
-        "principal" : "cn=Directory Manager",
+        "principal" : "uid=admin",
         "credentials" : "&{userstore.password}",
         "baseContexts" : [
             "dc=openam,dc=forgerock,dc=org"
