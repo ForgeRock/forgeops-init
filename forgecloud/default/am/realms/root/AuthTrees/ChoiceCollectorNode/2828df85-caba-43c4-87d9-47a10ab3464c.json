@@ -1,12 +1,9 @@
 {
   "data": {
     "_id": "2828df85-caba-43c4-87d9-47a10ab3464c",
-    "defaultChoice": "SMS",
-    "choices": [
-      "SMS",
-      "Email"
-    ],
-    "prompt": "How would you like to receive your One Time Passcode?",
+    "choices": ["Receive an email", "Receive a text"],
+    "defaultChoice": "Receive an email",
+    "prompt": "One Time Passcode",
     "_type": {
       "_id": "ChoiceCollectorNode",
       "name": "Choice Collector",
