@@ -1,0 +1,20 @@
+{
+  "data": {
+    "_id": "741d048d-54ad-4dcf-9c68-8ccc359b095d",
+    "defaultChoice": "Use your device",
+    "choices": ["Use your device", "Email a code", "Text a code"],
+    "prompt": "One Time Passcode",
+    "_type": {
+      "_id": "ChoiceCollectorNode",
+      "name": "Choice Collector",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "ChoiceCollector",
+    "entityId": "741d048d-54ad-4dcf-9c68-8ccc359b095d",
+    "pathParams": {}
+  }
+}

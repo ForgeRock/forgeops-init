@@ -1,0 +1,34 @@
+{
+  "data": {
+    "_id": "ed54e0ca-6f08-4cd0-bdc6-71609dcd6d3b",
+    "nodes": [
+      {
+        "_id": "ea629ec4-56d3-40d6-a0e1-a1099696ae09",
+        "nodeType": "ScriptedDecisionNode",
+        "displayName": "Metadata"
+      },
+      {
+        "_id": "9af84914-d8af-4585-9209-3111a6b8146b",
+        "nodeType": "UsernameCollectorNode",
+        "displayName": "Username Collector"
+      },
+      {
+        "_id": "dd291659-f1fc-41ec-b4e6-55a8f9a00760",
+        "nodeType": "PasswordCollectorNode",
+        "displayName": "Password Collector"
+      }
+    ],
+    "_type": {
+      "_id": "PageNode",
+      "name": "Page Node",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "PageNode",
+    "entityId": "ed54e0ca-6f08-4cd0-bdc6-71609dcd6d3b",
+    "pathParams": {}
+  }
+}

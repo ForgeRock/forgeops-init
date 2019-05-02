@@ -1,0 +1,17 @@
+{
+  "data": {
+    "_id": "fa66fe4b-1b9a-4e00-99c3-560ce3e2a6f9",
+    "_type": {
+      "_id": "UsernameCollectorNode",
+      "name": "Username Collector",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "UsernameCollector",
+    "entityId": "fa66fe4b-1b9a-4e00-99c3-560ce3e2a6f9",
+    "pathParams": {}
+  }
+}

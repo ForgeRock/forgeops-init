@@ -1,0 +1,104 @@
+{
+  "data": {
+    "_id": "SecondFactorWebAuthn",
+    "nodes": {
+      "11e6c792-c956-4bae-a2fa-3601c8ac1d44": {
+        "displayName": "Data Store Decision",
+        "nodeType": "DataStoreDecisionNode",
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "2a310955-2a4c-442e-a18a-4d055d0fb835"
+        }
+      },
+      "fcae334f-9edb-4425-8f36-90e1352fa11f": {
+        "displayName": "HOTP Generator",
+        "nodeType": "OneTimePasswordGeneratorNode",
+        "connections": {
+          "outcome": "56a7efed-ad2b-4fe2-b878-9f690d42c670"
+        }
+      },
+      "0f389639-3789-43e7-9087-38a2b327e46b": {
+        "displayName": "HOTP Generator",
+        "nodeType": "OneTimePasswordGeneratorNode",
+        "connections": {
+          "outcome": "64e8e5bf-24c7-40b7-a4ee-81921772ccd9"
+        }
+      },
+      "64e8e5bf-24c7-40b7-a4ee-81921772ccd9": {
+        "displayName": "OTP Email Sender",
+        "nodeType": "OneTimePasswordSmtpSenderNode",
+        "connections": {
+          "outcome": "960e223d-fdf2-4b17-baa1-6dd1b73fbe80"
+        }
+      },
+      "56a7efed-ad2b-4fe2-b878-9f690d42c670": {
+        "displayName": "OTP SMS Sender",
+        "nodeType": "OneTimePasswordSmsSenderNode",
+        "connections": {
+          "outcome": "960e223d-fdf2-4b17-baa1-6dd1b73fbe80"
+        }
+      },
+      "ab6af75d-83c3-4aef-9115-59394d62cb53": {
+        "displayName": "UsernamePassword",
+        "nodeType": "PageNode",
+        "connections": {
+          "outcome": "11e6c792-c956-4bae-a2fa-3601c8ac1d44"
+        }
+      },
+      "2a310955-2a4c-442e-a18a-4d055d0fb835": {
+        "displayName": "SecondFactorChoice",
+        "nodeType": "PageNode",
+        "connections": {
+          "SMS": "fcae334f-9edb-4425-8f36-90e1352fa11f",
+          "Email": "0f389639-3789-43e7-9087-38a2b327e46b",
+          "Device": "b2f3c121-b4c5-4df8-afe5-7fe476ad6549"
+        }
+      },
+      "960e223d-fdf2-4b17-baa1-6dd1b73fbe80": {
+        "displayName": "OneTimePassword",
+        "nodeType": "PageNode",
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "b2f3c121-b4c5-4df8-afe5-7fe476ad6549": {
+        "displayName": "DeviceAuthentication",
+        "nodeType": "PageNode",
+        "connections": {
+          "unsupported": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "failure": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "error": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "noDevice": "1e6b7e58-a223-4fa6-a24e-9f192df1840a"
+        }
+      },
+      "1e6b7e58-a223-4fa6-a24e-9f192df1840a": {
+        "displayName": "DeviceRegistrationChoice",
+        "nodeType": "PageNode",
+        "connections": {
+          "No": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "Yes": "ed2f0afa-1296-4928-9e01-c23553955054"
+        }
+      },
+      "ed2f0afa-1296-4928-9e01-c23553955054": {
+        "displayName": "DeviceRegistration",
+        "nodeType": "PageNode",
+        "connections": {
+          "unsupported": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "failure": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "error": "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      }
+    },
+    "entryNodeId": "ab6af75d-83c3-4aef-9115-59394d62cb53"
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "AuthTree",
+    "entityId": "SecondFactorWebAuthn",
+    "pathParams": {}
+  }
+}

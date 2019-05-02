@@ -1,0 +1,22 @@
+{
+  "data": {
+    "_id": "927773f6-a045-4467-9757-acd76b589ad2",
+    "name": "SMS with Twilio",
+    "description": "Custom script to send a One Time Passcode using Twilio. Account SID, auth key, and from phone need to be populated, and OTP messaging can be changed using this approach",
+    "script": "LyoKICAtIERhdGEgbWFkZSBhdmFpbGFibGUgYnkgbm9kZXMgdGhhdCBoYXZlIGFscmVhZHkgZXhlY3V0ZWQgYXJlIGF2YWlsYWJsZSBpbiB0aGUgc2hhcmVkU3RhdGUgdmFyaWFibGUuCiAgLSBUaGUgc2NyaXB0IHNob3VsZCBzZXQgb3V0Y29tZSB0byBlaXRoZXIgInRydWUiIG9yICJmYWxzZSIuCiAqLwoKdmFyIGZyID0gbmV3IEphdmFJbXBvcnRlcigKICBvcmcuZm9yZ2Vyb2NrLmh0dHAucHJvdG9jb2wsCiAgb3JnLmZvcmdlcm9jay51dGlsLnByb21pc2UsCiAgb3JnLmZvcmdlcm9jay5vcGVuYW0uYXV0aC5ub2RlcywKICBvcmcuZm9yZ2Vyb2NrLmd1aWNlLmNvcmUKKTsKZnVuY3Rpb24gcG9zdFNNUygpIHsKICB3aXRoIChmcikgewogICAgdmFyIGFjY291bnQgPSAnQUNDT1VOVF9TSUQnOwogICAgdmFyIGJhc2ljQXV0aEtleSA9ICdCQVNFNjRfQVVUSF9LRVknOyAvL2Jhc2U2NCBlbmNvZGluZyBvZiBhY2NvdW50IHNpZDphdXRoIHRva2VuIGZyb20gdHdpbGlvCiAgICB2YXIgZnJvbVBob25lID0gJ1RXSUxJT19HRU5FUkFURURfUEhPTkVfTlVNQkVSJzsKICAgIHZhciBpZGVudGl0eVByb3ZpZGVyID0gSW5qZWN0b3JIb2xkZXIuZ2V0SW5zdGFuY2UoSWRlbnRpdHlQcm92aWRlcik7CiAgICB2YXIgaWRlbnRpdHkgPSBpZGVudGl0eVByb3ZpZGVyLmdldElkZW50aXR5KHNoYXJlZFN0YXRlLmdldCgndXNlcm5hbWUnKSwgc2hhcmVkU3RhdGUuZ2V0KCdyZWFsbScpKTsKICAgIHZhciBwaG9uZU51bWJlciA9IGlkZW50aXR5LmdldEF0dHJpYnV0ZSgndGVsZXBob25lTnVtYmVyJyk7CiAgICBsb2dnZXIuZXJyb3IocGhvbmVOdW1iZXIpOwogICAgdmFyIHJlcXVlc3QgPSBuZXcgUmVxdWVzdCgpOwogICAgcmVxdWVzdC5tZXRob2QgPSAnUE9TVCc7CiAgICByZXF1ZXN0LnNldFVyaSgnaHR0cHM6Ly9hcGkudHdpbGlvLmNvbS8yMDEwLTA0LTAxL0FjY291bnRzLycgKyBhY2NvdW50ICsgJy9NZXNzYWdlcy5qc29uJyk7CiAgICByZXF1ZXN0LmdldEhlYWRlcnMoKS5hZGQoJ0NvbnRlbnQtVHlwZScsICdhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQnKTsKICAgIHJlcXVlc3QuZ2V0SGVhZGVycygpLmFkZCgnQXV0aG9yaXphdGlvbicsICdCYXNpYyAnICsgYmFzaWNBdXRoS2V5KTsKICAgIHZhciBib2R5ID0gc2hhcmVkU3RhdGUuZ2V0KCdvbmVUaW1lUGFzc3dvcmQnKTsKICAgIHJlcXVlc3Quc2V0RW50aXR5KCdCb2R5PU9uZSB0aW1lIHBhc3N3b3JkOiAnICsgYm9keSArICcmRnJvbT0rJyArIGZyb21QaG9uZSArICcmVG89KycgKyBwaG9uZU51bWJlci50b0FycmF5KClbMF0pOwogICAgcHJvbWlzZSA9IGh0dHBDbGllbnQuc2VuZChyZXF1ZXN0KTsKICAgIHZhciByZXNwb25zZSA9IHByb21pc2UuZ2V0KCk7CiAgICBsb2dnZXIubWVzc2FnZSgnVHdpbGlvIENhbGwuIFN0YXR1czogJyArIHJlc3BvbnNlLmdldFN0YXR1cygpICsgJywgQ2F1c2U6ICcgKyByZXNwb25zZS5nZXRDYXVzZSgpKTsKICB9Cn0KcG9zdFNNUygpOwpvdXRjb21lID0gJ291dGNvbWUnOw==",
+    "default": false,
+    "language": "JAVASCRIPT",
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": 0,
+    "lastModifiedBy": "null",
+    "lastModifiedDate": 0
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "Scripts",
+    "entityId": "927773f6-a045-4467-9757-acd76b589ad2",
+    "pathParams": {}
+  }
+}
