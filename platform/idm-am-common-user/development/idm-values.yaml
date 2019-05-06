@@ -13,5 +13,5 @@
     repo:
       host: userstore-0.userstore
       port: 1389
-      user: "uid=admin",
+      user: "uid=admin"
       password: password

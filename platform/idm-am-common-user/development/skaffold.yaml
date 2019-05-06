@@ -8,8 +8,6 @@ build:
     context: ../idm
   tagPolicy:
     sha256: {}
-  local:
-    push: false
 deploy:
   helm:
     releases:
@@ -20,6 +18,11 @@ deploy:
         certmanager.acme: false
         certmanager.issuer: ca-issuer
         certmanager.issuerKind: Issuer
+
+    - name: sk-userstore
+      chartPath: helm/ds
+      valuesFiles:
+      - userstore-values.yaml
 
     - name: sk-amster
       chartPath: helm/amster
@@ -43,8 +46,3 @@ deploy:
       chartPath: helm/openam
       valuesFiles:
       - openam-values.yaml
-
-    - name: sk-userstore
-      chartPath: helm/ds
-      valuesFiles:
-      - userstore-values.yaml
