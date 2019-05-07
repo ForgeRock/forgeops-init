@@ -35,7 +35,7 @@
         "displayName": "OTP SMS Sender",
         "nodeType": "OneTimePasswordSmsSenderNode",
         "connections": {
-          "outcome": "3e262811-82b0-4cc8-80d0-6f1ea2d04641"
+          "outcome": "9924a475-77d6-489c-a63d-e827bd7af697"
         }
       },
       "c67ce6e6-d7d8-4b2d-958b-f13e30689c7a": {
@@ -54,7 +54,15 @@
         }
       },
       "3e262811-82b0-4cc8-80d0-6f1ea2d04641": {
-        "displayName": "OneTimePassword",
+        "displayName": "OneTimePasswordEmail",
+        "nodeType": "PageNode",
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "9924a475-77d6-489c-a63d-e827bd7af697": {
+        "displayName": "OneTimePasswordSMS",
         "nodeType": "PageNode",
         "connections": {
           "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",

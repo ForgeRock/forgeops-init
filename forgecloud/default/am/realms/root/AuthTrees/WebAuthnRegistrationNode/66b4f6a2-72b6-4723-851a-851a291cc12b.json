@@ -4,10 +4,7 @@
     "relyingPartyName": "ForgeRock",
     "generateRecoveryCodes": true,
     "authenticatorAttachment": "UNSPECIFIED",
-    "acceptedSigningAlgorithms": [
-      "ES256",
-      "RS256"
-    ],
+    "acceptedSigningAlgorithms": ["ES256", "RS256"],
     "attestationPreference": "NONE",
     "userVerificationRequirement": "PREFERRED",
     "excludeCredentials": false,

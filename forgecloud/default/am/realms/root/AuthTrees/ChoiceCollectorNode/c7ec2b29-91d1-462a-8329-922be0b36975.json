@@ -3,7 +3,7 @@
     "_id": "c7ec2b29-91d1-462a-8329-922be0b36975",
     "defaultChoice": "Yes",
     "choices": ["Yes", "No"],
-    "prompt": "Go Passwordless",
+    "prompt": "DeviceRegistrationChoice",
     "_type": {
       "_id": "ChoiceCollectorNode",
       "name": "Choice Collector",

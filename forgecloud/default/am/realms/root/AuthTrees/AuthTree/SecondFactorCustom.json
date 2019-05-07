@@ -35,7 +35,7 @@
         "displayName": "Scripted Decision",
         "nodeType": "ScriptedDecisionNode",
         "connections": {
-          "outcome": "084e5b80-ba5c-4e63-b3ab-0dafaeb397c3"
+          "outcome": "cd7ea540-f61f-404a-97b3-f6843df0f3ff"
         }
       },
       "5376e8e6-044a-4eb9-ab3b-76fddc507a50": {
@@ -54,7 +54,15 @@
         }
       },
       "084e5b80-ba5c-4e63-b3ab-0dafaeb397c3": {
-        "displayName": "OneTimePassword",
+        "displayName": "OneTimePassword Email",
+        "nodeType": "PageNode",
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "cd7ea540-f61f-404a-97b3-f6843df0f3ff": {
+        "displayName": "OneTimePassword SMS",
         "nodeType": "PageNode",
         "connections": {
           "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",

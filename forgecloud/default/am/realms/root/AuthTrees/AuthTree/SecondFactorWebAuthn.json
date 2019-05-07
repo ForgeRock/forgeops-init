@@ -28,14 +28,14 @@
         "displayName": "OTP Email Sender",
         "nodeType": "OneTimePasswordSmtpSenderNode",
         "connections": {
-          "outcome": "960e223d-fdf2-4b17-baa1-6dd1b73fbe80"
+          "outcome": "cece27ff-c891-439b-9f6c-ee0a2437ada8"
         }
       },
       "56a7efed-ad2b-4fe2-b878-9f690d42c670": {
         "displayName": "OTP SMS Sender",
         "nodeType": "OneTimePasswordSmsSenderNode",
         "connections": {
-          "outcome": "960e223d-fdf2-4b17-baa1-6dd1b73fbe80"
+          "outcome": "b69a263e-bc10-44c6-b8bd-582ce620ab3b"
         }
       },
       "ab6af75d-83c3-4aef-9115-59394d62cb53": {
@@ -54,8 +54,16 @@
           "Device": "b2f3c121-b4c5-4df8-afe5-7fe476ad6549"
         }
       },
-      "960e223d-fdf2-4b17-baa1-6dd1b73fbe80": {
-        "displayName": "OneTimePassword",
+      "b69a263e-bc10-44c6-b8bd-582ce620ab3b": {
+        "displayName": "OneTimePasswordSMS",
+        "nodeType": "PageNode",
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "cece27ff-c891-439b-9f6c-ee0a2437ada8": {
+        "displayName": "OneTimePasswordEmail",
         "nodeType": "PageNode",
         "connections": {
           "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",

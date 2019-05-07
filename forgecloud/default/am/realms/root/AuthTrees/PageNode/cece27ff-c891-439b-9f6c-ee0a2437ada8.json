@@ -1,16 +1,16 @@
 {
   "data": {
-    "_id": "ed2f0afa-1296-4928-9e01-c23553955054",
+    "_id": "cece27ff-c891-439b-9f6c-ee0a2437ada8",
     "nodes": [
       {
-        "_id": "f29ed20a-fe9d-406c-9330-313e80a247f2",
+        "_id": "a303ddbf-52d5-4cee-b3d3-feace4514c7b",
         "nodeType": "ScriptedDecisionNode",
         "displayName": "Metadata"
       },
       {
-        "_id": "66b4f6a2-72b6-4723-851a-851a291cc12b",
-        "nodeType": "WebAuthnRegistrationNode",
-        "displayName": "WebAuthn Registration Node"
+        "_id": "667cd211-3f33-416e-982e-f6d71cb04c84",
+        "nodeType": "OneTimePasswordCollectorDecisionNode",
+        "displayName": "OTP Collector Decision"
       }
     ],
     "_type": {
@@ -23,7 +23,7 @@
     "realm": "/",
     "amsterVersion": "&{version}",
     "entityType": "PageNode",
-    "entityId": "ed2f0afa-1296-4928-9e01-c23553955054",
+    "entityId": "cece27ff-c891-439b-9f6c-ee0a2437ada8",
     "pathParams": {}
   }
 }

@@ -3,8 +3,8 @@
     "_id": "64e8e5bf-24c7-40b7-a4ee-81921772ccd9",
     "sslOption": "SSL",
     "hostPort": 0,
-    "emailAttribute": "mail",
     "smsGatewayImplementationClass": "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
+    "emailAttribute": "mail",
     "username": "mailServerUser",
     "_type": {
       "_id": "OneTimePasswordSmtpSenderNode",

@@ -4,7 +4,7 @@
     "outcomes": [
       "true"
     ],
-    "script": "3845ba8f-082b-4855-b636-0ba28a8bba1c",
+    "script": "8becb8ab-a4bb-46e9-8645-1a2b5f171fe0",
     "_type": {
       "_id": "ScriptedDecisionNode",
       "name": "Scripted Decision",

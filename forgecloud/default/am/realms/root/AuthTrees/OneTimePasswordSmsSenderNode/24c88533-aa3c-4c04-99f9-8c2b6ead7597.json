@@ -1,11 +1,13 @@
 {
   "data": {
     "_id": "24c88533-aa3c-4c04-99f9-8c2b6ead7597",
+    "hostName": "smtp.sendgrid.net",
     "sslOption": "SSL",
-    "hostPort": 0,
+    "hostPort": 587,
     "smsGatewayImplementationClass": "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
+    "fromEmailAddress": "noreply@forgeblocks.com",
     "mobilePhoneAttributeName": "telephoneNumber",
-    "username": "mailServerUser",
+    "username": "apikey",
     "_type": {
       "_id": "OneTimePasswordSmsSenderNode",
       "name": "OTP SMS Sender",

@@ -6,7 +6,7 @@
     "hostPort": 587,
     "emailAttribute": "mail",
     "smsGatewayImplementationClass": "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
-    "fromEmailAddress": "noreply@forgerock.com",
+    "fromEmailAddress": "noreply@forgeblocks.com",
     "username": "apikey",
     "_type": {
       "_id": "OneTimePasswordSmtpSenderNode",
