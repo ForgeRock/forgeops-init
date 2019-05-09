@@ -9,9 +9,3 @@
   config:
     strategy: files
     path: /opt/openidm
-  openidm:
-    repo:
-      host: userstore-0.userstore
-      port: 1389
-      user: "uid=admin"
-      password: password

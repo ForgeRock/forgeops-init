@@ -1,7 +1,5 @@
   domain: forgeops.com
   amadminPassword: password
-  userStore:
-    host: userstore-0.userstore
   resources:
     requests:
       memory: "64Mi"
