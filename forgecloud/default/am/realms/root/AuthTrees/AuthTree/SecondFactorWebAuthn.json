@@ -14,7 +14,7 @@
         "displayName": "HOTP Generator",
         "nodeType": "OneTimePasswordGeneratorNode",
         "connections": {
-          "outcome": "56a7efed-ad2b-4fe2-b878-9f690d42c670"
+          "outcome": "800dbc98-4e03-49fc-aa49-a10c6928fdcd"
         }
       },
       "0f389639-3789-43e7-9087-38a2b327e46b": {
@@ -31,9 +31,9 @@
           "outcome": "cece27ff-c891-439b-9f6c-ee0a2437ada8"
         }
       },
-      "56a7efed-ad2b-4fe2-b878-9f690d42c670": {
-        "displayName": "OTP SMS Sender",
-        "nodeType": "OneTimePasswordSmsSenderNode",
+      "800dbc98-4e03-49fc-aa49-a10c6928fdcd": {
+        "displayName": "SMS with Twilio",
+        "nodeType": "ScriptedDecisionNode",
         "connections": {
           "outcome": "b69a263e-bc10-44c6-b8bd-582ce620ab3b"
         }

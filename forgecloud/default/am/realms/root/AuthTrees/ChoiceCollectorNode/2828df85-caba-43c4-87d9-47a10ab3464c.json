@@ -2,7 +2,10 @@
   "data": {
     "_id": "2828df85-caba-43c4-87d9-47a10ab3464c",
     "defaultChoice": "Email",
-    "choices": ["Email", "SMS"],
+    "choices": [
+      "Email",
+      "SMS"
+    ],
     "prompt": "SecondFactorChoice",
     "_type": {
       "_id": "ChoiceCollectorNode",
