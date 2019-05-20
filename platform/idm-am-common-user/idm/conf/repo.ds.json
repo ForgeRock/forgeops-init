@@ -300,10 +300,11 @@
             "managed/user": {
                 "dnTemplate": "ou=people,ou=identities",
                 "namingStrategy": {
-                    "type": "clientDnNaming",
-                    "dnAttribute": "fr-idm-uuid"
+                    "type": "serverNaming",
+                    "dnAttribute": "uid",
+                    "idAttribute": "entryUUID"
                 },
-                "nativeId" : false,
+                "nativeId" : true,
                 "objectClasses": [
                     "person",
                     "organizationalPerson",
@@ -325,15 +326,12 @@
                 ],
                 "properties": {
                     "_id": {
-                        "primaryKey": true,
                         "type": "simple",
-                        "ldapAttribute": "fr-idm-uuid"
-                    },
-                    "_rev": {
-                        "type": "simple",
-                        "ldapAttribute": "etag"
+                        "ldapAttribute": "entryUUID",
+                        "writability": "createOnly"
                     },
                     "userName": {
+                        "primaryKey": true,
                         "type": "simple",
                         "ldapAttribute": "uid"
                     },
