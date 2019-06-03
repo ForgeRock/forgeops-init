@@ -32,7 +32,6 @@
       "propertyChangeNotifications" : "OFF",
       "notificationPropertyList" : [ ]
     },
-    "iplanet-am-session-constraint-resulting-behavior" : "DESTROY_OLD_SESSION",
     "quotas" : {
       "iplanet-am-session-enable-session-constraint" : "OFF",
       "denyLoginWhenRepoDown" : "NO",
