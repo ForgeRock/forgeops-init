@@ -1,0 +1,49 @@
+version: "1"
+stages:
+  - "clone"
+  - "build"
+  - "integration"
+  - "push"
+steps:
+  main_clone:
+    title: 'Cloning main repository...'
+    type: git-clone
+    repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
+    revision: '${{CF_REVISION}}'
+    git: github-fr-saas-codefresh
+  build:
+    title: "Building DS Docker Image"
+    type: "build"
+    working_directory: forgecloud/default/ds/
+    image_name: "gcr.io/fr-saas-registry/ds"
+    tag: "${{CF_BRANCH_TAG_NORMALIZED}}"
+    dockerfile: "Dockerfile"
+    stage: "build"
+  push_dev:
+    title: "Pushing DS image to gcr dev"
+    type: "push"
+    image_name: "fr-saas-registry/ds/dev"
+    registry: "gcr"
+    candidate: "${{build}}"
+    tags:
+      - "${{CF_BRANCH_TAG_NORMALIZED}}"
+      - "${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}"
+    stage: "push"
+    when:
+      branch:
+        ignore:
+          - master
+  push_staging:
+    title: "Pushing DS image to gcr staging"
+    type: "push"
+    image_name: "fr-saas-registry/ds/staging"
+    registry: "gcr"
+    candidate: "${{build}}"
+    tags:
+      - "${{CF_SHORT_REVISION}}"
+      - "latest"
+    stage: "push"
+    when:
+      branch:
+        only:
+          - master

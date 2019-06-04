@@ -1,0 +1,31 @@
+version: '1.0'
+kind: pipeline
+metadata:
+  name: ForgeCloud/forgeops-init/fr-product-am
+  isPublic: false
+  labels:
+    tags: []
+  deprecate:
+    repoPipeline: true
+  project: ForgeCloud/forgeops-init
+spec:
+  triggers:
+    - type: git
+      repo: ForgeCloud/forgeops-init
+      events:
+        - push
+      branchRegex: /.*/gi
+      modifiedFilesGlob: forgecloud/default/am/am.Dockerfile
+      provider: github
+      context: github-fr-saas-codefresh
+      name: am-update
+  contexts:
+    - git
+  variables: []
+  specTemplate:
+    location: git
+    repo: ForgeCloud/forgeops-init
+    path: codefresh/am.steps.yml
+    context: github-fr-saas-codefresh
+  steps: {}
+  stages: []
