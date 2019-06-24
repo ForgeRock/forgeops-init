@@ -1,0 +1,29 @@
+{
+  "data": {
+    "_id": "56525655-66e6-4630-8579-4b5191e04764",
+    "nodes": [
+      {
+        "_id": "8124c1a1-3763-42ed-a754-3974c9adbdb8",
+        "nodeType": "ScriptedDecisionNode",
+        "displayName": "Metadata"
+      },
+      {
+        "_id": "f06221d3-eebd-4d7b-aa51-aaab32023fa2",
+        "nodeType": "ChoiceCollectorNode",
+        "displayName": "Choice Collector"
+      }
+    ],
+    "_type": {
+      "_id": "PageNode",
+      "name": "Page Node",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "PageNode",
+    "entityId": "56525655-66e6-4630-8579-4b5191e04764",
+    "pathParams": {}
+  }
+}

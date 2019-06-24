@@ -1,0 +1,21 @@
+{
+  "data": {
+    "_id": "5d58731e-a190-4074-a273-c8e0f363c056",
+    "outcomes": [
+      "true"
+    ],
+    "script": "0c92978b-a6ef-4d9c-970b-c938fcb6bf34",
+    "_type": {
+      "_id": "ScriptedDecisionNode",
+      "name": "Scripted Decision",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "ScriptedDecision",
+    "entityId": "5d58731e-a190-4074-a273-c8e0f363c056",
+    "pathParams": {}
+  }
+}

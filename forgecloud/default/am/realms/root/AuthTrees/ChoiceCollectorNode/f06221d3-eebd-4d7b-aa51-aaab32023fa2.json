@@ -1,0 +1,23 @@
+{
+  "data": {
+    "_id": "f06221d3-eebd-4d7b-aa51-aaab32023fa2",
+    "defaultChoice": "Yes",
+    "choices": [
+      "Yes",
+      "No"
+    ],
+    "prompt": "DeviceRegistration",
+    "_type": {
+      "_id": "ChoiceCollectorNode",
+      "name": "Choice Collector",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "ChoiceCollector",
+    "entityId": "f06221d3-eebd-4d7b-aa51-aaab32023fa2",
+    "pathParams": {}
+  }
+}

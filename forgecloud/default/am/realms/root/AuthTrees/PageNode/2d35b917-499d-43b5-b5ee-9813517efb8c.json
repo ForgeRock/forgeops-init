@@ -1,0 +1,29 @@
+{
+  "data": {
+    "_id": "2d35b917-499d-43b5-b5ee-9813517efb8c",
+    "nodes": [
+      {
+        "_id": "7c973781-d507-4686-9603-8ac12761c9be",
+        "nodeType": "ScriptedDecisionNode",
+        "displayName": "Metadata"
+      },
+      {
+        "_id": "ca068175-d809-41e2-8019-e97428fa832a",
+        "nodeType": "PasswordCollectorNode",
+        "displayName": "Password Collector"
+      }
+    ],
+    "_type": {
+      "_id": "PageNode",
+      "name": "Page Node",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "PageNode",
+    "entityId": "2d35b917-499d-43b5-b5ee-9813517efb8c",
+    "pathParams": {}
+  }
+}

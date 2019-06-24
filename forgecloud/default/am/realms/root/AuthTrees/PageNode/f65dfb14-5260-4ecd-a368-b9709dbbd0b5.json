@@ -1,0 +1,29 @@
+{
+  "data": {
+    "_id": "f65dfb14-5260-4ecd-a368-b9709dbbd0b5",
+    "nodes": [
+      {
+        "_id": "279c330c-e3ef-42b8-8dc1-083b384abc68",
+        "nodeType": "ScriptedDecisionNode",
+        "displayName": "Metadata"
+      },
+      {
+        "_id": "aa70f00d-6297-4e64-a058-cb8f4d00ccbc",
+        "nodeType": "WebAuthnAuthenticationNode",
+        "displayName": "WebAuthn Authentication Node"
+      }
+    ],
+    "_type": {
+      "_id": "PageNode",
+      "name": "Page Node",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "PageNode",
+    "entityId": "f65dfb14-5260-4ecd-a368-b9709dbbd0b5",
+    "pathParams": {}
+  }
+}

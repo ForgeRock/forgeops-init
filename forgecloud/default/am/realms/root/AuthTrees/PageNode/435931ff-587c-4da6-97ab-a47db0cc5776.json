@@ -1,0 +1,29 @@
+{
+  "data": {
+    "_id": "435931ff-587c-4da6-97ab-a47db0cc5776",
+    "nodes": [
+      {
+        "_id": "890e82ee-c3f9-4060-be8f-2fadb29500e0",
+        "nodeType": "ScriptedDecisionNode",
+        "displayName": "Metadata"
+      },
+      {
+        "_id": "74d45495-446c-4d68-b598-81fe60622db3",
+        "nodeType": "ChoiceCollectorNode",
+        "displayName": "PasswordlessChoice"
+      }
+    ],
+    "_type": {
+      "_id": "PageNode",
+      "name": "Page Node",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "PageNode",
+    "entityId": "435931ff-587c-4da6-97ab-a47db0cc5776",
+    "pathParams": {}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "data": {
+    "_id": "0013e051-d6e1-4685-8172-bb1af2541711",
+    "defaultChoice": "Device",
+    "choices": [
+      "Device",
+      "Email",
+      "SMS"
+    ],
+    "prompt": "SecondFactorChoice",
+    "_type": {
+      "_id": "ChoiceCollectorNode",
+      "name": "Choice Collector",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "ChoiceCollector",
+    "entityId": "0013e051-d6e1-4685-8172-bb1af2541711",
+    "pathParams": {}
+  }
+}

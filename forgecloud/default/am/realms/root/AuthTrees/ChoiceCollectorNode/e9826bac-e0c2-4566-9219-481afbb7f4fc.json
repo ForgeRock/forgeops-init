@@ -1,0 +1,23 @@
+{
+  "data": {
+    "_id": "e9826bac-e0c2-4566-9219-481afbb7f4fc",
+    "defaultChoice": "Yes",
+    "choices": [
+      "Yes",
+      "No"
+    ],
+    "prompt": "PasswordlessChoice",
+    "_type": {
+      "_id": "ChoiceCollectorNode",
+      "name": "Choice Collector",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "ChoiceCollector",
+    "entityId": "e9826bac-e0c2-4566-9219-481afbb7f4fc",
+    "pathParams": {}
+  }
+}
