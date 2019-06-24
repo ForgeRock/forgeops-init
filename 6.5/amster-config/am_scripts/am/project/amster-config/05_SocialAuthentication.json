@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "6.0.0.1",
+    "entityType" : "SocialAuthentication",
+    "entityId" : "SocialAuthentication",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "enabledKeys" : [ "BS 2.0" ],
+    "displayNames" : {
+      "BS 2.0" : "BS 2.0"
+    },
+    "icons" : {
+      "BS 2.0" : "&{dihk.bs20.icon}"
+    },
+    "authenticationChains" : {
+      "BS 2.0" : "BS20SocialAuthenticationService"
+    },
+    "_type" : {
+      "_id" : "socialauthentication",
+      "name" : "Social Authentication Implementations",
+      "collection" : false
+    }
+  }
+}

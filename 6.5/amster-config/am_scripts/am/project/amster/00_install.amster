@@ -1,0 +1,29 @@
+// Amster should support property replacement like &{key} but this does not work for all properties.
+// Thus we declare all System-Properties as Amster variables and use them instead
+this.binding.variables << System.getenv()
+
+install-openam \
+--serverUrl http://localhost:8080/openam \
+--cookieDomain OPENAM_COOKIE_DOMAIN \
+--adminPwd OPENAM_ADMIN_PASSWORD \
+--policyAgentPwd OPENAM_POLICYAGENT_PASSWORD \
+--pwdEncKey OPENAM_ENCRYTION_KEY \
+--acceptLicense \
+--lbPrimaryUrl OPENAM_URI \
+--lbSiteName site1 \
+--cfgDir /home/forgerock/openam \
+--cfgStore dirServer \
+--cfgStoreHost openam-configstore \
+--cfgStorePort 1389 \
+--cfgStoreDirMgr "cn=Directory Manager" \
+--cfgStoreDirMgrPwd OPENAM_CONFIGSTORE_PASSWORD \
+--cfgStoreRootSuffix dc=openam,dc=forgerock,dc=org \
+--userStoreType LDAPv3ForOpenDS \
+--userStoreHost openam-userstore \
+--userStorePort 1389 \
+--userStoreDirMgr "cn=Directory Manager" \
+--userStoreDirMgrPwd OPENAM_USERSTORE_PASSWORD \
+--userStoreRootSuffix dc=openam,dc=forgerock,dc=org
+:exit
+
+// setting the cookieDomain with Amster during install does not work, instead we additionally use the Amster 00_Platform_cookiedomain.json config file

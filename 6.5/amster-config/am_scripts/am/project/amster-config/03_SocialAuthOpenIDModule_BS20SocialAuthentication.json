@@ -1,0 +1,62 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "6.5.1",
+    "entityType" : "SocialAuthOpenIDModule",
+    "entityId" : "BS20SocialAuthentication",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "BS20SocialAuthentication",
+    "core" : {
+      "usesBasicAuth" : true,
+      "scopeDelimiter" : null,
+      "subjectProperty" : "sub",
+      "tokenEndpoint" : "&{dihk.bs20.uri}/connect/token",
+      "logoutBehaviour" : "prompt",
+      "provider" : "other",
+      "scope" : [ "openid", "profile", "email", "roles" ],
+      "ssoProxyUrl" : "http://&{openam.host}:&{openam.port.http}/openam/oauth2c/OAuthProxy.jsp",
+      "clientSecret" : "&{dihk.bs20.clientsecret}",
+      "userInfoEndpoint" : "&{dihk.bs20.uri}/connect/userinfo",
+      "clientId" : "&{dihk.bs20.clientid}",
+      "issuerName" : "&{dihk.bs20.issuername}",
+      "logoutServiceUrl" : null,
+      "authorizeEndpoint" : "&{dihk.bs20.uri}/connect/authorize",
+      "authenticationLevel" : 0,
+      "mixUpMitigation" : false
+    },
+    "emailSettings" : {
+      "smtpFromAddress" : null,
+      "emailGateway" : "org.forgerock.openam.authentication.modules.oauth2.DefaultEmailGatewayImpl",
+      "smtpSslEnabled" : null,
+      "smtpPort" : "25",
+      "smtpPassword" : null,
+      "smtpUsername" : null,
+      "smtpHost" : "mail",
+      "emailAttribute" : null
+    },
+    "openId" : {
+      "cryptoContextValue" : "&{dihk.bs20.uri}/.well-known/jwks",
+      "cryptoContextType" : "jwk_url"
+    },
+    "accountProvisioning" : {
+      "accountProviderClass" : "de.dihk.openam.authentication.modules.mapping.GroupAwareAccountProvider",
+      "attributeMappingClasses" : [ "de.dihk.openam.authentication.modules.mapping.JsonAttributeMapper" ],
+      "accountMapperConfiguration" : [ "sub=uid" ],
+      "mapToAnonymousUser" : false,
+      "attributeMapperConfiguration" : [ "given_name=givenName", "sub=uid", "family_name=sn", "user_name=cn", "name=mail", "role.Roles=groups" ],
+      "createAccount" : true,
+      "enableRegistrationService" : false,
+      "accountMapperClass" : "org.forgerock.openam.authentication.modules.oidc.JwtAttributeMapper",
+      "promptPasswordFlag" : false,
+      "anonymousUserName" : "anonymous",
+      "saveAttributesInSession" : true
+    },
+    "_type" : {
+      "_id" : "authSocialOpenID",
+      "name" : "Social Auth OpenID",
+      "collection" : true
+    }
+  }
+}

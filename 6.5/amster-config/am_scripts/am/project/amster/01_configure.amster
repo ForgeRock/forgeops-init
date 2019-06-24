@@ -1,0 +1,10 @@
+connect https://login.idm.abnahme.services.ihk.de -k ssh/id_rsa
+
+// the command "import-config --path AMSTER_CONFIG" should be sufficient to import the config files, but Amster does import the files in an unpredictable order
+// thus we explicitly import them in alphabetical order one by one
+dir = new File(System.getenv("AMSTER_CONFIG"));
+dir.traverse(type: groovy.io.FileType.FILES, maxDepth: 0, nameFilter: ~/.*\.json$/) {
+    file -> eval("import-config --path " + file.path)
+};
+
+:exit
