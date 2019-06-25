@@ -1,9 +1,0 @@
-{
-  "profileEnhancementProcesses": [
-    "selfservice/termsAndConditions",
-    "selfservice/kbaUpdate",
-    "selfservice/profile"
-  ],
-  "authenticationRole": "openidm-authenticated",
-  "authorizationRole": "openidm-authorized"
-}

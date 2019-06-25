@@ -1,0 +1,21 @@
+version: '1.0'
+steps:
+  main_clone:
+    title: 'Cloning main repository...'
+    type: git-clone
+    repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
+    revision: '${{CF_REVISION}}'
+    git: github-fr-saas-codefresh
+  #-using CF cli image, apply pipeline files
+  ApplyForgeopsInitPipelines:
+    title: Apply pipelines file to CodeFresh
+    description: Runs Codefresh CLI to apply all pipelines to codefresh programatically
+    image: codefresh/cli
+    working_directory: codefresh/
+    commands:
+    # Re-Apply all pipelines
+      - for pipeline in *.pipeline.yml; do codefresh replace -f $pipeline; done
+    when:
+      branch:
+        only:
+          - master
