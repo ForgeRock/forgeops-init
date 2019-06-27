@@ -1,2 +1,2 @@
-FROM gcr.io/forgerock-io/ds:6.5.1
+FROM gcr.io/forgerock-io/ds:7.0.0-98c91bd
 COPY schema/ /opt/opendj/db/schema/
