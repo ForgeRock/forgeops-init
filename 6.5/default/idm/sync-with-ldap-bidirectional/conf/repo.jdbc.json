@@ -139,8 +139,21 @@
                     "name" : "name",
                     "description" : "description",
                     "temporalConstraints" : { "column" : "temporalConstraints", "type" : "JSON_LIST" },
-                    "condition" : "condition",
-		    "privileges" : { "column" : "privs", "type" : "JSON_LIST" }
+                    "condition" : "condition"
+                }
+            },
+            "internal/privilege" : {
+                "table" : "internalprivilege",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : "rev",
+                    "name" : "name",
+                    "description" : "description",
+                    "path" : "path",
+                    "permissions" : { "column" : "permissions", "type" : "JSON_LIST" },
+                    "actions" : { "column" : "actions", "type" : "JSON_LIST" },
+                    "filter" : "filter",
+                    "accessFlags" : { "column" : "accessflags", "type" : "JSON_LIST" }
                 }
             },
             "audit/authentication" : {
