@@ -1,8 +1,4 @@
-
-
-
-
 {
   "username" : "admin",
-  "password" : "&{openidm.repo.password}"
+  "password" : "&{openidm.webconsole.password}"
 }

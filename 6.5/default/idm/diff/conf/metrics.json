@@ -1,4 +1,4 @@
 {
-    "defaultRegistry" : "idm-default",
-    "enabled" : true
+    "enabled" : false,
+    "prometheusRole" : "&{openidm.prometheus.role}"
 }

@@ -1,0 +1,22 @@
+[
+    {
+        "operation" : "transform",
+        "field" : "/providers",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var updateConfig = function(p) {if(p.provider === 'instagram'){var _propertyMap = p.propertyMap;for (var i = 0; i < _propertyMap.length; i++) {var _map = _propertyMap[i];if ('full_name' in _map) {_map.source = \"full_name\";delete _map.full_name;break;}}}return p;};openidm.query('config', {'_queryFilter': '_id sw \"identityProvider/instagram\"'}).result.map(function(idp) {openidm.update('config/' + idp._id, null, updateConfig(idp));});content.map(updateConfig);"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/providers",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var updateConfig=function(p){if(p.provider==='vkontakte'){p.apiVersion='5.73';p.authenticationIdKey='id';p.propertyMap.map(function(prop){if(prop.source==='uid'){prop.source='id'}});if(p.schema.properties.uid!=null){p.schema.properties.id=p.schema.properties.uid;delete p.schema.properties.uid}var index=p.schema.order.indexOf('uid');if(index!==-1){p.schema.order[index]='id'}}return p};openidm.query('config',{'_queryFilter':'_id sw \"identityProvider/vkontakte\"'}).result.map(function(idp){openidm.update('config/'+idp._id,null,updateConfig(idp))});content.map(updateConfig)"
+            }
+        }
+    }
+]

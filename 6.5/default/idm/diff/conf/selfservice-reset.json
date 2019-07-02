@@ -1,0 +1,57 @@
+{
+    "stageConfigs" : [
+        {
+            "name" : "parameters",
+            "parameterNames" : [
+                "returnParams"
+            ]
+        },
+        {
+            "name" : "userQuery",
+            "validQueryFields" : [
+                "mail",
+                "userName"
+            ],
+            "identityIdField" : "_id",
+            "identityEmailField" : "mail",
+            "identityUsernameField" : "userName",
+            "identityServiceUrl" : "managed/user"
+        },
+        {
+            "name" : "emailValidation",
+            "identityEmailField" : "mail",
+            "emailServiceUrl" : "external/email",
+            "emailServiceParameters" : {
+                "waitForCompletion" : false
+            },
+            "from" : "info@&{openidm.host}",
+            "subject" : "Reset password email",
+            "mimeType" : "text/html",
+            "subjectTranslations" : {
+                "en" : "Reset your password",
+                "fr" : "Réinitialisez votre mot de passe",
+                "de" : "Passwort zurücksetzen"
+            },
+            "messageTranslations" : {
+                "en" : "<h3>Click to reset your password</h3><h4><a href=\"%link%\">Password reset link</a></h4>",
+                "fr" : "<h3>Cliquez pour réinitialiser votre mot de passe</h3><h4><a href=\"%link%\">Mot de passe lien de réinitialisation</a></h4>",
+                "de" : "<h3>Klicken Sie den folgenden Link, um Ihr Passwort zurückzusetzen: </h3><h4><a href=\"%link%\">Passwort zurücksetzen</a></h4>"
+            },
+            "verificationLinkToken" : "%link%",
+            "verificationLink" : "http://&{dihk.sso.external.ui.host}:&{dihk.sso.external.ui.port.http}/user/password-reset/password?"
+        },
+        {
+            "name" : "resetStage",
+            "identityServiceUrl" : "managed/user",
+            "identityPasswordField" : "password"
+        }
+    ],
+    "snapshotToken" : {
+        "type" : "jwt",
+        "jweAlgorithm" : "RSAES_PKCS1_V1_5",
+        "encryptionMethod" : "A128CBC_HS256",
+        "jwsAlgorithm" : "HS256",
+        "tokenExpiry" : 300
+    },
+    "storage" : "stateless"
+}
