@@ -35,15 +35,16 @@
         <!-- remove Server header from HTTP responses, to prevent leaking server-type/version -->
         <Set name="sendServerVersion">false</Set>
         <Set name="outputBufferSize">32768</Set>
-        <Set name="requestHeaderSize">16384</Set>
+        <Set name="requestHeaderSize">8192</Set>
         <Set name="responseHeaderSize">8192</Set>
     </New>
 
     <New id="httpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
         <Arg><Ref refid="httpSimpleConfig"/></Arg>
-        <!-- <Call name="addCustomizer">
+        <Call name="addCustomizer">
             <Arg>
                 <New class="org.eclipse.jetty.server.ForwardedRequestCustomizer">
+                    <!-- Prevent host header changes that may occur from URL hijacking attempts -->
                     <Set name="hostHeader">
                         <Call class="org.forgerock.openidm.jetty.Param" name="getProperty">
                             <Arg>openidm.host</Arg>
@@ -53,8 +54,7 @@
                     </Set>
                 </New>
             </Arg>
-        </Call> 
-        -->
+        </Call>
     </New>
 
     <New id="tlsHttpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
@@ -68,13 +68,10 @@
         <Call name="addCustomizer">
             <Arg><New class="org.eclipse.jetty.server.SecureRequestCustomizer"/></Arg>
         </Call>
-
-        <!-- Prevent host header changes that may occur from URL hijacking attempts -->
-        <!-- IF deployed behind a load balancer that protects the endpoint this is not required -->
-        <!-- <Call name="addCustomizer">
+        <Call name="addCustomizer">
             <Arg>
                 <New class="org.eclipse.jetty.server.ForwardedRequestCustomizer">
-            
+                    <!-- Prevent host header changes that may occur from URL hijacking attempts -->
                     <Set name="hostHeader">
                         <Call class="org.forgerock.openidm.jetty.Param" name="getProperty">
                             <Arg>openidm.host</Arg>
@@ -84,7 +81,7 @@
                     </Set>
                 </New>
             </Arg>
-        </Call> -->
+        </Call>
     </New>
 
     <New id="mutualAuthHttpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
@@ -98,10 +95,10 @@
         <Call name="addCustomizer">
             <Arg><New class="org.eclipse.jetty.server.SecureRequestCustomizer"/></Arg>
         </Call>
-        <!-- Prevent host header changes that may occur from URL hijacking attempts -->
-        <!-- <Call name="addCustomizer">
+        <Call name="addCustomizer">
             <Arg>
                 <New class="org.eclipse.jetty.server.ForwardedRequestCustomizer">
+                    <!-- Prevent host header changes that may occur from URL hijacking attempts -->
                     <Set name="hostHeader">
                         <Call class="org.forgerock.openidm.jetty.Param" name="getProperty">
                             <Arg>openidm.host</Arg>
@@ -111,7 +108,7 @@
                     </Set>
                 </New>
             </Arg>
-        </Call> -->
+        </Call>
     </New>
 
     <Array id="excludedCipherSuites" type="java.lang.String">
@@ -132,11 +129,6 @@
 
     </Array>
 
-    <Array  id= "excludedProtocols" type="java.lang.String">
-        <Item>SSLv3</Item>
-        <Item>TLSv1</Item>
-    </Array>
-
     <New id="sslContextFactory" class="org.eclipse.jetty.util.ssl.SslContextFactory">
         <Set name="keyStorePath"><Get class="org.forgerock.openidm.jetty.Param" name="keystoreLocation"/></Set>
         <Set name="keyStorePassword"><Get class="org.forgerock.openidm.jetty.Param" name="keystorePassword"/></Set>
@@ -148,7 +140,9 @@
         <Set name="trustStorePassword"><Get class="org.forgerock.openidm.jetty.Param" name="truststorePassword"/></Set>
         <Set name="certAlias"><Get class="org.forgerock.openidm.jetty.Param" name="certAlias"/></Set>
         <Set name="ExcludeProtocols">
-            <Ref refid="excludedProtocols"/>
+            <Array type="java.lang.String">
+                <Item>SSLv3</Item>
+            </Array>
         </Set>
         <Set name="ExcludeCipherSuites">
             <Ref refid="excludedCipherSuites"/>
@@ -167,7 +161,9 @@
         <Set name="needClientAuth">true</Set>
         <Set name="certAlias"><Get class="org.forgerock.openidm.jetty.Param" name="certAlias"/></Set>
         <Set name="ExcludeProtocols">
-            <Ref refid="excludedProtocols"/>
+            <Array type="java.lang.String">
+                <Item>SSLv3</Item>
+            </Array>
         </Set>
         <Set name="ExcludeCipherSuites">
             <Ref refid="excludedCipherSuites"/>

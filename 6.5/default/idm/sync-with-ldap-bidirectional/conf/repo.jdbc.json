@@ -1,100 +1,189 @@
 {
-    "dbType" : "POSTGRESQL",
+    "dbType" : "MYSQL",
     "useDataSource" : "default",
     "maxBatchSize" : 100,
     "maxTxRetry" : 5,
     "queries" : {
         "genericTables" : {
-            "credential-query" : "SELECT obj.objectid, obj.rev, obj.fullobject::text FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON objtype.id = obj.objecttypes_id WHERE json_extract_path_text(fullobject, 'userName') = ${username} AND json_extract_path_text(fullobject, 'accountStatus') = 'active' AND objtype.objecttype = ${_resource}",
-            "get-by-field-value" : "SELECT obj.objectid, obj.rev, obj.fullobject::text FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON objtype.id = obj.objecttypes_id WHERE json_extract_path_text(fullobject, ${field}) = ${value} AND objtype.objecttype = ${_resource}",
+            "credential-query" : "SELECT obj.objectid, obj.rev, obj.fullobject FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON objtype.id = obj.objecttypes_id AND objtype.objecttype = ${_resource} INNER JOIN ${_dbSchema}.${_propTable} usernameprop ON obj.id = usernameprop.${_mainTable}_id AND usernameprop.propkey='/userName' INNER JOIN ${_dbSchema}.${_propTable} statusprop ON obj.id = statusprop.${_mainTable}_id AND statusprop.propkey='/accountStatus' WHERE usernameprop.propvalue = ${username} AND statusprop.propvalue = 'active'",
+            "get-by-field-value" : "SELECT obj.objectid, obj.rev, obj.fullobject FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.${_propTable} prop ON obj.id = prop.${_mainTable}_id INNER JOIN ${_dbSchema}.objecttypes objtype ON objtype.id = obj.objecttypes_id WHERE prop.propkey=CONCAT('/', ${field}) AND prop.propvalue = ${value} AND objtype.objecttype = ${_resource}",
             "query-all-ids" : "SELECT obj.objectid FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON obj.objecttypes_id = objtype.id WHERE objtype.objecttype = ${_resource} LIMIT ${int:_pageSize} OFFSET ${int:_pagedResultsOffset}",
             "query-all-ids-count" : "SELECT COUNT(obj.objectid) AS total FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON obj.objecttypes_id = objtype.id WHERE objtype.objecttype = ${_resource}",
-            "query-all" : "SELECT obj.objectid, obj.rev, obj.fullobject::text FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON obj.objecttypes_id = objtype.id WHERE objtype.objecttype = ${_resource} LIMIT ${int:_pageSize} OFFSET ${int:_pagedResultsOffset}",
-            "query-all-count" : "SELECT COUNT(obj.fullobject) AS total FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON obj.objecttypes_id = objtype.id WHERE objtype.objecttype = ${_resource}",
-            "for-userName" : "SELECT obj.objectid, obj.rev, obj.fullobject::text FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON objtype.id = obj.objecttypes_id WHERE  json_extract_path_text(fullobject, 'userName') = ${uid} AND objtype.objecttype = ${_resource}",
-
-            "query-cluster-failed-instances" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'timestamp') <= ${timestamp} AND json_extract_path_text(fullobject, 'state') IN ('1','2')",
-            "query-cluster-running-instances" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'state' AND json_extract_path_text(fullobject, 'state') = '1'",
-            "query-cluster-instances" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'state'",
-            "query-cluster-events" : "SELECT fullobject::text FROM ${_dbSchema}.${_mainTable} obj WHERE json_extract_path_text(fullobject, 'type') = 'event' AND json_extract_path_text(fullobject, 'instanceId') = ${instanceId}",
-
+            "query-all" : "SELECT obj.objectid, obj.rev, obj.fullobject FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON obj.objecttypes_id = objtype.id WHERE objtype.objecttype = ${_resource} LIMIT ${int:_pageSize} OFFSET ${int:_pagedResultsOffset}",
+            "query-all-count" : "SELECT COUNT(obj.objectid) AS total FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON obj.objecttypes_id = objtype.id WHERE objtype.objecttype = ${_resource}",
+            "for-userName" : "SELECT obj.objectid, obj.rev, obj.fullobject FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.${_propTable} prop ON obj.id = prop.${_mainTable}_id INNER JOIN ${_dbSchema}.objecttypes objtype ON objtype.id = obj.objecttypes_id WHERE prop.propkey='/userName' AND prop.propvalue = ${uid} AND objtype.objecttype = ${_resource}",
+            "query-cluster-failed-instances" : "SELECT fullobject FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.${_propTable} prop ON obj.id = prop.${_mainTable}_id INNER JOIN ${_dbSchema}.${_propTable} state ON obj.id = state.${_mainTable}_id WHERE (prop.propkey = '/timestamp' AND prop.propvalue <= ${timestamp}) AND (state.propkey = '/state' AND (state.propvalue = '1' OR state.propvalue = '2'))",
+            "query-cluster-instances" : "SELECT fullobject FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.${_propTable} prop ON obj.id = prop.${_mainTable}_id WHERE (prop.propkey = '/type' AND prop.propvalue = 'state')",
+            "query-cluster-events" : "SELECT fullobject FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.${_propTable} prop1 ON obj.id = prop1.${_mainTable}_id INNER JOIN ${_dbSchema}.${_propTable} prop2 ON obj.id = prop2.${_mainTable}_id WHERE (prop1.propkey = '/type' AND prop1.propvalue = 'event') AND (prop2.propkey = '/instanceId' AND prop2.propvalue = ${instanceId})",
             "find-relationships-for-resource" : "SELECT * FROM ${_dbSchema}.${_mainTable} WHERE ((firstresourcecollection = ${resourceCollection} and firstresourceid = ${resourceId} and firstpropertyname = ${propertyName}) or (secondresourcecollection = ${resourceCollection} and secondresourceid = ${resourceId} and secondpropertyname = ${propertyName}))",
             "find-relationship-edges" : "SELECT * FROM ${_dbSchema}.${_mainTable} WHERE ((firstresourcecollection = ${firstResourceCollection} and firstresourceid = ${firstResourceId} and firstpropertyname = ${firstPropertyName}) and (secondresourcecollection = ${secondResourceCollection} and secondresourceid = ${secondResourceId} and secondpropertyname = ${secondPropertyName})) or ((firstresourcecollection = ${secondResourceCollection} and firstresourceid = ${secondResourceId} and firstpropertyname = ${secondPropertyName}) and (secondresourcecollection = ${firstResourceCollection} and secondresourceid = ${firstResourceId} and secondpropertyname = ${firstPropertyName}))"
         },
         "explicitTables" : {
             "query-all-ids" : "SELECT objectid FROM ${_dbSchema}.${_table} LIMIT ${int:_pageSize} OFFSET ${int:_pagedResultsOffset}",
+            "query-all-ids-count" : "SELECT COUNT(objectid) AS total FROM ${_dbSchema}.${_mainTable} obj INNER JOIN ${_dbSchema}.objecttypes objtype ON obj.objecttypes_id = objtype.id WHERE objtype.objecttype = ${_resource}",
             "get-notifications-for-user" : "select * FROM ${_dbSchema}.${_table} WHERE receiverId = ${userId} order by createDate desc",
             "for-userName" : "SELECT * FROM ${_dbSchema}.${_table} WHERE username = ${uid}",
-
-            "credential-query" : "SELECT * FROM ${_dbSchema}.${_table} WHERE username = ${username} AND accountstatus = 'active'",
+            "credential-query" : "SELECT * FROM ${_dbSchema}.${_table} WHERE username = ${username} and accountstatus = 'active'",
             "credential-internaluser-query" : "SELECT * FROM ${_dbSchema}.${_table} WHERE objectid = ${username}",
-
             "links-for-firstId" : "SELECT * FROM ${_dbSchema}.${_table} WHERE linkType = ${linkType} AND firstid = ${firstId}",
             "links-for-linkType" : "SELECT * FROM ${_dbSchema}.${_table} WHERE linkType = ${linkType}",
-
-            "query-all" : "SELECT * FROM ${_dbSchema}.${_table} LIMIT ${int:_pageSize} OFFSET ${int:_pagedResultsOffset}",
-            "get-recons" : "SELECT reconid, activitydate, mapping FROM ${_dbSchema}.${_table} WHERE mapping LIKE ${includeMapping} AND mapping NOT LIKE ${excludeMapping} AND entrytype = 'summary' ORDER BY activitydate DESC"
+            "query-all" : "SELECT * FROM ${_dbSchema}.${_table} LIMIT ${int:_pageSize} OFFSET ${int:_pagedResultsOffset}"
         },
-        "validInRelationshipQuery" : ["credential-query", "get-by-field-value", "query-all", "for-userName", "credential-internaluser-query"]
+        "validInRelationshipQuery" : [
+            "credential-query",
+            "get-by-field-value",
+            "query-all",
+            "for-userName",
+            "credential-internaluser-query"
+        ]
     },
     "commands" : {
         "genericTables" : { },
         "explicitTables" : {
-            "purge-by-recon-ids-to-keep" : "DELETE FROM ${_dbSchema}.${_table} WHERE mapping LIKE ${includeMapping} AND mapping NOT LIKE ${excludeMapping} AND reconId NOT IN (${list:reconIds})",
-            "purge-by-recon-expired" : "DELETE FROM ${_dbSchema}.${_table} WHERE mapping LIKE ${includeMapping} AND mapping NOT LIKE ${excludeMapping} AND activitydate < ${timestamp}",
+            "purge-by-recon-expired" : "DELETE r FROM ${_dbSchema}.${_table} r INNER JOIN (SELECT reconId FROM ${_dbSchema}.${_table} WHERE mapping LIKE ${includeMapping} AND mapping NOT LIKE ${excludeMapping} AND activitydate < ${timestamp} AND entryType = 'summary') AS x ON x.reconId = r.reconId",
+            "purge-by-recon-number-of" : "set @num := 0, @mapping := ''; DELETE r FROM ${_dbSchema}.${_table} r INNER JOIN ( SELECT reconId, mapping, activitydate, @num := if(@mapping = mapping, @num + 1, 1) AS row_number, @mapping := mapping as m FROM ${_dbSchema}.${_table} WHERE mapping LIKE ${includeMapping} AND mapping NOT LIKE ${excludeMapping} AND entryType = 'summary' ORDER BY mapping, activitydate desc ) AS x ON r.reconId = x.reconId WHERE x.row_number > ${numberOf}",
             "delete-mapping-links" : "DELETE FROM ${_dbSchema}.${_table} WHERE linktype = ${mapping}",
             "delete-target-ids-for-recon" : "DELETE FROM ${_dbSchema}.${_table} WHERE reconId = ${reconId}"
         }
     },
     "resourceMapping" : {
         "default" : {
-            "mainTable" : "genericobjects"
+            "mainTable" : "genericobjects",
+            "propertiesTable" : "genericobjectproperties",
+            "searchableDefault" : true
         },
         "genericMapping" : {
             "managed/*" : {
-                "mainTable" : "managedobjects"
+                "mainTable" : "managedobjects",
+                "propertiesTable" : "managedobjectproperties",
+                "searchableDefault" : true
             },
             "managed/user" : {
-                "mainTable" : "managedobjects"
+                "mainTable" : "managedobjects",
+                "propertiesTable" : "managedobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/userName" : {
+                        "searchable" : true
+                    },
+                    "/givenName" : {
+                        "searchable" : true
+                    },
+                    "/sn" : {
+                        "searchable" : true
+                    },
+                    "/mail" : {
+                        "searchable" : true
+                    },
+                    "/description" : {
+                        "searchable" : true
+                    },
+                    "/accountStatus" : {
+                        "searchable" : true
+                    },
+                    "/salutation" : {
+                        "searchable" : true
+                    },
+                    "/academicDegree" : {
+                        "searchable" : true
+                    },
+                    "/conditionsOfUseDate" : {
+                        "searchable" : true
+                    },
+                    "/privacyPolicyDate" : {
+                        "searchable" : true
+                    }
+                }
             },
             "scheduler" : {
-                "mainTable" : "schedulerobjects"
+                "mainTable" : "schedulerobjects",
+                "propertiesTable" : "schedulerobjectproperties",
+                "searchableDefault" : true
             },
             "scheduler/*" : {
-                "mainTable" : "schedulerobjects"
+                "mainTable" : "schedulerobjects",
+                "propertiesTable" : "schedulerobjectproperties",
+                "searchableDefault" : true
             },
             "cluster" : {
-                "mainTable" : "clusterobjects"
-            },
-            "config" : {
-                "mainTable" : "configobjects"
+                "mainTable" : "clusterobjects",
+                "propertiesTable" : "clusterobjectproperties",
+                "searchableDefault" : true
             },
             "relationships" : {
                 "mainTable" : "relationships",
-                "objectToColumn": {
+                "propertiesTable" : "relationshipproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/firstResourceCollection" : {
+                        "searchable" : true
+                    },
+                    "/firstResourceId" : {
+                        "searchable" : true
+                    },
+                    "/firstPropertyName" : {
+                        "searchable" : true
+                    },
+                    "/secondResourceCollection" : {
+                        "searchable" : true
+                    },
+                    "/secondResourceId" : {
+                        "searchable" : true
+                    },
+                    "/secondPropertyName" : {
+                        "searchable" : true
+                    }
+                },
+                "objectToColumn" : {
                     "firstResourceCollection" : "firstresourcecollection",
                     "firstResourceId" : "firstresourceid",
                     "firstPropertyName" : "firstpropertyname",
                     "secondResourceCollection" : "secondresourcecollection",
                     "secondResourceId" : "secondresourceid",
                     "secondPropertyName" : "secondpropertyname",
-                    "properties" : { "column" : "properties", "type" : "JSON_MAP" }
+                    "properties" : {
+                        "column" : "properties",
+                        "type" : "JSON_MAP"
+                    }
                 }
             },
             "updates" : {
-                "mainTable" : "updateobjects"
+                "mainTable" : "updateobjects",
+                "propertiesTable" : "updateobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/startDate" : {
+                        "searchable" : true
+                    }
+                }
             },
             "reconprogressstate" : {
-                "mainTable" : "genericobjects"
+                "mainTable" : "genericobjects",
+                "propertiesTable" : "genericobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/reconId" : {
+                        "searchable" : true
+                    },
+                    "/startTime" : {
+                        "searchable" : true
+                    }
+                }
             },
             "jsonstorage" : {
-                "mainTable" : "genericobjects"
+                "mainTable" : "genericobjects",
+                "propertiesTable" : "genericobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/timestamp" : {
+                        "searchable" : true
+                    }
+                }
             },
             "internal/usermeta" : {
-                "mainTable" : "genericobjects"
-            },
-            "internal/notification" : {
-                "mainTable" : "notificationobjects"
+                "mainTable" : "genericobjects",
+                "propertiesTable" : "genericobjectproperties",
+                "searchableDefault" : false
             }
         },
         "explicitMapping" : {
@@ -128,7 +217,11 @@
                 "objectToColumn" : {
                     "_id" : "objectid",
                     "_rev" : "rev",
-                    "password" : "pwd"
+                    "password" : "pwd",
+                    "roles" : {
+                        "column" : "roles",
+                        "type" : "JSON_LIST"
+                    }
                 }
             },
             "internal/role" : {
@@ -136,24 +229,7 @@
                 "objectToColumn" : {
                     "_id" : "objectid",
                     "_rev" : "rev",
-                    "name" : "name",
-                    "description" : "description",
-                    "temporalConstraints" : { "column" : "temporalConstraints", "type" : "JSON_LIST" },
-                    "condition" : "condition"
-                }
-            },
-            "internal/privilege" : {
-                "table" : "internalprivilege",
-                "objectToColumn" : {
-                    "_id" : "objectid",
-                    "_rev" : "rev",
-                    "name" : "name",
-                    "description" : "description",
-                    "path" : "path",
-                    "permissions" : { "column" : "permissions", "type" : "JSON_LIST" },
-                    "actions" : { "column" : "actions", "type" : "JSON_LIST" },
-                    "filter" : "filter",
-                    "accessFlags" : { "column" : "accessflags", "type" : "JSON_LIST" }
+                    "description" : "description"
                 }
             },
             "audit/authentication" : {
@@ -167,10 +243,22 @@
                     "provider" : "provider",
                     "method" : "method",
                     "result" : "result",
-                    "principal" : {"column" : "principals", "type" : "JSON_LIST"},
-                    "context" : {"column" : "context", "type" : "JSON_MAP"},
-                    "entries" : {"column" : "entries", "type" : "JSON_LIST"},
-                    "trackingIds" : {"column" : "trackingids", "type" : "JSON_LIST"}
+                    "principal" : {
+                        "column" : "principals",
+                        "type" : "JSON_LIST"
+                    },
+                    "context" : {
+                        "column" : "context",
+                        "type" : "JSON_MAP"
+                    },
+                    "entries" : {
+                        "column" : "entries",
+                        "type" : "JSON_LIST"
+                    },
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    }
                 }
             },
             "audit/config" : {
@@ -181,15 +269,18 @@
                     "eventName" : "eventname",
                     "transactionId" : "transactionid",
                     "userId" : "userid",
-                    "trackingIds" : {"column" : "trackingids", "type" : "JSON_LIST"},
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    },
                     "runAs" : "runas",
                     "objectId" : "configobjectid",
                     "operation" : "operation",
                     "before" : "beforeObject",
                     "after" : "afterObject",
-                    "changedFields": {
-                        "column": "changedfields",
-                        "type": "JSON_LIST"
+                    "changedFields" : {
+                        "column" : "changedfields",
+                        "type" : "JSON_LIST"
                     },
                     "revision" : "rev"
                 }
@@ -202,13 +293,19 @@
                     "eventName" : "eventname",
                     "transactionId" : "transactionid",
                     "userId" : "userid",
-                    "trackingIds" : {"column" : "trackingids", "type" : "JSON_LIST"},
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    },
                     "runAs" : "runas",
                     "objectId" : "activityobjectid",
                     "operation" : "operation",
                     "before" : "subjectbefore",
                     "after" : "subjectafter",
-                    "changedFields" : {"column" : "changedfields", "type" : "JSON_LIST"},
+                    "changedFields" : {
+                        "column" : "changedfields",
+                        "type" : "JSON_LIST"
+                    },
                     "revision" : "subjectrev",
                     "passwordChanged" : "passwordchanged",
                     "message" : "message",
@@ -225,13 +322,19 @@
                     "timestamp" : "activitydate",
                     "eventName" : "eventname",
                     "userId" : "userid",
-                    "trackingIds" : {"column" : "trackingids", "type" : "JSON_LIST"},
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    },
                     "action" : "activity",
                     "exception" : "exceptiondetail",
-                    "linkQualifier": "linkqualifier",
+                    "linkQualifier" : "linkqualifier",
                     "mapping" : "mapping",
                     "message" : "message",
-                    "messageDetail" : {"column" : "messagedetail", "type" : "JSON_MAP"},
+                    "messageDetail" : {
+                        "column" : "messagedetail",
+                        "type" : "JSON_MAP"
+                    },
                     "situation" : "situation",
                     "sourceObjectId" : "sourceobjectid",
                     "status" : "status",
@@ -251,13 +354,19 @@
                     "timestamp" : "activitydate",
                     "eventName" : "eventname",
                     "userId" : "userid",
-                    "trackingIds" : {"column" : "trackingids", "type" : "JSON_LIST"},
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    },
                     "action" : "activity",
                     "exception" : "exceptiondetail",
-                    "linkQualifier": "linkqualifier",
+                    "linkQualifier" : "linkqualifier",
                     "mapping" : "mapping",
                     "message" : "message",
-                    "messageDetail" : {"column" : "messagedetail", "type" : "JSON_MAP"},
+                    "messageDetail" : {
+                        "column" : "messagedetail",
+                        "type" : "JSON_MAP"
+                    },
                     "situation" : "situation",
                     "sourceObjectId" : "sourceobjectid",
                     "status" : "status",
@@ -272,26 +381,47 @@
                     "eventName" : "eventname",
                     "transactionId" : "transactionid",
                     "userId" : "userid",
-                    "trackingIds" : {"column" : "trackingids", "type" : "JSON_LIST"},
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    },
                     "server/ip" : "server_ip",
                     "server/port" : "server_port",
                     "client/ip" : "client_ip",
                     "client/port" : "client_port",
                     "request/protocol" : "request_protocol",
                     "request/operation" : "request_operation",
-                    "request/detail" : {"column" : "request_detail", "type" : "JSON_MAP"},
+                    "request/detail" : {
+                        "column" : "request_detail",
+                        "type" : "JSON_MAP"
+                    },
                     "http/request/secure" : "http_request_secure",
                     "http/request/method" : "http_request_method",
                     "http/request/path" : "http_request_path",
-                    "http/request/queryParameters" : {"column" : "http_request_queryparameters", "type" : "JSON_MAP"},
-                    "http/request/headers" : {"column" : "http_request_headers", "type" : "JSON_MAP"},
-                    "http/request/cookies" : {"column" : "http_request_cookies", "type" : "JSON_MAP"},
-                    "http/response/headers" : {"column" : "http_response_headers", "type" : "JSON_MAP"},
+                    "http/request/queryParameters" : {
+                        "column" : "http_request_queryparameters",
+                        "type" : "JSON_MAP"
+                    },
+                    "http/request/headers" : {
+                        "column" : "http_request_headers",
+                        "type" : "JSON_MAP"
+                    },
+                    "http/request/cookies" : {
+                        "column" : "http_request_cookies",
+                        "type" : "JSON_MAP"
+                    },
+                    "http/response/headers" : {
+                        "column" : "http_response_headers",
+                        "type" : "JSON_MAP"
+                    },
                     "response/status" : "response_status",
                     "response/statusCode" : "response_statuscode",
                     "response/elapsedTime" : "response_elapsedtime",
                     "response/elapsedTimeUnits" : "response_elapsedtimeunits",
-                    "response/detail" : {"column" : "response_detail", "type" : "JSON_MAP"},
+                    "response/detail" : {
+                        "column" : "response_detail",
+                        "type" : "JSON_MAP"
+                    },
                     "roles" : "roles"
                 }
             },
@@ -301,42 +431,10 @@
                     "_id" : "objectid",
                     "_rev" : "rev",
                     "reconId" : "reconid",
-                    "targetIds" : {"column" : "targetids", "type" : "JSON_LIST"}
-                }
-            },
-            "locks" : {
-                "table" : "locks",
-                "objectToColumn" : {
-                    "_id" : "objectid",
-                    "_rev" : "rev",
-                    "nodeId" : "nodeid"
-                }
-            },
-            "sync/queue" : {
-                "table" : "syncqueue",
-                "objectToColumn" : {
-                    "_id" : "objectid",
-                    "_rev" : "rev",
-                    "syncAction" : "syncAction",
-                    "resourceCollection" : "resourceCollection",
-                    "resourceId" : "resourceId",
-                    "mapping" : "mapping",
-                    "objectRev" : "objectRev",
-                    "oldObject" : {"column" : "oldObject", "type" : "JSON_MAP"},
-                    "newObject" : {"column" : "newObject", "type" : "JSON_MAP"},
-                    "context" : {"column" : "context", "type" : "JSON_MAP"},
-                    "state" : "state",
-                    "nodeId" : "nodeId",
-                    "remainingRetries" : {"column" : "remainingRetries", "type" : "NUMBER"},
-                    "createDate" : "createDate"
-                }
-            },
-            "file" : {
-                "table" : "files",
-                "objectToColumn" : {
-                    "_id" : "objectid",
-                    "_rev" : "rev",
-                    "content" : "content"
+                    "targetIds" : {
+                        "column" : "targetids",
+                        "type" : "JSON_LIST"
+                    }
                 }
             }
         }

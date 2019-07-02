@@ -20,18 +20,36 @@
             "identityServiceUrl" : "managed/user"
         },
         {
-            "name" : "kbaSecurityAnswerDefinitionStage",
-            "kbaConfig" : null
+            "name" : "emailValidation",
+            "identityEmailField" : "mail",
+            "emailServiceUrl" : "external/email",
+            "emailServiceParameters" : {
+                "waitForCompletion" : false
+            },
+            "from" : "info@&{openidm.host}",
+            "subject" : "Register new account",
+            "mimeType" : "text/html",
+            "subjectTranslations" : {
+                "en" : "Register new account",
+                "de" : "Neuen Benutzer-Account registrieren"
+            },
+            "messageTranslations" : {
+                "en" : "<h3>This is your registration email.</h3><h4><a href=\"%link%\">Email verification link</a></h4>",
+                "de" : "<h3>Willkommen, \nanbei erhalten Sie den Best&auml;tigungslink Ihrer Registrierung f&uuml;r ein IHK Portal:</h3><h4><a href=\"%link%\">Registrierung-abschlie&szlig;en-Link</a></h4><h3>Der Link ist 3 Tage g&uuml;ltig. Danach verfallen die Daten und Sie m&uuml;ssen sich erneut registrieren. Dies ist eine automatisch generierte Mail, bitte antworten Sie nicht auf diese.</h3> <h3>Ihr IHK Team</h3>"
+            },
+            "verificationLinkToken" : "%link%",
+            "verificationLink" : "http://&{dihk.sso.external.ui.host}:&{dihk.sso.external.ui.port.http}/user/registration/complete?"
         },
         {
             "name" : "selfRegistration",
             "identityServiceUrl" : "managed/user"
         },
         {
-            "name" : "localAutoLogin",
+            "name" : "openAMAutoLogin",
             "identityUsernameField" : "userName",
             "identityPasswordField" : "password",
-            "successUrl" : ""
+            "openAMBaseUrl" : "http://&{openam.host}:&{openam.port.http}/openam/",
+            "authenticationEndpoint" : "json/realms/root/authenticate"
         }
     ],
     "snapshotToken" : {

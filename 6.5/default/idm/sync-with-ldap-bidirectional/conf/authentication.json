@@ -3,78 +3,110 @@
         "sessionModule" : {
             "name" : "JWT_SESSION",
             "properties" : {
-                "maxTokenLifeMinutes" : 120,
-                "tokenIdleTimeMinutes" : 30,
+                "keyAlias" : "&{openidm.https.keystore.cert.alias}",
+                "privateKeyPassword" : "&{openidm.keystore.password}",
+                "keystoreType" : "&{openidm.keystore.type}",
+                "keystoreFile" : "&{openidm.keystore.location}",
+                "keystorePassword" : "&{openidm.keystore.password}",
                 "sessionOnly" : true,
-                "isHttpOnly" : true
+                "isHttpOnly" : true,
+                "maxTokenLifeSeconds" : "5",
+                "tokenIdleTimeSeconds" : "5"
             }
         },
         "authModules" : [
             {
                 "name" : "STATIC_USER",
                 "properties" : {
-                    "queryOnResource" : "internal/user",
+                    "queryOnResource" : "repo/internal/user",
                     "username" : "anonymous",
-                    "password" : "anonymous",
-                    "defaultUserRoles" : [ "internal/role/openidm-reg" ]
+                    "password" : "&{openidm.anonymous.password}",
+                    "defaultUserRoles" : [
+                        "openidm-reg"
+                    ]
                 },
                 "enabled" : true
             },
             {
-                "name" : "MANAGED_USER",
+                "name" : "STATIC_USER",
                 "properties" : {
-                    "augmentSecurityContext": {
+                    "queryOnResource" : "repo/internal/user",
+                    "username" : "openidm-admin",
+                    "password" : "&{openidm.admin.password}",
+                    "defaultUserRoles" : [
+                        "openidm-admin",
+                        "openidm-authorized"
+                    ],
+                    "runAsProperties" : {
+                        "adminRoles" : [
+                            "openidm-admin"
+                        ],
+                        "disallowedRunAsRoles" : [
+                            "openidm-admin"
+                        ],
+                        "queryId" : "credential-query",
+                        "queryOnResource" : "managed/user",
+                        "propertyMapping" : {
+                            "authenticationId" : "username",
+                            "userRoles" : "authzRoles"
+                        },
+                        "augmentSecurityContext" : {
+                            "type" : "text/javascript",
+                            "source" : "require('auth/customAuthz').setProtectedAttributes(security)"
+                        }
+                    }
+                },
+                "enabled" : true
+            },
+            {
+                "enabled" : true,
+                "properties" : {
+                    "queryOnResource" : "managed/user",
+                    "queryId" : "credential-query",
+                    "defaultUserRoles" : [ ],
+                    "augmentSecurityContext" : {
                         "type" : "text/javascript",
+                        "globals" : { },
                         "source" : "require('auth/customAuthz').setProtectedAttributes(security)"
                     },
-                    "queryId" : "credential-query",
-                    "queryOnResource" : "managed/user",
                     "propertyMapping" : {
                         "authenticationId" : "username",
                         "userCredential" : "password",
-                        "effectiveUserRoles" : "effectiveAuthzRoles"
+                        "userRoles" : "authzRoles"
+                    }
+                },
+                "name" : "MANAGED_USER"
+            },
+            {
+                "name" : "INTERNAL_USER",
+                "properties" : {
+                    "queryId" : "credential-internaluser-query",
+                    "queryOnResource" : "repo/internal/user",
+                    "propertyMapping" : {
+                        "authenticationId" : "username",
+                        "userCredential" : "password",
+                        "userRoles" : "roles"
                     },
                     "defaultUserRoles" : [ ]
                 },
                 "enabled" : false
             },
             {
-                "name" : "INTERNAL_USER",
+                "name" : "CLIENT_CERT",
                 "properties" : {
-                    "queryId" : "credential-internaluser-query",
-                    "queryOnResource" : "internal/user",
-                    "propertyMapping" : {
-                        "authenticationId" : "username",
-                        "userCredential" : "password",
-                        "userRoles" : "authzRoles"
-                    },
-                    "defaultUserRoles" : [ ]
-                },
-                "enabled" : true
-            },
-            {
-                "name" : "PASSTHROUGH",
-                "properties" : {
-                    "augmentSecurityContext": {
-                        "type" : "text/javascript",
-                        "file" : "auth/populateAsManagedUser.js"
-                    },
-                    "queryOnResource" : "system/ldap/account",
-                    "propertyMapping" : {
-                        "authenticationId" : "uid"
-                    },
-                    "managedUserLink" : "systemLdapAccounts_managedUser",
+                    "queryOnResource" : "managed/user",
                     "defaultUserRoles" : [
-                        "internal/role/openidm-authorized"
-                    ]
+                        "openidm-cert"
+                    ],
+                    "allowedAuthenticationIdPatterns" : [ ]
                 },
-                "enabled" : true
+                "enabled" : false
             },
             {
                 "name" : "SOCIAL_PROVIDERS",
                 "properties" : {
                     "defaultUserRoles" : [
-                        "internal/role/openidm-authorized"
+                        "openidm-authorized"
                     ],
                     "augmentSecurityContext" : {
                         "type" : "text/javascript",
@@ -85,17 +117,56 @@
                         "userRoles" : "authzRoles"
                     }
                 },
-                "enabled" : true
+                "enabled" : false
             },
             {
                 "name" : "STATIC_USER",
                 "properties" : {
-                    "queryOnResource" : "internal/user",
+                    "queryOnResource" : "repo/internal/user",
                     "username" : "&{openidm.prometheus.username}",
                     "password" : "&{openidm.prometheus.password}",
                     "defaultUserRoles" : [
-                        "internal/role/openidm-prometheus"
+                        "&{openidm.prometheus.role}"
                     ]
+                },
+                "enabled" : true
+            },
+            {
+                "name" : "OAUTH_CLIENT",
+                "properties" : {
+                    "augmentSecurityContext" : {
+                        "type" : "text/javascript",
+                        "globals" : {
+                            "sessionValidationBaseEndpoint" : "http://&{openam.host}:&{openam.port.http}/openam/json/sessions/"
+                        },
+                        "file" : "auth/amSessionCheck.js"
+                    },
+                    "propertyMapping" : {
+                        "authenticationId" : "uid",
+                        "userRoles" : "authzRoles"
+                    },
+                    "defaultUserRoles" : [
+                        "openidm-authorized"
+                    ],
+                    "idpConfig" : {
+                        "provider" : "OPENAM",
+                        "icon" : "<button class=\"btn btn-lg btn-default btn-block btn-social-provider\"><img src=\"images/forgerock_logo.png\">Sign In</button>",
+                        "scope" : [
+                            "openid"
+                        ],
+                        "authenticationIdKey" : "sub",
+                        "clientId" : "openidm",
+                        "clientSecret" : "&{openidm.oauth.clientsecret}",
+                        "authorizationEndpoint" : "http://&{openam.host}:&{openam.port.http}/openam/oauth2/authorize",
+                        "tokenEndpoint" : "http://&{openam.host}:&{openam.port.http}/openam/oauth2/access_token",
+                        "endSessionEndpoint" : "http://&{openam.host}:&{openam.port.http}/openam/oauth2/connect/endSession",
+                        "wellKnownEndpoint" : "http://&{openam.host}:&{openam.port.http}/openam/oauth2/.well-known/openid-configuration",
+                        "redirectUri" : "&{openidm.base.url.http}/oauthReturn/",
+                        "configClass" : "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration",
+                        "displayIcon" : "forgerock",
+                        "enabled" : true
+                    },
+                    "queryOnResource" : "system/userstore/account"
                 },
                 "enabled" : true
             }

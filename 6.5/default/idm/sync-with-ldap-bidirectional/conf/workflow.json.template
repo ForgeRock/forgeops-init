@@ -1,0 +1,10 @@
+{
+    "useDataSource" : "default",
+    "workflowDirectory" : "&{idm.instance.dir}/workflow",
+    "mail": "mail",
+    "mail/host": "&{external.mail.host}",
+    "mail/port": ${EXTERNAL_MAIL_PORT},
+    "mail/starttls": false,
+    "mail/username": "",
+    "mail/password": ""
+}

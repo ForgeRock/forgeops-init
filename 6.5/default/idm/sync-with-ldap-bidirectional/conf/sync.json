@@ -1,140 +1,24 @@
 {
     "mappings" : [
         {
-            "name" : "systemLdapAccounts_managedUser",
-            "source" : "system/ldap/account",
-            "target" : "managed/user",
+            "target" : "system/userstore/group",
+            "source" : "managed/role",
+            "name" : "managedRole_systemLdapUserstore_group",
+            "icon" : null,
+            "displayName" : "managedRole_systemLdapUserstore_group",
             "properties" : [
                 {
-                    "source" : "cn",
-                    "target" : "displayName"
-                },
-                {
-                    "source" : "description",
-                    "target" : "description"
-                },
-                {
-                    "source" : "givenName",
-                    "target" : "givenName"
-                },
-                {
-                    "source" : "mail",
-                    "target" : "mail"
-                },
-                {
-                    "source" : "telephoneNumber",
-                    "target" : "telephoneNumber"
-                },
-                {
-                    "source" : "sn",
-                    "target" : "sn"
-                },
-                {
-                    "source" : "uid",
-                    "target" : "userName"
-                },
-                {
-                    "source" : "inetuserstatus",
-                    "target" : "accountStatus"
-                }
-            ],
-            "policies" : [
-                {
-                    "situation" : "CONFIRMED",
-                    "action" : "UPDATE"
-                },
-                {
-                    "situation" : "FOUND",
-                    "action" : "UPDATE"
-                },
-                {
-                    "situation" : "ABSENT",
-                    "action" : "CREATE"
-                },
-                {
-                    "situation" : "AMBIGUOUS",
-                    "action" : "EXCEPTION"
-                },
-                {
-                    "situation" : "MISSING",
-                    "action" : "CREATE"
-                },
-                {
-                    "situation" : "SOURCE_MISSING",
-                    "action" : "DELETE"
-                },
-                {
-                    "situation" : "UNQUALIFIED",
-                    "action" : "IGNORE"
-                },
-                {
-                    "situation" : "UNASSIGNED",
-                    "action" : "IGNORE"
-                }
-            ]
-        },
-        {
-            "name" : "managedUser_systemLdapAccounts",
-            "source" : "managed/user",
-            "target" : "system/ldap/account",
-            "links" : "systemLdapAccounts_managedUser",
-            "onCreate" : {
-                "type" : "text/javascript",
-                "globals" : { },
-                "source" : "target.dn = 'uid=' + source.userName + ',ou=people,&{userstore.basecontext}';"
-            },
-            "properties" : [
-                {
-                    "source" : "givenName",
-                    "target" : "givenName"
-                },
-                {
-                    "source" : "sn",
-                    "target" : "sn"
-                },
-                {
-                    "source" : "",
+                    "target" : "dn",
                     "transform" : {
                         "type" : "text/javascript",
-                        "source" : "source.displayName || (source.givenName + ' ' + source.sn);"
+                        "globals" : { },
+                        "source" : "'cn=' + source.name + ',ou=groups,dc=openam,dc=forgerock,dc=org'"
                     },
-                    "target" : "cn"
+                    "source" : ""
                 },
                 {
-                    "source" : "userName",
-                    "target" : "uid"
-                },
-                {
-                    "source" : "description",
-                    "target" : "description",
-                    "condition" : {
-                        "type" : "text/javascript",
-                        "source" : "!!object.description"
-                    }
-                },
-                {
-                    "source" : "mail",
-                    "target" : "mail"
-                },
-                {
-                    "source" : "password",
-                    "condition" : {
-                        "type" : "text/javascript",
-                        "source" : "object.password != null"
-                    },
-                    "transform" : {
-                        "type" : "text/javascript",
-                        "source" : "openidm.decrypt(source);"
-                    },
-                    "target" : "userPassword"
-                },
-                {
-                    "source" : "telephoneNumber",
-                    "target" : "telephoneNumber",
-                    "condition" : {
-                        "type" : "text/javascript",
-                        "source" : "!!object.telephoneNumber"
-                    }
+                    "target" : "cn",
+                    "source" : "name"
                 }
             ],
             "policies" : [
@@ -191,6 +75,247 @@
                     "situation" : "ABSENT"
                 }
             ]
+        },
+        {
+            "name" : "managedUser_systemLdapUserstore_people",
+            "source" : "managed/user",
+            "target" : "system/userstore/account",
+            "onCreate" : {
+                "type" : "text/javascript",
+                "source" : "target.dn = 'uid=' + source.userName + ',ou=people,dc=openam,dc=forgerock,dc=org';"
+            },
+            "properties" : [
+                {
+                    "source" : "givenName",
+                    "target" : "givenName"
+                },
+                {
+                    "source" : "sn",
+                    "target" : "sn"
+                },
+                {
+                    "source" : "",
+                    "transform" : {
+                        "type" : "text/javascript",
+                        "source" : "source.displayName || (source.givenName + ' ' + source.sn);"
+                    },
+                    "target" : "cn"
+                },
+                {
+                    "source" : "userName",
+                    "target" : "uid"
+                },
+                {
+                    "source" : "description",
+                    "target" : "description",
+                    "condition" : {
+                        "type" : "text/javascript",
+                        "source" : "!!object.description"
+                    }
+                },
+                {
+                    "source" : "mail",
+                    "target" : "mail"
+                },
+                {
+                    "source" : "password",
+                    "condition" : {
+                        "type" : "text/javascript",
+                        "source" : "object.password != null"
+                    },
+                    "transform" : {
+                        "type" : "text/javascript",
+                        "source" : "openidm.decrypt(source);"
+                    },
+                    "target" : "userPassword"
+                },
+                {
+                    "source" : "telephoneNumber",
+                    "target" : "telephoneNumber",
+                    "condition" : {
+                        "type" : "text/javascript",
+                        "source" : "!!object.telephoneNumber"
+                    }
+                },
+                {
+                    "target" : "aliasList",
+                    "transform" : {
+                        "type" : "text/javascript",
+                        "globals" : { },
+                        "source" : "var managedUser = openidm.read(\"managed/user/\" + source._id, null, [\"idps\"]);\n    \nif (managedUser.idps) {\n    managedUser.idps.map(function(relationship) {\n        var provider = relationship[\"_ref\"].split(\"/\");\n        return provider[1] + '-' + provider[2];\n    });\n} else {\n    [];\n}"
+                    },
+                    "source" : ""
+                },
+                {
+                    "target" : "objectClass",
+                    "default" : [
+                        "top",
+                        "inetuser",
+                        "person",
+                        "inetOrgPerson",
+                        "organizationalPerson",
+                        "iplanet-am-user-service",
+                        "kbaInfoContainer"
+                    ]
+                },
+                {
+                    "target" : "kbaInfo",
+                    "source" : "kbaInfo",
+                    "transform" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "source ? (source.collect {(new groovy.json.JsonBuilder(it)).toString()}) : []"
+                    }
+                },
+                {
+                    "target" : "ldapGroups",
+                    "source" : "effectiveRoles",
+                    "transform" : {
+                        "type" : "text/javascript",
+                        "globals" : { },
+                        "source" : "source.map(function(role) {\n  \tvar roleNameRef = role._ref.split(\"/\");\n  \tvar roleName = roleNameRef[roleNameRef.length - 1];\n\treturn \"cn=\" + roleName + \",ou=groups,dc=openam,dc=forgerock,dc=org\";\n})"
+                    }
+                },
+                {
+                    "target" : "inetUserStatus",
+                    "source" : "accountStatus"
+                }
+            ],
+            "policies" : [
+                {
+                    "situation" : "CONFIRMED",
+                    "action" : "UPDATE"
+                },
+                {
+                    "situation" : "FOUND",
+                    "action" : "LINK"
+                },
+                {
+                    "situation" : "ABSENT",
+                    "action" : "CREATE"
+                },
+                {
+                    "situation" : "AMBIGUOUS",
+                    "action" : "IGNORE"
+                },
+                {
+                    "situation" : "MISSING",
+                    "action" : "CREATE"
+                },
+                {
+                    "situation" : "SOURCE_MISSING",
+                    "action" : "DELETE"
+                },
+                {
+                    "situation" : "UNQUALIFIED",
+                    "action" : "IGNORE"
+                },
+                {
+                    "situation" : "UNASSIGNED",
+                    "action" : "IGNORE"
+                }
+            ]
+        },
+        {
+            "target" : "managed/user",
+            "source" : "system/userstore/account",
+            "name" : "systemLdapUserstore_people_managedUser",
+            "displayName" : "systemLdapUserstore_people_managedUser",
+            "properties" : [
+                {
+                    "target" : "userName",
+                    "source" : "uid"
+                },
+                {
+                    "target" : "mail",
+                    "source" : "mail"
+                },
+                {
+                    "target" : "sn",
+                    "source" : "sn"
+                },
+                {
+                    "target" : "givenName",
+                    "source" : "givenName"
+                },
+                {
+                    "target" : "roles",
+                    "source" : "ldapGroups",
+                    "transform" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "source.collect { (it =~ /cn=(.+?),.*/) }\n        .findAll { it.find() }\n        .collect { [_ref: \"managed/role/\" + it[0][1]] }"
+                    }
+                },
+                {
+                    "target" : "accountStatus",
+                    "source" : "inetUserStatus",
+                    "transform" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "source?.toLowerCase()"
+                    }
+                },
+                {
+                    "target" : "salutation",
+                    "default" : "FEMALE"
+                }
+            ],
+            "policies" : [
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "AMBIGUOUS"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "SOURCE_MISSING"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "MISSING"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "FOUND_ALREADY_LINKED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "UNQUALIFIED"
+                },
+                {
+                    "action" : "LINK",
+                    "situation" : "UNASSIGNED"
+                },
+                {
+                    "action" : "UNLINK",
+                    "situation" : "LINK_ONLY"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
+                }
+            ],
+            "links" : "managedUser_systemLdapUserstore_people"
         }
     ]
 }

@@ -5,14 +5,13 @@
                 "type" : "text/javascript",
                 "source" : "context.caller.external === true || context.current.name === 'selfservice'"
             },
-            "evaluatePrivileges" : true,
             "onRequest" : {
                 "type" : "text/javascript",
-                "source" : "require('router-authz').testAccess()"
+                "file" : "router-authz.js"
             }
         },
         {
-            "pattern" : "^(managed|system|internal)($|(/.+))",
+            "pattern" : "^(managed|system|repo/internal)($|(/.+))",
             "onRequest" : {
                 "type" : "text/javascript",
                 "file" : "policyFilter.js"
@@ -23,15 +22,15 @@
             ]
         },
         {
-            "pattern" : "^(managed|internal)($|(/.+))",
-            "condition" : {
+            "pattern" : "repo/internal/user((/.+)|$)",
+            "onRequest" : {
                 "type" : "text/javascript",
-                "source" : "context.caller.external === true || context.current.name === 'selfservice'"
+                "source" : "request.content.password = require('crypto').hash(request.content.password);"
             },
-            "onResponse" : {
-                "type" : "text/javascript",
-                "source" : "require('relationshipFilter').filterResponse()"
-            }
+            "methods" : [
+                "create",
+                "update"
+            ]
         }
     ]
 }

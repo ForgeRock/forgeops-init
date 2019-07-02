@@ -9,10 +9,8 @@
         {
             "name" : "userQuery",
             "validQueryFields" : [
-                "userName",
                 "mail",
-                "givenName",
-                "sn"
+                "userName"
             ],
             "identityIdField" : "_id",
             "identityEmailField" : "mail",
@@ -20,10 +18,27 @@
             "identityServiceUrl" : "managed/user"
         },
         {
-            "name" : "kbaSecurityAnswerVerificationStage",
-            "kbaPropertyName" : "kbaInfo",
-            "identityServiceUrl" : "managed/user",
-            "kbaConfig" : null
+            "name" : "emailValidation",
+            "identityEmailField" : "mail",
+            "emailServiceUrl" : "external/email",
+            "emailServiceParameters" : {
+                "waitForCompletion" : false
+            },
+            "from" : "info@&{openidm.host}",
+            "subject" : "Reset password email",
+            "mimeType" : "text/html",
+            "subjectTranslations" : {
+                "en" : "Reset your password",
+                "fr" : "Réinitialisez votre mot de passe",
+                "de" : "Passwort zurücksetzen"
+            },
+            "messageTranslations" : {
+                "en" : "<h3>Click to reset your password</h3><h4><a href=\"%link%\">Password reset link</a></h4>",
+                "fr" : "<h3>Cliquez pour réinitialiser votre mot de passe</h3><h4><a href=\"%link%\">Mot de passe lien de réinitialisation</a></h4>",
+                "de" : "<h3>Klicken Sie den folgenden Link, um Ihr Passwort zurückzusetzen: </h3><h4><a href=\"%link%\">Passwort zurücksetzen</a></h4>"
+            },
+            "verificationLinkToken" : "%link%",
+            "verificationLink" : "http://&{dihk.sso.external.ui.host}:&{dihk.sso.external.ui.port.http}/user/password-reset/password?"
         },
         {
             "name" : "resetStage",

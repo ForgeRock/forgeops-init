@@ -1,0 +1,15 @@
+{
+    "host" : "&{external.mail.host}",
+    "port" : "&{external.mail.port}",
+    "timeout" : 300000,
+    "writetimeout" : 300000,
+    "connectiontimeout" : 300000,
+    "auth" : {
+        "enable" : false,
+        "username" : ""
+    },
+    "starttls" : {
+        "enable" : false
+    },
+    "from" : "admin@&{openidm.host}"
+}
