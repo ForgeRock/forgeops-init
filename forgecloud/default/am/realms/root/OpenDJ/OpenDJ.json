@@ -26,19 +26,19 @@
         "sunFMSAML2NameIdentifier",
         "inetorgperson",
         "devicePrintProfilesContainer",
-        "pushDeviceProfilesContainer",
-        "iPlanetPreferences",
         "iplanet-am-user-service",
+        "iPlanetPreferences",
+        "pushDeviceProfilesContainer",
         "forgerock-am-dashboard-service",
         "organizationalperson",
         "top",
         "kbaInfoContainer",
-        "oathDeviceProfilesContainer",
         "person",
-        "webauthnDeviceProfilesContainer",
         "sunAMAuthAccountLockout",
-        "fr-idm-managed-user-explicit",
-        "iplanet-am-auth-configuration-service"
+        "oathDeviceProfilesContainer",
+        "webauthnDeviceProfilesContainer",
+        "iplanet-am-auth-configuration-service",
+        "fr-idm-managed-user-explicit"
       ],
       "sun-idrepo-ldapv3-config-people-container-name": "ou",
       "sun-idrepo-ldapv3-config-auth-kba-attr": ["kbaInfo"],
@@ -100,7 +100,6 @@
         "fr-idm-lastSync",
         "memberOf",
         "sn",
-        "fr-idm-accountStatus",
         "preferredLocale",
         "manager",
         "iplanet-am-session-max-session-time",
@@ -112,6 +111,7 @@
         "fr-idm-effectiveAssignment",
         "fr-idm-preferences",
         "fr-idm-password",
+        "iplanet-am-user-login-status",
         "pushDeviceProfiles",
         "ds-pwp-account-disabled",
         "push2faEnabled",
@@ -154,25 +154,27 @@
       "sun-idrepo-ldapv3-config-max-result": 1000,
       "sun-idrepo-ldapv3-config-search-scope": "SCOPE_SUB",
       "sun-idrepo-ldapv3-config-time-limit": 10,
+      "sun-idrepo-ldapv3-config-connection_pool_min_size": 1,
       "openam-idrepo-ldapv3-heartbeat-interval": 10,
       "sun-idrepo-ldapv3-config-ldap-server": ["userstore-0.userstore:1389"],
       "openam-idrepo-ldapv3-heartbeat-timeunit": "SECONDS",
       "sun-idrepo-ldapv3-config-organization_name": "ou=identities",
-      "sun-idrepo-ldapv3-config-connection-                                                                                mode": "LDAP",
+      "sun-idrepo-ldapv3-config-connection-mode": "LDAP",
       "sun-idrepo-ldapv3-config-authpw": "password"
     },
+
     "pluginconfig": {
+      "sunIdRepoAttributeMapping": [],
       "sunIdRepoSupportedOperations": [
         "realm=read,create,edit,delete,service",
-        "group=read,create,edit,delete",
-        "user=read,create,edit,delete,service"
+        "user=read,create,edit,delete,service",
+        "group=read,create,edit,delete"
       ],
-      "sunIdRepoAttributeMapping": [],
       "sunIdRepoClass": "org.forgerock.openam.idrepo.ldap.DJLDAPv3Repo"
     },
     "persistentsearch": {
       "sun-idrepo-ldapv3-config-psearch-scope": "SCOPE_SUB",
-      "sun-idrepo-ldapv3-config-psearch-filter": "(&(!(objectclass=frCoreToken))(!(ou:dn:=services))(!(ou:dn:=tokens)))",
+      "sun-idrepo-ldapv3-config-psearch-filter": "(!(objectclass=frCoreToken))",
       "sun-idrepo-ldapv3-config-psearchbase": "ou=identities"
     },
     "errorhandling": {

@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "ScriptingEngineConfiguration",
+    "entityId" : "engineConfiguration",
+    "pathParams" : {
+      "contexts" : "AUTHENTICATION_TREE_DECISION_NODE"
+    }
+  },
+  "data" : {
+    "_id" : "engineConfiguration",
+    "_type" : {
+      "_id" : "engineConfiguration",
+      "collection" : false,
+      "name" : "Scripting engine configuration"
+    },
+    "blackList" : [ "java.lang.Class", "java.security.AccessController", "java.lang.reflect.*" ],
+    "coreThreads" : 10,
+    "idleTimeout" : 60,
+    "maxThreads" : 50,
+    "queueSize" : 10,
+    "serverTimeout" : 0,
+    "useSecurityManager" : true,
+    "whiteList" : [ "com.sun.identity.authentication.spi.MetadataCallback", "com.sun.identity.idm.AMIdentity", "com.sun.identity.shared.debug.Debug", "groovy.json.JsonSlurper", "java.lang.Boolean", "java.lang.Byte", "java.lang.Character", "java.lang.Character$Subset", "java.lang.Character$UnicodeBlock", "java.lang.Double", "java.lang.Float", "java.lang.Integer", "java.lang.Long", "java.lang.Math", "java.lang.Number", "java.lang.Object", "java.lang.Short", "java.lang.StrictMath", "java.lang.String", "java.lang.Void", "java.util.AbstractMap$SimpleImmutableEntry", "java.util.ArrayList", "java.util.Collections$UnmodifiableRandomAccessList", "java.util.HashMap", "java.util.HashMap$KeyIterator", "java.util.HashSet", "java.util.LinkedHashMap", "java.util.LinkedHashSet", "java.util.LinkedList", "java.util.TreeMap", "java.util.TreeSet", "org.codehaus.groovy.runtime.GStringImpl", "org.codehaus.groovy.runtime.ScriptBytecodeAdapter", "org.forgerock.guice.core.InjectorHolder", "org.forgerock.http.client.*", "org.forgerock.http.Client", "org.forgerock.http.context.RootContext", "org.forgerock.http.Context", "org.forgerock.http.Handler", "org.forgerock.http.protocol.Cookie", "org.forgerock.http.protocol.Entity", "org.forgerock.http.protocol.Form", "org.forgerock.http.protocol.Header", "org.forgerock.http.protocol.Headers", "org.forgerock.http.protocol.Message", "org.forgerock.http.protocol.Request", "org.forgerock.http.protocol.RequestCookies", "org.forgerock.http.protocol.Response", "org.forgerock.http.protocol.ResponseException", "org.forgerock.http.protocol.Responses", "org.forgerock.http.protocol.Status", "org.forgerock.json.JsonValue", "org.forgerock.openam.auth.node.api.Action", "org.forgerock.openam.auth.node.api.Action$ActionBuilder", "org.forgerock.openam.auth.nodes.IdentityProvider", "org.forgerock.openam.scripting.api.http.GroovyHttpClient", "org.forgerock.openam.scripting.api.http.JavaScriptHttpClient", "org.forgerock.openam.scripting.api.ScriptedIdentity", "org.forgerock.openam.scripting.api.ScriptedSession", "org.forgerock.util.promise.NeverThrowsException", "org.forgerock.util.promise.Promise", "org.forgerock.util.promise.PromiseImpl" ]
+  }
+}

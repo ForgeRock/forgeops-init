@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "ScriptingEngineConfiguration",
+    "entityId" : "engineConfiguration",
+    "pathParams" : {
+      "contexts" : "OIDC_CLAIMS"
+    }
+  },
+  "data" : {
+    "_id" : "engineConfiguration",
+    "_type" : {
+      "_id" : "engineConfiguration",
+      "collection" : false,
+      "name" : "Scripting engine configuration"
+    },
+    "blackList" : [ "java.lang.Class", "java.security.AccessController", "java.lang.reflect.*" ],
+    "coreThreads" : 10,
+    "idleTimeout" : 60,
+    "maxThreads" : 50,
+    "queueSize" : 10,
+    "serverTimeout" : 0,
+    "useSecurityManager" : true,
+    "whiteList" : [ "com.iplanet.sso.providers.dpro.SessionSsoToken", "com.sun.identity.idm.AMIdentity", "com.sun.identity.shared.debug.Debug", "groovy.json.internal.LazyMap", "groovy.json.JsonSlurper", "java.lang.Boolean", "java.lang.Byte", "java.lang.Character", "java.lang.Character$Subset", "java.lang.Character$UnicodeBlock", "java.lang.Double", "java.lang.Float", "java.lang.Integer", "java.lang.Long", "java.lang.Math", "java.lang.Number", "java.lang.Object", "java.lang.Short", "java.lang.StrictMath", "java.lang.String", "java.lang.Void", "java.math.BigDecimal", "java.util.ArrayList", "java.util.ArrayList$Itr", "java.util.Collections$1", "java.util.Collections$EmptyList", "java.util.Collections$SingletonList", "java.util.Date", "java.util.HashMap", "java.util.HashMap$Entry", "java.util.HashMap$KeyIterator", "java.util.HashMap$Node", "java.util.HashSet", "java.util.LinkedHashMap", "java.util.LinkedHashMap$Entry", "java.util.LinkedHashMap$LinkedEntryIterator", "java.util.LinkedHashMap$LinkedEntrySet", "java.util.LinkedHashSet", "java.util.LinkedList", "java.util.TreeMap", "java.util.TreeSet", "org.codehaus.groovy.runtime.GStringImpl", "org.codehaus.groovy.runtime.ScriptBytecodeAdapter", "org.forgerock.http.client.*", "org.forgerock.oauth2.core.exceptions.InvalidRequestException", "org.forgerock.oauth2.core.UserInfoClaims", "org.forgerock.openam.oauth2.OpenAMAccessToken", "org.forgerock.openidconnect.Claim", "org.forgerock.openidconnect.ssoprovider.OpenIdConnectSSOToken" ]
+  }
+}

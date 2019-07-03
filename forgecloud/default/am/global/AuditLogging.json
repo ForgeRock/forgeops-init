@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "&{version}",
+    "entityType" : "AuditLogging",
+    "entityId" : "AuditLogging",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "",
+    "_type" : {
+      "_id" : "audit",
+      "collection" : false,
+      "name" : "Audit Logging"
+    },
+    "auditEnabled" : true,
+    "blacklistFieldFilters" : [ ],
+    "defaults" : {
+      "auditEnabled" : true,
+      "blacklistFieldFilters" : [ ]
+    }
+  }
+}
