@@ -1,6 +1,6 @@
 {
     "driverClass" : "com.mysql.cj.jdbc.Driver",
-    "jdbcUrl" : "jdbc:mysql://&{openidm.repo.host}:&{openidm.repo.port}/&{openidm.repo.databaseName}?allowMultiQueries=true&characterEncoding=utf8&useSSL=false",
+    "jdbcUrl" : "jdbc:mysql://&{openidm.repo.host}:&{openidm.repo.port}/&{openidm.repo.databaseName}?allowMultiQueries=true&characterEncoding=utf8&useSSL=true",
     "databaseName" : "&{openidm.repo.databaseName}",
     "username" : "&{openidm.repo.username}",
     "password" : "&{openidm.repo.password}",
