@@ -18,20 +18,17 @@
       "statelessTokensEnabled" : false
     },
     "advancedOAuth2Config" : {
-      "customLoginUrlTemplate" : null,
       "supportedScopes" : [ "email|Your email address", "openid|", "address|Your postal address", "phone|Your telephone number(s)", "profile|Your personal information", "profile_update|Allowed to update your personal information", "consent_read|Ability to read your consent preferences", "workflow_tasks|Manage tasks assigned to you", "notifications|Manage your notifications", "user_admin|Allowed to make changes to users" ],
       "codeVerifierEnforced" : "false",
       "tokenSigningAlgorithm" : "HS256",
       "authenticationAttributes" : [ "uid" ],
       "defaultScopes" : [ "address", "phone", "openid", "profile", "email" ],
       "scopeImplementationClass" : "org.forgerock.openam.oauth2.OpenAMScopeValidator",
-      "modifiedTimestampAttribute" : null,
       "responseTypeClasses" : [ "code|org.forgerock.oauth2.core.AuthorizationCodeResponseTypeHandler", "id_token|org.forgerock.openidconnect.IdTokenResponseTypeHandler", "device_code|org.forgerock.oauth2.core.TokenResponseTypeHandler", "token|org.forgerock.oauth2.core.TokenResponseTypeHandler" ],
-      "hashSalt" : null,
+      "tlsCertificateBoundAccessTokensEnabled" : true,
       "moduleMessageEnabledInPasswordGrant" : false,
-      "tokenCompressionEnabled" : null,
       "tokenEncryptionEnabled" : false,
-      "createdTimestampAttribute" : null,
+      "grantTypes" : [ "implicit", "urn:ietf:params:oauth:grant-type:saml2-bearer", "refresh_token", "password", "client_credentials", "urn:ietf:params:oauth:grant-type:device_code", "authorization_code", "urn:ietf:params:oauth:grant-type:uma-ticket" ],
       "displayNameAttribute" : "cn",
       "supportedSubjectTypes" : [ "public" ]
     },
@@ -49,14 +46,13 @@
       "supportedRequestParameterEncryptionEnc" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
       "claimsParameterSupported" : false,
       "amrMappings" : { },
-      "requireRequestUriRegistration" : false,
-      "alwaysAddClaimsToToken" : true,
-      "supportedRequestParameterEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "RSA1_5", "A256KW", "dir", "A192KW" ],
+      "alwaysAddClaimsToToken" : false,
+      "supportedUserInfoSigningAlgorithms" : [ "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512" ],
+      "supportedRequestParameterEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "A256KW", "RSA1_5", "dir", "A192KW" ],
       "authorisedOpenIdConnectSSOClients" : [ ],
       "idTokenInfoClientAuthenticationEnabled" : true,
       "supportedRequestParameterSigningAlgorithms" : [ "PS384", "RS384", "ES384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
-      "loaMapping" : { },
-      "jkwsURI" : null
+      "loaMapping" : { }
     },
     "clientDynamicRegistrationConfig" : {
       "dynamicClientRegistrationSoftwareStatementRequired" : false,
@@ -73,15 +69,11 @@
       "supportedRcsRequestEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "RSA1_5", "A256KW", "dir", "A192KW" ],
       "supportedRcsResponseEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
       "supportedRcsRequestEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
-      "remoteConsentServiceId" : null,
-      "savedConsentAttribute" : null,
       "supportedRcsResponseEncryptionAlgorithms" : [ "RSA-OAEP", "RSA-OAEP-256", "A128KW", "A256KW", "RSA1_5", "dir", "A192KW" ]
     },
     "deviceCodeConfig" : {
       "devicePollInterval" : 5,
-      "completionUrl" : null,
-      "deviceCodeLifetime" : 300,
-      "verificationUrl" : null
+      "deviceCodeLifetime" : 300
     },
     "_type" : {
       "_id" : "oauth-oidc",

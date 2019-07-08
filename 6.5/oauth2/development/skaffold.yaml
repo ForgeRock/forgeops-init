@@ -10,8 +10,6 @@ build:
     context: ../idm
   - image: gcr.io/engineering-devops/skaffold/oauth2/end-user-ui
     context: ../end-user-ui
-  - image: gcr.io/engineering-devops/skaffold/oauth2/openam
-    context: ../openam
   tagPolicy:
     sha256: {}
   local:
@@ -62,10 +60,6 @@ deploy:
         helm: {}
     - name: sk-openam
       chartPath: helm/openam
-      values:
-        image: gcr.io/engineering-devops/skaffold/oauth2/openam
-      imageStrategy:
-        helm: {}
       setValues:
         domain: .forgeops.com
     - name: sk-configstore
