@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test" id="definitions" xsi:schemaLocation="              http://www.omg.org/spec/BPMN/20100524/MODEL http://local.openicf.forgerock.org/BPMN20.xsd">
+  <process id="de.dihk.sso.organisation.OrganisationProvisioningWorkflow" name="Organisationprovisioning" isExecutable="true">
+    <endEvent id="end" name="End"></endEvent>
+    <startEvent id="start" name="Start"></startEvent>
+    <scriptTask id="createOrganisation" name="Create Organisation" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+import com.fasterxml.jackson.databind.ObjectMapper
+
+final Logger logger = LoggerFactory.getLogger("organisation.provisioning.create")
+
+logger.info("Create given organisation: {}", organisation)
+
+openidm.create('managed/organisation', null, new ObjectMapper().convertValue(organisation, Map.class))
+
+logger.info("Successfully created organisation: {}", organisation)   </script>
+    </scriptTask>
+    <sequenceFlow id="flow1" sourceRef="start" targetRef="approveOrganisation"></sequenceFlow>
+    <userTask id="approveOrganisation" name="Approve Organisation" activiti:candidateGroups="dihkidm_sachbearbeiter">
+      <extensionElements>
+        <activiti:formProperty id="organisationApproved" name="Approved?" type="boolean" required="true"></activiti:formProperty>
+        <activiti:taskListener event="complete" expression="${execution.setVariable('organisationApproved', organisationApproved)}"></activiti:taskListener>
+      </extensionElements>
+    </userTask>
+    <exclusiveGateway id="exclusivegateway1" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow3" sourceRef="approveOrganisation" targetRef="exclusivegateway1"></sequenceFlow>
+    <sequenceFlow id="approved" name="approved" sourceRef="exclusivegateway1" targetRef="createOrganisationPassword">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${organisationApproved == true}]]></conditionExpression>
+    </sequenceFlow>
+    <exclusiveGateway id="exclusivegateway2" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow6" sourceRef="exclusivegateway2" targetRef="end"></sequenceFlow>
+    <sequenceFlow id="notApproved" name="not approved" sourceRef="exclusivegateway1" targetRef="exclusivegateway2">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${organisationApproved == false}]]></conditionExpression>
+    </sequenceFlow>
+    <serviceTask id="createOrganisationPassword" name="Create Organisation Password" activiti:class="de.dihk.sso.wfl.impl.organisation.OrganisationPasswordCreateService"></serviceTask>
+    <sequenceFlow id="flow7" sourceRef="createOrganisationPassword" targetRef="createOrganisation"></sequenceFlow>
+    <sequenceFlow id="flow8" sourceRef="createOrganisation" targetRef="mailtaskOrgaProv"></sequenceFlow>
+    <serviceTask id="mailtaskOrgaProv" name="Mail Task" activiti:type="mail">
+      <extensionElements>
+        <activiti:field name="html">
+          <activiti:expression><![CDATA[<html>
+                <body>Vielen Dank für Ihre Anfrage zur Registrierung der ${organisation.corporateName}!<br/>
+                  Die Registrierung der ${organisation.corporateName} ist erfolgreich abgeschlossen. Ihr zuständiger IDM Sachbearbeiter generiert für Sie ein Passwort, mit dem Sie die Aktivierung Ihrer<br/>
+                  Organisation vornehmen können. Dieses Passwort wird per Brief an die Geschäftsführung Ihrer Organisation versandt.<br/>
+                  Ident-Nummer: ${organisation.identNumber}<br/>
+                  Kammernummer: ${organisation.ihk}<br/>
+                  Für eventuelle Rückfragen steht Ihnen der zuständige IDM Sachbearbeiter <a href = "mailto:${supportMailadress}">${supportMailadress}</a> zur Verfügung.<br/>
+                  Vielen Dank
+                </body>
+              </html>]]></activiti:expression>
+        </activiti:field>
+        <activiti:field name="to">
+          <activiti:expression><![CDATA[${organisation.applicant.email}]]></activiti:expression>
+        </activiti:field>
+        <activiti:field name="from">
+          <activiti:expression><![CDATA[${supportMailadress}]]></activiti:expression>
+        </activiti:field>
+        <activiti:field name="subject">
+          <activiti:string><![CDATA[Ihre Registrierung bei der IHK]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="charset">
+          <activiti:string><![CDATA[UTF-8]]></activiti:string>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow id="flow9" sourceRef="mailtaskOrgaProv" targetRef="exclusivegateway2"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_de.dihk.sso.organisation.OrganisationProvisioningWorkflow">
+    <bpmndi:BPMNPlane bpmnElement="de.dihk.sso.organisation.OrganisationProvisioningWorkflow" id="BPMNPlane_de.dihk.sso.organisation.OrganisationProvisioningWorkflow">
+      <bpmndi:BPMNShape bpmnElement="end" id="BPMNShape_end">
+        <omgdc:Bounds height="35.0" width="35.0" x="700.0" y="189.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="start" id="BPMNShape_start">
+        <omgdc:Bounds height="35.0" width="35.0" x="90.0" y="189.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="createOrganisation" id="BPMNShape_createOrganisation">
+        <omgdc:Bounds height="55.0" width="105.0" x="490.0" y="98.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="approveOrganisation" id="BPMNShape_approveOrganisation">
+        <omgdc:Bounds height="55.0" width="105.0" x="156.0" y="179.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway1" id="BPMNShape_exclusivegateway1">
+        <omgdc:Bounds height="40.0" width="40.0" x="290.0" y="186.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway2" id="BPMNShape_exclusivegateway2">
+        <omgdc:Bounds height="40.0" width="40.0" x="620.0" y="186.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="createOrganisationPassword" id="BPMNShape_createOrganisationPassword">
+        <omgdc:Bounds height="55.0" width="105.0" x="350.0" y="98.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="mailtaskOrgaProv" id="BPMNShape_mailtaskOrgaProv">
+        <omgdc:Bounds height="55.0" width="105.0" x="660.0" y="98.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="125.0" y="206.0"></omgdi:waypoint>
+        <omgdi:waypoint x="156.0" y="206.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="261.0" y="206.0"></omgdi:waypoint>
+        <omgdi:waypoint x="290.0" y="206.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="approved" id="BPMNEdge_approved">
+        <omgdi:waypoint x="310.0" y="186.0"></omgdi:waypoint>
+        <omgdi:waypoint x="402.0" y="153.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="46.0" x="310.0" y="186.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="660.0" y="206.0"></omgdi:waypoint>
+        <omgdi:waypoint x="700.0" y="206.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="notApproved" id="BPMNEdge_notApproved">
+        <omgdi:waypoint x="330.0" y="206.0"></omgdi:waypoint>
+        <omgdi:waypoint x="620.0" y="206.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="64.0" x="330.0" y="206.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
+        <omgdi:waypoint x="455.0" y="125.0"></omgdi:waypoint>
+        <omgdi:waypoint x="490.0" y="125.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
+        <omgdi:waypoint x="595.0" y="125.0"></omgdi:waypoint>
+        <omgdi:waypoint x="660.0" y="125.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
+        <omgdi:waypoint x="765.0" y="125.0"></omgdi:waypoint>
+        <omgdi:waypoint x="675.0" y="158.0"></omgdi:waypoint>
+        <omgdi:waypoint x="640.0" y="158.0"></omgdi:waypoint>
+        <omgdi:waypoint x="640.0" y="186.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
