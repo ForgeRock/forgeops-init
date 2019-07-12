@@ -1,0 +1,22 @@
+{
+  "data": {
+    "_id": "282521f5-204e-4c05-ab4f-263e0667e128",
+    "asScript": false,
+    "origins": ["https://local.forgeblocks.com:9001"],
+    "isRecoveryCodeAllowed": false,
+    "userVerificationRequirement": "PREFERRED",
+    "timeout": 60,
+    "_type": {
+      "_id": "WebAuthnAuthenticationNode",
+      "name": "WebAuthn Authentication Node",
+      "collection": true
+    }
+  },
+  "metadata": {
+    "realm": "/",
+    "amsterVersion": "&{version}",
+    "entityType": "WebAuthnAuthenticationNode",
+    "entityId": "282521f5-204e-4c05-ab4f-263e0667e128",
+    "pathParams": {}
+  }
+}

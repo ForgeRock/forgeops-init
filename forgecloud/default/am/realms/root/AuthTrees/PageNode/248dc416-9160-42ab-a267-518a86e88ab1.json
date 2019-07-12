@@ -1,16 +1,16 @@
 {
   "data": {
-    "_id": "cd7ea540-f61f-404a-97b3-f6843df0f3ff",
+    "_id": "248dc416-9160-42ab-a267-518a86e88ab1",
     "pageDescription": {},
     "nodes": [
       {
-        "_id": "7d5e7ced-d551-49a8-af53-5146e6c7685a",
-        "nodeType": "OneTimePasswordCollectorDecisionNode",
-        "displayName": "OTP Collector Decision"
+        "_id": "b72a341a-993b-41aa-bcde-416bbe39d622",
+        "nodeType": "WebAuthnRegistrationNode",
+        "displayName": "WebAuthn Registration Node"
       }
     ],
     "pageHeader": {},
-    "stage": "OneTimePasswordSMS",
+    "stage": "DeviceRegistration",
     "_type": {
       "_id": "PageNode",
       "name": "Page Node",
@@ -21,7 +21,7 @@
     "realm": "/",
     "amsterVersion": "&{version}",
     "entityType": "PageNode",
-    "entityId": "cd7ea540-f61f-404a-97b3-f6843df0f3ff",
+    "entityId": "248dc416-9160-42ab-a267-518a86e88ab1",
     "pathParams": {}
   }
 }

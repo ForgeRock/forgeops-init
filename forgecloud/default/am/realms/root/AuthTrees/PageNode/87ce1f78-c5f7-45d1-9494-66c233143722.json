@@ -1,16 +1,16 @@
 {
   "data": {
-    "_id": "cd7ea540-f61f-404a-97b3-f6843df0f3ff",
+    "_id": "87ce1f78-c5f7-45d1-9494-66c233143722",
     "pageDescription": {},
     "nodes": [
       {
-        "_id": "7d5e7ced-d551-49a8-af53-5146e6c7685a",
-        "nodeType": "OneTimePasswordCollectorDecisionNode",
-        "displayName": "OTP Collector Decision"
+        "_id": "0013e051-d6e1-4685-8172-bb1af2541711",
+        "nodeType": "ChoiceCollectorNode",
+        "displayName": "SecondFactorChoice"
       }
     ],
     "pageHeader": {},
-    "stage": "OneTimePasswordSMS",
+    "stage": "SecondFactorChoice",
     "_type": {
       "_id": "PageNode",
       "name": "Page Node",
@@ -21,7 +21,7 @@
     "realm": "/",
     "amsterVersion": "&{version}",
     "entityType": "PageNode",
-    "entityId": "cd7ea540-f61f-404a-97b3-f6843df0f3ff",
+    "entityId": "87ce1f78-c5f7-45d1-9494-66c233143722",
     "pathParams": {}
   }
 }

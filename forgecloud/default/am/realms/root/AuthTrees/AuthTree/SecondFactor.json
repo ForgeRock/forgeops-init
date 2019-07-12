@@ -2,75 +2,107 @@
   "data": {
     "_id": "SecondFactor",
     "nodes": {
-      "1620cb9e-7d51-4d62-bffe-dcbfaa3fd575": {
+      "14bf4d09-130a-430b-aff9-4bee28640480": {
         "displayName": "Data Store Decision",
         "nodeType": "DataStoreDecisionNode",
         "connections": {
           "false": "e301438c-0bd0-429c-ab0c-66126501069a",
-          "true": "b45bdee2-4cd5-47d8-a5ad-f47fed5eaedb"
-        }
+          "true": "63f00174-2430-47c0-ab15-1dc9473bbe34"
+        },
+        "x": 417.328125,
+        "y": 112
       },
-      "d4aea03e-030e-4ee5-a0f3-54a2a2ed865f": {
+      "66f44b11-b08f-419d-ad0f-1776edf2fc36": {
         "displayName": "HOTP Generator",
         "nodeType": "OneTimePasswordGeneratorNode",
         "connections": {
-          "outcome": "0ec28689-edaa-4d5e-b9a4-15765c6ecd4b"
-        }
+          "outcome": "5376e8e6-044a-4eb9-ab3b-76fddc507a50"
+        },
+        "x": 879.046875,
+        "y": 101
       },
-      "4e894576-6605-4b96-b5c9-fceda1c7c461": {
+      "e27301eb-8258-4573-8b8f-e2c6c67de841": {
         "displayName": "HOTP Generator",
         "nodeType": "OneTimePasswordGeneratorNode",
         "connections": {
-          "outcome": "27687c7e-71d7-44a1-8721-5631593cc7d4"
-        }
+          "outcome": "72c4fb7e-1ec1-4093-a75b-e6db426bfdae"
+        },
+        "x": 879.046875,
+        "y": 168
       },
-      "27687c7e-71d7-44a1-8721-5631593cc7d4": {
-        "displayName": "OTP Email Sender",
-        "nodeType": "OneTimePasswordSmtpSenderNode",
-        "connections": {
-          "outcome": "3e262811-82b0-4cc8-80d0-6f1ea2d04641"
-        }
-      },
-      "c67ce6e6-d7d8-4b2d-958b-f13e30689c7a": {
+      "ed54e0ca-6f08-4cd0-bdc6-71609dcd6d3b": {
         "displayName": "UsernamePassword",
         "nodeType": "PageNode",
         "connections": {
-          "outcome": "1620cb9e-7d51-4d62-bffe-dcbfaa3fd575"
-        }
+          "outcome": "14bf4d09-130a-430b-aff9-4bee28640480"
+        },
+        "x": 152,
+        "y": 119
       },
-      "b45bdee2-4cd5-47d8-a5ad-f47fed5eaedb": {
-        "displayName": "SecondFactorChoice",
-        "nodeType": "PageNode",
-        "connections": {
-          "SMS": "d4aea03e-030e-4ee5-a0f3-54a2a2ed865f",
-          "Email": "4e894576-6605-4b96-b5c9-fceda1c7c461"
-        }
-      },
-      "3e262811-82b0-4cc8-80d0-6f1ea2d04641": {
-        "displayName": "OneTimePasswordEmail",
-        "nodeType": "PageNode",
-        "connections": {
-          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
-          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
-        }
-      },
-      "9924a475-77d6-489c-a63d-e827bd7af697": {
-        "displayName": "OneTimePasswordSMS",
-        "nodeType": "PageNode",
-        "connections": {
-          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
-          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
-        }
-      },
-      "0ec28689-edaa-4d5e-b9a4-15765c6ecd4b": {
+      "72c4fb7e-1ec1-4093-a75b-e6db426bfdae": {
         "displayName": "SMS with Twilio",
         "nodeType": "ScriptedDecisionNode",
         "connections": {
-          "outcome": "9924a475-77d6-489c-a63d-e827bd7af697"
-        }
+          "outcome": "cd7ea540-f61f-404a-97b3-f6843df0f3ff"
+        },
+        "x": 1056,
+        "y": 168
+      },
+      "5376e8e6-044a-4eb9-ab3b-76fddc507a50": {
+        "displayName": "Email with Sendgrid",
+        "nodeType": "ScriptedDecisionNode",
+        "connections": {
+          "outcome": "084e5b80-ba5c-4e63-b3ab-0dafaeb397c3"
+        },
+        "x": 1056,
+        "y": 101
+      },
+      "63f00174-2430-47c0-ab15-1dc9473bbe34": {
+        "displayName": "SecondFactorChoice",
+        "nodeType": "PageNode",
+        "connections": {
+          "SMS": "e27301eb-8258-4573-8b8f-e2c6c67de841",
+          "Email": "66f44b11-b08f-419d-ad0f-1776edf2fc36"
+        },
+        "x": 614,
+        "y": 119
+      },
+      "084e5b80-ba5c-4e63-b3ab-0dafaeb397c3": {
+        "displayName": "OneTimePassword Email",
+        "nodeType": "PageNode",
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "x": 1238,
+        "y": 25
+      },
+      "cd7ea540-f61f-404a-97b3-f6843df0f3ff": {
+        "displayName": "OneTimePassword SMS",
+        "nodeType": "PageNode",
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "x": 1238,
+        "y": 168
       }
     },
-    "entryNodeId": "c67ce6e6-d7d8-4b2d-958b-f13e30689c7a"
+    "staticNodes": {
+      "startNode": {
+        "x": 50,
+        "y": 134.5
+      },
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 1503.5,
+        "y": 168
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 1503.5,
+        "y": 101
+      }
+    },
+    "entryNodeId": "ed54e0ca-6f08-4cd0-bdc6-71609dcd6d3b"
   },
   "metadata": {
     "realm": "/",

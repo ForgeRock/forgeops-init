@@ -2,105 +2,153 @@
   "data": {
     "_id": "SecondFactorWebAuthn",
     "nodes": {
-      "11e6c792-c956-4bae-a2fa-3601c8ac1d44": {
-        "displayName": "Data Store Decision",
-        "nodeType": "DataStoreDecisionNode",
-        "connections": {
-          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
-          "true": "2a310955-2a4c-442e-a18a-4d055d0fb835"
-        }
-      },
-      "fcae334f-9edb-4425-8f36-90e1352fa11f": {
-        "displayName": "HOTP Generator",
-        "nodeType": "OneTimePasswordGeneratorNode",
-        "connections": {
-          "outcome": "800dbc98-4e03-49fc-aa49-a10c6928fdcd"
-        }
-      },
-      "0f389639-3789-43e7-9087-38a2b327e46b": {
-        "displayName": "HOTP Generator",
-        "nodeType": "OneTimePasswordGeneratorNode",
-        "connections": {
-          "outcome": "64e8e5bf-24c7-40b7-a4ee-81921772ccd9"
-        }
-      },
-      "64e8e5bf-24c7-40b7-a4ee-81921772ccd9": {
-        "displayName": "OTP Email Sender",
-        "nodeType": "OneTimePasswordSmtpSenderNode",
-        "connections": {
-          "outcome": "cece27ff-c891-439b-9f6c-ee0a2437ada8"
-        }
-      },
-      "800dbc98-4e03-49fc-aa49-a10c6928fdcd": {
-        "displayName": "SMS with Twilio",
-        "nodeType": "ScriptedDecisionNode",
-        "connections": {
-          "outcome": "b69a263e-bc10-44c6-b8bd-582ce620ab3b"
-        }
-      },
-      "ab6af75d-83c3-4aef-9115-59394d62cb53": {
+      "94eed4dc-7227-4d9c-ae01-497fd5309df3": {
         "displayName": "UsernamePassword",
         "nodeType": "PageNode",
         "connections": {
-          "outcome": "11e6c792-c956-4bae-a2fa-3601c8ac1d44"
-        }
+          "outcome": "baf6c91d-962b-4e2d-907d-81dd2318f66b"
+        },
+        "x": 152,
+        "y": 119
       },
-      "2a310955-2a4c-442e-a18a-4d055d0fb835": {
-        "displayName": "SecondFactorChoice",
+      "56525655-66e6-4630-8579-4b5191e04764": {
+        "displayName": "DeviceRegistrationChoice",
         "nodeType": "PageNode",
         "connections": {
-          "SMS": "fcae334f-9edb-4425-8f36-90e1352fa11f",
-          "Email": "0f389639-3789-43e7-9087-38a2b327e46b",
-          "Device": "b2f3c121-b4c5-4df8-afe5-7fe476ad6549"
-        }
+          "No": "ccb66459-13c8-4e92-b85f-b3f64186e8db",
+          "Yes": "248dc416-9160-42ab-a267-518a86e88ab1"
+        },
+        "x": 1144,
+        "y": 119
       },
-      "b69a263e-bc10-44c6-b8bd-582ce620ab3b": {
+      "64b22c66-e543-458b-8776-41383679ec99": {
         "displayName": "OneTimePasswordSMS",
         "nodeType": "PageNode",
         "connections": {
           "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
           "false": "e301438c-0bd0-429c-ab0c-66126501069a"
-        }
+        },
+        "x": 2048,
+        "y": 168
       },
-      "cece27ff-c891-439b-9f6c-ee0a2437ada8": {
+      "87ce1f78-c5f7-45d1-9494-66c233143722": {
+        "displayName": "SecondFactorChoice",
+        "nodeType": "PageNode",
+        "connections": {
+          "Email": "e3148185-d2d7-4c2e-b1a2-fec7a5a00829",
+          "SMS": "31806f27-b21f-4b09-adb7-679b8c1df91a",
+          "Device": "d8b629b1-0b9c-43d1-9862-2f0b5edf1164"
+        },
+        "x": 614,
+        "y": 119
+      },
+      "baf6c91d-962b-4e2d-907d-81dd2318f66b": {
+        "displayName": "Data Store Decision",
+        "nodeType": "DataStoreDecisionNode",
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "87ce1f78-c5f7-45d1-9494-66c233143722"
+        },
+        "x": 417.328125,
+        "y": 112
+      },
+      "e3148185-d2d7-4c2e-b1a2-fec7a5a00829": {
+        "displayName": "HOTP Generator",
+        "nodeType": "OneTimePasswordGeneratorNode",
+        "connections": {
+          "outcome": "e710e72b-b7d2-406f-b515-b44f2ee5d7a2"
+        },
+        "x": 1674.796875,
+        "y": 101
+      },
+      "31806f27-b21f-4b09-adb7-679b8c1df91a": {
+        "displayName": "HOTP Generator",
+        "nodeType": "OneTimePasswordGeneratorNode",
+        "connections": {
+          "outcome": "9fe42387-728b-4869-b441-92cff5578ae2"
+        },
+        "x": 1674.796875,
+        "y": 168
+      },
+      "e710e72b-b7d2-406f-b515-b44f2ee5d7a2": {
+        "displayName": "Email with Sendgrid",
+        "nodeType": "ScriptedDecisionNode",
+        "connections": {
+          "outcome": "c556474d-b81d-46dd-b780-6db7a6451250"
+        },
+        "x": 1851.28125,
+        "y": 101
+      },
+      "9fe42387-728b-4869-b441-92cff5578ae2": {
+        "displayName": "SMS with Twilio",
+        "nodeType": "ScriptedDecisionNode",
+        "connections": {
+          "outcome": "64b22c66-e543-458b-8776-41383679ec99"
+        },
+        "x": 1851.28125,
+        "y": 168
+      },
+      "c556474d-b81d-46dd-b780-6db7a6451250": {
         "displayName": "OneTimePasswordEmail",
         "nodeType": "PageNode",
         "connections": {
           "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
           "false": "e301438c-0bd0-429c-ab0c-66126501069a"
-        }
+        },
+        "x": 2048,
+        "y": 25
       },
-      "b2f3c121-b4c5-4df8-afe5-7fe476ad6549": {
-        "displayName": "DeviceAuthentication",
-        "nodeType": "PageNode",
-        "connections": {
-          "unsupported": "e301438c-0bd0-429c-ab0c-66126501069a",
-          "success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
-          "failure": "e301438c-0bd0-429c-ab0c-66126501069a",
-          "error": "e301438c-0bd0-429c-ab0c-66126501069a",
-          "noDevice": "1e6b7e58-a223-4fa6-a24e-9f192df1840a"
-        }
-      },
-      "1e6b7e58-a223-4fa6-a24e-9f192df1840a": {
-        "displayName": "DeviceRegistrationChoice",
-        "nodeType": "PageNode",
-        "connections": {
-          "No": "e301438c-0bd0-429c-ab0c-66126501069a",
-          "Yes": "ed2f0afa-1296-4928-9e01-c23553955054"
-        }
-      },
-      "ed2f0afa-1296-4928-9e01-c23553955054": {
+      "248dc416-9160-42ab-a267-518a86e88ab1": {
         "displayName": "DeviceRegistration",
         "nodeType": "PageNode",
         "connections": {
-          "unsupported": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "unsupported": "ccb66459-13c8-4e92-b85f-b3f64186e8db",
           "success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
           "failure": "e301438c-0bd0-429c-ab0c-66126501069a",
-          "error": "e301438c-0bd0-429c-ab0c-66126501069a"
-        }
+          "error": "ccb66459-13c8-4e92-b85f-b3f64186e8db"
+        },
+        "x": 1381,
+        "y": 248
+      },
+      "ccb66459-13c8-4e92-b85f-b3f64186e8db": {
+        "displayName": "SecondFactorChoice",
+        "nodeType": "PageNode",
+        "connections": {
+          "Email": "e3148185-d2d7-4c2e-b1a2-fec7a5a00829",
+          "SMS": "31806f27-b21f-4b09-adb7-679b8c1df91a"
+        },
+        "x": 1410,
+        "y": 31
+      },
+      "d8b629b1-0b9c-43d1-9862-2f0b5edf1164": {
+        "displayName": "DeviceAuthentication",
+        "nodeType": "PageNode",
+        "connections": {
+          "unsupported": "ccb66459-13c8-4e92-b85f-b3f64186e8db",
+          "noDevice": "56525655-66e6-4630-8579-4b5191e04764",
+          "failure": "ccb66459-13c8-4e92-b85f-b3f64186e8db",
+          "error": "ccb66459-13c8-4e92-b85f-b3f64186e8db",
+          "success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "x": 879,
+        "y": 71
       }
     },
-    "entryNodeId": "ab6af75d-83c3-4aef-9115-59394d62cb53"
+    "staticNodes": {
+      "startNode": {
+        "x": 50,
+        "y": 134.5
+      },
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 2313.25,
+        "y": 168
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 2313.25,
+        "y": 101
+      }
+    },
+    "entryNodeId": "94eed4dc-7227-4d9c-ae01-497fd5309df3"
   },
   "metadata": {
     "realm": "/",
