@@ -5,7 +5,7 @@
         "connectorName" : "org.identityconnectors.ldap.LdapConnector"
     },
     "configurationProperties" : {
-        "host" : "openam-userstore",
+        "host" : "userstore",
         "port" : "1389",
         "ssl" : false,
         "principal" : "cn=Directory Manager",

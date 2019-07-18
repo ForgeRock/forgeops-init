@@ -5,6 +5,58 @@
 # or with one of its affiliates. All use shall be exclusively subject
 # to such license between the licensee and ForgeRock AS.
 #
+
+
+dn: dc=org
+dc: org
+objectClass: domain
+objectClass: top
+
+dn: dc=forgerock,dc=org
+dc: forgerock
+objectClass: domain
+objectClass: top
+
+dn: dc=openam,dc=forgerock,dc=org
+dc: openam
+objectClass: domain
+objectClass: top
+
+
+
+dn: ou=groups,dc=openam,dc=forgerock,dc=org
+ou: groups
+objectClass: organizationalUnit
+objectClass: top
+
+
+
+dn: cn=dihkidm_sachbearbeiter,ou=groups,dc=openam,dc=forgerock,dc=org
+cn: dihkidm_sachbearbeiter
+objectClass: groupOfUniqueNames
+objectClass: top
+
+dn: cn=dihkidm_ihkservicemitarbeiter,ou=groups,dc=openam,dc=forgerock,dc=org
+cn: dihkidm_ihkservicemitarbeiter
+objectClass: groupOfUniqueNames
+objectClass: top
+
+dn: cn=dihkidm_ihkadministrator,ou=groups,dc=openam,dc=forgerock,dc=org
+cn: dihkidm_ihkadministrator
+objectClass: groupOfUniqueNames
+objectClass: top
+
+dn: cn=dihkidm_datenschutzbeauftragter,ou=groups,dc=openam,dc=forgerock,dc=org
+cn: dihkidm_datenschutzbeauftragter
+objectClass: groupOfUniqueNames
+objectClass: top
+
+dn: cn=dihkidm_ihkfachdienst,ou=groups,dc=openam,dc=forgerock,dc=org
+cn: dihkidm_ihkfachdienst
+objectClass: groupOfUniqueNames
+objectClass: top
+
+
 dn: ou=identities
 objectClass: domain
 objectClass: top
@@ -82,5 +134,10 @@ objectClass: top
 
 dn: cn=Chat Users,ou=Groups,ou=identities
 cn: Chat Users
+objectClass: groupOfUniqueNames
+objectClass: top
+
+dn: cn=DIHK_SSO_EXAMPLE,ou=groups,dc=openam,dc=forgerock,dc=org
+cn: DIHK_SSO_EXAMPLE
 objectClass: groupOfUniqueNames
 objectClass: top
