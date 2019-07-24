@@ -1,2 +1,2 @@
-FROM gcr.io/forgerock-io/ds/docker-build:7.0.0-150adc4
+FROM gcr.io/forgerock-io/ds:7.0.0-98c91bd
 COPY schema/ /opt/opendj/db/schema/
