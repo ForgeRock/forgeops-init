@@ -271,7 +271,7 @@
             },
             "onRetrieve": {
               "type": "text/javascript",
-              "source": "object.accountStatus = (object.isDisabled == true) ? 'Deactivated' : (object.lockTime ? 'Locked' : 'Active')"
+              "source": "object.accountStatus = (object.isDisabled == true || object.isDisabled == 'true') ? 'Deactivated' : (object.lockTime ? 'Locked' : 'Active')"
             },
             "onStore": {
               "type": "text/javascript",
