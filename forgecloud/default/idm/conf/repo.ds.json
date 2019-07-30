@@ -212,8 +212,9 @@
             "managed/user": {
                 "dnTemplate": "ou=people,ou=identities",
                 "namingStrategy": {
-                    "type": "clientDnNaming",
-                    "dnAttribute": "fr-idm-uuid"
+                    "type": "serverNaming",
+                    "dnAttribute": "uid",
+                    "idAttribute": "entryUUID"
                 },
                 "nativeId" : true,
                 "objectClasses": [
@@ -226,10 +227,10 @@
                     "fr-idm-managed-user-explicit"
                 ],
                 "properties": {
-		    "_id": {
-                        "primaryKey": true,
+                    "_id": {
                         "type": "simple",
-                        "ldapAttribute": "fr-idm-uuid"
+                        "ldapAttribute": "entryUUID",
+                        "writability": "createOnly"
                     },
                     "userName": {
                         "primaryKey": true,
