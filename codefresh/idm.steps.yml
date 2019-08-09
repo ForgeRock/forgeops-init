@@ -1,9 +1,4 @@
 version: "1"
-stages:
-  - "clone"
-  - "build"
-  - "integration"
-  - "push"
 steps:
   main_clone:
     title: 'Cloning main repository...'
@@ -18,32 +13,12 @@ steps:
     image_name: "gcr.io/fr-saas-registry/idm"
     tag: "${{CF_BRANCH_TAG_NORMALIZED}}"
     dockerfile: "Dockerfile"
-    stage: "build"
-  push_dev:
-    title: "Pushing IDM image to gcr dev"
+  push:
+    title: "Pushing to Docker Registry"
     type: "push"
-    image_name: "fr-saas-registry/idm/dev"
+    image_name: "fr-saas-registry/idm"
     registry: "gcr"
     candidate: "${{build}}"
     tags:
       - "${{CF_BRANCH_TAG_NORMALIZED}}"
       - "${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}"
-    stage: "push"
-    when:
-      branch:
-        ignore:
-          - master
-  push_staging:
-    title: "Pushing IDM image to gcr staging"
-    type: "push"
-    image_name: "fr-saas-registry/idm/staging"
-    registry: "gcr"
-    candidate: "${{build}}"
-    tags:
-      - "${{CF_SHORT_REVISION}}"
-      - "latest"
-    stage: "push"
-    when:
-      branch:
-        only:
-          - master
