@@ -86,29 +86,32 @@ println "done"
 println
 print "Writing updates to Identity Stack Docker files... "
 
-function update_base_image_in_dockerfile() {
-    DOCKER_FILE=$1
-    DOCKER_REPO=$2
-    DOCKER_TAG=$3
+# Updates base image reference to "upgrade" to a later release.
+# Also adds labels to Docker image so that it's easy to trace the lineage of any Docker image created from this file.
+function update_dockerfile() {
+    PRODUCT=$1
+    DOCKER_FILE=$2
+    DOCKER_REPO=$3
+    DOCKER_TAG=$4
 
     FROM_LINE=$(grep -nr "FROM " ${DOCKER_FILE} | cut -d : -f 2)
     LENGTH=$(wc -l < ${DOCKER_FILE})
 
-    rm -f /tmp/tmp.Dockerfile
-    # Copy the lines before the Dockerfile FROM line to a temp file
-    sed -n "1,$(( FROM_LINE - 1 ))p" ${DOCKER_FILE} >> /tmp/tmp.Dockerfile
-    # Write a new FROM line to the temp file
-    echo "FROM ${DOCKER_REPO}:${DOCKER_TAG}" >> /tmp/tmp.Dockerfile
-    # Copy the lines after the Dockerfile FROM line to the temp file
-    sed -n "$(( FROM_LINE + 1 )),${LENGTH}p" ${DOCKER_FILE} >> /tmp/tmp.Dockerfile
-    # Replace the current Dockerfile with the temp file
+    TEMP_DOCKER_FILE=/tmp/tmp.Dockerfile
+    cp ${DOCKER_FILE} ${TEMP_DOCKER_FILE}
+    # NB. using ; rather than / as the sed delimiter character as the Docker image repo name contains /
+    sed -i.bak -E "s;FROM .*;FROM ${DOCKER_REPO}:${DOCKER_TAG};" ${TEMP_DOCKER_FILE}
+    # NB. ending the first label line with backslash so that we define both labels in a single Docker layer
+    #     we need to double-escape the backslash though (once for bash, and once for sed) so end up with \\\\
+    sed -i.bak -E "s/LABEL FORGEOPS_COMMIT_SHA=.*/LABEL FORGEOPS_COMMIT_SHA=${FORGEOPS_COMMIT_SHA} \\\\/" ${TEMP_DOCKER_FILE}
+    sed -i.bak -E "s/    ${PRODUCT}_DOCKER_TAG=.*/    ${PRODUCT}_DOCKER_TAG=.${DOCKER_TAG}/" ${TEMP_DOCKER_FILE}
     mv /tmp/tmp.Dockerfile ${DOCKER_FILE}
 }
 
-update_base_image_in_dockerfile ${GIT_REPO_ROOT}/forgecloud/default/am/am.Dockerfile ${AM_DOCKER_REPO} ${AM_DOCKER_TAG}
-update_base_image_in_dockerfile ${GIT_REPO_ROOT}/forgecloud/default/am/amster.Dockerfile ${AMSTER_DOCKER_REPO} ${AMSTER_DOCKER_TAG}
-update_base_image_in_dockerfile ${GIT_REPO_ROOT}/forgecloud/default/ds/Dockerfile ${DS_DOCKER_REPO} ${DS_DOCKER_TAG}
-update_base_image_in_dockerfile ${GIT_REPO_ROOT}/forgecloud/default/idm/Dockerfile ${IDM_DOCKER_REPO} ${IDM_DOCKER_TAG}
+update_dockerfile "AM" ${GIT_REPO_ROOT}/forgecloud/default/am/am.Dockerfile ${AM_DOCKER_REPO} ${AM_DOCKER_TAG}
+update_dockerfile "AMSTER" ${GIT_REPO_ROOT}/forgecloud/default/am/amster.Dockerfile ${AMSTER_DOCKER_REPO} ${AMSTER_DOCKER_TAG}
+update_dockerfile "DS" ${GIT_REPO_ROOT}/forgecloud/default/ds/Dockerfile ${DS_DOCKER_REPO} ${DS_DOCKER_TAG}
+update_dockerfile "IDM" ${GIT_REPO_ROOT}/forgecloud/default/idm/Dockerfile ${IDM_DOCKER_REPO} ${IDM_DOCKER_TAG}
 
 println "done"
 
