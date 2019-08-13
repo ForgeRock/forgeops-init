@@ -94,6 +94,9 @@ function update_dockerfile() {
     DOCKER_REPO=$3
     DOCKER_TAG=$4
 
+    FORGEOPS_COMMIT_SHA_LABEL=com.forgerock.forgeops.hash
+    PRODUCT_DOCKER_TAG_LABEL=com.forgerock.${PRODUCT}.tag
+
     FROM_LINE=$(grep -nr "FROM " ${DOCKER_FILE} | cut -d : -f 2)
     LENGTH=$(wc -l < ${DOCKER_FILE})
 
@@ -103,15 +106,15 @@ function update_dockerfile() {
     sed -i.bak -E "s;FROM .*;FROM ${DOCKER_REPO}:${DOCKER_TAG};" ${TEMP_DOCKER_FILE}
     # NB. ending the first label line with backslash so that we define both labels in a single Docker layer
     #     we need to double-escape the backslash though (once for bash, and once for sed) so end up with \\\\
-    sed -i.bak -E "s/LABEL FORGEOPS_COMMIT_SHA=.*/LABEL FORGEOPS_COMMIT_SHA=${FORGEOPS_COMMIT_SHA} \\\\/" ${TEMP_DOCKER_FILE}
-    sed -i.bak -E "s/    ${PRODUCT}_DOCKER_TAG=.*/    ${PRODUCT}_DOCKER_TAG=.${DOCKER_TAG}/" ${TEMP_DOCKER_FILE}
+    sed -i.bak -E "s/LABEL ${FORGEOPS_COMMIT_SHA_LABEL}=.*/LABEL ${FORGEOPS_COMMIT_SHA_LABEL}=${FORGEOPS_COMMIT_SHA} \\\\/" ${TEMP_DOCKER_FILE}
+    sed -i.bak -E "s/    ${PRODUCT_DOCKER_TAG_LABEL}=.*/    ${PRODUCT_DOCKER_TAG_LABEL}=.${DOCKER_TAG}/" ${TEMP_DOCKER_FILE}
     mv /tmp/tmp.Dockerfile ${DOCKER_FILE}
 }
 
-update_dockerfile "AM" ${GIT_REPO_ROOT}/forgecloud/default/am/am.Dockerfile ${AM_DOCKER_REPO} ${AM_DOCKER_TAG}
-update_dockerfile "AMSTER" ${GIT_REPO_ROOT}/forgecloud/default/am/amster.Dockerfile ${AMSTER_DOCKER_REPO} ${AMSTER_DOCKER_TAG}
-update_dockerfile "DS" ${GIT_REPO_ROOT}/forgecloud/default/ds/Dockerfile ${DS_DOCKER_REPO} ${DS_DOCKER_TAG}
-update_dockerfile "IDM" ${GIT_REPO_ROOT}/forgecloud/default/idm/Dockerfile ${IDM_DOCKER_REPO} ${IDM_DOCKER_TAG}
+update_dockerfile "am" ${GIT_REPO_ROOT}/forgecloud/default/am/am.Dockerfile ${AM_DOCKER_REPO} ${AM_DOCKER_TAG}
+update_dockerfile "amster" ${GIT_REPO_ROOT}/forgecloud/default/am/amster.Dockerfile ${AMSTER_DOCKER_REPO} ${AMSTER_DOCKER_TAG}
+update_dockerfile "ds" ${GIT_REPO_ROOT}/forgecloud/default/ds/Dockerfile ${DS_DOCKER_REPO} ${DS_DOCKER_TAG}
+update_dockerfile "idm" ${GIT_REPO_ROOT}/forgecloud/default/idm/Dockerfile ${IDM_DOCKER_REPO} ${IDM_DOCKER_TAG}
 
 println "done"
 
