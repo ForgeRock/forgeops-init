@@ -48,13 +48,7 @@ var httpAccessConfig =
         },
         {
            "pattern"    : "identityProviders",
-           "roles"      : "internal/role/openidm-authorized",
-           "methods"    : "action",
-           "actions"    : "normalizeProfile"
-        },
-        {
-           "pattern"    : "identityProviders",
-           "roles"      : "internal/role/openidm-authorized",
+           "roles"      : "openidm-authorized",
            "methods"    : "read",
            "actions"    : "*"
         },
@@ -79,25 +73,7 @@ var httpAccessConfig =
         },
         {
             "pattern"    : "config/ui/dashboard",
-            "roles"      : "internal/role/openidm-authorized",
-            "methods"    : "read",
-            "actions"    : "*"
-        },
-        {
-            "pattern"    : "info/features",
-            "roles"      : "*",
-            "methods"    : "query",
-            "actions"    : "*"
-        },
-        {
-            "pattern"    : "privilege",
-            "roles"      : "*",
-            "methods"    : "action",
-            "actions"    : "listPrivileges"
-        },
-        {
-            "pattern"    : "privilege/*",
-            "roles"      : "*",
+            "roles"      : "openidm-authorized",
             "methods"    : "read",
             "actions"    : "*"
         },
@@ -181,7 +157,7 @@ var httpAccessConfig =
 
         {
            "pattern"    : "selfservice/kba",
-           "roles"      : "internal/role/openidm-authorized",
+           "roles"      : "openidm-authorized",
            "methods"    : "read",
            "actions"    : "*",
            "customAuthz" : "checkIfUIIsEnabled('kbaEnabled')"
@@ -190,7 +166,7 @@ var httpAccessConfig =
         // rules governing requests originating from forgerock-selfservice
         {
             "pattern"   : "managed/user",
-            "roles"     : "internal/role/openidm-reg",
+            "roles"     : "openidm-reg",
             "methods"   : "create",
             "actions"   : "*",
             "customAuthz" : "checkIfUIIsEnabled('selfRegistration') && isSelfServiceRequest() && onlyEditableManagedObjectProperties('user', [])"
@@ -227,7 +203,7 @@ var httpAccessConfig =
         // Schema service that provides sanitized schema data needed to support the UI
         {
             "pattern"    : "schema/*",
-            "roles"      : "internal/role/openidm-authorized,internal/role/openidm-authenticated",
+            "roles"      : "openidm-authorized,openidm-authenticated",
             "methods"    : "read",
             "actions"    : "*"
         },
@@ -235,7 +211,7 @@ var httpAccessConfig =
         // Consent service that provides end-user functions related to Privacy & Consent
         {
             "pattern"    : "consent",
-            "roles"      : "internal/role/openidm-authorized",
+            "roles"      : "openidm-authorized",
             "methods"    : "action",
             "actions"    : "*"
         },
@@ -243,7 +219,7 @@ var httpAccessConfig =
         // openidm-admin can request nearly anything (except query expressions on repo endpoints)
         {
             "pattern"   : "*",
-            "roles"     : "internal/role/openidm-admin",
+            "roles"     : "openidm-admin",
             "methods"   : "*", // default to all methods allowed
             "actions"   : "*", // default to all actions allowed
             "customAuthz" : "disallowQueryExpression()",
@@ -252,7 +228,7 @@ var httpAccessConfig =
         // additional rules for openidm-admin that selectively enable certain parts of system/
         {
             "pattern"   : "system/*",
-            "roles"     : "internal/role/openidm-admin",
+            "roles"     : "openidm-admin",
             "methods"   : "create,read,update,delete,patch,query", // restrictions on 'action'
             "actions"   : "",
             "customAuthz" : "disallowQueryExpression()"
@@ -260,28 +236,28 @@ var httpAccessConfig =
         // Allow access to custom scripted endpoints
         {
             "pattern"   : "system/*",
-            "roles"     : "internal/role/openidm-admin",
+            "roles"     : "openidm-admin",
             "methods"   : "script",
             "actions"   : "*"
         },
         // Note that these actions are available directly on system as well
         {
             "pattern"   : "system/*",
-            "roles"     : "internal/role/openidm-admin",
+            "roles"     : "openidm-admin",
             "methods"   : "action",
             "actions"   : "test,testConfig,createconfiguration,liveSync,authenticate"
         },
         // Disallow command action on repo
         {
             "pattern"   : "repo",
-            "roles"     : "internal/role/openidm-admin",
+            "roles"     : "openidm-admin",
             "methods"   : "*", // default to all methods allowed
             "actions"   : "*", // default to all actions allowed
             "customAuthz" : "disallowCommandAction()"
         },
         {
             "pattern"   : "repo/*",
-            "roles"     : "internal/role/openidm-admin",
+            "roles"     : "openidm-admin",
             "methods"   : "*", // default to all methods allowed
             "actions"   : "*", // default to all actions allowed
             "customAuthz" : "disallowCommandAction()"
@@ -289,7 +265,7 @@ var httpAccessConfig =
         //allow the ability to delete links for a specific mapping
         {
             "pattern"   : "repo/link",
-            "roles"     : "internal/role/openidm-admin",
+            "roles"     : "openidm-admin",
             "methods"   : "action",
             "actions"   : "command",
             "customAuthz" : "request.additionalParameters.commandId === 'delete-mapping-links'"
@@ -298,19 +274,19 @@ var httpAccessConfig =
         // Additional checks for authenticated users
         {
             "pattern"   : "policy/*",
-            "roles"     : "internal/role/openidm-authorized", // openidm-authorized is logged-in users
+            "roles"     : "openidm-authorized", // openidm-authorized is logged-in users
             "methods"   : "read,action",
             "actions"   : "*"
         },
         {
             "pattern"   : "config/ui/*",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "read",
             "actions"   : "*"
         },
         {
             "pattern"   : "authentication",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "action",
             "actions"   : "reauthenticate"
         },
@@ -321,87 +297,78 @@ var httpAccessConfig =
 
         {
             "pattern"   : "*",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "read,action,delete",
             "actions"   : "bind,unbind",
             "customAuthz" : "ownDataOnly()"
         },
         {
             "pattern"   : "*",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "update,patch,action",
             "actions"   : "patch",
             "customAuthz" : "ownDataOnly() && onlyEditableManagedObjectProperties('user', []) && reauthIfProtectedAttributeChange()"
         },
         {
             "pattern"   : "selfservice/user/*",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "patch,action",
             "actions"   : "patch",
             "customAuthz" : "(request.resourcePath === 'selfservice/user/' + context.security.authorization.id) && onlyEditableManagedObjectProperties('user', [])"
         },
 
-        // enforcement of which notifications an authorized user can read and delete
+        // enforcement of which notifications you can read and delete is done within the endpoint
         {
-            "pattern"   : "notification/*",
-            "roles"     : "internal/role/openidm-authorized",
+            "pattern"   : "endpoint/usernotifications",
+            "roles"     : "openidm-authorized",
             "methods"   : "read",
-            "actions"   : "",
-            "customAuthz" : "openidm.read(request.resourcePath, null, ['target']).target._ref === (context.security.authorization.component + '/' + context.security.authorization.id)"
+            "actions"   : "*"
         },
         {
-            "pattern"   : "notification",
-            "roles"     : "internal/role/openidm-authorized",
-            "methods"   : "action",
-            "actions"   : "deleteNotificationsForTarget",
-            "customAuthz" : "request.additionalParameters.target === (context.security.authorization.component + '/' + context.security.authorization.id)"
-        },
-        {
-            "pattern"   : "notification/*",
-            "roles"     : "internal/role/openidm-authorized",
+            "pattern"   : "endpoint/usernotifications/*",
+            "roles"     : "openidm-authorized",
             "methods"   : "delete",
-            "actions"   : "",
-            "customAuthz" : "openidm.read(request.resourcePath, null, ['target']).target._ref === (context.security.authorization.component + '/' + context.security.authorization.id)"
+            "actions"   : "*"
         },
 
         // Workflow-related endpoints for authorized users
 
         {
             "pattern"   : "endpoint/getprocessesforuser",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "read",
             "actions"   : "*"
         },
         {
             "pattern"   : "endpoint/gettasksview",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "query",
             "actions"   : "*"
         },
         {
             "pattern"   : "workflow/taskinstance/*",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "action",
             "actions"   : "complete",
             "customAuthz" : "isMyTask()"
         },
         {
             "pattern"   : "workflow/taskinstance/*",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "read,update",
             "actions"   : "*",
             "customAuthz" : "canUpdateTask()"
         },
         {
             "pattern"   : "workflow/processinstance",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "create",
             "actions"   : "*",
             "customAuthz": "isAllowedToStartProcess()"
         },
         {
             "pattern"   : "workflow/processdefinition/*",
-            "roles"     : "internal/role/openidm-authorized",
+            "roles"     : "openidm-authorized",
             "methods"   : "*",
             "actions"   : "read",
             "customAuthz": "isOneOfMyWorkflows()"
@@ -409,40 +376,10 @@ var httpAccessConfig =
         // Clients authenticated via SSL mutual authentication
         {
             "pattern"   : "managed/user",
-            "roles"     : "internal/role/openidm-cert",
+            "roles"     : "openidm-cert",
             "methods"   : "patch,action",
             "actions"   : "patch",
             "customAuthz" : "isQueryOneOf({'managed/user': ['for-userName']}) && restrictPatchToFields(['password'])"
-        },
-        // Grant users access to their own user metadata
-        {
-            "pattern"   : "internal/usermeta/*",
-            "roles"     : "internal/role/openidm-authorized",
-            "methods"   : "read",
-            "actions"   : "*",
-            "customAuthz" : "ownRelationship()"
-        },
-        // Grant users access to their own notifications
-        {
-            "pattern"   : "internal/notification/*",
-            "roles"     : "internal/role/openidm-authorized",
-            "methods"   : "read",
-            "actions"   : "*",
-            "customAuthz" : "ownRelationship()"
-        },
-        {
-            "pattern"   : "managed/user/*",
-            "roles"     : "internal/role/openidm-authorized",
-            "methods"   : "read,query",
-            "actions"   : "*",
-            "customAuthz" : "ownRelationshipCollection(['idps','_meta','_notifications'])"
-        },
-        {
-            "pattern"   : "managed/*",
-            "roles"     : "internal/role/openidm-authorized",
-            "methods"   : "read",
-            "actions"   : "*",
-            "customAuthz" : "ownIDP()"
         }
     ]
 };
