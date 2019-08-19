@@ -10,9 +10,9 @@
                 {
                     "target" : "dn",
                     "transform" : {
-                        "type" : "text/javascript",
+                        "type" : "groovy",
                         "globals" : { },
-                        "source" : "'cn=' + source.name + ',ou=groups,dc=openam,dc=forgerock,dc=org'"
+                        "source" : "\"cn=\" + source.name + \",ou=groups,dc=openam,dc=forgerock,dc=org\""
                     },
                     "source" : ""
                 },
@@ -77,74 +77,50 @@
             ]
         },
         {
-            "name" : "managedUser_systemLdapUserstore_people",
-            "source" : "managed/user",
             "target" : "system/userstore/account",
-            "onCreate" : {
-                "type" : "text/javascript",
-                "source" : "target.dn = 'uid=' + source.userName + ',ou=people,dc=openam,dc=forgerock,dc=org';"
-            },
+            "source" : "managed/user",
+            "name" : "managedUser_systemUserstoreLdap_account",
+            "icon" : null,
+            "displayName" : "managedUser_systemUserstoreLdap_account",
             "properties" : [
                 {
-                    "source" : "givenName",
-                    "target" : "givenName"
+                    "target" : "givenName",
+                    "source" : "givenName"
                 },
                 {
-                    "source" : "sn",
-                    "target" : "sn"
+                    "target" : "sn",
+                    "source" : "sn"
                 },
                 {
-                    "source" : "",
+                    "target" : "cn",
                     "transform" : {
-                        "type" : "text/javascript",
-                        "source" : "source.displayName || (source.givenName + ' ' + source.sn);"
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "source.displayName ? source.displayName : (source.givenName + ' ' + source.sn)"
                     },
-                    "target" : "cn"
+                    "source" : ""
                 },
                 {
-                    "source" : "userName",
-                    "target" : "uid"
+                    "target" : "uid",
+                    "source" : "userName"
                 },
                 {
-                    "source" : "description",
-                    "target" : "description",
-                    "condition" : {
-                        "type" : "text/javascript",
-                        "source" : "!!object.description"
-                    }
+                    "target" : "mail",
+                    "source" : "mail"
                 },
                 {
-                    "source" : "mail",
-                    "target" : "mail"
-                },
-                {
+                    "target" : "userPassword",
                     "source" : "password",
-                    "condition" : {
-                        "type" : "text/javascript",
-                        "source" : "object.password != null"
-                    },
-                    "transform" : {
-                        "type" : "text/javascript",
-                        "source" : "openidm.decrypt(source);"
-                    },
-                    "target" : "userPassword"
-                },
-                {
-                    "source" : "telephoneNumber",
-                    "target" : "telephoneNumber",
-                    "condition" : {
-                        "type" : "text/javascript",
-                        "source" : "!!object.telephoneNumber"
-                    }
-                },
-                {
-                    "target" : "aliasList",
                     "transform" : {
                         "type" : "text/javascript",
                         "globals" : { },
-                        "source" : "var managedUser = openidm.read(\"managed/user/\" + source._id, null, [\"idps\"]);\n    \nif (managedUser.idps) {\n    managedUser.idps.map(function(relationship) {\n        var provider = relationship[\"_ref\"].split(\"/\");\n        return provider[1] + '-' + provider[2];\n    });\n} else {\n    [];\n}"
+                        "source" : "openidm.decrypt(source);"
                     },
-                    "source" : ""
+                    "condition" : {
+                        "type" : "text/javascript",
+                        "globals" : { },
+                        "source" : "object.password != null"
+                    }
                 },
                 {
                     "target" : "objectClass",
@@ -159,22 +135,13 @@
                     ]
                 },
                 {
-                    "target" : "kbaInfo",
-                    "source" : "kbaInfo",
+                    "target" : "ldapGroups",
                     "transform" : {
                         "type" : "groovy",
                         "globals" : { },
-                        "source" : "source ? (source.collect {(new groovy.json.JsonBuilder(it)).toString()}) : []"
-                    }
-                },
-                {
-                    "target" : "ldapGroups",
-                    "source" : "effectiveRoles",
-                    "transform" : {
-                        "type" : "text/javascript",
-                        "globals" : { },
-                        "source" : "source.map(function(role) {\n  \tvar roleNameRef = role._ref.split(\"/\");\n  \tvar roleName = roleNameRef[roleNameRef.length - 1];\n\treturn \"cn=\" + roleName + \",ou=groups,dc=openam,dc=forgerock,dc=org\";\n})"
-                    }
+                        "source" : "source.collect {it._ref}\n                .collect {it =~ /^(.*\\/)*([^\\/]+)$/}\n                .collect {it ? it.group(2) : null}\n                .findAll()\n                .findAll {it != \"null\"}\n                .collect {\"cn=\\\"\" + it + \",ou=groups,dc=openam,dc=forgerock,dc=org\\\"\"}"
+                    },
+                    "source" : "effectiveRoles"
                 },
                 {
                     "target" : "inetUserStatus",
@@ -183,44 +150,70 @@
             ],
             "policies" : [
                 {
-                    "situation" : "CONFIRMED",
-                    "action" : "UPDATE"
+                    "action" : "IGNORE",
+                    "situation" : "AMBIGUOUS"
                 },
                 {
-                    "situation" : "FOUND",
-                    "action" : "LINK"
+                    "action" : "DELETE",
+                    "situation" : "SOURCE_MISSING"
                 },
                 {
-                    "situation" : "ABSENT",
-                    "action" : "CREATE"
+                    "action" : "CREATE",
+                    "situation" : "MISSING"
                 },
                 {
-                    "situation" : "AMBIGUOUS",
-                    "action" : "IGNORE"
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
                 },
                 {
-                    "situation" : "MISSING",
-                    "action" : "CREATE"
+                    "action" : "IGNORE",
+                    "situation" : "UNQUALIFIED"
                 },
                 {
-                    "situation" : "SOURCE_MISSING",
-                    "action" : "DELETE"
+                    "action" : "IGNORE",
+                    "situation" : "UNASSIGNED"
                 },
                 {
-                    "situation" : "UNQUALIFIED",
-                    "action" : "IGNORE"
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
                 },
                 {
-                    "situation" : "UNASSIGNED",
-                    "action" : "IGNORE"
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "LINK",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
                 }
-            ]
+            ],
+            "onCreate" : {
+                "type" : "groovy",
+                "globals" : { },
+                "source" : "target.dn = 'uid=' + source.userName + ',ou=people,dc=openam,dc=forgerock,dc=org';"
+            }
         },
         {
             "target" : "managed/user",
             "source" : "system/userstore/account",
-            "name" : "systemLdapUserstore_people_managedUser",
-            "displayName" : "systemLdapUserstore_people_managedUser",
+            "name" : "systemLdapUserstoreAccount_managedUser",
+            "icon" : null,
+            "displayName" : "systemLdapUserstoreAccount_managedUser",
             "properties" : [
                 {
                     "target" : "userName",
@@ -258,7 +251,12 @@
                 },
                 {
                     "target" : "salutation",
-                    "default" : "FEMALE"
+                    "condition" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "target == null || target.salutation == null"
+                    },
+                    "default" : "DIVERS"
                 }
             ],
             "policies" : [
@@ -314,8 +312,7 @@
                     "action" : "CREATE",
                     "situation" : "ABSENT"
                 }
-            ],
-            "links" : "managedUser_systemLdapUserstore_people"
+            ]
         }
     ]
 }

@@ -3,13 +3,9 @@
         "sessionModule" : {
             "name" : "JWT_SESSION",
             "properties" : {
-                "keyAlias" : "&{openidm.https.keystore.cert.alias}",
-                "privateKeyPassword" : "&{openidm.keystore.password}",
-                "keystoreType" : "&{openidm.keystore.type}",
-                "keystoreFile" : "&{openidm.keystore.location}",
-                "keystorePassword" : "&{openidm.keystore.password}",
                 "sessionOnly" : true,
                 "isHttpOnly" : true,
+                "enableDynamicRoles" : false,
                 "maxTokenLifeSeconds" : "5",
                 "tokenIdleTimeSeconds" : "5"
             }
@@ -18,24 +14,24 @@
             {
                 "name" : "STATIC_USER",
                 "properties" : {
-                    "queryOnResource" : "repo/internal/user",
+                    "queryOnResource" : "internal/user",
                     "username" : "anonymous",
                     "password" : "&{openidm.anonymous.password}",
                     "defaultUserRoles" : [
-                        "openidm-reg"
+                        "internal/role/openidm-reg"
                     ]
                 },
                 "enabled" : true
             },
             {
-                "name" : "STATIC_USER",
+                "enabled" : true,
                 "properties" : {
-                    "queryOnResource" : "repo/internal/user",
+                    "queryOnResource" : "internal/user",
                     "username" : "openidm-admin",
                     "password" : "&{openidm.admin.password}",
                     "defaultUserRoles" : [
-                        "openidm-admin",
-                        "openidm-authorized"
+                        "internal/role/openidm-admin",
+                        "internal/role/openidm-authorized"
                     ],
                     "runAsProperties" : {
                         "adminRoles" : [
@@ -56,7 +52,7 @@
                         }
                     }
                 },
-                "enabled" : true
+                "name" : "STATIC_USER"
             },
             {
                 "enabled" : true,
@@ -78,35 +74,24 @@
                 "name" : "MANAGED_USER"
             },
             {
-                "name" : "INTERNAL_USER",
+                "enabled" : false,
                 "properties" : {
+                    "queryOnResource" : "internal/user",
                     "queryId" : "credential-internaluser-query",
-                    "queryOnResource" : "repo/internal/user",
+                    "defaultUserRoles" : [ ],
                     "propertyMapping" : {
                         "authenticationId" : "username",
                         "userCredential" : "password",
-                        "userRoles" : "roles"
-                    },
-                    "defaultUserRoles" : [ ]
+                        "userRoles" : "authzRoles"
+                    }
                 },
-                "enabled" : false
-            },
-            {
-                "name" : "CLIENT_CERT",
-                "properties" : {
-                    "queryOnResource" : "managed/user",
-                    "defaultUserRoles" : [
-                        "openidm-cert"
-                    ],
-                    "allowedAuthenticationIdPatterns" : [ ]
-                },
-                "enabled" : false
+                "name" : "INTERNAL_USER"
             },
             {
                 "name" : "SOCIAL_PROVIDERS",
                 "properties" : {
                     "defaultUserRoles" : [
-                        "openidm-authorized"
+                        "internal/role/openidm-authorized"
                     ],
                     "augmentSecurityContext" : {
                         "type" : "text/javascript",
@@ -122,7 +107,7 @@
             {
                 "name" : "STATIC_USER",
                 "properties" : {
-                    "queryOnResource" : "repo/internal/user",
+                    "queryOnResource" : "internal/user",
                     "username" : "&{openidm.prometheus.username}",
                     "password" : "&{openidm.prometheus.password}",
                     "defaultUserRoles" : [
@@ -146,7 +131,7 @@
                         "userRoles" : "authzRoles"
                     },
                     "defaultUserRoles" : [
-                        "openidm-authorized"
+                        "internal/role/openidm-authorized"
                     ],
                     "idpConfig" : {
                         "provider" : "OPENAM",

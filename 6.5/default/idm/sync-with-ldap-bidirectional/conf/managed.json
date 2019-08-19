@@ -265,8 +265,12 @@
                             {
                                 "policyId" : "regexpMatches",
                                 "params" : {
-                                    "regexp" : "^[1-9]\\d{6}$"
+                                    "regexp" : "^[1-9]\\d{9}$"
                                 }
+                            },
+                            {
+                                "policyId" : "unique",
+                                "params" : { }
                             }
                         ]
                     },
@@ -317,13 +321,6 @@
                     },
                     "location" : {
                         "title" : "Ort",
-                        "type" : "string",
-                        "viewable" : true,
-                        "searchable" : true,
-                        "userEditable" : true
-                    },
-                    "district" : {
-                        "title" : "Ortsteil",
                         "type" : "string",
                         "viewable" : true,
                         "searchable" : true,
@@ -459,7 +456,6 @@
                     "houseNumber",
                     "zipCode",
                     "location",
-                    "district",
                     "commercialRegistryNumber",
                     "member",
                     "applicant",
@@ -573,15 +569,6 @@
                 "type" : "text/javascript",
                 "file" : "roles/onDelete-roles.js"
             },
-            "onCreate" : {
-                "type" : "text/javascript",
-                "globals" : { },
-                "source" : "object.name = object._id;\nrequire('roles/conditionalRoles').roleCreate(object);"
-            },
-            "onUpdate" : {
-                "type" : "text/javascript",
-                "source" : "require('roles/conditionalRoles').roleUpdate(oldObject, object);"
-            },
             "postCreate" : {
                 "type" : "text/javascript",
                 "source" : "require('roles/postOperation-roles').manageTemporalConstraints(resourceName);"
@@ -670,6 +657,7 @@
                             "resourceCollection" : [
                                 {
                                     "notify" : true,
+                                    "conditionalAssociation" : true,
                                     "path" : "managed/user",
                                     "label" : "User",
                                     "query" : {
@@ -717,6 +705,7 @@
                             "resourceCollection" : [
                                 {
                                     "path" : "managed/user",
+                                    "conditionalAssociation" : true,
                                     "label" : "User",
                                     "query" : {
                                         "queryFilter" : "true",
@@ -783,6 +772,7 @@
                         "title" : "Condition",
                         "viewable" : false,
                         "searchable" : false,
+                        "isConditional" : true,
                         "type" : "string"
                     },
                     "temporalConstraints" : {
@@ -833,19 +823,15 @@
             "name" : "user",
             "onCreate" : {
                 "type" : "text/javascript",
-                "source" : "require('onCreateUser').setDefaultFields(object);require('roles/conditionalRoles').createConditionalGrantsForUser(object, 'roles');require('onCreateUser').emailUser(object);"
+                "source" : "require('onCreateUser').setDefaultFields(object);require('onCreateUser').emailUser(object);"
             },
             "onUpdate" : {
                 "type" : "text/javascript",
-                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('onUpdateUser').createNotification(object, oldObject);"
-            },
-            "onDelete" : {
-                "type" : "text/javascript",
-                "file" : "onDelete-user-cleanup.js"
+                "source" : "require('onUpdateUser').preserveLastSync(object, oldObject, request);"
             },
             "postDelete" : {
                 "type" : "text/javascript",
-                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);"
+                "source" : "require('postDelete-idp-cleanup').removeConnectedIdpData(oldObject, resourceName, request);require('postDelete-notification-cleanup').removeConnectedNotificationData(oldObject, resourceName, request);"
             },
             "schema" : {
                 "$schema" : "http://forgerock.org/json-schema#",
@@ -910,7 +896,7 @@
                         "minLength" : null,
                         "userEditable" : true,
                         "encryption" : {
-                            "key" : "openidm-sym-default"
+                            "purpose": "idm.password.encryption"
                         },
                         "scope" : "private",
                         "isProtected" : true,
@@ -941,7 +927,7 @@
                             {
                                 "policyId" : "regexpMatches",
                                 "params" : {
-                                    "regexp" : "^[a-zA-Z ]+-?[a-zA-Z ]*$"
+                                    "regexp" : "^[a-zA-Z ÄÖÜäöüßäëïöüÄËÏÖÜàéèîôûÀÉÈÎÔÛ]+-?[a-zA-Z ÄÖÜäöüßäëïöüÄËÏÖÜàéèîôûÀÉÈÎÔÛ]*$"
                                 }
                             },
                             {
@@ -967,7 +953,7 @@
                             {
                                 "policyId" : "regexpMatches",
                                 "params" : {
-                                    "regexp" : "^[a-zA-Z ]+-?[a-zA-Z ]*$"
+                                    "regexp" : "^[a-zA-Z ÄÖÜäöüßäëïöüÄËÏÖÜàéèîôûÀÉÈÎÔÛ]+-?[a-zA-Z ÄÖÜäöüßäëïöüÄËÏÖÜàéèîôûÀÉÈÎÔÛ]*$"
                                 }
                             },
                             {
@@ -996,6 +982,9 @@
                         "policies" : [
                             {
                                 "policyId" : "valid-email-address-format"
+                            },
+                            {
+                                "policyId" : "unique"
                             }
                         ],
                         "minLength" : null,
@@ -1130,6 +1119,7 @@
                                 {
                                     "path" : "managed/role",
                                     "label" : "Role",
+                                    "conditionalAssociationField" : "condition",
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
@@ -1220,8 +1210,9 @@
                             },
                             "resourceCollection" : [
                                 {
-                                    "path" : "repo/internal/role",
+                                    "path" : "internal/role",
                                     "label" : "Internal Role",
+                                    "conditionalAssociationField" : "condition",
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
@@ -1233,6 +1224,7 @@
                                 {
                                     "path" : "managed/role",
                                     "label" : "Role",
+                                    "conditionalAssociationField" : "condition",
                                     "query" : {
                                         "queryFilter" : "true",
                                         "fields" : [
@@ -1518,7 +1510,7 @@
                             {
                                 "policyId" : "regexpMatches",
                                 "params" : {
-                                    "regexp" : "^(MALE)|(FEMALE)$"
+                                    "regexp" : "^(MALE)|(FEMALE)|(DIVERS)$"
                                 }
                             }
                         ]
@@ -1686,6 +1678,8 @@
                     "createDate",
                     "lastChanged"
                 ]
+            },
+            "notifications" : {
             },
             "iconClass" : "fa fa-database",
             "type" : "Managed Object"

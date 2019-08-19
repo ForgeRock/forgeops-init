@@ -29,6 +29,7 @@
             "resourceCollection" : [
               {
                 "path" : "managed/user",
+                "conditionalAssociation" : true,
                 "notify" : true,
                 "label" : "User",
                 "query" : {

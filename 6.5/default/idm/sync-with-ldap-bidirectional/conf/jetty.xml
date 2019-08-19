@@ -35,7 +35,7 @@
         <!-- remove Server header from HTTP responses, to prevent leaking server-type/version -->
         <Set name="sendServerVersion">false</Set>
         <Set name="outputBufferSize">32768</Set>
-        <Set name="requestHeaderSize">8192</Set>
+        <Set name="requestHeaderSize">16384</Set>
         <Set name="responseHeaderSize">8192</Set>
     </New>
 
@@ -129,6 +129,11 @@
 
     </Array>
 
+    <Array  id= "excludedProtocols" type="java.lang.String">
+        <Item>SSLv3</Item>
+        <Item>TLSv1</Item>
+    </Array>
+
     <New id="sslContextFactory" class="org.eclipse.jetty.util.ssl.SslContextFactory">
         <Set name="keyStorePath"><Get class="org.forgerock.openidm.jetty.Param" name="keystoreLocation"/></Set>
         <Set name="keyStorePassword"><Get class="org.forgerock.openidm.jetty.Param" name="keystorePassword"/></Set>
@@ -140,9 +145,7 @@
         <Set name="trustStorePassword"><Get class="org.forgerock.openidm.jetty.Param" name="truststorePassword"/></Set>
         <Set name="certAlias"><Get class="org.forgerock.openidm.jetty.Param" name="certAlias"/></Set>
         <Set name="ExcludeProtocols">
-            <Array type="java.lang.String">
-                <Item>SSLv3</Item>
-            </Array>
+            <Ref refid="excludedProtocols"/>
         </Set>
         <Set name="ExcludeCipherSuites">
             <Ref refid="excludedCipherSuites"/>
@@ -161,9 +164,7 @@
         <Set name="needClientAuth">true</Set>
         <Set name="certAlias"><Get class="org.forgerock.openidm.jetty.Param" name="certAlias"/></Set>
         <Set name="ExcludeProtocols">
-            <Array type="java.lang.String">
-                <Item>SSLv3</Item>
-            </Array>
+            <Ref refid="excludedProtocols"/>
         </Set>
         <Set name="ExcludeCipherSuites">
             <Ref refid="excludedCipherSuites"/>
@@ -289,6 +290,27 @@
         <Arg>
             <New class="org.forgerock.openidm.jetty.JettyErrorHandler">
                 <Set name="server"><Ref refid="Server" /></Set>
+            </New>
+        </Arg>
+    </Call>
+
+    <Call name="insertHandler">
+        <Arg>
+            <!-- https://www.eclipse.org/jetty/documentation/9.4.x/gzip-filter.html -->
+            <New id="GzipHandler" class="org.eclipse.jetty.server.handler.gzip.GzipHandler">
+                <Set name="minGzipSize"><Property name="jetty.gzip.minGzipSize" default="2048"/></Set>
+                <Set name="checkGzExists"><Property name="jetty.gzip.checkGzExists" default="false"/></Set>
+                <Set name="compressionLevel"><Property name="jetty.gzip.compressionLevel" default="-1"/></Set>
+                <Set name="inflateBufferSize"><Property name="jetty.gzip.inflateBufferSize" default="0"/></Set>
+                <Set name="syncFlush"><Property name="jetty.gzip.syncFlush" default="false" /></Set>
+                <Set name="excludedAgentPatterns">
+                    <Array type="String">
+                        <!-- IE 6 has known bugs related to GZIP compression -->
+                        <Item><Property name="jetty.gzip.excludedUserAgent" default=".*MSIE.6\.0.*"/></Item>
+                    </Array>
+                </Set>
+                <Set name="includedMethodList"><Property name="jetty.gzip.includedMethodList" default="GET" /></Set>
+                <Set name="excludedMethodList"><Property name="jetty.gzip.excludedMethodList" default="" /></Set>
             </New>
         </Arg>
     </Call>

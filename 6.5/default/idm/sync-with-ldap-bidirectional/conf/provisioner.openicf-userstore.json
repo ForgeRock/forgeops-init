@@ -5,7 +5,7 @@
         "connectorName" : "org.identityconnectors.ldap.LdapConnector"
     },
     "configurationProperties" : {
-        "host" : "userstore",
+        "host" : "openam-userstore",
         "port" : "1389",
         "ssl" : false,
         "principal" : "cn=Directory Manager",
@@ -13,19 +13,18 @@
         "baseContexts" : [
             "dc=openam,dc=forgerock,dc=org"
         ],
+        "baseContextsToSynchronize" : [
+            "dc=openam,dc=forgerock,dc=org"
+        ],
         "accountSearchFilter" : null,
         "accountSynchronizationFilter" : null,
         "groupSearchFilter" : null,
         "groupSynchronizationFilter" : null,
-        "passwordAttributeToSynchronize" : null,
-        "synchronizePasswords" : false,
         "removeLogEntryObjectClassFromFilter" : true,
         "modifiersNamesToFilterOut" : [ ],
-        "passwordDecryptionKey" : null,
         "changeLogBlockSize" : "100",
         "attributesToSynchronize" : [ ],
         "changeNumberAttribute" : "changeNumber",
-        "passwordDecryptionInitializationVector" : null,
         "filterWithOrInsteadOfAnd" : false,
         "objectClassesToSynchronize" : [
             "inetOrgPerson"
@@ -55,9 +54,6 @@
         "groupObjectClasses" : [
             "top",
             "groupOfUniqueNames"
-        ],
-        "baseContextsToSynchronize" : [
-            "dc=openam,dc=forgerock,dc=org"
         ]
     },
     "resultsHandlerConfig" : {
