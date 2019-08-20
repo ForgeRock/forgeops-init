@@ -1,8 +1,7 @@
 # WARNING: Base image reference should not be set manually.
 # To "upgrade" to a later release of the Identity Stack, use the script: /scripts/upgrade_identity_stack.sh
-FROM gcr.io/forgerock-io/ds/pit1:7.0.0-179536e
-# WARNING: FORGEOPS_COMMIT_SHA and DS_DOCKER_TAG labels should not be set manually
+FROM gcr.io/forgerock-io/ds/pit1:7.0.0-dde97a1
+# WARNING: DS_DOCKER_TAG label should not be set manually
 # To "upgrade" to a later release of the Identity Stack, use the script: /scripts/upgrade_identity_stack.sh
-LABEL com.forgerock.forgeops.hash=c6e38bcbb96efe64ed32ab24f167e9fa3c476719 \
-    com.forgerock.ds.tag=7.0.0-179536e
+LABEL com.forgerock.ds.tag=7.0.0-dde97a1
 COPY schema/ /opt/opendj/db/schema/

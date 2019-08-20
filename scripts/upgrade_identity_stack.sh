@@ -40,8 +40,6 @@ cd /tmp/forgeops
 println
 print "Reading references from forgeops... "
 
-cat > /tmp/.forgeopsRefs << EOF
-FORGEOPS_BRANCH=${FORGEOPS_BRANCH}
 FORGEOPS_COMMIT_SHA=$(git log -n 1 --format=oneline | cut -d " " -f 1)
 AM_DOCKER_REPO=$(yq r helm/openam/values.yaml image.repository)
 AM_DOCKER_TAG=$(yq r helm/openam/values.yaml image.tag)
@@ -51,34 +49,37 @@ DS_DOCKER_REPO=$(yq r helm/ds/values.yaml image.repository)
 DS_DOCKER_TAG=$(yq r helm/ds/values.yaml image.tag)
 IDM_DOCKER_REPO=$(yq r helm/openidm/values.yaml image.repository)
 IDM_DOCKER_TAG=$(yq r helm/openidm/values.yaml image.tag)
-EOF
 
 println "done"
 
-# print references to console
-cat /tmp/.forgeopsRefs
+echo FORGEOPS_BRANCH=${FORGEOPS_BRANCH}
+echo FORGEOPS_COMMIT_SHA=${FORGEOPS_COMMIT_SHA}
+echo AM_DOCKER_REPO=${AM_DOCKER_REPO}
+echo AM_DOCKER_TAG=${AM_DOCKER_TAG}
+echo AMSTER_DOCKER_REPO=${AMSTER_DOCKER_REPO}
+echo AMSTER_DOCKER_TAG=${AMSTER_DOCKER_TAG}
+echo DS_DOCKER_REPO=${DS_DOCKER_REPO}
+echo DS_DOCKER_TAG=${DS_DOCKER_TAG}
+echo IDM_DOCKER_REPO=${IDM_DOCKER_REPO}
+echo IDM_DOCKER_TAG=${IDM_DOCKER_TAG}
 
 # Write record of all references to file which will be checked into Git
 # This reference file will be consumed by the script saas/devtools/upgrade_identity_stack.sh
 
 println
-print "Writing record of the references used by this script to the file .forgeopsRefs... "
+print "Writing record of referenced forgeops commit to the file .forgeops... "
 
-cat > ${GIT_REPO_ROOT}/.forgeopsRefs << EOF
+cat > ${GIT_REPO_ROOT}/.forgeops << EOF
 ###
 # Generated at $(date -u +"%Y-%m-%dT%H:%M:%SZ") by forgeops-init/scripts/upgrade_identity_stack.sh
 #
-# This file records the forgeops branch and commit from which all the Identity Stack Docker
-# image references were taken.  It also records what these references were.
+# This file records the forgeops commit from which all the Identity Stack Docker image references were taken.
 # This reference is consumed by the script saas/devtools/upgrade_identity_stack.sh
 
-$(cat /tmp/.forgeopsRefs)
+FORGEOPS_COMMIT_SHA=${FORGEOPS_COMMIT_SHA}
 EOF
 
 println "done"
-
-# load the variables written to the reference file
-. ${GIT_REPO_ROOT}/.forgeopsRefs
 
 ###
 # Update base image used by all Identity Stack Docker images
@@ -104,10 +105,7 @@ function update_dockerfile() {
     cp ${DOCKER_FILE} ${TEMP_DOCKER_FILE}
     # NB. using ; rather than / as the sed delimiter character as the Docker image repo name contains /
     sed -i.bak -E "s;FROM .*;FROM ${DOCKER_REPO}:${DOCKER_TAG};" ${TEMP_DOCKER_FILE}
-    # NB. ending the first label line with backslash so that we define both labels in a single Docker layer
-    #     we need to double-escape the backslash though (once for bash, and once for sed) so end up with \\\\
-    sed -i.bak -E "s/LABEL ${FORGEOPS_COMMIT_SHA_LABEL}=.*/LABEL ${FORGEOPS_COMMIT_SHA_LABEL}=${FORGEOPS_COMMIT_SHA} \\\\/" ${TEMP_DOCKER_FILE}
-    sed -i.bak -E "s/    ${PRODUCT_DOCKER_TAG_LABEL}=.*/    ${PRODUCT_DOCKER_TAG_LABEL}=.${DOCKER_TAG}/" ${TEMP_DOCKER_FILE}
+    sed -i.bak -E "s/LABEL ${PRODUCT_DOCKER_TAG_LABEL}=.*/LABEL ${PRODUCT_DOCKER_TAG_LABEL}=${DOCKER_TAG}/" ${TEMP_DOCKER_FILE}
     mv /tmp/tmp.Dockerfile ${DOCKER_FILE}
 }
 
