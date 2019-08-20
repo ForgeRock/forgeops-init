@@ -1,0 +1,19 @@
+{
+    "enabled" : true,
+    "persisted" : true,
+    "recoverable" : false,
+    "misfirePolicy" : "fireAndProceed",
+    "schedule" : null,
+    "repeatInterval" : 15000,
+    "repeatCount" : -1,
+    "type" : "simple",
+    "invokeService" : "provisioner",
+    "invokeContext" : {
+        "source" : "system/userstore/group",
+        "action" : "liveSync"
+    },
+    "invokeLogLevel" : "debug",
+    "startTime" : null,
+    "endTime" : null,
+    "concurrentExecution" : false
+}

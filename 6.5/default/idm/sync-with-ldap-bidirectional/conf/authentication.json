@@ -35,10 +35,10 @@
                     ],
                     "runAsProperties" : {
                         "adminRoles" : [
-                            "openidm-admin"
+                            "internal/role/openidm-admin"
                         ],
                         "disallowedRunAsRoles" : [
-                            "openidm-admin"
+                            "internal/role/openidm-admin"
                         ],
                         "queryId" : "credential-query",
                         "queryOnResource" : "managed/user",

@@ -12,9 +12,9 @@
                     "transform" : {
                         "type" : "groovy",
                         "globals" : { },
-                        "source" : "\"cn=\" + source.name + \",ou=groups,dc=openam,dc=forgerock,dc=org\""
+                        "source" : "'cn=' + source + ',ou=groups,dc=openam,dc=forgerock,dc=org'"
                     },
-                    "source" : ""
+                    "source" : "name"
                 },
                 {
                     "target" : "cn",
@@ -74,14 +74,25 @@
                     "action" : "CREATE",
                     "situation" : "ABSENT"
                 }
+            ],
+            "correlationQuery" : [
+                {
+                    "linkQualifier" : "default",
+                    "expressionTree" : {
+                        "any" : [
+                            "cn"
+                        ]
+                    },
+                    "mapping" : "managedRole_systemLdapUserstore_group",
+                    "type" : "text/javascript",
+                    "file" : "ui/correlateTreeToQueryFilter.js"
+                }
             ]
         },
         {
-            "target" : "system/userstore/account",
+            "name" : "managedUser_systemLdapUserstore_people",
             "source" : "managed/user",
-            "name" : "managedUser_systemUserstoreLdap_account",
-            "icon" : null,
-            "displayName" : "managedUser_systemUserstoreLdap_account",
+            "target" : "system/userstore/account",
             "properties" : [
                 {
                     "target" : "givenName",
@@ -92,17 +103,25 @@
                     "source" : "sn"
                 },
                 {
-                    "target" : "cn",
                     "transform" : {
                         "type" : "groovy",
                         "globals" : { },
-                        "source" : "source.displayName ? source.displayName : (source.givenName + ' ' + source.sn)"
+                        "source" : "source?.displayName ? source.displayName : source?.givenName + ' ' + source?.sn"
                     },
+                    "target" : "cn",
                     "source" : ""
                 },
                 {
-                    "target" : "uid",
-                    "source" : "userName"
+                    "source" : "userName",
+                    "target" : "uid"
+                },
+                {
+                    "source" : "description",
+                    "target" : "description",
+                    "condition" : {
+                        "type" : "text/javascript",
+                        "source" : "!!object.description"
+                    }
                 },
                 {
                     "target" : "mail",
@@ -139,18 +158,27 @@
                     "transform" : {
                         "type" : "groovy",
                         "globals" : { },
-                        "source" : "source.collect {it._ref}\n                .collect {it =~ /^(.*\\/)*([^\\/]+)$/}\n                .collect {it ? it.group(2) : null}\n                .findAll()\n                .findAll {it != \"null\"}\n                .collect {\"cn=\\\"\" + it + \",ou=groups,dc=openam,dc=forgerock,dc=org\\\"\"}"
+                        "source" : "source.collect {it._ref}\n                .collect {it =~ /^(.*\\/)*([^\\/]+)$/}\n                .collect {it ? it.group(2) : null}\n                .findAll()\n                .findAll {it != \"null\"}\n                .collect {\"cn=\" + it + \",ou=groups,dc=openam,dc=forgerock,dc=org\"}"
                     },
                     "source" : "effectiveRoles"
                 },
                 {
                     "target" : "inetUserStatus",
                     "source" : "accountStatus"
+                },
+                {
+                    "target" : "dn",
+                    "source" : "userName",
+                    "transform" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "\"uid=\" + source + \",ou=people,dc=openam,dc=forgerock,dc=org\""
+                    }
                 }
             ],
             "policies" : [
                 {
-                    "action" : "IGNORE",
+                    "action" : "EXCEPTION",
                     "situation" : "AMBIGUOUS"
                 },
                 {
@@ -158,7 +186,7 @@
                     "situation" : "SOURCE_MISSING"
                 },
                 {
-                    "action" : "CREATE",
+                    "action" : "EXCEPTION",
                     "situation" : "MISSING"
                 },
                 {
@@ -166,11 +194,11 @@
                     "situation" : "FOUND_ALREADY_LINKED"
                 },
                 {
-                    "action" : "IGNORE",
+                    "action" : "DELETE",
                     "situation" : "UNQUALIFIED"
                 },
                 {
-                    "action" : "IGNORE",
+                    "action" : "EXCEPTION",
                     "situation" : "UNASSIGNED"
                 },
                 {
@@ -194,7 +222,7 @@
                     "situation" : "CONFIRMED"
                 },
                 {
-                    "action" : "LINK",
+                    "action" : "UPDATE",
                     "situation" : "FOUND"
                 },
                 {
@@ -202,18 +230,107 @@
                     "situation" : "ABSENT"
                 }
             ],
-            "onCreate" : {
-                "type" : "groovy",
-                "globals" : { },
-                "source" : "target.dn = 'uid=' + source.userName + ',ou=people,dc=openam,dc=forgerock,dc=org';"
-            }
+            "correlationQuery" : [
+                {
+                    "linkQualifier" : "default",
+                    "expressionTree" : {
+                        "any" : [
+                            "uid"
+                        ]
+                    },
+                    "mapping" : "managedUser_systemLdapUserstore_people",
+                    "type" : "text/javascript",
+                    "file" : "ui/correlateTreeToQueryFilter.js"
+                }
+            ]
+        },
+        {
+            "target" : "managed/role",
+            "source" : "system/userstore/group",
+            "name" : "systemUserstoreGroup_managedRole",
+            "icon" : null,
+            "displayName" : "systemUserstoreGroup_managedRole",
+            "properties" : [
+                {
+                    "target" : "name",
+                    "source" : "cn",
+                    "transform" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "source.get(0)"
+                    }
+                },
+                {
+                    "target" : "_id",
+                    "source" : "cn",
+                    "transform" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "source.get(0)"
+                    }
+                }
+            ],
+            "policies" : [
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "AMBIGUOUS"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "SOURCE_MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "UNQUALIFIED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "UNASSIGNED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
+                }
+            ],
+            "links" : "managedRole_systemLdapUserstore_group"
         },
         {
             "target" : "managed/user",
             "source" : "system/userstore/account",
-            "name" : "systemLdapUserstoreAccount_managedUser",
-            "icon" : null,
-            "displayName" : "systemLdapUserstoreAccount_managedUser",
+            "name" : "systemLdapUserstore_people_managedUser",
+            "displayName" : "systemLdapUserstore_people_managedUser",
             "properties" : [
                 {
                     "target" : "userName",
@@ -251,12 +368,12 @@
                 },
                 {
                     "target" : "salutation",
+                    "default" : "DIVERS",
                     "condition" : {
                         "type" : "groovy",
                         "globals" : { },
                         "source" : "target == null || target.salutation == null"
-                    },
-                    "default" : "DIVERS"
+                    }
                 }
             ],
             "policies" : [
@@ -312,7 +429,8 @@
                     "action" : "CREATE",
                     "situation" : "ABSENT"
                 }
-            ]
+            ],
+            "links" : "managedUser_systemLdapUserstore_people"
         }
     ]
 }

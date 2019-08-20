@@ -444,7 +444,15 @@
                         "userEditable" : true,
                         "description" : null,
                         "minLength" : null,
-                        "isVirtual" : false
+                        "isVirtual" : false,
+                        "policies" : [
+                            {
+                                "policyId" : "regexpMatches",
+                                "params" : {
+                                    "regexp" : "^(INACTIVE)|(ACTIVE)$"
+                                }
+                            }
+                        ]
                     }
                 },
                 "order" : [
@@ -477,7 +485,8 @@
                     "applicant",
                     "reasonForProvisioning",
                     "company",
-                    "password"
+                    "password",
+                    "status"
                 ]
             },
             "iconClass" : "fa fa-database",
@@ -582,12 +591,11 @@
                 "source" : "require('roles/postOperation-roles').manageTemporalConstraints(resourceName);"
             },
             "schema" : {
-                "id" : "urn:jsonschema:org:forgerock:openidm:managed:api:Role",
                 "$schema" : "http://forgerock.org/json-schema#",
                 "type" : "object",
                 "title" : "Role",
+                "description" : null,
                 "icon" : "fa-check-square-o",
-                "description" : "",
                 "properties" : {
                     "_id" : {
                         "description" : "Role ID",
@@ -800,11 +808,17 @@
                         "notifyRelationships" : [
                             "members"
                         ]
+                    },
+                    "applicationRole" : {
+                        "title" : "applicationRole",
+                        "type" : "boolean",
+                        "viewable" : true,
+                        "searchable" : false,
+                        "userEditable" : true,
+                        "description" : null,
+                        "isVirtual" : false
                     }
                 },
-                "required" : [
-                    "name"
-                ],
                 "order" : [
                     "_id",
                     "name",
@@ -813,7 +827,11 @@
                     "authzMembers",
                     "assignments",
                     "condition",
-                    "temporalConstraints"
+                    "temporalConstraints",
+                    "applicationRole"
+                ],
+                "required" : [
+                    "name"
                 ]
             },
             "iconClass" : "fa fa-database",
@@ -1683,6 +1701,78 @@
             },
             "iconClass" : "fa fa-database",
             "type" : "Managed Object"
+        },
+        {
+            "name" : "EMailData",
+            "schema" : {
+                "$schema" : "http://forgerock.org/json-schema#",
+                "type" : "object",
+                "title" : "E-Mail Daten",
+                "description" : "Daten (Betreff, Inhalt, ...) für das Versenden von E-Mails.",
+                "icon" : "fa-database",
+                "properties" : {
+                    "_id" : {
+                        "title" : "ID",
+                        "type" : "string",
+                        "viewable" : true,
+                        "searchable" : true,
+                        "userEditable" : true
+                    },
+                    "name" : {
+                        "title" : "Name des Templates",
+                        "type" : "string",
+                        "viewable" : true,
+                        "searchable" : true,
+                        "userEditable" : true,
+                        "description" : null,
+                        "minLength" : null,
+                        "isVirtual" : false
+                    },
+                    "subject_de" : {
+                        "title" : "Betreff (deutsch)",
+                        "type" : "string",
+                        "viewable" : true,
+                        "searchable" : true,
+                        "userEditable" : true
+                    },
+                    "body_de" : {
+                        "title" : "Inhalt (deutsch)",
+                        "type" : "string",
+                        "viewable" : true,
+                        "searchable" : true,
+                        "userEditable" : true
+                    },
+                    "subject_en" : {
+                        "title" : "Betreff (englisch)",
+                        "type" : "string",
+                        "viewable" : true,
+                        "searchable" : true,
+                        "userEditable" : true
+                    },
+                    "body_en" : {
+                        "title" : "Inhalt (englisch)",
+                        "type" : "string",
+                        "viewable" : true,
+                        "searchable" : true,
+                        "userEditable" : true
+                    }
+                },
+                "order" : [
+                    "_id",
+                    "name",
+                    "subject_de",
+                    "body_de",
+                    "subject_en",
+                    "body_en"
+                ],
+                "required" : [
+                    "_id",
+                    "subject_de",
+                    "body_de",
+                    "subject_en",
+                    "body_en"
+                ]
+            }
         }
     ]
 }
