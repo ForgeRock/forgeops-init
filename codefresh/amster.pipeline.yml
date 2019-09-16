@@ -15,7 +15,7 @@ spec:
       events:
         - push
       branchRegex: /.*/gi
-      modifiedFilesGlob: forgecloud/default/am/**
+      modifiedFilesGlob: forgecloud/default/am/{amster.Dockerfile,global/**,realms/**}
       provider: github
       context: github-fr-saas-codefresh
       name: amster-update

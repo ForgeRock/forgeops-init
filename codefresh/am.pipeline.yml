@@ -15,7 +15,7 @@ spec:
       events:
         - push
       branchRegex: /.*/gi
-      modifiedFilesGlob: forgecloud/default/am/am.Dockerfile
+      modifiedFilesGlob: {forgecloud/default/am/am.Dockerfile,forgecloud/default/am/logback.xml}
       provider: github
       context: github-fr-saas-codefresh
       name: am-update
