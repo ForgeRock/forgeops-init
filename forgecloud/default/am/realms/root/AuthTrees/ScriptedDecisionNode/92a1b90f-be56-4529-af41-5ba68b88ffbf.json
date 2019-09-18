@@ -1,10 +1,10 @@
 {
   "data": {
-    "_id": "e710e72b-b7d2-406f-b515-b44f2ee5d7a2",
+    "_id": "92a1b90f-be56-4529-af41-5ba68b88ffbf",
     "outcomes": [
       "outcome"
     ],
-    "script": "e8946bd5-1f92-4a46-b745-847485b36659",
+    "script": "d25827fa-9eb9-4bbf-abe5-8d0b3c8f2b46",
     "_type": {
       "_id": "ScriptedDecisionNode",
       "name": "Scripted Decision",
@@ -15,7 +15,7 @@
     "realm": "/",
     "amsterVersion": "&{version}",
     "entityType": "ScriptedDecision",
-    "entityId": "e710e72b-b7d2-406f-b515-b44f2ee5d7a2",
+    "entityId": "92a1b90f-be56-4529-af41-5ba68b88ffbf",
     "pathParams": {}
   }
 }
