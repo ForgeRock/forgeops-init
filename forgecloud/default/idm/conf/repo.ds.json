@@ -225,7 +225,6 @@
                     "person",
                     "organizationalPerson",
                     "inetOrgPerson",
-                    "extensibleObject",
                     "iplanet-am-user-service",
                     "devicePrintProfilesContainer",
                     "fr-idm-managed-user-explicit"
@@ -257,7 +256,7 @@
                         "type": "json",
                         "ldapAttribute": "fr-idm-emails",
                         "isMultiValued": true
-                    }, 
+                    },
                     "phoneNumbers":{
                         "type": "json",
                         "ldapAttribute": "fr-idm-phone-numbers",
@@ -283,19 +282,19 @@
                         "ldapAttribute": "fr-idm-photos",
                         "isMultiValued": true
                     },
-                    "nickName":{                        
+                    "nickName":{
                         "type": "simple",
                         "ldapAttribute": "fr-idm-nick-name"
                     },
-                    "profileUrl":{                        
+                    "profileUrl":{
                         "type": "simple",
                         "ldapAttribute": "fr-idm-profile-url"
                     },
-                    "userType":{                        
+                    "userType":{
                         "type": "simple",
                         "ldapAttribute": "fr-idm-user-type"
                     },
-                    "title":{                        
+                    "title":{
                         "type": "simple",
                         "ldapAttribute": "fr-idm-title"
                     },
@@ -303,11 +302,11 @@
                             "type": "simple",
                             "ldapAttribute": "fr-idm-preferred-language"
                     },
-                    "locale":{                        
+                    "locale":{
                         "type": "simple",
                         "ldapAttribute": "fr-idm-locale"
                     },
-                    "timezone": {                        
+                    "timezone": {
                         "type": "simple",
                         "ldapAttribute": "fr-idm-timezone"
                     },
