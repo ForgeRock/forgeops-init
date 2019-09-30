@@ -16,7 +16,7 @@
         "displayName": "HOTP Generator",
         "nodeType": "OneTimePasswordGeneratorNode",
         "connections": {
-          "outcome": "5376e8e6-044a-4eb9-ab3b-76fddc507a50"
+          "outcome": "92a1b90f-be56-4529-af41-5ba68b88ffbf"
         },
         "x": 879.046875,
         "y": 101
@@ -48,8 +48,8 @@
         "x": 1056,
         "y": 168
       },
-      "5376e8e6-044a-4eb9-ab3b-76fddc507a50": {
-        "displayName": "Email with Sendgrid",
+      "92a1b90f-be56-4529-af41-5ba68b88ffbf": {
+        "displayName": "Email with org-api template",
         "nodeType": "ScriptedDecisionNode",
         "connections": {
           "outcome": "084e5b80-ba5c-4e63-b3ab-0dafaeb397c3"
