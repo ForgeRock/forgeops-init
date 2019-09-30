@@ -6,3 +6,4 @@ FROM gcr.io/forgerock-io/amster/pit1:7.0.0-4eb16a442b
 LABEL com.forgerock.amster.tag=7.0.0-4eb16a442b
 COPY global /opt/amster/config/global
 COPY realms /opt/amster/config/realms
+COPY import-config.sh /opt/amster/
