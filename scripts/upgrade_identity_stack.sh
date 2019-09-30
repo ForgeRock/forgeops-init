@@ -13,7 +13,8 @@ GIT_REPO_ROOT=$(cd "${GIT_REPO_ROOT}"; pwd)
 # forgeops branch to use
 #  Commits to forgeops master should only be permitted when PIT 1 tests pass
 #  Commits to forgeops stable should only be permitted when PIT 2 tests pass
-FORGEOPS_BRANCH=stable
+#  Currently tracking master as PIT 2 tests are still being finalised
+FORGEOPS_BRANCH=master
 
 function print {
   echo -n -e "\e[33m${1}\e[0m"
@@ -114,14 +115,6 @@ update_dockerfile "ds" ${GIT_REPO_ROOT}/forgecloud/default/ds/Dockerfile ${DS_DO
 update_dockerfile "idm" ${GIT_REPO_ROOT}/forgecloud/default/idm/Dockerfile ${IDM_DOCKER_REPO} ${IDM_DOCKER_TAG}
 
 println "done"
-
-###
-# Capture default config from Docker images
-
-${GIT_REPO_ROOT}/scripts/export_default_idm_base_config.sh
-
-###
-# Print out summary
 
 cat << EOF
 

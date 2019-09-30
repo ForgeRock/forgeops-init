@@ -6,7 +6,7 @@
         "patch"
     ],
     "condition" : {
-        "type" : "groovy",
+        "type" : "text/javascript",
         "globals" : {
             "propertiesToCheck" : [
                 "userName",
@@ -25,7 +25,7 @@
                 "preferences"
             ]
         },
-        "file" : "propertiesModifiedFilter.groovy"
+        "file" : "propertiesModifiedFilter.js"
     },
     "target" : {
         "resource" : "managed/user/{{response/_id}}"
