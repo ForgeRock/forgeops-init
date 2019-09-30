@@ -115,14 +115,6 @@ update_dockerfile "idm" ${GIT_REPO_ROOT}/forgecloud/default/idm/Dockerfile ${IDM
 
 println "done"
 
-###
-# Capture default config from Docker images
-
-${GIT_REPO_ROOT}/scripts/export_default_idm_base_config.sh
-
-###
-# Print out summary
-
 cat << EOF
 
 Please commit these changes to a branch and push to GitHub.
