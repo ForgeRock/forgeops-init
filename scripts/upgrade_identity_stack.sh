@@ -13,7 +13,8 @@ GIT_REPO_ROOT=$(cd "${GIT_REPO_ROOT}"; pwd)
 # forgeops branch to use
 #  Commits to forgeops master should only be permitted when PIT 1 tests pass
 #  Commits to forgeops stable should only be permitted when PIT 2 tests pass
-FORGEOPS_BRANCH=stable
+#  Currently tracking master as PIT 2 tests are still being finalised
+FORGEOPS_BRANCH=master
 
 function print {
   echo -n -e "\e[33m${1}\e[0m"
