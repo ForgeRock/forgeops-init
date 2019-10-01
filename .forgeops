@@ -1,7 +1,7 @@
 ###
-# Generated at 2019-08-19T20:47:05Z by forgeops-init/scripts/upgrade_identity_stack.sh
+# Generated at 2019-09-17T09:36:53Z by forgeops-init/scripts/upgrade_identity_stack.sh
 #
 # This file records the forgeops commit from which all the Identity Stack Docker image references were taken.
 # This reference is consumed by the script saas/devtools/upgrade_identity_stack.sh
 
-FORGEOPS_COMMIT_SHA=c1254a81ecf440bf2852316c69598f1055f068e3
+FORGEOPS_COMMIT_SHA=37865f90dfe13c1408558f239e24b41efb71ec13
