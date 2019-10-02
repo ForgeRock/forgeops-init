@@ -1,0 +1,46 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthSocialAuthTwitterService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthTwitterService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "core" : {
+      "usesBasicAuth" : false,
+      "authenticationLevel" : 0,
+      "clientId" : null,
+      "tokenEndpoint" : "https://api.twitter.com/oauth/access_token",
+      "subjectProperty" : "id_str",
+      "requestTokenEndpoint" : "https://api.twitter.com/oauth/request_token",
+      "provider" : "Twitter",
+      "ssoProxyUrl" : "http://openam:80/am/oauth2c/OAuthProxy.jsp",
+      "authorizeEndpoint" : "https://api.twitter.com/oauth/authenticate",
+      "clientSecret" : null,
+      "userInfoEndpoint" : "https://api.twitter.com/1.1/account/verify_credentials.json"
+    },
+    "accountProvisioning" : {
+      "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
+      "createAccount" : true,
+      "enableRegistrationService" : false,
+      "attributeMappingClasses" : [ "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|twitter-" ],
+      "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|*|twitter-",
+      "accountMapperConfiguration" : [ "id_str=uid" ],
+      "mapToAnonymousUser" : false,
+      "anonymousUserName" : "anonymous",
+      "attributeMapperConfiguration" : [ "full_name=sn", "username=cn", "id_str=uid", "username=givenName" ],
+      "saveAttributesInSession" : true
+    },
+    "_type" : {
+      "_id" : "iPlanetAMAuthSocialAuthTwitterService",
+      "name" : "iPlanetAMAuthSocialAuthTwitterService",
+      "collection" : false
+    },
+    "_id" : "defaultconfig"
+  }
+}

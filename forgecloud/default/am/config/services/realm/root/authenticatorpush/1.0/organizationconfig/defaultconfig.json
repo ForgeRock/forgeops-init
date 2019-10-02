@@ -1,0 +1,30 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "AuthenticatorPush",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=AuthenticatorPush,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "authenticatorPushDeviceSettingsEncryptionKeystorePassword" : null,
+    "authenticatorPushDeviceSettingsEncryptionKeystorePrivateKeyPassword" : null,
+    "pushAttrName" : "pushDeviceProfiles",
+    "authenticatorPushDeviceSettingsEncryptionKeystoreKeyPairAlias" : null,
+    "authenticatorPushDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jks",
+    "authenticatorPushDeviceSettingsEncryptionKeystoreType" : "JKS",
+    "_type" : {
+      "_id" : "AuthenticatorPush",
+      "name" : "AuthenticatorPush",
+      "collection" : false
+    },
+    "authenticatorPushDeviceSettingsEncryptionScheme" : "NONE",
+    "authenticatorPushDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQAN3I9PeGf/MkZ0tW0BzBkfxmgS/rMPaO6PIvaYm3RKoLteEG7xo6cw==",
+    "authenticatorPushSkippableName" : "push2faEnabled",
+    "_id" : "defaultconfig"
+  }
+}

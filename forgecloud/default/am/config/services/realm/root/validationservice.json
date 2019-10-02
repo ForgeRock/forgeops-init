@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "validationService",
+    "entityId" : "validationService",
+    "uid" : "ou=validationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "validationService",
+      "name" : "validationService",
+      "collection" : false
+    },
+    "_id" : "validationService"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "MetadataNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=MetadataNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"MetadataNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/MetadataNode\"  i18nKey=\"nodeDescription\"  resourceName=\"MetadataNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/MetadataNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\" ><AttributeSchema i18nKey=\"attributes\"  name=\"attributes\"  order=\"100\"  resourceName=\"attributes\"  syntax=\"string\"  type=\"list\" ></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "MetadataNode",
+      "name" : "MetadataNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

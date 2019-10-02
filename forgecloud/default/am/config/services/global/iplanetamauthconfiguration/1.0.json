@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthConfiguration",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"iPlanetAMAuthConfiguration\" version=\"1.0\"><Schema i18nFileName=\"amAuthConfig\"  i18nKey=\"iplanet-am-auth-config-service-description\"  propertiesViewBeanURL=\"am/auth/ACServiceInstanceList\"  resourceName=\"EMPTY\"  revisionNumber=\"20\"  serviceHierarchy=\"/DSAMEConfig/iPlanetAMAuthConfiguration\" >\n            <Global hideConfigUI=\"no\"  validate=\"yes\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"serviceObjectClasses\"  syntax=\"string\"  type=\"list\" >\n                    <DefaultValues>\n                        <Value>iplanet-am-auth-configuration-service</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n            </Global>\n\n            <Organization hideConfigUI=\"no\" > \n                <SubSchema hideConfigUI=\"no\"  inheritance=\"single\"  maintainPriority=\"no\"  name=\"Configurations\"  realmCloneable=\"yes\"  resourceName=\"USE-PARENT\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"NamedConfiguration\"  realmCloneable=\"yes\"  resourceName=\"USE-PARENT\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                        <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a101\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"iplanet-am-auth-configuration\"  order=\"100\"  propertiesViewBeanURL=\"am/auth/ACModuleList\"  resourceName=\"authChainConfiguration\"  syntax=\"string\"  type=\"single\"  uitype=\"link\" ></AttributeSchema>\n                             <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a102\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"iplanet-am-auth-login-success-url\"  order=\"200\"  resourceName=\"loginSuccessUrl\"  syntax=\"string\"  type=\"list\" >\n                            <DefaultValues>\n                                  <Value></Value>\n                            </DefaultValues>\n                        </AttributeSchema>\n                        <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a103\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"iplanet-am-auth-login-failure-url\"  order=\"300\"  resourceName=\"loginFailureUrl\"  syntax=\"string\"  type=\"list\" >\n                            <DefaultValues>\n                                <Value></Value>\n                            </DefaultValues>\n                        </AttributeSchema>\n                         <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a104\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"iplanet-am-auth-post-login-process-class\"  order=\"400\"  resourceName=\"loginPostProcessClass\"  syntax=\"string\"  type=\"list\" >\n                        </AttributeSchema>\n\n                    </SubSchema> \n                </SubSchema> \n            </Organization> \n            \n            <Dynamic>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a101\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"iplanet-am-auth-configuration\"  order=\"100\"  resourceName=\"authChainConfiguration\"  syntax=\"string\"  type=\"single_choice\" >\n                    <ChoiceValues>\n                        <ChoiceValuesClassName className=\"com.sun.identity.authentication.service.ConfiguredAuthServices\" ></ChoiceValuesClassName>\n                    </ChoiceValues>\n                    <DefaultValues>\n                        <Value>[Empty]</Value>\n                    </DefaultValues>\n                </AttributeSchema>                \n            </Dynamic>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "iPlanetAMAuthConfiguration",
+      "name" : "iPlanetAMAuthConfiguration",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

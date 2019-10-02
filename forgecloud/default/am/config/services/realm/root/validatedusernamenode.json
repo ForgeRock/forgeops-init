@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "ValidatedUsernameNode",
+    "entityId" : "ValidatedUsernameNode",
+    "uid" : "ou=ValidatedUsernameNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "ValidatedUsernameNode",
+      "name" : "ValidatedUsernameNode",
+      "collection" : false
+    },
+    "_id" : "ValidatedUsernameNode"
+  }
+}

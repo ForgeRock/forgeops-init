@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityFilteredRoleService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=sunIdentityFilteredRoleService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunIdentityFilteredRoleService\" version=\"1.0\"><Schema i18nFileName=\"amEntrySpecific\"  resourceName=\"EMPTY\"  revisionNumber=\"20\" >\n            <Dynamic>\n                <AttributeSchema any=\"required|adminDisplay\"  cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"fr1\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"nsRoleFilter\"  order=\"100\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n\t\t    <DefaultValues>\n                        <Value>(objectclass=inetorgperson)</Value>\n\t\t    </DefaultValues>\n                </AttributeSchema>\n\n\t\t<AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"RequiredValueValidator\"  syntax=\"string\"  type=\"validator\" >\n\t\t    <DefaultValues>\n\t\t\t<Value>com.sun.identity.sm.RequiredValueValidator</Value>\n\t\t    </DefaultValues>\n\t\t</AttributeSchema>\n\n            </Dynamic>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "sunIdentityFilteredRoleService",
+      "name" : "sunIdentityFilteredRoleService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

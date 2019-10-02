@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthConfiguration",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=UserConfig,ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "iPlanetAMAuthConfiguration",
+      "name" : "iPlanetAMAuthConfiguration",
+      "collection" : false
+    },
+    "authChainConfiguration" : null,
+    "_id" : "defaultconfig"
+  }
+}

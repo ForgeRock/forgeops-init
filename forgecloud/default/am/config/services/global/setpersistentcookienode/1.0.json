@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "SetPersistentCookieNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=SetPersistentCookieNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"SetPersistentCookieNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/SetPersistentCookieNode\"  i18nKey=\"nodeDescription\"  resourceName=\"SetPersistentCookieNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/SetPersistentCookieNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"useHttpOnlyCookie\"  name=\"useHttpOnlyCookie\"  order=\"400\"  resourceName=\"useHttpOnlyCookie\"  syntax=\"boolean\"  type=\"single\" ><DefaultValues><Value>true</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"maxLife\"  name=\"maxLife\"  order=\"200\"  resourceName=\"maxLife\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>5</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"hmacSigningKey\"  name=\"hmacSigningKey\"  order=\"500\"  resourceName=\"hmacSigningKey\"  syntax=\"password\"  type=\"single\"  validator=\"RequiredValueValidator0 HmacSigningKeyValidator1\" ></AttributeSchema><AttributeSchema i18nKey=\"persistentCookieName\"  name=\"persistentCookieName\"  order=\"600\"  resourceName=\"persistentCookieName\"  syntax=\"string\"  type=\"single\" ><DefaultValues><Value>session-jwt</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"idleTimeout\"  name=\"idleTimeout\"  order=\"100\"  resourceName=\"idleTimeout\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>5</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"useSecureCookie\"  name=\"useSecureCookie\"  order=\"300\"  resourceName=\"useSecureCookie\"  syntax=\"boolean\"  type=\"single\" ><DefaultValues><Value>true</Value></DefaultValues></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema><AttributeSchema name=\"HmacSigningKeyValidator1\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>org.forgerock.openam.auth.nodes.validators.HmacSigningKeyValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "SetPersistentCookieNode",
+      "name" : "SetPersistentCookieNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

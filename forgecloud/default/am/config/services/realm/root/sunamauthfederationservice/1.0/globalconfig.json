@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunAMAuthFederationService",
+    "entityId" : "GlobalConfig",
+    "uid" : "ou=GlobalConfig,ou=1.0,ou=sunAMAuthFederationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "organizationalunit" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "sunAMAuthFederationService",
+      "name" : "sunAMAuthFederationService",
+      "collection" : false
+    },
+    "_id" : "GlobalConfig"
+  }
+}

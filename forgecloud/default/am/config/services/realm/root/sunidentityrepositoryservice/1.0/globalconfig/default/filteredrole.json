@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityRepositoryService",
+    "entityId" : "default/filteredrole",
+    "uid" : "ou=filteredrole,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
+    "sunServiceID" : "SupportedIdentities",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "sunIdentityRepositoryService",
+      "name" : "sunIdentityRepositoryService",
+      "collection" : false
+    },
+    "servicename" : [ "sunIdentityFilteredRoleService" ],
+    "_id" : "default/filteredrole",
+    "canHaveMembers" : [ "user" ]
+  }
+}

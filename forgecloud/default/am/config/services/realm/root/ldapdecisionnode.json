@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "LdapDecisionNode",
+    "entityId" : "LdapDecisionNode",
+    "uid" : "ou=LdapDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "LdapDecisionNode",
+      "name" : "LdapDecisionNode",
+      "collection" : false
+    },
+    "_id" : "LdapDecisionNode"
+  }
+}

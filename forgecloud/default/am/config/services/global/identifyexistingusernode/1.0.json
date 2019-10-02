@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "IdentifyExistingUserNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=IdentifyExistingUserNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"IdentifyExistingUserNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/IdentifyExistingUserNode\"  i18nKey=\"nodeDescription\"  resourceName=\"IdentifyExistingUserNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/IdentifyExistingUserNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"identityAttribute\"  name=\"identityAttribute\"  order=\"200\"  resourceName=\"identityAttribute\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ><DefaultValues><Value>mail</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"objectType\"  name=\"objectType\"  order=\"100\"  resourceName=\"objectType\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ><DefaultValues><Value>user</Value></DefaultValues></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "IdentifyExistingUserNode",
+      "name" : "IdentifyExistingUserNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

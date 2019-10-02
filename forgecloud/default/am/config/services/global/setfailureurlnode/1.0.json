@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "SetFailureUrlNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=SetFailureUrlNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"SetFailureUrlNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/SetFailureUrlNode\"  i18nKey=\"nodeDescription\"  resourceName=\"SetFailureUrlNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/SetFailureUrlNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"failureUrl\"  name=\"failureUrl\"  order=\"100\"  resourceName=\"failureUrl\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "SetFailureUrlNode",
+      "name" : "SetFailureUrlNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

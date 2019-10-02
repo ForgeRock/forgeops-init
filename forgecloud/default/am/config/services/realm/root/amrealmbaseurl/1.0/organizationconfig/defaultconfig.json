@@ -1,0 +1,25 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "amRealmBaseURL",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=amRealmBaseURL,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "extensionClassName" : null,
+    "_type" : {
+      "_id" : "amRealmBaseURL",
+      "name" : "amRealmBaseURL",
+      "collection" : false
+    },
+    "contextPath" : "/am",
+    "fixedValue" : null,
+    "_id" : "defaultconfig",
+    "source" : "REQUEST_VALUES"
+  }
+}

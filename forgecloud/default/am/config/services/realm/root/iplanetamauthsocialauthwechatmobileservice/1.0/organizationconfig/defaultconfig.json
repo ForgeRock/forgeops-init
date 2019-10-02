@@ -1,0 +1,52 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthSocialAuthWeChatMobileService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthWeChatMobileService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "core" : {
+      "authenticationLevel" : 0,
+      "subjectProperty" : "openid",
+      "provider" : "WeChat",
+      "scope" : [ "snsapi_userinfo" ],
+      "ssoProxyUrl" : "http://openam:80/am/oauth2c/OAuthProxy.jsp",
+      "userInfoEndpoint" : "https://api.wechat.com/sns/userinfo"
+    },
+    "accountProvisioning" : {
+      "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
+      "attributeMappingClasses" : [ "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|wechat-" ],
+      "accountMapperConfiguration" : [ "openid=uid" ],
+      "mapToAnonymousUser" : false,
+      "attributeMapperConfiguration" : [ "nickname=givenName", "openid=uid", "nickname=cn", "nickname=sn" ],
+      "createAccount" : true,
+      "enableRegistrationService" : false,
+      "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|*|wechat-",
+      "promptPasswordFlag" : false,
+      "anonymousUserName" : "anonymous",
+      "saveAttributesInSession" : true
+    },
+    "emailSettings" : {
+      "smtpFromAddress" : null,
+      "emailGateway" : "org.forgerock.openam.authentication.modules.oauth2.DefaultEmailGatewayImpl",
+      "smtpSslEnabled" : null,
+      "smtpPort" : "25",
+      "smtpPassword" : null,
+      "smtpUsername" : null,
+      "smtpHost" : "localhost",
+      "emailAttribute" : null
+    },
+    "_type" : {
+      "_id" : "iPlanetAMAuthSocialAuthWeChatMobileService",
+      "name" : "iPlanetAMAuthSocialAuthWeChatMobileService",
+      "collection" : false
+    },
+    "_id" : "defaultconfig"
+  }
+}

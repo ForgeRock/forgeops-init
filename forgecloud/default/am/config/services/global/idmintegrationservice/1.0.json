@@ -1,0 +1,34 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "IdmIntegrationService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=IdmIntegrationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : [ ]
+  },
+  "data" : {
+    "defaults" : {
+      "provisioningEncryptionKeyAlias" : "selfservice",
+      "provisioningEncryptionAlgorithm" : "RSAES_PKCS1_V1_5",
+      "provisioningEncryptionMethod" : "A128CBC_HS256",
+      "idmObjectEndpoint" : null,
+      "provisioningSigningKeyAlias" : "openidm-selfservice-key",
+      "idmDeploymentPath" : null,
+      "jwtSigningCompatibilityMode" : false,
+      "idmDeploymentUrl" : null,
+      "enabled" : false,
+      "provisioningSigningAlgorithm" : "HS256"
+    },
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"IdmIntegrationService\" version=\"1.0\"><Schema i18nFileName=\"IdmIntegrationService\"  i18nKey=\"am.idm.integration.description\"  resourceName=\"idm-integration\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/IdmIntegrationService\" >\n            <Organization hideConfigUI=\"no\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"am.idm.integration.enabled\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"enabled\"  order=\"2100\"  syntax=\"boolean\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <BooleanValues>\n                        <BooleanTrueValue i18nKey=\"i18nTrue\" >true</BooleanTrueValue>\n                        <BooleanFalseValue i18nKey=\"i18nFalse\" >false</BooleanFalseValue>\n                    </BooleanValues>\n                    <DefaultValues>\n                        <Value>false</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"am.idm.integration.deploymentUrl\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"idmDeploymentUrl\"  order=\"2200\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <ExampleValue>\n                        <Value>https:&#47;&#47;openidm.example.com</Value>\n                    </ExampleValue>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"am.idm.integration.deploymentPath\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"idmDeploymentPath\"  order=\"2210\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <ExampleValue>\n                        <Value>openidm</Value>\n                    </ExampleValue>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"am.idm.integration.objectEndpoint\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"idmObjectEndpoint\"  order=\"2220\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <ExampleValue>\n                        <Value>managed</Value>\n                    </ExampleValue>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"am.idm.integration.provisioningSigningKeyAlias\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"provisioningSigningKeyAlias\"  order=\"2240\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>openidm-selfservice-key</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"am.idm.integration.provisioningEncryptionKeyAlias\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"provisioningEncryptionKeyAlias\"  order=\"2250\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>selfservice</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"am.idm.integration.provisioningSigningAlgorithm\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"provisioningSigningAlgorithm\"  order=\"2260\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>HS256</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"am.idm.integration.jwtSigningCompatibilityMode\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"jwtSigningCompatibilityMode\"  order=\"2265\"  syntax=\"boolean\"  type=\"single\" >\n                    <BooleanValues>\n                        <BooleanTrueValue i18nKey=\"i18nTrue\" >true</BooleanTrueValue>\n                        <BooleanFalseValue i18nKey=\"i18nFalse\" >false</BooleanFalseValue>\n                    </BooleanValues>\n                    <DefaultValues>\n                        <Value>false</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"am.idm.integration.provisioningEncryptionAlgorithm\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"provisioningEncryptionAlgorithm\"  order=\"2270\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>RSAES_PKCS1_V1_5</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"am.idm.integration.provisioningEncryptionMethod\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"provisioningEncryptionMethod\"  order=\"2280\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>A128CBC_HS256</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "IdmIntegrationService",
+      "name" : "IdmIntegrationService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

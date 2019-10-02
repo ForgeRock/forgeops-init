@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "RestApisService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=RestApisService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"RestApisService\" version=\"1.0\"><Schema i18nFileName=\"RestApis\"  i18nKey=\"openam-rest-apis-service-description\"  resourceName=\"rest\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/RestApisService\" >\n\n            <Global hideConfigUI=\"no\"  validate=\"yes\" >\n                <AttributeSchema any=\"display\"  cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a101\"  isSearchable=\"no\"  listOrder=\"insertion\"  name=\"openam-rest-apis-default-version\"  order=\"100\"  resourceName=\"defaultVersion\"  syntax=\"string\"  type=\"single_choice\" >\n                    <ChoiceValues>\n                        <ChoiceValue i18nKey=\"a101a\" >Latest</ChoiceValue>\n                        <ChoiceValue i18nKey=\"a101b\" >Oldest</ChoiceValue>\n                        <ChoiceValue i18nKey=\"a101c\" >None</ChoiceValue>\n                    </ChoiceValues>\n                    <DefaultValues>\n                        <Value>Latest</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema any=\"display\"  cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a104\"  isSearchable=\"no\"  listOrder=\"insertion\"  name=\"openam-rest-apis-default-protocol\"  order=\"400\"  resourceName=\"defaultProtocolVersion\"  syntax=\"string\"  type=\"single_choice\" >\n                    <ChoiceValues>\n                        <ChoiceValue i18nKey=\"a104a\" >Oldest</ChoiceValue>\n                        <ChoiceValue i18nKey=\"a104b\" >Latest</ChoiceValue>\n                        <ChoiceValue i18nKey=\"a104c\" >None</ChoiceValue>\n                    </ChoiceValues>\n                    <DefaultValues>\n                        <Value>Latest</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema any=\"display\"  cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a102\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"openam-rest-apis-header-warning\"  order=\"200\"  resourceName=\"warningHeader\"  syntax=\"boolean\"  type=\"single\" >\n                    <BooleanValues>\n                        <BooleanTrueValue i18nKey=\"a102a\" >Enabled</BooleanTrueValue>\n                        <BooleanFalseValue i18nKey=\"a102b\" >Disabled</BooleanFalseValue>\n                    </BooleanValues>\n                    <DefaultValues>\n                        <Value>Enabled</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a103\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"openam-rest-apis-descriptions-state\"  order=\"300\"  resourceName=\"descriptionsState\"  syntax=\"string\"  type=\"single_choice\" >\n                    <ChoiceValues>\n                        <ChoiceValue i18nKey=\"a103a\" >DYNAMIC</ChoiceValue>\n                        <ChoiceValue i18nKey=\"a103b\" >STATIC</ChoiceValue>\n                        <ChoiceValue i18nKey=\"a103c\" >DISABLED</ChoiceValue>\n                    </ChoiceValues>\n                    <DefaultValues>\n                        <Value>STATIC</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a105\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"csrfFilterEnabled\"  order=\"500\"  syntax=\"boolean\"  type=\"single\" >\n                    <BooleanValues>\n                        <BooleanTrueValue i18nKey=\"a102a\" >true</BooleanTrueValue>\n                        <BooleanFalseValue i18nKey=\"a102b\" >false</BooleanFalseValue>\n                    </BooleanValues>\n                    <DefaultValues>\n                        <Value>true</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n            </Global>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "RestApisService",
+      "name" : "RestApisService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

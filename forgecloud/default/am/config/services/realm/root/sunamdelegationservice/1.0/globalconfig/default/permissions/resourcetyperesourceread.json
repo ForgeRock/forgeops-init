@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunAMDelegationService",
+    "entityId" : "default/Permissions/ResourceTypeResourceRead",
+    "uid" : "ou=ResourceTypeResourceRead,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
+    "sunServiceID" : "Permission",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "resource" : [ "REALM/rest/1.0/resourcetypes/read" ],
+    "_type" : {
+      "_id" : "sunAMDelegationService",
+      "name" : "sunAMDelegationService",
+      "collection" : false
+    },
+    "_id" : "default/Permissions/ResourceTypeResourceRead",
+    "actions" : [ "READ" ]
+  }
+}

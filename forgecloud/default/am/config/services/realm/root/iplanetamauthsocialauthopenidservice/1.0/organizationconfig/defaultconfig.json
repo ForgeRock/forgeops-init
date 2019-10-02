@@ -1,0 +1,66 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthSocialAuthOpenIDService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthOpenIDService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "core" : {
+      "usesBasicAuth" : true,
+      "scopeDelimiter" : null,
+      "tokenEndpoint" : null,
+      "subjectProperty" : null,
+      "logoutBehaviour" : "prompt",
+      "provider" : null,
+      "ssoProxyUrl" : "http://openam:80/am/oauth2c/OAuthProxy.jsp",
+      "scope" : [ "openid" ],
+      "clientSecret" : null,
+      "userInfoEndpoint" : null,
+      "clientId" : null,
+      "issuerName" : null,
+      "logoutServiceUrl" : null,
+      "authenticationLevel" : 0,
+      "authorizeEndpoint" : null,
+      "mixUpMitigation" : false
+    },
+    "accountProvisioning" : {
+      "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
+      "attributeMappingClasses" : [ ],
+      "accountMapperConfiguration" : [ ],
+      "mapToAnonymousUser" : false,
+      "attributeMapperConfiguration" : [ ],
+      "createAccount" : true,
+      "enableRegistrationService" : false,
+      "accountMapperClass" : null,
+      "promptPasswordFlag" : false,
+      "anonymousUserName" : "anonymous",
+      "saveAttributesInSession" : true
+    },
+    "openId" : {
+      "cryptoContextValue" : null,
+      "cryptoContextType" : null
+    },
+    "emailSettings" : {
+      "smtpFromAddress" : null,
+      "emailGateway" : "org.forgerock.openam.authentication.modules.oauth2.DefaultEmailGatewayImpl",
+      "smtpSslEnabled" : null,
+      "smtpPort" : "25",
+      "smtpPassword" : null,
+      "smtpUsername" : null,
+      "smtpHost" : "localhost",
+      "emailAttribute" : null
+    },
+    "_type" : {
+      "_id" : "iPlanetAMAuthSocialAuthOpenIDService",
+      "name" : "iPlanetAMAuthSocialAuthOpenIDService",
+      "collection" : false
+    },
+    "_id" : "defaultconfig"
+  }
+}

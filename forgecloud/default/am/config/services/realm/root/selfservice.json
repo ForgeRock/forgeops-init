@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "selfService",
+    "entityId" : "selfService",
+    "uid" : "ou=selfService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "selfService",
+      "name" : "selfService",
+      "collection" : false
+    },
+    "_id" : "selfService"
+  }
+}

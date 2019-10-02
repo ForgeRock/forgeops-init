@@ -1,0 +1,30 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "ScriptingService",
+    "entityId" : "default/scriptConfigurations/e8946bd5-1f92-4a46-b745-847485b36659",
+    "uid" : "ou=e8946bd5-1f92-4a46-b745-847485b36659,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
+    "sunServiceID" : "scriptConfiguration",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "e8946bd5-1f92-4a46-b745-847485b36659" ]
+  },
+  "data" : {
+    "lastModifiedDate" : "0",
+    "createdBy" : "null",
+    "lastModifiedBy" : "null",
+    "_type" : {
+      "_id" : "ScriptingService",
+      "name" : "ScriptingService",
+      "collection" : false
+    },
+    "context" : "AUTHENTICATION_TREE_DECISION_NODE",
+    "name" : "Email with Sendgrid",
+    "description" : "Custom script to send a One Time Passcode using Sendgrid. Password needs to be populated, and OTP messaging can be changed using this approach",
+    "language" : "JAVASCRIPT",
+    "_id" : "default/scriptConfigurations/e8946bd5-1f92-4a46-b745-847485b36659",
+    "creationDate" : "0",
+    "script" : "LyoKICAtIERhdGEgbWFkZSBhdmFpbGFibGUgYnkgbm9kZXMgdGhhdCBoYXZlIGFscmVhZHkgZXhlY3V0ZWQgYXJlIGF2YWlsYWJsZSBpbiB0aGUgc2hhcmVkU3RhdGUgdmFyaWFibGUuCiAgLSBUaGUgc2NyaXB0IHNob3VsZCBzZXQgb3V0Y29tZSB0byBlaXRoZXIgInRydWUiIG9yICJmYWxzZSIuCiAgLSBTYW1wbGUgY3VybCByZXF1ZXN0IGZyb20gc2VuZGdyaWQgYXBpIHRoaXMgc2NyaXB0IGlzIGJhc2VkIG9mZjoKICBodHRwczovL3NlbmRncmlkLmNvbS9kb2NzL2Zvci1kZXZlbG9wZXJzL3NlbmRpbmctZW1haWwvYXBpLWdldHRpbmctc3RhcnRlZC8KICBjdXJsIC0tcmVxdWVzdCBQT1NUIFwKLS11cmwgaHR0cHM6Ly9hcGkuc2VuZGdyaWQuY29tL3YzL21haWwvc2VuZCBcCi0taGVhZGVyICdhdXRob3JpemF0aW9uOiBCZWFyZXIgPDxZT1VSX0FQSV9LRVk+PicgXAotLWhlYWRlciAnY29udGVudC10eXBlOiBhcHBsaWNhdGlvbi9qc29uJyBcCi0tZGF0YSAneyJwZXJzb25hbGl6YXRpb25zIjpbeyJ0byI6W3siZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsIm5hbWUiOiJKb2huIERvZSJ9XSwic3ViamVjdCI6IkhlbGxvLCBXb3JsZCEifV0sImNvbnRlbnQiOiBbeyJ0eXBlIjogInRleHQvcGxhaW4iLCAidmFsdWUiOiAiSGV5YSEifV0sImZyb20iOnsiZW1haWwiOiJzYW0uc21pdGhAZXhhbXBsZS5jb20iLCJuYW1lIjoiU2FtIFNtaXRoIn0sInJlcGx5X3RvIjp7ImVtYWlsIjoic2FtLnNtaXRoQGV4YW1wbGUuY29tIiwibmFtZSI6IlNhbSBTbWl0aCJ9fScKICovCgp2YXIgZnIgPSBuZXcgSmF2YUltcG9ydGVyKAogIG9yZy5mb3JnZXJvY2suaHR0cC5wcm90b2NvbCwKICBvcmcuZm9yZ2Vyb2NrLnV0aWwucHJvbWlzZSwKICBvcmcuZm9yZ2Vyb2NrLm9wZW5hbS5hdXRoLm5vZGVzLAogIG9yZy5mb3JnZXJvY2suZ3VpY2UuY29yZQopOwpmdW5jdGlvbiBwb3N0RW1haWwoKSB7CiAgd2l0aCAoZnIpIHsKICAgIHZhciB1cmwgPSAnaHR0cHM6Ly9hcGkuc2VuZGdyaWQuY29tL3YzL21haWwvc2VuZCc7CiAgICB2YXIgYXBpS2V5ID0gJ1NHLjNBUFIzWGt2U2xpN293YXlIN0s4dWcuVnRfMERlalJXT3V2MmxUZzA1OHMzOEFUNVhyMGswVzFiNVF2R0FCWWp4WSc7IC8vcmVwbGFjZSB3aXRoIHRoZSBzZW5kZ3JpZCBwYXNzd29yZAogICAgdmFyIGlkZW50aXR5UHJvdmlkZXIgPSBJbmplY3RvckhvbGRlci5nZXRJbnN0YW5jZShJZGVudGl0eVByb3ZpZGVyKTsKICAgIHZhciBpZGVudGl0eSA9IGlkZW50aXR5UHJvdmlkZXIuZ2V0SWRlbnRpdHkoc2hhcmVkU3RhdGUuZ2V0KCd1c2VybmFtZScpLCBzaGFyZWRTdGF0ZS5nZXQoJ3JlYWxtJykpOwogICAgdmFyIGVtYWlsID0gaWRlbnRpdHkuZ2V0QXR0cmlidXRlKCdtYWlsJyk7CiAgICB2YXIgZnJvbUVtYWlsICA9ICdub3JlcGx5QGZvcmdlcm9jay5jb20nOwogICAgdmFyIHN1YmplY3QgPSAiT25lIFRpbWUgUGFzc2NvZGUiOwogICAgdmFyIGJvZHkgPSAiVGhlIG9uZSB0aW1lIHBhc3Njb2RlIHlvdSByZXF1ZXN0ZWQgaXM6ICI7CiAgICAKICAgIGxvZ2dlci5lcnJvcihlbWFpbCk7CiAgICB2YXIgcmVxdWVzdCA9IG5ldyBSZXF1ZXN0KCk7CiAgICByZXF1ZXN0Lm1ldGhvZCA9ICdQT1NUJzsKICAgIHJlcXVlc3Quc2V0VXJpKHVybCk7CiAgICByZXF1ZXN0LmdldEhlYWRlcnMoKS5hZGQoJ0NvbnRlbnQtVHlwZScsICdhcHBsaWNhdGlvbi9qc29uJyk7CiAgICByZXF1ZXN0LmdldEhlYWRlcnMoKS5hZGQoJ0F1dGhvcml6YXRpb24nLCAoJ0JlYXJlciAnICsgYXBpS2V5KSk7CiAgICB2YXIgb3RwID0gc2hhcmVkU3RhdGUuZ2V0KCdvbmVUaW1lUGFzc3dvcmQnKTsKICAgIHZhciBkYXRhID0geyJwZXJzb25hbGl6YXRpb25zIjpbeyJ0byI6W3siZW1haWwiOiBlbWFpbC50b0FycmF5KClbMF0gfV0sInN1YmplY3QiOiBzdWJqZWN0IH1dLCJjb250ZW50IjogW3sidHlwZSI6ICJ0ZXh0L3BsYWluIiwgInZhbHVlIjogKGJvZHkgICsgb3RwKSB9XSwiZnJvbSI6eyJlbWFpbCI6IGZyb21FbWFpbCB9LCJyZXBseV90byI6eyJlbWFpbCI6IGZyb21FbWFpbCB9fTsKICAgIGxvZ2dlci5lcnJvcihkYXRhKTsKICAgIHJlcXVlc3Quc2V0RW50aXR5KGRhdGEpOwogICAgcHJvbWlzZSA9IGh0dHBDbGllbnQuc2VuZChyZXF1ZXN0KTsKICAgIHZhciByZXNwb25zZSA9IHByb21pc2UuZ2V0KCk7CiAgICBsb2dnZXIubWVzc2FnZSgnU2VuZGdyaWQgRW1haWwuIFN0YXR1czogJyArIHJlc3BvbnNlLmdldFN0YXR1cygpICsgJywgQ2F1c2U6ICcgKyByZXNwb25zZS5nZXRDYXVzZSgpKTsKICB9Cn0KcG9zdEVtYWlsKCk7Cm91dGNvbWUgPSAnb3V0Y29tZSc7"
+  }
+}

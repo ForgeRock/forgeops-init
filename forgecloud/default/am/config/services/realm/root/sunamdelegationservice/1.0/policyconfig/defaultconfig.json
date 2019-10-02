@@ -1,0 +1,24 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunAMDelegationService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=PolicyConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "READ" : null,
+    "MODIFY" : null,
+    "_type" : {
+      "_id" : "sunAMDelegationService",
+      "name" : "sunAMDelegationService",
+      "collection" : false
+    },
+    "_id" : "defaultconfig",
+    "DELEGATE" : null
+  }
+}

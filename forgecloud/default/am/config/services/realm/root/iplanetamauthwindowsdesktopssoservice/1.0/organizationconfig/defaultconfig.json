@@ -1,0 +1,30 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthWindowsDesktopSSOService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthWindowsDesktopSSOService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "trustedKerberosRealms" : [ ],
+    "authenticationLevel" : 0,
+    "_type" : {
+      "_id" : "iPlanetAMAuthWindowsDesktopSSOService",
+      "name" : "iPlanetAMAuthWindowsDesktopSSOService",
+      "collection" : false
+    },
+    "returnPrincipalWithDomainName" : false,
+    "principalName" : null,
+    "_id" : "defaultconfig",
+    "kerberosServiceIsinitiator" : true,
+    "kerberosRealm" : null,
+    "keytabFileName" : null,
+    "kerberosServerName" : null,
+    "lookupUserInRealm" : false
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "PushNotificationService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=PushNotificationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : [ ]
+  },
+  "data" : {
+    "defaults" : {
+      "delegateFactory" : "org.forgerock.openam.services.push.sns.SnsHttpDelegateFactory",
+      "mdDuration" : 120,
+      "accessKey" : null,
+      "appleEndpoint" : null,
+      "mdConcurrency" : 16,
+      "secret" : null,
+      "region" : "us-east-1",
+      "googleEndpoint" : null,
+      "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator",
+      "mdCacheSize" : 10000
+    },
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"PushNotificationService\" version=\"1.0\"><Schema i18nFileName=\"amPushNotification\"  i18nKey=\"push-notification-description\"  resourceName=\"pushNotification\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/PushNotificationService\" >\n            <Organization hideConfigUI=\"no\" >\n\n                \n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"RequiredValueValidator\"  syntax=\"string\"  type=\"validator\" >\n                    <DefaultValues>\n                        <Value>com.sun.identity.sm.RequiredValueValidator</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n\n                \n\n                \n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a010\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"accessKey\"  order=\"100\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <ExampleValue>\n                        <Value>AKIAIOSFODNN7EXAMPLE</Value>\n                    </ExampleValue>\n                </AttributeSchema>\n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a020\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"secret\"  order=\"200\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <ExampleValue>\n                        <Value>wJalrXUtnFEMI&#47;K7MDENG&#47;bPxRfiCYEXAMPLEKEY</Value>\n                    </ExampleValue>\n                </AttributeSchema>\n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a030\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"appleEndpoint\"  order=\"300\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <ExampleValue>\n                        <Value>arn:aws:sns:us-east-1:1234567890:app&#47;APNS&#47;production</Value>\n                    </ExampleValue>\n                </AttributeSchema>\n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a040\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"googleEndpoint\"  order=\"400\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <ExampleValue>\n                        <Value>arn:aws:sns:us-east-1:1234567890:app&#47;GCM&#47;production</Value>\n                    </ExampleValue>\n                </AttributeSchema>\n\n                \n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a045\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"region\"  order=\"500\"  syntax=\"string\"  type=\"single_choice\"  validator=\"RequiredValueValidator\" >\n                    <ChoiceValues>\n                        <ChoiceValue>us-gov-west-1</ChoiceValue>\n                        <ChoiceValue>us-east-1</ChoiceValue>\n                        <ChoiceValue>us-west-1</ChoiceValue>\n                        <ChoiceValue>us-west-2</ChoiceValue>\n                        <ChoiceValue>eu-west-1</ChoiceValue>\n                        <ChoiceValue>eu-central-1</ChoiceValue>\n                        <ChoiceValue>ap-southeast-1</ChoiceValue>\n                        <ChoiceValue>ap-southeast-2</ChoiceValue>\n                        <ChoiceValue>ap-northeast-1</ChoiceValue>\n                        <ChoiceValue>ap-northeast-2</ChoiceValue>\n                        <ChoiceValue>sa-east-1</ChoiceValue>\n                        <ChoiceValue>cn-north-1</ChoiceValue>\n                    </ChoiceValues>\n                    <DefaultValues>\n                        <Value>us-east-1</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a050\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"delegateFactory\"  order=\"600\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>org.forgerock.openam.services.push.sns.SnsHttpDelegateFactory</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a060\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"mdDuration\"  order=\"700\"  rangeEnd=\"2147483647\"  rangeStart=\"0\"  syntax=\"number_range\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>120</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a070\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"mdConcurrency\"  order=\"800\"  rangeEnd=\"16\"  rangeStart=\"1\"  syntax=\"number_range\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>16</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a080\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"mdCacheSize\"  order=\"900\"  rangeEnd=\"2147483647\"  rangeStart=\"0\"  syntax=\"number_range\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>10000</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "PushNotificationService",
+      "name" : "PushNotificationService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

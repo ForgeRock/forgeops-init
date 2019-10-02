@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunFAMSAML2Configuration",
+    "entityId" : "GlobalConfig",
+    "uid" : "ou=GlobalConfig,ou=1.0,ou=sunFAMSAML2Configuration,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "sunFAMSAML2Configuration",
+      "name" : "sunFAMSAML2Configuration",
+      "collection" : false
+    },
+    "_id" : "GlobalConfig"
+  }
+}

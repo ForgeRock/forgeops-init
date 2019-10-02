@@ -1,0 +1,33 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthOpenIdConnectService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthOpenIdConnectService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "acceptedAuthorizedParties" : [ "http://www.example.com/authorized/party", "AuthorizedPartyExample" ],
+    "cryptoContextValue" : "https://accounts.google.com/.well-known/openid-configuration",
+    "_type" : {
+      "_id" : "iPlanetAMAuthOpenIdConnectService",
+      "name" : "iPlanetAMAuthOpenIdConnectService",
+      "collection" : false
+    },
+    "jwtToLdapAttributeMappings" : [ "sub=uid", "email=mail" ],
+    "idTokenIssuer" : "accounts.google.com",
+    "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
+    "idTokenHeaderName" : "oidc_id_token",
+    "principalMapperClass" : "org.forgerock.openam.authentication.modules.oidc.JwtAttributeMapper",
+    "audienceName" : "example",
+    "useSubClaimIfNoMatch" : false,
+    "cryptoContextType" : ".well-known/openid-configuration_url",
+    "clientSecret" : null,
+    "_id" : "defaultconfig",
+    "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator"
+  }
+}

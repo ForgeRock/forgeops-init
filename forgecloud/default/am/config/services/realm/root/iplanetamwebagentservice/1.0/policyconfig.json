@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMWebAgentService",
+    "entityId" : "PolicyConfig",
+    "uid" : "ou=PolicyConfig,ou=1.0,ou=iPlanetAMWebAgentService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "iPlanetAMWebAgentService",
+      "name" : "iPlanetAMWebAgentService",
+      "collection" : false
+    },
+    "_id" : "PolicyConfig"
+  }
+}

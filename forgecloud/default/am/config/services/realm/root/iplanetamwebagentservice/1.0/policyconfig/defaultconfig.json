@@ -1,0 +1,28 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMWebAgentService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=PolicyConfig,ou=1.0,ou=iPlanetAMWebAgentService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "HEAD" : null,
+    "DELETE" : null,
+    "POST" : null,
+    "GET" : null,
+    "_type" : {
+      "_id" : "iPlanetAMWebAgentService",
+      "name" : "iPlanetAMWebAgentService",
+      "collection" : false
+    },
+    "_id" : "defaultconfig",
+    "OPTIONS" : null,
+    "PUT" : null,
+    "PATCH" : null
+  }
+}

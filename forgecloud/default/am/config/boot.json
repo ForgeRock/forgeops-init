@@ -1,0 +1,19 @@
+{
+  "instance" : "http://openam:80/am",
+  "dsameUser" : "cn=dsameuser,ou=DSAME Users,ou=am-config",
+  "keystores" : {
+    "default" : {
+      "keyStorePasswordFile" : "/home/forgerock/openam/security/secrets/default/.storepass",
+      "keyPasswordFile" : "/home/forgerock/openam/security/secrets/default/.keypass",
+      "keyStoreType" : "JCEKS",
+      "keyStoreFile" : "/home/forgerock/openam/security/keystores/keystore.jceks"
+    }
+  },
+  "configStoreList" : [ {
+    "baseDN" : "ou=am-config",
+    "dirManagerDN" : "uid=am-config,ou=admins,ou=am-config",
+    "ldapHost" : "userstore-0.userstore",
+    "ldapPort" : 1389,
+    "ldapProtocol" : "ldap"
+  } ]
+}

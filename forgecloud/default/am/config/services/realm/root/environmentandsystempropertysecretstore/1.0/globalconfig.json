@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "EnvironmentAndSystemPropertySecretStore",
+    "entityId" : "GlobalConfig",
+    "uid" : "ou=GlobalConfig,ou=1.0,ou=EnvironmentAndSystemPropertySecretStore,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "EnvironmentAndSystemPropertySecretStore",
+      "name" : "EnvironmentAndSystemPropertySecretStore",
+      "collection" : false
+    },
+    "_id" : "GlobalConfig"
+  }
+}

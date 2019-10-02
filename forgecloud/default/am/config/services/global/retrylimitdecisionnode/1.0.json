@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "RetryLimitDecisionNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=RetryLimitDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"RetryLimitDecisionNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/RetryLimitDecisionNode\"  i18nKey=\"nodeDescription\"  resourceName=\"RetryLimitDecisionNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/RetryLimitDecisionNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"retryLimit\"  name=\"retryLimit\"  order=\"100\"  resourceName=\"retryLimit\"  syntax=\"number\"  type=\"single\"  validator=\"GreaterThanZeroValidator0\" ><DefaultValues><Value>3</Value></DefaultValues></AttributeSchema><AttributeSchema name=\"GreaterThanZeroValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>org.forgerock.openam.auth.nodes.validators.GreaterThanZeroValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "RetryLimitDecisionNode",
+      "name" : "RetryLimitDecisionNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

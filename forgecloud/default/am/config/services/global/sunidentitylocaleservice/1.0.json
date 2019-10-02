@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityLocaleService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=sunIdentityLocaleService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunIdentityLocaleService\" version=\"1.0\"><Schema revisionNumber=\"20\" >\n            <Global hideConfigUI=\"no\"  validate=\"no\" >\n                <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"ResourceBundleName\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"no\" >\n                    <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"Locale\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"no\" >\n                    </SubSchema>\n                </SubSchema>\n            </Global>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "sunIdentityLocaleService",
+      "name" : "sunIdentityLocaleService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

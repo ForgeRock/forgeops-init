@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunFMSAML2MetadataService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=sunFMSAML2MetadataService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunFMSAML2MetadataService\" version=\"1.0\"><Schema i18nFileName=\"fmSAML2Configuration\"  i18nKey=\"\"  resourceName=\"saml2\"  revisionNumber=\"10\" >\n\n            <Organization hideConfigUI=\"no\" >\n                <SubSchema hideConfigUI=\"no\"  i18nKey=\"a100\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"EntityDescriptor\"  realmCloneable=\"yes\"  resourceName=\"USE-PARENT\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a101\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-saml2-metadata\"  order=\"100\"  resourceName=\"metadata\"  syntax=\"string\"  type=\"single\" >\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a102\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-saml2-entityconfig\"  order=\"200\"  resourceName=\"entityConfig\"  syntax=\"string\"  type=\"single\" >\n                    </AttributeSchema>\n                </SubSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "sunFMSAML2MetadataService",
+      "name" : "sunFMSAML2MetadataService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunAMAuthDataStoreService",
+    "entityId" : "Instances",
+    "uid" : "ou=Instances,ou=1.0,ou=sunAMAuthDataStoreService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "organizationalunit" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "sunAMAuthDataStoreService",
+      "name" : "sunAMAuthDataStoreService",
+      "collection" : false
+    },
+    "_id" : "Instances"
+  }
+}

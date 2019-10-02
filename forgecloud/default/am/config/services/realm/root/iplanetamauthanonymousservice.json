@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthAnonymousService",
+    "entityId" : "iPlanetAMAuthAnonymousService",
+    "uid" : "ou=iPlanetAMAuthAnonymousService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "iPlanetAMAuthAnonymousService",
+      "name" : "iPlanetAMAuthAnonymousService",
+      "collection" : false
+    },
+    "_id" : "iPlanetAMAuthAnonymousService"
+  }
+}

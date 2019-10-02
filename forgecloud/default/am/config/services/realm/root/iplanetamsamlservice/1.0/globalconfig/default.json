@@ -1,0 +1,41 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMSAMLService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMSAMLService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent", "organizationalunit" ],
+    "pathParams" : { },
+    "ou" : [ "default" ]
+  },
+  "data" : {
+    "iplanet-am-saml-cleanup-interval" : 180,
+    "iplanet-am-saml-signresponse" : false,
+    "serviceObjectClasses" : [ "iplanet-am-saml-service" ],
+    "iplanet-am-saml-target-specifier" : "TARGET",
+    "iplanet-am-saml-signassertion" : false,
+    "AttributeListForAttributeQuery" : [ ],
+    "iplanet-am-saml-name-id-format-attr-map" : [ ],
+    "iplanet-am-saml-artifact-name" : "SAMLart",
+    "iplanet-am-saml-assertion-max-number" : 0,
+    "_type" : {
+      "_id" : "iPlanetAMSAMLService",
+      "name" : "iPlanetAMSAMLService",
+      "collection" : false
+    },
+    "DefaultAssertionVersion" : "1.1",
+    "iplanet-am-saml-signrequest" : false,
+    "iplanet-am-saml-post-to-target-urls" : [ ],
+    "iplanet-am-saml-assertion-timeout" : 420,
+    "iplanet-am-saml-attr-map" : [ ],
+    "RemoveAssertion" : true,
+    "iplanet-am-saml-siteid-issuername-list" : [ "instanceID=http://openam:80/am|siteid=/HNqWXZn9iUXvdJfP1VbjXSNdDk=|issuerName=openam:80" ],
+    "_id" : "default",
+    "iplanet-am-saml-artifact-timeout" : 400,
+    "DefaultProtocolVersion" : "1.1",
+    "iplanet-am-saml-partner-urls" : [ ],
+    "iplanet-am-saml-notbefore-timeskew" : 180
+  }
+}

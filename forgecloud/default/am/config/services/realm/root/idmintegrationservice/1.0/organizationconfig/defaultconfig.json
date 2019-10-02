@@ -1,0 +1,31 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "IdmIntegrationService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=IdmIntegrationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "provisioningEncryptionKeyAlias" : "selfservice",
+    "provisioningEncryptionMethod" : "A128CBC_HS256",
+    "provisioningEncryptionAlgorithm" : "RSAES_PKCS1_V1_5",
+    "provisioningSigningKeyAlias" : "openidm-selfservice-key",
+    "idmObjectEndpoint" : null,
+    "_type" : {
+      "_id" : "IdmIntegrationService",
+      "name" : "IdmIntegrationService",
+      "collection" : false
+    },
+    "idmDeploymentPath" : null,
+    "_id" : "defaultconfig",
+    "jwtSigningCompatibilityMode" : false,
+    "idmDeploymentUrl" : null,
+    "enabled" : false,
+    "provisioningSigningAlgorithm" : "HS256"
+  }
+}

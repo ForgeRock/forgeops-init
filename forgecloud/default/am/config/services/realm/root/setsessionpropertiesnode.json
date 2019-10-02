@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "SetSessionPropertiesNode",
+    "entityId" : "SetSessionPropertiesNode",
+    "uid" : "ou=SetSessionPropertiesNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "SetSessionPropertiesNode",
+      "name" : "SetSessionPropertiesNode",
+      "collection" : false
+    },
+    "_id" : "SetSessionPropertiesNode"
+  }
+}

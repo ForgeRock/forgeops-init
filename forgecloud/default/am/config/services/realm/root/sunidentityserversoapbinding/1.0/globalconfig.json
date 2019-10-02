@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityServerSOAPBinding",
+    "entityId" : "GlobalConfig",
+    "uid" : "ou=GlobalConfig,ou=1.0,ou=sunIdentityServerSOAPBinding,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "sunIdentityServerSOAPBinding",
+      "name" : "sunIdentityServerSOAPBinding",
+      "collection" : false
+    },
+    "_id" : "GlobalConfig"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "KbaCreateNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=KbaCreateNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"KbaCreateNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/KbaCreateNode\"  i18nKey=\"nodeDescription\"  resourceName=\"KbaCreateNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/KbaCreateNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"message\"  name=\"message\"  order=\"100\"  resourceName=\"message\"  syntax=\"string\"  type=\"list\"  uitype=\"maplist\"  validator=\"RequiredValueValidator0\" ></AttributeSchema><AttributeSchema i18nKey=\"objectType\"  name=\"objectType\"  order=\"200\"  resourceName=\"objectType\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ><DefaultValues><Value>user</Value></DefaultValues></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "KbaCreateNode",
+      "name" : "KbaCreateNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityLocaleService",
+    "entityId" : "sunIdentityLocaleService",
+    "uid" : "ou=sunIdentityLocaleService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "sunIdentityLocaleService",
+      "name" : "sunIdentityLocaleService",
+      "collection" : false
+    },
+    "_id" : "sunIdentityLocaleService"
+  }
+}

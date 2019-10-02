@@ -1,0 +1,31 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "UmaProvider",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=UmaProvider,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "resharingMode" : "IMPLICIT",
+    "deleteResourceSetsOnDeleteRS" : true,
+    "emailRequestingPartyOnPendingRequestApproval" : true,
+    "deletePoliciesOnDeleteRS" : true,
+    "userProfileLocaleAttribute" : "inetOrgPerson",
+    "_type" : {
+      "_id" : "UmaProvider",
+      "name" : "UmaProvider",
+      "collection" : false
+    },
+    "grantRptConditions" : [ "REQUEST_PARTIAL", "REQUEST_NONE", "TICKET_PARTIAL" ],
+    "pendingRequestsEnabled" : true,
+    "supportedUmaProfiles" : [ ],
+    "_id" : "defaultconfig",
+    "permissionTicketLifetime" : 120,
+    "emailResourceOwnerOnPendingRequestCreation" : true
+  }
+}

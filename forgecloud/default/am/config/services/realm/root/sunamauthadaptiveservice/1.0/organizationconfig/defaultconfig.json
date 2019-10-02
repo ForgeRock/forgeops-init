@@ -1,0 +1,88 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunAMAuthAdaptiveService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthAdaptiveService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "general" : {
+      "authenticationLevel" : 0,
+      "riskThreshold" : 1
+    },
+    "authfailed" : {
+      "invertFailureScore" : false,
+      "failureScore" : 1,
+      "failedAuthenticationCheckEnabled" : false
+    },
+    "attributecheck" : {
+      "profileRiskAttributeCheckEnabled" : false,
+      "profileRiskAttributeScore" : 1,
+      "profileRiskAttributeName" : null,
+      "invertProfileRiskAttributeScore" : false,
+      "profileRiskAttributeValue" : null
+    },
+    "lastlogin" : {
+      "timeSinceLastLoginCookieName" : null,
+      "saveLastLoginTimeOnSuccessfulLogin" : false,
+      "invertTimeSinceLastLoginScore" : false,
+      "timeSinceLastLoginScore" : 1,
+      "maxTimeSinceLastLogin" : null,
+      "timeSinceLastLoginCheckEnabled" : false
+    },
+    "iprange" : {
+      "ipRangeCheckEnabled" : false,
+      "ipRangeScore" : 1,
+      "ipRange" : [ "10.0.0.0/24" ],
+      "invertIPRangeScoreEnabled" : false
+    },
+    "_type" : {
+      "_id" : "sunAMAuthAdaptiveService",
+      "name" : "sunAMAuthAdaptiveService",
+      "collection" : false
+    },
+    "iphistory" : {
+      "ipHistoryCount" : 5,
+      "invertIPHistoryScore" : false,
+      "ipHistoryScore" : 1,
+      "ipHistoryProfileAttribute" : "iphistory",
+      "saveSuccessfulIP" : false,
+      "ipHistoryCheckEnabled" : false
+    },
+    "_id" : "defaultconfig",
+    "requestheader" : {
+      "requestHeaderCheckEnabled" : false,
+      "requestHeaderValue" : null,
+      "invertRequestHeaderScore" : false,
+      "requestHeaderScore" : 1,
+      "requestHeaderName" : null
+    },
+    "knowncookie" : {
+      "knownCookieValue" : null,
+      "knownCookieScore" : 1,
+      "knownCookieName" : null,
+      "invertKnownCookieScore" : false,
+      "createKnownCookieOnSuccessfulLogin" : false,
+      "knownCookieCheckEnabled" : false
+    },
+    "devicecookie" : {
+      "deviceCookieCheckEnabled" : false,
+      "invertDeviceCookieScore" : false,
+      "saveDeviceCookieValueOnSuccessfulLogin" : false,
+      "deviceCookieName" : "Device",
+      "deviceCookieScore" : 1
+    },
+    "geolocation" : {
+      "geolocationCheckEnabled" : false,
+      "geolocationDatabaseLocation" : null,
+      "geolocationScore" : 1,
+      "geolocationValidCountryCodes" : null,
+      "invertGeolocationScore" : false
+    }
+  }
+}

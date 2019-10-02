@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "amRealmBaseURL",
+    "entityId" : "PluginConfig",
+    "uid" : "ou=PluginConfig,ou=1.0,ou=amRealmBaseURL,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "amRealmBaseURL",
+      "name" : "amRealmBaseURL",
+      "collection" : false
+    },
+    "_id" : "PluginConfig"
+  }
+}

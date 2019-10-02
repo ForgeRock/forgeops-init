@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunfmSAML2SOAPBindingService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=sunfmSAML2SOAPBindingService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunfmSAML2SOAPBindingService\" version=\"1.0\"><Schema i18nFileName=\"fmSAML2SOAPBindingConfiguration\"  i18nKey=\"sunfmSAML2SOAPBindingDescription\"  propertiesViewBeanURL=\"../service/SCSAML2SOAPBinding\"  resourceName=\"federation/saml2soapbinding\"  revisionNumber=\"10\"  serviceHierarchy=\"/DSAMEConfig/sunfmSAML2SOAPBindingService\" >\n            <Global hideConfigUI=\"no\"  validate=\"yes\" > \n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a101\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sunSAML2RequestHandlerList\"  order=\"100\"  resourceName=\"requestHandlers\"  syntax=\"string\"  type=\"list\" >\n                </AttributeSchema> \n            </Global>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "sunfmSAML2SOAPBindingService",
+      "name" : "sunfmSAML2SOAPBindingService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

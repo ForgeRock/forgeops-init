@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "MailServer",
+    "entityId" : "OrganizationConfig",
+    "uid" : "ou=OrganizationConfig,ou=1.0,ou=MailServer,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "MailServer",
+      "name" : "MailServer",
+      "collection" : false
+    },
+    "_id" : "OrganizationConfig"
+  }
+}

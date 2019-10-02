@@ -1,0 +1,37 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMUserService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=UserConfig,ou=1.0,ou=iPlanetAMUserService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunIdentityMSISDNNumber" : [ ],
+    "userPassword" : null,
+    "telephoneNumber" : null,
+    "mail" : null,
+    "iplanet-am-user-alias-list" : [ ],
+    "givenName" : null,
+    "_type" : {
+      "_id" : "iPlanetAMUserService",
+      "name" : "iPlanetAMUserService",
+      "collection" : false
+    },
+    "cn" : null,
+    "employeeNumber" : null,
+    "uid" : null,
+    "postalAddress" : null,
+    "iplanet-am-user-success-url" : [ ],
+    "inetUserStatus" : "Active",
+    "_id" : "defaultconfig",
+    "sn" : null,
+    "iplanet-am-user-auth-config" : null,
+    "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator",
+    "iplanet-am-user-failure-url" : [ ]
+  }
+}

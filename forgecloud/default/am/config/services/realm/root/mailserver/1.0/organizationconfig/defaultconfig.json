@@ -1,0 +1,31 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "MailServer",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=MailServer,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "emailAddressAttribute" : "mail",
+    "password" : null,
+    "hostname" : null,
+    "sslState" : "SSL",
+    "port" : 465,
+    "subject" : null,
+    "_type" : {
+      "_id" : "MailServer",
+      "name" : "MailServer",
+      "collection" : false
+    },
+    "from" : null,
+    "_id" : "defaultconfig",
+    "message" : null,
+    "emailImplClassName" : "org.forgerock.openam.services.email.MailServerImpl",
+    "username" : null
+  }
+}

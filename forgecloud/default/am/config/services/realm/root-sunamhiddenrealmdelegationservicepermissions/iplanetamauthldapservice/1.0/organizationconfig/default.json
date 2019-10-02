@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : "/sunamhiddenrealmdelegationservicepermissions",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthLDAPService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthLDAPService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "iPlanetAMAuthLDAPService",
+      "name" : "iPlanetAMAuthLDAPService",
+      "collection" : false
+    },
+    "_id" : "default",
+    "userBindPassword-encrypted" : "AAAAA0FFUwIQmZkbJGmPsH5BTSb+gWNRFmgw+ee97pI70xXjheAEP92trdWkIClGpOfn9x8mylmX9PF7u7zuqn1MUutLy9WxCQ==",
+    "userBindPassword" : null
+  }
+}

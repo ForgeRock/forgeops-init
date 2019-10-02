@@ -1,0 +1,30 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "AuthenticatorOATH",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=AuthenticatorOATH,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "authenticatorOATHSkippableName" : "oath2faEnabled",
+    "authenticatorOATHDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jks",
+    "authenticatorOATHDeviceSettingsEncryptionKeystorePrivateKeyPassword" : null,
+    "authenticatorOATHDeviceSettingsEncryptionKeystoreType" : "JKS",
+    "_type" : {
+      "_id" : "AuthenticatorOATH",
+      "name" : "AuthenticatorOATH",
+      "collection" : false
+    },
+    "authenticatorOATHDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQhU179OcA0f1v74XMZ5dQmxndFyYPzzRvFdRFV8LabhVDxaap0WkHPg==",
+    "authenticatorOATHDeviceSettingsEncryptionScheme" : "NONE",
+    "authenticatorOATHDeviceSettingsEncryptionKeystoreKeyPairAlias" : null,
+    "_id" : "defaultconfig",
+    "authenticatorOATHDeviceSettingsEncryptionKeystorePassword" : null,
+    "oathAttrName" : "oathDeviceProfiles"
+  }
+}

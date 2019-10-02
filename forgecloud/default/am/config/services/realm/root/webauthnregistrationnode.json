@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "WebAuthnRegistrationNode",
+    "entityId" : "WebAuthnRegistrationNode",
+    "uid" : "ou=WebAuthnRegistrationNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "WebAuthnRegistrationNode",
+      "name" : "WebAuthnRegistrationNode",
+      "collection" : false
+    },
+    "_id" : "WebAuthnRegistrationNode"
+  }
+}

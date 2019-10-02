@@ -1,0 +1,34 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunFAMSAML2Configuration",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=sunFAMSAML2Configuration,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "encryptedKeyInKeyInfo" : true,
+    "caCertValidation" : false,
+    "signingCertValidation" : false,
+    "idpDiscoveryCookieDomain" : null,
+    "xmlEncryptionClass" : "com.sun.identity.saml2.xmlenc.FMEncProvider",
+    "_type" : {
+      "_id" : "sunFAMSAML2Configuration",
+      "name" : "sunFAMSAML2Configuration",
+      "collection" : false
+    },
+    "failOverEnabled" : false,
+    "idpDiscoveryUrlSchema" : "https",
+    "nameIDInfoAttribute" : "sun-fm-saml2-nameid-info",
+    "xmlSigningClass" : "com.sun.identity.saml2.xmlsig.FMSigProvider",
+    "bufferLength" : 2048,
+    "nameIDInfoKeyAttribute" : "sun-fm-saml2-nameid-infokey",
+    "idpDiscoveryCookieType" : "PERSISTENT",
+    "cacheCleanupInterval" : 600,
+    "_id" : "default"
+  }
+}

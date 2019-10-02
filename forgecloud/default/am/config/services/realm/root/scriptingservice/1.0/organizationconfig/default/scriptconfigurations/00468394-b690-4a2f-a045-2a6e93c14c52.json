@@ -1,0 +1,30 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "ScriptingService",
+    "entityId" : "default/scriptConfigurations/00468394-b690-4a2f-a045-2a6e93c14c52",
+    "uid" : "ou=00468394-b690-4a2f-a045-2a6e93c14c52,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
+    "sunServiceID" : "scriptConfiguration",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "lastModifiedDate" : "0",
+    "createdBy" : "null",
+    "lastModifiedBy" : "null",
+    "_type" : {
+      "_id" : "ScriptingService",
+      "name" : "ScriptingService",
+      "collection" : false
+    },
+    "context" : "AUTHENTICATION_TREE_DECISION_NODE",
+    "name" : "TEMPLATE - SMS with Twilio",
+    "description" : "TEMPLATE: Custom script to send a One Time Passcode using Twilio. Account SID, auth key, and from phone need to be populated, and OTP messaging can be changed using this approach",
+    "language" : "JAVASCRIPT",
+    "_id" : "default/scriptConfigurations/00468394-b690-4a2f-a045-2a6e93c14c52",
+    "creationDate" : "0",
+    "script" : "LyoKICAtIERhdGEgbWFkZSBhdmFpbGFibGUgYnkgbm9kZXMgdGhhdCBoYXZlIGFscmVhZHkgZXhlY3V0ZWQgYXJlIGF2YWlsYWJsZSBpbiB0aGUgc2hhcmVkU3RhdGUgdmFyaWFibGUuCiAgLSBUaGUgc2NyaXB0IHNob3VsZCBzZXQgb3V0Y29tZSB0byBlaXRoZXIgInRydWUiIG9yICJmYWxzZSIuCiAqLwoKdmFyIGZyID0gbmV3IEphdmFJbXBvcnRlcigKICBvcmcuZm9yZ2Vyb2NrLmh0dHAucHJvdG9jb2wsCiAgb3JnLmZvcmdlcm9jay51dGlsLnByb21pc2UsCiAgb3JnLmZvcmdlcm9jay5vcGVuYW0uYXV0aC5ub2RlcywKICBvcmcuZm9yZ2Vyb2NrLmd1aWNlLmNvcmUKKTsKCmZ1bmN0aW9uIHBvc3RTTVMoKSB7CiAgd2l0aCAoZnIpIHsKICAgIHZhciBhY2NvdW50ID0gJ0FDQ09VTlRfU0lEJzsKICAgIHZhciBiYXNpY0F1dGhLZXkgPSAnQkFTRTY0X0FVVEhfS0VZJzsgLy9iYXNlNjQgZW5jb2Rpbmcgb2YgYWNjb3VudCBzaWQ6YXV0aCB0b2tlbiBmcm9tIHR3aWxpbwogICAgdmFyIGZyb21QaG9uZSA9ICdUV0lMSU9fR0VORVJBVEVEX1BIT05FX05VTUJFUic7CiAgICB2YXIgaWRlbnRpdHlQcm92aWRlciA9IEluamVjdG9ySG9sZGVyLmdldEluc3RhbmNlKElkZW50aXR5UHJvdmlkZXIpOwogICAgdmFyIGlkZW50aXR5ID0gaWRlbnRpdHlQcm92aWRlci5nZXRJZGVudGl0eShzaGFyZWRTdGF0ZS5nZXQoJ3VzZXJuYW1lJyksIHNoYXJlZFN0YXRlLmdldCgncmVhbG0nKSk7CgogICAgdmFyIHBob25lTnVtYmVyQXR0ciA9IGlkZW50aXR5LmdldEF0dHJpYnV0ZSgnZnItaWRtLXBob25lLW51bWJlcnMnKTsKICAgIGlmIChwaG9uZU51bWJlckF0dHIgPT0gbnVsbCB8fCBwaG9uZU51bWJlckF0dHIuc2l6ZSgpID09IDApIHsKICAgICAgbG9nZ2VyLmVycm9yKCdObyBwaG9uZSBudW1iZXIgYXZhaWxhYmxlJyk7CiAgICAgIHJldHVybjsKICAgIH0KCiAgICB2YXIgcGhvbmVOdW1iZXJKc29uID0gcGhvbmVOdW1iZXJBdHRyLml0ZXJhdG9yKCkubmV4dCgpOwogICAgdmFyIHBob25lTnVtYmVyID0gSlNPTi5wYXJzZShwaG9uZU51bWJlckpzb24pLnZhbHVlOwoKICAgIHZhciByZXF1ZXN0ID0gbmV3IFJlcXVlc3QoKTsKICAgIHJlcXVlc3QubWV0aG9kID0gJ1BPU1QnOwogICAgcmVxdWVzdC5zZXRVcmkoJ2h0dHBzOi8vYXBpLnR3aWxpby5jb20vMjAxMC0wNC0wMS9BY2NvdW50cy8nICsgYWNjb3VudCArICcvTWVzc2FnZXMuanNvbicpOwogICAgcmVxdWVzdC5nZXRIZWFkZXJzKCkuYWRkKCdDb250ZW50LVR5cGUnLCAnYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkJyk7CiAgICByZXF1ZXN0LmdldEhlYWRlcnMoKS5hZGQoJ0F1dGhvcml6YXRpb24nLCAnQmFzaWMgJyArIGJhc2ljQXV0aEtleSk7CgogICAgdmFyIGJvZHkgPSBzaGFyZWRTdGF0ZS5nZXQoJ29uZVRpbWVQYXNzd29yZCcpOwogICAgcmVxdWVzdC5zZXRFbnRpdHkoJ0JvZHk9T25lIHRpbWUgcGFzc3dvcmQ6ICcgKyBib2R5ICsgJyZGcm9tPSsnICsgZnJvbVBob25lICsgJyZUbz0rJyArIHBob25lTnVtYmVyKTsKICAgIHByb21pc2UgPSBodHRwQ2xpZW50LnNlbmQocmVxdWVzdCk7CgogICAgdmFyIHJlc3BvbnNlID0gcHJvbWlzZS5nZXQoKTsKICAgIGxvZ2dlci5tZXNzYWdlKCdUd2lsaW8gQ2FsbC4gU3RhdHVzOiAnICsgcmVzcG9uc2UuZ2V0U3RhdHVzKCkgKyAnLCBDYXVzZTogJyArIHJlc3BvbnNlLmdldENhdXNlKCkpOwogIH0KfQoKcG9zdFNNUygpOwoKb3V0Y29tZSA9ICdvdXRjb21lJzs="
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityRepositoryService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent", "organizationalunit" ],
+    "pathParams" : { },
+    "ou" : [ "defaultconfig" ]
+  },
+  "data" : {
+    "sunIdRepoAttributeCombiner" : "com.iplanet.am.sdk.AttributeCombiner",
+    "_type" : {
+      "_id" : "sunIdentityRepositoryService",
+      "name" : "sunIdentityRepositoryService",
+      "collection" : false
+    },
+    "sunIdRepoAttributeValidator" : [ "class=com.sun.identity.idm.server.IdRepoAttributeValidatorImpl", "minimumPasswordLength=8", "usernameInvalidChars=*|(|)|&|!" ],
+    "_id" : "defaultconfig"
+  }
+}

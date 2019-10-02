@@ -1,0 +1,25 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "",
+    "entityId" : "Lw",
+    "uid" : "ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent", "organizationalunit" ],
+    "pathParams" : { },
+    "ou" : [ ]
+  },
+  "data" : {
+    "aliases" : [ "openam-cm-fraas-1265-129.forgeblocks.com", "openam", "am-config" ],
+    "parentPath" : "",
+    "_type" : {
+      "_id" : "",
+      "name" : "",
+      "collection" : false
+    },
+    "name" : "/",
+    "active" : true,
+    "_id" : "root"
+  }
+}

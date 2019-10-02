@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "webhooks",
+    "entityId" : "OrganizationConfig",
+    "uid" : "ou=OrganizationConfig,ou=1.0,ou=webhooks,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "webhooks",
+      "name" : "webhooks",
+      "collection" : false
+    },
+    "_id" : "OrganizationConfig"
+  }
+}

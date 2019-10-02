@@ -1,0 +1,26 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "socialAuthNService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=socialAuthNService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "MapValueValidator" : "com.sun.identity.common.configuration.MapValueValidator",
+    "authenticationChains" : { },
+    "_type" : {
+      "_id" : "socialAuthNService",
+      "name" : "socialAuthNService",
+      "collection" : false
+    },
+    "displayNames" : { },
+    "_id" : "defaultconfig",
+    "enabledKeys" : [ ],
+    "icons" : { }
+  }
+}

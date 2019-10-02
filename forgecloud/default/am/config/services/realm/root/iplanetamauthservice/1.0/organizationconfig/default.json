@@ -1,0 +1,69 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "default" ]
+  },
+  "data" : {
+    "general" : {
+      "locale" : "en_US",
+      "statelessSessionsEnabled" : false,
+      "userStatusCallbackPlugins" : [ ],
+      "identityType" : [ "agent", "user" ],
+      "defaultAuthLevel" : 0,
+      "twoFactorRequired" : false
+    },
+    "core" : {
+      "orgConfig" : "ldapService",
+      "adminAuthModule" : "ldapService"
+    },
+    "security" : {
+      "moduleBasedAuthEnabled" : true,
+      "zeroPageLoginAllowedWithoutReferrer" : true,
+      "sharedSecret" : null,
+      "sharedSecret-encrypted" : "AAAAA0FFUwIQXRReYqbLBMKFtmbjMMCbqO6r6QfbCVM9npCfDwmiaSoE6zCe+ZcnpbAwk8UcYNhMLYcqXqmdlCLW9mvkLkCKZoskZ8mSyendnsFGNYYtB90t7RToAXs0thh24xwiYha6l6zXqcepwAHl1f8cmLjJeg==",
+      "keyAlias" : "test",
+      "zeroPageLoginEnabled" : false,
+      "zeroPageLoginReferrerWhiteList" : [ ]
+    },
+    "postauthprocess" : {
+      "usernameGeneratorClass" : "com.sun.identity.authentication.spi.DefaultUserIDGenerator",
+      "loginFailureUrl" : [ ],
+      "userAttributeSessionMapping" : [ ],
+      "loginPostProcessClass" : [ ],
+      "usernameGeneratorEnabled" : true,
+      "loginSuccessUrl" : [ "/console" ]
+    },
+    "accountlockout" : {
+      "lockoutDuration" : 0,
+      "loginFailureLockoutMode" : false,
+      "lockoutDurationMultiplier" : 1,
+      "lockoutWarnUserCount" : 0,
+      "loginFailureCount" : 5,
+      "loginFailureDuration" : 300,
+      "storeInvalidAttemptsInDataStore" : true
+    },
+    "_type" : {
+      "_id" : "iPlanetAMAuthService",
+      "name" : "iPlanetAMAuthService",
+      "collection" : false
+    },
+    "userprofile" : {
+      "defaultRole" : [ ],
+      "aliasAttributeName" : [ "uid" ],
+      "dynamicProfileCreation" : "false"
+    },
+    "_id" : "default",
+    "trees" : {
+      "authenticationSessionsStateManagement" : "JWT",
+      "authenticationSessionsWhitelist" : false,
+      "authenticationSessionsMaxDuration" : 5
+    }
+  }
+}

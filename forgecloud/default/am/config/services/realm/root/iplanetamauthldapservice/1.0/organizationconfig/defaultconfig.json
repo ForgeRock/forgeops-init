@@ -1,0 +1,41 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthLDAPService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthLDAPService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "returnUserDN" : true,
+    "minimumPasswordLength" : "8",
+    "primaryLdapServer" : [ "userstore-0.userstore:1389" ],
+    "operationTimeout" : 0,
+    "searchScope" : "SUBTREE",
+    "userSearchAttributes" : [ "uid" ],
+    "_type" : {
+      "_id" : "iPlanetAMAuthLDAPService",
+      "name" : "iPlanetAMAuthLDAPService",
+      "collection" : false
+    },
+    "connectionHeartbeatInterval" : 10,
+    "beheraPasswordPolicySupportEnabled" : true,
+    "trustAllServerCertificates" : false,
+    "profileAttributeMappings" : [ ],
+    "connectionHeartbeatTimeUnit" : "SECONDS",
+    "userSearchFilter" : null,
+    "userBindDN" : "uid=admin",
+    "authenticationLevel" : 0,
+    "secondaryLdapServer" : [ ],
+    "userProfileRetrievalAttribute" : "uid",
+    "openam-auth-ldap-connection-mode" : "LDAP",
+    "userSearchStartDN" : [ "ou=identities" ],
+    "_id" : "defaultconfig",
+    "iplanet-am-auth-ldap-invalid-chars" : [ "*|(|)|&|!" ],
+    "userBindPassword" : null
+  }
+}

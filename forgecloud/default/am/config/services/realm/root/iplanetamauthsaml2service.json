@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthSAML2Service",
+    "entityId" : "iPlanetAMAuthSAML2Service",
+    "uid" : "ou=iPlanetAMAuthSAML2Service,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "iPlanetAMAuthSAML2Service",
+      "name" : "iPlanetAMAuthSAML2Service",
+      "collection" : false
+    },
+    "_id" : "iPlanetAMAuthSAML2Service"
+  }
+}

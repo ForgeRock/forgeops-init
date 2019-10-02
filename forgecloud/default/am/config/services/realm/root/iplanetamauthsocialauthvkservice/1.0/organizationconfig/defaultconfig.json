@@ -1,0 +1,57 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthSocialAuthVKService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthVKService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "core" : {
+      "subjectProperty" : "id",
+      "tokenEndpoint" : "https://oauth.vk.com/access_token",
+      "apiVersion" : "5.73",
+      "provider" : "VKontakte",
+      "scope" : [ "email" ],
+      "ssoProxyUrl" : "http://openam:80/am/oauth2c/OAuthProxy.jsp",
+      "clientSecret" : null,
+      "forgerock-am-auth-socialauthvk-auth-level" : 0,
+      "userInfoEndpoint" : "https://api.vk.com/method/users.get",
+      "clientId" : null,
+      "authorizeEndpoint" : "https://oauth.vk.com/authorize"
+    },
+    "accountProvisioning" : {
+      "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
+      "attributeMappingClasses" : [ "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|vkontakte-" ],
+      "accountMapperConfiguration" : [ "id=uid" ],
+      "mapToAnonymousUser" : false,
+      "attributeMapperConfiguration" : [ "first_name=givenName", "first_name=cn", "id=uid", "last_name=sn", "email=mail" ],
+      "createAccount" : true,
+      "enableRegistrationService" : false,
+      "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|vkontakte-",
+      "promptPasswordFlag" : false,
+      "anonymousUserName" : "anonymous",
+      "saveAttributesInSession" : true
+    },
+    "emailSettings" : {
+      "smtpFromAddress" : null,
+      "emailGateway" : "org.forgerock.openam.authentication.modules.oauth2.DefaultEmailGatewayImpl",
+      "smtpSslEnabled" : null,
+      "smtpPort" : "25",
+      "smtpPassword" : null,
+      "smtpUsername" : null,
+      "smtpHost" : "localhost",
+      "emailAttribute" : null
+    },
+    "_type" : {
+      "_id" : "iPlanetAMAuthSocialAuthVKService",
+      "name" : "iPlanetAMAuthSocialAuthVKService",
+      "collection" : false
+    },
+    "_id" : "defaultconfig"
+  }
+}

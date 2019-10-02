@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "FileSystemSecretStore",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=FileSystemSecretStore,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"FileSystemSecretStore\" version=\"1.0\"><Schema i18nFileName=\"org.forgerock.openam.secrets.config.FileSystemSecretStore\"  i18nKey=\"serviceDescription\"  resourceName=\"FileSystemSecretStore\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/FileSystemSecretStore\" ><Global><SubSchema i18nKey=\"serviceDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"suffix\"  name=\"suffix\"  order=\"200\"  resourceName=\"suffix\"  syntax=\"string\"  type=\"single\" ><IsOptional></IsOptional></AttributeSchema><AttributeSchema i18nKey=\"format\"  name=\"format\"  order=\"300\"  resourceName=\"format\"  syntax=\"string\"  type=\"single_choice\"  validator=\"RequiredValueValidator0\" ><ChoiceValues><ChoiceValue i18nKey=\"format.PLAIN\" >PLAIN</ChoiceValue><ChoiceValue i18nKey=\"format.BASE64\" >BASE64</ChoiceValue><ChoiceValue i18nKey=\"format.ENCRYPTED_PLAIN\" >ENCRYPTED_PLAIN</ChoiceValue><ChoiceValue i18nKey=\"format.ENCRYPTED_BASE64\" >ENCRYPTED_BASE64</ChoiceValue><ChoiceValue i18nKey=\"format.ENCRYPTED_HMAC_KEY\" >ENCRYPTED_HMAC_KEY</ChoiceValue><ChoiceValue i18nKey=\"format.BASE64_HMAC_KEY\" >BASE64_HMAC_KEY</ChoiceValue></ChoiceValues><DefaultValues><Value>BASE64</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"directory\"  name=\"directory\"  order=\"100\"  resourceName=\"directory\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema></SubSchema></Global><Organization><SubSchema i18nKey=\"serviceDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"suffix\"  name=\"suffix\"  order=\"200\"  resourceName=\"suffix\"  syntax=\"string\"  type=\"single\" ><IsOptional></IsOptional></AttributeSchema><AttributeSchema i18nKey=\"format\"  name=\"format\"  order=\"300\"  resourceName=\"format\"  syntax=\"string\"  type=\"single_choice\"  validator=\"RequiredValueValidator0\" ><ChoiceValues><ChoiceValue i18nKey=\"format.PLAIN\" >PLAIN</ChoiceValue><ChoiceValue i18nKey=\"format.BASE64\" >BASE64</ChoiceValue><ChoiceValue i18nKey=\"format.ENCRYPTED_PLAIN\" >ENCRYPTED_PLAIN</ChoiceValue><ChoiceValue i18nKey=\"format.ENCRYPTED_BASE64\" >ENCRYPTED_BASE64</ChoiceValue><ChoiceValue i18nKey=\"format.ENCRYPTED_HMAC_KEY\" >ENCRYPTED_HMAC_KEY</ChoiceValue><ChoiceValue i18nKey=\"format.BASE64_HMAC_KEY\" >BASE64_HMAC_KEY</ChoiceValue></ChoiceValues><DefaultValues><Value>BASE64</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"directory\"  name=\"directory\"  order=\"100\"  resourceName=\"directory\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "FileSystemSecretStore",
+      "name" : "FileSystemSecretStore",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

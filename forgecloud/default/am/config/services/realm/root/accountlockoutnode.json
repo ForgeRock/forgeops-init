@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "AccountLockoutNode",
+    "entityId" : "AccountLockoutNode",
+    "uid" : "ou=AccountLockoutNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "AccountLockoutNode",
+      "name" : "AccountLockoutNode",
+      "collection" : false
+    },
+    "_id" : "AccountLockoutNode"
+  }
+}

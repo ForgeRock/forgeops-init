@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityServerSOAPBinding",
+    "entityId" : "sunIdentityServerSOAPBinding",
+    "uid" : "ou=sunIdentityServerSOAPBinding,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "sunIdentityServerSOAPBinding",
+      "name" : "sunIdentityServerSOAPBinding",
+      "collection" : false
+    },
+    "_id" : "sunIdentityServerSOAPBinding"
+  }
+}

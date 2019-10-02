@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunAMRealmService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=sunAMRealmService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunAMRealmService\" version=\"1.0\"><Schema revisionNumber=\"10\" ></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "sunAMRealmService",
+      "name" : "sunAMRealmService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

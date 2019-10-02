@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "amRealmBaseURL",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=amRealmBaseURL,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "amRealmBaseURL",
+      "name" : "amRealmBaseURL",
+      "collection" : false
+    },
+    "fixedValue" : "https://openam-cm-fraas-1265-129.forgeblocks.com",
+    "_id" : "default",
+    "source" : "FIXED_VALUE"
+  }
+}

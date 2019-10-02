@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "ModifyAuthLevelNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=ModifyAuthLevelNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"ModifyAuthLevelNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/framework/ModifyAuthLevelNode\"  i18nKey=\"nodeDescription\"  resourceName=\"ModifyAuthLevelNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/ModifyAuthLevelNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\" ><AttributeSchema i18nKey=\"authLevelIncrement\"  name=\"authLevelIncrement\"  order=\"100\"  resourceName=\"authLevelIncrement\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>0</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "ModifyAuthLevelNode",
+      "name" : "ModifyAuthLevelNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

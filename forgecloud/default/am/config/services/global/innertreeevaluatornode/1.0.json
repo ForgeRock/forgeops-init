@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "InnerTreeEvaluatorNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=InnerTreeEvaluatorNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"InnerTreeEvaluatorNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/framework/InnerTreeEvaluatorNode\"  i18nKey=\"nodeDescription\"  resourceName=\"InnerTreeEvaluatorNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/InnerTreeEvaluatorNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validator=\"org.forgerock.openam.auth.nodes.framework.validators.InnerTreeConfigValidator\" ><AttributeSchema i18nKey=\"tree\"  name=\"tree\"  order=\"100\"  resourceName=\"tree\"  syntax=\"string\"  type=\"single_choice\"  uitype=\"scriptSelect\" ><ChoiceValues><ChoiceValuesClassName className=\"org.forgerock.openam.auth.nodes.framework.valueproviders.InnerTreeChoiceValues\" ></ChoiceValuesClassName></ChoiceValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "InnerTreeEvaluatorNode",
+      "name" : "InnerTreeEvaluatorNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

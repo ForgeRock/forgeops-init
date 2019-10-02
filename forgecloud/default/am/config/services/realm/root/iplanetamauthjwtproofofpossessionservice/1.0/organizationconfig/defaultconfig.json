@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthJwtProofOfPossessionService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthJwtProofOfPossessionService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "authenticationLevel" : 0,
+    "_type" : {
+      "_id" : "iPlanetAMAuthJwtProofOfPossessionService",
+      "name" : "iPlanetAMAuthJwtProofOfPossessionService",
+      "collection" : false
+    },
+    "responseEncryptionMethod" : "ECDHE",
+    "subjectJwkSetAttr" : null,
+    "responseEncryptionCipher" : "A128GCM",
+    "_id" : "defaultconfig",
+    "enableTlsSessionBinding" : true,
+    "challengeSigningKey" : null
+  }
+}

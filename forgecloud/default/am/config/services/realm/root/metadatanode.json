@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "MetadataNode",
+    "entityId" : "MetadataNode",
+    "uid" : "ou=MetadataNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "MetadataNode",
+      "name" : "MetadataNode",
+      "collection" : false
+    },
+    "_id" : "MetadataNode"
+  }
+}

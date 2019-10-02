@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "AgentDataStoreDecisionNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=AgentDataStoreDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"AgentDataStoreDecisionNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/AgentDataStoreDecisionNode\"  i18nKey=\"nodeDescription\"  resourceName=\"AgentDataStoreDecisionNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/AgentDataStoreDecisionNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\" ></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "AgentDataStoreDecisionNode",
+      "name" : "AgentDataStoreDecisionNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

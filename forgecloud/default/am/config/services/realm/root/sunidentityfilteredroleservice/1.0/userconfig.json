@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityFilteredRoleService",
+    "entityId" : "UserConfig",
+    "uid" : "ou=UserConfig,ou=1.0,ou=sunIdentityFilteredRoleService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "sunIdentityFilteredRoleService",
+      "name" : "sunIdentityFilteredRoleService",
+      "collection" : false
+    },
+    "_id" : "UserConfig"
+  }
+}

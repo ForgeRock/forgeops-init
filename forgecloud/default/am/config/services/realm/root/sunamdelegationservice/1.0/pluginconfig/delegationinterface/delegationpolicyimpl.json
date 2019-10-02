@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunAMDelegationService",
+    "entityId" : "DelegationInterface/DelegationPolicyImpl",
+    "uid" : "ou=DelegationPolicyImpl,ou=DelegationInterface,ou=PluginConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunPluginSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunAMDelegationService\" version=\"1.0\"><PluginSchema className=\"com.sun.identity.delegation.plugins.DelegationPolicyImpl\"  i18nKey=\"sun-am-delegation-policyimpl-name\"  interfaceName=\"DelegationInterface\"  name=\"DelegationPolicyImpl\" ></PluginSchema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "sunAMDelegationService",
+      "name" : "sunAMDelegationService",
+      "collection" : false
+    },
+    "_id" : "DelegationInterface/DelegationPolicyImpl"
+  }
+}

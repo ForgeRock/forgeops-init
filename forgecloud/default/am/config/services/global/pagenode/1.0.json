@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "PageNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=PageNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"PageNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/framework/PageNode\"  i18nKey=\"nodeDescription\"  resourceName=\"PageNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/PageNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validator=\"org.forgerock.openam.auth.nodes.framework.PageNode$MultipleCallbacksOnlyInLastNode\" ><AttributeSchema i18nKey=\"pageHeader\"  name=\"pageHeader\"  order=\"100\"  resourceName=\"pageHeader\"  syntax=\"string\"  type=\"list\"  uitype=\"maplist\" ></AttributeSchema><AttributeSchema i18nKey=\"pageDescription\"  name=\"pageDescription\"  order=\"200\"  resourceName=\"pageDescription\"  syntax=\"string\"  type=\"list\"  uitype=\"maplist\" ></AttributeSchema><AttributeSchema i18nKey=\"nodes\"  name=\"nodes\"  order=\"500\"  resourceName=\"nodes\"  syntax=\"string\"  type=\"list\"  uitype=\"orderedlist\" ></AttributeSchema><AttributeSchema i18nKey=\"stage\"  name=\"stage\"  order=\"300\"  resourceName=\"stage\"  syntax=\"string\"  type=\"single\" ></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "PageNode",
+      "name" : "PageNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

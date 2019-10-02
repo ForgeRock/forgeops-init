@@ -1,0 +1,25 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthAmsterService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAmsterService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent", "organizationalunit" ],
+    "pathParams" : { },
+    "ou" : [ "defaultconfig" ]
+  },
+  "data" : {
+    "authenticationLevel" : 0,
+    "_type" : {
+      "_id" : "iPlanetAMAuthAmsterService",
+      "name" : "iPlanetAMAuthAmsterService",
+      "collection" : false
+    },
+    "authorizedKeys" : "/var/run/secrets/openam/keystore/authorized_keys",
+    "_id" : "defaultconfig",
+    "enabled" : true,
+    "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator"
+  }
+}

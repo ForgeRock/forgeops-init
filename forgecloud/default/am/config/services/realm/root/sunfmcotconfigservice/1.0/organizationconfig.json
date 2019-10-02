@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunFMCOTConfigService",
+    "entityId" : "OrganizationConfig",
+    "uid" : "ou=OrganizationConfig,ou=1.0,ou=sunFMCOTConfigService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "sunFMCOTConfigService",
+      "name" : "sunFMCOTConfigService",
+      "collection" : false
+    },
+    "_id" : "OrganizationConfig"
+  }
+}

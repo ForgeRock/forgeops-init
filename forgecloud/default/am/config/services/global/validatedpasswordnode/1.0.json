@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "ValidatedPasswordNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=ValidatedPasswordNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"ValidatedPasswordNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/ValidatedPasswordNode\"  i18nKey=\"nodeDescription\"  resourceName=\"ValidatedPasswordNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/ValidatedPasswordNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"validateInput\"  name=\"validateInput\"  order=\"100\"  resourceName=\"validateInput\"  syntax=\"boolean\"  type=\"single\" ><DefaultValues><Value>false</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"objectType\"  name=\"objectType\"  order=\"200\"  resourceName=\"objectType\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ><DefaultValues><Value>user</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"passwordAttribute\"  name=\"passwordAttribute\"  order=\"300\"  resourceName=\"passwordAttribute\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ><DefaultValues><Value>password</Value></DefaultValues></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "ValidatedPasswordNode",
+      "name" : "ValidatedPasswordNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

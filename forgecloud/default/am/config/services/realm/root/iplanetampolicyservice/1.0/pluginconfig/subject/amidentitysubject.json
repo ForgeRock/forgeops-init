@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMPolicyService",
+    "entityId" : "Subject/AMIdentitySubject",
+    "uid" : "ou=AMIdentitySubject,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunPluginSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"iPlanetAMPolicyService\" version=\"1.0\"><PluginSchema className=\"com.sun.identity.policy.plugins.AMIdentitySubject\"  i18nFileName=\"amPolicy\"  i18nKey=\"SunIdentityServer-subject-AMIdentitySubject-name\"  interfaceName=\"Subject\"  name=\"AMIdentitySubject\"  propertiesViewBeanURL=\"../policy/IdentitySubject\" ></PluginSchema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "iPlanetAMPolicyService",
+      "name" : "iPlanetAMPolicyService",
+      "collection" : false
+    },
+    "_id" : "Subject/AMIdentitySubject"
+  }
+}

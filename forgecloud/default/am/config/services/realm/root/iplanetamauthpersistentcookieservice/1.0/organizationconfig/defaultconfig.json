@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthPersistentCookieService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthPersistentCookieService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "useHttpOnlyCookie" : true,
+    "enforceClientIP" : false,
+    "idleTimeout" : 5,
+    "_type" : {
+      "_id" : "iPlanetAMAuthPersistentCookieService",
+      "name" : "iPlanetAMAuthPersistentCookieService",
+      "collection" : false
+    },
+    "useSecureCookie" : true,
+    "_id" : "defaultconfig",
+    "maxLife" : 5,
+    "cookieName" : "session-jwt"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAdminConsoleService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAdminConsoleService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "pagingSize" : 25,
+    "_type" : {
+      "_id" : "iPlanetAMAdminConsoleService",
+      "name" : "iPlanetAMAdminConsoleService",
+      "collection" : false
+    },
+    "searchLimit" : 100,
+    "iplanet-am-admin-console-custom-jsp-dir" : "console",
+    "passwordResetEnabled" : false,
+    "searchReturnAttributes" : "uid cn",
+    "_id" : "defaultconfig",
+    "searchTimeout" : 5
+  }
+}

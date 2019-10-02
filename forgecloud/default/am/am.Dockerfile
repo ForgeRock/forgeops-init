@@ -13,3 +13,6 @@ ADD --chown=forgerock:root \
   $LOGBACK/contrib/logback-jackson/0.1.5/logback-jackson-0.1.5.jar \
   /usr/local/tomcat/webapps/am/WEB-INF/lib/
 COPY logback.xml /usr/local/tomcat/webapps/am/WEB-INF/classes
+
+COPY --chown=forgerock:daemon config /home/forgerock/openam/config
+COPY --chown=forgerock:daemon security/secrets/jceks_credentials /home/forgerock/openam/security/secrets/jceks_credentials

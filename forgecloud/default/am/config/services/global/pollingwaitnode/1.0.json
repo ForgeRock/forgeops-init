@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "PollingWaitNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=PollingWaitNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"PollingWaitNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/PollingWaitNode\"  i18nKey=\"nodeDescription\"  resourceName=\"PollingWaitNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/PollingWaitNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\" ><AttributeSchema i18nKey=\"secondsToWait\"  name=\"secondsToWait\"  order=\"100\"  resourceName=\"secondsToWait\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>8</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"exitable\"  name=\"exitable\"  order=\"500\"  resourceName=\"exitable\"  syntax=\"boolean\"  type=\"single\" ><DefaultValues><Value>false</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"spamDetectionEnabled\"  name=\"spamDetectionEnabled\"  order=\"200\"  resourceName=\"spamDetectionEnabled\"  syntax=\"boolean\"  type=\"single\" ><DefaultValues><Value>false</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"spamDetectionTolerance\"  name=\"spamDetectionTolerance\"  order=\"300\"  resourceName=\"spamDetectionTolerance\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>3</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"waitingMessage\"  name=\"waitingMessage\"  order=\"400\"  resourceName=\"waitingMessage\"  syntax=\"string\"  type=\"list\"  uitype=\"maplist\" ></AttributeSchema><AttributeSchema i18nKey=\"exitMessage\"  name=\"exitMessage\"  order=\"600\"  resourceName=\"exitMessage\"  syntax=\"string\"  type=\"list\"  uitype=\"maplist\" ></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "PollingWaitNode",
+      "name" : "PollingWaitNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

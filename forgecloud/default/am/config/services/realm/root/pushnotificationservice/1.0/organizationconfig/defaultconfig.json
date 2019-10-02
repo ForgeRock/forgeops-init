@@ -1,0 +1,31 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "PushNotificationService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=PushNotificationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "delegateFactory" : "org.forgerock.openam.services.push.sns.SnsHttpDelegateFactory",
+    "mdDuration" : 120,
+    "accessKey" : null,
+    "appleEndpoint" : null,
+    "_type" : {
+      "_id" : "PushNotificationService",
+      "name" : "PushNotificationService",
+      "collection" : false
+    },
+    "mdConcurrency" : 16,
+    "_id" : "defaultconfig",
+    "secret" : null,
+    "region" : "us-east-1",
+    "googleEndpoint" : null,
+    "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator",
+    "mdCacheSize" : 10000
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunAMAuthSAEService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=sunAMAuthSAEService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : [ ]
+  },
+  "data" : {
+    "defaults" : {
+      "authenticationLevel" : 0
+    },
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunAMAuthSAEService\" version=\"1.0\"><Schema i18nFileName=\"fmAuthSAE\"  i18nKey=\"sunAMAuthSAEServiceDescription\"  resourceName=\"sae\"  revisionNumber=\"10\"  serviceHierarchy=\"/DSAMEConfig/authentication/sunAMAuthSAEService\" >\n\t    \n            <Organization hideConfigUI=\"no\" >                  \n\t\t<AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a500\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sunAMAuthSAEAuthLevel\"  order=\"100\"  resourceName=\"authenticationLevel\"  syntax=\"number\"  type=\"single\" >\n                    <DefaultValues>\n                        <Value>0</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n            <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"serverconfig\"  realmCloneable=\"yes\"  resourceName=\"USE-PARENT\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n    \t\t    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a500\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sunAMAuthSAEAuthLevel\"  order=\"100\"  resourceName=\"authenticationLevel\"  syntax=\"number\"  type=\"single\" >\n                        <DefaultValues>\n                            <Value>0</Value>\n                        </DefaultValues>\n                    </AttributeSchema>\n\t\t</SubSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "sunAMAuthSAEService",
+      "name" : "sunAMAuthSAEService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

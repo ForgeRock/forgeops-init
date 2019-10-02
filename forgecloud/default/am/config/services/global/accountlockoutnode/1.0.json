@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "AccountLockoutNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=AccountLockoutNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"AccountLockoutNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/AccountLockoutNode\"  i18nKey=\"nodeDescription\"  resourceName=\"AccountLockoutNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/AccountLockoutNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\" ><AttributeSchema i18nKey=\"lockAction\"  name=\"lockAction\"  order=\"100\"  resourceName=\"lockAction\"  syntax=\"string\"  type=\"single_choice\" ><ChoiceValues><ChoiceValue i18nKey=\"lockAction.LOCK\" >LOCK</ChoiceValue><ChoiceValue i18nKey=\"lockAction.UNLOCK\" >UNLOCK</ChoiceValue></ChoiceValues><DefaultValues><Value>LOCK</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "AccountLockoutNode",
+      "name" : "AccountLockoutNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

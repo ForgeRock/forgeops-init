@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "RadiusServerService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=RadiusServerService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "radiusThreadPoolMaxSize" : 10,
+    "radiusListenerEnabled" : "NO",
+    "radiusThreadPoolCoreSize" : 1,
+    "radiusServerPort" : 1812,
+    "radiusThreadPoolKeepaliveSeconds" : 10,
+    "_type" : {
+      "_id" : "RadiusServerService",
+      "name" : "RadiusServerService",
+      "collection" : false
+    },
+    "radiusThreadPoolQueueSize" : 20,
+    "_id" : "default"
+  }
+}

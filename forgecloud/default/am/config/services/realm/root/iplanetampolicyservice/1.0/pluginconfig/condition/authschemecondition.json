@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMPolicyService",
+    "entityId" : "Condition/AuthSchemeCondition",
+    "uid" : "ou=AuthSchemeCondition,ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunPluginSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"iPlanetAMPolicyService\" version=\"1.0\"><PluginSchema className=\"com.sun.identity.policy.plugins.AuthSchemeCondition\"  i18nFileName=\"amPolicy\"  i18nKey=\"iplanet-authscheme-condition-name\"  interfaceName=\"Condition\"  name=\"AuthSchemeCondition\"  propertiesViewBeanURL=\"../policy/PMDefaultAuthSchemeCondition\" ></PluginSchema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "iPlanetAMPolicyService",
+      "name" : "iPlanetAMPolicyService",
+      "collection" : false
+    },
+    "_id" : "Condition/AuthSchemeCondition"
+  }
+}

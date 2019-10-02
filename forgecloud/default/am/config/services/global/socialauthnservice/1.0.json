@@ -1,0 +1,29 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "socialAuthNService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=socialAuthNService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : [ ]
+  },
+  "data" : {
+    "defaults" : {
+      "enabledKeys" : [ ],
+      "MapValueValidator" : "com.sun.identity.common.configuration.MapValueValidator",
+      "displayNames" : { },
+      "icons" : { },
+      "authenticationChains" : { }
+    },
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"socialAuthNService\" version=\"1.0\"><Schema i18nFileName=\"socialAuthN\"  i18nKey=\"forgerock-am-socialauthn-service-description\"  resourceName=\"socialauthentication\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/socialAuthNService\" >\n            <Organization hideConfigUI=\"no\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"MapValueValidator\"  syntax=\"string\"  type=\"validator\" >\n                    <DefaultValues>\n                        <Value>com.sun.identity.common.configuration.MapValueValidator</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a101\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"socialAuthNDisplayName\"  order=\"100\"  resourceName=\"displayNames\"  syntax=\"string\"  type=\"list\"  uitype=\"maplist\"  validator=\"MapValueValidator\" ></AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a102\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"socialAuthNAuthChain\"  order=\"200\"  resourceName=\"authenticationChains\"  syntax=\"string\"  type=\"list\"  uitype=\"maplist\"  validator=\"MapValueValidator\" >\n                    <ChoiceValues>\n                        <ChoiceValuesClassName className=\"com.sun.identity.authentication.service.ConfiguredSocialAuthServices\" ></ChoiceValuesClassName>\n                    </ChoiceValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a103\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"socialAuthNIcon\"  order=\"300\"  resourceName=\"icons\"  syntax=\"string\"  type=\"list\"  uitype=\"maplist\"  validator=\"MapValueValidator\" ></AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a104\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"socialAuthNEnabled\"  order=\"400\"  resourceName=\"enabledKeys\"  syntax=\"string\"  type=\"list\" ></AttributeSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "socialAuthNService",
+      "name" : "socialAuthNService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

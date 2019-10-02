@@ -1,0 +1,34 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "MailServer",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=MailServer,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : [ ]
+  },
+  "data" : {
+    "defaults" : {
+      "emailAddressAttribute" : "mail",
+      "message" : null,
+      "port" : 465,
+      "password" : null,
+      "from" : null,
+      "hostname" : null,
+      "username" : null,
+      "sslState" : "SSL",
+      "subject" : null,
+      "emailImplClassName" : "org.forgerock.openam.services.email.MailServerImpl"
+    },
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"MailServer\" version=\"1.0\"><Schema i18nFileName=\"MailServer\"  i18nKey=\"forgerock-email-service-description\"  resourceName=\"email\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/ForgeRockSendEmailService\" >\n\n            <Organization hideConfigUI=\"no\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a100\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerockMailServerImplClassName\"  order=\"100\"  resourceName=\"emailImplClassName\"  syntax=\"string\"  type=\"single\" >\n                    <DefaultValues>\n                        <Value>org.forgerock.openam.services.email.MailServerImpl</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a101\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerockEmailServiceSMTPHostName\"  order=\"200\"  resourceName=\"hostname\"  syntax=\"string\"  type=\"single\" >\n                    <ExampleValue>\n                        <Value>smtp.example.com</Value>\n                    </ExampleValue>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a102\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerockEmailServiceSMTPHostPort\"  order=\"300\"  rangeEnd=\"65535\"  rangeStart=\"0\"  resourceName=\"port\"  syntax=\"number_range\"  type=\"single\" >\n                    <DefaultValues>\n                        <Value>465</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a103\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerockEmailServiceSMTPUserName\"  order=\"400\"  resourceName=\"username\"  syntax=\"string\"  type=\"single\" >\n                    <ExampleValue>\n                        <Value>username</Value>\n                    </ExampleValue>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a104\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerockEmailServiceSMTPUserPassword\"  order=\"500\"  resourceName=\"password\"  syntax=\"password\"  type=\"single\" >\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a105\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerockEmailServiceSMTPSSLEnabled\"  order=\"600\"  resourceName=\"sslState\"  syntax=\"string\"  type=\"single_choice\" >\n                    <ChoiceValues>\n                        <ChoiceValue i18nKey=\"ssl\" >SSL</ChoiceValue>\n                        <ChoiceValue i18nKey=\"nonssl\" >Non SSL</ChoiceValue>\n                        <ChoiceValue i18nKey=\"starttls\" >Start TLS</ChoiceValue>\n                    </ChoiceValues>\n                    <DefaultValues>\n                        <Value>SSL</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a106\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerockEmailServiceSMTPFromAddress\"  order=\"700\"  resourceName=\"from\"  syntax=\"string\"  type=\"single\" >\n                    <ExampleValue>\n                        <Value>no-reply@example.com</Value>\n                    </ExampleValue>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a107\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"openamEmailAttribute\"  order=\"800\"  resourceName=\"emailAddressAttribute\"  syntax=\"string\"  type=\"single\" >\n                    <DefaultValues>\n                        <Value>mail</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a108\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerockEmailServiceSMTPSubject\"  order=\"900\"  resourceName=\"subject\"  syntax=\"string\"  type=\"single\" >\n                    <IsOptional></IsOptional>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a109\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerockEmailServiceSMTPMessage\"  order=\"1000\"  resourceName=\"message\"  syntax=\"string\"  type=\"single\" >\n                    <IsOptional></IsOptional>\n                </AttributeSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "MailServer",
+      "name" : "MailServer",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

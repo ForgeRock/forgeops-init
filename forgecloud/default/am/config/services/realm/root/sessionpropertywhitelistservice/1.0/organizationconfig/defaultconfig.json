@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "SessionPropertyWhitelistService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=SessionPropertyWhitelistService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "SessionPropertyWhitelistService",
+      "name" : "SessionPropertyWhitelistService",
+      "collection" : false
+    },
+    "sessionPropertyWhitelist" : [ "AMCtxId" ],
+    "_id" : "defaultconfig"
+  }
+}

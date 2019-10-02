@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityFilteredRoleService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=DynamicConfig,ou=1.0,ou=sunIdentityFilteredRoleService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "nsRoleFilter" : "(objectclass=inetorgperson)",
+    "_type" : {
+      "_id" : "sunIdentityFilteredRoleService",
+      "name" : "sunIdentityFilteredRoleService",
+      "collection" : false
+    },
+    "_id" : "defaultconfig",
+    "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator"
+  }
+}

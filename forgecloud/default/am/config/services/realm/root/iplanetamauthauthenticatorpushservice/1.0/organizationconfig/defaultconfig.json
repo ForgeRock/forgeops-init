@@ -1,0 +1,25 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthAuthenticatorPushService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAuthenticatorPushService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "authenticationLevel" : 0,
+    "pushMessage" : "Login attempt from {{user}} at {{issuer}}",
+    "_type" : {
+      "_id" : "iPlanetAMAuthAuthenticatorPushService",
+      "name" : "iPlanetAMAuthAuthenticatorPushService",
+      "collection" : false
+    },
+    "_id" : "defaultconfig",
+    "timeoutInMilliSecconds" : 120000,
+    "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator"
+  }
+}

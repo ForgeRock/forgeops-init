@@ -1,0 +1,47 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMNamingService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMNamingService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "serviceObjectClasses" : [ "iplanet-am-naming-service" ],
+    "iplanet-am-naming-policy-class" : "com.sun.identity.policy.remote.PolicyRequestHandler",
+    "federationConfig" : {
+      "samlAssertionManagerUrl" : "%protocol://%host:%port%uri/AssertionManagerServlet/AssertionManagerIF",
+      "samlAwareServletUrl" : "%protocol://%host:%port%uri/SAMLAwareServlet",
+      "jaxrpcUrl" : "%protocol://%host:%port%uri/jaxrpc/",
+      "samlSoapReceiverUrl" : "%protocol://%host:%port%uri/SAMLSOAPReceiver",
+      "samlPostServletUrl" : "%protocol://%host:%port%uri/SAMLPOSTProfileServlet"
+    },
+    "iplanet-am-naming-logging-class" : "com.sun.identity.log.service.LogService",
+    "endpointConfig" : {
+      "stsMexUrl" : "%protocol://%host:%port%uri/sts/mex",
+      "idsvcsRestUrl" : "%protocol://%host:%port%uri/identity/",
+      "stsUrl" : "%protocol://%host:%port%uri/sts",
+      "jaxwsUrl" : "%protocol://%host:%port%uri/identityservices/"
+    },
+    "iplanet-am-naming-auth-class" : "com.sun.identity.authentication.server.AuthXMLHandler",
+    "generalConfig" : {
+      "sessionUrl" : "%protocol://%host:%port%uri/sessionservice",
+      "profileUrl" : "%protocol://%host:%port%uri/profileservice",
+      "policyUrl" : "%protocol://%host:%port%uri/policyservice",
+      "authUrl" : "%protocol://%host:%port%uri/authservice",
+      "loggingUrl" : "%protocol://%host:%port%uri/loggingservice"
+    },
+    "_type" : {
+      "_id" : "iPlanetAMNamingService",
+      "name" : "iPlanetAMNamingService",
+      "collection" : false
+    },
+    "iplanet-am-naming-profile-class" : "com.iplanet.dpro.profile.agent.ProfileService",
+    "iplanet-am-naming-session-class" : "com.iplanet.dpro.session.service.SessionRequestHandler",
+    "_id" : "default"
+  }
+}

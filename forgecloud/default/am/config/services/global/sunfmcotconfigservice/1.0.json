@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunFMCOTConfigService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=sunFMCOTConfigService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunFMCOTConfigService\" version=\"1.0\"><Schema i18nFileName=\"fmCOTConfiguration\"  i18nKey=\"\"  resourceName=\"circlesoftrust\"  revisionNumber=\"20\" >\n\n            <Organization hideConfigUI=\"no\" >\n                <SubSchema hideConfigUI=\"no\"  i18nKey=\"a200\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"cot\"  realmCloneable=\"yes\"  resourceName=\"USE-PARENT\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a201\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-cot-description\"  order=\"100\"  resourceName=\"description\"  syntax=\"string\"  type=\"single\" >\n                        <IsOptional></IsOptional>\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a205\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-cot-status\"  order=\"200\"  resourceName=\"status\"  syntax=\"string\"  type=\"single_choice\" >\n                        <IsOptional></IsOptional>\n                        <ChoiceValues>\n                              <ChoiceValue i18nKey=\"a206\" >active</ChoiceValue>\n                             <ChoiceValue i18nKey=\"a207\" >inactive</ChoiceValue>\n                        </ChoiceValues>\n                        <DefaultValues>\n                             <Value>active</Value>\n                        </DefaultValues>\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a211\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-saml2-writerservice-url\"  order=\"400\"  resourceName=\"saml2WriterServiceUrl\"  syntax=\"string\"  type=\"single\"  validator=\"URLValidator\" >\n                        <IsOptional></IsOptional>\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a212\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-saml2-readerservice-url\"  order=\"500\"  resourceName=\"saml2ReaderServiceUrl\"  syntax=\"string\"  type=\"single\"  validator=\"URLValidator\" >\n                        <IsOptional></IsOptional>\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"yes\"  i18nKey=\"a213\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-idff-writerservice-url\"  order=\"600\"  resourceName=\"idffWriterServiceUrl\"  syntax=\"url\"  type=\"single\" >\n                        <IsOptional></IsOptional>\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"yes\"  i18nKey=\"a214\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-idff-readerservice-url\"  order=\"700\"  resourceName=\"idffReaderServiceUrl\"  syntax=\"url\"  type=\"single\" >\n                        <IsOptional></IsOptional>\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a210\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-trusted-providers\"  order=\"300\"  resourceName=\"trustedProviders\"  syntax=\"string\"  type=\"list\" >\n                        <IsOptional></IsOptional>\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"URLValidator\"  syntax=\"string\"  type=\"validator\" >\n                        <DefaultValues>\n                            <Value>org.forgerock.openam.sm.validation.URLValidator</Value>\n                        </DefaultValues>\n                    </AttributeSchema>\n                </SubSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "sunFMCOTConfigService",
+      "name" : "sunFMCOTConfigService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

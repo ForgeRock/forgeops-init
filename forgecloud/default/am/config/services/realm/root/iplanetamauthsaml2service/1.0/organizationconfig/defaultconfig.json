@@ -1,0 +1,36 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthSAML2Service",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSAML2Service,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "authnContextClassRef" : null,
+    "isPassive" : "false",
+    "_type" : {
+      "_id" : "iPlanetAMAuthSAML2Service",
+      "name" : "iPlanetAMAuthSAML2Service",
+      "collection" : false
+    },
+    "binding" : "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact",
+    "authnContextDeclRef" : null,
+    "sloEnabled" : "false",
+    "allowCreate" : "true",
+    "metaAlias" : "/sp",
+    "authenticationLevel" : 0,
+    "entityName" : "http://",
+    "nameIdFormat" : "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent",
+    "forceAuthn" : "false",
+    "reqBinding" : "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+    "_id" : "defaultconfig",
+    "loginChain" : null,
+    "sloRelay" : "http://",
+    "authComparison" : "exact"
+  }
+}

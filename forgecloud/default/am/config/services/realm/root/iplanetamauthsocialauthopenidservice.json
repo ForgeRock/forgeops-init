@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthSocialAuthOpenIDService",
+    "entityId" : "iPlanetAMAuthSocialAuthOpenIDService",
+    "uid" : "ou=iPlanetAMAuthSocialAuthOpenIDService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "iPlanetAMAuthSocialAuthOpenIDService",
+      "name" : "iPlanetAMAuthSocialAuthOpenIDService",
+      "collection" : false
+    },
+    "_id" : "iPlanetAMAuthSocialAuthOpenIDService"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetG11NSettings",
+    "entityId" : "iPlanetG11NSettings",
+    "uid" : "ou=iPlanetG11NSettings,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "iPlanetG11NSettings",
+      "name" : "iPlanetG11NSettings",
+      "collection" : false
+    },
+    "_id" : "iPlanetG11NSettings"
+  }
+}

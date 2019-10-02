@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "GlobalSecrets",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=GlobalSecrets,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"GlobalSecrets\" version=\"1.0\"><Schema i18nFileName=\"org.forgerock.openam.secrets.config.GlobalSecrets\"  i18nKey=\"serviceDescription\"  resourceName=\"GlobalSecrets\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/GlobalSecrets\" ><Global hideConfigUI=\"yes\" ><AttributeSchema i18nKey=\"storeTypes\"  name=\"storeTypes\"  order=\"100\"  resourceName=\"storeTypes\"  syntax=\"string\"  type=\"list\" ></AttributeSchema></Global></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "GlobalSecrets",
+      "name" : "GlobalSecrets",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

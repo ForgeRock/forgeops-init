@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "PushResultVerifierNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=PushResultVerifierNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"PushResultVerifierNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/push/PushResultVerifierNode\"  i18nKey=\"nodeDescription\"  resourceName=\"PushResultVerifierNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/PushResultVerifierNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\" ></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "PushResultVerifierNode",
+      "name" : "PushResultVerifierNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

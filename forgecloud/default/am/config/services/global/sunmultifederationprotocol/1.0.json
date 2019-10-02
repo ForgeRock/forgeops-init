@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunMultiFederationProtocol",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=sunMultiFederationProtocol,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunMultiFederationProtocol\" version=\"1.0\"><Schema i18nFileName=\"fmMultiFederationProtocol\"  i18nKey=\"sunMultiFederationProtocol\"  propertiesViewBeanURL=\"\"  resourceName=\"federation/multi\"  revisionNumber=\"10\"  serviceHierarchy=\"\" >\n            <Global hideConfigUI=\"no\"  validate=\"yes\" >\n               <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a101\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"SingleLogoutHandlerList\"  order=\"100\"  resourceName=\"singleLogoutHandlerList\"  syntax=\"string\"  type=\"list\" >\n                   <DefaultValues>\n                       <Value>key=SAML2|class=com.sun.identity.multiprotocol.SAML2SingleLogoutHandler</Value>\n                       <Value>key=WSFED|class=com.sun.identity.multiprotocol.WSFederationSingleLogoutHandler</Value>\n                   </DefaultValues>\n               </AttributeSchema>\n            </Global>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "sunMultiFederationProtocol",
+      "name" : "sunMultiFederationProtocol",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

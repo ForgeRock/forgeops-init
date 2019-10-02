@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunAMAuthJDBCService",
+    "entityId" : "OrganizationConfig",
+    "uid" : "ou=OrganizationConfig,ou=1.0,ou=sunAMAuthJDBCService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "sunAMAuthJDBCService",
+      "name" : "sunAMAuthJDBCService",
+      "collection" : false
+    },
+    "_id" : "OrganizationConfig"
+  }
+}

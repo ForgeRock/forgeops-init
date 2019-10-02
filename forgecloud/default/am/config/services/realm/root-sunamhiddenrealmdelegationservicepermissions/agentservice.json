@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/sunamhiddenrealmdelegationservicepermissions",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "AgentService",
+    "entityId" : "AgentService",
+    "uid" : "ou=AgentService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "AgentService",
+      "name" : "AgentService",
+      "collection" : false
+    },
+    "_id" : "AgentService"
+  }
+}

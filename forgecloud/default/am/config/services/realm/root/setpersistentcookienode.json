@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "SetPersistentCookieNode",
+    "entityId" : "SetPersistentCookieNode",
+    "uid" : "ou=SetPersistentCookieNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "SetPersistentCookieNode",
+      "name" : "SetPersistentCookieNode",
+      "collection" : false
+    },
+    "_id" : "SetPersistentCookieNode"
+  }
+}

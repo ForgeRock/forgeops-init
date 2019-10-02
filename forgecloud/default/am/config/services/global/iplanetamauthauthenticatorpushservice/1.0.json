@@ -1,0 +1,28 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthAuthenticatorPushService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=iPlanetAMAuthAuthenticatorPushService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : [ ]
+  },
+  "data" : {
+    "defaults" : {
+      "pushMessage" : "Login attempt from {{user}} at {{issuer}}",
+      "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator",
+      "timeoutInMilliSecconds" : 120000,
+      "authenticationLevel" : 0
+    },
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"iPlanetAMAuthAuthenticatorPushService\" version=\"1.0\"><Schema i18nFileName=\"amAuthAuthenticatorPush\"  i18nKey=\"iPlanetAMAuthAuthenticatorPushServiceDescription\"  resourceName=\"authPush\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/authentication/iPlanetAMAuthAuthenticatorPushService\" >\n\n            <Organization hideConfigUI=\"no\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"RequiredValueValidator\"  syntax=\"string\"  type=\"validator\" >\n                    <DefaultValues>\n                        <Value>com.sun.identity.sm.RequiredValueValidator</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a600\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerock-am-auth-authenticatorpush-auth-level\"  order=\"100\"  rangeEnd=\"2147483647\"  rangeStart=\"0\"  resourceName=\"authenticationLevel\"  syntax=\"number_range\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>0</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a601\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerock-am-auth-push-message-response-timeout\"  order=\"200\"  rangeEnd=\"2147483647\"  rangeStart=\"0\"  resourceName=\"timeoutInMilliSecconds\"  syntax=\"number_range\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>120000</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a602\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerock-am-auth-push-message\"  order=\"300\"  resourceName=\"pushMessage\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                    <DefaultValues>\n                        <Value>Login attempt from {{user}} at {{issuer}}</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n                <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"serverconfig\"  realmCloneable=\"yes\"  resourceName=\"USE-PARENT\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a600\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerock-am-auth-authenticatorpush-auth-level\"  order=\"100\"  rangeEnd=\"2147483647\"  rangeStart=\"0\"  resourceName=\"authenticationLevel\"  syntax=\"number_range\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                        <DefaultValues>\n                            <Value>0</Value>\n                        </DefaultValues>\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a601\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerock-am-auth-push-message-response-timeout\"  order=\"200\"  rangeEnd=\"2147483647\"  rangeStart=\"0\"  resourceName=\"timeoutInMilliSecconds\"  syntax=\"number_range\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                        <DefaultValues>\n                            <Value>120000</Value>\n                        </DefaultValues>\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a602\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerock-am-auth-push-message\"  order=\"300\"  resourceName=\"pushMessage\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n                        <DefaultValues>\n                            <Value>Login attempt from {{user}} at {{issuer}}</Value>\n                        </DefaultValues>\n                    </AttributeSchema>\n                </SubSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "iPlanetAMAuthAuthenticatorPushService",
+      "name" : "iPlanetAMAuthAuthenticatorPushService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

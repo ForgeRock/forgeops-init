@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMPolicyService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"iPlanetAMPolicyService\" version=\"1.0\"><Schema i18nFileName=\"amPolicy\"  i18nKey=\"iplanet-policy-service-name\"  revisionNumber=\"60\" >\n\n            <Organization hideConfigUI=\"no\" >\n                <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"Policies\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"NamedPolicy\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                        <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"xmlpolicy\"  syntax=\"xml\"  type=\"single\" ></AttributeSchema>\n                    </SubSchema>\n                </SubSchema>\n\n                <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"Resources\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"ServiceType\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                        <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"xmlresources\"  syntax=\"xml\"  type=\"single\" ></AttributeSchema>\n                        <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"resourceprefixes\"  syntax=\"xml\"  type=\"list\" ></AttributeSchema>\n                    </SubSchema>\n                </SubSchema>\n\n                <SubSchema hideConfigUI=\"no\"  inheritance=\"single\"  maintainPriority=\"no\"  name=\"RealmSubjects\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"xmlRealmSubjects\"  syntax=\"xml\"  type=\"single\" ></AttributeSchema>\n                </SubSchema>\n\n            </Organization>\n\n            <PluginInterface i18nKey=\"iplanet-policy-resource-interface-name\"  interface=\"com.sun.identity.policy.interfaces.ResourceName\"  name=\"ResourceName\" ></PluginInterface>\n            <PluginInterface i18nKey=\"iplanet-policy-referral-interface-name\"  interface=\"com.sun.identity.policy.interfaces.Referral\"  name=\"Referral\" ></PluginInterface>\n            <PluginInterface i18nKey=\"iplanet-policy-subject-interface-name\"  interface=\"com.sun.identity.policy.interfaces.Subject\"  name=\"Subject\" ></PluginInterface>\n            <PluginInterface i18nKey=\"iplanet-policy-condition-interface-name\"  interface=\"com.sun.identity.policy.interfaces.Condition\"  name=\"Condition\" ></PluginInterface>\n            <PluginInterface i18nKey=\"iplanet-policy-responseprovider-name\"  interface=\"com.sun.identity.policy.interfaces.ResponseProvider\"  name=\"ResponseProvider\" ></PluginInterface>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "iPlanetAMPolicyService",
+      "name" : "iPlanetAMPolicyService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

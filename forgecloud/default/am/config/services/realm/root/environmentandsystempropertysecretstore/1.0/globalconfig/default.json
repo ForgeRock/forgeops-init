@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "EnvironmentAndSystemPropertySecretStore",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=EnvironmentAndSystemPropertySecretStore,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "RequiredValueValidator0" : "com.sun.identity.sm.RequiredValueValidator",
+    "_type" : {
+      "_id" : "EnvironmentAndSystemPropertySecretStore",
+      "name" : "EnvironmentAndSystemPropertySecretStore",
+      "collection" : false
+    },
+    "format" : "BASE64",
+    "_id" : "default"
+  }
+}

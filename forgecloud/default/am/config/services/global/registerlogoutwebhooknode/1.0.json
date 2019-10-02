@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "RegisterLogoutWebhookNode",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=RegisterLogoutWebhookNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"RegisterLogoutWebhookNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/RegisterLogoutWebhookNode\"  i18nKey=\"nodeDescription\"  resourceName=\"RegisterLogoutWebhookNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/RegisterLogoutWebhookNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"webhookName\"  name=\"webhookName\"  order=\"100\"  resourceName=\"webhookName\"  syntax=\"string\"  type=\"single_choice\"  uitype=\"scriptSelect\"  validator=\"RequiredValueValidator0\" ><ChoiceValues><ChoiceValuesClassName className=\"org.forgerock.openam.webhook.node.WebhookChoiceValues\" ></ChoiceValuesClassName></ChoiceValues></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "RegisterLogoutWebhookNode",
+      "name" : "RegisterLogoutWebhookNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

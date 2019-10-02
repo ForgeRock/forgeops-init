@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "KbaDecisionNode",
+    "entityId" : "KbaDecisionNode",
+    "uid" : "ou=KbaDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "KbaDecisionNode",
+      "name" : "KbaDecisionNode",
+      "collection" : false
+    },
+    "_id" : "KbaDecisionNode"
+  }
+}
