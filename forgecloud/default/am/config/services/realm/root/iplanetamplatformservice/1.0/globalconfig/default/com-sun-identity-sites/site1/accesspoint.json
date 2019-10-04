@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMPlatformService",
     "entityId" : "default/com-sun-identity-sites/site1/accesspoint",
+    "serviceVersion" : "6ea08428-6297-450a-86f8-5f31e34bb70f",
     "uid" : "ou=accesspoint,ou=site1,ou=com-sun-identity-sites,ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMPlatformService,ou=services,ou=am-config",
     "sunServiceID" : "accesspoint",
     "objectClass" : [ "top", "sunServiceComponent" ],
@@ -18,6 +19,6 @@
       "collection" : false
     },
     "_id" : "default/com-sun-identity-sites/site1/accesspoint",
-    "primary-url" : "https://openam-cm-fraas-1265-129.forgeblocks.com"
+    "primary-url" : "https://openam-cm-fraas-1265-134.forgeblocks.com"
   }
 }

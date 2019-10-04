@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AttributeValueDecisionNode",
     "entityId" : "AttributeValueDecisionNode",
+    "serviceVersion" : null,
     "uid" : "ou=AttributeValueDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

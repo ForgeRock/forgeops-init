@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "QueryFilterDecisionNode",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=QueryFilterDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "FileSystemSecretStore",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : null,
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=FileSystemSecretStore,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

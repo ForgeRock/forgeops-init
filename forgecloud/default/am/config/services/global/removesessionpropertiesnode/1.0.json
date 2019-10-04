@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RemoveSessionPropertiesNode",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=RemoveSessionPropertiesNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -11,7 +12,7 @@
     "ou" : null
   },
   "data" : {
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"RemoveSessionPropertiesNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/RemoveSessionPropertiesNode\"  i18nKey=\"nodeDescription\"  resourceName=\"RemoveSessionPropertiesNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/RemoveSessionPropertiesNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"propertyNames\"  name=\"propertyNames\"  order=\"100\"  resourceName=\"propertyNames\"  syntax=\"string\"  type=\"list\"  validator=\"RequiredValueValidator0 SessionPropertyNameValidator1\" ></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema><AttributeSchema name=\"SessionPropertyNameValidator1\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>org.forgerock.openam.auth.nodes.validators.SessionPropertyNameValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"RemoveSessionPropertiesNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/RemoveSessionPropertiesNode\"  i18nKey=\"nodeDescription\"  resourceName=\"RemoveSessionPropertiesNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/RemoveSessionPropertiesNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"propertyNames\"  name=\"propertyNames\"  order=\"100\"  resourceName=\"propertyNames\"  syntax=\"string\"  type=\"list\"  validator=\"SessionPropertyNameValidator0 RequiredValueValidator1\" ></AttributeSchema><AttributeSchema name=\"SessionPropertyNameValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>org.forgerock.openam.auth.nodes.validators.SessionPropertyNameValidator</Value></DefaultValues></AttributeSchema><AttributeSchema name=\"RequiredValueValidator1\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "RemoveSessionPropertiesNode",
       "name" : "RemoveSessionPropertiesNode",

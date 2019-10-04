@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "amPluginService",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=amPluginService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -11,7 +12,7 @@
     "ou" : null
   },
   "data" : {
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"amPluginService\" version=\"1.0\"><Schema i18nKey=\"\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/amPluginService\" >\n            <Global hideConfigUI=\"no\"  validate=\"yes\" >\n                <SubSchema hideConfigUI=\"no\"  inheritance=\"single\"  maintainPriority=\"no\"  name=\"plugins\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"plugin\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                        <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"version\"  syntax=\"string\"  type=\"single\" ></AttributeSchema>\n                    </SubSchema>\n                </SubSchema>\n            </Global>\n        </Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"amPluginService\" version=\"1.0\"><Schema i18nKey=\"\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/amPluginService\"  serviceVersion=\"28619dfd-ebc3-4ff5-bb07-e3f431953cee\" >\n            <Global hideConfigUI=\"no\"  validate=\"yes\" >\n                <SubSchema hideConfigUI=\"no\"  inheritance=\"single\"  maintainPriority=\"no\"  name=\"plugins\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <SubSchema hideConfigUI=\"no\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"plugin\"  realmCloneable=\"yes\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                        <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"version\"  syntax=\"string\"  type=\"single\" ></AttributeSchema>\n                    </SubSchema>\n                </SubSchema>\n            </Global>\n        </Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "amPluginService",
       "name" : "amPluginService",

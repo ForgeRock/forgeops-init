@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunAMAuthFederationService",
     "entityId" : "PluginConfig",
+    "serviceVersion" : "7f0182fb-5c75-43d2-b6cd-e8638907a131",
     "uid" : "ou=PluginConfig,ou=1.0,ou=sunAMAuthFederationService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent" ],

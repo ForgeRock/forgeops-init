@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAdminConsoleService",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "ea4f129f-77a5-4d8b-8f46-2a42f317b017",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAdminConsoleService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

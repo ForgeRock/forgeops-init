@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthRadiusService",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "c8727546-5c11-4c9a-88ea-162b95addaca",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthRadiusService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

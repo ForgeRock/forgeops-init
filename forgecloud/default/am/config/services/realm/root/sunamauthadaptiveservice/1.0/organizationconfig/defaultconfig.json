@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunAMAuthAdaptiveService",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "4490d9f5-a758-4763-9152-1a560addd6dd",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthAdaptiveService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

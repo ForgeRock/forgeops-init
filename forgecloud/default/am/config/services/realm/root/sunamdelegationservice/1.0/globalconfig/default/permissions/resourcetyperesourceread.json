@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunAMDelegationService",
     "entityId" : "default/Permissions/ResourceTypeResourceRead",
+    "serviceVersion" : "c22441ba-fbe7-4b97-a521-394e4bd297c9",
     "uid" : "ou=ResourceTypeResourceRead,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Permission",
     "objectClass" : [ "top", "sunServiceComponent" ],

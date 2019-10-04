@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AuthenticatorWebAuthn",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "8b76d4e3-214e-429d-984a-3d4c0f5cc9ad",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=AuthenticatorWebAuthn,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent", "organizationalunit" ],
@@ -11,7 +12,7 @@
     "ou" : [ "defaultconfig" ]
   },
   "data" : {
-    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQ6cuDg84k+FAMTyFqX55EpmAeQoFrmgk3u73jMJrxn9/ylQ3D/NFD1Q==",
+    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQzQ9oFEcWG7eZZLhdjJXEPI6fUbuIjUW4uX3Qx8LSashXchnc3Ijj0g==",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreType" : "JCEKS",
     "_type" : {
       "_id" : "AuthenticatorWebAuthn",
@@ -23,6 +24,6 @@
     "_id" : "defaultconfig",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreKeyPairAlias" : null,
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword" : null,
-    "authenticatorWebAuthnDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/keystore.jceks"
+    "authenticatorWebAuthnDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jceks"
   }
 }

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunIdentityRepositoryService",
     "entityId" : "default/users",
+    "serviceVersion" : "2cbe84e8-7d79-4d13-bd92-3a537a7f5ad4",
     "uid" : "ou=users,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "users",
     "objectClass" : [ "top", "sunServiceComponent" ],

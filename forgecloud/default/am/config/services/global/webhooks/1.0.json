@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "webhooks",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=webhooks,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -11,7 +12,7 @@
     "ou" : null
   },
   "data" : {
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"webhooks\" version=\"1.0\"><Schema i18nFileName=\"WebhookService\"  i18nKey=\"serviceDescription\"  resourceName=\"webhooks\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/webhooks\" ><Organization><SubSchema i18nKey=\"serviceDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"url\"  name=\"url\"  order=\"100\"  resourceName=\"url\"  syntax=\"string\"  type=\"single\" ></AttributeSchema><AttributeSchema i18nKey=\"body\"  name=\"body\"  order=\"200\"  resourceName=\"body\"  syntax=\"string\"  type=\"single\" ></AttributeSchema><AttributeSchema i18nKey=\"headers\"  name=\"headers\"  order=\"300\"  resourceName=\"headers\"  syntax=\"string\"  type=\"list\"  uitype=\"maplist\"  validator=\"HttpHeaderValidator0\" ><DefaultValues><Value>[accept]=*&#47;*</Value></DefaultValues></AttributeSchema><AttributeSchema name=\"HttpHeaderValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>org.forgerock.openam.webhook.HttpHeaderValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"webhooks\" version=\"1.0\"><Schema i18nFileName=\"WebhookService\"  i18nKey=\"serviceDescription\"  resourceName=\"webhooks\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/webhooks\" ><Organization><SubSchema i18nKey=\"serviceDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"body\"  name=\"body\"  order=\"200\"  resourceName=\"body\"  syntax=\"string\"  type=\"single\" ></AttributeSchema><AttributeSchema i18nKey=\"headers\"  name=\"headers\"  order=\"300\"  resourceName=\"headers\"  syntax=\"string\"  type=\"list\"  uitype=\"maplist\"  validator=\"HttpHeaderValidator0\" ><DefaultValues><Value>[accept]=*&#47;*</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"url\"  name=\"url\"  order=\"100\"  resourceName=\"url\"  syntax=\"string\"  type=\"single\" ></AttributeSchema><AttributeSchema name=\"HttpHeaderValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>org.forgerock.openam.webhook.HttpHeaderValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "webhooks",
       "name" : "webhooks",

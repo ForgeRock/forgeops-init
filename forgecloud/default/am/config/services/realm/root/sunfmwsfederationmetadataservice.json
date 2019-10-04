@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunFMWSFederationMetadataService",
     "entityId" : "sunFMWSFederationMetadataService",
+    "serviceVersion" : null,
     "uid" : "ou=sunFMWSFederationMetadataService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

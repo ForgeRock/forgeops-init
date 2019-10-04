@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunFMCOTConfigService",
     "entityId" : "sunFMCOTConfigService",
+    "serviceVersion" : null,
     "uid" : "ou=sunFMCOTConfigService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

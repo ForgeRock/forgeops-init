@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "validationService",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=validationService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -14,7 +15,7 @@
     "defaults" : {
       "validGotoDestinations" : [ ]
     },
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"validationService\" version=\"1.0\"><Schema i18nFileName=\"validationService\"  i18nKey=\"openam-validation-service-description\"  resourceName=\"validation\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/validationService\" >\n            <Organization hideConfigUI=\"no\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a100\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"openam-auth-valid-goto-resources\"  order=\"100\"  resourceName=\"validGotoDestinations\"  syntax=\"string\"  type=\"list\" >\n                </AttributeSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"validationService\" version=\"1.0\"><Schema i18nFileName=\"validationService\"  i18nKey=\"openam-validation-service-description\"  resourceName=\"validation\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/validationService\"  serviceVersion=\"f783f3b8-ecfd-4bbc-8f33-c0f94b48690d\" >\n            <Organization hideConfigUI=\"no\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a100\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"openam-auth-valid-goto-resources\"  order=\"100\"  resourceName=\"validGotoDestinations\"  syntax=\"string\"  type=\"list\" >\n                </AttributeSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "validationService",
       "name" : "validationService",

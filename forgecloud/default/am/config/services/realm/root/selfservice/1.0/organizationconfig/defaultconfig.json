@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "selfService",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "8ad17622-7eea-468b-a7b3-a8e132ea9f4a",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=selfService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

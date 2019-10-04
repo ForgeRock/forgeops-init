@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthCertService",
     "entityId" : "iPlanetAMAuthCertService",
+    "serviceVersion" : null,
     "uid" : "ou=iPlanetAMAuthCertService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

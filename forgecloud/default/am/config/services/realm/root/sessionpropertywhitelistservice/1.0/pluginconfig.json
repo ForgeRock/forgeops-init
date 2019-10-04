@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "SessionPropertyWhitelistService",
     "entityId" : "PluginConfig",
+    "serviceVersion" : "d4946e05-9873-4028-9f65-977aab0e7d1a",
     "uid" : "ou=PluginConfig,ou=1.0,ou=SessionPropertyWhitelistService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent" ],

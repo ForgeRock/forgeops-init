@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "amTransactionService",
     "entityId" : "amTransactionService",
+    "serviceVersion" : null,
     "uid" : "ou=amTransactionService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

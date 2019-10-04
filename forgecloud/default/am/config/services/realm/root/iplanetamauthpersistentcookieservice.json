@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthPersistentCookieService",
     "entityId" : "iPlanetAMAuthPersistentCookieService",
+    "serviceVersion" : null,
     "uid" : "ou=iPlanetAMAuthPersistentCookieService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

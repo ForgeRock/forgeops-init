@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "ScriptingService",
     "entityId" : "default/OIDC_CLAIMS",
+    "serviceVersion" : "24b09aa8-a51c-4ccf-a07c-9a9dd08eeefd",
     "uid" : "ou=OIDC_CLAIMS,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : "scriptContext",
     "objectClass" : [ "top", "sunServiceComponent" ],

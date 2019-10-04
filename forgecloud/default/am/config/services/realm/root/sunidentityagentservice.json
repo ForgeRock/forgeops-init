@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunIdentityAgentService",
     "entityId" : "sunIdentityAgentService",
+    "serviceVersion" : null,
     "uid" : "ou=sunIdentityAgentService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

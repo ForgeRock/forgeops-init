@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "SocialNode",
     "entityId" : "SocialNode",
+    "serviceVersion" : null,
     "uid" : "ou=SocialNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

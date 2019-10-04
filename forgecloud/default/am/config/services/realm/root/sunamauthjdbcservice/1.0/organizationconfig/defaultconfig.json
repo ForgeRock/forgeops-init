@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunAMAuthJDBCService",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "40eaf82d-4e9d-4344-83ea-4ec9a4a522f2",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthJDBCService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
@@ -17,7 +18,7 @@
       "name" : "sunAMAuthJDBCService",
       "collection" : false
     },
-    "password-encrypted" : "AAAAA0FFUwIQ1SllqFy5HmqNBYKLp7TFOUL0BM6wMZuKnaXzKComtH6yh5t0lDQgiw==",
+    "password-encrypted" : "AAAAA0FFUwIQMXMr75TN2gkPz5W6fKzHHgMCeuzgFzPApK8FOG6uE1n+VMMfi5dH4A==",
     "connectionType" : "JNDI",
     "passwordColumn" : "PASSWORD_COLUMN",
     "passwordTransformClass" : "com.sun.identity.authentication.modules.jdbc.ClearTextTransform",

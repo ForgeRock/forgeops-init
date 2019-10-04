@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunFAMFederationCommon",
     "entityId" : "sunFAMFederationCommon",
+    "serviceVersion" : null,
     "uid" : "ou=sunFAMFederationCommon,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

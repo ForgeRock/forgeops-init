@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMSessionService",
     "entityId" : "iPlanetAMSessionService",
+    "serviceVersion" : null,
     "uid" : "ou=iPlanetAMSessionService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

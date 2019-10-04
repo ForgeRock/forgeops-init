@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RestApisService",
     "entityId" : "GlobalConfig",
+    "serviceVersion" : "294f7f51-f790-4eb9-b669-7be78a4117a8",
     "uid" : "ou=GlobalConfig,ou=1.0,ou=RestApisService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

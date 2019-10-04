@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "ProfileCompletenessDecisionNode",
     "entityId" : "ProfileCompletenessDecisionNode",
+    "serviceVersion" : null,
     "uid" : "ou=ProfileCompletenessDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

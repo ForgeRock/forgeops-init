@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "SessionPropertyWhitelistService",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=SessionPropertyWhitelistService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -14,7 +15,7 @@
     "defaults" : {
       "sessionPropertyWhitelist" : [ "AMCtxId" ]
     },
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"SessionPropertyWhitelistService\" version=\"1.0\"><Schema i18nFileName=\"amSessionPropertyWhitelist\"  i18nKey=\"forgerock-session-property-whitelist-service-description\"  resourceName=\"amSessionPropertyWhitelist\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/SessionPropertyWhitelistService\" >\n        <Organization hideConfigUI=\"no\" >\n            <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a100\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerock-session-property-whitelist\"  order=\"100\"  resourceName=\"sessionPropertyWhitelist\"  syntax=\"string\"  type=\"list\" >\n                <DefaultValues>\n                    <Value>AMCtxId</Value>\n                </DefaultValues>\n            </AttributeSchema>\n        </Organization>\n    </Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"SessionPropertyWhitelistService\" version=\"1.0\"><Schema i18nFileName=\"amSessionPropertyWhitelist\"  i18nKey=\"forgerock-session-property-whitelist-service-description\"  resourceName=\"amSessionPropertyWhitelist\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/SessionPropertyWhitelistService\"  serviceVersion=\"d4946e05-9873-4028-9f65-977aab0e7d1a\" >\n        <Organization hideConfigUI=\"no\" >\n            <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a100\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"forgerock-session-property-whitelist\"  order=\"100\"  resourceName=\"sessionPropertyWhitelist\"  syntax=\"string\"  type=\"list\" >\n                <DefaultValues>\n                    <Value>AMCtxId</Value>\n                </DefaultValues>\n            </AttributeSchema>\n        </Organization>\n    </Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "SessionPropertyWhitelistService",
       "name" : "SessionPropertyWhitelistService",

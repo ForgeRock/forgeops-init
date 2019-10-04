@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunAMAuthSAEService",
     "entityId" : "sunAMAuthSAEService",
+    "serviceVersion" : null,
     "uid" : "ou=sunAMAuthSAEService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

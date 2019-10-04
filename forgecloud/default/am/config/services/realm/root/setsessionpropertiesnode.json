@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "SetSessionPropertiesNode",
     "entityId" : "SetSessionPropertiesNode",
+    "serviceVersion" : null,
     "uid" : "ou=SetSessionPropertiesNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

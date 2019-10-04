@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "SoapSecurityTokenService",
     "entityId" : "SoapSecurityTokenService",
+    "serviceVersion" : null,
     "uid" : "ou=SoapSecurityTokenService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

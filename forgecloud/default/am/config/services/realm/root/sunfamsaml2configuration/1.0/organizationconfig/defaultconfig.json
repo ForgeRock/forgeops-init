@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunFAMSAML2Configuration",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "bde43f16-3a80-400d-a6d3-ced587341591",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunFAMSAML2Configuration,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
@@ -11,7 +12,7 @@
     "ou" : null
   },
   "data" : {
-    "metadataSigningKeyPass-encrypted" : "AAAAA0FFUwIQVU6yn0e6vFqovAG8iU3i3EsyKYaWHC5ekG8atFWfoN655rA8c+KOaw==",
+    "metadataSigningKeyPass-encrypted" : "AAAAA0FFUwIQbSbbcW8xlVvjABHYkrHdBQy1z9PD622qwWASwBM149xvUCbPOHZQpXnoKPorEdJO",
     "metadataSigningKey" : "test",
     "_type" : {
       "_id" : "sunFAMSAML2Configuration",

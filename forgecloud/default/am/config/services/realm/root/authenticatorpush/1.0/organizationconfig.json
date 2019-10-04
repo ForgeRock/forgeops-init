@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AuthenticatorPush",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "ceac17ff-05b4-4d10-9fbb-c839a6e3405a",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=AuthenticatorPush,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

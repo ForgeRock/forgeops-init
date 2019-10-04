@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthJwtProofOfPossessionService",
     "entityId" : "iPlanetAMAuthJwtProofOfPossessionService",
+    "serviceVersion" : null,
     "uid" : "ou=iPlanetAMAuthJwtProofOfPossessionService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

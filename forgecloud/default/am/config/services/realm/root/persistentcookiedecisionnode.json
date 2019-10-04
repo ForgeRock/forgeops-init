@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "PersistentCookieDecisionNode",
     "entityId" : "PersistentCookieDecisionNode",
+    "serviceVersion" : null,
     "uid" : "ou=PersistentCookieDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

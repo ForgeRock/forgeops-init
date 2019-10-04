@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunIdentityFilteredRoleService",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "ce630643-d318-4ec5-8df2-6d91b6359ba1",
     "uid" : "ou=defaultconfig,ou=UserConfig,ou=1.0,ou=sunIdentityFilteredRoleService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

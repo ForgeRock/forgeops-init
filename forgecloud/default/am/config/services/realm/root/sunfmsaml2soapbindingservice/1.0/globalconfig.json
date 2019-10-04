@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunfmSAML2SOAPBindingService",
     "entityId" : "GlobalConfig",
+    "serviceVersion" : "a9bdff48-ba11-4691-bbe2-ae5895a4e758",
     "uid" : "ou=GlobalConfig,ou=1.0,ou=sunfmSAML2SOAPBindingService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

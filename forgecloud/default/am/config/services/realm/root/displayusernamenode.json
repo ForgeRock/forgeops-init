@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "DisplayUserNameNode",
     "entityId" : "DisplayUserNameNode",
+    "serviceVersion" : null,
     "uid" : "ou=DisplayUserNameNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

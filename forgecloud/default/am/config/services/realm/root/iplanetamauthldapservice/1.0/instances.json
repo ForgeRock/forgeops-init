@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthLDAPService",
     "entityId" : "Instances",
+    "serviceVersion" : "9f5f6b1a-ecc1-4be7-b70b-fd654f7391d3",
     "uid" : "ou=Instances,ou=1.0,ou=iPlanetAMAuthLDAPService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "organizationalunit" ],

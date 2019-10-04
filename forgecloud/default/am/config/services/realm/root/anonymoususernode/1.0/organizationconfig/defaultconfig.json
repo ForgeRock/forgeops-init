@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AnonymousUserNode",
     "entityId" : "defaultconfig",
+    "serviceVersion" : null,
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=AnonymousUserNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "DeviceId",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "2a3a15b9-6343-4237-ad61-6727ecb5d5a1",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=DeviceId,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent", "organizationalunit" ],
@@ -13,7 +14,7 @@
   "data" : {
     "deviceIdSettingsEncryptionKeystoreType" : "JKS",
     "deviceIdAttrName" : "devicePrintProfiles",
-    "deviceIdSettingsEncryptionKeystore" : "/home/forgerock/openam/keystore.jks",
+    "deviceIdSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jks",
     "_type" : {
       "_id" : "DeviceId",
       "name" : "DeviceId",
@@ -23,6 +24,6 @@
     "_id" : "defaultconfig",
     "deviceIdSettingsEncryptionScheme" : "NONE",
     "deviceIdSettingsEncryptionKeystoreKeyPairAlias" : null,
-    "deviceIdSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQbYkqezbqdyaJe3pfa37/ck7tK29kwA/uEjbS71NQDXXI59Va8laUIw=="
+    "deviceIdSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQlJKKriVjzZPgrw9xAd0qzxRBE78ams4kBv3YUKmWgp6MzLOUSAny4Q=="
   }
 }

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "OAuth2Provider",
     "entityId" : "OAuth2Provider",
+    "serviceVersion" : null,
     "uid" : "ou=OAuth2Provider,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

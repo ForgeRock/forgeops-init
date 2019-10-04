@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "SocialFacebookNode",
     "entityId" : "SocialFacebookNode",
+    "serviceVersion" : null,
     "uid" : "ou=SocialFacebookNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

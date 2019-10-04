@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunIdentityLocaleService",
     "entityId" : "sunIdentityLocaleService",
+    "serviceVersion" : null,
     "uid" : "ou=sunIdentityLocaleService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

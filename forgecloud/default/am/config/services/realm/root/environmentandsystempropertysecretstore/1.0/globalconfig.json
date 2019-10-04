@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "EnvironmentAndSystemPropertySecretStore",
     "entityId" : "GlobalConfig",
+    "serviceVersion" : null,
     "uid" : "ou=GlobalConfig,ou=1.0,ou=EnvironmentAndSystemPropertySecretStore,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

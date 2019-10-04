@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "UmaProvider",
     "entityId" : "UmaProvider",
+    "serviceVersion" : null,
     "uid" : "ou=UmaProvider,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

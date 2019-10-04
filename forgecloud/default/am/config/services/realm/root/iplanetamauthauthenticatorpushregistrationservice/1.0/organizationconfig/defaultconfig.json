@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthAuthenticatorPushRegistrationService",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "12d48c98-6b81-4adb-b4e0-f5304bf3b545",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAuthenticatorPushRegistrationService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AccountActiveDecisionNode",
     "entityId" : "AccountActiveDecisionNode",
+    "serviceVersion" : null,
     "uid" : "ou=AccountActiveDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "ConsentNode",
     "entityId" : "ConsentNode",
+    "serviceVersion" : null,
     "uid" : "ou=ConsentNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

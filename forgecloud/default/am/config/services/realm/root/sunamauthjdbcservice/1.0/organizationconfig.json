@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunAMAuthJDBCService",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "40eaf82d-4e9d-4344-83ea-4ec9a4a522f2",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=sunAMAuthJDBCService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

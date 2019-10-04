@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMLoggingService",
     "entityId" : "default",
+    "serviceVersion" : "203f9aca-d255-4de5-aa3d-6097b3571036",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMLoggingService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

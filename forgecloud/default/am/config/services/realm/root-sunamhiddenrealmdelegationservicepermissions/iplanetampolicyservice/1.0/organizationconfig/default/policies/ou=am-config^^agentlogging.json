@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMPolicyService",
     "entityId" : "default/Policies/ou=am-config^^AgentLogging",
+    "serviceVersion" : "4b5a2caf-15b6-452b-a855-82d17ba6e616",
     "uid" : "ou=ou=am-config^^AgentLogging,ou=Policies,ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID" : "NamedPolicy",
     "objectClass" : [ "top", "sunServiceComponent" ],
@@ -17,6 +18,6 @@
       "collection" : false
     },
     "_id" : "default/Policies/ou=am-config^^AgentLogging",
-    "xmlpolicy" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Policy name=\"ou=am-config^^AgentLogging\" createdby=\"cn=dsameuser,ou=DSAME Users,ou=am-config\" lastmodifiedby=\"cn=dsameuser,ou=DSAME Users,ou=am-config\" creationdate=\"1570009693523\" lastmodifieddate=\"1570009693523\" referralPolicy=\"false\" active=\"true\" >\n<Rule name=\"delegation-rule1\">\n<ServiceName name=\"sunAMDelegationService\" />\n<ResourceName name=\"sms://*ou=am-config/iPlanetAMLoggingService/1.0/application/*\" />\n<AttributeValuePair>\n<Attribute name=\"MODIFY\" />\n<Value>allow</Value>\n</AttributeValuePair>\n</Rule>\n<Subjects name=\"Subjects\" description=\"\">\n<Subject name=\"AuthenticatedAgents\" type=\"AuthenticatedAgents\" includeType=\"inclusive\">\n</Subject>\n</Subjects>\n</Policy>"
+    "xmlpolicy" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Policy name=\"ou=am-config^^AgentLogging\" createdby=\"cn=dsameuser,ou=DSAME Users,ou=am-config\" lastmodifiedby=\"cn=dsameuser,ou=DSAME Users,ou=am-config\" creationdate=\"1570193771119\" lastmodifieddate=\"1570193771119\" referralPolicy=\"false\" active=\"true\" >\n<Rule name=\"delegation-rule1\">\n<ServiceName name=\"sunAMDelegationService\" />\n<ResourceName name=\"sms://*ou=am-config/iPlanetAMLoggingService/1.0/application/*\" />\n<AttributeValuePair>\n<Attribute name=\"MODIFY\" />\n<Value>allow</Value>\n</AttributeValuePair>\n</Rule>\n<Subjects name=\"Subjects\" description=\"\">\n<Subject name=\"AuthenticatedAgents\" type=\"AuthenticatedAgents\" includeType=\"inclusive\">\n</Subject>\n</Subjects>\n</Policy>"
   }
 }

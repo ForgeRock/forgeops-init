@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "PushNotificationService",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "a2417613-64ec-462a-a50a-be87ff8a3fe0",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=PushNotificationService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

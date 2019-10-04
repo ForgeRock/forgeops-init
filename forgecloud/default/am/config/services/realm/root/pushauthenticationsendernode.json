@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "PushAuthenticationSenderNode",
     "entityId" : "PushAuthenticationSenderNode",
+    "serviceVersion" : null,
     "uid" : "ou=PushAuthenticationSenderNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "PasswordCollectorNode",
     "entityId" : "PluginConfig",
+    "serviceVersion" : null,
     "uid" : "ou=PluginConfig,ou=1.0,ou=PasswordCollectorNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "KbaCreateNode",
     "entityId" : "KbaCreateNode",
+    "serviceVersion" : null,
     "uid" : "ou=KbaCreateNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "SessionPropertyWhitelistService",
     "entityId" : "SessionPropertyWhitelistService",
+    "serviceVersion" : null,
     "uid" : "ou=SessionPropertyWhitelistService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

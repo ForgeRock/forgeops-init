@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "amTransactionService",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=amTransactionService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -14,7 +15,7 @@
     "defaults" : {
       "timeToLive" : "180"
     },
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"amTransactionService\" version=\"1.0\"><Schema i18nFileName=\"amTransaction\"  i18nKey=\"serviceDescription\"  resourceName=\"transaction\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/amTransactionService\" >\n            <Organization hideConfigUI=\"no\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"transactionTimeToLive\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"transactionTimeToLive\"  order=\"0\"  resourceName=\"timeToLive\"  syntax=\"string\"  type=\"single\" >\n                    <DefaultValues>\n                        <Value>180</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"amTransactionService\" version=\"1.0\"><Schema i18nFileName=\"amTransaction\"  i18nKey=\"serviceDescription\"  resourceName=\"transaction\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/amTransactionService\"  serviceVersion=\"c3b91b81-9de6-438d-9960-71ff784ef424\" >\n            <Organization hideConfigUI=\"no\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"transactionTimeToLive\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"transactionTimeToLive\"  order=\"0\"  resourceName=\"timeToLive\"  syntax=\"string\"  type=\"single\" >\n                    <DefaultValues>\n                        <Value>180</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "amTransactionService",
       "name" : "amTransactionService",

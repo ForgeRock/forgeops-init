@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RecoveryCodeCollectorDecisionNode",
     "entityId" : "RecoveryCodeCollectorDecisionNode",
+    "serviceVersion" : null,
     "uid" : "ou=RecoveryCodeCollectorDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

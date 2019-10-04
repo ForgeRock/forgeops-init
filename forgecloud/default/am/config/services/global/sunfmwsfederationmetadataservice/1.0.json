@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunFMWSFederationMetadataService",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=sunFMWSFederationMetadataService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -11,7 +12,7 @@
     "ou" : null
   },
   "data" : {
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunFMWSFederationMetadataService\" version=\"1.0\"><Schema i18nFileName=\"fmWSFederationConfiguration\"  i18nKey=\"\"  resourceName=\"ws\"  revisionNumber=\"10\" >\n\n            <Organization hideConfigUI=\"no\" >\n                <SubSchema hideConfigUI=\"no\"  i18nKey=\"a100\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"EntityDescriptor\"  realmCloneable=\"yes\"  resourceName=\"USE-PARENT\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a101\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-wsfederation-metadata\"  order=\"100\"  resourceName=\"metadata\"  syntax=\"string\"  type=\"single\" >\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a102\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-wsfederation-entityconfig\"  order=\"200\"  resourceName=\"entityConfig\"  syntax=\"string\"  type=\"single\" >\n                    </AttributeSchema>\n                </SubSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunFMWSFederationMetadataService\" version=\"1.0\"><Schema i18nFileName=\"fmWSFederationConfiguration\"  i18nKey=\"\"  resourceName=\"ws\"  revisionNumber=\"10\"  serviceVersion=\"aef96003-a627-4ff6-909e-d94c41582f9b\" >\n\n            <Organization hideConfigUI=\"no\" >\n                <SubSchema hideConfigUI=\"no\"  i18nKey=\"a100\"  inheritance=\"multiple\"  maintainPriority=\"no\"  name=\"EntityDescriptor\"  realmCloneable=\"yes\"  resourceName=\"USE-PARENT\"  supportsApplicableOrganization=\"no\"  validate=\"yes\" >\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a101\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-wsfederation-metadata\"  order=\"100\"  resourceName=\"metadata\"  syntax=\"string\"  type=\"single\" >\n                    </AttributeSchema>\n                    <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a102\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sun-fm-wsfederation-entityconfig\"  order=\"200\"  resourceName=\"entityConfig\"  syntax=\"string\"  type=\"single\" >\n                    </AttributeSchema>\n                </SubSchema>\n            </Organization>\n        </Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "sunFMWSFederationMetadataService",
       "name" : "sunFMWSFederationMetadataService",

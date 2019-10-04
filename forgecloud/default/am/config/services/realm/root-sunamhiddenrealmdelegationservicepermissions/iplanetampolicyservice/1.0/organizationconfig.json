@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMPolicyService",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "4b5a2caf-15b6-452b-a855-82d17ba6e616",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "organizationalunit" ],

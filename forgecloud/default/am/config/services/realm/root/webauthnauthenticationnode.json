@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "WebAuthnAuthenticationNode",
     "entityId" : "WebAuthnAuthenticationNode",
+    "serviceVersion" : null,
     "uid" : "ou=WebAuthnAuthenticationNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

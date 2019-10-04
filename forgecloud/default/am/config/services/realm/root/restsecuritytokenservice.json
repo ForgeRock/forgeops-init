@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RestSecurityTokenService",
     "entityId" : "RestSecurityTokenService",
+    "serviceVersion" : null,
     "uid" : "ou=RestSecurityTokenService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

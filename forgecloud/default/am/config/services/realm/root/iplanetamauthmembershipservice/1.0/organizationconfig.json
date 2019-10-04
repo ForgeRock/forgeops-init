@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthMembershipService",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "2edba7df-b00f-4293-a5a7-df63edaa589c",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthMembershipService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

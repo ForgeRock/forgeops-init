@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "CreateObjectNode",
     "entityId" : "CreateObjectNode",
+    "serviceVersion" : null,
     "uid" : "ou=CreateObjectNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

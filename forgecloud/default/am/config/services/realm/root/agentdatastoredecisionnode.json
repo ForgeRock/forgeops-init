@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AgentDataStoreDecisionNode",
     "entityId" : "AgentDataStoreDecisionNode",
+    "serviceVersion" : null,
     "uid" : "ou=AgentDataStoreDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

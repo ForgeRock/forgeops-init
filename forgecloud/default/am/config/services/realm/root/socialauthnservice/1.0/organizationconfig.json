@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "socialAuthNService",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "b804ce6d-8a81-4785-8061-73c6ab56475f",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=socialAuthNService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMMonitoringService",
     "entityId" : "iPlanetAMMonitoringService",
+    "serviceVersion" : null,
     "uid" : "ou=iPlanetAMMonitoringService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

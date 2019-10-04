@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AgentService",
     "entityId" : "default",
+    "serviceVersion" : "c40732f0-2a80-444a-a9a5-c01bcfc0493d",
     "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=AgentService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent" ],

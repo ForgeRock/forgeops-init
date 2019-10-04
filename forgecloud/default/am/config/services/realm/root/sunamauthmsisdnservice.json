@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunAMAuthMSISDNService",
     "entityId" : "sunAMAuthMSISDNService",
+    "serviceVersion" : null,
     "uid" : "ou=sunAMAuthMSISDNService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

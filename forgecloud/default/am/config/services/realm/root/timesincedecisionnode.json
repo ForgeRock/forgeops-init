@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "TimeSinceDecisionNode",
     "entityId" : "TimeSinceDecisionNode",
+    "serviceVersion" : null,
     "uid" : "ou=TimeSinceDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

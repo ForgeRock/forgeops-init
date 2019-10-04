@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "SocialOpenIdConnectNode",
     "entityId" : "SocialOpenIdConnectNode",
+    "serviceVersion" : null,
     "uid" : "ou=SocialOpenIdConnectNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

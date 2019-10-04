@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMPolicyConfigService",
     "entityId" : "default",
+    "serviceVersion" : "6d37f397-3c5e-4e9e-a6d0-249e91558583",
     "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent" ],
@@ -19,6 +20,6 @@
       "collection" : false
     },
     "_id" : "default",
-    "bindPassword-encrypted" : "AAAAA0FFUwIQ20yMXIUog04Msi4aGDnQ8YxyD1SwXK34Pn5KymFpM99piMZlXqfYaYCyiKZBvLwO1FX9LJ4h2KAdSaOicJ6Yow=="
+    "bindPassword-encrypted" : "AAAAA0FFUwIQsonCgfZcag7EBi0Wi1DDYxeroOZGwY2TaUftsCKMsfVBSTo7+aDIy0cTVbyxlKhBD8yAlu+LvKM9SDyIqt5/yw=="
   }
 }

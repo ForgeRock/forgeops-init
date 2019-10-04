@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AuthenticatorOATH",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "ece2e02e-eb21-45f8-88c5-aa29790dee6f",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=AuthenticatorOATH,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
@@ -20,7 +21,7 @@
       "name" : "AuthenticatorOATH",
       "collection" : false
     },
-    "authenticatorOATHDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQhU179OcA0f1v74XMZ5dQmxndFyYPzzRvFdRFV8LabhVDxaap0WkHPg==",
+    "authenticatorOATHDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQh93v6ZR9KulXjqqasWIopj9O3hxQDAe7Suy6rCp5nOcATTY4oFd2l7CoxY51Zw1t",
     "authenticatorOATHDeviceSettingsEncryptionScheme" : "NONE",
     "authenticatorOATHDeviceSettingsEncryptionKeystoreKeyPairAlias" : null,
     "_id" : "defaultconfig",

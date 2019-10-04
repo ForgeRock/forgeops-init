@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunFAMSAML2Configuration",
     "entityId" : "sunFAMSAML2Configuration",
+    "serviceVersion" : null,
     "uid" : "ou=sunFAMSAML2Configuration,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

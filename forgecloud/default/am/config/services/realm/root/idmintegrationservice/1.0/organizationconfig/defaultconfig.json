@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "IdmIntegrationService",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "0b2c8897-96ea-48d1-975a-9cd5cfcf029b",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=IdmIntegrationService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

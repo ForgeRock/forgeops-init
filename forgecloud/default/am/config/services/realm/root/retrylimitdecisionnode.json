@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RetryLimitDecisionNode",
     "entityId" : "RetryLimitDecisionNode",
+    "serviceVersion" : null,
     "uid" : "ou=RetryLimitDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

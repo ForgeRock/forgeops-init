@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMPolicyService",
     "entityId" : "Condition/AuthLevelCondition",
+    "serviceVersion" : "4b5a2caf-15b6-452b-a855-82d17ba6e616",
     "uid" : "ou=AuthLevelCondition,ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

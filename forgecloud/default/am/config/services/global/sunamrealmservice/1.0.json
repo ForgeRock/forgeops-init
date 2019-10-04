@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunAMRealmService",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=sunAMRealmService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -11,7 +12,7 @@
     "ou" : null
   },
   "data" : {
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunAMRealmService\" version=\"1.0\"><Schema revisionNumber=\"10\" ></Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunAMRealmService\" version=\"1.0\"><Schema revisionNumber=\"10\"  serviceVersion=\"7f876aef-5004-46d7-97c9-70a27bc8a7ac\" >\n        </Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "sunAMRealmService",
       "name" : "sunAMRealmService",

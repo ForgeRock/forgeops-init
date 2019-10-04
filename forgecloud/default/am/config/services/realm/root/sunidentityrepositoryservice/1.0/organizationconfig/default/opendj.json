@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunIdentityRepositoryService",
     "entityId" : "default/OpenDJ",
+    "serviceVersion" : "2cbe84e8-7d79-4d13-bd92-3a537a7f5ad4",
     "uid" : "ou=OpenDJ,ou=default,ou=OrganizationConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "LDAPv3ForOpenDS",
     "objectClass" : [ "top", "sunServiceComponent" ],
@@ -32,7 +33,7 @@
       "sun-idrepo-ldapv3-config-search-scope" : "SCOPE_SUB",
       "sun-idrepo-ldapv3-config-time-limit" : 10,
       "sun-idrepo-ldapv3-config-authpw" : null,
-      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQcwVXmdgndTo8o+jpN4GxK3rPnU5T6Xn6eF5hh49LtFChIMvvAcgOEEQK2juI+amdUe3WhE4Sv9oNjZnw0QrZ7A=="
+      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQsi0adLcqraaaX6OFuyKnStyAU0oVZdKYmXu08rP3/QHR9DWrX6cuBysrDKFCtMg74qBmIvKdT+om8rklr8laYw=="
     },
     "groupconfig" : {
       "sun-idrepo-ldapv3-config-groups-search-attribute" : "cn",

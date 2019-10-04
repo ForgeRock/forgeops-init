@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AgentService",
     "entityId" : "agentgroup",
+    "serviceVersion" : "c40732f0-2a80-444a-a9a5-c01bcfc0493d",
     "uid" : "ou=agentgroup,ou=Instances,ou=1.0,ou=AgentService,ou=services,ou=am-config",
     "sunServiceID" : "agentgroup",
     "objectClass" : [ "top", "sunServiceComponent" ],

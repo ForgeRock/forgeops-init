@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthSAML2Service",
     "entityId" : "iPlanetAMAuthSAML2Service",
+    "serviceVersion" : null,
     "uid" : "ou=iPlanetAMAuthSAML2Service,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

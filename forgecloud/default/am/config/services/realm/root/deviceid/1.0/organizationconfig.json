@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "DeviceId",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "2a3a15b9-6343-4237-ad61-6727ecb5d5a1",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=DeviceId,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

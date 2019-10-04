@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "amRealmBaseURL",
     "entityId" : "amRealmBaseURL",
+    "serviceVersion" : null,
     "uid" : "ou=amRealmBaseURL,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

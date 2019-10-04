@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "ScriptedDecisionNode",
     "entityId" : "default/92a1b90f-be56-4529-af41-5ba68b88ffbf",
+    "serviceVersion" : null,
     "uid" : "ou=92a1b90f-be56-4529-af41-5ba68b88ffbf,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptedDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : "instance",
     "objectClass" : [ "top", "sunServiceComponent" ],

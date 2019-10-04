@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "ZeroPageLoginNode",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=ZeroPageLoginNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -11,7 +12,7 @@
     "ou" : null
   },
   "data" : {
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"ZeroPageLoginNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/ZeroPageLoginNode\"  i18nKey=\"nodeDescription\"  resourceName=\"ZeroPageLoginNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/ZeroPageLoginNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\" ><AttributeSchema i18nKey=\"usernameHeader\"  name=\"usernameHeader\"  order=\"100\"  resourceName=\"usernameHeader\"  syntax=\"string\"  type=\"single\" ><DefaultValues><Value>X-OpenAM-Username</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"passwordHeader\"  name=\"passwordHeader\"  order=\"200\"  resourceName=\"passwordHeader\"  syntax=\"string\"  type=\"single\" ><DefaultValues><Value>X-OpenAM-Password</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"referrerWhiteList\"  name=\"referrerWhiteList\"  order=\"400\"  resourceName=\"referrerWhiteList\"  syntax=\"string\"  type=\"list\" ></AttributeSchema><AttributeSchema i18nKey=\"allowWithoutReferer\"  name=\"allowWithoutReferer\"  order=\"300\"  resourceName=\"allowWithoutReferer\"  syntax=\"boolean\"  type=\"single\" ><DefaultValues><Value>true</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"ZeroPageLoginNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/ZeroPageLoginNode\"  i18nKey=\"nodeDescription\"  resourceName=\"ZeroPageLoginNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/ZeroPageLoginNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\" ><AttributeSchema i18nKey=\"usernameHeader\"  name=\"usernameHeader\"  order=\"100\"  resourceName=\"usernameHeader\"  syntax=\"string\"  type=\"single\" ><DefaultValues><Value>X-OpenAM-Username</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"passwordHeader\"  name=\"passwordHeader\"  order=\"200\"  resourceName=\"passwordHeader\"  syntax=\"string\"  type=\"single\" ><DefaultValues><Value>X-OpenAM-Password</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"allowWithoutReferer\"  name=\"allowWithoutReferer\"  order=\"300\"  resourceName=\"allowWithoutReferer\"  syntax=\"boolean\"  type=\"single\" ><DefaultValues><Value>true</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"referrerWhiteList\"  name=\"referrerWhiteList\"  order=\"400\"  resourceName=\"referrerWhiteList\"  syntax=\"string\"  type=\"list\" ></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "ZeroPageLoginNode",
       "name" : "ZeroPageLoginNode",

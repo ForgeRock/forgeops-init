@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunFMSAML2MetadataService",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "3b751cf3-3978-4f1f-acd8-926b50c66744",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunFMSAML2MetadataService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

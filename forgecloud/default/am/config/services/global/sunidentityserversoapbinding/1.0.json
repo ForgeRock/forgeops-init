@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunIdentityServerSOAPBinding",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=sunIdentityServerSOAPBinding,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -11,7 +12,7 @@
     "ou" : null
   },
   "data" : {
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunIdentityServerSOAPBinding\" version=\"1.0\"><Schema i18nFileName=\"fmSOAPBindingConfiguration\"  i18nKey=\"sunIdentityServerSOAPBindingDescription\"  propertiesViewBeanURL=\"../service/SCSOAPBinding\"  revisionNumber=\"40\"  serviceHierarchy=\"/DSAMEConfig/sunIdentityServerSOAPBinding\" > \n            <Global hideConfigUI=\"no\"  validate=\"yes\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a112\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"JAXBPackageList\"  order=\"1000\"  syntax=\"string\"  type=\"single\" >\n                </AttributeSchema>\n            </Global>\n        </Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunIdentityServerSOAPBinding\" version=\"1.0\"><Schema i18nFileName=\"fmSOAPBindingConfiguration\"  i18nKey=\"sunIdentityServerSOAPBindingDescription\"  propertiesViewBeanURL=\"../service/SCSOAPBinding\"  revisionNumber=\"40\"  serviceHierarchy=\"/DSAMEConfig/sunIdentityServerSOAPBinding\"  serviceVersion=\"291d02c1-caef-4d9f-ab74-c2d43e805146\" > \n            <Global hideConfigUI=\"no\"  validate=\"yes\" >\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"a112\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"JAXBPackageList\"  order=\"1000\"  syntax=\"string\"  type=\"single\" >\n                </AttributeSchema>\n            </Global>\n        </Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "sunIdentityServerSOAPBinding",
       "name" : "sunIdentityServerSOAPBinding",

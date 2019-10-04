@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RestSecurityTokenService",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "21f03203-6aca-4451-bf99-227958238163",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=RestSecurityTokenService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

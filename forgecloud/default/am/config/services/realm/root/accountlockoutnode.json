@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AccountLockoutNode",
     "entityId" : "AccountLockoutNode",
+    "serviceVersion" : null,
     "uid" : "ou=AccountLockoutNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

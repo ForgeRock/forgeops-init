@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "ChoiceCollectorNode",
     "entityId" : "ChoiceCollectorNode",
+    "serviceVersion" : null,
     "uid" : "ou=ChoiceCollectorNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthOATHService",
     "entityId" : "iPlanetAMAuthOATHService",
+    "serviceVersion" : null,
     "uid" : "ou=iPlanetAMAuthOATHService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

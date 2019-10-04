@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunIdentityRepositoryService",
     "entityId" : "default/users/anonymous",
+    "serviceVersion" : "2cbe84e8-7d79-4d13-bd92-3a537a7f5ad4",
     "uid" : "ou=anonymous,ou=users,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "user",
     "objectClass" : [ "top", "sunServiceComponent" ],
@@ -27,7 +28,7 @@
     "employeeNumber" : null,
     "postalAddress" : null,
     "iplanet-am-user-success-url" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQ8BGxJFn1VID14G6/tVO6xSegPE0OALbCSxw5l/8P0suqhaD6IcrRIUeGsxraYTS6esh8MXIivhKP+CwWM2Cb/pLzdU7tAdLB8hZqTFcqEz5IwbkFulehRg==",
+    "userPassword-encrypted" : "AAAAA0FFUwIQ8a4E/3SC6B9hecxPIecKPcrvhgrei8U6BFi1jti2b3CZURvX52A2w4UiPggY5CW3N8msTaIh2FCJARz6N9uL7o3Vg8vQM8pE/OQ4Seri9bAj/NonkcQxMg==",
     "_id" : "default/users/anonymous",
     "sn" : "anonymous",
     "iplanet-am-user-failure-url" : null

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "ScriptingService",
     "entityId" : "default/scriptConfigurations/d25827fa-9eb9-4bbf-abe5-8d0b3c8f2b46",
+    "serviceVersion" : "24b09aa8-a51c-4ccf-a07c-9a9dd08eeefd",
     "uid" : "ou=d25827fa-9eb9-4bbf-abe5-8d0b3c8f2b46,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : "scriptConfiguration",
     "objectClass" : [ "top", "sunServiceComponent" ],

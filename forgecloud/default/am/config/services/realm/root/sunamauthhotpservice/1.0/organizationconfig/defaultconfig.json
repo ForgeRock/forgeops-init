@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunAMAuthHOTPService",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "0d2581b3-2a7b-4feb-9473-a8496a2c4bba",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthHOTPService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
@@ -32,7 +33,7 @@
     "_id" : "defaultconfig",
     "mobileCarrierAttribute" : null,
     "otpMaxRetry" : 3,
-    "smtpUserPassword-encrypted" : "AAAAA0FFUwIQ+1xHAyFvnlPi2ZMXdScwQdnNwtqGRLUlwCh4RhlrbtZAphdrYVYY5A==",
+    "smtpUserPassword-encrypted" : "AAAAA0FFUwIQuLf/z674JAMYh2bRrG+/vbU1lLzGu3dGnZQE+afKmY6pQu88hzhyNw==",
     "otpValidityDuration" : 5
   }
 }

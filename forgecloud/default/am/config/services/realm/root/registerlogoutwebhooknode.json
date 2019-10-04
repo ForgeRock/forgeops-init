@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RegisterLogoutWebhookNode",
     "entityId" : "RegisterLogoutWebhookNode",
+    "serviceVersion" : null,
     "uid" : "ou=RegisterLogoutWebhookNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

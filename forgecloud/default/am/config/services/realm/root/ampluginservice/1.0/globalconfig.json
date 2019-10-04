@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "amPluginService",
     "entityId" : "GlobalConfig",
+    "serviceVersion" : "28619dfd-ebc3-4ff5-bb07-e3f431953cee",
     "uid" : "ou=GlobalConfig,ou=1.0,ou=amPluginService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "organizationalunit" ],

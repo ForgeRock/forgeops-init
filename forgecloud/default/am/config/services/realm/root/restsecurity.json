@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RestSecurity",
     "entityId" : "RestSecurity",
+    "serviceVersion" : null,
     "uid" : "ou=RestSecurity,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

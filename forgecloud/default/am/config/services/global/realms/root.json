@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "",
     "entityId" : "Lw",
+    "serviceVersion" : null,
     "uid" : "ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent", "organizationalunit" ],
@@ -11,7 +12,7 @@
     "ou" : [ ]
   },
   "data" : {
-    "aliases" : [ "openam-cm-fraas-1265-129.forgeblocks.com", "openam", "am-config" ],
+    "aliases" : [ "openam", "am-config", "openam-cm-fraas-1265-134.forgeblocks.com" ],
     "parentPath" : "",
     "_type" : {
       "_id" : "",

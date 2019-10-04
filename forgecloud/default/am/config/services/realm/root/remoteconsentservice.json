@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RemoteConsentService",
     "entityId" : "RemoteConsentService",
+    "serviceVersion" : null,
     "uid" : "ou=RemoteConsentService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

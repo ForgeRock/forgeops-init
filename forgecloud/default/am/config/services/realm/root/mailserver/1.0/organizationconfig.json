@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "MailServer",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "60e52950-4f41-43e0-8f09-7c53927236d3",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=MailServer,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthService",
     "entityId" : "default",
+    "serviceVersion" : "7aeda61a-95f2-4ded-8b48-2fa986b96e51",
     "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent" ],
@@ -27,7 +28,7 @@
       "moduleBasedAuthEnabled" : true,
       "zeroPageLoginAllowedWithoutReferrer" : true,
       "sharedSecret" : null,
-      "sharedSecret-encrypted" : "AAAAA0FFUwIQXRReYqbLBMKFtmbjMMCbqO6r6QfbCVM9npCfDwmiaSoE6zCe+ZcnpbAwk8UcYNhMLYcqXqmdlCLW9mvkLkCKZoskZ8mSyendnsFGNYYtB90t7RToAXs0thh24xwiYha6l6zXqcepwAHl1f8cmLjJeg==",
+      "sharedSecret-encrypted" : "AAAAA0FFUwIQzxPf7+v7jhE9tcAV3AdcMxxBt9yM05b7ET5/KR1t7xbFqM4h6VhrKcrYkn2J/+K1EvJU6oAhu9kmufH1teJRAJTxbUClQBdDEiANat1PnHlHZO+Falmm/vOfw4adQXUZqoRJpX2ZhEvDC1nbbnifWQ==",
       "keyAlias" : "test",
       "zeroPageLoginEnabled" : false,
       "zeroPageLoginReferrerWhiteList" : [ ]

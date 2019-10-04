@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunMultiFederationProtocol",
     "entityId" : "GlobalConfig",
+    "serviceVersion" : "1fd3d649-701b-417d-8017-d845083a2d0c",
     "uid" : "ou=GlobalConfig,ou=1.0,ou=sunMultiFederationProtocol,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

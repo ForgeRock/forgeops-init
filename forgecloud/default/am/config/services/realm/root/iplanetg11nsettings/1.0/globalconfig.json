@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetG11NSettings",
     "entityId" : "GlobalConfig",
+    "serviceVersion" : "c7f35872-3623-4140-8672-d01d6b5d1d00",
     "uid" : "ou=GlobalConfig,ou=1.0,ou=iPlanetG11NSettings,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "PageNode",
     "entityId" : "default/63f00174-2430-47c0-ab15-1dc9473bbe34",
+    "serviceVersion" : null,
     "uid" : "ou=63f00174-2430-47c0-ab15-1dc9473bbe34,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,ou=am-config",
     "sunServiceID" : "instance",
     "objectClass" : [ "top", "sunServiceComponent" ],

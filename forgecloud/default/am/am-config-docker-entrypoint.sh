@@ -8,23 +8,19 @@ echo "Copying config"
 mkdir -p /home/forgerock/openam/config
 cp -R /home/forgerock/config/* /home/forgerock/openam/config
 
-echo "Copying jceks secrets"
-mkdir -p /home/forgerock/openam/security/secrets/jceks_credentials
-cp -R /home/forgerock/security/secrets/jceks_credentials /home/forgerock/openam/security/secrets
-
-# org.forgerock.openam.utils.AMKeyProvider#readPasswordFile logs errors:
-# Unable to read private key password file /home/forgerock/openam/am/.storepass
-# Unable to read private key password file /home/forgerock/openam/am/.keypass
-# (stacktrace at end of script)
+## org.forgerock.openam.utils.AMKeyProvider#readPasswordFile logs errors:
+## Unable to read private key password file /home/forgerock/openam/am/.storepass
+## Unable to read private key password file /home/forgerock/openam/am/.keypass
+## (stacktrace at end of script)
 echo "Copying default passwords"
 mkdir -p /home/forgerock/openam/am
 cp /home/forgerock/openam/security/secrets/default/.storepass /home/forgerock/openam/am/.storepass
 cp /home/forgerock/openam/security/secrets/default/.keypass /home/forgerock/openam/am/.keypass
 
-echo "Copying keystore.jceks"
-mkdir -p /home/forgerock/openam/security/keystores
-rm -f /home/forgerock/openam/security/keystores/keystore.jceks
-cp /home/forgerock/keystore.jceks /home/forgerock/openam/security/keystores
+#echo "Copying keystore.jceks"
+#mkdir -p /home/forgerock/openam/security/keystores
+#rm -f /home/forgerock/openam/security/keystores/keystore.jceks
+#cp /home/forgerock/keystore.jceks /home/forgerock/openam/security/keystores
 
 # Unable to read private key password file /home/forgerock/openam/am/.storepass
 #  exception: "java.io.FileNotFoundException: /home/forgerock/openam/am/.storepass (No such file or directory)

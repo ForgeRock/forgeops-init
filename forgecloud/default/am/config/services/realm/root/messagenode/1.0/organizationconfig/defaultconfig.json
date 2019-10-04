@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "MessageNode",
     "entityId" : "defaultconfig",
+    "serviceVersion" : null,
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=MessageNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

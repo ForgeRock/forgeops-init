@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "ScriptingService",
     "entityId" : "ScriptingService",
+    "serviceVersion" : null,
     "uid" : "ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

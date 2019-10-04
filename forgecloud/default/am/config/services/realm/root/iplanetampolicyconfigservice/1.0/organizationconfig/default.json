@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMPolicyConfigService",
     "entityId" : "default",
+    "serviceVersion" : "6d37f397-3c5e-4e9e-a6d0-249e91558583",
     "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent" ],
@@ -19,6 +20,6 @@
       "collection" : false
     },
     "_id" : "default",
-    "bindPassword-encrypted" : "AAAAA0FFUwIQ44GqjaR8PgreAQNeTlA0N2D15lDMThrCTkVP8shZSN983vhMAZbF/eV6f80AA81JLwSfY1ycQFiErpcEsgmcmA=="
+    "bindPassword-encrypted" : "AAAAA0FFUwIQBUx61AvnAxDQq1kZE/nYk3v2cqRYSn0atSJx9VuQTP1k8NE1c8tJnk9WKbHzHfB/8Et2u+x3jysE9uvDhSJQvA=="
   }
 }

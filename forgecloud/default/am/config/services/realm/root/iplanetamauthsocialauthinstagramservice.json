@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthSocialAuthInstagramService",
     "entityId" : "iPlanetAMAuthSocialAuthInstagramService",
+    "serviceVersion" : null,
     "uid" : "ou=iPlanetAMAuthSocialAuthInstagramService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

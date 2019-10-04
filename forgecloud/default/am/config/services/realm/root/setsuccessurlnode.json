@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "SetSuccessUrlNode",
     "entityId" : "SetSuccessUrlNode",
+    "serviceVersion" : null,
     "uid" : "ou=SetSuccessUrlNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

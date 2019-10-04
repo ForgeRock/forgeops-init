@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AttributeCollectorNode",
     "entityId" : "AttributeCollectorNode",
+    "serviceVersion" : null,
     "uid" : "ou=AttributeCollectorNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

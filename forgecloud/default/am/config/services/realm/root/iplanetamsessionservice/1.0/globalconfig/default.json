@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMSessionService",
     "entityId" : "default",
+    "serviceVersion" : "6af875fc-7d0f-41d5-8a55-d402454c6b6a",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMSessionService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent", "organizationalunit" ],
@@ -37,7 +38,7 @@
     "_id" : "default",
     "stateless" : {
       "statelessSigningHmacSecret" : null,
-      "statelessSigningHmacSecret-encrypted" : "AAAAA0FFUwIQpPgnGE09Qxist9F5oiJIeG5UhdbaefH8aySUoYplmpj/Xs0Db3qyTUPWifjV2XVLphCcC92O3xdzbOYQiUuUhiI6h/ZhU/Pd",
+      "statelessSigningHmacSecret-encrypted" : "AAAAA0FFUwIQxPLXPW+F2GUdtI1d00J17/EH4p0jYp/qwZ4fZqsHIkjS214ajctndviVztDGertIUwnq9TpCbslEKS7kK79EOXtd2cHcXlGE",
       "openam-session-stateless-blacklist-poll-interval" : 60,
       "statelessSigningType" : "HS256",
       "openam-session-stateless-enable-session-blacklisting" : false,
@@ -46,7 +47,7 @@
       "openam-session-stateless-blacklist-purge-delay" : 1,
       "statelessSigningRsaCertAlias" : "test",
       "statelessEncryptionAesKey" : null,
-      "statelessEncryptionAesKey-encrypted" : "AAAAA0FFUwIQIA1pm8aQkIzzh8GqL6dbvtxnm5e6xesJGFa/TeLwv70AEcICHLEde7PsljoeNK8/5AHxRpBHp6PTnSek9ygqCkanCXs8hDkZ",
+      "statelessEncryptionAesKey-encrypted" : "AAAAA0FFUwIQjFBIubZ5xRpujNPVWN4E1mFf6glDVQTwmoVFrNQAhnGQk9KPQWA2e46n/PQ38pGPCoYUWSMzGjNRrWp7l25wJczFzjRBkNuG",
       "openam-session-stateless-blacklist-cache-size" : 10000,
       "statelessEncryptionRsaCertAlias" : "test"
     },

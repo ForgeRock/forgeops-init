@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "TimerStartNode",
     "entityId" : "TimerStartNode",
+    "serviceVersion" : null,
     "uid" : "ou=TimerStartNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

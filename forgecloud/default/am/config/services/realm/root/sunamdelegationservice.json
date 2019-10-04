@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunAMDelegationService",
     "entityId" : "sunAMDelegationService",
+    "serviceVersion" : null,
     "uid" : "ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

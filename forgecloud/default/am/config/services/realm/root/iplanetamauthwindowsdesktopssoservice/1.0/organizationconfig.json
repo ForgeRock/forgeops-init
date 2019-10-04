@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMAuthWindowsDesktopSSOService",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "c03c02b6-6a09-434c-99a1-d6eec25e352e",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthWindowsDesktopSSOService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

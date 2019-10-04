@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunIdentityRepositoryService",
     "entityId" : "default/users/dsameuser",
+    "serviceVersion" : "2cbe84e8-7d79-4d13-bd92-3a537a7f5ad4",
     "uid" : "ou=dsameuser,ou=users,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "user",
     "objectClass" : [ "top", "sunServiceComponent" ],
@@ -12,7 +13,7 @@
   },
   "data" : {
     "userPassword" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQ/sgREuWIfLm3KS9m/gDfjZxs4HBA5hd/Ny9BIHg8oXHENjCWKo7cilGRJ1yxO5kDh6qQzsAZymiowEBX6wik1y6k/+THbuky4IqOZb9zDYEpDEjfJfxRsB8mdK00TksuTF915ztgs5kyUakwVArvPqBRxulqjjifQy0hhRRTzWwpkcI5kdaXjhf0ZJqyl/gipXA2ZJoCjuO+Dd4iCnQoIOsn4aR+D0bLbmFbkUzkiU1U5SV6wxDtyG/b3fwuaKP6yR8jPf05/ddQK0Zr4NjExAy66xfB5PcI",
+    "userPassword-encrypted" : "AAAAA0FFUwIQrDxBRO2iMAwrdncVlSOXh1e3ulj5m5YjZglHFlRFHOxe1IQpzEmGgQScv6fStven9RrMYxAR5rqp848Cw8OCu9KQYo1cnPpoPJ4MQGOCbUBqOUP4YCKvalxOUt66DVACmExZWURm87rfHEY+b9JpQ1P7P/PuQC4PorDGbsJui2hjq4Fqe6XsEYXQkD9ZHKgKcBehYak1zpH94Kfl+FTRZbHB73AOXiKZYyP9bmDowgm2JKbo9rtVW1o+BYyIYlZGNpfVZtVrxgROH02r582GHhIFE3ZZlxSt",
     "_type" : {
       "_id" : "sunIdentityRepositoryService",
       "name" : "sunIdentityRepositoryService",

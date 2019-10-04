@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "CorsService",
     "entityId" : "default/appCorsService",
+    "serviceVersion" : null,
     "uid" : "ou=appCorsService,ou=default,ou=GlobalConfig,ou=1.0,ou=CorsService,ou=services,ou=am-config",
     "sunServiceID" : "instance",
     "objectClass" : [ "top", "sunServiceComponent" ],
@@ -13,7 +14,7 @@
   "data" : {
     "maxAge" : 600,
     "exposedHeaders" : [ ],
-    "acceptedOrigins" : [ ],
+    "acceptedOrigins" : [ "https://ui-cm-fraas-1265-134.forgeblocks.com" ],
     "_type" : {
       "_id" : "CorsService",
       "name" : "CorsService",

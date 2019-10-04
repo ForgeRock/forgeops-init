@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RadiusServerService",
     "entityId" : "default",
+    "serviceVersion" : "dbdc2a1c-ed18-4e0a-8dc8-a6902ed6a0dc",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=RadiusServerService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

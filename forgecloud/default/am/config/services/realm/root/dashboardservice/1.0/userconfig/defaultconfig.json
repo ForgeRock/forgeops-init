@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "dashboardService",
     "entityId" : "defaultconfig",
+    "serviceVersion" : "48a85381-c2c8-49b7-9f7d-aa2b159fd82b",
     "uid" : "ou=defaultconfig,ou=UserConfig,ou=1.0,ou=dashboardService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

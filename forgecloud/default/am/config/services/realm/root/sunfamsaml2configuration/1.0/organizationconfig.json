@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "sunFAMSAML2Configuration",
     "entityId" : "OrganizationConfig",
+    "serviceVersion" : "bde43f16-3a80-400d-a6d3-ced587341591",
     "uid" : "ou=OrganizationConfig,ou=1.0,ou=sunFAMSAML2Configuration,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "iPlanetAMSAMLService",
     "entityId" : "GlobalConfig",
+    "serviceVersion" : "9a320ff3-89a8-40cb-ba84-c9ef63fe72f6",
     "uid" : "ou=GlobalConfig,ou=1.0,ou=iPlanetAMSAMLService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],

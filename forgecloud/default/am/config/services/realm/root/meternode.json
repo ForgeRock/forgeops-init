@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "MeterNode",
     "entityId" : "MeterNode",
+    "serviceVersion" : null,
     "uid" : "ou=MeterNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "AuthenticatorOATH",
     "entityId" : "AuthenticatorOATH",
+    "serviceVersion" : null,
     "uid" : "ou=AuthenticatorOATH,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "EmailTemplateNode",
     "entityId" : "EmailTemplateNode",
+    "serviceVersion" : null,
     "uid" : "ou=EmailTemplateNode,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],

@@ -4,6 +4,7 @@
     "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "RemoteConsentService",
     "entityId" : "1.0",
+    "serviceVersion" : null,
     "uid" : "ou=1.0,ou=RemoteConsentService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunService" ],
@@ -14,13 +15,13 @@
     "defaults" : {
       "clientId" : null,
       "jwksUriAS" : null,
-      "jwkStoreCacheTimeout" : 60,
       "signingKeyAlias" : null,
+      "jwkStoreCacheTimeout" : 60,
       "encryptionKeyAlias" : null,
       "jwkStoreCacheMissCacheTime" : 1,
       "consentResponseTimeLimit" : 2
     },
-    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"RemoteConsentService\" version=\"1.0\"><Schema i18nFileName=\"RemoteConsentService\"  i18nKey=\"serviceDescription\"  resourceName=\"RemoteConsentService\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/RemoteConsentService\" ><Organization><AttributeSchema i18nKey=\"encryptionKeyAlias\"  name=\"encryptionKeyAlias\"  order=\"300\"  resourceName=\"encryptionKeyAlias\"  syntax=\"string\"  type=\"single\" ></AttributeSchema><AttributeSchema i18nKey=\"jwksUriAS\"  name=\"jwksUriAS\"  order=\"400\"  resourceName=\"jwksUriAS\"  syntax=\"string\"  type=\"single\" ></AttributeSchema><AttributeSchema i18nKey=\"jwkStoreCacheTimeout\"  name=\"jwkStoreCacheTimeout\"  order=\"500\"  resourceName=\"jwkStoreCacheTimeout\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>60</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"jwkStoreCacheMissCacheTime\"  name=\"jwkStoreCacheMissCacheTime\"  order=\"600\"  resourceName=\"jwkStoreCacheMissCacheTime\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>1</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"consentResponseTimeLimit\"  name=\"consentResponseTimeLimit\"  order=\"700\"  resourceName=\"consentResponseTimeLimit\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>2</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"signingKeyAlias\"  name=\"signingKeyAlias\"  order=\"200\"  resourceName=\"signingKeyAlias\"  syntax=\"string\"  type=\"single\" ></AttributeSchema><AttributeSchema i18nKey=\"clientId\"  name=\"clientId\"  order=\"100\"  resourceName=\"clientId\"  syntax=\"string\"  type=\"single\" ></AttributeSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"RemoteConsentService\" version=\"1.0\"><Schema i18nFileName=\"RemoteConsentService\"  i18nKey=\"serviceDescription\"  resourceName=\"RemoteConsentService\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/RemoteConsentService\" ><Organization><AttributeSchema i18nKey=\"signingKeyAlias\"  name=\"signingKeyAlias\"  order=\"200\"  resourceName=\"signingKeyAlias\"  syntax=\"string\"  type=\"single\" ></AttributeSchema><AttributeSchema i18nKey=\"encryptionKeyAlias\"  name=\"encryptionKeyAlias\"  order=\"300\"  resourceName=\"encryptionKeyAlias\"  syntax=\"string\"  type=\"single\" ></AttributeSchema><AttributeSchema i18nKey=\"jwksUriAS\"  name=\"jwksUriAS\"  order=\"400\"  resourceName=\"jwksUriAS\"  syntax=\"string\"  type=\"single\" ></AttributeSchema><AttributeSchema i18nKey=\"jwkStoreCacheTimeout\"  name=\"jwkStoreCacheTimeout\"  order=\"500\"  resourceName=\"jwkStoreCacheTimeout\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>60</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"jwkStoreCacheMissCacheTime\"  name=\"jwkStoreCacheMissCacheTime\"  order=\"600\"  resourceName=\"jwkStoreCacheMissCacheTime\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>1</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"consentResponseTimeLimit\"  name=\"consentResponseTimeLimit\"  order=\"700\"  resourceName=\"consentResponseTimeLimit\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>2</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"clientId\"  name=\"clientId\"  order=\"100\"  resourceName=\"clientId\"  syntax=\"string\"  type=\"single\" ></AttributeSchema></Organization></Schema></Service></ServicesConfiguration>",
     "_type" : {
       "_id" : "RemoteConsentService",
       "name" : "RemoteConsentService",
