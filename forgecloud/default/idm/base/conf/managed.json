@@ -661,7 +661,7 @@
                         "isPersonal" : true,
                         "policies" : [
                             {
-                                "policyId" : "unique"
+                                "policyId" : "valid-username"
                             },
                             {
                                 "policyId" : "no-internal-user-conflict"
