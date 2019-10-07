@@ -24,7 +24,7 @@
     "selfRegistrationTokenLifetime" : 900,
     "forgotPasswordEnabled" : false,
     "selfRegistrationEnabled" : false,
-    "confirmationIdHmacKey" : "WL0ermcEmQjGWpead93bc+Q5NlCz6+x0fsO32yv5Yrc=",
+    "confirmationIdHmacKey" : "8hN9vi3E3VyXV0hTsbfmgNtHF3O3+m5g/wvehgjV8nA=",
     "_id" : "defaultconfig",
     "SigningKeyValidator" : "org.forgerock.openam.authentication.modules.persistentcookie.validation.SigningKeyValidator",
     "forgotPasswordConfirmationUrl" : "http://openam:80/am/XUI/confirm.html",

@@ -12,7 +12,7 @@
     "ou" : [ ]
   },
   "data" : {
-    "aliases" : [ "openam", "am-config", "openam-cm-fraas-1265-138.forgeblocks.com" ],
+    "aliases" : [ "openam-cm-fraas-1265-139.forgeblocks.com", "openam", "am-config" ],
     "parentPath" : "",
     "_type" : {
       "_id" : "",

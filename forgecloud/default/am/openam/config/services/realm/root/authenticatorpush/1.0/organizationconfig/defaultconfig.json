@@ -24,7 +24,7 @@
       "collection" : false
     },
     "authenticatorPushDeviceSettingsEncryptionScheme" : "NONE",
-    "authenticatorPushDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQpeEPAOLNQFhd2r1GA9Tu603l2LYobuvX5bXITvCJk5P/qhbH2nhFxpynawga3iRO",
+    "authenticatorPushDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQ6mlwF/l00FA86FeXaa7NiPzRI+IgPeVNNu1lSFhxPoSUugSwUSqP6JWl4EwoY3qv",
     "authenticatorPushSkippableName" : "push2faEnabled",
     "_id" : "defaultconfig"
   }

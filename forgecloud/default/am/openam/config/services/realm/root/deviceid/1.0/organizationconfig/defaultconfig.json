@@ -24,6 +24,6 @@
     "_id" : "defaultconfig",
     "deviceIdSettingsEncryptionScheme" : "NONE",
     "deviceIdSettingsEncryptionKeystoreKeyPairAlias" : null,
-    "deviceIdSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQ9ukjN9mCq072OWuKBIbjKhp6b/K7b/VuDWBS3oqfcSFFv2bpbRkUdw=="
+    "deviceIdSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQBM2rQ5PL6lCex14SJnH8agU80+0E7/E8dfX0VM4w03vAYVWh2FsnrQ=="
   }
 }

@@ -12,7 +12,7 @@
     "ou" : [ "defaultconfig" ]
   },
   "data" : {
-    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQ5L+21O8ClvAA3RMKKYkClRlG2BdvowRZtYUv20bD3PDVREe1QA2bZw==",
+    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQ3yxcSCTjZenlHSUsGWNvBvLMDQFescxAYJPMhK8W5ft/34wEYmju/w==",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreType" : "JCEKS",
     "_type" : {
       "_id" : "AuthenticatorWebAuthn",

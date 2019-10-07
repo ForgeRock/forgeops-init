@@ -33,7 +33,7 @@
     "_id" : "defaultconfig",
     "mobileCarrierAttribute" : null,
     "otpMaxRetry" : 3,
-    "smtpUserPassword-encrypted" : "AAAAA0FFUwIQ1vI/MVnm4gY/aWGPG8lMY+Jf8lOra6fJdwjZA905ngwnjFT3oCo9oQ==",
+    "smtpUserPassword-encrypted" : "AAAAA0FFUwIQftc3RjHDoW3kYMyWvTJmaAXilWwF2arsLlevsZWOIut/S2+8YNTH6g==",
     "otpValidityDuration" : 5
   }
 }

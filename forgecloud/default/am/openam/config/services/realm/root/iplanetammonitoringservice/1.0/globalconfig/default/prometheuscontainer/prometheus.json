@@ -18,7 +18,7 @@
       "name" : "iPlanetAMMonitoringService",
       "collection" : false
     },
-    "password-encrypted" : "AAAAA0FFUwIQJKdCSn4rskOHY8i8grEpBd6RbwDouoZG0kkDTqiT/zfbgqv2S06Yr6tFhHnvEAFFhL6AsiDPC3dqHERg632m9Q==",
+    "password-encrypted" : "AAAAA0FFUwIQt/hHx0ssuIzMRLNdmt4ASPN1770KPUncpalhYzhuot9j3f3+rYD2QQvGDi3sVDoabj8hN2OwNIGbn4swwIgUtA==",
     "_id" : "default/prometheusContainer/prometheus",
     "authenticationType" : "BASIC",
     "enabled" : true,

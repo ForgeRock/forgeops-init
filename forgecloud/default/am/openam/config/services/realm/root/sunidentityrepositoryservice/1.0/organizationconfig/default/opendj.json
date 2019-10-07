@@ -33,7 +33,7 @@
       "sun-idrepo-ldapv3-config-search-scope" : "SCOPE_SUB",
       "sun-idrepo-ldapv3-config-time-limit" : 10,
       "sun-idrepo-ldapv3-config-authpw" : null,
-      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQZwkP5KVj+PW16z5QTNkHxrUNIBmpYl29yN/6hF10D5NaNvgrgMU7F6g50E9XUv/WOembheGd5qjF3CIOlhfZ2w=="
+      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQf74mwTjjhPE8DP/bjUWCewvOhjmRUEMi6Jtsd3Fy/IgcHJwOhs8Rkih6Be2b82lFsLehc59G8NHvrUmBOkU7nA=="
     },
     "groupconfig" : {
       "sun-idrepo-ldapv3-config-groups-search-attribute" : "cn",

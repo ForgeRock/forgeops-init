@@ -17,7 +17,7 @@
       "name" : "amRealmBaseURL",
       "collection" : false
     },
-    "fixedValue" : "https://openam-cm-fraas-1265-138.forgeblocks.com",
+    "fixedValue" : "https://openam-cm-fraas-1265-139.forgeblocks.com",
     "_id" : "default",
     "source" : "FIXED_VALUE"
   }

@@ -56,7 +56,7 @@
       "moduleBasedAuthEnabled" : true,
       "zeroPageLoginAllowedWithoutReferrer" : true,
       "sharedSecret" : null,
-      "sharedSecret-encrypted" : "AAAAA0FFUwIQBYLll/DHUGxATQpdFil8FZ4CW2xiiyONHfJ7Epb699DoFhVskjZCVuXvhiaDmiMNrlE+DEubs0MJRWyHO1Q+eX+sB/+Uh8Ts",
+      "sharedSecret-encrypted" : "AAAAA0FFUwIQFR0GwKoRbIUMvTo0zIWgPLHYA724vLeZi0rkKp+6A3pojzAEV/tIGR+l5LcX0GWs5feAhvurOOqb8hD9S+jzIyvBvgScFQ7a",
       "iplanet-am-auth-valid-goto-domains" : [ ],
       "keyAlias" : "test",
       "zeroPageLoginEnabled" : false,

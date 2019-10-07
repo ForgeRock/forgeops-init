@@ -21,7 +21,7 @@
       "name" : "AuthenticatorOATH",
       "collection" : false
     },
-    "authenticatorOATHDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQfvHOrVseddv0Zu5oKxk5VYyGAdzNZjB4qntLxBZO1gFggQ9qImhRvaksqejVfVsN",
+    "authenticatorOATHDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQdhOcaz53HZtjCFgRWDqmdAe8uH40k3ydkKv8MxhfCv+o9lwfnn8beGG60/0ENW3P",
     "authenticatorOATHDeviceSettingsEncryptionScheme" : "NONE",
     "authenticatorOATHDeviceSettingsEncryptionKeystoreKeyPairAlias" : null,
     "_id" : "defaultconfig",

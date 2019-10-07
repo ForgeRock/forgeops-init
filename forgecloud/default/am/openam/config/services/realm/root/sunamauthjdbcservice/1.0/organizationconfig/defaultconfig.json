@@ -18,7 +18,7 @@
       "name" : "sunAMAuthJDBCService",
       "collection" : false
     },
-    "password-encrypted" : "AAAAA0FFUwIQgjrt7Jm2mexOtetNZ0qY5qWNjC6WClH/TpFoFEYoQPiI/CF2RN5oWA==",
+    "password-encrypted" : "AAAAA0FFUwIQrUp6D1SV9bea2UooRwd7/JOuCUEco7qlpN8MBCpKanMRQ86CK9nVow==",
     "connectionType" : "JNDI",
     "passwordColumn" : "PASSWORD_COLUMN",
     "passwordTransformClass" : "com.sun.identity.authentication.modules.jdbc.ClearTextTransform",

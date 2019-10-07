@@ -12,7 +12,7 @@
     "ou" : null
   },
   "data" : {
-    "metadataSigningKeyPass-encrypted" : "AAAAA0FFUwIQ4F54Nx//8R9ZuJKue3lUMXDbqTXLe+IsM0nWYlJ5+dJZvEqmB4HLWcDqe5jix+ZR",
+    "metadataSigningKeyPass-encrypted" : "AAAAA0FFUwIQuYcJbrUEvxlAa7r1eUaNGKyd4s0uYFS1MkeyQCNf5ey9dU7aOyLWcJzFktasib0k",
     "metadataSigningKey" : "test",
     "_type" : {
       "_id" : "sunFAMSAML2Configuration",
