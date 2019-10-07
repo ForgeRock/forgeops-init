@@ -13,7 +13,7 @@
       "collection" : false,
       "name" : "Monitoring"
     },
-    "authfilePath" : "%BASE_DIR%/%SERVER_URI%/openam_mon_auth",
+    "authfilePath" : "%BASE_DIR%/security/openam_mon_auth",
     "enabled" : true,
     "httpEnabled" : false,
     "httpPort" : 8082,
