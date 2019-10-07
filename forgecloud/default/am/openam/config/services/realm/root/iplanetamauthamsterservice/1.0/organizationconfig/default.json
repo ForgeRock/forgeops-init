@@ -18,7 +18,7 @@
       "name" : "iPlanetAMAuthAmsterService",
       "collection" : false
     },
-    "authorizedKeys" : "/var/run/secrets/openam/keystore/authorized_keys",
+    "authorizedKeys" : "/home/forgerock/openam/security/keys/amster/authorized_keys",
     "_id" : "default",
     "enabled" : true
   }
