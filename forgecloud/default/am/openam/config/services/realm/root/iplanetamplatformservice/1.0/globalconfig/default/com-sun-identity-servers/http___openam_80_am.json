@@ -1,0 +1,26 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMPlatformService",
+    "entityId" : "default/com-sun-identity-servers/http://openam:80/am",
+    "serviceVersion" : "6ea08428-6297-450a-86f8-5f31e34bb70f",
+    "uid" : "ou=http://openam:80/am,ou=com-sun-identity-servers,ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMPlatformService,ou=services,ou=am-config",
+    "sunServiceID" : "server",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "http://openam:80/am" ]
+  },
+  "data" : {
+    "serverconfig" : [ "com.iplanet.services.debug.level=error", "com.sun.identity.urlconnection.useCache=false", "com.iplanet.am.server.host=openam", "com.iplanet.am.server.port=80", "com.iplanet.services.configpath=/home/forgerock/openam", "com.iplanet.am.serverMode=true", "am.encryption.pwd=e2KGNLVHdB", "com.sun.identity.sm.sms_object_class_name=com.sun.identity.sm.SmsWrapperObject", "com.sun.embedded.sync.servers=on", "com.sun.embedded.replicationport=", "com.iplanet.am.ldap.connection.ldap.error.codes.retries=80,81,91", "bootstrap.file=null", "com.iplanet.security.SSLSocketFactoryImpl=com.sun.identity.shared.ldap.factory.JSSESocketFactory", "com.sun.identity.common.systemtimerpool.size=3", "com.iplanet.am.locale=en_US", "com.sun.identity.sm.enableDataStoreNotification=true", "com.iplanet.am.services.deploymentDescriptor=/am", "com.sun.am.event.connection.disable.list=aci,um", "com.iplanet.am.server.protocol=http", "com.sun.services.debug.mergeall=off", "com.iplanet.am.lbcookie.value=01", "opensso.protocol.handler.pkgs=" ],
+    "_type" : {
+      "_id" : "iPlanetAMPlatformService",
+      "name" : "iPlanetAMPlatformService",
+      "collection" : false
+    },
+    "siteId" : "site1",
+    "serverconfigxml" : "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" standalone=\"yes\"?>\n\n<!--\n   DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.\n  \n   Copyright (c) 2005 Sun Microsystems Inc. All Rights Reserved\n  \n   The contents of this file are subject to the terms\n   of the Common Development and Distribution License\n   (the License). You may not use this file except in\n   compliance with the License.\n  \n   You can obtain a copy of the License at\n   https://opensso.dev.java.net/public/CDDLv1.0.html or\n   opensso/legal/CDDLv1.0.txt\n   See the License for the specific language governing\n   permission and limitations under the License.\n  \n   When distributing Covered Code, include this CDDL\n   Header Notice in each file and include the License file\n   at opensso/legal/CDDLv1.0.txt.\n   If applicable, add the following below the CDDL Header,\n   with the fields enclosed by brackets [] replaced by\n   your own identifying information:\n   \"Portions Copyrighted [year] [name of copyright owner]\"\n\n   $Id: serverconfig.xml,v 1.15 2008/11/06 05:31:02 veiming Exp $\n\n   Portions Copyright 2015-2017 ForgeRock AS.\n-->\n\n\n<iPlanetDataAccessLayer>\n    <ServerGroup name=\"default\" minConnPool=\"1\" maxConnPool=\"10\">\n        <Server name=\"Server1\" host=\"userstore-0.userstore\" port=\"1389\" type=\"SIMPLE\" />\n        <User name=\"User1\" type=\"proxy\">\n            <DirDN>\n                cn=puser,ou=DSAME Users,ou=am-config\n            </DirDN>\n            <DirPassword>\n                AQIC3NzTolg9xkfdgoJ7TcFBRc9xz8K9tn7l\n            </DirPassword>\n        </User>\n        <User name=\"User2\" type=\"admin\">\n            <DirDN>\n                cn=dsameuser,ou=DSAME Users,ou=am-config\n            </DirDN>\n            <DirPassword>\n                AQIC3NzTolg9xkfdgoJ7TcFBRc9xz8K9tn7l\n            </DirPassword>\n        </User>\n        <BaseDN>\n            ou=am-config\n        </BaseDN>                \n    </ServerGroup>\n\n    <!--\n    Datastore for storing configuration and policy data in different Directory.\n    -->\n    <ServerGroup name=\"sms\" minConnPool=\"1\" maxConnPool=\"10\">\n        <Server name=\"Server1\" host=\"userstore-0.userstore\" port=\"1389\"\n             type=\"SIMPLE\" />\n             <User name=\"User2\" type=\"admin\">\n                <DirDN>uid=am-config,ou=admins,ou=am-config</DirDN>\n                <DirPassword>AQIC3NzTolg9xkf/z848xMlDYsthU2AvZ1AV</DirPassword>\n             </User>\n             <BaseDN>ou=am-config</BaseDN>\n    </ServerGroup>\n\n</iPlanetDataAccessLayer>\n",
+    "_id" : "default/com-sun-identity-servers/http://openam:80/am",
+    "id" : "01"
+  }
+}

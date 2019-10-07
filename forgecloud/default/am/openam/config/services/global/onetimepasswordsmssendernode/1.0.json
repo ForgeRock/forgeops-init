@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "OneTimePasswordSmsSenderNode",
+    "entityId" : "1.0",
+    "serviceVersion" : null,
+    "uid" : "ou=1.0,ou=OneTimePasswordSmsSenderNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"OneTimePasswordSmsSenderNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/OneTimePasswordSmsSenderNode\"  i18nKey=\"nodeDescription\"  resourceName=\"OneTimePasswordSmsSenderNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/OneTimePasswordSmsSenderNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"mobileCarrierAttributeName\"  name=\"mobileCarrierAttributeName\"  order=\"1200\"  resourceName=\"mobileCarrierAttributeName\"  syntax=\"string\"  type=\"single\" ><IsOptional></IsOptional></AttributeSchema><AttributeSchema i18nKey=\"mobilePhoneAttributeName\"  name=\"mobilePhoneAttributeName\"  order=\"1100\"  resourceName=\"mobilePhoneAttributeName\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ><DefaultValues><Value>telephoneNumber</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"hostPort\"  name=\"hostPort\"  order=\"300\"  resourceName=\"hostPort\"  syntax=\"number\"  type=\"single\"  validator=\"RequiredValueValidator0\" ><DefaultValues><Value>0</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"smsGatewayImplementationClass\"  name=\"smsGatewayImplementationClass\"  order=\"2200\"  resourceName=\"smsGatewayImplementationClass\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ><DefaultValues><Value>com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"fromEmailAddress\"  name=\"fromEmailAddress\"  order=\"600\"  resourceName=\"fromEmailAddress\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ></AttributeSchema><AttributeSchema i18nKey=\"sslOption\"  name=\"sslOption\"  order=\"2100\"  resourceName=\"sslOption\"  syntax=\"string\"  type=\"single_choice\"  validator=\"RequiredValueValidator0\" ><ChoiceValues><ChoiceValue i18nKey=\"sslOption.NON_SSL\" >NON_SSL</ChoiceValue><ChoiceValue i18nKey=\"sslOption.SSL\" >SSL</ChoiceValue><ChoiceValue i18nKey=\"sslOption.START_TLS\" >START_TLS</ChoiceValue></ChoiceValues><DefaultValues><Value>SSL</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"hostName\"  name=\"hostName\"  order=\"200\"  resourceName=\"hostName\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ></AttributeSchema><AttributeSchema i18nKey=\"username\"  name=\"username\"  order=\"400\"  resourceName=\"username\"  syntax=\"string\"  type=\"single\"  validator=\"RequiredValueValidator0\" ></AttributeSchema><AttributeSchema i18nKey=\"password\"  name=\"password\"  order=\"500\"  resourceName=\"password\"  syntax=\"password\"  type=\"single\"  validator=\"RequiredValueValidator0\" ></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "OneTimePasswordSmsSenderNode",
+      "name" : "OneTimePasswordSmsSenderNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

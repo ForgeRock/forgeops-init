@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "WebAuthnAuthenticationNode",
+    "entityId" : "1.0",
+    "serviceVersion" : null,
+    "uid" : "ou=1.0,ou=WebAuthnAuthenticationNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"WebAuthnAuthenticationNode\" version=\"1.0\"><Schema i18nFileName=\"org/forgerock/openam/auth/nodes/webauthn/WebAuthnAuthenticationNode\"  i18nKey=\"nodeDescription\"  resourceName=\"WebAuthnAuthenticationNode\"  revisionNumber=\"1\"  serviceHierarchy=\"/DSAMEConfig/WebAuthnAuthenticationNode\" ><Organization><SubSchema i18nKey=\"nodeDescription\"  inheritance=\"multiple\"  name=\"instance\"  resourceName=\"USE-PARENT\"  validate=\"yes\" ><AttributeSchema i18nKey=\"isRecoveryCodeAllowed\"  name=\"isRecoveryCodeAllowed\"  order=\"30\"  resourceName=\"isRecoveryCodeAllowed\"  syntax=\"boolean\"  type=\"single\" ><DefaultValues><Value>false</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"relyingPartyDomain\"  name=\"relyingPartyDomain\"  order=\"10\"  resourceName=\"relyingPartyDomain\"  syntax=\"string\"  type=\"single\" ><IsOptional></IsOptional></AttributeSchema><AttributeSchema i18nKey=\"userVerificationRequirement\"  name=\"userVerificationRequirement\"  order=\"20\"  resourceName=\"userVerificationRequirement\"  syntax=\"string\"  type=\"single_choice\" ><ChoiceValues><ChoiceValue i18nKey=\"userVerificationRequirement.REQUIRED\" >REQUIRED</ChoiceValue><ChoiceValue i18nKey=\"userVerificationRequirement.PREFERRED\" >PREFERRED</ChoiceValue><ChoiceValue i18nKey=\"userVerificationRequirement.DISCOURAGED\" >DISCOURAGED</ChoiceValue></ChoiceValues><DefaultValues><Value>PREFERRED</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"origins\"  name=\"origins\"  order=\"15\"  resourceName=\"origins\"  syntax=\"string\"  type=\"list\"  validator=\"RequiredValueValidator0\" ></AttributeSchema><AttributeSchema i18nKey=\"asScript\"  name=\"asScript\"  order=\"50\"  resourceName=\"asScript\"  syntax=\"boolean\"  type=\"single\" ><DefaultValues><Value>true</Value></DefaultValues></AttributeSchema><AttributeSchema i18nKey=\"timeout\"  name=\"timeout\"  order=\"40\"  resourceName=\"timeout\"  syntax=\"number\"  type=\"single\" ><DefaultValues><Value>60</Value></DefaultValues></AttributeSchema><AttributeSchema name=\"RequiredValueValidator0\"  syntax=\"string\"  type=\"validator\" ><DefaultValues><Value>com.sun.identity.sm.RequiredValueValidator</Value></DefaultValues></AttributeSchema></SubSchema></Organization></Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "WebAuthnAuthenticationNode",
+      "name" : "WebAuthnAuthenticationNode",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}

@@ -5,22 +5,33 @@
 set -x
 
 echo "Copying config"
+rm -rf /home/forgerock/openam/config
 mkdir -p /home/forgerock/openam/config
-cp -R /home/forgerock/config/* /home/forgerock/openam/config
+cp -R /home/forgerock/fbc/openam/config/* /home/forgerock/openam/config
 
-## org.forgerock.openam.utils.AMKeyProvider#readPasswordFile logs errors:
-## Unable to read private key password file /home/forgerock/openam/am/.storepass
-## Unable to read private key password file /home/forgerock/openam/am/.keypass
-## (stacktrace at end of script)
-echo "Copying default passwords"
-mkdir -p /home/forgerock/openam/am
-cp /home/forgerock/openam/security/secrets/default/.storepass /home/forgerock/openam/am/.storepass
-cp /home/forgerock/openam/security/secrets/default/.keypass /home/forgerock/openam/am/.keypass
+echo "Copying security"
+rm -rf /home/forgerock/openam/authorized_keys
+cp /home/forgerock/fbc/openam/authorized_keys /home/forgerock/openam/authorized_keys
 
-#echo "Copying keystore.jceks"
-#mkdir -p /home/forgerock/openam/security/keystores
-#rm -f /home/forgerock/openam/security/keystores/keystore.jceks
-#cp /home/forgerock/keystore.jceks /home/forgerock/openam/security/keystores
+echo "Copying security"
+rm -rf /home/forgerock/openam/security
+mkdir -p /home/forgerock/openam/security
+cp -R /home/forgerock/fbc/openam/security/* /home/forgerock/openam/security
+
+
+### org.forgerock.openam.utils.AMKeyProvider#readPasswordFile logs errors:
+### Unable to read private key password file /home/forgerock/openam/am/.storepass
+### Unable to read private key password file /home/forgerock/openam/am/.keypass
+### (stacktrace at end of script)
+#echo "Copying default passwords"
+#mkdir -p /home/forgerock/openam/am
+#cp /home/forgerock/openam/security/secrets/default/.storepass /home/forgerock/openam/am/.storepass
+#cp /home/forgerock/openam/security/secrets/default/.keypass /home/forgerock/openam/am/.keypass
+#
+##echo "Copying keystore.jceks"
+##mkdir -p /home/forgerock/openam/security/keystores
+##rm -f /home/forgerock/openam/security/keystores/keystore.jceks
+##cp /home/forgerock/keystore.jceks /home/forgerock/openam/security/keystores
 
 # Unable to read private key password file /home/forgerock/openam/am/.storepass
 #  exception: "java.io.FileNotFoundException: /home/forgerock/openam/am/.storepass (No such file or directory)

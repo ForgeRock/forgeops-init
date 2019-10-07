@@ -1,0 +1,59 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMSessionService",
+    "entityId" : "default",
+    "serviceVersion" : "6af875fc-7d0f-41d5-8a55-d402454c6b6a",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMSessionService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent", "organizationalunit" ],
+    "pathParams" : { },
+    "ou" : [ "default" ]
+  },
+  "data" : {
+    "serviceObjectClasses" : [ "iplanet-am-session-service" ],
+    "general" : {
+      "timeoutHandlers" : [ ],
+      "latestAccessTimeUpdateFrequency" : 60,
+      "dnRestrictionOnly" : false
+    },
+    "Base64Validator" : "org.forgerock.openam.sm.validation.Base64EncodedBinaryValidator",
+    "search" : {
+      "maxSessionListSize" : 120,
+      "sessionListRetrievalTimeout" : 5
+    },
+    "quotas" : {
+      "iplanet-am-session-enable-session-constraint" : "OFF",
+      "denyLoginWhenRepoDown" : "NO",
+      "quotaConstraintMaxWaitTime" : 6000,
+      "behaviourWhenQuotaExhausted" : "org.forgerock.openam.session.service.DestroyNextExpiringAction"
+    },
+    "StatelessSessionSigningValidator" : "org.forgerock.openam.sm.validation.StatelessSessionSigningAlgorithmValidator",
+    "_type" : {
+      "_id" : "iPlanetAMSessionService",
+      "name" : "iPlanetAMSessionService",
+      "collection" : false
+    },
+    "_id" : "default",
+    "stateless" : {
+      "statelessSigningHmacSecret" : null,
+      "statelessSigningHmacSecret-encrypted" : "AAAAA0FFUwIQufe/p1lpxjXwQoXo9piOamlF4eCCWKNm1aXzfMuK2cuMi/2gUUx6qsR4uz75if8NM72/+Nfk+K/Xu7/r6oEdQ+y31TgXOgOO",
+      "openam-session-stateless-blacklist-poll-interval" : 60,
+      "statelessSigningType" : "HS256",
+      "openam-session-stateless-enable-session-blacklisting" : false,
+      "statelessCompressionType" : "NONE",
+      "statelessEncryptionType" : "DIRECT",
+      "openam-session-stateless-blacklist-purge-delay" : 1,
+      "statelessSigningRsaCertAlias" : "test",
+      "statelessEncryptionAesKey" : null,
+      "statelessEncryptionAesKey-encrypted" : "AAAAA0FFUwIQ7UbrUp9xhDCiTtzqaVRuufHRoujVux3s6ZVY2mA5+yIQn8YP9ma6ahB0G3bBDlzqlxxgFlG0O+/dRoiKpOjFa/VSEox1Aamz",
+      "openam-session-stateless-blacklist-cache-size" : 10000,
+      "statelessEncryptionRsaCertAlias" : "test"
+    },
+    "notifications" : {
+      "propertyChangeNotifications" : "OFF",
+      "notificationPropertyList" : [ ]
+    }
+  }
+}

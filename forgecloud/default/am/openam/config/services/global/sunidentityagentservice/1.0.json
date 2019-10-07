@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityAgentService",
+    "entityId" : "1.0",
+    "serviceVersion" : null,
+    "uid" : "ou=1.0,ou=sunIdentityAgentService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunServiceSchema" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ServicesConfiguration><Service name=\"sunIdentityAgentService\" version=\"1.0\"><Schema i18nFileName=\"amAgent\"  revisionNumber=\"10\"  serviceVersion=\"caec27ab-ec51-4988-93fd-64626f743026\" >\n            <Generic type=\"Agent\" >\n\t        <AttributeSchema any=\"required|display\"  cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"u102\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"userpassword\"  order=\"100\"  syntax=\"password\"  type=\"single\"  validator=\"RequiredValueValidator\" >\n\t\t    <DefaultValues>\n\t\t\t<Value>AQIC3NzTolg9xkfXn6ps2OSdSA==</Value>\n\t\t    </DefaultValues>\n\t\t</AttributeSchema>\n\t        <AttributeSchema any=\"display\"  cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"u105\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"description\"  order=\"200\"  syntax=\"string\"  type=\"single\" >\n\t\t</AttributeSchema>\n\t        <AttributeSchema any=\"display\"  cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"u107\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sunIdentityServerDeviceKeyValue\"  order=\"300\"  syntax=\"string\"  type=\"list\" >\n\t\t</AttributeSchema>\n                <AttributeSchema any=\"required|filter|adminDisplay\"  cosQualifier=\"default\"  hideConfigUI=\"no\"  i18nKey=\"u111\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"sunIdentityServerDeviceStatus\"  order=\"400\"  syntax=\"string\"  type=\"single_choice\"  validator=\"RequiredValueValidator\" >\n                    <ChoiceValues>\n                        <ChoiceValue i18nKey=\"u200\" >Active</ChoiceValue>\n                        <ChoiceValue i18nKey=\"u201\" >Inactive</ChoiceValue>\n                    </ChoiceValues>\n\t\t    <DefaultValues>\n                        <Value>Active</Value>\n\t\t    </DefaultValues>\n\t        </AttributeSchema>\n                <AttributeSchema cosQualifier=\"default\"  hideConfigUI=\"no\"  isSearchable=\"no\"  listOrder=\"natural\"  name=\"RequiredValueValidator\"  syntax=\"string\"  type=\"validator\" >\n                    <DefaultValues>\n                        <Value>com.sun.identity.sm.RequiredValueValidator</Value>\n                    </DefaultValues>\n                </AttributeSchema>\n\t    </Generic>\n        </Schema></Service></ServicesConfiguration>",
+    "_type" : {
+      "_id" : "sunIdentityAgentService",
+      "name" : "sunIdentityAgentService",
+      "collection" : false
+    },
+    "_id" : "1.0"
+  }
+}
