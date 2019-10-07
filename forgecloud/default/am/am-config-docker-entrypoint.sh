@@ -18,6 +18,8 @@ rm -rf /home/forgerock/openam/security
 mkdir -p /home/forgerock/openam/security
 cp -R /home/forgerock/fbc/openam/security/* /home/forgerock/openam/security
 
+echo "Creating .homeVersion file"
+echo -n "structured" > /home/forgerock/openam/.homeVersion
 
 ### org.forgerock.openam.utils.AMKeyProvider#readPasswordFile logs errors:
 ### Unable to read private key password file /home/forgerock/openam/am/.storepass
