@@ -1,0 +1,11 @@
+  domain: forgeops.com
+  service:
+    name: idm-service
+    externalPort: 8080
+    type: NodePort
+  resources:
+    requests:
+      memory: "512Mi"
+  config:
+    strategy: files
+    path: /opt/openidm

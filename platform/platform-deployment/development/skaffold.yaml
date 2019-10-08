@@ -1,0 +1,52 @@
+apiVersion: skaffold/v1beta6
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/engineering-devops/skaffold/idm-am-common-user/amster
+    context: ../amster
+  - image: gcr.io/engineering-devops/skaffold/idm-am-common-user/idm
+    context: ../idm
+  tagPolicy:
+    sha256: {}
+deploy:
+  helm:
+    releases:
+    - name: sk-frconfig
+      chartPath: forgeops/helm/frconfig
+      setValues:
+        domain: forgeops.com
+        certmanager.acme: false
+        certmanager.issuer: ca-issuer
+        certmanager.issuerKind: Issuer
+
+    - name: sk-userstore
+      chartPath: forgeops/helm/ds
+      valuesFiles:
+      - forgeops/samples/config/ds-shared-repo/userstore.yaml
+      - userstore-values.yaml
+
+    - name: sk-amster
+      chartPath: forgeops/helm/amster
+      valuesFiles:
+      - forgeops/samples/config/ds-shared-repo/amster.yaml
+      - amster-values.yaml
+      values:
+        image: gcr.io/engineering-devops/skaffold/idm-am-common-user/amster
+      imageStrategy:
+        helm: {}
+
+    - name: sk-idm
+      chartPath: forgeops/helm/openidm
+      valuesFiles:
+      - forgeops/samples/config/ds-shared-repo/openidm.yaml
+      - idm-values.yaml
+      values:
+        image: gcr.io/engineering-devops/skaffold/idm-am-common-user/idm
+      imageStrategy:
+        helm: {}
+
+    - name: sk-openam
+      chartPath: forgeops/helm/openam
+      valuesFiles:
+      - forgeops/samples/config/ds-shared-repo/openam.yaml
+      - openam-values.yaml
