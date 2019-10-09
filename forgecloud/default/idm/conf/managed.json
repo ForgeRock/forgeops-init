@@ -619,12 +619,12 @@
                         "description" : "Name",
                         "type" : "object",
                         "properties" : {
-                            "formatted": "string",
-                            "familyName": "string",
-                            "givenName": "string",
-                            "middleName": "string",
-                            "honorificPrefix": "string",
-                            "honorificSuffix": "string"
+                            "formatted": { "type": "string" },
+                            "familyName": { "type": "string" },
+                            "givenName": { "type": "string" },
+                            "middleName": { "type": "string" },
+                            "honorificPrefix": { "type": "string" },
+                            "honorificSuffix": { "type": "string" }
                         }
                       },
                     "cn" : {
