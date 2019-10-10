@@ -1,0 +1,19 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "6.5.2",
+    "entityType" : "ScriptTypes",
+    "entityId" : "OAUTH2_ACCESS_TOKEN_MODIFICATION",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "OAUTH2_ACCESS_TOKEN_MODIFICATION",
+    "languages" : [ "JAVASCRIPT", "GROOVY" ],
+    "defaultScript" : "d22f9a0c-426a-4466-b95e-d0f125b0d5fa",
+    "_type" : {
+      "_id" : "contexts",
+      "name" : "Scripting",
+      "collection" : true
+    }
+  }
+}
