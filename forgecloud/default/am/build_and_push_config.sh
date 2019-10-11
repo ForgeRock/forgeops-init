@@ -3,9 +3,9 @@
 
 # temporary script for building am-config Docker image and pushing it to gcr
 
-docker build -t gcr.io/fr-saas-registry/am-config:FRAAS-1265-AM-FBC-latest -f am-config.Dockerfile .
+docker build -t gcr.io/fr-saas-registry/am-config:FRAAS-1265-141-latest -f am-config.Dockerfile .
 
-docker push gcr.io/fr-saas-registry/am-config:FRAAS-1265-AM-FBC-latest
+docker push gcr.io/fr-saas-registry/am-config:FRAAS-1265-141-latest
 
 # deploy this image as an init-container within the openam pod
 #      - image: gcr.io/fr-saas-registry/am-config:FRAAS-1265-AM-FBC-latest
