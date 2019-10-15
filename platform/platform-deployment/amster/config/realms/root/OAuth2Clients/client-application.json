@@ -3,11 +3,11 @@
     "realm" : "/",
     "amsterVersion" : "&{version}",
     "entityType" : "OAuth2Clients",
-    "entityId" : "resource-server",
+    "entityId" : "client-application",
     "pathParams" : { }
   },
   "data" : {
-    "_id" : "resource-server",
+    "_id" : "client-application",
     "signEncOAuth2ClientConfig" : {
       "idTokenEncryptionMethod" : "A128CBC-HS256",
       "jwkSet" : null,
@@ -33,7 +33,7 @@
       "clientJwtPublicKey" : null
     },
     "advancedOAuth2ClientConfig" : {
-      "grantTypes" : [ "authorization_code" ],
+      "grantTypes" : [ "authorization_code", "password" ],
       "updateAccessToken" : null,
       "requestUris" : [ ],
       "clientUri" : [ ],
@@ -59,17 +59,15 @@
       "defaultMaxAgeEnabled" : false
     },
     "coreOAuth2ClientConfig" : {
-      "userpassword" : null,
-      "userpassword-encrypted" : "AAAAA0FFUwIQjp8Mpw0gXghvSphDZAOSAD1eS76PiQpfrBWIs1NHgpWc/5PEMaFnKg==",
       "authorizationCodeLifetime" : 0,
       "accessTokenLifetime" : 0,
-      "defaultScopes" : [ "am-introspect-all-tokens" ],
+      "defaultScopes" : [ ],
       "clientName" : [ ],
       "clientType" : "Confidential",
-      "scopes" : [ ],
+      "scopes" : [ "mail", "employeenumber" ],
       "agentgroup" : null,
       "refreshTokenLifetime" : 0,
-      "redirectionUris" : [ "http://fake.com" ],
+      "redirectionUris" : [ ],
       "status" : "Active"
     },
     "coreUmaClientConfig" : {

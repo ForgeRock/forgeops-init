@@ -1,89 +1,32 @@
- {
-    "serverAuthContext" : {
-        "sessionModule" : {
-            "name" : "JWT_SESSION",
-            "properties" : {
-                "maxTokenLifeMinutes" : 120,
-                "tokenIdleTimeMinutes" : 30,
-                "sessionOnly" : true,
-                "isHttpOnly" : true,
-                "enableDynamicRoles" : false
-            }
+{
+    "rsFilter": {
+        "clientId": "rsFilterClient",
+        "clientSecret": "rsFilterClient",
+        "tokenIntrospectUrl": "http://am:80/am/oauth2/introspect",
+        "scopes": [],
+        "cache": {
+            "maxTimeout": "300 seconds"
         },
-        "authModules" : [
+        "queryOnResource": "managed/user",
+        "propertyMapping": {
+            "authenticationId": "userName",
+            "userRoles": "authzRoles"
+        },
+        "staticUserMapping": [
             {
-                "name" : "STATIC_USER",
-                "properties" : {
-                    "queryOnResource" : "internal/user",
-                    "username" : "anonymous",
-                    "password" : "anonymous",
-                    "defaultUserRoles" : [
-                        "internal/role/openidm-reg"
-                    ]
-                },
-                "enabled" : true
+                "idpUser": "amadmin",
+                "localUser": "internal/user/openidm-admin",
+                "userRoles": "authzRoles"
             },
             {
-                "name" : "MANAGED_USER",
-                "properties" : {
-                    "augmentSecurityContext": {
-                        "type" : "text/javascript",
-                        "source" : "require('auth/customAuthz').setProtectedAttributes(security)"
-                    },
-                    "queryId" : "credential-query",
-                    "queryOnResource" : "managed/user",
-                    "propertyMapping" : {
-                        "authenticationId" : "username",
-                        "userCredential" : "password",
-                        "userRoles" : "authzRoles"
-                    },
-                    "defaultUserRoles" : [ ]
-                },
-                "enabled" : true
-            },
-            {
-                "name" : "INTERNAL_USER",
-                "properties" : {
-                    "queryId" : "credential-internaluser-query",
-                    "queryOnResource" : "internal/user",
-                    "propertyMapping" : {
-                        "authenticationId" : "username",
-                        "userCredential" : "password",
-                        "userRoles" : "authzRoles"
-                    },
-                    "defaultUserRoles" : [ ]
-                },
-                "enabled" : true
-            },
-            {
-                "name" : "SOCIAL_PROVIDERS",
-                "properties" : {
-                    "defaultUserRoles" : [
-                        "internal/role/openidm-authorized"
-                    ],
-                    "augmentSecurityContext" : {
-                        "type" : "text/javascript",
-                        "globals" : { },
-                        "file" : "auth/populateAsManagedUserFromRelationship.js"
-                    },
-                    "propertyMapping" : {
-                        "userRoles" : "authzRoles"
-                    }
-                },
-                "enabled" : true
-            },
-            {
-                "name" : "STATIC_USER",
-                "properties" : {
-                    "queryOnResource" : "internal/user",
-                    "username" : "&{openidm.prometheus.username}",
-                    "password" : "&{openidm.prometheus.password}",
-                    "defaultUserRoles" : [
-                        "&{openidm.prometheus.role}"
-                    ]
-                },
-                "enabled" : true
+                "idpUser": "idm-provisioning",
+                "localUser": "internal/user/openidm-admin",
+                "userRoles": "authzRoles"
             }
-        ]
+        ],
+        "anonymousUserMapping": {
+            "localUser": "internal/user/anonymous",
+            "userRoles": "authzRoles"
+        }
     }
 }

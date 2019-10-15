@@ -3,9 +3,9 @@
     "realm" : null,
     "amsterVersion" : "&{version}",
     "entityType" : "CtsDataStoreProperties",
-    "entityId" : "http://openam:80/am",
+    "entityId" : "http://am:80/am",
     "pathParams" : {
-      "serverName" : "http://openam:80/am"
+      "serverName" : "http://am:80/am"
     }
   },
   "data" : {

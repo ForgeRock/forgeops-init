@@ -3,11 +3,11 @@
     "realm" : "/",
     "amsterVersion" : "&{version}",
     "entityType" : "OAuth2Clients",
-    "entityId" : "resource-server",
+    "entityId" : "clientOIDC_0",
     "pathParams" : { }
   },
   "data" : {
-    "_id" : "resource-server",
+    "_id" : "clientOIDC_0",
     "signEncOAuth2ClientConfig" : {
       "idTokenEncryptionMethod" : "A128CBC-HS256",
       "jwkSet" : null,
@@ -59,16 +59,15 @@
       "defaultMaxAgeEnabled" : false
     },
     "coreOAuth2ClientConfig" : {
-      "userpassword" : null,
-      "userpassword-encrypted" : "AAAAA0FFUwIQjp8Mpw0gXghvSphDZAOSAD1eS76PiQpfrBWIs1NHgpWc/5PEMaFnKg==",
-      "authorizationCodeLifetime" : 0,
-      "accessTokenLifetime" : 0,
-      "defaultScopes" : [ "am-introspect-all-tokens" ],
+      "userpassword" : "password",
+      "authorizationCodeLifetime" : 120,
+      "accessTokenLifetime" : 3600,
+      "defaultScopes" : [ "cn" ],
       "clientName" : [ ],
       "clientType" : "Confidential",
-      "scopes" : [ ],
+      "scopes" : [ "profile", "email", "openid" ],
       "agentgroup" : null,
-      "refreshTokenLifetime" : 0,
+      "refreshTokenLifetime" : 604800,
       "redirectionUris" : [ "http://fake.com" ],
       "status" : "Active"
     },

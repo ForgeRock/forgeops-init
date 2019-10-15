@@ -1,19 +1,6 @@
-# Platform Common Repo Sample
+# Platform Deployment
 
 This is a sample project demonstrates using AM and IDM with DS as their common repo.
-
-The easiest way to start this configuration is using the instructions found under [development](./development). If you want to run this configuration in a more production-oriented way, you deploy each of these helm charts from forgeops:
-
- - frconfig
- - amster
- - openidm
- - openam
- - ds
-
-You will need to adjust the config path values for amster, openig and openidm to point to the appropriate subfolders under this forgeops-init structure.
-
- - "amster" contains the amster configuration
- - "idm" contains the openidm configuration
 
 ## Accessing the running platform
 
