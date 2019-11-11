@@ -1,0 +1,32 @@
+{
+  "metadata" : {
+    "realm" : "/MyNewRealm",
+    "amsterVersion" : "6.5.2",
+    "entityType" : "ActiveDirectoryModule",
+    "entityId" : "ADModule",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "ADModule",
+    "searchScope" : "SUBTREE",
+    "returnUserDN" : true,
+    "profileAttributeMappings" : [ ],
+    "userBindDN" : "cn=Directory manager",
+    "userSearchAttributes" : [ "uid" ],
+    "connectionHeartbeatTimeUnit" : "MINUTES",
+    "userProfileRetrievalAttribute" : "uid",
+    "openam-auth-ldap-connection-mode" : "LDAP",
+    "primaryLdapServer" : [ "configstore-0.configstore:1389" ],
+    "connectionHeartbeatInterval" : 1,
+    "secondaryLdapServer" : [ ],
+    "userSearchStartDN" : [ "ou=identities" ],
+    "trustAllServerCertificates" : false,
+    "operationTimeout" : 0,
+    "authenticationLevel" : 0,
+    "_type" : {
+      "_id" : "activedirectory",
+      "name" : "Active Directory",
+      "collection" : true
+    }
+  }
+}
