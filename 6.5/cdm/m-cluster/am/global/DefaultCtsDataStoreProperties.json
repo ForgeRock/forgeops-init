@@ -20,7 +20,6 @@
       "org.forgerock.services.cts.store.directory.name" : "&{CTS_STORES|ctsstore-0.ctsstore:1389}",
       "org.forgerock.services.cts.store.loginid" : "cn=Directory Manager",
       "org.forgerock.services.cts.store.password" : "&{CTS_PASSWORD|password}",
-      "org.forgerock.services.cts.store.password-encrypted" : "AAAAA0FFUwIQa84HsOpfOwwL3Hw1KNuPg8fsBqhBT3XA/SHaztDn/QfIcOxrONst0Q==",
       "org.forgerock.services.cts.store.heartbeat" : "10",
       "org.forgerock.services.cts.store.affinity.enabled" : true
     }
